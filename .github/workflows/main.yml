@@ -22,12 +22,12 @@ jobs:
           - 2021.3.9f1
         os: 
           - windows-2019
-        #  - macos-latest
+          - macos-latest
         include:
           - os: windows-2019
             targetPlatform: StandaloneWindows64
-        #  - os: macos-latest
-        #    targetPlatform: StandaloneOSX
+          - os: macos-latest
+            targetPlatform: StandaloneOSX
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
