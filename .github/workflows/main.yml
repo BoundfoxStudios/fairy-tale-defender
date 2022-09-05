@@ -58,4 +58,7 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
           if-no-files-found: error
+      - name: Return license after workflow cancellation
+        uses: game-ci/unity-return-license@v2
+        if: ${{ cancelled() }}
     
