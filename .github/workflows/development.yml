@@ -1,4 +1,4 @@
-name: Release
+name: Development
 
 on: 
   push:
@@ -9,21 +9,20 @@ on:
 
 jobs: 
   build:
+    name: Development
     uses: ./.github/workflows/build.yml
     secrets:
       UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
       UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
       UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
     with:
-      project-path: ${{ matrix.project-path }}
       target-platform: ${{ matrix.target-platform }}
       os: ${{ matrix.os }}
       custom-parameters: '-Development -AllowDebugging'
+      do-test: true
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        project-path:
-          - CommunityProject
         os:
           - windows-2019
           - macos-latest

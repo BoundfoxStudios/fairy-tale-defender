@@ -8,31 +8,31 @@ on:
       target-platform:
         required: true
         type: string
-        description: "A valid Unity target platform identifier"
+        description: A valid Unity target platform identifier
       os:
         required: true
-        description: "A valid GitHub runner operation system identifier"
+        description: A valid GitHub runner operation system identifier
         type: string
       unity-version: 
         required: false
-        description: "A valid Game CI Unity version identifier, defaults to 2021.3.9f1"
+        description: A valid Game CI Unity version identifier, defaults to 2021.3.9f1
         default: 2021.3.9f1
         type: string
       project-path:
         required: false
         default: CommunityProject
-        description: "Path that points to the Unity project, defaults to CommunityProject"
+        description: Path that points to the Unity project, defaults to CommunityProject
         type: string
       custom-parameters:
         required: false
         default: ''
-        description: "Additional parameters to pass to Unity for building"
+        description: Additional parameters to pass to Unity for building
         type: string
-      # do-test:
-      #   required: false
-      #   description: "Whether to execute tests or not, defaults to false"
-      #   default: false
-      #   type: boolean
+      do-test:
+        required: false
+        description: Whether to execute tests or not, defaults to false
+        default: false
+        type: boolean
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -40,12 +40,36 @@ on:
         required: true
       UNITY_SERIAL: 
         required: false
-        description: "Set the serial to use a professional license for building"
+        description: Set the serial to use a professional license for building
       UNITY_LICENSE:
         required: false
-        description: "Set the license to use a personal license for building"
+        description: Set the license to use a personal license for building
   
 jobs: 
+  test:
+    name: Test for ${{ inputs.target-platform }}
+    runs-on: ${{ inputs.os }}
+    # Game CI does not support MacOS yet for executing the tests
+    if: ${{ inputs.do-test && !startsWith(inputs.os, 'macos-') }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/unity-cache
+        with:
+          projectPath: ${{ inputs.project-path }}
+          unityVersion: ${{ inputs.unity-version }}
+          targetPlatform: ${{ inputs.target-platform }}
+      - uses: game-ci/unity-test-runner@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }} 
+        with:
+          projectPath: ${{ inputs.project-path }}
+          unityVersion: ${{ inputs.unity-version }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
   build:
     name: Build for ${{ inputs.target-platform }}
     runs-on: ${{ inputs.os }}
@@ -53,15 +77,11 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0
-      - uses: actions/cache@v2
+      - uses: ./.github/actions/unity-cache
         with:
-          path: ${{ inputs.project-path }}/Library
-          key:
-            Library-${{ inputs.project-path }}-${{ inputs.target-platform }}-${{ hashFiles(format('{0}/Assets/**', inputs.project-path), format('{0}/Packages/**', inputs.project-path), format('{0}/ProjectSettings/**', inputs.project-path)) }}
-          restore-keys: |
-            Library-${{ inputs.project-path }}-${{ inputs.target-platform }}-
-            Library-${{ inputs.project-path }}-
-            Library-
+          projectPath: ${{ inputs.project-path }}
+          unityVersion: ${{ inputs.unity-version }}
+          targetPlatform: ${{ inputs.target-platform }}
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
