@@ -5,7 +5,15 @@ on:
     branches:
       - develop
       - 'feature/**'
+    paths:
+      - 'CommunityProject/Assets/**'
+      - 'CommunityProject/Packages/**'
+      - 'CommunityProject/ProjectSettings/**'
   pull_request:
+    paths:
+      - 'CommunityProject/Assets/**'
+      - 'CommunityProject/Packages/**'
+      - 'CommunityProject/ProjectSettings/**'
 
 jobs: 
   build:
