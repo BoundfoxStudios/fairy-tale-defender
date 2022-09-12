@@ -1,0 +1,33 @@
+name: Release
+concurrency: no-concurrency-due-to-license-activation
+
+on: 
+  push:
+    branches:
+      - main
+
+jobs: 
+  build:
+    uses: ./.github/workflows/build.yml
+    secrets:
+      UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+      UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+      UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+    with:
+      project-path: ${{ matrix.project-path }}
+      target-platform: ${{ matrix.target-platform }}
+      os: ${{ matrix.os }}
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        project-path:
+          - CommunityProject
+        os:
+          - windows-2019
+          - macos-latest
+        include:
+          - os: windows-2019
+            target-platform: StandaloneWindows64
+          - os: macos-latest
+            target-platform: StandaloneOSX

@@ -1,0 +1,82 @@
+# Reusable workflow for building the community project
+
+name: Unity Build & Test Reusable Workflow
+
+on: 
+  workflow_call:
+    inputs:
+      target-platform:
+        required: true
+        type: string
+        description: "A valid Unity target platform identifier"
+      os:
+        required: true
+        description: "A valid GitHub runner operation system identifier"
+        type: string
+      unity-version: 
+        required: false
+        description: "A valid Game CI Unity version identifier, defaults to 2021.3.9f1"
+        default: 2021.3.9f1
+        type: string
+      project-path:
+        required: false
+        default: CommunityProject
+        description: "Path that points to the Unity project, defaults to CommunityProject"
+        type: string
+      custom-parameters:
+        required: false
+        default: ''
+        description: "Additional parameters to pass to Unity for building"
+        type: string
+      # do-test:
+      #   required: false
+      #   description: "Whether to execute tests or not, defaults to false"
+      #   default: false
+      #   type: boolean
+    secrets:
+      UNITY_EMAIL: 
+        required: true
+      UNITY_PASSWORD:
+        required: true
+      UNITY_SERIAL: 
+        required: false
+        description: "Set the serial to use a professional license for building"
+      UNITY_LICENSE:
+        required: false
+        description: "Set the license to use a personal license for building"
+  
+jobs: 
+  build:
+    name: Build for ${{ inputs.target-platform }}
+    runs-on: ${{ inputs.os }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/cache@v2
+        with:
+          path: ${{ inputs.project-path }}/Library
+          key:
+            Library-${{ inputs.project-path }}-${{ inputs.target-platform }}-${{ hashFiles(format('{0}/Assets/**', inputs.project-path), format('{0}/Packages/**', inputs.project-path), format('{0}/ProjectSettings/**', inputs.project-path)) }}
+          restore-keys: |
+            Library-${{ inputs.project-path }}-${{ inputs.target-platform }}-
+            Library-${{ inputs.project-path }}-
+            Library-
+      - uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          projectPath: ${{ inputs.project-path }}
+          unityVersion: ${{ inputs.unity-version }}
+          targetPlatform: ${{ inputs.target-platform }}
+          versioning: Semantic
+          buildName: CommunityProject
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Build-${{ github.run_id }}-${{ inputs.target-platform }}
+          path: build/${{ inputs.target-platform }}
+          if-no-files-found: error
+    

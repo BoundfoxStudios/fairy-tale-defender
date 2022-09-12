@@ -1,0 +1,34 @@
+name: Release
+
+on: 
+  push:
+    branches:
+      - develop
+      - 'feature/**'
+  pull_request:
+
+jobs: 
+  build:
+    uses: ./.github/workflows/build.yml
+    secrets:
+      UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
+      UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
+      UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
+    with:
+      project-path: ${{ matrix.project-path }}
+      target-platform: ${{ matrix.target-platform }}
+      os: ${{ matrix.os }}
+      custom-parameters: '-Development -AllowDebugging'
+    strategy:
+      fail-fast: true
+      matrix:
+        project-path:
+          - CommunityProject
+        os:
+          - windows-2019
+          - macos-latest
+        include:
+          - os: windows-2019
+            target-platform: StandaloneWindows64
+          - os: macos-latest
+            target-platform: StandaloneOSX
