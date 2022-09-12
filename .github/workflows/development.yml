@@ -14,6 +14,8 @@ on:
       - 'CommunityProject/Assets/**'
       - 'CommunityProject/Packages/**'
       - 'CommunityProject/ProjectSettings/**'
+    branches-ignore:
+      - main
 
 jobs: 
   build:
