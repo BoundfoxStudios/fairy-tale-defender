@@ -1,0 +1,18 @@
+{
+    "name": "BoundfoxStudios.CommunityProject.Editor",
+    "rootNamespace": "BoundfoxStudios.CommunityProject.Editor",
+    "references": [
+        "GUID:a69fcba4d4eac4e8ca4c773e52725894"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
