@@ -1,0 +1,12 @@
+{
+  "name": "presentations",
+  "scripts": {
+    "01-getting-started": "marp --watch --preview 01-getting-started/index.md"
+  },
+  "keywords": [],
+  "author": "Manuel Rauber <manuel.rauber@boundfoxstudios.com>",
+  "license": "GPL-3.0-only",
+  "devDependencies": {
+    "@marp-team/marp-cli": "~2.1.2"
+  }
+}
