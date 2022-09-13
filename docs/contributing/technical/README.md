@@ -10,7 +10,7 @@ Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 ## Worauf muss ich achten?
 
 * Lies Dir die [Coding Conventions](coding-conventions.md) durch.
-* Du musst die korrekte Unity-Version installieren. Schaue [hier](../../../CommunityProject/ProjectSettings/ProjectVersion.txt) nach, welche Version im Projekt eingesetzt wird.
+* Du musst die korrekte Unity-Version installieren, das ist aktuell **Unity 2021.3.9f1**. Schaue gerne [hier](../../../CommunityProject/ProjectSettings/ProjectVersion.txt) nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren. 
 * Unity tendiert gerne dazu, dass es Dinge mitändert, die man nicht oder vermeintlich nicht angefasst hat.
   Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du auch nur die Sachen committest, die Du auch wirklich geändert hast.
 
