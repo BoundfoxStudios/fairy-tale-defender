@@ -1,0 +1,14 @@
+name: Linter
+description: Lints the Unity source code
+inputs:
+  project-path:
+    required: true
+    description: Path that points to the Unity project folder
+  
+runs:
+  using: 'composite'
+  steps:
+    - name: Lint code base
+      run: dotnet format whitespace --verify-no-changes --folder Assets/_Game/Scripts
+      working-directory: ${{ inputs.project-path }}
+      shell: sh

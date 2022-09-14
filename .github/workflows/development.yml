@@ -18,7 +18,18 @@ on:
       - main
 
 jobs: 
+  lint:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/linter
+        with: 
+          project-path: CommunityProject
+
   build:
+    needs: lint
     name: Development
     uses: ./.github/workflows/build.yml
     secrets:
@@ -29,6 +40,7 @@ jobs:
       target-platform: ${{ matrix.target-platform }}
       os: ${{ matrix.os }}
       custom-parameters: '-Development -AllowDebugging'
+      project-path: CommunityProject
       do-test: true
     strategy:
       fail-fast: false

@@ -19,9 +19,8 @@ on:
         default: 2021.3.9f1
         type: string
       project-path:
-        required: false
-        default: CommunityProject
-        description: Path that points to the Unity project, defaults to CommunityProject
+        required: true
+        description: Path that points to the Unity project
         type: string
       custom-parameters:
         required: false

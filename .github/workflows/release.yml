@@ -17,6 +17,7 @@ jobs:
     with:
       target-platform: ${{ matrix.target-platform }}
       os: ${{ matrix.os }}
+      project-path: CommunityProject
       do-test: true
     strategy:
       fail-fast: true
