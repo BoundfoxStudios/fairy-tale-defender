@@ -2,7 +2,7 @@
 
 # Boundfox Studios Community-Projekt
 
-// CI TRIGGER
+// CI TRIGGER 2
 
 ![Boundfox Studios Community-Projekt](docs/assets/cover.png)
 
