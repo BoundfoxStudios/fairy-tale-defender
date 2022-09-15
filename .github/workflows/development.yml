@@ -18,7 +18,8 @@ on:
       - main
 
 jobs: 
-  lint:
+  lint: # Don't change name, it must be the same as in skip.yml
+    name: Lint code base
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
@@ -28,9 +29,9 @@ jobs:
         with: 
           project-path: CommunityProject
 
-  build:
+  build: # Don't change name, it must be the same as in skip.yml
     needs: lint
-    name: Development
+    name: Development Builds
     uses: ./.github/workflows/build.yml
     secrets:
       UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
