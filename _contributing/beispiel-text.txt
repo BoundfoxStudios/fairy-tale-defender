@@ -1,0 +1,7 @@
+Hallo!
+
+Ich bin eine Beispieldatei.
+
+Ich lieg hier einfach so rum und mache nichts. Das kann ich wunderbar. :)
+
+Viel Spaß beim Lernen von Git!
