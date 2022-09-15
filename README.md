@@ -37,7 +37,7 @@ _Ich kann aber gar nicht programmieren._
 Kein Problem! Ein Spiel zu entwickeln bedeutet viel mehr als Programmieren zu können. 
 Beispielsweise werden auch 3D-Modellierer, 2D-Designer, Musiker, Effekt-Designer, Spieletester, Übersetzer und vieles mehr benötigt.
 
-Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/P6meol97bCg) an, danach kannst Du [hier](docs/contributing/README.md) in der [Dokumentation](docs/README.md) lesen, wie Du Dich am Community-Projekt beteiligen kannst. 
+Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an, danach kannst Du [hier](docs/contributing/README.md) in der [Dokumentation](docs/README.md) lesen, wie Du Dich am Community-Projekt beteiligen kannst. 
 
 Beachte beim Mitmachen auch unseren [Code of Conduct](CODE_OF_CONDUCT.md), sodass wir hier alle, die mitmachen möchten, respektvoll miteinander umgehen.
 
