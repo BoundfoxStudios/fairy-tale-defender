@@ -56,9 +56,9 @@ jobs:
           fetch-depth: 0
       - uses: ./.github/actions/unity-cache
         with:
-          projectPath: ${{ inputs.project-path }}
-          unityVersion: ${{ inputs.unity-version }}
-          targetPlatform: ${{ inputs.target-platform }}
+          project-path: ${{ inputs.project-path }}
+          unity-version: ${{ inputs.unity-version }}
+          target-platform: ${{ inputs.target-platform }}
       - uses: game-ci/unity-test-runner@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
