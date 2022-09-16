@@ -1,0 +1,26 @@
+name: Build Manifest
+description: Writes the build-manifest.json file to be read by the Unity project
+inputs:
+  project-path:
+    required: true
+    description: Path that points to the Unity project folder
+  
+runs:
+  using: 'composite'
+  steps:
+    - name: Grab short SHA
+      id: variables
+      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      shell: sh
+    - name: Write Build Manifest to JSON file
+      uses: DamianReeves/write-file-action@master
+      with:
+        path: ${{ inputs.project-path }}/Assets/_Game/Resources/build-manifest.json
+        write-mode: overwrite
+        contents: |
+          {
+            "sha": "${{ github.sha }}",
+            "shortSha": "${{ steps.variables.outputs.sha_short }}",
+            "runId": ${{ github.run_id }},
+            "runNumber": ${{ github.run_number }}
+          }     

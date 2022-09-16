@@ -32,6 +32,11 @@ on:
         description: Whether to execute tests or not, defaults to false
         default: false
         type: boolean
+      write-build-manifest:
+        required: false
+        description: Whether to write the build-manifest.json, defaults to true
+        default: true
+        type: boolean
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -69,6 +74,7 @@ jobs:
           projectPath: ${{ inputs.project-path }}
           unityVersion: ${{ inputs.unity-version }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+        
   build:
     name: Build for ${{ inputs.target-platform }}
     runs-on: ${{ inputs.os }}
@@ -81,6 +87,10 @@ jobs:
           projectPath: ${{ inputs.project-path }}
           unityVersion: ${{ inputs.unity-version }}
           targetPlatform: ${{ inputs.target-platform }}
+      - uses: ./.github/actions/build-manifest
+        if : ${{ inputs.write-build-manifest }}
+        with: 
+          project-path: ${{ inputs.project-path }}
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
