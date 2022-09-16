@@ -37,6 +37,11 @@ on:
         description: Whether to write the build-manifest.json, defaults to true
         default: true
         type: boolean
+      write-contributors:
+        required: false
+        description: : Whether to write contributors.json, deaults to true
+        default: true
+        type: boolean
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -91,6 +96,11 @@ jobs:
         if : ${{ inputs.write-build-manifest }}
         with: 
           project-path: ${{ inputs.project-path }}
+      - uses: ./.github/actions/contributors-list
+        if : ${{ inputs.write-contributors }}
+        with: 
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          project-path: CommunityProject
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
