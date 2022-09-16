@@ -1,9 +1,9 @@
 name: Build Manifest
-description: Writes the build-manifest.json file to be read by the Unity project
-inputs:
-  project-path:
-    required: true
-    description: Path that points to the Unity project folder
+description: Generates a JSON string containing build information.
+outputs:
+  content:
+    description: The JSON string containing build information.
+    value: ${{ steps.content.outputs.value }}
   
 runs:
   using: 'composite'
@@ -12,12 +12,11 @@ runs:
       id: variables
       run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
       shell: sh
-    - name: Write Build Manifest to JSON file
-      uses: DamianReeves/write-file-action@master
+    - name: Write Build Manifest to outputs
+      uses: mkungla/actions-set-text-output@v1
+      id: content
       with:
-        path: ${{ inputs.project-path }}/Assets/_Game/Build/manifest.json
-        write-mode: overwrite
-        contents: |
+        text: |
           {
             "sha": "${{ github.sha }}",
             "shortSha": "${{ steps.variables.outputs.sha_short }}",
