@@ -1,7 +1,7 @@
 # Mitmachen!
 
 Es freut uns sehr, wenn wir Dein Interesse geweckt haben, dass Du Dich in irgendeiner Form am Community-Projekt beteiligen möchtest. 
-Schau Dir am besten zuerst das [Intro-Video auf YouTube](https://youtu.be/P6meol97bCg) an und lies dann hier weiter.
+Schau Dir am besten zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an und lies dann hier weiter.
 Bitte beachte zudem unseren [Code of Conduct](../CODE_OF_CONDUCT.md), sodass wir hier alle miteinander respektvoll umgehen und eine angenehme Atmosphäre schaffen.
 
 > Kleines Vorwort: Wir stehen noch ganz am Anfang dieses Projektes. Wie es für ein neues Projekt üblich ist, ist der Anfang oft am schwierigsten. Es gibt noch keine Strukturen, keine Dinge, bei denen man sich orientieren kann.
