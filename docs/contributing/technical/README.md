@@ -1,5 +1,7 @@
 # Technisch mitmachen
 
+[ [Häufig gestellte Fragen](faq.md) ] | [ [Coding Conventions](coding-conventions.md) ]
+
 Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 
 * entwickelst Code für das Spiel,
