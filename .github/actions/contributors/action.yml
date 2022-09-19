@@ -24,7 +24,7 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.github-token }}
       run: |
-        echo "::set-output name=contributors::$(gh api /repos/BoundfoxStudios/community-project/contributors | jq --compact-output '[.[] | { user: .login, url: .url, contributions: .contributions }]')"
+        echo "::set-output name=contributors::$(gh api /repos/BoundfoxStudios/community-project/contributors | jq --compact-output '[.[] | { user: .login, url: .html_url, contributions: .contributions }]')"
       shell: sh
     - name: Write Build Manifest to JSON file
       id: content
