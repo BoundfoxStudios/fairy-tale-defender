@@ -74,10 +74,13 @@ jobs:
           - 2021.3.9f1
         os:
           - windows-2019
+          - ubuntu-latest
           # Game CI does not support MacOS yet for executing the tests
         include:
           - os: windows-2019
             target-platform: StandaloneWindows64
+          - os: ubuntu-latest
+            target-platform: StandaloneLinux64
 
   manifest:
     name: Generate build manifest json
@@ -150,6 +153,19 @@ jobs:
           versioning: Semantic
           buildName: CommunityProject
           customParameters: ${{ inputs.custom-parameters }}
+      
+      # We need to create a TAR archive before uploading due to possible permission loss
+      # See: 
+      #   - https://github.com/actions/upload-artifact#permission-loss
+      #   - https://github.com/game-ci/unity-actions/issues/152
+      - name: Create TAR archive
+        if: ${{ startsWith(matrix.os, 'macos-') }}
+        run: |
+          tar -czf Build-${{ github.run_id }}-${{ matrix.target-platform }}.tar ${{ matrix.target-platform }}
+          mv  Build-${{ github.run_id }}-${{ matrix.target-platform }}.tar ${{ matrix.target-platform }}
+          find . -not -name '*.tar' -delete
+        shell: bash
+        working-directory: build
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ github.run_id }}-${{ matrix.target-platform }}
@@ -164,9 +180,12 @@ jobs:
         os:
           - windows-2019
           - macos-latest
+          - ubuntu-latest
         include:
           - os: windows-2019
             target-platform: StandaloneWindows64
           - os: macos-latest
             target-platform: StandaloneOSX
+          - os: ubuntu-latest
+            target-platform: StandaloneLinux64
     
