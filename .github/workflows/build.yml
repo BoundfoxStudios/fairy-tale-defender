@@ -110,18 +110,21 @@ jobs:
           unity-version: ${{ inputs.unity-version }}
           target-platform: ${{ inputs.target-platform }}
       - name: write manifest.json
+        if: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' }}
         uses: DamianReeves/write-file-action@master
         with:
          path: ${{ inputs.project-path }}/Assets/_Game/Build/manifest.json
          write-mode: overwrite
          contents: ${{ needs.manifest.outputs.content }}
       - name: write contributors.json
+        if: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' }}
         uses: DamianReeves/write-file-action@master
         with:
          path: ${{ inputs.project-path }}/Assets/_Game/Build/contributors.json
          write-mode: overwrite
          contents: ${{ needs.contributors.outputs.content }}
       - name: Commit manifest & contributors changes
+        if: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' }}
         uses: EndBug/add-and-commit@v9
         with:
           push: false
