@@ -37,19 +37,4 @@ jobs:
       UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
       UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
     with:
-      target-platform: ${{ matrix.target-platform }}
-      os: ${{ matrix.os }}
-      custom-parameters: '-Development -AllowDebugging'
-      project-path: CommunityProject
       do-test: true
-    strategy:
-      fail-fast: false
-      matrix:
-        os:
-          - windows-2019
-          - macos-latest
-        include:
-          - os: windows-2019
-            target-platform: StandaloneWindows64
-          - os: macos-latest
-            target-platform: StandaloneOSX
