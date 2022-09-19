@@ -149,6 +149,7 @@ jobs:
           targetPlatform: ${{ matrix.target-platform }}
           versioning: Semantic
           buildName: CommunityProject
+          customParameters: ${{ inputs.custom-parameters }}
       - uses: actions/upload-artifact@v2
         with:
           name: Build-${{ github.run_id }}-${{ matrix.target-platform }}
