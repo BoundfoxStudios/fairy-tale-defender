@@ -1,10 +1,10 @@
 using System.Collections;
-using BoundfoxStudios.CommunityProject.Diagnostics;
+using BoundfoxStudios.CommunityProject.Build.BuildManifest;
 using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Diagnostics
+namespace BoundfoxStudios.CommunityProject.Tests.Editor.Build.BuildManifest
 {
 	public class BuildManifestReaderTests
 	{
