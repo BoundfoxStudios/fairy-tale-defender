@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Diagnostics
+namespace BoundfoxStudios.CommunityProject.Build.BuildManifest
 {
 	/// <summary>
 	/// This class abstracts the manifest.json file.
