@@ -1,6 +1,6 @@
 # Technisch mitmachen
 
-[ [Häufig gestellte Fragen](faq.md) ] | [ [Coding Conventions](coding-conventions.md) ]
+[ [Häufig gestellte Fragen](faq.md) ] | [ [Coding Conventions](coding-conventions.md) ] | [ [CI/CD](ci-cd.md) ]
 
 Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 
