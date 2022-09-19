@@ -5,4 +5,4 @@ Die Inhalte, die Du aktuell siehst, sind einfach nur Beispielinhalte, sodass wir
 In Unity laden wir diese Dateien über Addressables, um ein paar Informationen anzuzeigen.
 
 manifest.json: Informationen über den Build selbst.
-
+contributors.json: Alle Mitwirkenden stehen hier drin, um sie in den Credits anzeigen zu können.
