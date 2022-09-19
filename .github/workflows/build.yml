@@ -121,6 +121,10 @@ jobs:
          path: ${{ inputs.project-path }}/Assets/_Game/Build/contributors.json
          write-mode: overwrite
          contents: ${{ needs.contributors.outputs.content }}
+      - name: Commit manifest & contributors changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          push: false
       - uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
