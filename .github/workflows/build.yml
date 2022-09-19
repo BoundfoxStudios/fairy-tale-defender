@@ -5,22 +5,10 @@ name: Unity Build & Test Reusable Workflow
 on: 
   workflow_call:
     inputs:
-      target-platform:
-        required: true
-        type: string
-        description: A valid Unity target platform identifier
-      os:
-        required: true
-        description: A valid GitHub runner operation system identifier
-        type: string
-      unity-version: 
-        required: false
-        description: A valid Game CI Unity version identifier, defaults to 2021.3.9f1
-        default: 2021.3.9f1
-        type: string
       project-path:
-        required: true
+        required: false
         description: Path that points to the Unity project
+        default: CommunityProject
         type: string
       custom-parameters:
         required: false
@@ -32,6 +20,16 @@ on:
         description: Whether to execute tests or not, defaults to false
         default: false
         type: boolean
+      fail-fast:
+        required: false
+        description: Whether to fail fast in the matrix build strategy, defaults to false
+        default: false
+        type: boolean
+      max-parallel:
+        required: false
+        description: Maximum amount of parallel matrix build strategy runners, defaults to 10
+        default: 10
+        type: number
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -46,10 +44,9 @@ on:
   
 jobs: 
   test:
-    name: Test for ${{ inputs.target-platform }}
-    runs-on: ${{ inputs.os }}
-    # Game CI does not support MacOS yet for executing the tests
-    if: ${{ inputs.do-test && !startsWith(inputs.os, 'macos-') }}
+    name: Test for ${{ matrix.target-platform }}
+    runs-on: ${{ matrix.os }}
+    if: ${{ inputs.do-test }}
     steps:
       - uses: actions/checkout@v2
         with:
@@ -57,8 +54,8 @@ jobs:
       - uses: ./.github/actions/unity-cache
         with:
           project-path: ${{ inputs.project-path }}
-          unity-version: ${{ inputs.unity-version }}
-          target-platform: ${{ inputs.target-platform }}
+          unity-version: ${{ matrix.unity-version }}
+          target-platform: ${{ matrix.target-platform }}
       - uses: game-ci/unity-test-runner@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
@@ -67,8 +64,20 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }} 
         with:
           projectPath: ${{ inputs.project-path }}
-          unityVersion: ${{ inputs.unity-version }}
+          unityVersion: ${{ matrix.unity-version }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+    strategy:
+      fail-fast: ${{ inputs.fail-fast }}
+      max-parallel: ${{ inputs.max-parallel }}
+      matrix:
+        unity-version:
+          - 2021.3.9f1
+        os:
+          - windows-2019
+          # Game CI does not support MacOS yet for executing the tests
+        include:
+          - os: windows-2019
+            target-platform: StandaloneWindows64
 
   manifest:
     name: Generate build manifest json
@@ -97,8 +106,8 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
         
   build:
-    name: Build for ${{ inputs.target-platform }}
-    runs-on: ${{ inputs.os }}
+    name: Build for ${{ matrix.target-platform }}
+    runs-on: ${{ matrix.os }}
     needs: [manifest, contributors]
     steps:
       - uses: actions/checkout@v2
@@ -107,8 +116,8 @@ jobs:
       - uses: ./.github/actions/unity-cache
         with:
           project-path: ${{ inputs.project-path }}
-          unity-version: ${{ inputs.unity-version }}
-          target-platform: ${{ inputs.target-platform }}
+          unity-version: ${{ matrix.unity-version }}
+          target-platform: ${{ matrix.target-platform }}
       - name: write manifest.json
         if: ${{ github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main' }}
         uses: DamianReeves/write-file-action@master
@@ -136,13 +145,27 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           projectPath: ${{ inputs.project-path }}
-          unityVersion: ${{ inputs.unity-version }}
-          targetPlatform: ${{ inputs.target-platform }}
+          unityVersion: ${{ matrix.unity-version }}
+          targetPlatform: ${{ matrix.target-platform }}
           versioning: Semantic
           buildName: CommunityProject
       - uses: actions/upload-artifact@v2
         with:
-          name: Build-${{ github.run_id }}-${{ inputs.target-platform }}
-          path: build/${{ inputs.target-platform }}
+          name: Build-${{ github.run_id }}-${{ matrix.target-platform }}
+          path: build/${{ matrix.target-platform }}
           if-no-files-found: error
+    strategy:
+      fail-fast: ${{ inputs.fail-fast }}
+      max-parallel: ${{ inputs.max-parallel }}
+      matrix:
+        unity-version:
+          - 2021.3.9f1
+        os:
+          - windows-2019
+          - macos-latest
+        include:
+          - os: windows-2019
+            target-platform: StandaloneWindows64
+          - os: macos-latest
+            target-platform: StandaloneOSX
     
