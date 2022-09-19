@@ -29,5 +29,7 @@ namespace BoundfoxStudios.CommunityProject.Build.BuildManifest
 		public string ShortSha => shortSha;
 		public int RunId => runId;
 		public int RunNumber => runNumber;
+
+		// I am just a CI trigger and will be removed later. :))
 	}
 }
