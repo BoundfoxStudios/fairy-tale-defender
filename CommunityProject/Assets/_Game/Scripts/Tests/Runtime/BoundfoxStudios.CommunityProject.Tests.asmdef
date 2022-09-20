@@ -4,7 +4,12 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "BoundfoxStudios.CommunityProject"
+        "BoundfoxStudios.CommunityProject",
+        "UniTask",
+        "UniTask.Addressables",
+        "Unity.Addressables",
+        "Unity.ResourceManager",
+        "BoundfoxStudios.FluentAssertions"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
