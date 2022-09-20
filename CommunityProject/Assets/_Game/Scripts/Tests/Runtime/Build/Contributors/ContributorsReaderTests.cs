@@ -1,11 +1,10 @@
 using System.Collections;
-using BoundfoxStudios.CommunityProject.Build.BuildManifest;
 using BoundfoxStudios.CommunityProject.Build.Contributors;
 using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Build.Contributors
+namespace BoundfoxStudios.CommunityProject.Tests.Build.Contributors
 {
 	public class ContributorsReaderTests
 	{

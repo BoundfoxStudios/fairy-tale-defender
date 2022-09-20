@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Build.BuildManifest
+namespace BoundfoxStudios.CommunityProject.Tests.Build.BuildManifest
 {
 	public class BuildManifestReaderTests
 	{
