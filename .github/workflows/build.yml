@@ -73,12 +73,10 @@ jobs:
         unity-version:
           - 2021.3.9f1
         os:
-          - windows-2019
           - ubuntu-latest
           # Game CI does not support MacOS yet for executing the tests
+          # Regarding Windows see: https://github.com/BoundfoxStudios/community-project/issues/20
         include:
-          - os: windows-2019
-            target-platform: StandaloneWindows64
           - os: ubuntu-latest
             target-platform: StandaloneLinux64
 
