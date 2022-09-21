@@ -6,7 +6,7 @@
 
 [_I speak english._](#english)
 
-[ [Dokumentation](docs/README.md) ] | [ [Mitmachen](docs/contributing/README.md) ]
+[ [Dokumentation](docs/README.md) ] [ [Mitmachen](docs/contributing/README.md) ] [ [Roadmap](docs/roadmap.md) ]
 
 Hallo!
 

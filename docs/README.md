@@ -5,6 +5,8 @@ In dieser Dokumentation wirst Du nach und nach alles finden, was zum Community-P
 ## Inhaltsverzeichnis
 
 * [Mitmachen](contributing/README.md)
+* [Roadmap](roadmap.md): Phasen des Projekts
+* [Mitmachen](contributing/README.md): Wie kann ich mitmachen?
   * [Technisch](contributing/technical/README.md)
     * [Häufig gestellte Fragen](contributing/technical/faq.md)
     * [Coding Conventions](contributing/technical/coding-conventions.md)
