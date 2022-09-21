@@ -14,7 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_TableCollectionName: UI
   m_TableCollectionNameGuidString: f8b2dcc7eb952411c827560f5a80fbe3
-  m_Entries: []
+  m_Entries:
+  - m_Id: 137189676539904
+    m_Key: PersistentManagers/LoadingScreen_Canvas/LoadingScreen/Panel/Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

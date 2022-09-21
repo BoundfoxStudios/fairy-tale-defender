@@ -1,12 +1,26 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
 namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 {
+	public abstract class EventChannelBaseSO : ScriptableObject
+	{
+#if UNITY_EDITOR
+		/// <summary>
+		/// In-Editor description to let developers for what certain event instances are.
+		/// </summary>
+		[TextArea]
+		[SerializeField]
+		[UsedImplicitly]
+		private string Description;
+#endif
+	}
+
 	/// <summary>
 	/// Base EventChannel without an argument.
 	/// </summary>
-	public abstract class EventChannelSO : ScriptableObject
+	public abstract class EventChannelSO : EventChannelBaseSO
 	{
 		public UnityAction Raised = delegate { };
 
@@ -34,7 +48,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 	/// <summary>
 	/// Base EventChannel with an argument.
 	/// </summary>
-	public abstract class EventChannelSO<T> : ScriptableObject
+	public abstract class EventChannelSO<T> : EventChannelBaseSO
 	{
 		public UnityAction<T> Raised = delegate { };
 
@@ -55,7 +69,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 
 		private void Log(T value)
 		{
-			Debug.Log($"<b><color=yellow>Event</color></b> {name} raised with type {value.GetType()} and value {value}!");
+			Debug.Log($"<b><color=yellow>Event</color></b> {name} raised with type {value.GetType().Name} and value {value}!");
 		}
 	}
 }
