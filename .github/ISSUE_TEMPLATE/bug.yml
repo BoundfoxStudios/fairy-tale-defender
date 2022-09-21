@@ -1,5 +1,5 @@
 name: Bug
-description: Beschreibe einen Fehler
+description: Beschreibe einen Fehler.
 title: "[Bug]: "
 labels: ["Bug", "Triage"]
 body:
