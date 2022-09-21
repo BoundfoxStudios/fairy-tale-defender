@@ -1,0 +1,18 @@
+name: Idee/Vorschlag für ein Feature
+description: Schlage eine Idee oder ein Feature für das Projekt vor.
+title: "[Idee/Vorschlag]: "
+labels: ["Triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Danke, dass Du Dir die Zeit nimmst, eine Idee oder ein Feature für das Projekt vorzuschlagen!
+  - type: textarea
+    id: feature
+    attributes:
+      label: Idee/Feature-Beschreibung
+      description: |
+        Beschreibe hier ausführlich und präzise die Idee oder das Feature, was Du Dir wünschst.
+
+        Falls Deine Idee oder Feature aufgrund eines Problems mit einem bisherigen Feature basiert, beschreibe bitte das zugrundeliegende Problem und dann, was für Dich die beste Lösung wäre.
+    validations:
+      required: true
