@@ -1,0 +1,62 @@
+name: Bug
+description: Beschreibe einen Fehler
+title: "[Bug]: "
+labels: ["Bug", "Triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Danke, dass Du Dir die Zeit nimmst, einen Fehler zu beschreiben!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Fehlerbeschreibung
+      description: Beschreibe hier ausführlich und präzise den Fehler
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Wie kann man den Fehler reproduzieren?
+      description: Bitte beschreibe hier ausführlich, wie man den Fehler reproduzieren kann.
+    validations:
+      required: true
+  - type: textarea
+    id: behaviour
+    attributes:
+      label: Erwartetes Verhalten
+      description: Bitte beschreibe hier ausführlich, welches fehlerfreie Verhalten Du erwartest.
+    validations:
+      required: true
+  - type: dropdown 
+    id: operating-system
+    attributes:
+      label: Betriebssystem
+      description: Bitte selektiere Dein Betriebssystem, dass Du nutzt.
+      multiple: false
+      options:
+        - Windows 7
+        - Windows 8
+        - Windows 10
+        - Linux (genaue Distribution bitte in der Fehlerbeschreibung angeben)
+        - macOS Monterey
+        - macOS Big Sur
+        - macOS Catalina
+        - Anderes (bitte in der Fehlerbeschreibung angeben)
+    validations:
+      required: true
+  - type: input
+    id: build-version
+    attributes:
+      label: Spiel-Version
+      description: | 
+        Bitte gib hier die Spiel-Version an, bei der Du Fehler gefunden hast.
+        Die genaue Version siehst Du im Hauptmenü.
+        Du kannst die Version anklicken, um die Versionsnummer zu kopieren und um sie hier einfügen zu können.
+  - type: textarea
+    id: misc
+    attributes:
+      label: Sonstiges
+      description: |
+        Falls Du noch weitere Informationen hast, schreibe diese gerne hier rein.
+
+        Tipp: Du kannst hier Screenshots anhängen, in dem Du in das Textfeld klickst und ein Bild via Drag & Drop reinziehst.

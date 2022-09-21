@@ -1,0 +1,14 @@
+name: Sonstiges
+description: Alles, was nicht in die anderen Kategorien passt.
+labels: ["Triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Danke, dass Du Dir die Zeit nimmst!
+  - type: textarea
+    id: misc
+    attributes:
+      label: Beschreibung
+      description: Je ausführlicher und präziser Du hier Dein Anliegen schilderst, umso einfacher können wir helfen. :)
+    validations:
+      required: true
