@@ -37,10 +37,14 @@ jobs:
         with:
           app_id: ${{ secrets.COMMUNITY_APP_ID }}
           private_key: ${{ secrets.COMMUNITY_APP_PEM }}
-      - uses: actions/add-to-project@v0.3.0
+      - name: Move new issue to Triage column
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
         with:
-          project-url: https://github.com/orgs/BoundfoxStudios/projects/1
-          github-token: ${{ steps.generate_token.outputs.token }}
-          labeled: Triage
+          gh_token: ${{ steps.generate_token.outputs.token }}
+          organization: BoundfoxStudios
+          project_id: 1
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: Triage
+
 
   
