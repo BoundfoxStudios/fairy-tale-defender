@@ -33,13 +33,15 @@ Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.co
     <dd>Das Runterladen von Commits von einem remote Repo in das lokale Repo.</dd>
     <dt>Push</dt>
     <dd>Das Hochladen von Commits von einem lokalen Repo in ein remote Repo.</dd>
-    <dt>Pull Request</dt>
+    <dt>Pull Request, PR</dt>
     <dd>Das Bereitstellen von Änderungen, die in einem Fork gemacht wurden, in das Original-Repo.</dd>
 </dl>
 
 ## Game Dev
 
 <dl>
+    <dt>User Interface, UI</dt>
+    <dd>Die Benutzeroberfläche einer Anwendung.</dd>
     <dt>MVP</dt>
     <dd>Minimal Viable Product, <a href="https://github.com/boundfoxstudios/community-project/tree/develop/docs/glossary.md#mvp">siehe hier</a></dd>
 </dl>
