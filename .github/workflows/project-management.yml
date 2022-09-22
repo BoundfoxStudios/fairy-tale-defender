@@ -18,4 +18,5 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           message: Danke, dass Du diese Aufgabe übernimmst! Falls Du Fragen hast, schreib sie einfach ins Issue!
+          issueCurrentlyAssignedMessage: Die Aufgabe wird aktuell bereits von jemand anderem bearbeitet, daher kannst Du Dir diese leider nicht selbst zuweisen.
           trigger: .meine-aufgabe
