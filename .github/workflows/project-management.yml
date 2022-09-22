@@ -9,7 +9,8 @@ on:
     types:
       - opened
       - unlabeled
-  
+      - assigned
+      - unassigned
 
 jobs:
   assign-issue-to-contributor:
@@ -49,6 +50,46 @@ jobs:
   move-issue-to-todo-column-when-triage-label-is-removed:
     name: Move an issue to the Todo column when triage label is removed
     if: ${{ github.event_name == 'issues' && github.event.action == 'unlabeled' && github.event.label.name == 'Triage' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+        with:
+          app_id: ${{ secrets.COMMUNITY_APP_ID }}
+          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
+      - name: Move new issue to Todo column
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+        with:
+          gh_token: ${{ steps.generate_token.outputs.token }}
+          organization: BoundfoxStudios
+          project_id: 1
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: Todo
+  
+  move-issue-to-in-progress-on-assign:
+    name: Move an issue to in progress when it is assigned.
+    if: ${{  github.event_name == 'issues' && github.event.action == 'assigned' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+        with:
+          app_id: ${{ secrets.COMMUNITY_APP_ID }}
+          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
+      - name: Move new issue to Todo column
+        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+        with:
+          gh_token: ${{ steps.generate_token.outputs.token }}
+          organization: BoundfoxStudios
+          project_id: 1
+          resource_node_id: ${{ github.event.issue.node_id }}
+          status_value: In Progress
+
+  move-issue-back-to-todo-on-unassign:
+    name: Move an issue back to todo on unassign
+    if: ${{  github.event_name == 'issues' && github.event.action == 'unassigned' && !github.event.issue.assignee }}
     runs-on: ubuntu-latest
     steps:
       - name: Generate token
