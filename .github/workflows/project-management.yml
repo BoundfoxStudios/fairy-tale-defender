@@ -18,6 +18,9 @@ jobs:
     if: ${{ github.event_name == 'issue_comment' && !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
+      - uses: Bhacaz/checkout-files@v2
+        with:
+          files: .github/actions
       - name: Assign issue
         uses: bdougie/take-action@main
         env:
@@ -26,83 +29,69 @@ jobs:
           message: Danke, dass Du diese Aufgabe übernimmst! Falls Du Fragen hast, schreib sie einfach ins Issue!
           issueCurrentlyAssignedMessage: Die Aufgabe wird aktuell bereits von jemand anderem bearbeitet, daher kannst Du Dir diese leider nicht selbst zuweisen.
           trigger: .meine-aufgabe
+      - uses: ./.github/actions/move-issue
+        with:
+          app-id: ${{ secrets.COMMUNITY_APP_ID }}
+          private-key: ${{ secrets.COMMUNITY_APP_PEM }}
+          issue-id: ${{ github.event.issue.node_id }}
+          column: In Progress
   
   move-new-issues-to-triage-column:
     name: Move new issues to triage column
     if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+      - uses: Bhacaz/checkout-files@v2
         with:
-          app_id: ${{ secrets.COMMUNITY_APP_ID }}
-          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
-      - name: Move new issue to Triage column
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+          files: .github/actions
+      - uses: ./.github/actions/move-issue
         with:
-          gh_token: ${{ steps.generate_token.outputs.token }}
-          organization: BoundfoxStudios
-          project_id: 1
-          resource_node_id: ${{ github.event.issue.node_id }}
-          status_value: Triage
+          app-id: ${{ secrets.COMMUNITY_APP_ID }}
+          private-key: ${{ secrets.COMMUNITY_APP_PEM }}
+          issue-id: ${{ github.event.issue.node_id }}
+          column: Triage
   
   move-issue-to-todo-column-when-triage-label-is-removed:
     name: Move an issue to the Todo column when triage label is removed
     if: ${{ github.event_name == 'issues' && github.event.action == 'unlabeled' && github.event.label.name == 'Triage' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+      - uses: Bhacaz/checkout-files@v2
         with:
-          app_id: ${{ secrets.COMMUNITY_APP_ID }}
-          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
-      - name: Move new issue to Todo column
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+          files: .github/actions
+      - uses: ./.github/actions/move-issue
         with:
-          gh_token: ${{ steps.generate_token.outputs.token }}
-          organization: BoundfoxStudios
-          project_id: 1
-          resource_node_id: ${{ github.event.issue.node_id }}
-          status_value: Todo
+          app-id: ${{ secrets.COMMUNITY_APP_ID }}
+          private-key: ${{ secrets.COMMUNITY_APP_PEM }}
+          issue-id: ${{ github.event.issue.node_id }}
+          column: Todo
   
   move-issue-to-in-progress-on-assign:
     name: Move an issue to in progress when it is assigned.
     if: ${{  github.event_name == 'issues' && github.event.action == 'assigned' }}
     runs-on: ubuntu-latest
     steps:
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+      - uses: Bhacaz/checkout-files@v2
         with:
-          app_id: ${{ secrets.COMMUNITY_APP_ID }}
-          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
-      - name: Move new issue to Todo column
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+          files: .github/actions
+      - uses: ./.github/actions/move-issue
         with:
-          gh_token: ${{ steps.generate_token.outputs.token }}
-          organization: BoundfoxStudios
-          project_id: 1
-          resource_node_id: ${{ github.event.issue.node_id }}
-          status_value: In Progress
+          app-id: ${{ secrets.COMMUNITY_APP_ID }}
+          private-key: ${{ secrets.COMMUNITY_APP_PEM }}
+          issue-id: ${{ github.event.issue.node_id }}
+          column: In Progress
 
   move-issue-back-to-todo-on-unassign:
     name: Move an issue back to todo on unassign
     if: ${{  github.event_name == 'issues' && github.event.action == 'unassigned' && !github.event.issue.assignee }}
     runs-on: ubuntu-latest
     steps:
-      - name: Generate token
-        id: generate_token
-        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+      - uses: Bhacaz/checkout-files@v2
         with:
-          app_id: ${{ secrets.COMMUNITY_APP_ID }}
-          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
-      - name: Move new issue to Todo column
-        uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+          files: .github/actions
+      - uses: ./.github/actions/move-issue
         with:
-          gh_token: ${{ steps.generate_token.outputs.token }}
-          organization: BoundfoxStudios
-          project_id: 1
-          resource_node_id: ${{ github.event.issue.node_id }}
-          status_value: Todo
+          app-id: ${{ secrets.COMMUNITY_APP_ID }}
+          private-key: ${{ secrets.COMMUNITY_APP_PEM }}
+          issue-id: ${{ github.event.issue.node_id }}
+          column: Todo

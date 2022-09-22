@@ -1,0 +1,33 @@
+name: Move Issue
+description: Action to move an issue on the project board.
+inputs:
+  app-id:
+    required: true
+    description: The GitHub App Id
+  private-key:
+    required: true
+    description: The private key for the GitHub App
+  issue-id:
+    required: true
+    description: The issue id to move
+  column:
+    required: true
+    description: The named column where to move the issue to
+  
+runs:
+  using: 'composite'
+  steps:
+  - name: Generate token
+    id: generate_token
+    uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+    with:
+      app_id: ${{ inputs.app-id }}
+      private_key: ${{ inputs.private-key }}
+  - name: Move the issue to ${{ inputs.column }}
+    uses: leonsteinhaeuser/project-beta-automations@v2.0.0
+    with:
+      gh_token: ${{ steps.generate_token.outputs.token }}
+      organization: BoundfoxStudios
+      project_id: 1
+      resource_node_id: ${{ inputs.issue-id }}
+      status_value: ${{ inputs.column }}
