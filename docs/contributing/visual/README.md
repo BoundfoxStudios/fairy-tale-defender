@@ -47,6 +47,10 @@ Hier erstellst Du einen Ordner mit Deinem Benutzernamen und dort drin je nach Be
 
 Wichtig ist, dass Du einmal die Original-Datei hochlädst (sodass jemand anders es weiterbearbeiten kann, falls es nötig ist) und Dein 3D-Modell als `.fbx` oder Deine 2D-Arbeit als `.png`. 
 
+Bitte achte auch darauf, dass Deine Dateien bereits optimiert sind, unnötige Sachen entfernt sind, etc. 
+Original-Dateien tendieren oft dazu, recht schnell groß zu werden.
+Git und große Dateien sind nicht unbedingt Freunde, je mehr Du daher optimierst, umso besser.
+
 Falls Du Dir unsicher bist, frag gerne auf dem [Discord](https://discord.gg/tHqNzMT) nach.
 
 ### Beispiel
