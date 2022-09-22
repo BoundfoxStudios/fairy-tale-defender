@@ -5,11 +5,16 @@ on:
     types:
       - created
       - edited
+  issues:
+    types:
+      - opened
+      - unlabeled
+  
 
 jobs:
-  assignIssueToCommenter:
+  assign-issue-to-contributor:
     name: Assign Issue to Contributor
-    if: ${{ !github.event.issue.pull_request }}
+    if: ${{ github.event_name == 'issue_comment' && !github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     steps:
       - name: Assign issue
@@ -20,3 +25,22 @@ jobs:
           message: Danke, dass Du diese Aufgabe übernimmst! Falls Du Fragen hast, schreib sie einfach ins Issue!
           issueCurrentlyAssignedMessage: Die Aufgabe wird aktuell bereits von jemand anderem bearbeitet, daher kannst Du Dir diese leider nicht selbst zuweisen.
           trigger: .meine-aufgabe
+  
+  move-new-issues-to-triage-column:
+    name: Move new issues to triage column
+    if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Generate token
+        id: generate_token
+        uses: tibdex/github-app-token@36464acb844fc53b9b8b2401da68844f6b05ebb0
+        with:
+          app_id: ${{ secrets.COMMUNITY_APP_ID }}
+          private_key: ${{ secrets.COMMUNITY_APP_PEM }}
+      - uses: actions/add-to-project@v0.3.0
+        with:
+          project-url: https://github.com/orgs/BoundfoxStudios/projects/1
+          github-token: ${{ steps.generate_token.outputs.token }}
+          labeled: Triage
+
+  
