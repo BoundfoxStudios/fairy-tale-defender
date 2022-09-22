@@ -4,7 +4,7 @@
 
 In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.
 Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
-Du solltest natürlich auch die Suchmaschine Deine Wahl bemühen, um Dein Verständnis zu vergrößern.
+Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.
 
 Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.com/BoundfoxStudios/community-project/issues/new/choose) ("Sonstiges").
 
@@ -24,7 +24,7 @@ Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.co
     <dt>Fork</dt>
     <dd>"Verknüpfte" Kopie eines Repositories. Wird z.B. genutzt um Features, Bugs, etc. zu entwickeln/fixen und dann via Pull Request an das Original-Repository zu übertragen.</dd>
     <dt>Repository, Repo</dt>
-    <dd>Ein unter versionskontrolle stehender Ordner, in dem Änderungen nachvollzogen werden können. Oder salopp: Ein Git(Hub)-Projekt.<br><br>
+    <dd>Ein unter Versionskontrolle stehender Ordner, in dem Änderungen nachvollzogen werden können. Oder salopp: Ein Git(Hub)-Projekt.<br><br>
     Hier unterscheidet man zwischen einem lokalen Repo und einem remote Repo.
     Das lokale Repo liegt auf der Festplatte.
     Das remote Repo liegt z.B. bei GitHub.
