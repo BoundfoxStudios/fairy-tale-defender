@@ -87,11 +87,25 @@ Sobald es mal "mehr vom Spiel gibt", werden weitere Rollen sich am Spiel beteili
 
 ## Wo finde ich, was es zu tun gibt? Wo sind die Aufgaben?
 
-Eine Liste von Aufgaben wirst Du auf der [Issue-Seite](https://github.com/BoundfoxStudios/community-project/issues) von unserem Community-Projekt finden.
+Eine Liste von Aufgaben wirst Du auf der [Issue-Seite][1] von unserem Community-Projekt finden.
+Alternativ kannst Du auch einen Blick auf das [Projekt-Board][2] werfen.
 Das bedeutet aber nicht, dass Du nur an diesen Aufgaben arbeiten kannst.
 Wenn Du einen Bug gefunden hast oder Dir eine tolle Idee kommt, dann lass uns gerne darüber reden und eventuell machen wir daraus eine neue Aufgabe für Dich.
 
 Hier erneut ein Hinweis zum Thema [Verlässlichkeit](#verlässlichkeit): Bitte versuche immer nur eine Aufgabe zu übernehmen, diese abzuschließen (bzw. mindestens einen Pull Request zu stellen), bevor Du eine weitere Aufgabe übernimmst.
+
+### Wie kann ich eine Aufgabe übernehmen?
+
+Sowohl auf der [Issue-Seite][1] und auf dem [Projekt-Board][2] findest Du alle aktuellen Aufgaben.
+Alle Aufgaben, die mit `Triage` markiert sind, bzw. beim Projekt-Board in der Spalte `Triage` sind, müssen noch vorsortiert werden.
+
+Für Dich relevant sind daher alle Aufgaben, die **nicht** mit Triage markiert sind.
+Wenn Dich eine konkrete Aufgabe interessiert, klicke sie an, um die Dateilseite zu kommen.
+Lese Dir hier durch, um was es genau geht und stelle gerne Rückfragen, falls Dir eine Information fehlt.
+Sobald Du Dich entschließt, dass Du diese Aufgabe bearbeiten möchtest, schreibe einen Kommentar in dem folgender Text vorkommt: `.meine-aufgabe` - Du musst es exakt so schreiben, wie es dort steht, mit dem Punkt am Anfang, alles kleingeschrieben und dem Bindestrich. 
+Sobald Du den Kommentar abgeschickt hast, wird es ca. 30-60 Sekunden dauern, bis GitHub Dir diese Aufgabe zuweist. Ab jetzt kannst Du daran arbeiten. :-)
+
+Falls Du eine Aufgabe findest, die schon jemand bearbeitet und Du auch dran interessiert bist, dann schreibe gerne einen Kommentar rein und melde Dich am besten kurz auf dem Discord-Server.
 
 ## Ich habe eine Aufgabe fertig, was mache ich damit?
 
@@ -124,3 +138,8 @@ Falls es je zu so einer Situation kommt, werden die Gründe ausführlich erläut
 Wann immer Du eine Frage hast, nicht weiter kommst oder generell etwas zum Projekt wissen möchtest, komm gerne auf [Discord](https://discord.gg/tHqNzMT) und frag einfach nach. :-)
 
 Und jetzt viel Spaß beim Mitmachen!
+
+<!-- Reference Links -->
+
+[1]: https://github.com/BoundfoxStudios/community-project/issues
+[2]: https://github.com/orgs/BoundfoxStudios/projects/1/views/1
