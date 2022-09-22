@@ -16,9 +16,6 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Install jq
-      run: sudo apt-get install jq
-      shell: sh
     - name: Get Contributors from API
       id: variables
       env:
