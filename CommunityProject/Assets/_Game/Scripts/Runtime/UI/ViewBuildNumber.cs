@@ -26,7 +26,7 @@ namespace BoundfoxStudios.CommunityProject.UI
 		}
 
 		// Start is called before the first frame update
-		void Start()
+		void Awake()
 		{
 			_buildNumberText = this.gameObject.GetComponent<TextMeshProUGUI>();
 			InitLoadBuildManifestAsyncAction();
