@@ -21,7 +21,7 @@ namespace BoundfoxStudios.CommunityProject.UI
             LoadBuildManifestAsyncAction = new Action(async () =>
             {
                 unibm = await bmReader.LoadAsync();
-                BuildNumberText.text = string.Format("Build: {0} ({1})", Application.version, unibm.ShortSha);
+                BuildNumberText.text = $"Build: {Application.version} ({unibm.ShortSha})";
             });
         }
 
