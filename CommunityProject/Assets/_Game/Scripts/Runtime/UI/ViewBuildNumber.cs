@@ -5,7 +5,7 @@ using UnityEngine;
 using TMPro;
 using System;
 
-namespace BoundfoxStudios.CommunityProject
+namespace BoundfoxStudios.CommunityProject.UI
 {
     public class ViewBuildNumber : MonoBehaviour
     {
