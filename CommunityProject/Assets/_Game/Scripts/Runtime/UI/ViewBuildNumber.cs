@@ -21,14 +21,14 @@ namespace BoundfoxStudios.CommunityProject.UI
             LoadBuildManifestAsyncAction = new Action(async () =>
             {
                 unibm = await bmReader.LoadAsync();
-                BuildNumberText.text = $"Build: {Application.version} ({unibm.ShortSha})";
+                _buildNumberText.text = $"Build: {Application.version} ({unibm.ShortSha})";
             });
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            BuildNumberText = this.gameObject.GetComponent<TextMeshProUGUI>();
+            _buildNumberText = this.gameObject.GetComponent<TextMeshProUGUI>();
             InitLoadBuildManifestAsyncAction();
             LoadBuildManifestAsyncAction.Invoke();
         }
