@@ -10,7 +10,7 @@ namespace BoundfoxStudios.CommunityProject.UI
     [AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
     public class ViewBuildNumber : MonoBehaviour
     {
-        private TextMeshProUGUI BuildNumberText;
+        private TextMeshProUGUI _buildNumberText;
         private BuildManifestReader bmReader = new BuildManifestReader();
 
         public BuildManifest unibm;
