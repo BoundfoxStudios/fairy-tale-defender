@@ -7,6 +7,7 @@ using System;
 
 namespace BoundfoxStudios.CommunityProject.UI
 {
+    [AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
     public class ViewBuildNumber : MonoBehaviour
     {
         private TextMeshProUGUI BuildNumberText;
