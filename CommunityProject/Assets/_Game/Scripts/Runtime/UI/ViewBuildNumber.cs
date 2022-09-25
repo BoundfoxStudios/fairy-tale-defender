@@ -22,7 +22,7 @@ namespace BoundfoxStudios.CommunityProject.UI
 
 		private async UniTask<string> CreateBuildNumberAsync()
 		{
-			BuildManifestReader _buildManifestReader = new BuildManifestReader();
+			var _buildManifestReader = new BuildManifestReader();
 			var buildManifest = await _buildManifestReader.LoadAsync();
 			return $"Build: {Application.version} ({buildManifest.ShortSha})";
 		}
