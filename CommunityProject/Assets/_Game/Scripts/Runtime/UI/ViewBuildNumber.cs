@@ -8,10 +8,12 @@ using System;
 namespace BoundfoxStudios.CommunityProject.UI
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
+	[RequireComponent(typeof(TextMeshProUGUI))]
+
 	public class ViewBuildNumber : MonoBehaviour
 	{
 		private TextMeshProUGUI _buildNumberText;
-		private BuildManifestReader _bmReader = new BuildManifestReader();
+		private BuildManifestReader _buildManifestReader = new BuildManifestReader();
 
 		private BuildManifest _buildManifest;
 		private Action LoadBuildManifestAsyncAction;
@@ -20,7 +22,7 @@ namespace BoundfoxStudios.CommunityProject.UI
 		{
 			LoadBuildManifestAsyncAction = new Action(async () =>
 			{
-				_buildManifest = await _bmReader.LoadAsync();
+				_buildManifest = await _buildManifestReader.LoadAsync();
 				_buildNumberText.text = $"Build: {Application.version} ({_buildManifest.ShortSha})";
 			});
 		}
