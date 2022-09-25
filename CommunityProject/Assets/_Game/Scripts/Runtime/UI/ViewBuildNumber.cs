@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System;
+using Cysharp.Threading.Tasks;
 
 namespace BoundfoxStudios.CommunityProject.UI
 {
@@ -15,24 +16,20 @@ namespace BoundfoxStudios.CommunityProject.UI
 		private TextMeshProUGUI _buildNumberText;
 		private BuildManifestReader _buildManifestReader = new BuildManifestReader();
 
-		private BuildManifest _buildManifest;
-		private Action LoadBuildManifestAsyncAction;
-
-		private void InitLoadBuildManifestAsyncAction()
+		private async UniTask CreateBuildNumber()
 		{
-			LoadBuildManifestAsyncAction = new Action(async () =>
-			{
-				_buildManifest = await _buildManifestReader.LoadAsync();
-				_buildNumberText.text = $"Build: {Application.version} ({_buildManifest.ShortSha})";
-			});
+			var buildManifest = await _buildManifestReader.LoadAsync();
+			_buildNumberText.text = $"Build: {Application.version} ({buildManifest.ShortSha})";
 		}
 
 		// Start is called before the first frame update
-		void Awake()
+		private async UniTaskVoid Awake()
 		{
 			_buildNumberText = gameObject.GetComponent<TextMeshProUGUI>();
-			InitLoadBuildManifestAsyncAction();
-			LoadBuildManifestAsyncAction.Invoke();
+
+			var buildManifest = await _buildManifestReader.LoadAsync();
+
+			_buildNumberText.text = $"Build: {Application.version} ({buildManifest.ShortSha})";
 		}
 
 		// Kopiert die Buildnummer in die Windows Zwischenablage
