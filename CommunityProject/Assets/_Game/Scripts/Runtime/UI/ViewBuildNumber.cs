@@ -32,5 +32,11 @@ namespace BoundfoxStudios.CommunityProject.UI
 			InitLoadBuildManifestAsyncAction();
 			LoadBuildManifestAsyncAction.Invoke();
 		}
+
+		// Kopiert die Buildnummer in die Windows Zwischenablage
+		public void CopyBuildNumberToClipboard()
+		{
+			GUIUtility.systemCopyBuffer = _buildNumberText.text;
+		}
 	}
 }
