@@ -1,14 +1,16 @@
 name: Development
 
+concurrency: 
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
 on: 
   push:
-    branches:
-      - develop
     paths:
       - 'CommunityProject/Assets/**'
       - 'CommunityProject/Packages/**'
       - 'CommunityProject/ProjectSettings/**'
-  pull_request:
+  pull_request_target:
     paths:
       - 'CommunityProject/Assets/**'
       - 'CommunityProject/Packages/**'
@@ -17,8 +19,17 @@ on:
       - main
 
 jobs: 
+  unlabel_pr_on_push:
+    name: Unlabel "ci-reviewed" PR on push
+    if: ${{ github.event.action == 'synchronize' && github.event_name == 'pull_request_target' }}
+    steps:
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: ci-reviewed
+
   lint: # Don't change name, it must be the same as in skip.yml
     name: Lint code base
+    if: ${{ (github.ref == 'refs/heads/develop' && github.event_name == 'push') || github.event_name == 'push_request_target' }}
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v2
@@ -30,6 +41,7 @@ jobs:
 
   build: # Don't change name, it must be the same as in skip.yml
     needs: lint
+    if: ${{ (github.ref == 'refs/heads/develop' && github.event_name == 'push') || (github.event.action == 'labeled' && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')) }}
     name: Development Builds
     uses: ./.github/workflows/build.yml
     secrets:
