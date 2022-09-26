@@ -8,16 +8,9 @@ on:
       - 'CommunityProject/Assets/**'
       - 'CommunityProject/Packages/**'
       - 'CommunityProject/ProjectSettings/**'
-  pull_request:
-    paths:
-      - 'CommunityProject/Assets/**'
-      - 'CommunityProject/Packages/**'
-      - 'CommunityProject/ProjectSettings/**'
-    branches-ignore:
-      - main
 
 jobs: 
-  lint: # Don't change name, it must be the same as in skip.yml
+  lint:
     name: Lint code base
     runs-on: ubuntu-latest
     steps: 
@@ -25,10 +18,8 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./.github/actions/linter
-        with: 
-          project-path: CommunityProject
 
-  build: # Don't change name, it must be the same as in skip.yml
+  build:
     needs: lint
     name: Development Builds
     uses: ./.github/workflows/build.yml

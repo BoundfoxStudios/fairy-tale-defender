@@ -17,7 +17,7 @@ on:
 jobs:
   assign-issue-to-contributor:
     name: Assign Issue to Contributor
-    if: ${{ github.event_name == 'issue_comment' && !github.event.issue.pull_request && !contains(github.event.issue.labels.*.name, 'Triage') }}
+    if: github.event_name == 'issue_comment' && !github.event.issue.pull_request && !contains(github.event.issue.labels.*.name, 'Triage')
     runs-on: ubuntu-latest
     steps:
       - uses: Bhacaz/checkout-files@v2
@@ -40,7 +40,7 @@ jobs:
   
   move-new-issues-to-triage-column:
     name: Move new issues to triage column
-    if: ${{ github.event_name == 'issues' && github.event.action == 'opened' }}
+    if: github.event_name == 'issues' && github.event.action == 'opened'
     runs-on: ubuntu-latest
     steps:
       - uses: Bhacaz/checkout-files@v2
@@ -55,7 +55,7 @@ jobs:
   
   move-issue-to-todo-column-when-triage-label-is-removed:
     name: Move an issue to the Todo column when triage label is removed
-    if: ${{ github.event_name == 'issues' && github.event.action == 'unlabeled' && github.event.label.name == 'Triage' }}
+    if: github.event_name == 'issues' && github.event.action == 'unlabeled' && github.event.label.name == 'Triage'
     runs-on: ubuntu-latest
     steps:
       - uses: Bhacaz/checkout-files@v2
@@ -70,7 +70,7 @@ jobs:
   
   move-issue-to-in-progress-on-assign:
     name: Move an issue to in progress when it is assigned.
-    if: ${{  github.event_name == 'issues' && github.event.action == 'assigned' }}
+    if: github.event_name == 'issues' && github.event.action == 'assigned'
     runs-on: ubuntu-latest
     steps:
       - uses: Bhacaz/checkout-files@v2
@@ -85,7 +85,7 @@ jobs:
 
   move-issue-back-to-todo-on-unassign:
     name: Move an issue back to todo on unassign
-    if: ${{  github.event_name == 'issues' && github.event.action == 'unassigned' && !github.event.issue.assignee }}
+    if: github.event_name == 'issues' && github.event.action == 'unassigned' && !github.event.issue.assignee
     runs-on: ubuntu-latest
     steps:
       - uses: Bhacaz/checkout-files@v2

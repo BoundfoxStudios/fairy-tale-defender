@@ -1,0 +1,71 @@
+name: Pull Requests
+
+concurrency: 
+  group: ${{ github.head_ref }}
+  cancel-in-progress: true
+
+on: 
+  pull_request_target:
+    types:
+      - labeled
+      - synchronize
+    branches-ignore:
+      - main
+
+jobs: 
+  unlabel-pr-on-push:
+    name: Unlabel "ci-reviewed" PR on push
+    if: | 
+      github.event.action == 'synchronize' 
+      && github.event_name == 'pull_request_target'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: ci-reviewed
+
+  has-changes:
+    name: Check if there are changes to the game code
+    runs-on: ubuntu-latest
+    outputs:
+      src: ${{ steps.has-changes.outputs.src }}
+    steps:
+      - uses: dorny/paths-filter@v2
+        id: has-changes
+        with:
+          filters: |
+            src: 
+              - 'CommunityProject/Assets/**'
+              - 'CommunityProject/Packages/**'
+              - 'CommunityProject/ProjectSettings/**'
+
+  lint:
+    name: Lint code base
+    if: | 
+      always() 
+      && needs.unlabel-pr-on-push.result == 'skipped'
+      && needs.has-changes.outputs.src == 'true'
+    needs: [unlabel-pr-on-push, has-changes]
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: ./.github/actions/linter
+
+  build:
+    needs: [unlabel-pr-on-push, lint]
+    if: |
+      always() 
+      && needs.unlabel-pr-on-push.result == 'skipped'
+      && needs.lint.result == 'success'
+      && github.event.action == 'labeled' 
+      && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
+    name: Development Builds
+    uses: ./.github/workflows/build.yml
+    secrets:
+      UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
+      UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
+      UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
+    with:
+      do-test: true
