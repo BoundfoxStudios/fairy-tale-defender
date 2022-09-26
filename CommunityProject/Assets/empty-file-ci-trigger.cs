@@ -6,3 +6,4 @@
 // Trigger that should cancel current running PR check
 // Trigger
 // Trigger
+// Trigger
