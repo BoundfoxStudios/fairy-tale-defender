@@ -14,6 +14,7 @@ namespace BoundfoxStudios.CommunityProject.Editor
 				public const string Texts = UI + "/Texts";
 
 				public const string Cameras = GameObjectRoot + "/Cameras";
+				public const string Lights = GameObjectRoot + "/Lights";
 				public const string Editor = GameObjectRoot + "/Editor";
 
 				// This must be "GameObject" to integrate into the Unity GameObject menu.

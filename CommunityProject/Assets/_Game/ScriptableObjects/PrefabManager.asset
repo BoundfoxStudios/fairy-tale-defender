@@ -18,6 +18,8 @@ MonoBehaviour:
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
     Level: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083, type: 3}
+  Lights:
+    Sun: {fileID: 7890647129816737892, guid: 3bc16c3b51ceb4220a1c165954209c34, type: 3}
   Editor:
     EditorColdStartup: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
       type: 3}
