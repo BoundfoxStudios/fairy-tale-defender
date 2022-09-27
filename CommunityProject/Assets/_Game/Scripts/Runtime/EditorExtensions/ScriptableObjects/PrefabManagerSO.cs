@@ -18,6 +18,7 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 
 		public TextPrefabs Texts;
 		public CameraPrefabs Cameras;
+		public LightPrefabs Lights;
 		public EditorPrefabs Editor;
 
 		[Serializable]
@@ -31,6 +32,12 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 		{
 			public GameObject Menu;
 			public GameObject Level;
+		}
+
+		[Serializable]
+		public class LightPrefabs
+		{
+			public GameObject Sun;
 		}
 
 		[Serializable]
