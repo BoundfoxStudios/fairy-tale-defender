@@ -4,7 +4,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 {
 	public static partial class Prefabs
 	{
-		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Text", priority = MenuPriority)]
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Text", priority = UIMenuPriority)]
 		private static void CreateText()
 		{
 			SafeInstantiate(prefabManager => prefabManager.Texts.Text);
