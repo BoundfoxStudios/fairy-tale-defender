@@ -17,12 +17,20 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 		public GameObject Canvas;
 
 		public TextPrefabs Texts;
+		public CameraPrefabs Cameras;
 		public EditorPrefabs Editor;
 
 		[Serializable]
 		public class TextPrefabs
 		{
 			public GameObject Text;
+		}
+
+		[Serializable]
+		public class CameraPrefabs
+		{
+			public GameObject Menu;
+			public GameObject Level;
 		}
 
 		[Serializable]

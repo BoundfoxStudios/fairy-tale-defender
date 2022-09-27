@@ -15,6 +15,9 @@ MonoBehaviour:
   Canvas: {fileID: 7329999705680356850, guid: 42707aee6922e4159909253356ec706a, type: 3}
   Texts:
     Text: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
+  Cameras:
+    Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
+    Level: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083, type: 3}
   Editor:
     EditorColdStartup: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
       type: 3}
