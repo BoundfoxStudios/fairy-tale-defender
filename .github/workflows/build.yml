@@ -30,6 +30,16 @@ on:
         description: Maximum amount of parallel matrix build strategy runners, defaults to 10
         default: 10
         type: number
+      do-upload-game-binaries:
+        required: false
+        description: Set to true when generated game binaries should be uploaded to GitHub
+        default: false
+        type: boolean
+      do-upload-debug-symbols:
+        required: false
+        description: Set to true when generated debug symbols should be uploaded to GitHub
+        default: false
+        type: boolean
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -151,23 +161,24 @@ jobs:
           versioning: Semantic
           buildName: CommunityProject
           customParameters: ${{ inputs.custom-parameters }}
-      
-      # We need to create a TAR archive before uploading due to possible permission loss
-      # See: 
-      #   - https://github.com/actions/upload-artifact#permission-loss
-      #   - https://github.com/game-ci/unity-actions/issues/152
-      - name: Create TAR archive
-        if: startsWith(matrix.os, 'macos-')
-        run: |
-          tar -czf Build-${{ github.run_id }}-${{ matrix.target-platform }}.tar ${{ matrix.target-platform }}
-          mv  Build-${{ github.run_id }}-${{ matrix.target-platform }}.tar ${{ matrix.target-platform }}
-          find . -not -name '*.tar' -delete
-        shell: bash
-        working-directory: build
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
+        name: Upload Game Binaries
+        if: inputs.do-upload-game-binaries
         with:
           name: Build-${{ github.run_id }}-${{ matrix.target-platform }}
-          path: build/${{ matrix.target-platform }}
+          path: | 
+            build/${{ matrix.target-platform }}
+            !build/${{ matrix.target-platform }}/*ButDontShipItWithYourGame
+            !build/${{ matrix.target-platform }}/*DoNotShip
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v3
+        name: Upload Debug Symbols
+        if: inputs.do-upload-debug-symbols
+        with:
+          name: Build-${{ github.run_id }}-${{ matrix.target-platform }}-Debug-Symbols
+          path: |
+            build/${{ matrix.target-platform }}/*ButDontShipItWithYourGame
+            build/${{ matrix.target-platform }}/*DoNotShip
           if-no-files-found: error
     strategy:
       fail-fast: ${{ inputs.fail-fast }}
@@ -177,12 +188,12 @@ jobs:
           - 2021.3.9f1
         os:
           - windows-2019
-          - macos-latest
+          - macos-12
           - ubuntu-latest
         include:
           - os: windows-2019
             target-platform: StandaloneWindows64
-          - os: macos-latest
+          - os: macos-12
             target-platform: StandaloneOSX
           - os: ubuntu-latest
             target-platform: StandaloneLinux64

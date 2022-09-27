@@ -29,3 +29,17 @@ jobs:
       UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
     with:
       do-test: true
+      do-upload-game-binaries: true
+      do-upload-debug-symbols: true
+
+  notarize:
+    needs: build
+    name: Notarize the macOS build
+    uses: ./.github/workflows/notarization.yml
+    secrets:
+      APPLE_CERTIFICATE_DATA: ${{ secrets.APPLE_CERTIFICATE_DATA }}
+      APPLE_CERTIFICATE_PASSPHRASE: ${{ secrets.APPLE_CERTIFICATE_PASSPHRASE }}
+      APPLE_TEAM_NAME: ${{ secrets.APPLE_TEAM_NAME }}
+      APPLE_NOTARIZATION_USERNAME: ${{ secrets.APPLE_NOTARIZATION_USERNAME }}
+      APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
+        
