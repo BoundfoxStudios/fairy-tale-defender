@@ -11,7 +11,8 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 		private const int Separator = 11;
 
 		private const int CamerasMenuPriority = MenuPriority;
-		private const int UIMenuPriority = CamerasMenuPriority + Separator;
+		private const int LightsMenuPriority = CamerasMenuPriority + 1;
+		private const int UIMenuPriority = LightsMenuPriority + Separator;
 		private const int EditorMenuPriority = UIMenuPriority + Separator;
 
 		private static bool SelectionHasCanvasValidate() =>

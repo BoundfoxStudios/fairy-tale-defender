@@ -4,16 +4,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 {
 	public static partial class Prefabs
 	{
-		[MenuItem(Constants.MenuNames.GameObjectMenus.Cameras + "/Menu", priority = CamerasMenuPriority)]
-		private static void CreateMenuCamera()
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Lights + "/Sun", priority = LightsMenuPriority)]
+		private static void CreateSun()
 		{
-			SafeInstantiate(prefabManager => prefabManager.Cameras.Menu);
-		}
-
-		[MenuItem(Constants.MenuNames.GameObjectMenus.Cameras + "/Level", priority = CamerasMenuPriority)]
-		private static void CreateLevelCamera()
-		{
-			SafeInstantiate(prefabManager => prefabManager.Cameras.Level);
+			SafeInstantiate(prefabManager => prefabManager.Lights.Sun);
 		}
 	}
 }
