@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 13966, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: LevelScene_Template
+  m_EditorClassIdentifier: 
+  templateScene: {fileID: 102900000, guid: a8dbbde99c4d241ca81fb006f23ec2da, type: 3}
+  templateName: Level Szene
+  description: "Diese Vorlage ist f\xFCr neue Levels.\n\nBitte darauf achten, auch
+    ein MenuSceneSO anzulegen und mit dem EditorColdStartup zu verkn\xFCpfen."
+  preview: {fileID: 0}
+  dependencies:
+  - dependency: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083,
+      type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 7890647129816737892, guid: 3bc16c3b51ceb4220a1c165954209c34,
+      type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 2800000, guid: 5f2a108eb023faf43a809979fd3d38f2, type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
+      type: 3}
+    instantiationMode: 1
+  templatePipeline: {fileID: 0}
+  addToDefaults: 1
