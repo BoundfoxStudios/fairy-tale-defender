@@ -10,6 +10,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 		private const int MenuPriority = -50;
 		private const int Separator = 11;
 
+		private const int CamerasMenuPriority = MenuPriority;
+		private const int UIMenuPriority = CamerasMenuPriority + Separator;
+		private const int EditorMenuPriority = UIMenuPriority + Separator;
+
 		private static bool SelectionHasCanvasValidate() =>
 			Selection.activeGameObject && Selection.activeGameObject.GetComponentInParent<Canvas>();
 
@@ -22,7 +26,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 				if (!item)
 				{
 					Debug.LogWarning($"{nameof(SafeInstantiate)} invoked, but {nameof(itemSelector)} returned null. " +
-					                 "Did you forget to fill the slot in the inspector?");
+									 "Did you forget to fill the slot in the inspector?");
 					return;
 				}
 
