@@ -8,6 +8,7 @@
 * Systeme
   * [Event-System](systems/event-system.md)
   * [Multi-Scene-Management](systems/multi-scene-management.md)
+  * [Prefabs](systems/prefabs.md)
 
 Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 

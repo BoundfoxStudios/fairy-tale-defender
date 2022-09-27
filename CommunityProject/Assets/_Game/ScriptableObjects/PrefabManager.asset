@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b191e8ace244f2982c59b9353339e95, type: 3}
+  m_Name: PrefabManager
+  m_EditorClassIdentifier: 
+  Canvas: {fileID: 7329999705680356850, guid: 42707aee6922e4159909253356ec706a, type: 3}
+  Texts:
+    Text: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
+  Editor:
+    EditorColdStartup: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
+      type: 3}
