@@ -29,6 +29,10 @@ MonoBehaviour:
     m_Address: ScriptableObjects/PrefabManager.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 5c35e69f2befe437287a8a10b29e6a24
+    m_Address: Scenes/Templates
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
