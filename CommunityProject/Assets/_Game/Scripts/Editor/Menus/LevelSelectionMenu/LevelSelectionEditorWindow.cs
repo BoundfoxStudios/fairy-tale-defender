@@ -78,7 +78,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.LevelSelectionEditorWindow
 				OpenSceneButton("PersistentManagers", "Managers/PersistentManagers");
 				EditorGUILayout.EndHorizontal();
 			}
-			EndFoldoutGroup("Managers", showMenus);
+			EndFoldoutGroup("Managers", showManagers);
 		}
 
 		private void RenderGameplay()
