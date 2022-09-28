@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
@@ -5,9 +6,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 	public static partial class Prefabs
 	{
 		[MenuItem(Constants.MenuNames.GameObjectMenus.UI + "/Canvas", priority = UIMenuPriority * 2)]
-		private static void CreateCanvas()
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateCanvasAsync()
 		{
-			SafeInstantiate(prefabManager => prefabManager.Canvas);
+			await SafeInstantiateAsync(prefabManager => prefabManager.Canvas);
 		}
 	}
 }

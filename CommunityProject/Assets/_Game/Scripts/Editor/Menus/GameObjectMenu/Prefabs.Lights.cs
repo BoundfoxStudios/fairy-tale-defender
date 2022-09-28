@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
@@ -5,9 +6,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 	public static partial class Prefabs
 	{
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Cameras + "/Menu", priority = CamerasMenuPriority)]
-		private static void CreateMenuCamera()
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateMenuCameraAsync()
 		{
-			SafeInstantiate(prefabManager => prefabManager.Cameras.Menu);
+			await SafeInstantiateAsync(prefabManager => prefabManager.Cameras.Menu);
 		}
 	}
 }

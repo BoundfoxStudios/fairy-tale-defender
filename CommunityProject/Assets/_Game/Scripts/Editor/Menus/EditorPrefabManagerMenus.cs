@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Menus
@@ -5,9 +6,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus
 	public static class EditorPrefabManagerMenus
 	{
 		[MenuItem(Constants.MenuNames.MenuName + "/Select PrefabManager", priority = 0)]
-		private static void PingPrefabManager()
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid PingPrefabManagerAsync()
 		{
-			PrefabManager.SafeInvoke(prefabManager => Selection.activeObject = prefabManager);
+			await PrefabManager.SafeInvokeAsync(prefabManager => Selection.activeObject = prefabManager);
 		}
 	}
 }

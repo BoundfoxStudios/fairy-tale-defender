@@ -1,39 +1,34 @@
 using System;
 using BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects;
-using UnityEditor;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace BoundfoxStudios.CommunityProject.Editor
 {
 	public static class PrefabManager
 	{
-		public static PrefabManagerSO _prefabManager;
+		private const string PrefabManagerAddressablesKey = "ScriptableObjects/PrefabManager.asset";
+		private static PrefabManagerSO _prefabManager;
 
-		private static PrefabManagerSO LocatePrefabManager()
+		private static async UniTask<PrefabManagerSO> LocatePrefabManagerAsync()
 		{
-			// Unfortunately, we can not use the Addressables here to locate the PrefabManagerSO instance, because
-			// Addressables do not work well in editor scripts due to their async nature
-			// which does not work well in-editor, yet.
-			var prefabManagerGuids =
-				AssetDatabase.FindAssets($"t:{nameof(PrefabManagerSO)}", new[] { "Assets/_Game/ScriptableObjects" });
+			var prefabManager = await Addressables.LoadAssetAsync<PrefabManagerSO>(PrefabManagerAddressablesKey);
 
-			if (prefabManagerGuids.Length != 1)
+			if (!prefabManager)
 			{
-				Debug.LogError(
-					$"Expected exactly 1 instance of {nameof(PrefabManagerSO)} but found {prefabManagerGuids.Length}");
+				Debug.LogWarning($"Did not find {nameof(prefabManager)} under addressables key {PrefabManagerAddressablesKey}");
 				return null;
 			}
 
-			var path = AssetDatabase.GUIDToAssetPath(prefabManagerGuids[0]);
-
-			return AssetDatabase.LoadAssetAtPath<PrefabManagerSO>(path);
+			return prefabManager;
 		}
 
-		public static void SafeInvoke(Action<PrefabManagerSO> callback)
+		public static async UniTask SafeInvokeAsync(Action<PrefabManagerSO> callback)
 		{
 			if (!_prefabManager)
 			{
-				var prefabManager = LocatePrefabManager();
+				var prefabManager = await LocatePrefabManagerAsync();
 
 				if (!prefabManager)
 				{
