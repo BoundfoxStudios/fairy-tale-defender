@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Windows.LevelSelectionEditorWindow
+namespace BoundfoxStudios.CommunityProject.Editor.Windows
 {
 	public class LevelSelectionEditorWindow : EditorWindow
 	{
