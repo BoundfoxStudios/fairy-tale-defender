@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Windows.LevelSelectionEditorWindow
 {
-    public class LevelSelectionEditorWindow : EditorWindow
-    {
+	public class LevelSelectionEditorWindow : EditorWindow
+	{
 		private bool _openAdditive;
 		private Vector2 _scrollPosition;
 
