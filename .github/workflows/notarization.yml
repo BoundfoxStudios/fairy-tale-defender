@@ -81,7 +81,7 @@ jobs:
           rm Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.entitlements
           tar -czf Build-${{ github.run_id }}-StandaloneOSX.tar Build-${{ github.run_id }}-StandaloneOSX
         shell: bash
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: Build-${{ github.run_id }}-StandaloneOSX
           path: Build-${{ github.run_id }}-StandaloneOSX.tar
