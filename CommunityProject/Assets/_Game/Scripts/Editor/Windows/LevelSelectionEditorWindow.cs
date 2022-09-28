@@ -30,6 +30,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			RenderScenes();
 			EditorGUILayout.EndScrollView();
 		}
+
 		private void ModifierKeysChanged()
 		{
 			if (hasFocus)
