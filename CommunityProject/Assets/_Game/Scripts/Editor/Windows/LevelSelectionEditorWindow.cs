@@ -1,22 +1,15 @@
-using BoundfoxStudios.CommunityProject.SceneManagement;
-using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Editor.LevelSelectionEditorWindow
+namespace BoundfoxStudios.CommunityProject.Editor.Windows.LevelSelectionEditorWindow
 {
     public class LevelSelectionEditorWindow : EditorWindow
     {
-		#region Private Fields
 		private bool _openAdditive;
 		private Vector2 _scrollPosition;
 
-		#endregion
-
-		#region EditorWindow Implementation
-		[MenuItem(Constants.MenuNames.LevelSelectionEditorWindowName)]
+		[MenuItem(Constants.MenuNames.LevelSelection)]
 		private static void ShowWindow()
 		{
 			var window = GetWindow<LevelSelectionEditorWindow>();
@@ -37,8 +30,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.LevelSelectionEditorWindow
 			RenderScenes();
 			EditorGUILayout.EndScrollView();
 		}
-
-		#region Unity-Callbacks
 		private void ModifierKeysChanged()
 		{
 			if (hasFocus)
@@ -47,50 +38,35 @@ namespace BoundfoxStudios.CommunityProject.Editor.LevelSelectionEditorWindow
 			}
 		}
 
-		#endregion
-
-		#endregion
-
-		#region Private (Helper) Methods
-
 		private void RenderScenes()
 		{
-			RenderMenus();
-			RenderGameplay();
+			RenderMenuScenes();
+			RenderManagerScenes();
 		}
 
-		private void RenderMenus()
+		private void RenderMenuScenes()
 		{
-			var showMenus = BeginFoldoutGroup("Menus");
-			if (showMenus)
+			var show = BeginFoldoutGroup("Menus");
+			if (show)
 			{
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneButton("MainMenu", "Menus/MainMenu");
 				EditorGUILayout.EndHorizontal();
 			}
-			EndFoldoutGroup("Menus", showMenus);
+			EndFoldoutGroup("Menus", show);
+		}
 
-			var showManagers = BeginFoldoutGroup("Managers");
-			if (showManagers)
+		private void RenderManagerScenes()
+		{
+			var show = BeginFoldoutGroup("Managers");
+			if (show)
 			{
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneButton("Initialization", "Managers/Initialization");
 				OpenSceneButton("PersistentManagers", "Managers/PersistentManagers");
 				EditorGUILayout.EndHorizontal();
 			}
-			EndFoldoutGroup("Managers", showManagers);
-		}
-
-		private void RenderGameplay()
-		{
-			var show = BeginFoldoutGroup("GameplayLevel");
-			if (show)
-			{
-				//EditorGUILayout.BeginHorizontal();
-				//OpenSceneButton("to be added", string.Empty);
-				//EditorGUILayout.EndHorizontal();
-			}
-			EndFoldoutGroup("GameplayLevel", show);
+			EndFoldoutGroup("Managers", show);
 		}
 
 		private bool IsControlPressed()
@@ -137,8 +113,5 @@ namespace BoundfoxStudios.CommunityProject.Editor.LevelSelectionEditorWindow
 			}
 			return false;
 		}
-
-		#endregion
-
 	}
 }
