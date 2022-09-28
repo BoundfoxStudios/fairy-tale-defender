@@ -1,33 +1,39 @@
 using BoundfoxStudios.CommunityProject.Build.BuildManifest;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using System;
 using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace BoundfoxStudios.CommunityProject.UI
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
 	[RequireComponent(typeof(TextMeshProUGUI))]
-	public class ViewBuildNumber : MonoBehaviour
+	public class ViewBuildNumber : MonoBehaviour, IPointerClickHandler
 	{
 		private TextMeshProUGUI _buildNumberText;
 
+		[UsedImplicitly]
+		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
 			_buildNumberText = gameObject.GetComponent<TextMeshProUGUI>();
 			_buildNumberText.text = await CreateBuildNumberAsync();
 		}
 
+		public void OnPointerClick(PointerEventData eventData)
+		{
+			CopyBuildNumberToClipboard();
+		}
+
 		private async UniTask<string> CreateBuildNumberAsync()
 		{
-			var _buildManifestReader = new BuildManifestReader();
-			var buildManifest = await _buildManifestReader.LoadAsync();
+			var buildManifestReader = new BuildManifestReader();
+			var buildManifest = await buildManifestReader.LoadAsync();
 			return $"Build: {Application.version} ({buildManifest.ShortSha})";
 		}
 
-		public void CopyBuildNumberToClipboard()
+		private void CopyBuildNumberToClipboard()
 		{
 			GUIUtility.systemCopyBuffer = _buildNumberText.text;
 		}
