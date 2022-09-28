@@ -2,7 +2,11 @@
     "name": "BoundfoxStudios.CommunityProject.Editor",
     "rootNamespace": "BoundfoxStudios.CommunityProject.Editor",
     "references": [
-        "GUID:a69fcba4d4eac4e8ca4c773e52725894"
+        "GUID:a69fcba4d4eac4e8ca4c773e52725894",
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:593a5b492d29ac6448b1ebf7f035ef33"
     ],
     "includePlatforms": [
         "Editor"

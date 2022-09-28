@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
@@ -5,9 +6,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 	public static partial class Prefabs
 	{
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Text", priority = UIMenuPriority)]
-		private static void CreateText()
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateTextAsync()
 		{
-			SafeInstantiate(prefabManager => prefabManager.Texts.Text);
+			await SafeInstantiateAsync(prefabManager => prefabManager.Texts.Text);
 		}
 
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Text", true)]
