@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 875239b3fe0ae364b9ff5ef0756aa6e9
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 8404be70184654265930450def6a9037, type: 3}
+  generateWrapperCode: 1
+  wrapperCodePath: Assets/_Game/Scripts/Runtime/Input/GameInput.cs
+  wrapperClassName: 
+  wrapperCodeNamespace: BoundfoxStudios.CommunityProject.Input
