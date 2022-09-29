@@ -8,6 +8,7 @@ namespace BoundfoxStudios.CommunityProject
 			public const string Events = MenuName + "/Events";
 			public const string SceneManagement = MenuName + "/Scene Management";
 			public const string UI = MenuName + "/UI";
+			public const string Input = MenuName + "/Input";
 		}
 	}
 }
