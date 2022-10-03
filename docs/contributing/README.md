@@ -120,7 +120,8 @@ Eventuell bedeutet das auch, dass Du erneut etwas anpassen musst, damit es dann 
 Es gibt ein paar Dinge, die Du _wirklich_ nicht tun darfst, wenn Du mitarbeitest:
 
 * Füge keine Dinge hinzu, die gegen unseren [Code of Conduct](../../CODE_OF_CONDUCT.md) verstoßen, also z.B. sexualisierte, gewaltverherrlichende Inhalte (Text, Bilder, ...), weiteres entnimm bitte dem [Code of Conduct](../../CODE_OF_CONDUCT.md).
-* Füge keine Dinge hinzu, die Du nicht selbst erstellt hast oder nicht CC0 lizenziert sind. Auch Code von anderen Projekten darf nicht genutzt werden, außer er ist selbst Open Source.
+* Füge keine Dinge hinzu, die Du nicht selbst erstellt hast oder nicht CC0 lizenziert sind. Auch Code von anderen Projekten darf nicht genutzt werden, außer er ist selbst Open Source. 
+  Bei CC0-Lizenzen ist es zwar nicht nötig, dass wir den Original-Autor erwähnen, aber es ist natürlich schön, wenn wir das tun. Wenn Du daher etwas CC0-lizenziertes nutzt, dass Du dies dokumentierst, sodass wir diesen Punkt in den Credits aufnehmen können.
 
 Wenn Du Dich nicht an diese grundlegende Dinge hältst, behalten wir uns vor, Dich von der weiteren Zusammenarbeit mit diesem Projekt auszuschließen.
 
