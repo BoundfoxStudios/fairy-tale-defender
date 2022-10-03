@@ -10,28 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
-  m_Name: Data
+  m_Name: Logic
   m_EditorClassIdentifier: 
-  m_GroupName: Data
+  m_GroupName: Logic
   m_Data:
     m_SerializedData: []
-  m_GUID: 6d60c4845535d45619a89e8db061d10d
+  m_GUID: 74dacaa36ffa246ce94029fac96cb3df
   m_SerializeEntries:
-  - m_GUID: 72d28e3c53404ed09cbc9fd749c43f7c
-    m_Address: Build/manifest.json
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: fd3cd69a326847a68461e0ea157b9a3f
-    m_Address: Build/contributors.json
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 002fb4d6b7c244ca0bd5aee7c5e3034d
-    m_Address: ScriptableObjects/Scenes
+  - m_GUID: c106703ec20954b8691cd4d74b610ea7
+    m_Address: ScriptableObjects/Events
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: e72165b4b00004a16bced9c390c4088a, type: 2}
-    - {fileID: 11400000, guid: 299fb12e06fef444281da9cd32b6f80e, type: 2}
+    - {fileID: 11400000, guid: e1d5a3bb050f84e34861f0380d7ab02d, type: 2}
+    - {fileID: 11400000, guid: dc7f7ef46bdbd4210b15864f4b308f54, type: 2}
