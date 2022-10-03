@@ -33,6 +33,9 @@ Das Community-Projekt verfolgt mehrere Ziele:
 
 Eine kleine Roadmap findest Du [hier](docs/roadmap.md).
 
+Eine MindMap mit aktuell allen verrückten Ideen findest Du [hier](https://miro.com/app/board/uXjVPSFGLlk=/?share_link_id=580613867296). 
+Falls Du hier noch was ergänzen möchtest, schreib gerne ein [Issue](https://github.com/BoundfoxStudios/community-project/issues/new?assignees=&labels=Triage&template=misc.yml) oder direkt in [Discord][2].
+
 ## Ich will mitmachen!
 
 Super! Spieleentwicklung ist aufwendig - auch wenn wir vorhaben, ein kleines Spiel zu erstellen - helfende Hände und kreative Köpfe sind daher immer willkommen!
