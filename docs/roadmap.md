@@ -12,8 +12,8 @@ Auf ein Terminieren verzichten wir hier bewusst, da wir uns die Zeit nehmen, die
 In diesem Abschnitt folgt eine sehr grobe Definition, welche Phasen durchlaufen werden.
 Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.
 
-1. Findung des Genres. `<-`
-2. Findung des Themas (z.B. ob das Spiel in Richtung "Modern", "Fantasy", "Mittelalter" geht).
+1. Findung des Genres.
+2. Findung des Themas (z.B. ob das Spiel in Richtung "Modern", "Fantasy", "Mittelalter" geht). `<-`
 3. Findung des Stils
    
    Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen. 
