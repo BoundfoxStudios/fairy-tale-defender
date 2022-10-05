@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Input
+namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
 	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions, GameInput.IUIActions
