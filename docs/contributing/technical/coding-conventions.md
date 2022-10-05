@@ -45,6 +45,11 @@ Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via `asyn
 > In der Zukunft will Unity selbst mehr und mehr in Richtung `async/await` gehen und steht dazu auch mit UniTask im Kontakt.
 > Mehr Info siehe ein [Blog-Post von Unity selbst](https://blog.unity.com/technology/unity-and-net-whats-next) -> "Modernizing the .NET Runtime".
 
+#### Unit-Tests
+
+Zum Unit-Testen nutzen wir zusätzlich das [FluentAssertions-Framework](https://fluentassertions.com), was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte `Assert`.
+Damit es in Unity genutzt werden kann, nutzen wir den [Unity-Adapter](https://github.com/BoundfoxStudios/fluentassertions-unity).
+
 ### Formatierung
 
 * Verwende **1 Tab** pro Spalte, keine Leerzeichen.
