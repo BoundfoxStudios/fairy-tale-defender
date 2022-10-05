@@ -13,6 +13,9 @@ Hallo!
 Schön, dass Du hier her gefunden hast zu unserem Community-Projekt (oder eher auch ein Community-Experiment).
 In diesem Repository (kurz Repo) findest Du so ziemlich alles, was zum Community-Projekt gehört.
 
+Als Genre wollen wir gemeinsam ein Tower Defense umsetzen.
+Mit welchem Theme (z.B. Mittelalter, Fantasy, ...), in welchem Stil und welche Features implementiert werden sollen, das sind noch offene Punkte, die in den nächsten Wochen geklärt werden sollen.
+
 ## Ziele
 
 Das Community-Projekt verfolgt mehrere Ziele:

@@ -12,7 +12,7 @@ Auf ein Terminieren verzichten wir hier bewusst, da wir uns die Zeit nehmen, die
 In diesem Abschnitt folgt eine sehr grobe Definition, welche Phasen durchlaufen werden.
 Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.
 
-1. Findung des Genres.
+1. Findung des Genres: Entscheidung der Community: **Tower Defense**
 2. Findung des Themas (z.B. ob das Spiel in Richtung "Modern", "Fantasy", "Mittelalter" geht). `<-`
 3. Findung des Stils
    
@@ -44,8 +44,6 @@ In unserem Fall ist das ein bisschen anders, da wir das Spiel kostenfrei zur Ver
 Daher müssen wir keine "Forschung" betreiben, ob unser Spiel auf einen Markt trifft und einen finanziellen Erfolg bedeuten könnte.
 
 Nichtsdestotrotz beschreibt ein MVP eben die kleinste Umsetzung der Kernidee.
-
-Da die aktuelle Tendenz der Abstimmung stark Richtung Tower Defense geht, folgt eine grobe Beschreibung, wie ein MVP eines Tower Defense aussehen könnte.
 
 ### MVP Tower Defense
 
