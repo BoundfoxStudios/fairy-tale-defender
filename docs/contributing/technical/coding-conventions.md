@@ -34,6 +34,17 @@ Wir nutzen als Basis die [.NET Standards](https://docs.microsoft.com/en-us/dotne
 * Vermeide Magic Numbers ("magische Nummer"), z.B. `value * 0.08`, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.
 * Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist `BoundfoxStudios.CommunityProject`.
 
+#### Asynchrone Entwicklung / Coroutines
+
+Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# `async/await` nutzen können: [UniTask](https://github.com/Cysharp/UniTask).
+Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).
+
+Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via `async/await` implementierbar ist.
+
+> Kleine Info am Rande: Bevor es das `async/await`-Feature in .NET gab, nutzte Unity die Coroutines, um asynchrone Operationen zu ermöglichen.
+> In der Zukunft will Unity selbst mehr und mehr in Richtung `async/await` gehen und steht dazu auch mit UniTask im Kontakt.
+> Mehr Info siehe ein [Blog-Post von Unity selbst](https://blog.unity.com/technology/unity-and-net-whats-next) -> "Modernizing the .NET Runtime".
+
 ### Formatierung
 
 * Verwende **1 Tab** pro Spalte, keine Leerzeichen.
