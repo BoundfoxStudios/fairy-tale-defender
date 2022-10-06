@@ -107,6 +107,11 @@ Sobald Du den Kommentar abgeschickt hast, wird es ca. 30-60 Sekunden dauern, bis
 
 Falls Du eine Aufgabe findest, die schon jemand bearbeitet und Du auch dran interessiert bist, dann schreibe gerne einen Kommentar rein und melde Dich am besten kurz auf dem Discord-Server.
 
+### Wie kann ich eine Aufgabe wieder abgeben?
+
+Falls Dir irgendwas dazwischen kommt, Deine Aufgabe zu bearbeiten (siehe Thema Verlässlichkeit), dann öffnest Du einfach Deine Aufgabe auf GitHub und kannst rechts unter dem Punkt "Assignees" auf "Unassign me" klicken, dann wird Deine Aufgabe wieder zurückgegeben.
+Zudem wirst Du, falls Du Dich länger nicht um Deine Aufgabe kümmerst, automatisch vom System angeschrieben und daran erinnert.
+
 ## Ich habe eine Aufgabe fertig, was mache ich damit?
 
 Wenn Du eine Aufgabe fertig hast, dann hast Du in der Regel auch eine oder mehrere Dateien verändert, hinzugefügt, gelöscht, etc. 
