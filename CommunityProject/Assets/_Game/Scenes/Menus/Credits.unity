@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.1273233, g: 0.13415198, b: 0.12107962, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TextMeshProObject: {fileID: 9024772728314251075, guid: d8f332d8456fea69b94dc4c29657f0d2,
     type: 3}
+  ScrollTextSpeed: 20
 --- !u!1001 &1556225287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +299,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329999705680356852, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329999705680356852, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 7329999705680356853, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
         type: 3}
