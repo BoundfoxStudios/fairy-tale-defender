@@ -11,5 +11,10 @@ In dieser Dokumentation wirst Du nach und nach alles finden, was zum Community-P
     * [Häufig gestellte Fragen](contributing/technical/faq.md)
     * [Coding Conventions](contributing/technical/coding-conventions.md)
     * [CI/CD](contributing/technical/ci-cd.md)
+    * Systeme
+      * [Event-System](contributing/technical/systems/event-system.md)
+      * [Multi-Scene-Management](contributing/technical/systems/multi-scene-management.md)
+      * [Scene Templates](contributing/technical/systems/scene-templates.md)
+      * [Prefabs](contributing/technical/systems/prefabs.md)
   * [Visuell](contributing/visual/README.md)
   * [Auditiv](contributing/auditory/README.md)
