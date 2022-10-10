@@ -116,6 +116,7 @@ Zudem wirst Du, falls Du Dich länger nicht um Deine Aufgabe kümmerst, automati
 
 Wenn Du eine Aufgabe fertig hast, dann hast Du in der Regel auch eine oder mehrere Dateien verändert, hinzugefügt, gelöscht, etc. 
 Jetzt wirst Du einen Pull Request erstellen, in dem Deine Änderungen sind und auch die Aufgabe verlinkt.
+Bitte aktiviere beim Erstellen des Pull Requests die Option "Allow edits from maintainers".
 Falls alles passt, werden Deine Änderungen von den [Ansprechpartnern](../../README.md#ansprechpartner) ins Spiel übernommen werden.
 Falls etwas nicht passt oder noch was unklar ist, dann wird es entsprechende Rückfragen geben.
 Eventuell bedeutet das auch, dass Du erneut etwas anpassen musst, damit es dann schlussendlich zum Spiel passt. 
