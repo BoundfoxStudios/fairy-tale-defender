@@ -17,6 +17,7 @@ Wir nutzen als Basis die [.NET Standards](https://docs.microsoft.com/en-us/dotne
 ### Groß-/Kleinschreibung
 
 > **camelCase**: Erster Buchstabe ist kleingeschrieben, der jeweils erste Buchstabe der Folgewörter ist großgeschrieben.
+> 
 > **PascalCase**: Der erste Buchstabe eines jeden Wortes ist großgeschrieben.
 
 * Klassen, Methoden, Enums, Namespaces, öffentliche Felder und Eigenschaften: PascalCase.
