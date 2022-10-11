@@ -35,9 +35,7 @@ jobs:
     needs: has-changes
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/linter
 
   build:

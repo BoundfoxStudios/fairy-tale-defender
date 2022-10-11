@@ -58,9 +58,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     if: inputs.do-test
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/unity-cache
         with:
           project-path: ${{ inputs.project-path }}
@@ -96,9 +94,7 @@ jobs:
     outputs:
       content: ${{ steps.manifest.outputs.content }}
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/build-manifest
         id: manifest
       
@@ -108,9 +104,7 @@ jobs:
     outputs:
       content: ${{ steps.contributors.outputs.content }}
     steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/contributors
         id: contributors
         with: 
@@ -121,7 +115,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     needs: [manifest, contributors]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0
       - uses: ./.github/actions/unity-cache
