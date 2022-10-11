@@ -17,7 +17,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private AudioSource _audioSource;
 
-		private async UniTaskVoid Awake()
+		private void Awake()
 		{
 			_audioSource = GetComponent<AudioSource>();
 
@@ -28,24 +28,25 @@ namespace BoundfoxStudios.CommunityProject.Audio
 				return;
 			}
 
-			await PlayMusicAsync();
+			PlayMusicAsync().Forget();
 		}
 
-		private async UniTask PlayMusicAsync()
-		{
-			while (true)
+		private async UniTaskVoid PlayMusicAsync()
+		{			
+			var clip = GetNextClip();
+
+			if (clip == null)
 			{
-				var clip = GetNextClip();
-
-				if (clip)
-				{
-					_audioSource.clip = clip;
-					_audioSource.Play();
-
-					await UniTask.Delay(TimeSpan.FromSeconds(clip.length), ignoreTimeScale: true);
-				}
-				await UniTask.Yield();
+				Debug.LogError("No valid Playlist", this);
+				return;
 			}
+
+			_audioSource.clip = clip;
+			_audioSource.Play();
+
+			await UniTask.Delay(TimeSpan.FromSeconds(clip.length), ignoreTimeScale: true);
+
+			PlayMusicAsync().Forget();
 		}
 
 		private AudioClip GetNextClip()
