@@ -12,5 +12,13 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 		public string Title;
 		public string Interpreter;
 		public string Url;
+
+		private void OnValidate()
+		{
+			if (AudioClip == null)
+			{
+				Debug.LogWarning("No AudioClip assigned", this);
+			}
+		}
 	}
 }
