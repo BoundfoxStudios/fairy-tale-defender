@@ -126,7 +126,7 @@ jobs:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
     steps:
-      - uses: boundfoxstudios/action-unassign-contributor-after-days-of-inactivity@main
+      - uses: boundfoxstudios/action-unassign-contributor-after-days-of-inactivity@v1
         with:
           last-activity: 7
           labels: 'Wartet auf Contributor'
