@@ -22,9 +22,8 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 			if (Playlist == null)
 			{
-#if UNITY_EDITOR
-				Debug.LogWarning("No Playlist on this BackgroundMusicPlayer", this);
-#endif
+				Debug.LogError("No Playlist on this BackgroundMusicPlayer", this);
+
 				return;
 			}
 
