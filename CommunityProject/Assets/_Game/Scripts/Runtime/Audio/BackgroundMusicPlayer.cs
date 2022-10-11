@@ -8,6 +8,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	/// This component plays <see cref="AudioClip"/>s from a given <see cref="PlaylistSO"/> on the <see cref="AudioSource"/> on same GameObject.
 	/// </summary>
 	[RequireComponent(typeof(AudioSource))]
+	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(BackgroundMusicPlayer))]
 	public class BackgroundMusicPlayer : MonoBehaviour
 	{
 		[SerializeField]
