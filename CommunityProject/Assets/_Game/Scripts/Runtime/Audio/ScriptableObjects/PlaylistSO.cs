@@ -20,7 +20,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 		{
 			foreach (var item in Clips)
 			{
-				if (item.AudioClip == null)
+				if (!item.AudioClip)
 				{
 					_isValid = false;
 					return;
@@ -32,7 +32,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{
-			if (_isValid == false)
+			if (!_isValid)
 			{
 				Debug.LogError("Missing AudioClip(s) in playlist", this);
 				return null;

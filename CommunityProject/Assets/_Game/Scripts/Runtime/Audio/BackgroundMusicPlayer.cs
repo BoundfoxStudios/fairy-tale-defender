@@ -21,7 +21,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 		{
 			_audioSource = GetComponent<AudioSource>();
 
-			if (Playlist == null)
+			if (!Playlist)
 			{
 				Debug.LogError("No Playlist on this BackgroundMusicPlayer", this);
 
@@ -35,7 +35,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 		{			
 			var clip = GetNextClip();
 
-			if (clip == null)
+			if (!clip)
 			{
 				Debug.LogError("No valid Playlist", this);
 				return;
