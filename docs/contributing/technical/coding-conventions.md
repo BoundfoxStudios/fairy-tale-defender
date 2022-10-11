@@ -22,6 +22,7 @@ Wir nutzen als Basis die [.NET Standards](https://docs.microsoft.com/en-us/dotne
 * Klassen, Methoden, Enums, Namespaces, öffentliche Felder und Eigenschaften: PascalCase.
 * Lokale Variablen, Methodenparameter: camelCase.
 * Private Felder: camelCase und Unterstrich-Präfix, z.B. `_gameControls`.
+  * Bei privaten Feldern, die serialisiert werden, also ein `[SerializeField]` haben: PascalCase.
 
 ### Programmierung
 
