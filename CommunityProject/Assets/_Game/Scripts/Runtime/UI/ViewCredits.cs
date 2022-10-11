@@ -11,59 +11,58 @@ namespace BoundfoxStudios.CommunityProject.UI
     public class ViewCredits : MonoBehaviour
     {
 		public GameObject TextMeshProObject;
-
-		private float screenSizeWidth;
-		private float screenSizeHeigth;
-
-		private List<string> _creditsList = new ();
-		private GameObject go;
-
-		private float pos = -150.0f;
-		
 		[Range(0,100)]
-		public float ScrollTextSpeed = 0;
+		public float ScrollTextSpeed = 20;
+		[Range(0,1000)]
+		public int ScrollTextPadding = 100;
+		private float screenSizeWidth;
+		public float screenSizeHeigth;
+		private List<CreditItem> _creditItems = new List<CreditItem>();
 
         // Start is called before the first frame update
         async void Awake()
         {
 			var contibutersReader = new ContributorsReader();
-			var contributers = await contibutersReader.LoadAsync();
+			var _contributers = await contibutersReader.LoadAsync();
 
 			screenSizeWidth = GetComponent<Canvas>().renderingDisplaySize.x;
 			screenSizeHeigth = GetComponent<Canvas>().renderingDisplaySize.y;
-			screenSizeHeigth = Screen.height;
 
-			var canvas = GetComponent<Canvas>();
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth, "Boundfox Studios",""));
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"Community-Projekt",""));
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"YouTube: https://youtube.com/c/boundfox",""));
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"GitHub: https://github.com/boundfoxstudios/community-project",""));
 
-			// Neues GO für Text erstellen 
-			go = Instantiate(TextMeshProObject, new Vector3(0, 0, 0.0f), Quaternion.identity);
+			foreach(var item in _contributers)
+			{
+				_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth, item.User,item.Url));
+			}
 
-			go.transform.parent = transform;
-			go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, screenSizeHeigth / 2);
-			go.GetComponent<RectTransform>().SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, screenSizeWidth);
-
-			Debug.Log("Contributer Count: " + contributers.LongLength);
-
-			go.GetComponent<TMPro.TextMeshProUGUI>().text = contributers[0].User;
-			go.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f , 0.0f);
-			go.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f , 0.0f);
+			CalcAllCreditItemPosition();
 		}
         // Update is called once per frame
         void Update()
-        {
-			float a = Time.deltaTime;
-
-			pos += a * 500f * ( ScrollTextSpeed / 100.0f);
-
-			if(pos > screenSizeHeigth)
-				pos = -150.0f;
-
-			go.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, pos);
-        }
-
-		void FillCreditList()
 		{
+			foreach (var item in _creditItems)
+			{
+				item.SetHorizontalPosition(item.GetHorizontalPosition() + Time.deltaTime * 500.0f * (ScrollTextSpeed / 100.0f));
+			}
 
+			if (_creditItems.Count > 0)
+			{
+				if (_creditItems[_creditItems.Count - 1].GetHorizontalPosition() > screenSizeHeigth)
+					CalcAllCreditItemPosition();
+			}
+		}
+
+		private void CalcAllCreditItemPosition()
+		{
+			float startPosition = -150.0f;
+			foreach(var item in _creditItems)
+			{
+				item.SetHorizontalPosition(startPosition);
+				startPosition -= ScrollTextPadding;
+			}
 		}
     }
 }
