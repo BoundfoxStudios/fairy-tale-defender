@@ -16,7 +16,7 @@ namespace BoundfoxStudios.CommunityProject.UI
 		[Range(0,1000)]
 		public int ScrollTextPadding = 100;
 		private float screenSizeWidth;
-		public float screenSizeHeigth;
+		private float screenSizeHeigth;
 		private List<CreditItem> _creditItems = new List<CreditItem>();
 
         // Start is called before the first frame update
