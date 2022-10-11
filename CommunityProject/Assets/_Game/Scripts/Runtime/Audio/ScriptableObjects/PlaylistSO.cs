@@ -9,25 +9,21 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 	public class PlaylistSO : ScriptableObject
 	{
 		[SerializeField]
-		private PlaylistItemSO[] clips;
+		private PlaylistItemSO[] Clips;
 
 		private int _lastClipIndex;
 		private int _nextClipIndex;
 
-		/// <summary>
-		/// Returns an <see cref="AudioClip"/> in this playlist randomly
-		/// </summary>
-		/// <returns>Another <see cref="AudioClip"/> than the one previously played in this playlist</returns>
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{
 			do
 			{
-				_nextClipIndex = Random.Range(0, clips.Length);
-			} while (_nextClipIndex == _lastClipIndex);
+				_nextClipIndex = Random.Range(0, Clips.Length);
+			} while (_nextClipIndex == _lastClipIndex && Clips[_nextClipIndex].AudioClip != null);
 
 			_lastClipIndex = _nextClipIndex;
 
-			return clips[_nextClipIndex].AudioClip;
+			return Clips[_nextClipIndex].AudioClip;
 		}
 	}
 }
