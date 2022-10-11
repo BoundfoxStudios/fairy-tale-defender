@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Audio
+namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 {
 	/// <summary>
 	/// Container for <see cref="PlaylistItemSO"/>s
