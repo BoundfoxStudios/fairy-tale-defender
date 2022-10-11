@@ -12,7 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	public class BackgroundMusicPlayer : MonoBehaviour
 	{
 		[SerializeField]
-		private PlaylistSO playlist;
+		private PlaylistSO Playlist;
 
 		private AudioSource _audioSource;
 
@@ -20,7 +20,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 		{
 			_audioSource = GetComponent<AudioSource>();
 
-			if (playlist == null)
+			if (Playlist == null)
 			{
 #if UNITY_EDITOR
 				Debug.LogWarning("No Playlist on this BackgroundMusicPlayer", this);
@@ -50,7 +50,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private AudioClip GetNextClip()
 		{
-			return playlist.GetNextRandomClipWithoutImmediateRepeat();
+			return Playlist.GetNextRandomClipWithoutImmediateRepeat();
 		}
 	}
 }
