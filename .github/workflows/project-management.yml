@@ -16,7 +16,7 @@ on:
       - assigned
       - unassigned
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '0 0 * * *'    
 
 jobs:
   assign-issue-to-contributor:
@@ -120,3 +120,16 @@ jobs:
           exempt-issue-labels: 'Blockiert'
           exempt-pr-labels: 'Blockiert'
           remove-stale-when-updated: true
+  
+  unassign-issues-labeled-waiting-for-contributor-after-7-days-of-inactivity:
+    name: Unassign issues labeled "Wartet auf Contributor" after 7 days of inactivity.
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: boundfoxstudios/action-unassign-contributor-after-days-of-inactivity@main
+        with:
+          last-activity: 7
+          labels: 'Wartet auf Contributor'
+          exempt-assignees: 'ManuelRauber'
+          labels-to-remove: 'Wartet auf Contributor'
+          message: 'Aufgrund längerer Inaktivität wurde diese Aufgabe automatisch zurückgeben.'
