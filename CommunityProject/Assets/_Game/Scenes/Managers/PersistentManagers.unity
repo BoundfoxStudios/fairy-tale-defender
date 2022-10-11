@@ -457,7 +457,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!114 &1426170392
 MonoBehaviour:
@@ -484,7 +484,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 2692712827960007871, guid: 3e3e965e639d8434fa54621eaf374ca5,
     type: 2}
   m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
