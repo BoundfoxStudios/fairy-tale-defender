@@ -15,7 +15,7 @@ Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 
 * entwickelst Code für das Spiel,
 * entwickelst Erweiterungen für den Unity-Editor,
-* möchtest bestehende Bug im Spiel beseitigen und/oder
+* möchtest bestehende Bugs im Spiel beseitigen und/oder
 * möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch [hier](../visual/README.md))
 
 ## Worauf muss ich achten?
@@ -39,7 +39,7 @@ Bitte mache folgende Dinge **nicht** oder nur nach Rücksprache mit einem [Anspr
 
 ## Wo lade ich meine Ergebnisse hin?
 
-Im Gegensatz zur kreativen Mitarbeit, arbeist Du als als Techniker direkt am Unity-Projekt und machst dort Deine Änderungen.
+Im Gegensatz zur kreativen Mitarbeit, arbeitest Du als als Techniker direkt am Unity-Projekt und machst dort Deine Änderungen.
 
 ### Was passiert dann?
 
