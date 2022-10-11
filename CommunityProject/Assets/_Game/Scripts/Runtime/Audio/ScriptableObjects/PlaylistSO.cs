@@ -14,12 +14,39 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 		private int _lastClipIndex;
 		private int _nextClipIndex;
 
+		private bool _isValid;
+
+		private void OnValidate()
+		{
+			foreach (var item in Clips)
+			{
+				if (item.AudioClip == null)
+				{
+					_isValid = false;
+					return;
+				}
+			}
+
+			_isValid = true;
+		}
+
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{
+			if (_isValid == false)
+			{
+				Debug.LogError("Missing AudioClip(s) in playlist", this);
+				return null;
+			}
+
+			if (Clips.Length == 1)
+			{
+				return Clips[0].AudioClip;
+			}
+
 			do
 			{
 				_nextClipIndex = Random.Range(0, Clips.Length);
-			} while (_nextClipIndex == _lastClipIndex && Clips[_nextClipIndex].AudioClip != null);
+			} while (_nextClipIndex == _lastClipIndex);
 
 			_lastClipIndex = _nextClipIndex;
 
