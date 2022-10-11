@@ -15,7 +15,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private void OnValidate()
 		{
-			if (AudioClip == null)
+			if (!AudioClip)
 			{
 				Debug.LogWarning("No AudioClip assigned", this);
 			}
