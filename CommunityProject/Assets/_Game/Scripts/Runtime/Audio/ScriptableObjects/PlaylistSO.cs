@@ -13,28 +13,11 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private int _lastClipIndex;
 		private int _nextClipIndex;
-
-		private bool _isValid;
-
-		private void OnValidate()
-		{
-			foreach (var item in Clips)
-			{
-				if (!item.AudioClip)
-				{
-					_isValid = false;
-					return;
-				}
-			}
-
-			_isValid = true;
-		}
-
+		
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{
-			if (!_isValid)
+			if (Clips == null || Clips.Length == 0)
 			{
-				Debug.LogError("Missing AudioClip(s) in playlist", this);
 				return null;
 			}
 
