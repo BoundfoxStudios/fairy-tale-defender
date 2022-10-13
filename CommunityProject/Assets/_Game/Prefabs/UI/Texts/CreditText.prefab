@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8189487217192543218}
   - component: {fileID: 8618415878157559291}
   - component: {fileID: 8535240463679073397}
+  - component: {fileID: 4849303306285214375}
   m_Layer: 5
   m_Name: CreditText
   m_TagString: Untagged
@@ -135,3 +136,15 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4849303306285214375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9024772728314251075}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c914c4858407f9cd7b814621f54464eb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
