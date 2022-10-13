@@ -32,7 +32,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 		}
 
 		private async UniTaskVoid PlayMusicAsync()
-		{			
+		{
 			var clip = GetNextClip();
 
 			if (!clip)

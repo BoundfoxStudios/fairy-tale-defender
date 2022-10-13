@@ -13,7 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private int _lastClipIndex;
 		private int _nextClipIndex;
-		
+
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{
 			if (Clips == null || Clips.Length == 0)
