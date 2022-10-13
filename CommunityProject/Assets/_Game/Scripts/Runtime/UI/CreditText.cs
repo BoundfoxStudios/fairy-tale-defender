@@ -9,21 +9,14 @@ namespace BoundfoxStudios.CommunityProject.UI
 {
 	public class CreditText : MonoBehaviour, IPointerClickHandler
 	{
-		// Start is called before the first frame update
-		void Start()
-		{
+		public string Url = string.Empty;
 
-		}
-
-		// Update is called once per frame
-		void Update()
-		{
-        
-		}
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			UnityEngine.Debug.Log("test...");
-			Process.Start("www.google.com");
+			if(Url != string.Empty)	
+			{
+				Process.Start(Url);
+			}
 		}
 	}
 }

@@ -30,8 +30,8 @@ namespace BoundfoxStudios.CommunityProject.UI
 
 			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth, "Boundfox Studios",""));
 			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"Community-Projekt",""));
-			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"YouTube: https://youtube.com/c/boundfox",""));
-			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"GitHub: https://github.com/boundfoxstudios/community-project",""));
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"YouTube: https://youtube.com/c/boundfox","https://youtube.com/c/boundfox"));
+			_creditItems.Add(new CreditItem(TextMeshProObject, transform, screenSizeWidth,"GitHub: https://github.com/boundfoxstudios/community-project","https://github.com/boundfoxstudios/community-project"));
 
 			foreach(var item in _contributers)
 			{

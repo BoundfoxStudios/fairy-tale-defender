@@ -21,6 +21,7 @@ namespace BoundfoxStudios.CommunityProject.UI
 			creditItemGameObject.GetComponent<TMPro.TextMeshProUGUI>().text = name;
 			creditItemGameObject.GetComponent<RectTransform>().anchorMin = new Vector2(0.5f , 0.0f);
 			creditItemGameObject.GetComponent<RectTransform>().anchorMax = new Vector2(0.5f , 0.0f);
+			creditItemGameObject.GetComponent<CreditText>().Url = url;
 		}
 
 		public void SetHorizontalPosition(float horizontalPosition)
