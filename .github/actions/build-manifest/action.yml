@@ -10,7 +10,7 @@ runs:
   steps:
     - name: Grab short SHA
       id: variables
-      run: echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+      run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       shell: sh
     - name: Write Build Manifest to outputs
       uses: mkungla/actions-set-text-output@v1
