@@ -8,6 +8,7 @@ on:
       - 'CommunityProject/Assets/**'
       - 'CommunityProject/Packages/**'
       - 'CommunityProject/ProjectSettings/**'
+  workflow_dispatch:
 
 jobs: 
   lint:
