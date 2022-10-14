@@ -99,7 +99,7 @@ You can also join our [Discord][2] server where we also have English channels.
 
 Have fun!
 
-<!-- Reference Links -->
+<!-- Reference Links ci trigger -->
 
 [1]: https://youtube.com/c/boundfox
 [2]: https://discord.gg/tHqNzMT
