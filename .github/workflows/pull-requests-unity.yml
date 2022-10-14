@@ -1,4 +1,4 @@
-name: Pull Requests
+name: Unity PRs
 
 concurrency: 
   group: ${{ github.head_ref }}
@@ -12,27 +12,14 @@ on:
       - opened
     branches-ignore:
       - main
+    paths:
+       - 'CommunityProject/Assets/**'
+       - 'CommunityProject/Packages/**'
+       - 'CommunityProject/ProjectSettings/**'
 
 jobs: 
-  has-changes:
-    name: Check if there are changes to the game code
-    runs-on: ubuntu-latest
-    outputs:
-      src: ${{ steps.has-changes.outputs.src }}
-    steps:
-      - uses: dorny/paths-filter@v2
-        id: has-changes
-        with:
-          filters: |
-            src: 
-              - 'CommunityProject/Assets/**'
-              - 'CommunityProject/Packages/**'
-              - 'CommunityProject/ProjectSettings/**'
-
   lint:
     name: Lint code base
-    if: needs.has-changes.outputs.src == 'true'
-    needs: has-changes
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
