@@ -44,7 +44,7 @@ jobs:
         run: |
           random_password=$(openssl rand -base64 64)
           echo "::add-mask::$random_password"
-          echo "::set-output name=value::$random_password"
+          echo "value=$random_password" >> $GITHUB_OUTPUT
       - name: Import certificate
         uses: devbotsxyz/import-signing-certificate@main
         with:
