@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManager
 {
-	public class JsonFileManager:IFileManager
+	public class JsonFileManager : IFileManager
 	{
 		private string _rootPath = Application.persistentDataPath;
 
