@@ -19,7 +19,10 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
 		{
 			var jsonSerialization = JsonUtility.ToJson(serializable);
 
-			File.WriteAllText(CreateFilePath(key), jsonSerialization);
+			var path = CreateFilePath(key);
+			EnsurePath(path);
+
+			File.WriteAllText(path, jsonSerialization);
 
 			return UniTask.CompletedTask;
 		}
@@ -35,11 +38,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
 
 		private string CreateFilePath(string key)
 		{
-			var path = Path.Combine(_rootPath, key);
-
-			EnsurePath(path);
-
-			return path;
+			return Path.Combine(_rootPath, key);
 		}
 
 		private void EnsurePath(string path)
