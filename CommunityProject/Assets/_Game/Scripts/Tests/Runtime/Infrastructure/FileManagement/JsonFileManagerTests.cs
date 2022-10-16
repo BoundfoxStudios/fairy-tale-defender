@@ -104,7 +104,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Infrastructure.FileManagement
 
 			var sut = new JsonFileManager();
 
-			Func<Task> action =() =>  sut.ReadAsync<UnitTestSerializable>(UnitTestFile).AsTask();
+			Func<Task> action = () => sut.ReadAsync<UnitTestSerializable>(UnitTestFile).AsTask();
 
 			await action.Should().ThrowAsync<Exception>();
 		});
