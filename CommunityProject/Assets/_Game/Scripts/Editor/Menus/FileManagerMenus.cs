@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Menus
 {
-	public class JsonFileManagerMenu
+	public static class FileManagerMenus
 	{
 		[MenuItem(Constants.MenuNames.MenuName + "/Open Application Data")]
 		private static void OpenApplicationData()
