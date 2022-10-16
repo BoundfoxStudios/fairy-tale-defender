@@ -1,7 +1,10 @@
 {
   "name": "presentations",
   "scripts": {
-    "01-getting-started": "marp --watch --preview 01-getting-started/README.md"
+    "01-getting-started": "marp --watch --preview 01-getting-started/index.md",
+    "02-3d-artist-suggestions": "marp --watch --preview 02-3d-artist-suggestions/index.md",
+    "pdf:01-getting-started": "marp --pdf --allow-local-files 01-getting-started/index.md",
+    "pdf:02-3d-artist-suggestions": "marp --pdf --allow-local-files 02-3d-artist-suggestions/index.md"
   },
   "keywords": [],
   "author": "Manuel Rauber <manuel.rauber@boundfoxstudios.com>",
