@@ -6,7 +6,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
 {
 	public class JsonFileManager : IFileManager
 	{
-		private string _rootPath = Application.persistentDataPath;
+		private readonly string _rootPath = Application.persistentDataPath;
 
 		public UniTask<bool> ExistsAsync(string key)
 		{
@@ -15,25 +15,21 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
 			return UniTask.FromResult(result);
 		}
 
-		public UniTask WriteAsync<T>(string key, T serializable)
+		public async UniTask WriteAsync<T>(string key, T serializable)
 		{
 			var jsonSerialization = JsonUtility.ToJson(serializable);
 
 			var path = CreateFilePath(key);
 			EnsurePath(path);
 
-			File.WriteAllText(path, jsonSerialization);
-
-			return UniTask.CompletedTask;
+			await File.WriteAllTextAsync(path, jsonSerialization);
 		}
 
-		public UniTask<T> ReadAsync<T>(string key)
+		public async UniTask<T> ReadAsync<T>(string key)
 		{
-			var jsonFromFile = File.ReadAllText(CreateFilePath(key));
+			var jsonFromFile = await File.ReadAllTextAsync(CreateFilePath(key));
 
-			var result = JsonUtility.FromJson<T>(jsonFromFile);
-
-			return UniTask.FromResult(result);
+			return JsonUtility.FromJson<T>(jsonFromFile);
 		}
 
 		private string CreateFilePath(string key)
