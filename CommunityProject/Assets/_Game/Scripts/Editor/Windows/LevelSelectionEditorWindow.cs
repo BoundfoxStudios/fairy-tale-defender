@@ -9,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 		private bool _openAdditive;
 		private Vector2 _scrollPosition;
 
-		[MenuItem(Constants.MenuNames.LevelSelection)]
+		[MenuItem(Constants.MenuNames.LevelSelection, priority = 10000)]
 		private static void ShowWindow()
 		{
 			var window = GetWindow<LevelSelectionEditorWindow>();

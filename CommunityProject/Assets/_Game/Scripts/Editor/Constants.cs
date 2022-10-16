@@ -7,7 +7,8 @@ namespace BoundfoxStudios.CommunityProject.Editor
 		public static class MenuNames
 		{
 			public const string MenuName = RuntimeConstants.MenuNames.MenuName;
-			public const string LevelSelection = MenuName + "/Level Selection";
+			public const string Windows = MenuName + "/Windows";
+			public const string LevelSelection = Windows + "/Level Selection";
 
 			public static class GameObjectMenus
 			{
