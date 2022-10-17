@@ -14,11 +14,17 @@ namespace BoundfoxStudios.CommunityProject.Audio
         // Start is called before the first frame update
         void Start()
         {
+
+        }
+
+        private void OnEnable()
+        {
 	        _audioSource = gameObject.GetComponent<AudioSource>();
         }
 
         public void PlayAudioCue(AudioCueSO audioCue)
         {
+	        Debug.Log("SoundEmitter Play");
 	        Play(audioCue).Forget();
         }
 
@@ -28,7 +34,9 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	        _audioSource.clip = audioCue.AudioClip;
 	        _audioSource.Play();
 
-	        await UniTask.Delay((int)_audioSource.clip.length, ignoreTimeScale: true);
+	        var clipLengthInSeconds = TimeSpan.FromSeconds(_audioSource.clip.length);
+
+	        await UniTask.Delay(clipLengthInSeconds, true);
 
 	        Finished?.Invoke();
         }
