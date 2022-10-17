@@ -1,5 +1,6 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -26,10 +27,15 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[SerializeField]
 		private AssetReferenceT<LoadSceneEventChannelSO> LoadSceneEventChannel;
 
+		[Header("GameSettings Reference")]
+		[SerializeField]
+		private SettingsSO Settings;
+
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Start()
 		{
+			await Settings.LoadAsync();
 			await LoadPersistentManagersAsync();
 			await LoadIntoMainMenuAsync();
 			await UnloadInitializationSceneAsync();
