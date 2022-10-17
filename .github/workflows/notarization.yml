@@ -36,7 +36,7 @@ jobs:
           name: Build-${{ github.run_id }}-StandaloneOSX
           path: Build-${{ github.run_id }}-StandaloneOSX
       - name: Select XCode Version ${{ inputs.xcode-version }}
-        uses: BoundfoxStudios/xcode-select@v1
+        uses: BoundfoxStudios/action-xcode-select@v1
         with:
           version: ${{ inputs.xcode-version }}
       - name: Generate random keychain password
@@ -46,7 +46,7 @@ jobs:
           echo "::add-mask::$random_password"
           echo "value=$random_password" >> $GITHUB_OUTPUT
       - name: Import certificate
-        uses: BoundfoxStudios/import-signing-certificate@v1
+        uses: BoundfoxStudios/action-import-signing-certificate@v1
         with:
           certificate-data: ${{ secrets.APPLE_CERTIFICATE_DATA }}
           certificate-passphrase: ${{ secrets.APPLE_CERTIFICATE_PASSPHRASE }}
@@ -61,13 +61,13 @@ jobs:
         run: codesign --deep --force --verify --verbose --timestamp --options runtime --entitlements "CommunityProject.entitlements" --sign "${{ secrets.APPLE_TEAM_NAME }}" CommunityProject.app
         working-directory: Build-${{ github.run_id }}-StandaloneOSX
       - name: Notarize
-        uses: BoundfoxStudios/xcode-notarize@v1
+        uses: BoundfoxStudios/action-xcode-notarize@v1
         with:
           product-path: Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.app
           appstore-connect-username: ${{ secrets.APPLE_NOTARIZATION_USERNAME }}
           appstore-connect-password: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
       - name: Staple
-        uses: BoundfoxStudios/xcode-staple@v1
+        uses: BoundfoxStudios/action-xcode-staple@v1
         with:
           product-path: Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.app
       # We need to create a TAR archive before uploading due to possible permission loss

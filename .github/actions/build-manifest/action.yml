@@ -13,7 +13,7 @@ runs:
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       shell: sh
     - name: Write Build Manifest to outputs
-      uses: mkungla/actions-set-text-output@v1
+      uses: BoundfoxStudios/action-set-text-output@v1
       id: content
       with:
         text: |
