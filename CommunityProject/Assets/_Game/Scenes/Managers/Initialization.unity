@@ -167,6 +167,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  Settings: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac, type: 2}
 --- !u!4 &1802424
 Transform:
   m_ObjectHideFlags: 0

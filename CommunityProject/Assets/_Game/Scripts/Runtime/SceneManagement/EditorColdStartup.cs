@@ -1,5 +1,6 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
@@ -19,6 +20,8 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[Header("References")]
 		[SerializeField]
 		private SceneSO ThisScene;
+		[SerializeField]
+		private SettingsSO Settings;
 
 		[SerializeField]
 		private PersistentManagersSceneSO PersistentManagersScene;
@@ -45,6 +48,8 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 			{
 				return;
 			}
+
+			await Settings.LoadAsync();
 
 			await PersistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
 
