@@ -372,12 +372,6 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 510804133511062542, guid: 110ebe51c4ba84a6380c1994ab337b3d,
         type: 3}
-      propertyPath: Settings
-      value: 
-      objectReference: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
-        type: 2}
-    - target: {fileID: 510804133511062542, guid: 110ebe51c4ba84a6380c1994ab337b3d,
-        type: 3}
       propertyPath: ThisScene
       value: 
       objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
