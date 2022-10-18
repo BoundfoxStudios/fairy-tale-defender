@@ -13,8 +13,8 @@ In diesem Abschnitt folgt eine sehr grobe Definition, welche Phasen durchlaufen 
 Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.
 
 1. Findung des Genres: Entscheidung der Community: **Tower Defense**
-2. Findung des Themas (z.B. ob das Spiel in Richtung "Modern", "Fantasy", "Mittelalter" geht). `<-`
-3. Findung des Stils
+2. Findung des Themas (z.B. ob das Spiel in Richtung "Modern", "Fantasy", "Mittelalter" geht). 
+3. Findung des Stils `<-`
    
    Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen. 
 4. Erstellung des Game Design Documents.
