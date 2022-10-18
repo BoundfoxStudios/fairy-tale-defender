@@ -43,5 +43,5 @@ Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.co
     <dt>User Interface, UI</dt>
     <dd>Die Benutzeroberfläche einer Anwendung.</dd>
     <dt>MVP</dt>
-    <dd>Minimal Viable Product, <a href="https://github.com/BoundfoxStudios/community-project/blob/develop/docs/roadmap.md">siehe hier</a></dd>
+    <dd>Minimal Viable Product, <a href="https://github.com/BoundfoxStudios/community-project/blob/develop/docs/roadmap.md#mvp">siehe hier</a></dd>
 </dl>
