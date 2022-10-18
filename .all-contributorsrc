@@ -98,5 +98,12 @@
   "contributorsPerLine": 7,
   "linkToUsage": false,
   "repoType": "github",
-  "contributorsSortAlphabetically": true
+  "contributorsSortAlphabetically": true,
+  "types": {
+    "model": {
+      "symbol": "🤖",
+      "description": "3D models",
+      "link": "[<%= symbol %>](<%= url %> \"<%= description %>\"),"
+    }
+  }
 }
