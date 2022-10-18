@@ -33,4 +33,4 @@ jobs:
     name: Label succesful build
     runs-on: ubuntu-latest
     steps:
-      - run: exit -
+      - run: exit 0
