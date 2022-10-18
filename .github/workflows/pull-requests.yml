@@ -5,15 +5,10 @@ concurrency:
   cancel-in-progress: true
 
 on: 
-  pull_request:
+  pull_request_target:
     types:
       - synchronize
       - opened
-    branches-ignore:
-      - main
-  
-  pull_request_target:
-    types:
       - labeled
     branches-ignore:
       - main
@@ -38,12 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
-        if: github.event_name == 'pull_request'
-      - uses: actions/checkout@v3
-        if: github.event_name == 'pull_request_target'
         with:
           ref: "refs/pull/${{ github.event.number }}/merge"
-      - uses: ./.github/actions/linter
+      - uses: ./.github/actions/linter@develop
 
   build:
     needs: [lint, change-detection]
@@ -52,7 +44,7 @@ jobs:
       && github.event.action == 'labeled' 
       && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
     name: Development Builds
-    uses: ./.github/workflows/build.yml
+    uses: ./.github/workflows/build.yml@develop
     secrets:
       UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
       UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
@@ -63,8 +55,6 @@ jobs:
 
   label-successful-build:
     needs: [change-detection, build]
-    permissions:
-      pull-requests: write
     if: always()
     name: Label succesful build
     runs-on: ubuntu-latest
@@ -73,7 +63,6 @@ jobs:
         run: |
           echo "Need successful build"
           exit 1
-      - uses: actions/checkout@v3
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ci-ready-to-merge
