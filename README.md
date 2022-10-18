@@ -62,6 +62,7 @@ Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
   <tbody>
     <tr>
       <td align="center"><a href="https://manuel-rauber.com"><img src="https://avatars.githubusercontent.com/u/740791?v=4?s=100" width="100px;" alt="Manuel Rauber"/><br /><sub><b>Manuel Rauber</b></sub></a><br /><a href="#code-ManuelRauber" title="Code">💻</a> <a href="#doc-ManuelRauber" title="Documentation">📖</a> <a href="#ideas-ManuelRauber" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-ManuelRauber" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-ManuelRauber" title="Maintenance">🚧</a> <a href="#projectManagement-ManuelRauber" title="Project Management">📆</a> <a href="#review-ManuelRauber" title="Reviewed Pull Requests">👀</a></td>
+      <td align="center"><a href="https://github.com/GodGamer948"><img src="https://avatars.githubusercontent.com/u/109614371?v=4?s=100" width="100px;" alt="GodGamer948"/><br /><sub><b>GodGamer948</b></sub></a><br /><a href="#doc-GodGamer948" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>
