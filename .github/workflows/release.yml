@@ -7,7 +7,15 @@ on:
       - main
 
 jobs: 
+  lint:
+    name: Lint code base
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/linter
+
   build:
+    needs: lint
     name: Release
     uses: ./.github/workflows/build.yml
     secrets:
@@ -18,3 +26,15 @@ jobs:
       do-test: true
       fail-fast: true
       max-parallel: 1
+      ref: ${{ env.GITHUB_REF }}
+  
+  notarize:
+    needs: build
+    name: Notarize the macOS build
+    uses: ./.github/workflows/notarization.yml
+    secrets:
+      APPLE_CERTIFICATE_DATA: ${{ secrets.APPLE_CERTIFICATE_DATA }}
+      APPLE_CERTIFICATE_PASSPHRASE: ${{ secrets.APPLE_CERTIFICATE_PASSPHRASE }}
+      APPLE_TEAM_NAME: ${{ secrets.APPLE_TEAM_NAME }}
+      APPLE_NOTARIZATION_USERNAME: ${{ secrets.APPLE_NOTARIZATION_USERNAME }}
+      APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}

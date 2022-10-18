@@ -5,11 +5,20 @@ concurrency:
   cancel-in-progress: true
 
 on: 
+  pull_request:
+    types:
+      - synchronize
+      - opened
+    branches-ignore:
+      - main
+    paths:
+       - 'CommunityProject/Assets/**'
+       - 'CommunityProject/Packages/**'
+       - 'CommunityProject/ProjectSettings/**'  
+  
   pull_request_target:
     types:
       - labeled
-      - synchronize
-      - opened
     branches-ignore:
       - main
     paths:
@@ -23,6 +32,11 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
+        if: github.event_name == 'pull_request'
+      - uses: actions/checkout@v3
+        if: github.event_name == 'pull_request_target'
+        with:
+          ref: "refs/pull/${{ github.event.number }}/merge"
       - uses: ./.github/actions/linter
 
   build:
@@ -38,6 +52,7 @@ jobs:
       UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
     with:
       do-test: true
+      ref: "refs/pull/${{ github.event.number }}/merge"
 
   unlabel-pr:
     needs: build

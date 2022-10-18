@@ -30,6 +30,7 @@ jobs:
       do-test: true
       do-upload-game-binaries: true
       do-upload-debug-symbols: true
+      ref: ${{ env.GITHUB_REF }}
 
   notarize:
     needs: build

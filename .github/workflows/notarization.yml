@@ -28,8 +28,6 @@ jobs:
     timeout-minutes: 15 # should be enough for notarization
     steps:
       - uses: actions/checkout@v3
-      - name: Debug List
-        run: ls -R
       - name: Download macOS artifacts
         uses: actions/download-artifact@v3
         with:
