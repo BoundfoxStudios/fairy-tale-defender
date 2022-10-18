@@ -1,6 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -31,21 +30,28 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			GameSettingsChangedEventChannel.Raised += ApplySettings;
 		}
 
-		private async UniTask OnDisable()
+		private void OnDisable()
 		{
 			GameSettingsChangedEventChannel.Raised -= ApplySettings;
-
-			await Settings.SaveAsync();
 		}
 
 		private void ApplySettings()
 		{
+			ApplyAudioSettings();
+			ApplyScreenSettings();
+			ApplyGraphicSettings();
+		}
+
+		private void ApplyAudioSettings()
+		{
 			MainMixer.SetFloat("MasterVolume", GetNormalizedToMixerVolume(Settings.Audio.MasterVolume));
 			MainMixer.SetFloat("MusicVolume", GetNormalizedToMixerVolume(Settings.Audio.MusicVolume));
-			MainMixer.SetFloat("EffectsVolume", GetNormalizedToMixerVolume(Settings.Audio.SFXVolume));
+			MainMixer.SetFloat("EffectsVolume", GetNormalizedToMixerVolume(Settings.Audio.EffectsVolume));
 			MainMixer.SetFloat("UIVolume", GetNormalizedToMixerVolume(Settings.Audio.UIVolume));
+		}
 
-
+		private void ApplyScreenSettings()
+		{
 			var resolutionIndex = Settings.Graphic.ResolutionIndex;
 
 			if (resolutionIndex < 0 || resolutionIndex > Screen.resolutions.Length)
@@ -59,7 +65,10 @@ namespace BoundfoxStudios.CommunityProject.Settings
 						Screen.resolutions[resolutionIndex].height,
 						Settings.Graphic.IsFullscreen
 						);
+		}
 
+		private void ApplyGraphicSettings()
+		{
 			QualitySettings.SetQualityLevel(Settings.Graphic.GraphicLevel);
 		}
 

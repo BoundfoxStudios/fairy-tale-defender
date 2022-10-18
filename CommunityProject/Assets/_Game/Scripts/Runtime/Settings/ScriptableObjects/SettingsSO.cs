@@ -16,7 +16,6 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		public AudioConfig Audio => _gameSettings.Audio;
 		public GraphicConfig Graphic => _gameSettings.Graphic;
 
-
 		private JsonFileManager _jsonFileManager;
 		private readonly string _jsonFileName = "config.json";
 
@@ -53,7 +52,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 			[Range(0f, 1f)]
 			public float MasterVolume = 1f;
 			[Range(0f, 1f)]
-			public float SFXVolume = 1f;
+			public float EffectsVolume = 1f;
 			[Range(0f, 1f)]
 			public float MusicVolume = 1f;
 			[Range(0f, 1f)]

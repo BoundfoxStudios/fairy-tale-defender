@@ -29,16 +29,21 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		[Header("GameSettings Reference")]
 		[SerializeField]
-		private SettingsSO Settings;
+		private AssetReferenceT<SettingsSO> Settings;
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Start()
 		{
-			await Settings.LoadAsync();
+			await LoadSettingsAsync();
 			await LoadPersistentManagersAsync();
 			await LoadIntoMainMenuAsync();
 			await UnloadInitializationSceneAsync();
+		}
+
+		private async UniTask LoadSettingsAsync()
+		{
+			await Settings.LoadAssetAsync();
 		}
 
 		private async UniTask LoadPersistentManagersAsync()
