@@ -1,6 +1,6 @@
 namespace BoundfoxStudios.CommunityProject
 {
-	public static class Constants
+					public static class Constants
 	{
 		public static class MenuNames
 		{
