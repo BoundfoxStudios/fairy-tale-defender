@@ -16,6 +16,15 @@
         "projectManagement",
         "review"
       ]
+    },
+    {
+      "login": "ThKattanek",
+      "name": "Thorsten Kattanek",
+      "avatar_url": "https://avatars.githubusercontent.com/u/14269404?v=4",
+      "profile": "https://thorsten-kattanek.de",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "files": [
