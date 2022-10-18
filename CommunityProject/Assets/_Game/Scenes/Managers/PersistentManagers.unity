@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -628,9 +628,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd2c3cdb5bd34bd8854fbde3b6ba09df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioCueEventChannel: {fileID: 11400000, guid: 46ae3b397e135716d999bdb294ce4155,
+  AudioCueEventChannel: {fileID: 11400000, guid: 46ae3b397e135716d999bdb294ce4155,
     type: 2}
-  soundEmitterPrefab: {fileID: 1511006161638987186, guid: c85b26efc2c4937c69adee980784cb23,
+  SoundEmitterPrefab: {fileID: 1453437015387252058, guid: c85b26efc2c4937c69adee980784cb23,
     type: 3}
 --- !u!1 &1723093762 stripped
 GameObject:

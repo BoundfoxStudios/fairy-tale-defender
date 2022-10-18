@@ -1,42 +1,38 @@
-using System;
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace BoundfoxStudios.CommunityProject.Audio
 {
+	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(AudioCuePlayer))]
 	public class AudioCuePlayer : MonoBehaviour
 	{
 		[SerializeField]
-		private AudioCueEventChannelSO audioCueEventChannel;
+		private AudioCueEventChannelSO AudioCueEventChannel;
 
 		[SerializeField]
-		private GameObject soundEmitterPrefab;
+		private SoundEmitter SoundEmitterPrefab;
 
 		private void OnEnable()
 		{
-			audioCueEventChannel.Raised += OnPlay;
+			AudioCueEventChannel.Raised += Play;
 		}
 
 		private void OnDisable()
 		{
-			audioCueEventChannel.Raised -= OnPlay;
+			AudioCueEventChannel.Raised -= Play;
 		}
 
-		private void OnPlay(AudioCueSO audioCue)
+		private void Play(AudioCueSO audioCue)
 		{
-			var emitterObject = Instantiate(soundEmitterPrefab, Vector3.zero, Quaternion.identity);
-			var emitter = emitterObject.GetComponent<SoundEmitter>();
+			var emitter = Instantiate(SoundEmitterPrefab, Vector3.zero, Quaternion.identity);
 
 			emitter.PlayAudioCue(audioCue);
 
 			emitter.Finished += () =>
 			{
-				Destroy(emitterObject);
+				Destroy(emitter.gameObject);
 			};
 		}
-
-
 	}
 }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db3d3a0391d64dee8fd8a0c439feae07, type: 3}
   m_Name: AudioCue_EventChannel
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Raised to play an audio cue (sound effect).
