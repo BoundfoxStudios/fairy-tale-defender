@@ -5,40 +5,33 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio
 {
-    public class SoundEmitter : MonoBehaviour
-    {
-	    private AudioSource _audioSource;
+	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(SoundEmitter))]
+	public class SoundEmitter : MonoBehaviour
+	{
+		private AudioSource _audioSource;
 
-	    public event Action Finished;
+		public event Action Finished;
 
-        // Start is called before the first frame update
-        void Start()
-        {
+		private void OnEnable()
+		{
+			_audioSource = gameObject.GetComponent<AudioSource>();
+		}
 
-        }
+		public void PlayAudioCue(AudioCueSO audioCue)
+		{
+			Play(audioCue).Forget();
+		}
 
-        private void OnEnable()
-        {
-	        _audioSource = gameObject.GetComponent<AudioSource>();
-        }
+		private async UniTaskVoid Play(AudioCueSO audioCue)
+		{
+			_audioSource.clip = audioCue.AudioClip;
+			_audioSource.Play();
 
-        public void PlayAudioCue(AudioCueSO audioCue)
-        {
-	        Debug.Log("SoundEmitter Play");
-	        Play(audioCue).Forget();
-        }
+			var clipLengthInSeconds = TimeSpan.FromSeconds(_audioSource.clip.length);
 
+			await UniTask.Delay(clipLengthInSeconds, true);
 
-        private async UniTaskVoid Play(AudioCueSO audioCue)
-        {
-	        _audioSource.clip = audioCue.AudioClip;
-	        _audioSource.Play();
-
-	        var clipLengthInSeconds = TimeSpan.FromSeconds(_audioSource.clip.length);
-
-	        await UniTask.Delay(clipLengthInSeconds, true);
-
-	        Finished?.Invoke();
-        }
-    }
+			Finished?.Invoke();
+		}
+	}
 }
