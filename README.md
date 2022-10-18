@@ -1,4 +1,4 @@
-[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCf54CbMEHpI3fXE-SwMg0Ug?style=social)][1] [![Discord](https://img.shields.io/discord/454361389935493124?logo=discord&logoColor=white)][2]
+[![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCf54CbMEHpI3fXE-SwMg0Ug?style=social)][1] [![Discord](https://img.shields.io/discord/454361389935493124?logo=discord&logoColor=white)][2] ![GitHub contributors (via allcontributors.org)](https://img.shields.io/github/all-contributors/BoundfoxStudios/community-project)
 
 # Boundfox Studios Community-Projekt
 
@@ -55,11 +55,13 @@ Beachte beim Mitmachen auch unseren [Code of Conduct](CODE_OF_CONDUCT.md), sodas
 
 Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
 
-<a href="https://github.com/BoundfoxStudios/community-project/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=BoundfoxStudios/community-project" />
-</a>
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
 
-Made with [contrib.rocks](https://contrib.rocks).
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Was bedeutet denn ...?
 
