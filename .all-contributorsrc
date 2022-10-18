@@ -1,5 +1,26 @@
 {
-    "projectName": "community-project",
-    "projectOwner": "BoundfoxStudios",
-    "contributors": []
+  "projectName": "community-project",
+  "projectOwner": "BoundfoxStudios",
+  "contributors": [
+    {
+      "login": "ManuelRauber",
+      "name": "Manuel Rauber",
+      "avatar_url": "https://avatars.githubusercontent.com/u/740791?v=4",
+      "profile": "https://manuel-rauber.com",
+      "contributions": [
+        "code",
+        "doc",
+        "ideas",
+        "infra",
+        "maintenance",
+        "projectManagement",
+        "review"
+      ]
+    }
+  ],
+  "files": [
+    "README.md"
+  ],
+  "commitConvention": "angular",
+  "contributorsPerLine": 7
 }
