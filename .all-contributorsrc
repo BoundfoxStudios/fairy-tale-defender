@@ -41,5 +41,8 @@
     "README.md"
   ],
   "commitConvention": "angular",
-  "contributorsPerLine": 7
+  "contributorsPerLine": 7,
+  "linkToUsage": false,
+  "repoType": "github",
+  "contributorsSortAlphabetically": true
 }
