@@ -65,9 +65,6 @@ jobs:
 
   label-successful-build:
     needs: build
-    if: |
-      always()
-      && needs.build.result == 'success'
     name: Label succesful build
     runs-on: ubuntu-latest
     steps:
