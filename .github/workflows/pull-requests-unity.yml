@@ -27,6 +27,15 @@ on:
        - 'CommunityProject/ProjectSettings/**'
 
 jobs: 
+  unlabel-ready-to-merge:
+    name: Removes "ci-ready-to-merge" label on synchronize
+    if: github.event.action == 'synchronize'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-remove-labels@v1
+        with:
+          labels: ci-ready-to-merge
+
   lint:
     name: Lint code base
     runs-on: ubuntu-latest
@@ -53,6 +62,16 @@ jobs:
     with:
       do-test: true
       ref: "refs/pull/${{ github.event.number }}/merge"
+
+  label-successful-build:
+    needs: build
+    if: success()
+    name: Label succesful build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-ecosystem/action-add-labels@v1
+        with:
+          labels: ci-ready-to-merge
 
   unlabel-pr:
     needs: build

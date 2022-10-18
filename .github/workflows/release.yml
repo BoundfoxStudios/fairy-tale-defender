@@ -26,7 +26,7 @@ jobs:
       do-test: true
       fail-fast: true
       max-parallel: 1
-      ref: ${{ env.GITHUB_REF }}
+      ref: ${{ github.ref }}
   
   notarize:
     needs: build

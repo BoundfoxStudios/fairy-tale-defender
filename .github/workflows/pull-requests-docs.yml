@@ -28,3 +28,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: exit 0
+  
+  label-successful-build: # Just for skipping required status checks
+    name: Label succesful build
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit -
