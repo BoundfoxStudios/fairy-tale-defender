@@ -3,15 +3,19 @@ name: Change Detection
 on:
   workflow_call:
     outputs:
-      changes:
-        description: Recognized changes
-        value: ${{ jobs.change-detection.outputs.changes }}
+      unity:
+        description: True, if the Unity project has changes
+        value: ${{ jobs.change-detection.outputs.unity }}
+      docs:
+        description: True, if documentation has changes
+        value: ${{ jobs.change-detection.outputs.docs }}
 
 jobs:
   change-detection:
     runs-on: ubuntu-latest
     outputs:
-      changes: ${{ steps.changes.outputs }}
+      unity: ${{ steps.changes.outputs.unity }}
+      docs: ${{ steps.changes.outputs.docs }}
     steps:
       - uses: dorny/paths-filter@v2
         id: changes

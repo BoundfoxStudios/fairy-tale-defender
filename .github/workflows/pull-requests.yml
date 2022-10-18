@@ -34,7 +34,7 @@ jobs:
   lint:
     name: Lint code base
     needs: change-detection
-    if: needs.change-detection.outputs.changes.unity == 'true'
+    if: needs.change-detection.outputs.unity == 'true'
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
@@ -48,7 +48,7 @@ jobs:
   build:
     needs: [lint, change-detection]
     if: |
-      needs.change-detection.outputs.changes.unity == 'true'
+      needs.change-detection.outputs.unity == 'true'
       && github.event.action == 'labeled' 
       && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
     name: Development Builds
