@@ -51,6 +51,16 @@ Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/Q
 
 Beachte beim Mitmachen auch unseren [Code of Conduct](CODE_OF_CONDUCT.md), sodass wir hier alle, die mitmachen möchten, respektvoll miteinander umgehen.
 
+### Wer macht bereits mit?
+
+Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
+
+<a href="https://github.com/BoundfoxStudios/community-project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=BoundfoxStudios/community-project" />
+</a>
+
+Made with [contrib.rocks](https://contrib.rocks).
+
 ## Was bedeutet denn ...?
 
 Du wirst im Laufe der Dokumentation sicher über Begrifflichkeiten stolpern, die Du so noch nicht kennst.
