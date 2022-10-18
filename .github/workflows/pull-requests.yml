@@ -11,22 +11,17 @@ on:
       - opened
     branches-ignore:
       - main
-    paths:
-       - 'CommunityProject/Assets/**'
-       - 'CommunityProject/Packages/**'
-       - 'CommunityProject/ProjectSettings/**'  
   
   pull_request_target:
     types:
       - labeled
     branches-ignore:
       - main
-    paths:
-       - 'CommunityProject/Assets/**'
-       - 'CommunityProject/Packages/**'
-       - 'CommunityProject/ProjectSettings/**'
 
 jobs: 
+  change-detection:
+    uses: ./.github/workflows/change-detection.yml
+
   unlabel-ready-to-merge:
     name: Removes "ci-ready-to-merge" label on synchronize
     if: github.event.action == 'synchronize'
@@ -38,6 +33,8 @@ jobs:
 
   lint:
     name: Lint code base
+    needs: change-detection
+    if: needs.change-detection.outputs.changes.unity == 'true'
     runs-on: ubuntu-latest
     steps: 
       - uses: actions/checkout@v3
@@ -49,9 +46,10 @@ jobs:
       - uses: ./.github/actions/linter
 
   build:
-    needs: lint
+    needs: [lint, change-detection]
     if: |
-      github.event.action == 'labeled' 
+      needs.change-detection.outputs.changes.unity == 'true'
+      && github.event.action == 'labeled' 
       && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
     name: Development Builds
     uses: ./.github/workflows/build.yml
@@ -65,14 +63,10 @@ jobs:
 
   label-successful-build:
     needs: build
-    if: always()
+    if: success()
     name: Label succesful build
     runs-on: ubuntu-latest
     steps:
-      - if: needs.build.result != 'success'
-        run: |
-          echo "Requires build"
-          exit 1
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ci-ready-to-merge

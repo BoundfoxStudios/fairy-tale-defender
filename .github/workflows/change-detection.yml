@@ -1,0 +1,27 @@
+name: Change Detection
+
+on:
+  workflow_call:
+    outputs:
+      changes:
+        description: Recognized changes
+        value: ${{ jobs.change-detection.outputs.changes }}
+
+jobs:
+  change-detection:
+    runs-on: ubuntu-latest
+    outputs:
+      changes: ${{ steps.changes.outputs }}
+    steps:
+      - uses: dorny/paths-filter@v2
+        id: changes
+        with:
+          filters: |
+            unity:
+              - 'CommunityProject/Assets/**'
+              - 'CommunityProject/Packages/**'
+              - 'CommunityProject/ProjectSettings/**'
+            docs:
+              - 'docs/**'
+              - '**/*.md'
+              - '.all-contributorsrc'
