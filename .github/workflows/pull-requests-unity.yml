@@ -65,9 +65,14 @@ jobs:
 
   label-successful-build:
     needs: build
+    if: always()
     name: Label succesful build
     runs-on: ubuntu-latest
     steps:
+      - if: needs.build.result != 'success'
+        run: |
+          echo "Requires build"
+          exit 1
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ci-ready-to-merge
