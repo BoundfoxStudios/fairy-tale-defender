@@ -2,6 +2,8 @@
 
 In dieser Dokumentation wirst Du nach und nach alles finden, was zum Community-Projekt gehört.
 
+// ci trigger, yay!
+
 ## Inhaltsverzeichnis
 
 * [Glossar](glossary.md): Begriffdefinitionen
