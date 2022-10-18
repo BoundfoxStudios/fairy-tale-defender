@@ -62,14 +62,12 @@ jobs:
       ref: "refs/pull/${{ github.event.number }}/merge"
 
   label-successful-build:
-    needs: build
-    if: |
-      always()
-      && needs.change-detection.outputs.unity == 'true'
+    needs: [change-detection, build]
+    if: always()
     name: Label succesful build
     runs-on: ubuntu-latest
     steps:
-      - if: needs.build.result != 'success'
+      - if: needs.change-detection.outputs.unity == 'true' && needs.build.result != 'success'
         run: |
           echo "Need successful build"
           exit 1
