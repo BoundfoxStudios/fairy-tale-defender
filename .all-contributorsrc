@@ -17,7 +17,7 @@
         "review"
       ]
     },
-    {
+     {
       "login": "M4lph",
       "name": "M4lph",
       "avatar_url": "https://avatars.githubusercontent.com/u/18291863?v=4",
@@ -25,6 +25,15 @@
       "contributions": [
         "code",
         "doc"
+      ]
+    },
+    {
+      "login": "fastFox2",
+      "name": "fastFox2",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72040701?v=4",
+      "profile": "https://github.com/fastFox2",
+      "contributions": [
+        "code"
       ]
     }
   ],
