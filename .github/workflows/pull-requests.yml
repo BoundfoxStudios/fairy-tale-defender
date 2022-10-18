@@ -73,6 +73,7 @@ jobs:
         run: |
           echo "Need successful build"
           exit 1
+      - uses: actions/checkout@v3
       - uses: actions-ecosystem/action-add-labels@v1
         with:
           labels: ci-ready-to-merge
