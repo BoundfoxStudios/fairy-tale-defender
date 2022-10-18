@@ -63,6 +63,8 @@ jobs:
 
   label-successful-build:
     needs: [change-detection, build]
+    permissions:
+      pull-requests: write
     if: always()
     name: Label succesful build
     runs-on: ubuntu-latest
