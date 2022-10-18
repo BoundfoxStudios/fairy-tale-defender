@@ -63,6 +63,7 @@ Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
     <tr>
       <td align="center"><a href="https://manuel-rauber.com"><img src="https://avatars.githubusercontent.com/u/740791?v=4?s=100" width="100px;" alt="Manuel Rauber"/><br /><sub><b>Manuel Rauber</b></sub></a><br /><a href="#code-ManuelRauber" title="Code">💻</a> <a href="#doc-ManuelRauber" title="Documentation">📖</a> <a href="#ideas-ManuelRauber" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-ManuelRauber" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-ManuelRauber" title="Maintenance">🚧</a> <a href="#projectManagement-ManuelRauber" title="Project Management">📆</a> <a href="#review-ManuelRauber" title="Reviewed Pull Requests">👀</a></td>
       <td align="center"><a href="https://github.com/M4lph"><img src="https://avatars.githubusercontent.com/u/18291863?v=4?s=100" width="100px;" alt="M4lph"/><br /><sub><b>M4lph</b></sub></a><br /><a href="#code-M4lph" title="Code">💻</a> <a href="#doc-M4lph" title="Documentation">📖</a></td>
+      <td align="center"><a href="https://github.com/fastFox2"><img src="https://avatars.githubusercontent.com/u/72040701?v=4?s=100" width="100px;" alt="fastFox2"/><br /><sub><b>fastFox2</b></sub></a><br /><a href="#code-fastFox2" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
