@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: "refs/pull/${{ github.event.number }}/merge"
-      - uses: ./.github/actions/linter@develop
+      - uses: ./.github/actions/linter
 
   build:
     needs: [lint, change-detection]
@@ -44,7 +44,7 @@ jobs:
       && github.event.action == 'labeled' 
       && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
     name: Development Builds
-    uses: ./.github/workflows/build.yml@develop
+    uses: ./.github/workflows/build.yml
     secrets:
       UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
       UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
