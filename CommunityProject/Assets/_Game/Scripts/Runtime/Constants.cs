@@ -1,3 +1,4 @@
+// ci trigger
 namespace BoundfoxStudios.CommunityProject
 {
 	public static class Constants
