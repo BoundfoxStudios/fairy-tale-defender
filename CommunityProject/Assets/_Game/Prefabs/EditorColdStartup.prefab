@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisScene: {fileID: 0}
+  Settings: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac, type: 2}
   PersistentManagersScene: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3,
     type: 2}
   NotifyColdStartupEventChannel: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
