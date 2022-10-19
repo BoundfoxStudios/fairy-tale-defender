@@ -20,6 +20,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[Header("References")]
 		[SerializeField]
 		private SceneSO ThisScene;
+
 		[SerializeField]
 		private SettingsSO Settings;
 
