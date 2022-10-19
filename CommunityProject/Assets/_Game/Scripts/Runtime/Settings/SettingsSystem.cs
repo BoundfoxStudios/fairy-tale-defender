@@ -13,6 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 	{
 		[SerializeField]
 		private SettingsSO Settings;
+
 		[SerializeField]
 		private AudioMixer MainMixer;
 
@@ -61,10 +62,10 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			}
 
 			Screen.SetResolution(
-						Screen.resolutions[resolutionIndex].width,
-						Screen.resolutions[resolutionIndex].height,
-						Settings.Graphic.IsFullscreen
-						);
+				Screen.resolutions[resolutionIndex].width,
+				Screen.resolutions[resolutionIndex].height,
+				Settings.Graphic.IsFullscreen
+			);
 		}
 
 		private void ApplyGraphicSettings()
