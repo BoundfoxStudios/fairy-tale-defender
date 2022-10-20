@@ -119,6 +119,7 @@ jobs:
         id: contributors
         with: 
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          ref: ${{ inputs.ref }}
         
   build:
     name: Build for ${{ matrix.target-platform }}
