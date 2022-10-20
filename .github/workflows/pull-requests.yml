@@ -51,6 +51,7 @@ jobs:
       UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
     with:
       do-test: true
+      fail-fast: true
       ref: "refs/pull/${{ github.event.number }}/merge"
 
   label-successful-build:

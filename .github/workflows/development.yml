@@ -30,6 +30,7 @@ jobs:
       do-test: true
       do-upload-game-binaries: true
       do-upload-debug-symbols: true
+      fail-fast: true
       ref: ${{ github.ref }}
 
   notarize:
