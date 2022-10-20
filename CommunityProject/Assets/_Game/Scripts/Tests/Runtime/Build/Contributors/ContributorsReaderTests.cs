@@ -20,9 +20,12 @@ namespace BoundfoxStudios.CommunityProject.Tests.Build.Contributors
 
 			var contributor = contributors[0];
 
-			contributor.User.Should().Be("ThisIsAUnitTestUserThatWillBeOverwrittenLater");
-			contributor.Url.Should().Be("https://github.com/ThisIsAUnitTestUserThatWillBeOverwrittenLater");
-			contributor.Contributions.Should().Be(99);
+			contributor.User.Should().Be("Unit Test Account");
+			contributor.GitHubAccount.Should().Be("unitTestAccount");
+			contributor.ProfileUrl.Should().Be("https://github.com/unitTestAccount");
+			contributor.Contributions.Should().HaveCount(2);
+			contributor.Contributions[0].Should().Be("doc");
+			contributor.Contributions[1].Should().Be("code");
 		});
 	}
 }

@@ -1,9 +1,12 @@
 {
   "items": [
     {
-      "user": "ThisIsAUnitTestUserThatWillBeOverwrittenLater",
-      "url": "https://github.com/ThisIsAUnitTestUserThatWillBeOverwrittenLater",
-      "contributions": 99
+      "user": "Unit Test Account",
+      "githubAccount": "unitTestAccount",
+      "contributions": [
+        "doc",
+        "code"
+      ]
     }
   ]
 }
