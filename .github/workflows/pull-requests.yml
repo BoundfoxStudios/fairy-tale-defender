@@ -64,6 +64,7 @@ jobs:
           echo "Need successful build"
           exit 1
       - uses: actions-ecosystem/action-add-labels@v1
+        if: needs.build.result == 'success'
         with:
           labels: ci-ready-to-merge
 
