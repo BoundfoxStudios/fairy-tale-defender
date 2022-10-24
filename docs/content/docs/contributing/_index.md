@@ -5,6 +5,7 @@ description: Info, wie man beim Community-Projekt mitwirken kann.
 menu:
   main:
 weight: 100
+icon: fa-solid fa-people-group
 ---
 
 ![Boundfox Studios Community-Projekt](assets/cover.png)
