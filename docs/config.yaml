@@ -21,6 +21,8 @@ params:
   mermaid:
     enable: true
     theme: neutral
+  katex:
+    enable: true
   ui:
     sidebar_menu_compact: true
   project_links:
