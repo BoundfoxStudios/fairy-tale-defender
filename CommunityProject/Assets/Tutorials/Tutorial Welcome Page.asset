@@ -11,7 +11,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0885f594ab85594caa28e1a96cbe0d8, type: 3}
   m_Name: Tutorial Welcome Page
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier:
   Modified:
     m_PersistentCalls:
       m_Calls: []
@@ -23,7 +23,7 @@ MonoBehaviour:
   m_Description:
     m_Untranslated: "Sch\xF6n, dass Du hier bist!\n\nWir haben einige Tutorials vorbereitet,
       dass Du Dich schneller zurecht findest.\nFalls Du das erste Mal das Unity-Projekt
-      \xF6ffnest, dann lese zuerst am Besten einmal auf <a href=\"https://github.com/boundfoxstudios/community-project/tree/develop/docs/contributing/README.md\">GitHub
+      \xF6ffnest, dann lese zuerst am Besten einmal auf <a href=\"https://boundfoxstudios.github.io/community-project/docs/contributing/\">GitHub
       alle Informationen zum Mitmachen</a>, bevor Du hier weiter machst.\nAlle weiteren
       Tutorials findest Du im Men\xFC unter <b>Tutorials -> \"Show Tutorials\"</b>.\n\nViel
       Spa\xDF!"
@@ -31,7 +31,7 @@ MonoBehaviour:
   - Text:
       m_Untranslated: "Schlie\xDFen"
     Tooltip:
-      m_Untranslated: 
+      m_Untranslated:
     OnClick:
       m_PersistentCalls:
         m_Calls:
@@ -42,9 +42,9 @@ MonoBehaviour:
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: 
+            m_ObjectArgumentAssemblyTypeName:
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: 
+            m_StringArgument:
             m_BoolArgument: 0
           m_CallState: 1

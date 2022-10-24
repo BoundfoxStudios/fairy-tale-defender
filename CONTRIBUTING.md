@@ -1,3 +1,3 @@
 # Mitmachen!
 
-Schaue bitte in die [Dokumentation](docs/README.md) beim Thema [Mitmachen](docs/contributing/README.md) für alle Informationen, wie Du Dich beteiligen kannst!
+Schaue bitte in die [Dokumentation](https://boundfoxstudios.github.io/community-project/docs/) beim Thema [Mitmachen](https://boundfoxstudios.github.io/community-project/docs/contributing/) für alle Informationen, wie Du Dich beteiligen kannst!
