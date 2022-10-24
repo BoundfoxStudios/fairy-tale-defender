@@ -18,6 +18,9 @@ params:
   github_subdir: docs
   github_branch: develop
   offlineSearch: true
+  mermaid:
+    enable: true
+    theme: neutral
   ui:
     sidebar_menu_compact: true
   project_links:
