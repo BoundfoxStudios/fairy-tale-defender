@@ -1,0 +1,65 @@
+# More config possibility see here: https://github.com/google/docsy-example/blob/master/config.toml
+
+baseURL: http://example.org/
+languageCode: de-de
+defaultContentLanguage: de
+title: Boundfox Studios Community-Projekt
+
+enableRobotsTXT: true
+enableGitInfo: true
+
+params:
+  pygmentsUseClassic: false
+  pygmentsStyle: vs
+  copyright: Boundfox Studios
+  privacy_policy: https://boundfoxstudios.com/privacy-policy
+  url_latest_version: https://boundfoxstudios.github.io/community-project
+  github_repo: https://github.com/boundfoxstudios/community-project
+  github_subdir: docs
+  github_branch: develop
+  project_links:
+    github: &github
+      url: https://github.com/boundfoxstudios/community-project
+    twitter: &twitter
+      url: https://twitter.com/boundfoxstudios
+    youtube: &youtube
+      url: https://youtube.com/@BoundfoxStudios
+    discord: &discord
+      url: https://discord.gg/tHqNzMT
+  links:
+    user:
+      - <<: *youtube
+        name: YouTube
+        icon: fab fa-youtube
+        desc: Projekt-Update- und Unity-Tutorial-Videos
+      - <<: *twitter
+        name: Twitter
+        icon: fab fa-twitter
+    developer:
+      - <<: *github
+        name: GitHub
+        icon: fab fa-github
+        desc: Hier findet die Spielentwicklung statt
+      - <<: *discord
+        name: Discord
+        icon: fab fa-discord
+        desc: Diskussionen rund um das Projekt und allgemein um Unity
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # allow HTML
+  highlight:
+    style: vs
+
+module:
+  proxy: direct
+  hugoVersion:
+    extended: true
+    min: 0.73.0
+
+  imports:
+    - path: github.com/google/docsy
+      disable: false
+    - path: github.com/google/docsy/dependencies
+      disable: false

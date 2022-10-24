@@ -1,0 +1,19 @@
+{
+  "name": "documentation",
+  "version": "1.0.0",
+  "description": "Dokumentationswebsite powered by Hugo & Docsy",
+  "private": true,
+  "scripts": {
+	  "start": "hugo server --navigateToChanged",
+    "publish": "hugo --minify"
+  },
+  "hugo-bin": {
+    "buildTags": "extended"
+  },
+  "devDependencies": {
+    "autoprefixer": "~10.4.12",
+    "hugo-bin": "0.92.3",
+    "postcss": "~8.4.18",
+    "postcss-cli": "~10.0.0"
+  }
+}
