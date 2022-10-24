@@ -3,6 +3,7 @@ title: Roadmap
 linkTitle: Roadmap
 weight: 1
 description: Beschreibt den groben Ablauf des Projekts.
+icon: fa-solid fa-road
 ---
 
 Die Roadmap beschreibt sehr grob den Ablauf des Projektes und die Punkte, die wir erreichen wollen.

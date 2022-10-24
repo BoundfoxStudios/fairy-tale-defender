@@ -3,6 +3,7 @@ title: Technische Dokumentation
 linkTitle: Technische Dokumentation
 description: Sammelpunkt der technischen Dokumentation.
 weight: 200
+icon: fa-solid fa-code
 ---
 
 Hier findest Du die technische Dokumentation des Community-Projekts.

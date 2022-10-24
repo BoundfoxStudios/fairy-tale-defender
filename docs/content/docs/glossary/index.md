@@ -3,6 +3,7 @@ title: Glossar
 linkTitle: Glossar
 description: Auflistung eventueller unbekannter Wörter.
 weight: 100000
+icon: fa-solid fa-circle-question
 ---
 
 In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.

@@ -17,6 +17,8 @@ params:
   github_repo: https://github.com/boundfoxstudios/community-project
   github_subdir: docs
   github_branch: develop
+  ui:
+    sidebar_menu_compact: true
   project_links:
     github: &github
       url: https://github.com/boundfoxstudios/community-project
