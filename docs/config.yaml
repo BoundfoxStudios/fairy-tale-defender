@@ -1,6 +1,6 @@
 # More config possibility see here: https://github.com/google/docsy-example/blob/master/config.toml
 
-baseURL: http://example.org/
+baseURL: https://boundfoxstudios.github.io/community-project/
 languageCode: de-de
 defaultContentLanguage: de
 title: Boundfox Studios Community-Projekt
