@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Dokumentation</title><link>http://example.org/docs/</link><description>Recent content in Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>http://example.org/docs/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/roadmap/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Dokumentation</title><link>https://boundfoxstudios.github.io/community-project/docs/</link><description>Recent content in Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>https://boundfoxstudios.github.io/community-project/docs/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/roadmap/</guid><description>
 &lt;p>Die Roadmap beschreibt sehr grob den Ablauf des Projektes und die Punkte, die wir erreichen wollen.&lt;/p>
 &lt;p>Oft werden Roadmaps auch mit einem Datum versehen, wann ungefähr was fertig sein soll.
 Auf ein Terminieren verzichten wir hier bewusst, da wir uns die Zeit nehmen, die wir brauchen.&lt;/p>
@@ -57,7 +57,7 @@ Dieser könnte wie folgt aussehen.&lt;/p>
 Das ist zu diesem Zeitpunkt auch noch nicht wichtig und wird nach dem MVP angegangen.
 Natürlich kann, wenn sich genug beteiligen, auch in der MVP-Phase bereits eine Implementierung von Menüs, Optionen etc. geschehen.
 Bei gewissen Implementierungen kommt man sich hier ja auch nicht in die Quere.&lt;/p>
-&lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Docs: Coding Conventions</title><link>http://example.org/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/coding-conventions/</guid><description>
+&lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Docs: Coding Conventions</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</guid><description>
 &lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
 &lt;blockquote>
 &lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
@@ -183,7 +183,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 &lt;li>Instanzen von ScriptableObjects legen wir separat in diesem Ordner ab.&lt;/li>
 &lt;li>In diesem Ordner legen wir alle Skripte ab, gruppiert nach jeweiligem System.&lt;/li>
 &lt;/ol>
-&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>http://example.org/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/ci-cd/</guid><description>
+&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</guid><description>
 &lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
 &lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
 &lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
@@ -209,7 +209,7 @@ Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
 &lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
 &lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
 Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
-&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>http://example.org/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/faq/</guid><description>
+&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
@@ -224,7 +224,7 @@ Die geänderten Dateien (und prüfe bitte, ob es wirklich nur Deine Dateien sind
 &lt;p>Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei &amp;ldquo;Lint code base&amp;rdquo; kein Problem mehr machen.&lt;/p>
 &lt;h2 id="ich-erhalte-einen-fehler-beim-ausführen-von-formatbatformatsh">Ich erhalte einen Fehler beim Ausführen von format.bat/format.sh.&lt;/h2>
 &lt;p>Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit.
-Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item><item><title>Docs: Glossar</title><link>http://example.org/docs/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/glossary/</guid><description>
+Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item><item><title>Docs: Glossar</title><link>https://boundfoxstudios.github.io/community-project/docs/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/glossary/</guid><description>
 &lt;p>In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.
 Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
 Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.&lt;/p>
@@ -262,7 +262,7 @@ Das remote Repo liegt z.B. bei GitHub.
 &lt;dd>Die Benutzeroberfläche einer Anwendung.&lt;/dd>
 &lt;dt>MVP&lt;/dt>
 &lt;dd>Minimal Viable Product, &lt;a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier&lt;/a>&lt;/dd>
-&lt;/dl></description></item><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>http://example.org/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/auditory/</guid><description>
+&lt;/dl></description></item><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</guid><description>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">TODO&lt;/h4>
 Diese Seite ist aktuell noch nicht soweit ausgearbeitet, da es soundtechnisch leider noch nichts zu machen gibt. :)
@@ -294,7 +294,7 @@ Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwa
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
 Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
-&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Event-System</title><link>http://example.org/docs/docs-technical/systems/event-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/event-system/</guid><description>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Event-System</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/event-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/event-system/</guid><description>
 &lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
 &lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
 &lt;h2 id="implementierung">Implementierung&lt;/h2>
@@ -344,7 +344,7 @@ In diesem Moment haben wir alles voneinander entkoppelt.
 Die Spieler-Klasse hat viel weniger Verantwortlichkeiten, auch für den Entwickler ist es jetzt sehr viel einfacher zu verstehen, da statt viele Einzelsysteme nur noch das Event-System angesprochen wird.
 Damit haben wir jetzt eine &lt;em>lose Kopplung&lt;/em> erreicht.&lt;/p>
 &lt;p>Einfach ausgedrückt kann man sich das Event-System als eine Art Walkie-Talkie vorstellen.
-Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Multi Scene Management</title><link>http://example.org/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/multi-scene-management/</guid><description>
+Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Multi Scene Management</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</guid><description>
 &lt;p>Unity ist in der Lage, mehrere Szenen gleichzeitig laufen zu lassen.
 Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder auch welche wieder entladen.
 In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
@@ -400,7 +400,7 @@ Auch hier haben wir bereits ein Board-Mittel von Unity: ScriptableObjects.&lt;/p
 &lt;ul>
 &lt;li>Komplexität: Gerade für Anfänger, die bisher nur mit einer Szene gearbeitet haben, kann Multi Scene Management zu Beginn sehr komplex wirken.&lt;/li>
 &lt;li>Umdenken: Eigentlich was positives, aber anfänglich eher als Nachteil zu sehen: Man muss umdenken, wie der Code strukturiert ist, da man auf gewisse Dinge eben nicht sofort Zugriff hat, sondern eine Indirektion, z.B. über das &lt;a href="../event-system">Event-System&lt;/a> gehen muss.&lt;/li>
-&lt;/ul></description></item><item><title>Docs: Prefabs</title><link>http://example.org/docs/docs-technical/systems/prefabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/prefabs/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Prefabs</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/prefabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/prefabs/</guid><description>
 &lt;h2 id="ui-prefabs">UI Prefabs&lt;/h2>
 &lt;p>Im Community-Projekt nutzen wir ein kleines System, um einfacher Prefabs für das UI finden zu können.
 Generell liegen die Prefabs im Ordner &lt;code>Prefabs/UI&lt;/code>.&lt;/p>
@@ -415,7 +415,7 @@ Du findest die Instanz unter &lt;code>ScriptableObjects/PrefabManager&lt;/code>,
 &lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
 &lt;h3 id="ich-finde-nicht-was-ich-brauche">Ich finde nicht, was ich brauche.&lt;/h3>
 &lt;p>Es kann durchaus sein, dass Du UI umsetzen möchtest, aber es dafür noch keine passenden Prefabs findest.
-Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>http://example.org/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/scene-templates/</guid><description>
+Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</guid><description>
 &lt;p>Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü &lt;code>File&lt;/code> -&amp;gt; &lt;code>New Scene&lt;/code> gehst.
 Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;/p>
 &lt;ul>
@@ -424,7 +424,7 @@ Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;
 &lt;/ul>
 &lt;p>Wähle die &lt;strong>Menu Szene&lt;/strong>, wenn Du ein neues Menü anlegen möchtest.
 Darunter zählen alle FullScreen-Menüs, z.B. MainMenu, Optionen, Credits.&lt;/p>
-&lt;p>Wähle die &lt;strong>Level Szene&lt;/strong>, wenn Du ein neues Leven anlegen möchtest.&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>http://example.org/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/technical/</guid><description>
+&lt;p>Wähle die &lt;strong>Level Szene&lt;/strong>, wenn Du ein neues Leven anlegen möchtest.&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/technical/</guid><description>
 &lt;h2 id="inhaltsverzeichnis">Inhaltsverzeichnis&lt;/h2>
 &lt;p>Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du&lt;/p>
 &lt;ul>
@@ -462,7 +462,7 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
-&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>http://example.org/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/visual/</guid><description>
+&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/visual/</guid><description>
 &lt;p>Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h. Du&lt;/p>
 &lt;ul>
 &lt;li>modellierst 3D-Modelle,&lt;/li>
