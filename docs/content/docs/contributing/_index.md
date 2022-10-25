@@ -16,6 +16,8 @@ Bitte beachte zudem unseren [Code of Conduct][3], sodass wir hier alle miteinand
 
 Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!
 
+{{< contributors >}}
+
 {{% alert title="Wichtig" color="success" %}}
 Kleines Vorwort: Wir stehen noch ganz am Anfang dieses Projektes. Wie es für ein neues Projekt üblich ist, ist der Anfang oft am schwierigsten. Es gibt noch keine Strukturen, keine Dinge, bei denen man sich orientieren kann.
 Wir gehen daher davon aus, dass der Anfang erstmal recht chaotisch ablaufen wird und sich mit der Zeit dann findet.

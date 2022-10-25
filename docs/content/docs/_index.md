@@ -18,3 +18,9 @@ Unten links und rechts findest Du wichtige Links zum Projekt, aber auch hier noc
 * [YouTube]({{< param "project_links.youtube.url" >}})
 * [Twitter]({{< param "project_links.github.url" >}})
 * [Weitere Socials](https://boundfoxstudios.com/socials)
+
+## Wer macht alles mit?
+
+Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!
+
+{{< contributors >}}
