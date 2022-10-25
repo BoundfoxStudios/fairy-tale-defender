@@ -1,0 +1,9 @@
+$custom-breakpoints: (
+  xxxl: 2000px
+);
+
+@include media-breakpoint-up(xxxl, $custom-breakpoints) {
+  .row-cols-xxxl-9 {
+    @include row-cols(9);
+  }
+}

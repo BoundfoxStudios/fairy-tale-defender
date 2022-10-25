@@ -1,0 +1,32 @@
+{{ with getJSON "https://raw.githubusercontent.com/BoundfoxStudios/community-project/develop/.all-contributorsrc" }}
+<div class="container-fluid">
+  <div class="row row-cols-xxxl-9 row-cols-xl-5 row-cols-lg-4 row-cols-sm-3 row-cols-2">
+    {{ range $index, $element := sort .contributors "name" }}
+    <div class="col mb-4 text-center">
+      <div class="card">
+        <div class="card-header text-truncate">
+          <a href="https://github.com/{{ $element.login }}" target="_blank">{{ $element.name }}</a>
+        </div>
+        <img src="{{ $element.avatar_url }}" class="img-fluid" alt="{{ $element.name }}"/>
+        <div class="card-footer text-center">
+          {{ range $element.contributions }}
+          {{ if eq . "code" }}<a
+          href="https://github.com/BoundfoxStudios/community-project/commits?author={{ $element.login }}"
+          target="_blank" title="Code">💻</a>
+          {{ else if eq . "doc" }}<span title="Dokumentation">📖</span>
+          {{ else if eq . "ideas" }}<span title="Ideen">🤔</span>
+          {{ else if eq . "infra" }}<span title="Infrastruktur">🚇</span>
+          {{ else if eq . "maintenance" }}<span title="Maintenance">🚧</span>
+          {{ else if eq . "projectManagement" }}<span title="Projektmanagement">📆</span>
+          {{ else if eq . "review" }}<span title="Reviews">👀</span>
+          {{ else }}
+          {{ . }}
+          {{ end }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

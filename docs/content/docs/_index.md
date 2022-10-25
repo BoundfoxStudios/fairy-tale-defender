@@ -23,4 +23,4 @@ Unten links und rechts findest Du wichtige Links zum Projekt, aber auch hier noc
 
 Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!
 
-{{< contributors >}}
+{{< contributors-image-list >}}
