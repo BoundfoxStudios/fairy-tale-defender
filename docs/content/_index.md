@@ -20,7 +20,9 @@ linkTitle: Home
 
 {{% blocks/feature icon="fab fa-github" title="Mitmachen erwünscht" url="https://github.com/boundfoxstudios/community-project" %}}
 Wir freuen uns über jeden, der sich bei der Spielentwicklung beteiligen möchte.
-Ganz gleich ob Du Entwickler, 3D/2D-Artist, Musik/Effekt-Designer, Ideen-Geber, ..., bist - alle sind herzlich willkommen!
+Ganz gleich ob Du Entwickler, 3D/2D-Artist, Musik/Effekt-Designer, Ideen-Geber, ..., bist - alle sind herzlich willkommen.
+
+Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!
 {{% /blocks/feature %}}
 
 {{% blocks/feature icon="fab fa-discord" title="Discord" url="https://discord.gg/tHqNzMT" %}}

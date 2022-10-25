@@ -1,6 +1,6 @@
 ---
-title: Visuell (3D/2D) mitmachen
-linkTitle: Visuell (3D/2D)
+title: Visuell (3D, 2D) mitmachen
+linkTitle: Visuell (3D, 2D)
 description: Info über das Mitmachen im visuellen Bereich.
 ---
 

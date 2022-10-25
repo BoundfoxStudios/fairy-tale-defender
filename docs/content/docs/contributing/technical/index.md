@@ -1,6 +1,6 @@
 ---
 title: Technisch mitmachen
-linkTitle: Technisch
+linkTitle: Technisch (Code)
 description: Info über das Mitmachen im technichen Bereich.
 ---
 
