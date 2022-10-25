@@ -1,0 +1,136 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Mitmachen</title><link>http://example.org/docs/contributing/</link><description>Recent content in Mitmachen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="http://example.org/docs/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>http://example.org/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/auditory/</guid><description>
+&lt;div class="alert alert-danger" role="alert">
+&lt;h4 class="alert-heading">TODO&lt;/h4>
+Diese Seite ist aktuell noch nicht soweit ausgearbeitet, da es soundtechnisch leider noch nichts zu machen gibt. :)
+&lt;/div>
+&lt;p>Du bist hier richtig, wenn Du Dich auditiv am Projekt beteiligen möchtest, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>möchtest Musik komponieren oder&lt;/li>
+&lt;li>möchtest Sound-Effekte für das Spiel erstellen.&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;ul>
+&lt;li>Stereo-Sound.&lt;/li>
+&lt;li>Exportiere Deine Arbeit als &lt;code>.wav&lt;/code>-Datei.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Du kannst Deine Ergebnisse im Ordner &lt;code>_contributing/auditory&lt;/code> ablegen.
+Hier erstellst Du einen Ordner mit Deinem Benutzernamen und dort drin je nach Bedarf weitere Ordner (falls Du z.B. an mehrere Stücken gearbeitet hast).&lt;/p>
+&lt;p>Wichtig ist, dass Du einmal die Original-Datei hochlädst (sodass jemand anders es weiterbearbeiten kann, falls es nötig ist) und bei Sounds einmal einen Export im &lt;code>.wav&lt;/code>-Format, sodass wir es dann später in Unity nutzen können.
+Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwahrscheinlich ist), dann wäre auch &lt;code>.ogg&lt;/code> oder &lt;code>.mp3&lt;/code> in Ordnung. &lt;code>.wav&lt;/code> wird in jedem Fall allerdings bevorzugt.&lt;/p>
+&lt;p>Falls Du Dir unsicher bist, frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach.&lt;/p>
+&lt;h3 id="beispiel">Beispiel&lt;/h3>
+&lt;p>Wenn Dein Benutzername &lt;code>DerMusterMensch&lt;/code> ist und Du einen Plopp-Effekt erstellt hast, dann würdest Du den Ordner &lt;code>_contributing/auditory/DerMusterMensch/PloppEffect&lt;/code> anlegen und dort zwei Dateien hochladen:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>PloppEffect.original&lt;/code>&lt;/li>
+&lt;li>&lt;code>PloppEffect.wav&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>http://example.org/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/technical/</guid><description>
+&lt;h2 id="inhaltsverzeichnis">Inhaltsverzeichnis&lt;/h2>
+&lt;p>Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>entwickelst Code für das Spiel,&lt;/li>
+&lt;li>entwickelst Erweiterungen für den Unity-Editor,&lt;/li>
+&lt;li>möchtest bestehende Bugs im Spiel beseitigen und/oder&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../visual">hier&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;ul>
+&lt;li>Lies Dir die &lt;a href="../../docs-technical">Technische Dokumentation&lt;/a> durch.&lt;/li>
+&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2021.3.9f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
+&lt;ul>
+&lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2021.3.9f1/ad3870b89536">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
+Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/archive">hier auf der Unity-Seite&lt;/a> nach der Version.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Unity tendiert gerne dazu, dass es Dinge mitändert, die man nicht oder vermeintlich nicht angefasst hat.
+Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du auch nur die Sachen committest, die Du auch wirklich geändert hast.&lt;/li>
+&lt;/ul>
+&lt;h2 id="was-soll-ich-nicht-tun">Was soll ich nicht tun?&lt;/h2>
+&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>Aktualisierung der Unity-Version.&lt;/li>
+&lt;li>Neues Package dem Projekt hinzufügen.&lt;/li>
+&lt;li>Bestehendes Package aktualisieren.&lt;/li>
+&lt;li>Lösche keine Assets oder Szenen, die nicht unmittelbar mit Deiner Aufgabe zu tun haben. Refactoring, Rename &lt;em>kann&lt;/em> in Ordnung sein.&lt;/li>
+&lt;li>Füge keine Test-Szenen oder Test-Scripte hinzu. Du kannst diese gerne für Dich erstellen, aber committe und pushe sie nicht.&lt;/li>
+&lt;li>Nutze nicht den alten Unity-Text. Wir setzten ausschließlich auf TextMeshPro.&lt;/li>
+&lt;li>Nutze nicht das alte Unity Input. Wir nutzen ausschließlich das neue Unity &lt;a href="https://www.youtube.com/playlist?list=PLxVAs8AY4TgdZTkklVi739QeL-YTYU8in">Input System&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Im Gegensatz zur kreativen Mitarbeit, arbeitest Du als als Techniker direkt am Unity-Projekt und machst dort Deine Änderungen.&lt;/p>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
+&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>http://example.org/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/visual/</guid><description>
+&lt;p>Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>modellierst 3D-Modelle,&lt;/li>
+&lt;li>erstellst 2D-Grafiken, -Icons,&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../technical">hier&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;h3 id="3d">3D&lt;/h3>
+&lt;ul>
+&lt;li>Quasi Low Poly: Wir machen im Projekt nicht super harte Low Poly Umsetzung, aber eben auch kein High Poly.
+Versuche Polys zu vermeiden, wo Du keine benötigst und nutze gerne dort ein paar mehr, wo es benötigt wird.&lt;/li>
+&lt;li>Bitte achte darauf, dass alle Pivots korrekt gesetzt sind, gerade bei Dingen, die animiert werden sollen oder von Dir animiert wurden.
+Das Pivot vom Gesamtmodell soll unten in der Mitte des Modells sein.&lt;/li>
+&lt;li>Orientierung an den Unity-Achsen:
+&lt;ul>
+&lt;li>
+&lt;p>X-Achse: nach rechts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Y-Achse: nach oben&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Z-Achse: nach vorne&lt;/p>
+&lt;p>Wenn Du die Achsenorientierung prüfen möchtest, geht das leider nur mit Unity. Hierzu kannst Du Dir irgendeine Unity-Version installieren, ein neues leeres Projekt erstellen, Deine &lt;code>.fbx&lt;/code> Datei ins Projekt ziehen und dann in der Scene ablegen.&lt;/p>
+&lt;p>&lt;img src="assets/achsenorientierung-by-unity.png" alt="Achsenorientierung">&lt;/p>
+&lt;p>(Originalbild vom Unity Open Game &amp;ldquo;Chop Chop&amp;rdquo;)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Skalierung: 1 Blender Unit = 1 Meter = 1 Unity Unit.
+Wenn wir Dein Modell in Unity importieren, muss es mit einem 1/1/1 Scaling bereits die korrekte Größe haben.&lt;/li>
+&lt;li>Farben bzw. Farb-Palette muss sich im Laufe des Projektes noch finden.&lt;/li>
+&lt;li>Benutze bitte keinerlei Texturen.&lt;/li>
+&lt;li>Bitte beachte, dass die Shader Deiner Modellierungssoftware nicht mit Unity kompatibel sind. D.h. im Idealfall benötigt Dein Modell keinen eigenen Shader. Falls Du allerdings, Ausnahmen bestätigen die Regel, ein Modell/Aufgabe hast, die einen eigenen Shader benötigt, muss dieser Shader in Unity entwickelt werden. Du kannst ihn zwar in Deiner Modellierungssoftware auch erstellen, er dient dann allerdings nur als Referenz für die Unity-Shader-Entwicklung.&lt;/li>
+&lt;li>Benenne Deine Meshes, Animationen etc. korrekt (und auf Englisch, dict.cc hilft beim Übersetzen), denn niemand weiß, was &lt;code>Cube 1&lt;/code> und &lt;code>Animation 3&lt;/code> nachher wirklich ist.&lt;/li>
+&lt;li>Einfache Modelle sollten aus nur einem Mesh bestehen.&lt;/li>
+&lt;li>Exportiere Deine Modelle als &lt;code>.fbx&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="2d">2D&lt;/h3>
+&lt;ul>
+&lt;li>Dein Bild sollte so klein wie möglich und so groß wie nötig sein.&lt;/li>
+&lt;li>Farben bzw. Farb-Palette muss sich im Laufe des Projektes noch finden.&lt;/li>
+&lt;li>Wenn Du Bilder für die Benutzeroberfläche erstellst, sollte dieses in der Regel ein sogenanntes &amp;ldquo;9-slicing Sprite&amp;rdquo; sein, siehe hierzu die &lt;a href="https://docs.unity3d.com/Manual/9SliceSprites.html">Dokumentation bei Unity&lt;/a>. Es handelt sich hier um eine Standard-Technik, daher findest Du mit diesem Begriff einiges mehr über die Suchmaschine Deiner Wahl.&lt;/li>
+&lt;li>Exportiere Deine Arbeit als &lt;code>.png&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Du kannst Deine Ergebnisse im Ordner &lt;code>_contributing/visual&lt;/code> ablegen.
+Hier erstellst Du einen Ordner mit Deinem Benutzernamen und dort drin je nach Bedarf weitere Ordner (falls Du z.B. an mehrere Modellen gearbeitet hast).&lt;/p>
+&lt;p>Wichtig ist, dass Du einmal die Original-Datei hochlädst (sodass jemand anders es weiterbearbeiten kann, falls es nötig ist) und Dein 3D-Modell als &lt;code>.fbx&lt;/code> oder Deine 2D-Arbeit als &lt;code>.png&lt;/code>.&lt;/p>
+&lt;p>Bitte achte auch darauf, dass Deine Dateien bereits optimiert sind, unnötige Sachen entfernt sind, etc.
+Original-Dateien tendieren oft dazu, recht schnell groß zu werden.
+Git und große Dateien sind nicht unbedingt Freunde, je mehr Du daher optimierst, umso besser.&lt;/p>
+&lt;p>Falls Du Dir unsicher bist, frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach.&lt;/p>
+&lt;h3 id="beispiel">Beispiel&lt;/h3>
+&lt;p>Wenn Dein Benutzername &lt;code>DerMusterMensch&lt;/code> ist und Du ein Baum-Modell erstellt hast, dann würdest Du den Ordner &lt;code>_contributing/visual/DerMusterMensch/Baum&lt;/code> anlegen und dort zwei Dateien hochladen:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Baum.blendfile&lt;/code>&lt;/li>
+&lt;li>&lt;code>Baum.fbx&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item></channel></rss>

@@ -1,0 +1,530 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Dokumentation</title><link>http://example.org/docs/</link><description>Recent content in Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="http://example.org/docs/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Roadmap</title><link>http://example.org/docs/roadmap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/roadmap/</guid><description>
+&lt;p>Die Roadmap beschreibt sehr grob den Ablauf des Projektes und die Punkte, die wir erreichen wollen.&lt;/p>
+&lt;p>Oft werden Roadmaps auch mit einem Datum versehen, wann ungefähr was fertig sein soll.
+Auf ein Terminieren verzichten wir hier bewusst, da wir uns die Zeit nehmen, die wir brauchen.&lt;/p>
+&lt;h2 id="phasen">Phasen&lt;/h2>
+&lt;p>In diesem Abschnitt folgt eine sehr grobe Definition, welche Phasen durchlaufen werden.
+Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Findung des Genres: Entscheidung der Community: &lt;strong>Tower Defense&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Findung des Themas: Entscheidung der Community: &lt;strong>Mittelalter&lt;/strong>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Findung des Stils &lt;code>&amp;lt;-&lt;/code>&lt;/p>
+&lt;p>Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Erstellung des Game Design Documents.&lt;/p>
+&lt;p>Hier halten wir grob fest, was genau wir eigentlich für ein Spiel entwickeln wollen.
+Hier drin werden wir auch den MVP (siehe weiter unten) definieren.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Implementierung der Basis-Infrastruktur.&lt;/p>
+&lt;p>Das hier wird bereits parallel zum aktuellen &amp;ldquo;Pfeil&amp;rdquo; mitlaufen, da diese Basis unabhängig vom Spieltyp ist und bereits implementiert werden kann.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Umsetzung des MVPs.&lt;/p>
+&lt;p>Das bedeutet natürlich, dass hier modelliert, designt, entwickelt, getestet, etc. wird.&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Jeden einzelnen Punkt werden wir im Laufe der Zeit weiter und genauer ausarbeiten, sobald wir die jeweilige Phase erreichen.&lt;/p>
+&lt;p>Nach &lt;strong>Punkt 3&lt;/strong> können wir uns auch an eine Namensfindung machen.&lt;/p>
+&lt;p>Ab &lt;strong>Punkt 6&lt;/strong>, also wenn&amp;rsquo;s vom Spiel quasi was zu sehen gibt, können wir bereits das Spiel in einen Beta-Branch auf Steam deployen, sodass jeder, der dann einen Steam Key hat (wie hier die Verteilung aussieht, müssen wir noch schauen), den aktuellen Stand laden und testen kann.&lt;/p>
+&lt;h2 id="mvp">MVP&lt;/h2>
+&lt;p>Mit einem MVP, kurz für Minimal Viable Product, wird versucht herauszufinden, ob es für ein gewisses Spiel einen Markt bzw. Zielgruppe gibt.
+Das ist natürlich dann interessant, wenn man mit einem Spiel einen finanziellen Erfolg erreichen möchte.
+Merkt man durch den MVP, dass sich niemand für das Spiel interessiert, kann es sein, dass die Idee nicht gut ist und man über das Spiel nochmal nachdenken muss.&lt;/p>
+&lt;p>In unserem Fall ist das ein bisschen anders, da wir das Spiel kostenfrei zur Verfügung stellen werden und es vor allem auch um den Lernfaktor geht für jeden, der mitmachen möchte.
+Daher müssen wir keine &amp;ldquo;Forschung&amp;rdquo; betreiben, ob unser Spiel auf einen Markt trifft und einen finanziellen Erfolg bedeuten könnte.&lt;/p>
+&lt;p>Nichtsdestotrotz beschreibt ein MVP eben die kleinste Umsetzung der Kernidee.&lt;/p>
+&lt;h3 id="mvp-tower-defense">MVP Tower Defense&lt;/h3>
+&lt;p>Ziel des MVPs für ein Tower Defense ist es, einen ersten Game Loop zu erreichen.
+Dieser könnte wie folgt aussehen.&lt;/p>
+&lt;ul>
+&lt;li>Spiel starten (Spieler landet direkt auf einer Map)&lt;/li>
+&lt;li>Spieler sieht einen Weg, links ein Portal, rechts unsere Basis.&lt;/li>
+&lt;li>Gegner spawnen im Interval und laufen den Weg entlang.&lt;/li>
+&lt;li>Spieler kann 1-2 verschiedene Türme bauen.&lt;/li>
+&lt;li>Türme schießen auf den Gegner.&lt;/li>
+&lt;li>Werden alle Gegner besiegt -&amp;gt; Gewonnen&lt;/li>
+&lt;li>Erreichen die Gegner unsere Basis -&amp;gt; Verloren&lt;/li>
+&lt;/ul>
+&lt;p>Wenn wir diesen MVP erreicht haben, haben wir bereits einiges umgesetzt.&lt;/p>
+&lt;p>Natürlich gibt&amp;rsquo;s hier viele Dinge noch nicht, Menüs, Optionen, Map-Auswahl, und und und.
+Das ist zu diesem Zeitpunkt auch noch nicht wichtig und wird nach dem MVP angegangen.
+Natürlich kann, wenn sich genug beteiligen, auch in der MVP-Phase bereits eine Implementierung von Menüs, Optionen etc. geschehen.
+Bei gewissen Implementierungen kommt man sich hier ja auch nicht in die Quere.&lt;/p>
+&lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Docs: Coding Conventions</title><link>http://example.org/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/coding-conventions/</guid><description>
+&lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
+&lt;blockquote>
+&lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;h3 id="bezeichner">Bezeichner&lt;/h3>
+&lt;ul>
+&lt;li>Beschreibbare und präzise Namen, auch wenn diese länger werden. Lesbarkeit ist wichtiger als kurze Bezeichner.&lt;/li>
+&lt;li>Verwende &lt;em>keine&lt;/em> Abkürzungen.&lt;/li>
+&lt;li>Verwende anerkannte Akryonme, z.B. UI oder IO.&lt;/li>
+&lt;li>Präfixe boolsche Variablen mit &amp;ldquo;Is&amp;rdquo;, &amp;ldquo;Has&amp;rdquo;, &amp;ldquo;Can&amp;rdquo;, etc. z.B. &lt;code>CanJump&lt;/code>, &lt;code>IsActive&lt;/code>.&lt;/li>
+&lt;li>Vermeide das Nummerieren von Namen, z.B. &lt;code>Animator1&lt;/code>, &lt;code>Animator2&lt;/code>, etc. Verwende sinnvolle Bezeichner, um den Unterschied erkenntlich zu machen, z.B. &lt;code>PlayerAnimator&lt;/code>, &lt;code>EnemyAnimator&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="groß-kleinschreibung">Groß-/Kleinschreibung&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>camelCase&lt;/strong>: Erster Buchstabe ist kleingeschrieben, der jeweils erste Buchstabe der Folgewörter ist großgeschrieben.&lt;/p>
+&lt;p>&lt;strong>PascalCase&lt;/strong>: Der erste Buchstabe eines jeden Wortes ist großgeschrieben.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Klassen, Methoden, Enums, Namespaces, öffentliche Felder und Eigenschaften: PascalCase.&lt;/li>
+&lt;li>Lokale Variablen, Methodenparameter: camelCase.&lt;/li>
+&lt;li>Private Felder: camelCase und Unterstrich-Präfix, z.B. &lt;code>_gameControls&lt;/code>.
+&lt;ul>
+&lt;li>Bei privaten Feldern, die serialisiert werden, also ein &lt;code>[SerializeField]&lt;/code> haben: PascalCase.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="programmierung">Programmierung&lt;/h3>
+&lt;ul>
+&lt;li>Halte den Code in englischer Sprache (dict.cc hilft beim Übersetzen), Ausnahme &lt;a href="#kommentare">siehe Kommentare&lt;/a>&lt;/li>
+&lt;li>Felder und Methoden bleiben private, außer man benötigt öffentlichen Zugriff.&lt;/li>
+&lt;li>Wenn Du Felder im Inspektor sehen willst, aber den öffentlichen Zugriff nicht benötigt, dann verwende &lt;code>[SerializeField]&lt;/code> zusammen mit &lt;code>private&lt;/code>.
+Falls Du dann die Warnung erhälst &lt;em>&amp;ldquo;Field is never assigned to, will always have its default value&amp;rdquo;&lt;/em>, dann mache eine &lt;code>= default&lt;/code> Zuweisung&lt;/li>
+&lt;li>Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject (&lt;a href="https://www.youtube.com/watch?v=TjTL-MXPnbo">1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU">2&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=QkVpYHc1s60">3&lt;/a>) implementierst.&lt;/li>
+&lt;li>Vermeide statische Variablen.&lt;/li>
+&lt;li>Vermeide Magic Numbers (&amp;ldquo;magische Nummer&amp;rdquo;), z.B. &lt;code>value * 0.08&lt;/code>, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.&lt;/li>
+&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.CommunityProject&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h4 id="asynchrone-entwicklung--coroutines">Asynchrone Entwicklung / Coroutines&lt;/h4>
+&lt;p>Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# &lt;code>async/await&lt;/code> nutzen können: &lt;a href="https://github.com/Cysharp/UniTask">UniTask&lt;/a>.
+Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).&lt;/p>
+&lt;p>Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via &lt;code>async/await&lt;/code> implementierbar ist.&lt;/p>
+&lt;blockquote>
+&lt;p>Kleine Info am Rande: Bevor es das &lt;code>async/await&lt;/code>-Feature in .NET gab, nutzte Unity die Coroutines, um asynchrone Operationen zu ermöglichen.
+In der Zukunft will Unity selbst mehr und mehr in Richtung &lt;code>async/await&lt;/code> gehen und steht dazu auch mit UniTask im Kontakt.
+Mehr Info siehe ein &lt;a href="https://blog.unity.com/technology/unity-and-net-whats-next">Blog-Post von Unity selbst&lt;/a> -&amp;gt; &amp;ldquo;Modernizing the .NET Runtime&amp;rdquo;.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="unit-tests">Unit-Tests&lt;/h4>
+&lt;p>Zum Unit-Testen nutzen wir zusätzlich das &lt;a href="https://fluentassertions.com">FluentAssertions-Framework&lt;/a>, was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte &lt;code>Assert&lt;/code>.
+Damit es in Unity genutzt werden kann, nutzen wir den &lt;a href="https://github.com/BoundfoxStudios/fluentassertions-unity">Unity-Adapter&lt;/a>.&lt;/p>
+&lt;h3 id="formatierung">Formatierung&lt;/h3>
+&lt;ul>
+&lt;li>Verwende &lt;strong>1 Tab&lt;/strong> pro Spalte, keine Leerzeichen.
+Das gibt einfach jedem die Möglichkeit, den Code visuell so darzustellen, wie man sich wohlfühlt.&lt;/li>
+&lt;/ul>
+&lt;h3 id="kommentare">Kommentare&lt;/h3>
+&lt;ul>
+&lt;li>Auch wenn der Code in Englisch gehalten wird, schreibe Deine Kommentare auf Deutsch.&lt;/li>
+&lt;li>Versuche Kommentare zu vermeiden, der Code sollte für sich sprechen.&lt;/li>
+&lt;li>Füge Kommentare dort hinzu, wo es wirklich sinnvoll ist, bspw. wenn eine gewisse Ablaufreihenfolge besteht, die eingehalten werden muss.&lt;/li>
+&lt;li>Nutze VSDoc für Beschreibungen von Klassen, Methoden, etc.&lt;/li>
+&lt;li>Beschreibe jede öffentliche Klasse, Methode und Eigenschaft welchen Zweck sie erfüllt, z.B.
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// &amp;lt;summary&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// Diese Klasse kümmert sich um das Abspielen von Kamerafahrten.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// &amp;lt;/summary&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Verwende keine &lt;code>#region&lt;/code>-Direktiven oder Kommentare, die eine visuelle Trennung erzeugen, wie z.B. &lt;code>//-------&lt;/code>.
+Falls Du sowas brauchst, ist das oft ein Hinweis, dass die Klasse zu viele Zuständigkeiten hat.&lt;/li>
+&lt;/ul>
+&lt;h2 id="scene--hierarchy">Scene &amp;amp; Hierarchy&lt;/h2>
+&lt;h3 id="organisation">Organisation&lt;/h3>
+&lt;ul>
+&lt;li>Nutze leere GameObjects auf der obersten Ebene, um die Hierarchy visuell in logische Bereiche zu trennen, z.B. &lt;code>----Environment----&lt;/code>, &lt;code>----Managers----&lt;/code>.
+Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity beim Bauen des Projekts diese GameObjects entfernt.&lt;/li>
+&lt;li>Nutze leere GameObjects als Container, sobald Du mehr als 2 zusammenpassende Kind-Objekte hast.&lt;/li>
+&lt;/ul>
+&lt;h3 id="benamung">Benamung&lt;/h3>
+&lt;ul>
+&lt;li>Nutze keine Leerzeichen innerhalb von GameObject-Namen.&lt;/li>
+&lt;li>Nutze &lt;strong>PascalCase&lt;/strong>, z.B. &lt;code>MainDoor&lt;/code>, &lt;code>LeverTrigger&lt;/code>.&lt;/li>
+&lt;li>Benenne auch Prefab-Instanzen passend in der Hierarchy um.&lt;/li>
+&lt;/ul>
+&lt;h2 id="projektdateien">Projektdateien&lt;/h2>
+&lt;h3 id="benamung-1">Benamung&lt;/h3>
+&lt;ul>
+&lt;li>Gleiche Regeln wie bei &lt;a href="#scene--hierarchy">Scene &amp;amp; Hierachy&lt;/a>&lt;/li>
+&lt;li>Benenne Deine Objekte so, dass sie auf natürliche Art und Weise gruppiert werden, wenn sie im gleichen Ordner sind.
+&lt;ul>
+&lt;li>Start beim Namen mit dem &amp;ldquo;Ding&amp;rdquo; zu dem es gehört, z.B. &lt;code>PlayerAnimationController&lt;/code>, &lt;code>PlayerIdle&lt;/code>, &lt;code>PlayerRun&lt;/code>, &amp;hellip;&lt;/li>
+&lt;li>Wenn es sinnvoll ist, können Objekte so benannt werden, dass ähnliche Objekte zusammenbleiben oder durch ein Adjektiv anders gruppiert werden würden. Beispiel: In einem Ordner mit Requisiten würde man Tische nach dem Schema &lt;code>TableRound&lt;/code> und &lt;code>TableRectanngular&lt;/code> benennen statt &lt;code>RectangularTable&lt;/code> und &lt;code>RoundTable&lt;/code>, sodass alle Tische logisch gruppiert werden.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Vermeide Dateitypen in Namen, z.B. nutze &lt;code>ShinyMetal&lt;/code> statt &lt;code>ShinyMetalMaterial&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="ordnerstruktur">Ordnerstruktur&lt;/h3>
+&lt;p>Beispielstruktur:&lt;/p>
+&lt;pre tabindex="0">&lt;code>- Assets
+|- _Game [1]
+|- Art
+|- Buildings
+|- LightningTower
+|- Materials
+|- Prefabs
+|- Environment
+|- Nature
+|- Materials
+|- Prefabs
+|- Scenes [2]
+|- Examples [3]
+|- Menus
+|- Levels
+|- ScriptableObjects (Instanzen) [4]
+|- Scripts [5]
+|- Events
+|- ScriptableObjects (Definition)
+|- UI
+|- Materials
+|- ... (eventuelle Drittanbieterintegrationen)
+&lt;/code>&lt;/pre>&lt;ol>
+&lt;li>&lt;code>_Game&lt;/code>-Ordner, das ist unser Root-Ordner für das Spiel. Wir platzieren keinerlei Assets direkt im &lt;code>Assets&lt;/code>-Ordner von Unity. Diesen halten wir frei für Drittanbieterintegrationen, z.B. Steam.&lt;/li>
+&lt;li>Im Ordner &lt;code>Scenes&lt;/code> legen wir alle Scenen des Spiels ab, logisch gruppiert in weiteren Unterordnern.&lt;/li>
+&lt;li>Im Ordner &lt;code>Examples&lt;/code> kannst Du, wenn Du neue Systeme für das Spiel implementierst, eine Beispielszene ablegen, um anderen zu zeigen, wie es funktioniert.&lt;/li>
+&lt;li>Instanzen von ScriptableObjects legen wir separat in diesem Ordner ab.&lt;/li>
+&lt;li>In diesem Ordner legen wir alle Skripte ab, gruppiert nach jeweiligem System.&lt;/li>
+&lt;/ol>
+&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>http://example.org/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/ci-cd/</guid><description>
+&lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
+&lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
+&lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
+Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/.github/workflows">.github/workflows&lt;/a>.
+Wir setzen hier stark auf &lt;a href="https://game.ci">Game CI&lt;/a>, die eine Build-Umgebung für Unity bereitstellen.&lt;/p>
+&lt;p>In unserem Fall gibt es mehrere Prüfungen, die loslaufen, sobald ein Push auf &lt;code>develop&lt;/code> erfolgt oder ein PR gestellt wird.&lt;/p>
+&lt;ol>
+&lt;li>Code Linting: Prüfung, ob Code-Formatierung eingehalten wird.&lt;/li>
+&lt;li>Unit Tests: Starten der Unity Edit- &amp;amp; Play-Mode-Tests.&lt;/li>
+&lt;li>Export des Players: Es wird versucht, sowohl für Windows, Linux als auch für macOS das Spiel zu exportieren.&lt;/li>
+&lt;/ol>
+&lt;p>Sobald alle drei Prüfungen abgeschlossen sind, kann ein PR übernommen werden.
+Schlägt auch nur eine der Prüfungen fehl, muss der Ersteller des PRs schauen, woran es liegt und diese Fehler beheben.&lt;/p>
+&lt;h3 id="unity-lizenzierung">Unity Lizenzierung&lt;/h3>
+&lt;p>Ein &lt;em>nerviges&lt;/em> Problem bei lizenzierter Software ist oft das Aufsetzen von solchen automatischen Systemen, da diese in der Regel eine eigene Lizenz benötigen.
+Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
+&lt;ol>
+&lt;li>PRs und Änderungen an &lt;code>develop&lt;/code> werden mit einer Unity Personal License gebaut.&lt;/li>
+&lt;li>Änderungen an &lt;code>main&lt;/code> werden mit einer Unity Professional License gebaut (sodass der typische &amp;ldquo;Made by Unity&amp;rdquo;-Splashscreen nicht auftaucht).&lt;/li>
+&lt;/ol>
+&lt;h2 id="continuous-delivery">Continuous Delivery&lt;/h2>
+&lt;p>Vereinfacht beschreibt Continuous Delivery aus ständige Ausliefern von Änderungen an die Nutzer der Anwendung.&lt;/p>
+&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
+&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
+Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
+&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>http://example.org/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/faq/</guid><description>
+&lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
+&lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
+Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
+&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>CommunityProject&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Windows:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>format.bat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Linux/mac:S&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./format.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wenn der Befehl fertig ist, prüfst Du in GitHub Desktop, ob es geändert Dateien gibt, das sollte jetzt auch der Fall sein.
+Die geänderten Dateien (und prüfe bitte, ob es wirklich nur Deine Dateien sind) kannst Du nun committen und pushen.&lt;/p>
+&lt;p>Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei &amp;ldquo;Lint code base&amp;rdquo; kein Problem mehr machen.&lt;/p>
+&lt;h2 id="ich-erhalte-einen-fehler-beim-ausführen-von-formatbatformatsh">Ich erhalte einen Fehler beim Ausführen von format.bat/format.sh.&lt;/h2>
+&lt;p>Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit.
+Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item><item><title>Docs: Glossar</title><link>http://example.org/docs/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/glossary/</guid><description>
+&lt;p>In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.
+Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
+Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.&lt;/p>
+&lt;p>Sollte Dir hier ein Begriff fehlen, eröffne gerne ein &lt;a href="https://github.com/BoundfoxStudios/community-project/issues/new/choose">Issue&lt;/a> (&amp;ldquo;Sonstiges&amp;rdquo;).&lt;/p>
+&lt;h2 id="git--co">Git &amp;amp; Co.&lt;/h2>
+&lt;dl>
+&lt;dt>&lt;a href="https://git-scm.com" target="_blank">Git&lt;/a>&lt;/dt>
+&lt;dd>Allgmeine Versionskontrolle für Softwareentwicklung.&lt;/dd>
+&lt;dt>&lt;a href="https://github.com" target="_blank">GitHub&lt;/a>&lt;/dt>
+&lt;dd>Öffentliches Hosting eines Repositories.&lt;/dd>
+&lt;dt>&lt;a href="https://desktop.github.com" target="_blank">GitHub Desktop&lt;/a>&lt;/dt>
+&lt;dd>Software von GitHub zur vereinfachten Nutzung von Git und GitHub.&lt;/dd>
+&lt;dt>Branch&lt;/dt>
+&lt;dd>Beschreibt eine Abzweigung innerhalb des Repositories, um verschiedene Entwicklungsstände zu erzeugen.&lt;/dd>
+&lt;dt>Commit&lt;/dt>
+&lt;dd>Festsetzen von Änderungen in Git. Kann benannt werden, sodass man nachvollziehen kann, wann welche Änderungen gemacht wurden.&lt;/dd>
+&lt;dt>Fork&lt;/dt>
+&lt;dd>"Verknüpfte" Kopie eines Repositories. Wird z.B. genutzt um Features, Bugs, etc. zu entwickeln/fixen und dann via Pull Request an das Original-Repository zu übertragen.&lt;/dd>
+&lt;dt>Repository, Repo&lt;/dt>
+&lt;dd>Ein unter Versionskontrolle stehender Ordner, in dem Änderungen nachvollzogen werden können. Oder salopp: Ein Git(Hub)-Projekt.&lt;br>&lt;br>
+Hier unterscheidet man zwischen einem lokalen Repo und einem remote Repo.
+Das lokale Repo liegt auf der Festplatte.
+Das remote Repo liegt z.B. bei GitHub.
+Über die Git-Kommandos Push und Pull kann das lokale Repo mit dem remote Repo kommunizieren.&lt;/dd>
+&lt;dt>Pull&lt;/dt>
+&lt;dd>Das Runterladen von Commits von einem remote Repo in das lokale Repo.&lt;/dd>
+&lt;dt>Push&lt;/dt>
+&lt;dd>Das Hochladen von Commits von einem lokalen Repo in ein remote Repo.&lt;/dd>
+&lt;dt>Pull Request, PR&lt;/dt>
+&lt;dd>Das Bereitstellen von Änderungen, die in einem Fork gemacht wurden, in das Original-Repo.&lt;/dd>
+&lt;/dl>
+&lt;h2 id="game-dev">Game Dev&lt;/h2>
+&lt;dl>
+&lt;dt>User Interface, UI&lt;/dt>
+&lt;dd>Die Benutzeroberfläche einer Anwendung.&lt;/dd>
+&lt;dt>MVP&lt;/dt>
+&lt;dd>Minimal Viable Product, &lt;a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier&lt;/a>&lt;/dd>
+&lt;/dl></description></item><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>http://example.org/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/auditory/</guid><description>
+&lt;div class="alert alert-danger" role="alert">
+&lt;h4 class="alert-heading">TODO&lt;/h4>
+Diese Seite ist aktuell noch nicht soweit ausgearbeitet, da es soundtechnisch leider noch nichts zu machen gibt. :)
+&lt;/div>
+&lt;p>Du bist hier richtig, wenn Du Dich auditiv am Projekt beteiligen möchtest, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>möchtest Musik komponieren oder&lt;/li>
+&lt;li>möchtest Sound-Effekte für das Spiel erstellen.&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;ul>
+&lt;li>Stereo-Sound.&lt;/li>
+&lt;li>Exportiere Deine Arbeit als &lt;code>.wav&lt;/code>-Datei.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Du kannst Deine Ergebnisse im Ordner &lt;code>_contributing/auditory&lt;/code> ablegen.
+Hier erstellst Du einen Ordner mit Deinem Benutzernamen und dort drin je nach Bedarf weitere Ordner (falls Du z.B. an mehrere Stücken gearbeitet hast).&lt;/p>
+&lt;p>Wichtig ist, dass Du einmal die Original-Datei hochlädst (sodass jemand anders es weiterbearbeiten kann, falls es nötig ist) und bei Sounds einmal einen Export im &lt;code>.wav&lt;/code>-Format, sodass wir es dann später in Unity nutzen können.
+Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwahrscheinlich ist), dann wäre auch &lt;code>.ogg&lt;/code> oder &lt;code>.mp3&lt;/code> in Ordnung. &lt;code>.wav&lt;/code> wird in jedem Fall allerdings bevorzugt.&lt;/p>
+&lt;p>Falls Du Dir unsicher bist, frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach.&lt;/p>
+&lt;h3 id="beispiel">Beispiel&lt;/h3>
+&lt;p>Wenn Dein Benutzername &lt;code>DerMusterMensch&lt;/code> ist und Du einen Plopp-Effekt erstellt hast, dann würdest Du den Ordner &lt;code>_contributing/auditory/DerMusterMensch/PloppEffect&lt;/code> anlegen und dort zwei Dateien hochladen:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>PloppEffect.original&lt;/code>&lt;/li>
+&lt;li>&lt;code>PloppEffect.wav&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Event-System</title><link>http://example.org/docs/docs-technical/systems/event-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/event-system/</guid><description>
+&lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
+&lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
+&lt;h2 id="implementierung">Implementierung&lt;/h2>
+&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Events/ScriptableObjects">hier&lt;/a>.
+Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
+Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
+&lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
+Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="multi-scene-management.md">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Action[&amp;#34;Aktion/Trigger (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Raise()&amp;#34;| Event[&amp;#34;Event (ScriptableObject)&amp;#34;]
+EventListener[&amp;#34;Event Listener (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Horcht auf&amp;#34;| Event
+EventListener --&amp;gt; Response[&amp;#34;Antwort auf Event&amp;#34;]
+&lt;/code>&lt;/pre>&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
+&lt;p>Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.&lt;/p>
+&lt;p>Nehmen wir als Beispiel mal das Leben des Spielers.
+Wenn der Spieler Leben verliert oder bekommt, möchte man das in der Regel im UI anzeigen.
+Jetzt könnte der Spieler eine Referenz auf das UI haben (oder auch umgekehrt) und sobald der Spieler Leben verliert oder gewinnt, diese Änderung direkt an das UI übertragen.
+Weiter möchten wir, dass die Gegner sich anders verhalten, je nach dem, wie viel Leben der Spieler hat.
+Auch hier könnte jetzt der Spieler alle Gegner kennen und ihnen mitteilen, wenn sich das Leben verändert.
+Weiter geht&amp;rsquo;s mit anderen Systemen: Post Processing zum Effekte je nach Leben anzeigen, Audio System, dass entsprechend den Sound ändert etc.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Spieler --&amp;gt; UI
+Spieler --&amp;gt; Gegner1
+Spieler --&amp;gt; ...
+Spieler --&amp;gt; GegnerX
+Spieler --&amp;gt; PostProcessing
+Spieler --&amp;gt; AudioSystem
+&lt;/code>&lt;/pre>&lt;p>Wenn der Spieler all diese Systeme direkt kennen würde, nennt man dies auch eine hohe Kopplung.
+In der Softwareentwicklung versucht man, genau diese hohe Kopplung zu vermeiden.
+Auch wenn dieses Beispiel hier sehr einfach gehalten ist, führt diese Kopplung langsam aber sicher zu schlecht wartbarem Code.
+Denn, wann immer man sich die Spieler-Klasse ansieht, sehen wir viele Abhängigkeiten im Code.
+Jetzt muss jeder Entwickler schauen, was genau diese Abhängigkeiten machen, um zu verstehen, wie die Spieler-Klasse funktioniert.
+Außerdem hat die Spieler-Klasse viel mehr Verantwortung, als sie eigentlich haben müsste, da sie viele Bereiche der Gesamtanwendung kennt und bearbeitet.&lt;/p>
+&lt;p>Das ist in der Softwareentwicklung &lt;em>kein&lt;/em> erstrebenswerter Zustand.&lt;/p>
+&lt;p>Viel mehr wollen wir eine Entkopplung erreichen und hier tritt unser Event-System ein:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Spieler --&amp;gt;|Leben: 50| EventSystem
+EventSystem --&amp;gt;|Leben: 50| UI
+EventSystem --&amp;gt;|Leben: 50| GegnerX
+EventSystem --&amp;gt;|Leben: 50| PostProcessing
+EventSystem --&amp;gt;|Leben: 50| AudioSystem
+&lt;/code>&lt;/pre>&lt;p>Leider sieht es jetzt durch die Grafik so aus, als hätten wir das Problem zum Event-System verschoben, dass jetzt alle anderen kennt.
+Dem ist aber nicht so.
+Anstelle dass der Spieler jedes Einzelsystem bearbeitet, nutzt es einfach nur das Event-System und teilt sein aktuelles Leben mit.
+Was jetzt damit passiert, &lt;em>das ist dem Spieler vollkommen egal&lt;/em>.
+In diesem Moment haben wir alles voneinander entkoppelt.
+Die Spieler-Klasse hat viel weniger Verantwortlichkeiten, auch für den Entwickler ist es jetzt sehr viel einfacher zu verstehen, da statt viele Einzelsysteme nur noch das Event-System angesprochen wird.
+Damit haben wir jetzt eine &lt;em>lose Kopplung&lt;/em> erreicht.&lt;/p>
+&lt;p>Einfach ausgedrückt kann man sich das Event-System als eine Art Walkie-Talkie vorstellen.
+Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Multi Scene Management</title><link>http://example.org/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/multi-scene-management/</guid><description>
+&lt;p>Unity ist in der Lage, mehrere Szenen gleichzeitig laufen zu lassen.
+Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder auch welche wieder entladen.
+In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
+&lt;p>Der Ablauf ist aktuell wie folgt:&lt;/p>
+&lt;ul>
+&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
+&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="../../../../CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="event-system.md">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich im Community-Projekt &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
+&lt;/ul>
+&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+autonumber
+Spielstart -&amp;gt;&amp;gt; Initialization: Lädt
+activate Spielstart
+activate Initialization
+Initialization -&amp;gt;&amp;gt; PersistentManagers: Lädt
+activate PersistentManagers
+Initialization -&amp;gt;&amp;gt; PersistentManagers: Event: LoadScene &amp;#34;MainMenu&amp;#34;
+PersistentManagers -&amp;gt;&amp;gt; MainMenu: Lädt
+Initialization -&amp;gt;&amp;gt; Initialization: Entlädt sich selbst
+deactivate Initialization
+Note over PersistentManagers, MainMenu: Typischer Spielablauf...&amp;lt;br&amp;gt;Spiel wird gespielt...
+PersistentManagers -&amp;gt;&amp;gt; Spielstart: Spiel beenden
+deactivate PersistentManagers
+deactivate Spielstart
+&lt;/code>&lt;/pre>&lt;h2 id="vorteile">Vorteile&lt;/h2>
+&lt;h3 id="kein-dontdestroyonload-notwendig">Kein &lt;code>DontDestroyOnLoad&lt;/code> notwendig&lt;/h3>
+&lt;p>&lt;code>DontDestroyOnLoad&lt;/code> (DDOL) bringt einige Nachteile mitsich:&lt;/p>
+&lt;ul>
+&lt;li>Es wird oft in Zusammenhang mit dem Singleton-Pattern implementiert. Das bedeutet, dass Unity das Objekt erstellt, das Skript dann prüft, ob es bereits existiert und falls ja, sich automatisch wieder zerstört. Das sind unnötig verbratene Ressourcen.&lt;/li>
+&lt;li>Oft kann DDOL mit einem ScriptableObject ersetzt werden, da DDOL gerne für das Speichern von Laufzeitdaten verwendet wird, die man überall benötigt.&lt;/li>
+&lt;li>Diesen Mechanismus kann man durch Multi Scene Management sehr einfach mit den PersistentManagers erreichen, da diese im Spiel immer zur Verfügung stehen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="kein-code-typisches-singleton-pattern-notwendig">Kein code-typisches Singleton-Pattern notwendig&lt;/h3>
+&lt;p>Oft wird zusammen mit DDOL auch im Code ein Singleton-Pattern implementiert.
+Das bedeutet, dass das Objekt selbst entscheidet, ob es ein Singleton ist oder nicht.
+Das führt dann in der Regel dazu, dass man durch seine gesamte Codebase hinweg von überall den Zugriff auf irgendwelche Singletons sieht, was wiederum zu einer hohen Kopplung führt.
+Warum das schlecht ist, wird im &lt;a href="../event-system">Event-System&lt;/a> erklärt.&lt;/p>
+&lt;p>Dennoch gibt es Anwendungsfälle, bei denen Singletons praktisch sind.
+Denn das Pattern als solches ist per-se erstmal nicht schlecht, sondern oft dessen Anwendung ist das, was es schlecht macht.
+Bei Multi Scene Management können wir ein Singleton ganz einfach erreichen, in dem wir ein GameObject in der &lt;code>PersistentManagers&lt;/code>-Szene ablegen.
+Dadurch, dass diese einmalig geladen wird und das gesamte Spiel lebt, haben wir jetzt eine Instanz von einem Objekt, dass wir verwenden können, ergo ein Singleton.&lt;/p>
+&lt;p>Zudem kommt, dass Singeltons auch oft als Datencontainer, ähnlich wie bei DDOL, genutzt werden.
+Auch hier haben wir bereits ein Board-Mittel von Unity: ScriptableObjects.&lt;/p>
+&lt;p>Typische Anwendungsfälle sind hier z.B. Dinge wie:&lt;/p>
+&lt;ul>
+&lt;li>Scene Management&lt;/li>
+&lt;li>Hintergrundmusik&lt;/li>
+&lt;li>Analytics&lt;/li>
+&lt;li>Ladebildschirm&lt;/li>
+&lt;/ul>
+&lt;h2 id="nachteile">Nachteile&lt;/h2>
+&lt;p>Natürlich bringt das Multi Scene Management auch Nachteile mit sich.&lt;/p>
+&lt;ul>
+&lt;li>Komplexität: Gerade für Anfänger, die bisher nur mit einer Szene gearbeitet haben, kann Multi Scene Management zu Beginn sehr komplex wirken.&lt;/li>
+&lt;li>Umdenken: Eigentlich was positives, aber anfänglich eher als Nachteil zu sehen: Man muss umdenken, wie der Code strukturiert ist, da man auf gewisse Dinge eben nicht sofort Zugriff hat, sondern eine Indirektion, z.B. über das &lt;a href="../event-system">Event-System&lt;/a> gehen muss.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Prefabs</title><link>http://example.org/docs/docs-technical/systems/prefabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/prefabs/</guid><description>
+&lt;h2 id="ui-prefabs">UI Prefabs&lt;/h2>
+&lt;p>Im Community-Projekt nutzen wir ein kleines System, um einfacher Prefabs für das UI finden zu können.
+Generell liegen die Prefabs im Ordner &lt;code>Prefabs/UI&lt;/code>.&lt;/p>
+&lt;p>Um komfortabel ein UI zusammenbauen zu können, integrieren wir unsere eigenen Prefabs auch in das Menü von Unity (Rechtsklick in der Hierarchy).
+Auf diese Art funktioniert das Zusammenstecken von UI-Elementen ähnlich wie bei den Standard-Unity-Elementen.&lt;/p>
+&lt;p>&lt;img src="assets/hierarchy-menu.png" alt="Hierarchy Menü">&lt;/p>
+&lt;p>Damit das ganze funktioniert, nutzen wir eine Instanz von &lt;code>PrefabManagerSO&lt;/code>, dass alle Prefabs sammelt, die in diesem Menü angezeigt werden.
+Du findest die Instanz unter &lt;code>ScriptableObjects/PrefabManager&lt;/code>, oder einfach im Menü auf &lt;code>Community Project&lt;/code> -&amp;gt; &lt;code>Select PrefabManager&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="assets/select-prefab-manager.png" alt="Select Prefab Manager">&lt;/p>
+&lt;p>Im Inspektor siehst Du, welche Prefabs verknüpft sind und genutzt werden können.&lt;/p>
+&lt;p>&lt;img src="assets/prefab-manager.png" alt="Prefab Manager">&lt;/p>
+&lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
+&lt;h3 id="ich-finde-nicht-was-ich-brauche">Ich finde nicht, was ich brauche.&lt;/h3>
+&lt;p>Es kann durchaus sein, dass Du UI umsetzen möchtest, aber es dafür noch keine passenden Prefabs findest.
+Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>http://example.org/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/scene-templates/</guid><description>
+&lt;p>Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü &lt;code>File&lt;/code> -&amp;gt; &lt;code>New Scene&lt;/code> gehst.
+Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;/p>
+&lt;ul>
+&lt;li>Menu Szene&lt;/li>
+&lt;li>Level Szene&lt;/li>
+&lt;/ul>
+&lt;p>Wähle die &lt;strong>Menu Szene&lt;/strong>, wenn Du ein neues Menü anlegen möchtest.
+Darunter zählen alle FullScreen-Menüs, z.B. MainMenu, Optionen, Credits.&lt;/p>
+&lt;p>Wähle die &lt;strong>Level Szene&lt;/strong>, wenn Du ein neues Leven anlegen möchtest.&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>http://example.org/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/technical/</guid><description>
+&lt;h2 id="inhaltsverzeichnis">Inhaltsverzeichnis&lt;/h2>
+&lt;p>Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>entwickelst Code für das Spiel,&lt;/li>
+&lt;li>entwickelst Erweiterungen für den Unity-Editor,&lt;/li>
+&lt;li>möchtest bestehende Bugs im Spiel beseitigen und/oder&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../visual">hier&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;ul>
+&lt;li>Lies Dir die &lt;a href="../../docs-technical">Technische Dokumentation&lt;/a> durch.&lt;/li>
+&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2021.3.9f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
+&lt;ul>
+&lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2021.3.9f1/ad3870b89536">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
+Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/archive">hier auf der Unity-Seite&lt;/a> nach der Version.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Unity tendiert gerne dazu, dass es Dinge mitändert, die man nicht oder vermeintlich nicht angefasst hat.
+Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du auch nur die Sachen committest, die Du auch wirklich geändert hast.&lt;/li>
+&lt;/ul>
+&lt;h2 id="was-soll-ich-nicht-tun">Was soll ich nicht tun?&lt;/h2>
+&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
+&lt;ul>
+&lt;li>Aktualisierung der Unity-Version.&lt;/li>
+&lt;li>Neues Package dem Projekt hinzufügen.&lt;/li>
+&lt;li>Bestehendes Package aktualisieren.&lt;/li>
+&lt;li>Lösche keine Assets oder Szenen, die nicht unmittelbar mit Deiner Aufgabe zu tun haben. Refactoring, Rename &lt;em>kann&lt;/em> in Ordnung sein.&lt;/li>
+&lt;li>Füge keine Test-Szenen oder Test-Scripte hinzu. Du kannst diese gerne für Dich erstellen, aber committe und pushe sie nicht.&lt;/li>
+&lt;li>Nutze nicht den alten Unity-Text. Wir setzten ausschließlich auf TextMeshPro.&lt;/li>
+&lt;li>Nutze nicht das alte Unity Input. Wir nutzen ausschließlich das neue Unity &lt;a href="https://www.youtube.com/playlist?list=PLxVAs8AY4TgdZTkklVi739QeL-YTYU8in">Input System&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Im Gegensatz zur kreativen Mitarbeit, arbeitest Du als als Techniker direkt am Unity-Projekt und machst dort Deine Änderungen.&lt;/p>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
+&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>http://example.org/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/contributing/visual/</guid><description>
+&lt;p>Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h. Du&lt;/p>
+&lt;ul>
+&lt;li>modellierst 3D-Modelle,&lt;/li>
+&lt;li>erstellst 2D-Grafiken, -Icons,&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../technical">hier&lt;/a>)&lt;/li>
+&lt;/ul>
+&lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
+&lt;h3 id="3d">3D&lt;/h3>
+&lt;ul>
+&lt;li>Quasi Low Poly: Wir machen im Projekt nicht super harte Low Poly Umsetzung, aber eben auch kein High Poly.
+Versuche Polys zu vermeiden, wo Du keine benötigst und nutze gerne dort ein paar mehr, wo es benötigt wird.&lt;/li>
+&lt;li>Bitte achte darauf, dass alle Pivots korrekt gesetzt sind, gerade bei Dingen, die animiert werden sollen oder von Dir animiert wurden.
+Das Pivot vom Gesamtmodell soll unten in der Mitte des Modells sein.&lt;/li>
+&lt;li>Orientierung an den Unity-Achsen:
+&lt;ul>
+&lt;li>
+&lt;p>X-Achse: nach rechts&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Y-Achse: nach oben&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Z-Achse: nach vorne&lt;/p>
+&lt;p>Wenn Du die Achsenorientierung prüfen möchtest, geht das leider nur mit Unity. Hierzu kannst Du Dir irgendeine Unity-Version installieren, ein neues leeres Projekt erstellen, Deine &lt;code>.fbx&lt;/code> Datei ins Projekt ziehen und dann in der Scene ablegen.&lt;/p>
+&lt;p>&lt;img src="assets/achsenorientierung-by-unity.png" alt="Achsenorientierung">&lt;/p>
+&lt;p>(Originalbild vom Unity Open Game &amp;ldquo;Chop Chop&amp;rdquo;)&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Skalierung: 1 Blender Unit = 1 Meter = 1 Unity Unit.
+Wenn wir Dein Modell in Unity importieren, muss es mit einem 1/1/1 Scaling bereits die korrekte Größe haben.&lt;/li>
+&lt;li>Farben bzw. Farb-Palette muss sich im Laufe des Projektes noch finden.&lt;/li>
+&lt;li>Benutze bitte keinerlei Texturen.&lt;/li>
+&lt;li>Bitte beachte, dass die Shader Deiner Modellierungssoftware nicht mit Unity kompatibel sind. D.h. im Idealfall benötigt Dein Modell keinen eigenen Shader. Falls Du allerdings, Ausnahmen bestätigen die Regel, ein Modell/Aufgabe hast, die einen eigenen Shader benötigt, muss dieser Shader in Unity entwickelt werden. Du kannst ihn zwar in Deiner Modellierungssoftware auch erstellen, er dient dann allerdings nur als Referenz für die Unity-Shader-Entwicklung.&lt;/li>
+&lt;li>Benenne Deine Meshes, Animationen etc. korrekt (und auf Englisch, dict.cc hilft beim Übersetzen), denn niemand weiß, was &lt;code>Cube 1&lt;/code> und &lt;code>Animation 3&lt;/code> nachher wirklich ist.&lt;/li>
+&lt;li>Einfache Modelle sollten aus nur einem Mesh bestehen.&lt;/li>
+&lt;li>Exportiere Deine Modelle als &lt;code>.fbx&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="2d">2D&lt;/h3>
+&lt;ul>
+&lt;li>Dein Bild sollte so klein wie möglich und so groß wie nötig sein.&lt;/li>
+&lt;li>Farben bzw. Farb-Palette muss sich im Laufe des Projektes noch finden.&lt;/li>
+&lt;li>Wenn Du Bilder für die Benutzeroberfläche erstellst, sollte dieses in der Regel ein sogenanntes &amp;ldquo;9-slicing Sprite&amp;rdquo; sein, siehe hierzu die &lt;a href="https://docs.unity3d.com/Manual/9SliceSprites.html">Dokumentation bei Unity&lt;/a>. Es handelt sich hier um eine Standard-Technik, daher findest Du mit diesem Begriff einiges mehr über die Suchmaschine Deiner Wahl.&lt;/li>
+&lt;li>Exportiere Deine Arbeit als &lt;code>.png&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h2 id="wo-lade-ich-meine-ergebnisse-hin">Wo lade ich meine Ergebnisse hin?&lt;/h2>
+&lt;p>Du kannst Deine Ergebnisse im Ordner &lt;code>_contributing/visual&lt;/code> ablegen.
+Hier erstellst Du einen Ordner mit Deinem Benutzernamen und dort drin je nach Bedarf weitere Ordner (falls Du z.B. an mehrere Modellen gearbeitet hast).&lt;/p>
+&lt;p>Wichtig ist, dass Du einmal die Original-Datei hochlädst (sodass jemand anders es weiterbearbeiten kann, falls es nötig ist) und Dein 3D-Modell als &lt;code>.fbx&lt;/code> oder Deine 2D-Arbeit als &lt;code>.png&lt;/code>.&lt;/p>
+&lt;p>Bitte achte auch darauf, dass Deine Dateien bereits optimiert sind, unnötige Sachen entfernt sind, etc.
+Original-Dateien tendieren oft dazu, recht schnell groß zu werden.
+Git und große Dateien sind nicht unbedingt Freunde, je mehr Du daher optimierst, umso besser.&lt;/p>
+&lt;p>Falls Du Dir unsicher bist, frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach.&lt;/p>
+&lt;h3 id="beispiel">Beispiel&lt;/h3>
+&lt;p>Wenn Dein Benutzername &lt;code>DerMusterMensch&lt;/code> ist und Du ein Baum-Modell erstellt hast, dann würdest Du den Ordner &lt;code>_contributing/visual/DerMusterMensch/Baum&lt;/code> anlegen und dort zwei Dateien hochladen:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Baum.blendfile&lt;/code>&lt;/li>
+&lt;li>&lt;code>Baum.fbx&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h3 id="was-passiert-dann">Was passiert dann?&lt;/h3>
+&lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
+&lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
+&lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item></channel></rss>

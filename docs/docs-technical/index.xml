@@ -1,0 +1,170 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Technische Dokumentation</title><link>http://example.org/docs/docs-technical/</link><description>Recent content in Technische Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="http://example.org/docs/docs-technical/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Coding Conventions</title><link>http://example.org/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/coding-conventions/</guid><description>
+&lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
+&lt;blockquote>
+&lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="code">Code&lt;/h2>
+&lt;h3 id="bezeichner">Bezeichner&lt;/h3>
+&lt;ul>
+&lt;li>Beschreibbare und präzise Namen, auch wenn diese länger werden. Lesbarkeit ist wichtiger als kurze Bezeichner.&lt;/li>
+&lt;li>Verwende &lt;em>keine&lt;/em> Abkürzungen.&lt;/li>
+&lt;li>Verwende anerkannte Akryonme, z.B. UI oder IO.&lt;/li>
+&lt;li>Präfixe boolsche Variablen mit &amp;ldquo;Is&amp;rdquo;, &amp;ldquo;Has&amp;rdquo;, &amp;ldquo;Can&amp;rdquo;, etc. z.B. &lt;code>CanJump&lt;/code>, &lt;code>IsActive&lt;/code>.&lt;/li>
+&lt;li>Vermeide das Nummerieren von Namen, z.B. &lt;code>Animator1&lt;/code>, &lt;code>Animator2&lt;/code>, etc. Verwende sinnvolle Bezeichner, um den Unterschied erkenntlich zu machen, z.B. &lt;code>PlayerAnimator&lt;/code>, &lt;code>EnemyAnimator&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="groß-kleinschreibung">Groß-/Kleinschreibung&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;strong>camelCase&lt;/strong>: Erster Buchstabe ist kleingeschrieben, der jeweils erste Buchstabe der Folgewörter ist großgeschrieben.&lt;/p>
+&lt;p>&lt;strong>PascalCase&lt;/strong>: Der erste Buchstabe eines jeden Wortes ist großgeschrieben.&lt;/p>
+&lt;/blockquote>
+&lt;ul>
+&lt;li>Klassen, Methoden, Enums, Namespaces, öffentliche Felder und Eigenschaften: PascalCase.&lt;/li>
+&lt;li>Lokale Variablen, Methodenparameter: camelCase.&lt;/li>
+&lt;li>Private Felder: camelCase und Unterstrich-Präfix, z.B. &lt;code>_gameControls&lt;/code>.
+&lt;ul>
+&lt;li>Bei privaten Feldern, die serialisiert werden, also ein &lt;code>[SerializeField]&lt;/code> haben: PascalCase.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h3 id="programmierung">Programmierung&lt;/h3>
+&lt;ul>
+&lt;li>Halte den Code in englischer Sprache (dict.cc hilft beim Übersetzen), Ausnahme &lt;a href="#kommentare">siehe Kommentare&lt;/a>&lt;/li>
+&lt;li>Felder und Methoden bleiben private, außer man benötigt öffentlichen Zugriff.&lt;/li>
+&lt;li>Wenn Du Felder im Inspektor sehen willst, aber den öffentlichen Zugriff nicht benötigt, dann verwende &lt;code>[SerializeField]&lt;/code> zusammen mit &lt;code>private&lt;/code>.
+Falls Du dann die Warnung erhälst &lt;em>&amp;ldquo;Field is never assigned to, will always have its default value&amp;rdquo;&lt;/em>, dann mache eine &lt;code>= default&lt;/code> Zuweisung&lt;/li>
+&lt;li>Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject (&lt;a href="https://www.youtube.com/watch?v=TjTL-MXPnbo">1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU">2&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=QkVpYHc1s60">3&lt;/a>) implementierst.&lt;/li>
+&lt;li>Vermeide statische Variablen.&lt;/li>
+&lt;li>Vermeide Magic Numbers (&amp;ldquo;magische Nummer&amp;rdquo;), z.B. &lt;code>value * 0.08&lt;/code>, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.&lt;/li>
+&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.CommunityProject&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h4 id="asynchrone-entwicklung--coroutines">Asynchrone Entwicklung / Coroutines&lt;/h4>
+&lt;p>Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# &lt;code>async/await&lt;/code> nutzen können: &lt;a href="https://github.com/Cysharp/UniTask">UniTask&lt;/a>.
+Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).&lt;/p>
+&lt;p>Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via &lt;code>async/await&lt;/code> implementierbar ist.&lt;/p>
+&lt;blockquote>
+&lt;p>Kleine Info am Rande: Bevor es das &lt;code>async/await&lt;/code>-Feature in .NET gab, nutzte Unity die Coroutines, um asynchrone Operationen zu ermöglichen.
+In der Zukunft will Unity selbst mehr und mehr in Richtung &lt;code>async/await&lt;/code> gehen und steht dazu auch mit UniTask im Kontakt.
+Mehr Info siehe ein &lt;a href="https://blog.unity.com/technology/unity-and-net-whats-next">Blog-Post von Unity selbst&lt;/a> -&amp;gt; &amp;ldquo;Modernizing the .NET Runtime&amp;rdquo;.&lt;/p>
+&lt;/blockquote>
+&lt;h4 id="unit-tests">Unit-Tests&lt;/h4>
+&lt;p>Zum Unit-Testen nutzen wir zusätzlich das &lt;a href="https://fluentassertions.com">FluentAssertions-Framework&lt;/a>, was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte &lt;code>Assert&lt;/code>.
+Damit es in Unity genutzt werden kann, nutzen wir den &lt;a href="https://github.com/BoundfoxStudios/fluentassertions-unity">Unity-Adapter&lt;/a>.&lt;/p>
+&lt;h3 id="formatierung">Formatierung&lt;/h3>
+&lt;ul>
+&lt;li>Verwende &lt;strong>1 Tab&lt;/strong> pro Spalte, keine Leerzeichen.
+Das gibt einfach jedem die Möglichkeit, den Code visuell so darzustellen, wie man sich wohlfühlt.&lt;/li>
+&lt;/ul>
+&lt;h3 id="kommentare">Kommentare&lt;/h3>
+&lt;ul>
+&lt;li>Auch wenn der Code in Englisch gehalten wird, schreibe Deine Kommentare auf Deutsch.&lt;/li>
+&lt;li>Versuche Kommentare zu vermeiden, der Code sollte für sich sprechen.&lt;/li>
+&lt;li>Füge Kommentare dort hinzu, wo es wirklich sinnvoll ist, bspw. wenn eine gewisse Ablaufreihenfolge besteht, die eingehalten werden muss.&lt;/li>
+&lt;li>Nutze VSDoc für Beschreibungen von Klassen, Methoden, etc.&lt;/li>
+&lt;li>Beschreibe jede öffentliche Klasse, Methode und Eigenschaft welchen Zweck sie erfüllt, z.B.
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-csharp" data-lang="csharp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// &amp;lt;summary&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// Diese Klasse kümmert sich um das Abspielen von Kamerafahrten.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">/// &amp;lt;/summary&amp;gt;&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/li>
+&lt;li>Verwende keine &lt;code>#region&lt;/code>-Direktiven oder Kommentare, die eine visuelle Trennung erzeugen, wie z.B. &lt;code>//-------&lt;/code>.
+Falls Du sowas brauchst, ist das oft ein Hinweis, dass die Klasse zu viele Zuständigkeiten hat.&lt;/li>
+&lt;/ul>
+&lt;h2 id="scene--hierarchy">Scene &amp;amp; Hierarchy&lt;/h2>
+&lt;h3 id="organisation">Organisation&lt;/h3>
+&lt;ul>
+&lt;li>Nutze leere GameObjects auf der obersten Ebene, um die Hierarchy visuell in logische Bereiche zu trennen, z.B. &lt;code>----Environment----&lt;/code>, &lt;code>----Managers----&lt;/code>.
+Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity beim Bauen des Projekts diese GameObjects entfernt.&lt;/li>
+&lt;li>Nutze leere GameObjects als Container, sobald Du mehr als 2 zusammenpassende Kind-Objekte hast.&lt;/li>
+&lt;/ul>
+&lt;h3 id="benamung">Benamung&lt;/h3>
+&lt;ul>
+&lt;li>Nutze keine Leerzeichen innerhalb von GameObject-Namen.&lt;/li>
+&lt;li>Nutze &lt;strong>PascalCase&lt;/strong>, z.B. &lt;code>MainDoor&lt;/code>, &lt;code>LeverTrigger&lt;/code>.&lt;/li>
+&lt;li>Benenne auch Prefab-Instanzen passend in der Hierarchy um.&lt;/li>
+&lt;/ul>
+&lt;h2 id="projektdateien">Projektdateien&lt;/h2>
+&lt;h3 id="benamung-1">Benamung&lt;/h3>
+&lt;ul>
+&lt;li>Gleiche Regeln wie bei &lt;a href="#scene--hierarchy">Scene &amp;amp; Hierachy&lt;/a>&lt;/li>
+&lt;li>Benenne Deine Objekte so, dass sie auf natürliche Art und Weise gruppiert werden, wenn sie im gleichen Ordner sind.
+&lt;ul>
+&lt;li>Start beim Namen mit dem &amp;ldquo;Ding&amp;rdquo; zu dem es gehört, z.B. &lt;code>PlayerAnimationController&lt;/code>, &lt;code>PlayerIdle&lt;/code>, &lt;code>PlayerRun&lt;/code>, &amp;hellip;&lt;/li>
+&lt;li>Wenn es sinnvoll ist, können Objekte so benannt werden, dass ähnliche Objekte zusammenbleiben oder durch ein Adjektiv anders gruppiert werden würden. Beispiel: In einem Ordner mit Requisiten würde man Tische nach dem Schema &lt;code>TableRound&lt;/code> und &lt;code>TableRectanngular&lt;/code> benennen statt &lt;code>RectangularTable&lt;/code> und &lt;code>RoundTable&lt;/code>, sodass alle Tische logisch gruppiert werden.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Vermeide Dateitypen in Namen, z.B. nutze &lt;code>ShinyMetal&lt;/code> statt &lt;code>ShinyMetalMaterial&lt;/code>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="ordnerstruktur">Ordnerstruktur&lt;/h3>
+&lt;p>Beispielstruktur:&lt;/p>
+&lt;pre tabindex="0">&lt;code>- Assets
+|- _Game [1]
+|- Art
+|- Buildings
+|- LightningTower
+|- Materials
+|- Prefabs
+|- Environment
+|- Nature
+|- Materials
+|- Prefabs
+|- Scenes [2]
+|- Examples [3]
+|- Menus
+|- Levels
+|- ScriptableObjects (Instanzen) [4]
+|- Scripts [5]
+|- Events
+|- ScriptableObjects (Definition)
+|- UI
+|- Materials
+|- ... (eventuelle Drittanbieterintegrationen)
+&lt;/code>&lt;/pre>&lt;ol>
+&lt;li>&lt;code>_Game&lt;/code>-Ordner, das ist unser Root-Ordner für das Spiel. Wir platzieren keinerlei Assets direkt im &lt;code>Assets&lt;/code>-Ordner von Unity. Diesen halten wir frei für Drittanbieterintegrationen, z.B. Steam.&lt;/li>
+&lt;li>Im Ordner &lt;code>Scenes&lt;/code> legen wir alle Scenen des Spiels ab, logisch gruppiert in weiteren Unterordnern.&lt;/li>
+&lt;li>Im Ordner &lt;code>Examples&lt;/code> kannst Du, wenn Du neue Systeme für das Spiel implementierst, eine Beispielszene ablegen, um anderen zu zeigen, wie es funktioniert.&lt;/li>
+&lt;li>Instanzen von ScriptableObjects legen wir separat in diesem Ordner ab.&lt;/li>
+&lt;li>In diesem Ordner legen wir alle Skripte ab, gruppiert nach jeweiligem System.&lt;/li>
+&lt;/ol>
+&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>http://example.org/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/ci-cd/</guid><description>
+&lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
+&lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
+&lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
+Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/.github/workflows">.github/workflows&lt;/a>.
+Wir setzen hier stark auf &lt;a href="https://game.ci">Game CI&lt;/a>, die eine Build-Umgebung für Unity bereitstellen.&lt;/p>
+&lt;p>In unserem Fall gibt es mehrere Prüfungen, die loslaufen, sobald ein Push auf &lt;code>develop&lt;/code> erfolgt oder ein PR gestellt wird.&lt;/p>
+&lt;ol>
+&lt;li>Code Linting: Prüfung, ob Code-Formatierung eingehalten wird.&lt;/li>
+&lt;li>Unit Tests: Starten der Unity Edit- &amp;amp; Play-Mode-Tests.&lt;/li>
+&lt;li>Export des Players: Es wird versucht, sowohl für Windows, Linux als auch für macOS das Spiel zu exportieren.&lt;/li>
+&lt;/ol>
+&lt;p>Sobald alle drei Prüfungen abgeschlossen sind, kann ein PR übernommen werden.
+Schlägt auch nur eine der Prüfungen fehl, muss der Ersteller des PRs schauen, woran es liegt und diese Fehler beheben.&lt;/p>
+&lt;h3 id="unity-lizenzierung">Unity Lizenzierung&lt;/h3>
+&lt;p>Ein &lt;em>nerviges&lt;/em> Problem bei lizenzierter Software ist oft das Aufsetzen von solchen automatischen Systemen, da diese in der Regel eine eigene Lizenz benötigen.
+Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
+&lt;ol>
+&lt;li>PRs und Änderungen an &lt;code>develop&lt;/code> werden mit einer Unity Personal License gebaut.&lt;/li>
+&lt;li>Änderungen an &lt;code>main&lt;/code> werden mit einer Unity Professional License gebaut (sodass der typische &amp;ldquo;Made by Unity&amp;rdquo;-Splashscreen nicht auftaucht).&lt;/li>
+&lt;/ol>
+&lt;h2 id="continuous-delivery">Continuous Delivery&lt;/h2>
+&lt;p>Vereinfacht beschreibt Continuous Delivery aus ständige Ausliefern von Änderungen an die Nutzer der Anwendung.&lt;/p>
+&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
+&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
+Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
+&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Systeme</title><link>http://example.org/docs/docs-technical/systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/</guid><description>
+&lt;p>In dieser Sektion findest Du Dokumentation über bestehende Systeme, die bereits implementiert wurden.&lt;/p>
+&lt;p>Bitte nutze die Navigation links, um die System-Dokumentationen zu finden.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>http://example.org/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/faq/</guid><description>
+&lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
+&lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
+Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
+&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>CommunityProject&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Windows:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>format.bat
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Linux/mac:S&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>./format.sh
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Wenn der Befehl fertig ist, prüfst Du in GitHub Desktop, ob es geändert Dateien gibt, das sollte jetzt auch der Fall sein.
+Die geänderten Dateien (und prüfe bitte, ob es wirklich nur Deine Dateien sind) kannst Du nun committen und pushen.&lt;/p>
+&lt;p>Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei &amp;ldquo;Lint code base&amp;rdquo; kein Problem mehr machen.&lt;/p>
+&lt;h2 id="ich-erhalte-einen-fehler-beim-ausführen-von-formatbatformatsh">Ich erhalte einen Fehler beim Ausführen von format.bat/format.sh.&lt;/h2>
+&lt;p>Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit.
+Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item></channel></rss>

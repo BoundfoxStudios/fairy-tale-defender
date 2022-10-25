@@ -1,0 +1,131 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Systeme</title><link>http://example.org/docs/docs-technical/systems/</link><description>Recent content in Systeme on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="http://example.org/docs/docs-technical/systems/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Event-System</title><link>http://example.org/docs/docs-technical/systems/event-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/event-system/</guid><description>
+&lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
+&lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
+&lt;h2 id="implementierung">Implementierung&lt;/h2>
+&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Events/ScriptableObjects">hier&lt;/a>.
+Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
+Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
+&lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
+Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="multi-scene-management.md">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Action[&amp;#34;Aktion/Trigger (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Raise()&amp;#34;| Event[&amp;#34;Event (ScriptableObject)&amp;#34;]
+EventListener[&amp;#34;Event Listener (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Horcht auf&amp;#34;| Event
+EventListener --&amp;gt; Response[&amp;#34;Antwort auf Event&amp;#34;]
+&lt;/code>&lt;/pre>&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
+&lt;p>Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.&lt;/p>
+&lt;p>Nehmen wir als Beispiel mal das Leben des Spielers.
+Wenn der Spieler Leben verliert oder bekommt, möchte man das in der Regel im UI anzeigen.
+Jetzt könnte der Spieler eine Referenz auf das UI haben (oder auch umgekehrt) und sobald der Spieler Leben verliert oder gewinnt, diese Änderung direkt an das UI übertragen.
+Weiter möchten wir, dass die Gegner sich anders verhalten, je nach dem, wie viel Leben der Spieler hat.
+Auch hier könnte jetzt der Spieler alle Gegner kennen und ihnen mitteilen, wenn sich das Leben verändert.
+Weiter geht&amp;rsquo;s mit anderen Systemen: Post Processing zum Effekte je nach Leben anzeigen, Audio System, dass entsprechend den Sound ändert etc.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Spieler --&amp;gt; UI
+Spieler --&amp;gt; Gegner1
+Spieler --&amp;gt; ...
+Spieler --&amp;gt; GegnerX
+Spieler --&amp;gt; PostProcessing
+Spieler --&amp;gt; AudioSystem
+&lt;/code>&lt;/pre>&lt;p>Wenn der Spieler all diese Systeme direkt kennen würde, nennt man dies auch eine hohe Kopplung.
+In der Softwareentwicklung versucht man, genau diese hohe Kopplung zu vermeiden.
+Auch wenn dieses Beispiel hier sehr einfach gehalten ist, führt diese Kopplung langsam aber sicher zu schlecht wartbarem Code.
+Denn, wann immer man sich die Spieler-Klasse ansieht, sehen wir viele Abhängigkeiten im Code.
+Jetzt muss jeder Entwickler schauen, was genau diese Abhängigkeiten machen, um zu verstehen, wie die Spieler-Klasse funktioniert.
+Außerdem hat die Spieler-Klasse viel mehr Verantwortung, als sie eigentlich haben müsste, da sie viele Bereiche der Gesamtanwendung kennt und bearbeitet.&lt;/p>
+&lt;p>Das ist in der Softwareentwicklung &lt;em>kein&lt;/em> erstrebenswerter Zustand.&lt;/p>
+&lt;p>Viel mehr wollen wir eine Entkopplung erreichen und hier tritt unser Event-System ein:&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
+Spieler --&amp;gt;|Leben: 50| EventSystem
+EventSystem --&amp;gt;|Leben: 50| UI
+EventSystem --&amp;gt;|Leben: 50| GegnerX
+EventSystem --&amp;gt;|Leben: 50| PostProcessing
+EventSystem --&amp;gt;|Leben: 50| AudioSystem
+&lt;/code>&lt;/pre>&lt;p>Leider sieht es jetzt durch die Grafik so aus, als hätten wir das Problem zum Event-System verschoben, dass jetzt alle anderen kennt.
+Dem ist aber nicht so.
+Anstelle dass der Spieler jedes Einzelsystem bearbeitet, nutzt es einfach nur das Event-System und teilt sein aktuelles Leben mit.
+Was jetzt damit passiert, &lt;em>das ist dem Spieler vollkommen egal&lt;/em>.
+In diesem Moment haben wir alles voneinander entkoppelt.
+Die Spieler-Klasse hat viel weniger Verantwortlichkeiten, auch für den Entwickler ist es jetzt sehr viel einfacher zu verstehen, da statt viele Einzelsysteme nur noch das Event-System angesprochen wird.
+Damit haben wir jetzt eine &lt;em>lose Kopplung&lt;/em> erreicht.&lt;/p>
+&lt;p>Einfach ausgedrückt kann man sich das Event-System als eine Art Walkie-Talkie vorstellen.
+Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Multi Scene Management</title><link>http://example.org/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/multi-scene-management/</guid><description>
+&lt;p>Unity ist in der Lage, mehrere Szenen gleichzeitig laufen zu lassen.
+Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder auch welche wieder entladen.
+In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
+&lt;p>Der Ablauf ist aktuell wie folgt:&lt;/p>
+&lt;ul>
+&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
+&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="../../../../CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="event-system.md">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich im Community-Projekt &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
+&lt;/ul>
+&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
+&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+autonumber
+Spielstart -&amp;gt;&amp;gt; Initialization: Lädt
+activate Spielstart
+activate Initialization
+Initialization -&amp;gt;&amp;gt; PersistentManagers: Lädt
+activate PersistentManagers
+Initialization -&amp;gt;&amp;gt; PersistentManagers: Event: LoadScene &amp;#34;MainMenu&amp;#34;
+PersistentManagers -&amp;gt;&amp;gt; MainMenu: Lädt
+Initialization -&amp;gt;&amp;gt; Initialization: Entlädt sich selbst
+deactivate Initialization
+Note over PersistentManagers, MainMenu: Typischer Spielablauf...&amp;lt;br&amp;gt;Spiel wird gespielt...
+PersistentManagers -&amp;gt;&amp;gt; Spielstart: Spiel beenden
+deactivate PersistentManagers
+deactivate Spielstart
+&lt;/code>&lt;/pre>&lt;h2 id="vorteile">Vorteile&lt;/h2>
+&lt;h3 id="kein-dontdestroyonload-notwendig">Kein &lt;code>DontDestroyOnLoad&lt;/code> notwendig&lt;/h3>
+&lt;p>&lt;code>DontDestroyOnLoad&lt;/code> (DDOL) bringt einige Nachteile mitsich:&lt;/p>
+&lt;ul>
+&lt;li>Es wird oft in Zusammenhang mit dem Singleton-Pattern implementiert. Das bedeutet, dass Unity das Objekt erstellt, das Skript dann prüft, ob es bereits existiert und falls ja, sich automatisch wieder zerstört. Das sind unnötig verbratene Ressourcen.&lt;/li>
+&lt;li>Oft kann DDOL mit einem ScriptableObject ersetzt werden, da DDOL gerne für das Speichern von Laufzeitdaten verwendet wird, die man überall benötigt.&lt;/li>
+&lt;li>Diesen Mechanismus kann man durch Multi Scene Management sehr einfach mit den PersistentManagers erreichen, da diese im Spiel immer zur Verfügung stehen.&lt;/li>
+&lt;/ul>
+&lt;h3 id="kein-code-typisches-singleton-pattern-notwendig">Kein code-typisches Singleton-Pattern notwendig&lt;/h3>
+&lt;p>Oft wird zusammen mit DDOL auch im Code ein Singleton-Pattern implementiert.
+Das bedeutet, dass das Objekt selbst entscheidet, ob es ein Singleton ist oder nicht.
+Das führt dann in der Regel dazu, dass man durch seine gesamte Codebase hinweg von überall den Zugriff auf irgendwelche Singletons sieht, was wiederum zu einer hohen Kopplung führt.
+Warum das schlecht ist, wird im &lt;a href="../event-system">Event-System&lt;/a> erklärt.&lt;/p>
+&lt;p>Dennoch gibt es Anwendungsfälle, bei denen Singletons praktisch sind.
+Denn das Pattern als solches ist per-se erstmal nicht schlecht, sondern oft dessen Anwendung ist das, was es schlecht macht.
+Bei Multi Scene Management können wir ein Singleton ganz einfach erreichen, in dem wir ein GameObject in der &lt;code>PersistentManagers&lt;/code>-Szene ablegen.
+Dadurch, dass diese einmalig geladen wird und das gesamte Spiel lebt, haben wir jetzt eine Instanz von einem Objekt, dass wir verwenden können, ergo ein Singleton.&lt;/p>
+&lt;p>Zudem kommt, dass Singeltons auch oft als Datencontainer, ähnlich wie bei DDOL, genutzt werden.
+Auch hier haben wir bereits ein Board-Mittel von Unity: ScriptableObjects.&lt;/p>
+&lt;p>Typische Anwendungsfälle sind hier z.B. Dinge wie:&lt;/p>
+&lt;ul>
+&lt;li>Scene Management&lt;/li>
+&lt;li>Hintergrundmusik&lt;/li>
+&lt;li>Analytics&lt;/li>
+&lt;li>Ladebildschirm&lt;/li>
+&lt;/ul>
+&lt;h2 id="nachteile">Nachteile&lt;/h2>
+&lt;p>Natürlich bringt das Multi Scene Management auch Nachteile mit sich.&lt;/p>
+&lt;ul>
+&lt;li>Komplexität: Gerade für Anfänger, die bisher nur mit einer Szene gearbeitet haben, kann Multi Scene Management zu Beginn sehr komplex wirken.&lt;/li>
+&lt;li>Umdenken: Eigentlich was positives, aber anfänglich eher als Nachteil zu sehen: Man muss umdenken, wie der Code strukturiert ist, da man auf gewisse Dinge eben nicht sofort Zugriff hat, sondern eine Indirektion, z.B. über das &lt;a href="../event-system">Event-System&lt;/a> gehen muss.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Prefabs</title><link>http://example.org/docs/docs-technical/systems/prefabs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/prefabs/</guid><description>
+&lt;h2 id="ui-prefabs">UI Prefabs&lt;/h2>
+&lt;p>Im Community-Projekt nutzen wir ein kleines System, um einfacher Prefabs für das UI finden zu können.
+Generell liegen die Prefabs im Ordner &lt;code>Prefabs/UI&lt;/code>.&lt;/p>
+&lt;p>Um komfortabel ein UI zusammenbauen zu können, integrieren wir unsere eigenen Prefabs auch in das Menü von Unity (Rechtsklick in der Hierarchy).
+Auf diese Art funktioniert das Zusammenstecken von UI-Elementen ähnlich wie bei den Standard-Unity-Elementen.&lt;/p>
+&lt;p>&lt;img src="assets/hierarchy-menu.png" alt="Hierarchy Menü">&lt;/p>
+&lt;p>Damit das ganze funktioniert, nutzen wir eine Instanz von &lt;code>PrefabManagerSO&lt;/code>, dass alle Prefabs sammelt, die in diesem Menü angezeigt werden.
+Du findest die Instanz unter &lt;code>ScriptableObjects/PrefabManager&lt;/code>, oder einfach im Menü auf &lt;code>Community Project&lt;/code> -&amp;gt; &lt;code>Select PrefabManager&lt;/code>.&lt;/p>
+&lt;p>&lt;img src="assets/select-prefab-manager.png" alt="Select Prefab Manager">&lt;/p>
+&lt;p>Im Inspektor siehst Du, welche Prefabs verknüpft sind und genutzt werden können.&lt;/p>
+&lt;p>&lt;img src="assets/prefab-manager.png" alt="Prefab Manager">&lt;/p>
+&lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
+&lt;h3 id="ich-finde-nicht-was-ich-brauche">Ich finde nicht, was ich brauche.&lt;/h3>
+&lt;p>Es kann durchaus sein, dass Du UI umsetzen möchtest, aber es dafür noch keine passenden Prefabs findest.
+Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>http://example.org/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://example.org/docs/docs-technical/systems/scene-templates/</guid><description>
+&lt;p>Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü &lt;code>File&lt;/code> -&amp;gt; &lt;code>New Scene&lt;/code> gehst.
+Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;/p>
+&lt;ul>
+&lt;li>Menu Szene&lt;/li>
+&lt;li>Level Szene&lt;/li>
+&lt;/ul>
+&lt;p>Wähle die &lt;strong>Menu Szene&lt;/strong>, wenn Du ein neues Menü anlegen möchtest.
+Darunter zählen alle FullScreen-Menüs, z.B. MainMenu, Optionen, Credits.&lt;/p>
+&lt;p>Wähle die &lt;strong>Level Szene&lt;/strong>, wenn Du ein neues Leven anlegen möchtest.&lt;/p></description></item></channel></rss>
