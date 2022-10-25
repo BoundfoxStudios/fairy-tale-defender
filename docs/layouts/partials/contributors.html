@@ -1,6 +1,6 @@
 <div class="card-deck">
   {{ with getJSON "https://raw.githubusercontent.com/BoundfoxStudios/community-project/develop/.all-contributorsrc" }}
-  {{ range $index, $element := sort .contributors "login" }}
+  {{ range $index, $element := sort .contributors "name" }}
   <div class="ts-card card mb-4">
     <div class="card-header text-center">
       <a href="https://github.com/{{ $element.login }}" target="_blank">{{ $element.name }}</a>
