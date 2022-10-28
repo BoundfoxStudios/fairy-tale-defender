@@ -113,8 +113,8 @@ jobs:
           exempt-assignees: 'ManuelRauber'
           days-before-stale: 7
           days-before-close: -1 # Never close an issue/pr
-          stale-issue-message: 'Hey! Diese Aufgabe wurde vor einigen Tagen übernommen, aber seit dem ist nicht mehr passiert. Eventuell kann der aktuelle Contributor sich dazu äußern?'
-          stale-pr-message: 'Hey! Dieser Pull Request wurde vor einigen Tagen gestellt und bedarf noch Änderungen, aber seit dem ist nicht mehr passiert. Eventuell kann der aktuelle Contributor sich dazu äußern?'
+          stale-issue-message: 'Hey! Diese Aufgabe wurde vor einigen Tagen übernommen, aber seit dem ist nichts mehr passiert. Eventuell kann der aktuelle Contributor sich dazu äußern?'
+          stale-pr-message: 'Hey! Dieser Pull Request wurde vor einigen Tagen gestellt und bedarf noch Änderungen, aber seit dem ist nichts mehr passiert. Eventuell kann der aktuelle Contributor sich dazu äußern?'
           stale-issue-label: 'Wartet auf Contributor'
           stale-pr-label: 'Wartet auf Contributor'
           exempt-issue-labels: 'Blockiert'
