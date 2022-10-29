@@ -15,7 +15,7 @@ Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.
 
 Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
-Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das [Multi-Scene-Management](multi-scene-management.md) sehr praktisch ist.
+Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das [Multi-Scene-Management](../multi-scene-management) sehr praktisch ist.
 
 ```mermaid
 flowchart LR
