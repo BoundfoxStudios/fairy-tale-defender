@@ -8,7 +8,7 @@ Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h.
 
 * modellierst 3D-Modelle,
 * erstellst 2D-Grafiken, -Icons,
-* möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch [hier](../technical))
+* möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch [hier](../technical/))
 
 ## Worauf muss ich achten?
 

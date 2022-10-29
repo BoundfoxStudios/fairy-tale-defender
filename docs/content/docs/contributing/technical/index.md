@@ -1,7 +1,7 @@
 ---
 title: Technisch mitmachen
 linkTitle: Technisch (Code)
-description: Info über das Mitmachen im technichen Bereich.
+description: Info über das Mitmachen im technischen Bereich.
 ---
 
 ## Inhaltsverzeichnis
@@ -11,11 +11,11 @@ Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 * entwickelst Code für das Spiel,
 * entwickelst Erweiterungen für den Unity-Editor,
 * möchtest bestehende Bugs im Spiel beseitigen und/oder
-* möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch [hier](../visual))
+* möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch [hier](../visual/))
 
 ## Worauf muss ich achten?
 
-* Lies Dir die [Technische Dokumentation](../../docs-technical) durch.
+* Lies Dir die [Technische Dokumentation](../../docs-technical/) durch.
 * Du musst die korrekte Unity-Version installieren, das ist aktuell **Unity 2021.3.9f1**. Schaue gerne [hier](https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt) nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren. 
   * Um Unity in dieser Version zu installieren, klicke [hier](unityhub://2021.3.9f1/ad3870b89536), wenn Du den Unity Hub installiert hast. 
     Alternativ, schaue gerne [hier auf der Unity-Seite](https://unity3d.com/get-unity/download/archive) nach der Version.
