@@ -10,6 +10,12 @@ on:
   workflow_dispatch:
 
 jobs:
+  check-broken-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/hugo-check-broken-links
+
   deploy:
     runs-on: ubuntu-latest
     steps:
