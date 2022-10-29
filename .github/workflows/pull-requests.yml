@@ -1,4 +1,4 @@
-name: Unity PRs
+name: Pull Requests
 
 concurrency:
   group: ${{ github.head_ref }}
