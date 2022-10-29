@@ -66,7 +66,7 @@ jobs:
   label-successful-build:
     needs: [change-detection, build]
     if: always()
-    name: Label succesful build
+    name: Label successful build
     runs-on: ubuntu-latest
     steps:
       - if: needs.change-detection.outputs.unity == 'true' && needs.build.result != 'success'
