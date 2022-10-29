@@ -37,11 +37,11 @@ Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-pro
 &lt;li>entwickelst Code für das Spiel,&lt;/li>
 &lt;li>entwickelst Erweiterungen für den Unity-Editor,&lt;/li>
 &lt;li>möchtest bestehende Bugs im Spiel beseitigen und/oder&lt;/li>
-&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../visual">hier&lt;/a>)&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../visual/">hier&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
 &lt;ul>
-&lt;li>Lies Dir die &lt;a href="../../docs-technical">Technische Dokumentation&lt;/a> durch.&lt;/li>
+&lt;li>Lies Dir die &lt;a href="../../docs-technical/">Technische Dokumentation&lt;/a> durch.&lt;/li>
 &lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2021.3.9f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
 &lt;ul>
 &lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2021.3.9f1/ad3870b89536">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
@@ -73,7 +73,7 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;ul>
 &lt;li>modellierst 3D-Modelle,&lt;/li>
 &lt;li>erstellst 2D-Grafiken, -Icons,&lt;/li>
-&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../technical">hier&lt;/a>)&lt;/li>
+&lt;li>möchtest mit Shadern bzw. dem Shader-Graph visuellen Pepp hinzufügen (siehe auch &lt;a href="../technical/">hier&lt;/a>)&lt;/li>
 &lt;/ul>
 &lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
 &lt;h3 id="3d">3D&lt;/h3>
