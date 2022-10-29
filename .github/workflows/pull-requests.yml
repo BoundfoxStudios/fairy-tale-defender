@@ -1,10 +1,10 @@
 name: Unity PRs
 
-concurrency: 
+concurrency:
   group: ${{ github.head_ref }}
   cancel-in-progress: true
 
-on: 
+on:
   pull_request_target:
     types:
       - synchronize
@@ -13,7 +13,7 @@ on:
     branches-ignore:
       - main
 
-jobs: 
+jobs:
   change-detection:
     uses: ./.github/workflows/change-detection.yml
 
@@ -26,12 +26,21 @@ jobs:
         with:
           labels: ci-ready-to-merge
 
+  hugo-check-broken-links:
+    name: Check documentation for broken links
+    needs: change-detection
+    if: needs.change-detection.outputs.docs == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./.github/actions/hugo-check-broken-links
+
   lint:
     name: Lint code base
     needs: change-detection
     if: needs.change-detection.outputs.unity == 'true'
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v3
         with:
           ref: "refs/pull/${{ github.event.number }}/merge"
