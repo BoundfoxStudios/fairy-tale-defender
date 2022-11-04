@@ -1,7 +1,7 @@
 ---
 title: Roadmap
 linkTitle: Roadmap
-weight: 1
+weight: 10
 description: Beschreibt den groben Ablauf des Projekts.
 icon: fa-solid fa-road
 ---
