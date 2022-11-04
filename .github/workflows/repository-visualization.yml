@@ -1,0 +1,42 @@
+name: Repository Visualization
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  render-and-upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+        
+      - uses: nbprojekt/gource-action@v1
+        with:
+          gource_title: Community-Projekt
+          gource_resolution: 1440p
+          gource_fps: 60
+          gource_font_size: 40
+          gource_auto_skip_seconds: 0.1
+          gource_seconds_per_day: 0.5
+          logo_url: docs/static/bfs-head.png
+          gource_file_filter: .meta$
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 16
+      - run: npm install vimeo
+      - uses: actions/github-script@v6
+        env:
+          VIMEO_CLIENT_ID: ${{ secrets.VIMEO_CLIENT_ID }}
+          VIMEO_CLIENT_SECRET: ${{ secrets.VIMEO_CLIENT_SECRET }}
+          VIMEO_ACCESS_TOKEN: ${{ secrets.VIMEO_ACCESS_TOKEN }}
+        with:
+          script: |
+            const Vimeo = require('vimeo').Vimeo;
+
+            const client = new Vimeo(process.env.VIMEO_CLIENT_ID, process.env.VIMEO_CLIENT_SECRET, process.env.VIMEO_ACCESS_TOKEN);
+            const filePath = './gource/gource.mp4';
+
+            client.replace(filePath, 'videos/767236444', () => core.info('Upload to Vimeo was successful'), () => {}, error => core.setFailed(`Upload failed: ${error}`));

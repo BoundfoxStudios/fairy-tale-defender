@@ -24,3 +24,9 @@ Unten links und rechts findest Du wichtige Links zum Projekt, aber auch hier noc
 Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!
 
 {{< contributors-image-list >}}
+
+### Repository Visualisierung
+
+_Die Visualisierung wird täglich um Mitternacht aktualisiert._
+
+{{< vimeo 767236444 >}}
