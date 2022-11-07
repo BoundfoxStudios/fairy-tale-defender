@@ -262,7 +262,21 @@ Das remote Repo liegt z.B. bei GitHub.
 &lt;dd>Die Benutzeroberfläche einer Anwendung.&lt;/dd>
 &lt;dt>MVP&lt;/dt>
 &lt;dd>Minimal Viable Product, &lt;a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier&lt;/a>&lt;/dd>
-&lt;/dl></description></item><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</guid><description>
+&lt;/dl></description></item><item><title>Docs:</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</guid><description>
+&lt;h1 id="das-audiocue-system">Das AudioCue-System&lt;/h1>
+&lt;p>Das AudioCue-System dient dazu, einzelne Soundeffekte abzuspielen.
+Man möchte vielleicht fragen, warum nicht einfach das GameObjekt, welches den Sound benötigt eine AudioSource hat,
+welche dann den Sound abspielt. Dies ginge theoretisch, allerdings gibt es bei z.B. dem Tod einer Einheit das
+Problem, dass das GameObjekt zerstört werden soll und hierbei würde das Abspielen abgebrochen. Desswegen
+wird dies von einem System, welches diese Aufgabe zentraliesiert, übernommen.&lt;/p>
+&lt;h2 id="verwendenung">Verwendenung&lt;/h2>
+&lt;h3 id="audiocue">AudioCue&lt;/h3>
+&lt;p>Zuerst muss eine Instanz des AudioCueSO erstellt werden. An dieser Stelle muss der Audio Clip spezifiziert werden.&lt;/p>
+&lt;h3 id="abspielendes-gameobject">Abspielendes GameObject&lt;/h3>
+&lt;p>Das abspielende GameObject muss eine Referenz, nennen wir sie &lt;code>eventChannel&lt;/code> zu dem AudioCueEventChannelSO, abegelegt unter &lt;code>ScriptableObjects/Events&lt;/code>,
+haben. Außerdem muss das GameObject die Instanz, beispielsweise &lt;code>PlayerDeathSound&lt;/code> des AudioCueSO mit dem entsprechenden Clip kennen. Anschließend
+muss das Event mit &lt;code>eventChannel.Invoke(PlayerDeathSound);&lt;/code> geworfen werden. Nun ist die Arbeit auf Seiten des Abspielenden GameObject erledigt
+und es kann sich selbst zerstören/zerstört werden, ohne dass Probleme auftreten.&lt;/p></description></item><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</guid><description>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">TODO&lt;/h4>
 Diese Seite ist aktuell noch nicht soweit ausgearbeitet, da es soundtechnisch leider noch nichts zu machen gibt. :)
