@@ -262,8 +262,7 @@ Das remote Repo liegt z.B. bei GitHub.
 &lt;dd>Die Benutzeroberfläche einer Anwendung.&lt;/dd>
 &lt;dt>MVP&lt;/dt>
 &lt;dd>Minimal Viable Product, &lt;a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier&lt;/a>&lt;/dd>
-&lt;/dl></description></item><item><title>Docs:</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</guid><description>
-&lt;h1 id="das-audiocue-system">Das AudioCue-System&lt;/h1>
+&lt;/dl></description></item><item><title>Docs: Audio Cue (Sound Effekte)</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/audiocue-system/</guid><description>
 &lt;p>Das AudioCue-System dient dazu, einzelne Soundeffekte abzuspielen.
 Man möchte vielleicht fragen, warum nicht einfach das GameObjekt, welches den Sound benötigt eine AudioSource hat,
 welche dann den Sound abspielt. Dies ginge theoretisch, allerdings gibt es bei z.B. dem Tod einer Einheit das
