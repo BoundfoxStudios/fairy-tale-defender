@@ -1,4 +1,9 @@
-# Das AudioCue-System
+---
+title: Audio Cue (Sound Effekte)
+linkTitle: Audie Cue (Sound Effekte)
+description: Dokumentation des Audio Cue Systems.
+---
+
 Das AudioCue-System dient dazu, einzelne Soundeffekte abzuspielen.
 Man möchte vielleicht fragen, warum nicht einfach das GameObjekt, welches den Sound benötigt eine AudioSource hat,
 welche dann den Sound abspielt. Dies ginge theoretisch, allerdings gibt es bei z.B. dem Tod einer Einheit das
