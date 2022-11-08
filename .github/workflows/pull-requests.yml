@@ -64,7 +64,7 @@ jobs:
       ref: "refs/pull/${{ github.event.number }}/merge"
 
   label-successful-build:
-    needs: [change-detection, build]
+    needs: [change-detection, build, hugo-check-broken-links]
     if: always()
     name: Label successful build
     runs-on: ubuntu-latest
@@ -74,7 +74,9 @@ jobs:
           echo "Need successful build"
           exit 1
       - uses: actions-ecosystem/action-add-labels@v1
-        if: needs.build.result == 'success'
+        if: | 
+          (needs.change-detection.outputs.unity == 'true' && needs.build.result == 'success')
+          || (needs.change-detection.outputs.documentation == 'true' && needs.hugo-check-broken-links.result == 'success')
         with:
           labels: ci-ready-to-merge
 
