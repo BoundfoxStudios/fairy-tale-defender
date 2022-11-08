@@ -24,6 +24,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void Awake()
 		{
+			SetStartLocale();
 			ApplySettings();
 		}
 
@@ -35,6 +36,14 @@ namespace BoundfoxStudios.CommunityProject.Settings
 		private void OnDisable()
 		{
 			GameSettingsChangedEventChannel.Raised -= ApplySettings;
+		}
+
+		private void SetStartLocale()
+		{
+			if (Settings.Localization.Locale == default)
+			{
+				Settings.Localization.Locale = LocalizationSettings.SelectedLocale.Identifier;
+			}
 		}
 
 		private void ApplySettings()
@@ -82,12 +91,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void ApplyLocalizationSettings()
 		{
-			if (!Settings.Localization.Locale)
-			{
-				Settings.Localization.Locale = LocalizationSettings.SelectedLocale;
-			}
-
-			LocalizationSettings.SelectedLocale = Settings.Localization.Locale;
+			LocalizationSettings.SelectedLocale.Identifier = Settings.Localization.Locale;
 		}
 	}
 }

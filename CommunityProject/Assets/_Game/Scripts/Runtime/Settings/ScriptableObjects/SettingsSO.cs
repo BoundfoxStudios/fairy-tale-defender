@@ -74,7 +74,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		[Serializable]
 		public class LocalizationConfig
 		{
-			public Locale Locale = default;
+			public LocaleIdentifier Locale = default;
 		}
 	}
 }
