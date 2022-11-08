@@ -46,6 +46,8 @@ Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.co
 <dl>
     <dt>User Interface, UI</dt>
     <dd>Die Benutzeroberfläche einer Anwendung.</dd>
+    <dt>GDD</dt>
+    <dd>Game Design Document</dd>
     <dt>MVP</dt>
     <dd>Minimal Viable Product, <a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier</a></dd>
 </dl>

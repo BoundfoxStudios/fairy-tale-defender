@@ -5,6 +5,13 @@ languageCode: de-de
 defaultContentLanguage: de
 title: Boundfox Studios Community-Projekt
 
+cascade:
+  - type: docs
+    toc_root: true
+    _target:
+      path: "/game-design-document/**"
+
+
 enableRobotsTXT: true
 enableGitInfo: true
 
