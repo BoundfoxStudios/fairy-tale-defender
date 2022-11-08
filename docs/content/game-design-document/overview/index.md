@@ -33,3 +33,7 @@ Es beschreibt das Design für das Community-Projekt Tower Defense Spiel.
 ## Technologie
 
 * Unity 2021 LTS
+  * 3D URP
+  * Shader Graph
+  * Input System
+  * Jobs/Burst
