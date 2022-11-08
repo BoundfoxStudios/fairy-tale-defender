@@ -4,6 +4,8 @@ linkTitle: Mitmachen
 description: Info, wie man beim Community-Projekt mitwirken kann.
 menu:
   main:
+    weight: 1
+    pre: <i class='fa-solid fa-people-group'></i>
 weight: 100
 icon: fa-solid fa-people-group
 ---

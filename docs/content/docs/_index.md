@@ -4,6 +4,8 @@ linkTitle: Dokumentation
 
 menu:
   main:
+    weight: 50
+    pre: <i class='fa-solid fa-book'></i>
 ---
 
 In dieser Dokumentation wirst Du nach und nach alles finden, was zum Community-Projekt gehört.
