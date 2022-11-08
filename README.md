@@ -73,6 +73,7 @@ Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
       <td align="center"><a href="https://thorsten-kattanek.de"><img src="https://avatars.githubusercontent.com/u/14269404?v=4?s=100" width="100px;" alt="Thorsten Kattanek"/><br /><sub><b>Thorsten Kattanek</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/community-project/commits?author=ThKattanek" title="Code">💻</a></td>
     </tr>
     <tr>
+      <td align="center"><a href="https://github.com/TipiliF"><img src="https://avatars.githubusercontent.com/u/117525073?v=4?s=100" width="100px;" alt="TipiliF"/><br /><sub><b>TipiliF</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/community-project/commits?author=TipiliF" title="Documentation">📖</a></td>
       <td align="center"><a href="https://kordesii.itch.io/"><img src="https://avatars.githubusercontent.com/u/24779607?v=4?s=100" width="100px;" alt="Tobby"/><br /><sub><b>Tobby</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/community-project/commits?author=realTobby" title="Code">💻</a></td>
       <td align="center"><a href="https://github.com/fastFox2"><img src="https://avatars.githubusercontent.com/u/72040701?v=4?s=100" width="100px;" alt="fastFox2"/><br /><sub><b>fastFox2</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/community-project/commits?author=fastFox2" title="Code">💻</a></td>
     </tr>
