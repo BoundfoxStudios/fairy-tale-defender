@@ -43,7 +43,8 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private async UniTask LoadSettingsAsync()
 		{
-			await Settings.LoadAssetAsync();
+			var settings = await Settings.LoadAssetAsync();
+			await settings.LoadAsync();
 		}
 
 		private async UniTask LoadPersistentManagersAsync()
