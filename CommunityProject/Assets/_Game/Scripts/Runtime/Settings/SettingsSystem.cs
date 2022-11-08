@@ -91,7 +91,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void ApplyLocalizationSettings()
 		{
-			LocalizationSettings.SelectedLocale.Identifier = Settings.Localization.Locale;
+			LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(Settings.Localization.Locale);
 		}
 	}
 }
