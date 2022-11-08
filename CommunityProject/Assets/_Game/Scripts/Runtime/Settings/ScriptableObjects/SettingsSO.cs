@@ -2,6 +2,7 @@ using BoundfoxStudios.CommunityProject.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 {
@@ -15,6 +16,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 
 		public AudioConfig Audio => _gameSettings.Audio;
 		public GraphicConfig Graphic => _gameSettings.Graphic;
+		public LocalizationConfig Localization => _gameSettings.Localization;
 
 		private JsonFileManager _jsonFileManager;
 		private readonly string _jsonFileName = "config.json";
@@ -44,6 +46,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		{
 			public AudioConfig Audio;
 			public GraphicConfig Graphic;
+			public LocalizationConfig Localization;
 		}
 
 		[Serializable]
@@ -65,6 +68,12 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 			public int ResolutionIndex = -1;
 			public bool IsFullscreen = true;
 			public int GraphicLevel = 1;
+		}
+
+		[Serializable]
+		public class LocalizationConfig
+		{
+			public Locale Locale = default;
 		}
 	}
 }

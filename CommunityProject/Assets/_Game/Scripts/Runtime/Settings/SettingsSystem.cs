@@ -2,6 +2,7 @@ using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.Localization.Settings;
 
 namespace BoundfoxStudios.CommunityProject.Settings
 {
@@ -41,6 +42,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			ApplyAudioSettings();
 			ApplyScreenSettings();
 			ApplyGraphicSettings();
+			ApplyLocalizationSettings();
 		}
 
 		private void ApplyAudioSettings()
@@ -49,6 +51,11 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			MainMixer.SetFloat("MusicVolume", GetNormalizedToMixerVolume(Settings.Audio.MusicVolume));
 			MainMixer.SetFloat("EffectsVolume", GetNormalizedToMixerVolume(Settings.Audio.EffectsVolume));
 			MainMixer.SetFloat("UIVolume", GetNormalizedToMixerVolume(Settings.Audio.UIVolume));
+		}
+
+		private float GetNormalizedToMixerVolume(float value)
+		{
+			return (value - 1) * 80;
 		}
 
 		private void ApplyScreenSettings()
@@ -73,9 +80,14 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			QualitySettings.SetQualityLevel(Settings.Graphic.GraphicLevel);
 		}
 
-		private float GetNormalizedToMixerVolume(float value)
+		private void ApplyLocalizationSettings()
 		{
-			return (value - 1) * 80;
+			if (!Settings.Localization.Locale)
+			{
+				Settings.Localization.Locale = LocalizationSettings.SelectedLocale;
+			}
+
+			LocalizationSettings.SelectedLocale = Settings.Localization.Locale;
 		}
 	}
 }
