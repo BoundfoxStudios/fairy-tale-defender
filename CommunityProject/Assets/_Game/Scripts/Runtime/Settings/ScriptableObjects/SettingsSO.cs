@@ -66,7 +66,8 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		[Serializable]
 		public class GraphicConfig
 		{
-			public int ResolutionIndex = -1;
+			public int ScreenWidth = 0;
+			public int ScreenHeight = 0;
 			public bool IsFullscreen = true;
 			public int GraphicLevel = 1;
 		}

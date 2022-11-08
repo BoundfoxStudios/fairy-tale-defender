@@ -69,17 +69,15 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void ApplyScreenSettings()
 		{
-			var resolutionIndex = Settings.Graphic.ResolutionIndex;
-
-			if (resolutionIndex < 0 || resolutionIndex > Screen.resolutions.Length)
+			if (Settings.Graphic.ScreenWidth != Screen.width || Settings.Graphic.ScreenHeight != Screen.height)
 			{
-				resolutionIndex = Screen.resolutions.Length - 1;
-				Settings.Graphic.ResolutionIndex = resolutionIndex;
+				Settings.Graphic.ScreenWidth = Screen.width;
+				Settings.Graphic.ScreenHeight = Screen.height;
 			}
 
 			Screen.SetResolution(
-				Screen.resolutions[resolutionIndex].width,
-				Screen.resolutions[resolutionIndex].height,
+				Settings.Graphic.ScreenWidth,
+				Settings.Graphic.ScreenHeight,
 				Settings.Graphic.IsFullscreen
 			);
 		}
