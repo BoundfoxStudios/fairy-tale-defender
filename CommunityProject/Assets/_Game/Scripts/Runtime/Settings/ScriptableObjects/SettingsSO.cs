@@ -23,7 +23,8 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 
 		private void OnEnable()
 		{
-			_jsonFileManager = new JsonFileManager();
+			_gameSettings = new();
+			_jsonFileManager = new();
 		}
 
 		public async UniTask SaveAsync()
@@ -44,9 +45,9 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		[Serializable]
 		public class GameSettings
 		{
-			public AudioConfig Audio;
-			public GraphicConfig Graphic;
-			public LocalizationConfig Localization;
+			public AudioConfig Audio = new();
+			public GraphicConfig Graphic = new();
+			public LocalizationConfig Localization = new();
 		}
 
 		[Serializable]
