@@ -25,6 +25,7 @@ namespace BoundfoxStudios.CommunityProject.Settings
 		private void Awake()
 		{
 			SetStartLocale();
+			SetStartResolution();
 			ApplySettings();
 		}
 
@@ -43,6 +44,15 @@ namespace BoundfoxStudios.CommunityProject.Settings
 			if (Settings.Localization.Locale == default)
 			{
 				Settings.Localization.Locale = LocalizationSettings.SelectedLocale.Identifier;
+			}
+		}
+
+		private void SetStartResolution()
+		{
+			if (Settings.Graphic.ScreenWidth == 0 || Settings.Graphic.ScreenHeight == 0)
+			{
+				Settings.Graphic.ScreenWidth = Screen.width;
+				Settings.Graphic.ScreenHeight = Screen.height;
 			}
 		}
 
@@ -69,12 +79,6 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void ApplyScreenSettings()
 		{
-			if (Settings.Graphic.ScreenWidth != Screen.width || Settings.Graphic.ScreenHeight != Screen.height)
-			{
-				Settings.Graphic.ScreenWidth = Screen.width;
-				Settings.Graphic.ScreenHeight = Screen.height;
-			}
-
 			Screen.SetResolution(
 				Settings.Graphic.ScreenWidth,
 				Settings.Graphic.ScreenHeight,
