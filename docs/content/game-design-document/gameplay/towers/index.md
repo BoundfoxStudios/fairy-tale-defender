@@ -5,4 +5,8 @@ description: Informationen über Türme
 weight: 50
 ---
 
-TODO: Miro-Karte "Türme" https://miro.com/app/board/uXjVPSFGLlk=/?share_link_id=408641872985
+Der Spieler kann ausschließlich Türme bauen.
+Rekrutieren von Einheiten ist nicht vorgesehen.
+
+Welche Türme im Spiel vorkommen, ist noch nicht bekannt.
+Einige Ideen finden sich [hier](../../../docs/ideas/towers/).
