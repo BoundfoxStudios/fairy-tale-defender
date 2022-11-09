@@ -1,4 +1,36 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Ideen</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/</link><description>Recent content in Ideen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Story</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Ideen</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/</link><description>Recent content in Ideen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Gegner-Navigation</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</guid><description>
+&lt;p>Gemäß dem &lt;a href="../../../game-design-document/gameplay/enemies/">GDD&lt;/a> laufen Gegner auf vorgefertigten Wegen.
+Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
+&lt;h2 id="ideen-zu-wegen-von-gegnern">Ideen zu Wegen von Gegnern&lt;/h2>
+&lt;ul>
+&lt;li>Level-Designer platziert Wege und/oder Wegpunkte für Boden- und Lufteinheiten.&lt;/li>
+&lt;li>Bodeneinheiten könnten durch Wegveränderungen im Laufe des Levels anders verlaufen (siehe &lt;a href="#ideen-zur-ver%C3%A4nderung-von-wegen-durch-den-spieler">unten&lt;/a>).&lt;/li>
+&lt;li>Jedes Level benötigt mindestens einen Weg vom Spawnpunkt zum Ziel.
+&lt;ul>
+&lt;li>Hat ein Level nur einen einzigen Weg oder wurden andere Wege so abgeschnitten, dass nur noch ein einziger Weg existiert, dann kann der Spieler keine unüberwindbare Barrikade erstellen.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Jedes Level könnte einen oder mehrere Spawnpunkte haben.&lt;/li>
+&lt;/ul>
+&lt;h2 id="ideen-zur-veränderung-von-wegen-durch-den-spieler">Ideen zur Veränderung von Wegen durch den Spieler&lt;/h2>
+&lt;ul>
+&lt;li>Funktioniert nur bei Levels, die mehrere Wege haben&lt;/li>
+&lt;li>Errichten von Barrikaden
+&lt;ul>
+&lt;li>Könnten unüberwindbar sein&lt;/li>
+&lt;li>Könnten durch Gegner zerstört werden&lt;/li>
+&lt;li>Könnten nur durch bestimmte Gegnertypen bzw. Gegner mit bestimmten Attributen zerstört werden&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Das Verändern des Weges soll auch einen negativen Einfluss auf den Spieler haben, sodass das Beeinflussen eine bewusste Entscheidung sein muss
+&lt;ul>
+&lt;li>Weniger Gold pro Gegner?&lt;/li>
+&lt;li>Kürze Wartezeit zwischen Wellen?&lt;/li>
+&lt;li>Mehr Gegner pro Welle?&lt;/li>
+&lt;li>Stärkere Gegner?&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Story</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</guid><description>
 &lt;p>Diese Storys sind von unserem Community-Mitglied &lt;strong>Tipi&lt;/strong> geschrieben worden. Sie sind gedacht, um eine Idee für die Handlung und damit die Umgebung und den grafischen Stiel des Spiels zu setzen. Es sind jeweils die Startszenarien, die dann weiter ausgebaut werden, wenn die Community sich für eines entschieden hat (oder was ganz anderes will).&lt;/p>
 &lt;h2 id="story-1">Story 1&lt;/h2>
 &lt;p>Unsere Protagonistin ist Tochter einer mittelständischen Familie, ihre Kindheit war so weit in Ordnung. Ihr Vater war Handwerker, die Mutter hauptsächlich Mutter und wenn sie Zeit hatte, hat sie versucht, mit Kleinigkeiten etwas Geld dazuzuverdienen, es reichte zum Leben, viel mehr aber auch nicht. Mit dem heranwachsen zeigte sich immer mehr eine zurückhaltende aber sehr aufmerksame Persönlichkeit, ideal für den Besuch einer Bedienstenschule.&lt;/p>
@@ -12,4 +44,29 @@
 zumindest kenne ich genug andere Spiele, die das auch nutzen z.B. &amp;ldquo;Dark Parables&amp;rdquo; (die halt wirklich die ganzen Märchen durchmachen: Schneewittchen, Dornröschen, Jack und die wundererbse&amp;hellip;) es gibt auch ein Gutenberg Projekt (oder so) in dem public-domain texte gehortet werden) dieser Vorschlag hat den riesigen Vorteil, dass wir beim Design der Türme völlig eskalieren können, von Rotkäppchen türmen mit Wolfsmotiven bis Rattenfänger Türmen, die Musik machen, oder Eiskönigin Tower, die Eisspeere und Schneestürme verschießen.&lt;/p>
 &lt;h2 id="story-3">Story 3&lt;/h2>
 &lt;p>In einem kleinen Walddorf ist es normal, dass alle 5 Jahre eine neue Kräuterfrau in die geheime Magie der Pflanzen und Tiere eingeweiht wird. Es braucht eine natürliche Begabung mit Pflanzen und ein gutes Verständnis der Heilkunde, um dafür infrage zu kommen. Unsere kleine Hexe hat beides. Zudem wird ein gutes Gespür für Magie und ein gesunder Abenteuerdrang benötigt, da man sein Dorf verlässt und die Welt kennenlernt oder genauer genommen einen sehr magischen Teil der Welt. Nach einigen Monaten der Ausbildung lernt man, wie Dinge dazu gebracht werden können, einfache Handlungen von selbst auszuführen, Töpfe, die sich selbst umrühren, Besen, die von selbst fegen, aber auch Bögen, die von selbst Pfeile verschießen. Sobald dieses Wissen gefestigt ist, bricht man auf zu seiner ersten Wanderschaft. Von dem Dorf aus geht es zu einem Breitenzirkel, der sich tief im Wald versteckt. Schlägt man an einem bestimmten Ort ein Lager auf, bittet man damit um Einlass und ein Auflösen der schützenden Magie, die die Druiden Siedlung versteckt hält. Natürlich muss man zuvor den Druiden beweisen, dass man nicht irgendwer ist. Ein normaler, nichtmagischer Bürger würde in der Nacht von Wesen aus Laub mitsamt seines Zeltes aus der Lichtung getragen werden und irgendwo in der Wildnis aufwachen. Eine Hexe hingegen kann mit ihren magischen Geschützen diese Laubmonster abwehren. Dort endet die Reise jedoch nicht, es gibt andere Hexen und andere Länder die man bereisen muss. Sümpfe, Moore, Dschungel, Küsten, wüsten, sogar die hohe See und ferne Länder&amp;hellip;&lt;/p>
-&lt;p>Hier können wir halt fröhlich alle Terrains einbauen und verschiedenste Magierichtungen mit einbeziehen: Druiden, Hexen, Magier, Heilige, dämonische Kreaturen: alles ist möglich.&lt;/p></description></item></channel></rss>
+&lt;p>Hier können wir halt fröhlich alle Terrains einbauen und verschiedenste Magierichtungen mit einbeziehen: Druiden, Hexen, Magier, Heilige, dämonische Kreaturen: alles ist möglich.&lt;/p></description></item><item><title>Docs: Türme</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</guid><description>
+&lt;h2 id="kanonenturm">Kanonenturm&lt;/h2>
+&lt;ul>
+&lt;li>Feuert auf ein einzelnes Ziel&lt;/li>
+&lt;/ul>
+&lt;h2 id="katapultturm">Katapultturm&lt;/h2>
+&lt;ul>
+&lt;li>Flächenschaden&lt;/li>
+&lt;/ul>
+&lt;h2 id="balisteturm">Balisteturm&lt;/h2>
+&lt;ul>
+&lt;li>Gut gegen Rüstung&lt;/li>
+&lt;/ul>
+&lt;h2 id="trebuchetturm">Trebuchetturm&lt;/h2>
+&lt;ul>
+&lt;li>Ähnlich wie Katapult&lt;/li>
+&lt;li>Mehr Schaden, langsamere Feuerrate&lt;/li>
+&lt;/ul>
+&lt;h2 id="feuerwasserlufterde-turm">Feuer/Wasser/Luft/Erde Turm&lt;/h2>
+&lt;ul>
+&lt;li>Falls Magie in dieser Form einer Rolle spielt&lt;/li>
+&lt;/ul>
+&lt;h2 id="eisturm">Eisturm&lt;/h2>
+&lt;ul>
+&lt;li>Verlangsamung&lt;/li>
+&lt;/ul></description></item></channel></rss>

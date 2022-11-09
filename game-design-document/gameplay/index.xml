@@ -1,0 +1,92 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Gameplay</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/</link><description>Recent content in Gameplay on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/index.xml" rel="self" type="application/rss+xml"/><item><title>Game-Design-Document: Loop-basierter Ablauf</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/loop-gameplay/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/loop-gameplay/</guid><description>
+&lt;h2 id="loop-basiertes-gameplay">Loop-basiertes Gameplay&lt;/h2>
+&lt;p>Ein Level hat 20, 30, 40, 50, Wellen. Für Progress (sprich um Weiterzukommen) muss der Spieler die ersten 20 Wellen schaffen,
+bekommt dann ein neues Level freigeschaltet. Weitere Freischalten bei 30, &amp;hellip;, 50 Wellen sind z.B. Achievementsterne.
+Hat den Vorteil, dass der Spieler Progress machen kann, aber auch zum Achievement-Jagen ermutigt wird, &amp;ldquo;alte&amp;rdquo; Level
+erneut zu spielen.&lt;/p>
+&lt;p>Holt eventuell auch den Casual-Spieler ab, da er nicht gezwungen ist, permanent Levels erneut zu spielen.&lt;/p>
+&lt;p>Es wird keinerlei &amp;ldquo;Reset&amp;rdquo;/Prestige-Mechanik geben.&lt;/p></description></item><item><title>Game-Design-Document: Terrain</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/terrain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/terrain/</guid><description>
+&lt;p>Die Karten innerhalb der verschiedenen Level sind grundsätzlich rasterbasiert. Dabei handelt es sich nicht um flache Karten, sondern es sollen auch bergige Welten möglich sein.
+Es sollen abrupte größere Sprünge in der Höhe möglich sein, wie z.B. bei Bergen, um die Höhenunterschiede nicht ausschließlich kontinuierlich in Stufen zu gestalten. Damit würde die Landschaft nicht vollkommen homogen aussehen und etwas mehr Abwechslung für das Auge bieten.&lt;/p>
+&lt;p>Die einzelnen Wege werden ebenfalls auf diesem Raster platziert, andere Dekoelemente wie Bäume hingegen sollen absolut frei von Designern platziert werden können.&lt;/p>
+&lt;p>Eventuell wird die Höhe auch Auswirkungen auf z.B. Türme und deren Schussfertigkeit haben, steht zu diesem Zeitpunkt aber noch nicht fest.&lt;/p></description></item><item><title>Game-Design-Document: Rasterbasiertes Bauen</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/construction/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/construction/</guid><description>
+&lt;h2 id="rasterbasiertes-bauen-grid-based-building">Rasterbasiertes Bauen (Grid based building)&lt;/h2>
+&lt;p>Die Spielenden sollen &lt;a href="../../../docs/ideas/towers/">Türme&lt;/a> nicht völlig frei platzieren können, d.h. sie können die Türme nicht pixelweise verschieben.
+Stattdessen darf nur eine freie Position auf einem Raster gewählt werden, außerhalb der gegnerischen Laufpfade.&lt;/p>
+&lt;p>Sobald eine Position gewählt und ein Turm errichtet wurde, gilt das Feld auf dieser Position als besetzt und es kann kein weiterer Turm mehr darauf gebaut werden.&lt;/p>
+&lt;p>Ob ein Turm auch eine größere Fläche als ein einzelnes Feld belegen kann, steht zu diesem Zeitpunkt noch nicht fest.&lt;/p>
+&lt;p>Beispiele mit ähnlichen Systemen wären die Spiele Parkitect, Rimworld, Prison Architect uvm.&lt;/p></description></item><item><title>Game-Design-Document: Ressourcenmanagement</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/resource-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/resource-management/</guid><description>
+&lt;h2 id="resourcen-management">Resourcen Management&lt;/h2>
+&lt;p>Es wird &amp;ldquo;nur&amp;rdquo; Münzen für das Bauen von Türmen/Upgrades geben.&lt;/p>
+&lt;p>Für das Töten von Gegnern bekommt man x Münzen, die man einsetzen kann.&lt;/p>
+&lt;p>Eventuell wird es spezielle Ressourcenfelder in Leveln gegeben, die dann die Türme buffen. Zum Beispiel könnte ein
+Bogenschütze, der auf Lava steht, Feuerpfeile verschießen.&lt;/p></description></item><item><title>Game-Design-Document: Türme</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/towers/</guid><description>
+&lt;p>Der Spieler kann ausschließlich Türme bauen.
+Rekrutieren von Einheiten ist nicht vorgesehen.&lt;/p>
+&lt;p>Welche Türme im Spiel vorkommen, ist noch nicht bekannt.
+Einige Ideen finden sich &lt;a href="../../../docs/ideas/towers/">hier&lt;/a>.&lt;/p></description></item><item><title>Game-Design-Document: Gegner</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/enemies/</guid><description>
+&lt;h2 id="wellen">Wellen&lt;/h2>
+&lt;p>Typisch für ein Tower Defense Spiel ist, dass Gegner in Wellen erscheinen.
+Anfängliche Wellen starten mit leichteren Gegnern.
+Je länger ein Spieler durchhält, umso schwerer werden die Gegner in jeder Welle.&lt;/p>
+&lt;p>&amp;ldquo;Schwer&amp;rdquo; in diesem Zusammenhang bedeutet, dass ein Gegner mehr Lebenspunkte, mehr Rüstung oder z.B. höhere Elementar-Widerstände hat.
+Zum aktuellen Zeitpunkt ist noch nicht klar, welche Attribute ein Gegner haben wird.
+Zu keinem Zeitpunkt kann der Gegner den Spieler bzw. die Türme des Spielers angreifen.&lt;/p>
+&lt;h2 id="arten-von-gegner">Arten von Gegner&lt;/h2>
+&lt;ul>
+&lt;li>Bodeneinheiten&lt;/li>
+&lt;li>Lufteinheiten&lt;/li>
+&lt;li>Mini-Bosse&lt;/li>
+&lt;li>Boss-Gegner&lt;/li>
+&lt;li>End-Boss&lt;/li>
+&lt;/ul>
+&lt;h2 id="anzahl-der-gegner">Anzahl der Gegner&lt;/h2>
+&lt;p>Gegner sollen sich wertig anfühlen.
+Daher wird es keine Masse an Gegner geben, die durch die Türme angegriffen wird, sondern wenige.
+Klasse statt Masse ist die Devise.&lt;/p>
+&lt;h2 id="wege">Wege&lt;/h2>
+&lt;p>Die Gegner laufen auf vorgefertigten Wegen von ihrem Spawnpunkt zum Ziel.
+Hierbei kann es sich entweder um Boden- oder Lufteinheiten handeln.
+Auf dem Weg werden sie von den Türmen beschossen und nehmen Schaden, bis sie entweder sterben oder am Ziel ankommen.
+Kommen sie am Ziel an, nimmt der Spieler Schaden.&lt;/p>
+&lt;h3 id="wegbeeinflussung-durch-den-spieler">Wegbeeinflussung durch den Spieler&lt;/h3>
+&lt;p>Der Spieler soll die Möglichkeit haben, die Wege beeinflussen zu können.
+Wie genau ist zu diesem Zeitpunkt noch offen.
+Erste Ideen finden sich &lt;a href="../../../docs/ideas/navigation/">hier&lt;/a>.&lt;/p>
+&lt;p>Das Verändern der Wege soll eine bewusste Entscheidung durch den Spieler sein.
+Wenn er dies macht, sollte es auch einen negativen Einfluss auf den Spieler haben.
+Wie genauer dieser aussieht, steht zu aktuellen Zeitpunkt noch nicht fest.&lt;/p>
+&lt;p>&lt;img src="assets/ways.svg" alt="Wege">&lt;/p>
+&lt;p>Die Gegner sind intelligent und wissen, wann ein Weg blockiert ist und nehmen dann direkt eine alternative Route.
+Falls ein Gegner (z.B. Fluggegner) über eine Blockage fliegen kann, wird er den Weg über die Blockade gehen.
+Falls eine Blockage durch einen Gegner zerstört werden kann (siehe &lt;a href="../../../docs/ideas/navigation/">Ideen&lt;/a>), wird er den Weg der Blockade gehen und diese zerstören.
+Somit wird der Weg wieder frei für alle Gegner.&lt;/p></description></item><item><title>Game-Design-Document: Levels</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/levels/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/levels/</guid><description>
+&lt;p>Im Spiel hat der Spieler die Möglichkeit, verschiedene Levels zu spielen.
+In jedem Level muss er eine gewisse Anzahl an &lt;a href="../enemies/">Wellen schaffen&lt;/a>, bevor er das nächste Level spielen kann.&lt;/p>
+&lt;p>Die Levels werden auf zwei verschiedene Arten schwieriger:&lt;/p>
+&lt;ol>
+&lt;li>Jede Welle eines Levels wird schwieriger als die vorangegangene Welle.&lt;/li>
+&lt;li>Jedes weitere Level ist etwas schwieriger als das Level zuvor.&lt;/li>
+&lt;/ol>
+&lt;p>Es wird daher kein genereller Schwierigkeitsgrad benötigt.
+Die Schwierigkeit steigt kontinuierlich innerhalb jedes und mit jedem Level an.&lt;/p>
+&lt;p>Durch das &lt;a href="../loop-gameplay/">loop-basierte Gameplay&lt;/a> kann der Spieler ein Level mehrmals spielen.
+Daher ist es so, dass der Spieler nicht in der Lage sein soll, jedes Level beim ersten Durchspielen bis zur letzten Welle zu schaffen.
+Das wird erreicht, dass nach der x-ten Welle, die x+1-te Welle überproportional schwerer ist.
+Erst durch Forschung und Freischaltung weiterer Türme kann der Spieler bis zur letzten Welle vordringen.&lt;/p>
+&lt;p>Es braucht zudem eine Mechanik, die es erlaubt, dass der Spieler Wellen vorzeitig rufen kann.
+Das ermöglicht dem Spieler beim Wiederspielen eines leichteren Levels, die anfänglichen Wellen zu überspringen und sich auf die Herausforderung der späteren Wellen zu konzentrieren.&lt;/p>
+&lt;h2 id="herausforderungsmodus">Herausforderungsmodus&lt;/h2>
+&lt;p>Jedes Level kann in einem Herausforderungsmodus gestartet werden.
+In diesem Modus werden:&lt;/p>
+&lt;ul>
+&lt;li>Gegner stärker/schneller&lt;/li>
+&lt;li>Pausezeiten zwischen Wellen kürzer&lt;/li>
+&lt;li>Türme schwächer&lt;/li>
+&lt;/ul>
+&lt;p>Dieser Modus richtet sich an erfahrene Spieler, die bereits viel freigeschaltet haben und eine extra Portion Herausforderung wünschen.&lt;/p>
+&lt;p>Der Spieler soll in diesem Modus auf eine noch zu bestimmende Art und Weise belohnt werden.&lt;/p></description></item><item><title>Game-Design-Document: Spieler</title><link>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/player/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/game-design-document/gameplay/player/</guid><description>
+&lt;p>Der Spieler spielt aus einer Vogelperspektive.
+Er hat keinen steuerbaren Charakter.&lt;/p>
+&lt;p>Der Spieler kann die Kamera rein-/rauszoomen, bewegen und auf der Y-Achse drehen.
+Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item></channel></rss>
