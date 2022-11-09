@@ -8,6 +8,11 @@ menu:
     pre: <i class='fa-solid fa-book'></i>
 ---
 
+{{% alert title="Gendergerechte Sprache" color="success" %}}
+Zur Vereinfachung des Schreibens und Lesens der Dokumentation wird sie im generischen Maskulinum verfasst.
+Beispielsweise umfasst der Begriff "Der Spieler" alle Spieler:innen aller Geschlechter.
+{{% /alert %}}
+
 In dieser Dokumentation wirst Du nach und nach alles finden, was zum Community-Projekt gehört.
 
 Auf der linken Seite findest Du ein Inhaltsverzeichnis, auf der rechten Seite kannst Du Dir den Quelltext von der Dokumentation anschauen.
