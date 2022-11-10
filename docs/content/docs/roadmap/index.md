@@ -18,10 +18,12 @@ Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.
 
 1. Findung des Genres: Entscheidung der Community: **Tower Defense**
 2. Findung des Themas: Entscheidung der Community: **Mittelalter** 
-3. Findung des Stils `<-`
+3. ~~Findung des Stils~~
    
-   Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen. 
-4. Erstellung des Game Design Documents.
+   ~~Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen.~~
+
+   Die Stilfindung wird zu einem späteren Zeitpunkt stattfinden, sobald das GDD etwas Inhalt hat und man durch den MVP erste kleine Dinge implementiert hat.
+4. Erstellung des Game Design Documents. `<-`
    
    Hier halten wir grob fest, was genau wir eigentlich für ein Spiel entwickeln wollen.
    Hier drin werden wir auch den MVP (siehe weiter unten) definieren.
