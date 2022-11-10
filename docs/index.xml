@@ -55,11 +55,12 @@ Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.&lt;/p>
 &lt;p>Findung des Themas: Entscheidung der Community: &lt;strong>Mittelalter&lt;/strong>&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Findung des Stils &lt;code>&amp;lt;-&lt;/code>&lt;/p>
-&lt;p>Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen.&lt;/p>
+&lt;p>&lt;del>Findung des Stils&lt;/del>&lt;/p>
+&lt;p>&lt;del>Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen.&lt;/del>&lt;/p>
+&lt;p>Die Stilfindung wird zu einem späteren Zeitpunkt stattfinden, sobald das GDD etwas Inhalt hat und man durch den MVP erste kleine Dinge implementiert hat.&lt;/p>
 &lt;/li>
 &lt;li>
-&lt;p>Erstellung des Game Design Documents.&lt;/p>
+&lt;p>Erstellung des Game Design Documents. &lt;code>&amp;lt;-&lt;/code>&lt;/p>
 &lt;p>Hier halten wir grob fest, was genau wir eigentlich für ein Spiel entwickeln wollen.
 Hier drin werden wir auch den MVP (siehe weiter unten) definieren.&lt;/p>
 &lt;/li>
