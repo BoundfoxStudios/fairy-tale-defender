@@ -612,7 +612,17 @@ Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 &lt;li>Stärkere Gegner?&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: Multi Scene Management</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Magie</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/magic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/magic/</guid><description>
+&lt;h2 id="elementarmagie">Elementarmagie&lt;/h2>
+&lt;p>Folgende Elemente sollen als Magie ihren Weg in das Spiel finden:&lt;/p>
+&lt;ul>
+&lt;li>Luft&lt;/li>
+&lt;li>Erde/ Stein&lt;/li>
+&lt;li>Wasser/ Eis&lt;/li>
+&lt;li>Feuer&lt;/li>
+&lt;/ul>
+&lt;h2 id="türme">Türme&lt;/h2>
+&lt;p>Einige Ideen wie Türme Magie einsetzen könnten, finden sich &lt;a href="../../../docs/ideas/towers/#feuerwasserlufterde-turm">hier&lt;/a>.&lt;/p></description></item><item><title>Docs: Multi Scene Management</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/multi-scene-management/</guid><description>
 &lt;p>Unity ist in der Lage, mehrere Szenen gleichzeitig laufen zu lassen.
 Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder auch welche wieder entladen.
 In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
