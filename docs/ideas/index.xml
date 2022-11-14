@@ -1,4 +1,98 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Ideen</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/</link><description>Recent content in Ideen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Gegner-Navigation</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Ideen</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/</link><description>Recent content in Ideen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Gegner</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</guid><description>
+&lt;h2 id="gegnerarten">Gegnerarten&lt;/h2>
+&lt;p>Bisher wurden folgende Gegner vorgeschlagen:&lt;/p>
+&lt;ul>
+&lt;li>Bauern&lt;/li>
+&lt;li>Zwerge&lt;/li>
+&lt;li>Ritter&lt;/li>
+&lt;li>Reiter&lt;/li>
+&lt;li>Drachen&lt;/li>
+&lt;/ul>
+&lt;h2 id="attribute-der-gegner">Attribute der Gegner&lt;/h2>
+&lt;p>Gegner sollen über folgende Eigenschaften verfügen, die grob in jeweils 3-4 Stufen eingeteilt werden können.&lt;/p>
+&lt;ul>
+&lt;li>Lebenspunkte: Wenig, Mittel, Viel&lt;/li>
+&lt;li>Rüstung: Keine, Wenig, Mittel, Viel&lt;/li>
+&lt;li>Geschwindigkeit: Langsam, Mittel, Schnell&lt;/li>
+&lt;li>Größe: Klein, Mittel, Groß&lt;/li>
+&lt;li>Erfahrungpunkte für den Spieler: Wenig, Mittel, Viel&lt;/li>
+&lt;li>Münzen für den Spieler: Wenig, Mittel, Viel&lt;/li>
+&lt;li>Elementarwiderstände: Luft, Wasser, Feuer, Erde&lt;/li>
+&lt;li>Effektwiderstände: Umwerfwiderstand&lt;/li>
+&lt;li>Typ: Boden-, Lufteinheit&lt;/li>
+&lt;/ul>
+&lt;p>Es wurde sich gegen die Fähigkeit der Heilung bei Gegner entschieden.&lt;/p>
+&lt;h2 id="tabelle">Tabelle&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">&lt;/th>
+&lt;th style="text-align:center">Bauer&lt;/th>
+&lt;th style="text-align:center">Zwerg&lt;/th>
+&lt;th style="text-align:center">Ritter&lt;/th>
+&lt;th style="text-align:center">Reiter&lt;/th>
+&lt;th style="text-align:center">Drachen&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Lebenspunkte&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Mittel (mehr als Ritter)&lt;/td>
+&lt;td style="text-align:center">Hoch&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Rüstung&lt;/td>
+&lt;td style="text-align:center">Keine&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Keine&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Geschwindigkeit&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Langsam&lt;/td>
+&lt;td style="text-align:center">Schnell&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Größe&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Klein&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Groß&lt;/td>
+&lt;td style="text-align:center">Groß&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Erfahrungspunkte&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Hoch&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Münzen&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Wenig&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Mittel&lt;/td>
+&lt;td style="text-align:center">Hoch&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Typ&lt;/td>
+&lt;td style="text-align:center">Boden&lt;/td>
+&lt;td style="text-align:center">Boden&lt;/td>
+&lt;td style="text-align:center">Boden&lt;/td>
+&lt;td style="text-align:center">Boden&lt;/td>
+&lt;td style="text-align:center">Flug&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Gegner-Navigation</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</guid><description>
 &lt;p>Gemäß dem &lt;a href="../../../game-design-document/gameplay/enemies/">GDD&lt;/a> laufen Gegner auf vorgefertigten Wegen.
 Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 &lt;h2 id="ideen-zu-wegen-von-gegnern">Ideen zu Wegen von Gegnern&lt;/h2>
