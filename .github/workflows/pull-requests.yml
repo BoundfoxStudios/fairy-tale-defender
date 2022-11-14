@@ -75,11 +75,8 @@ jobs:
           exit 1
       - uses: actions-ecosystem/action-add-labels@v1
         if: | 
-          always() 
-          && (
-            (needs.change-detection.outputs.unity == 'true' && needs.build.result == 'success')
-            || (needs.change-detection.outputs.documentation == 'true' && needs.hugo-check-broken-links.result == 'success')
-          )
+          (needs.change-detection.outputs.unity == 'true' && needs.build.result == 'success')
+          || (needs.change-detection.outputs.docs == 'true' && needs.hugo-check-broken-links.result == 'success')
         with:
           labels: ci-ready-to-merge
 
