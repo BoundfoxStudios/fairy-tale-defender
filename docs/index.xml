@@ -486,7 +486,47 @@ In diesem Moment haben wir alles voneinander entkoppelt.
 Die Spieler-Klasse hat viel weniger Verantwortlichkeiten, auch für den Entwickler ist es jetzt sehr viel einfacher zu verstehen, da statt viele Einzelsysteme nur noch das Event-System angesprochen wird.
 Damit haben wir jetzt eine &lt;em>lose Kopplung&lt;/em> erreicht.&lt;/p>
 &lt;p>Einfach ausgedrückt kann man sich das Event-System als eine Art Walkie-Talkie vorstellen.
-Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Gegner</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</guid><description>
+Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item><item><title>Docs: Forschung</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/research/</guid><description>
+&lt;p>Durch forschen können weitere Inhalte und Verbesserungen freigeschaltet werden.
+Wie und wann man die Möglichkeit bekommt weiter zu forschen, steht noch offen.
+Dies könnte durch Sammeln von Erfahrung, beim Besiegen von Gegnern und ganzen Leveln der Fall sein, könnte aber auch z.B. Geld erfordern.&lt;/p>
+&lt;p>Die Forschung könnte sich u.a. über folgende Gebiete erstrecken:&lt;/p>
+&lt;h2 id="türmedocsideastowers">&lt;a href="../../../docs/ideas/towers/">Türme&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Türme werden erst mit abgeschlossener Forschung freigeschaltet&lt;/li>
+&lt;li>&lt;a href="../../../docs/ideas/towers/#t%C3%BCrme-sollen-%C3%BCber-folgende-attribute-verf%C3%BCgen-k%C3%B6nnen">Attribute&lt;/a> werden verbessert&lt;/li>
+&lt;li>Kosten werden reduziert
+&lt;ul>
+&lt;li>für Bau&lt;/li>
+&lt;li>für Upgrade&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>Benötigte Zeit zum upgraden wird reduziert&lt;/li>
+&lt;/ul>
+&lt;h2 id="personaldocsideastowersidee-von-wodan-im-discord">&lt;a href="../../../docs/ideas/towers/#idee-von-wodan-im-discord">Personal&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Das Cap (Limit) an Personal könnte sich erhöhen&lt;/li>
+&lt;li>Weniger Personalbedarf für bestimmte Türme&lt;/li>
+&lt;/ul>
+&lt;h2 id="magiedocsideasmagic">&lt;a href="../../../docs/ideas/magic/">Magie&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Element wird erst durch Forschung freigeschaltet&lt;/li>
+&lt;li>Element wird verbessert
+&lt;ul>
+&lt;li>Schaden&lt;/li>
+&lt;li>Fläche&lt;/li>
+&lt;li>Effektdauer&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="gegnerdocsideasenemies">&lt;a href="../../../docs/ideas/enemies/">Gegner&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>Globaler Schadenbonus für alle Türme gegen eine bestimmte Gegnerart
+&lt;ul>
+&lt;li>Könnte zum freischalten auch z.B. X-Kills an dem Gegnertyp benötigen&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Gegner</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</guid><description>
 &lt;h2 id="gegnerarten">Gegnerarten&lt;/h2>
 &lt;p>Bisher wurden folgende Gegner vorgeschlagen:&lt;/p>
 &lt;ul>
