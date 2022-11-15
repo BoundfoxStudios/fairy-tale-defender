@@ -1,9 +1,6 @@
 name: Contributors List
 description: | 
   Writes the contributors.json file to be read by the Unity project.
-  Please note the API shortcomings: https://docs.github.com/en/rest/repos/repos#list-repository-contributors
-  If we have more than 100 contributors, we need to page the result.
-  If we have more than 500 contributors, not all will be shown anymore.
 inputs:
   github-token:
     required: true
@@ -20,7 +17,7 @@ outputs:
 runs:
   using: 'composite'
   steps:
-    - name: Get Contributors from API
+    - name: Get Contributors from .all-contributorsrc
       id: variables
       env:
         GH_TOKEN: ${{ inputs.github-token }}
