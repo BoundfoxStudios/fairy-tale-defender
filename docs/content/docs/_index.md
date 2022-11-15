@@ -26,6 +26,12 @@ Unten links und rechts findest Du wichtige Links zum Projekt, aber auch hier noc
 * [Twitter]({{< param "project_links.github.url" >}})
 * [Weitere Socials](https://boundfoxstudios.com/socials)
 
+## YouTube "Community-Projekt" Playlist
+
+Alle Videos zum Community-Projekt findest Du in der [Playlist auf YouTube]({{< param "project_links.community_playlist.url" >}})!
+
+{{< youtube-playlist id="PLxVAs8AY4TgchOtBZqg4qvFeq6w74ZtAm" >}}
+
 ## Wer macht alles mit?
 
 Aktuell haben sich {{< contributor-count >}} Menschen am Projekt beteiligt!

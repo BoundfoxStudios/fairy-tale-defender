@@ -3,7 +3,15 @@ $custom-breakpoints: (
 );
 
 @include media-breakpoint-up(xxxl, $custom-breakpoints) {
+  .row-cols-xxxl-4 {
+    @include row-cols(4);
+  }
+
   .row-cols-xxxl-9 {
     @include row-cols(9);
   }
+}
+
+.bg-semi-transparent {
+  background-color: $bg-semi-transparent;
 }

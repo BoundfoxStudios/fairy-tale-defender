@@ -41,6 +41,8 @@ params:
       url: https://youtube.com/@BoundfoxStudios
     discord: &discord
       url: https://discord.gg/tHqNzMT
+    community_playlist:
+      url: https://www.youtube.com/playlist?list=PLxVAs8AY4TgchOtBZqg4qvFeq6w74ZtAm
   links:
     user:
       - <<: *youtube

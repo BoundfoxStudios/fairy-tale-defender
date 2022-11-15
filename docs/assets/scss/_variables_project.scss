@@ -1,4 +1,6 @@
 $primary: black;
 $secondary: #ffeb3b;
+$dark: #403F4C !default; // original from docsy
+$bg-semi-transparent: change-color($dark, $alpha: 0.8);
 
 $td-enable-google-fonts: false;

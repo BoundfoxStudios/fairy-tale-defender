@@ -8,6 +8,8 @@ on:
       - 'docs/**'
       - '.all-contributorsrc'
   workflow_dispatch:
+  schedule:
+    - cron: '5 17 * * 1' # deploy the documentation website every monday after the new video went live
 
 jobs:
   check-broken-links:
