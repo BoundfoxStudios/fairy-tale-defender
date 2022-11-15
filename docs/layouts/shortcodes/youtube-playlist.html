@@ -1,0 +1,21 @@
+{{ $youtubeApiKey := getenv "HUGO_YOUTUBE_API_KEY" }}
+{{ $id := .Get "id" | default (.Get 0) }}
+{{ with getJSON "https://www.googleapis.com/youtube/v3/playlistItems?part=status,snippet&maxResults=50&playlistId=" $id "&key=" $youtubeApiKey }}
+<div class="container-fluid">
+  <div class="row row-cols-xxxl-4 row-cols-xl-3 row-cols-lg-2 row-cols-sm-2 row-cols-1">
+  {{ range $index, $element := sort (where .items "status.privacyStatus" "public") "snippet.publishedAt" "desc" }}
+    {{ $videoUrl := print "https://www.youtube.com/watch?v=" $element.snippet.resourceId.videoId "&list=" $id "&index=" $element.snippet.position }}
+    <div class="col mb-4 text-center">
+      <div class="card">
+        <a href="{{ $videoUrl }}" target="_blank" title="{{ $element.snippet.title }}">
+          <img src="{{ $element.snippet.thumbnails.maxres.url }}" class="img-fluid" alt="{{ $element.snippet.title }}"/>
+          <div class="card-img-overlay d-flex justify-content-end align-items-end py-2 px-2">
+            <p class="card-text text-light bg-semi-transparent rounded px-1">{{ time.Format "02.01.2006" $element.snippet.publishedAt }}</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  {{ end }}
+  </div>
+</div>
+{{ end }}
