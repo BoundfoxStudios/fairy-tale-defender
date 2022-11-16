@@ -6,6 +6,7 @@ runs:
   steps:
     - uses: BoundfoxStudios/action-hugo-link-check@v2
       with:
+        skip: github\.com\/boundfoxstudios\/community-project\/(tree|edit|new|issues\/new)
         hugo-startup-wait-time: 60
         hugo-root: docs
         hugo-content-dir: docs/content
