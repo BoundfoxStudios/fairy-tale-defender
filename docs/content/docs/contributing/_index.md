@@ -98,9 +98,9 @@ Kommunikation ist an dieser Stelle essentiell. Auch wenn Du Dir z.B. eine Aufgab
 
 ## Ich möchte ...
 
-* ... [technisch mitarbeiten](technical) (z.B. Entwickler)
-* ... [visuell mitarbeiten](visual) (z.B. 3D-Designer, 2D-Designer)
-* ... [auditiv mitarbeiten](auditory) (z.B. Musik, Sound-Effekte)
+* ... [technisch mitarbeiten](technical/) (z.B. Entwickler)
+* ... [visuell mitarbeiten](visual/) (z.B. 3D-Designer, 2D-Designer)
+* ... [auditiv mitarbeiten](auditory/) (z.B. Musik, Sound-Effekte)
 
 Fühlst Du Dich in dieser Liste noch nicht zu Hause, da Du z.B. eher Spieletester sein möchtest, kein Problem!
 Dann bist Du zum aktuellen Stand des Projekte noch etwas zu früh dran.

@@ -8,4 +8,4 @@ icon: fa-solid fa-code
 
 Hier findest Du die technische Dokumentation des Community-Projekts.
 
-Wenn Du Dich interessiert, [Dich technisch zu beteiligen](../contributing/technical), also das Entwickeln von Code, dann solltest Du Dir alle Informationen hier durchlesen.
+Wenn Du Dich interessiert, [Dich technisch zu beteiligen](../contributing/technical/), also das Entwickeln von Code, dann solltest Du Dir alle Informationen hier durchlesen.
