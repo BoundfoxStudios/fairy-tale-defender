@@ -4,11 +4,9 @@ description: Checks the hugo documentation website for broken links
 runs:
   using: 'composite'
   steps:
-    - uses: BoundfoxStudios/action-hugo-link-check@v1
+    - uses: BoundfoxStudios/action-hugo-link-check@v2
       with:
         hugo-startup-wait-time: 60
-        excluded-schemes: 'unityhub'
-        rate-limit: 10
         hugo-root: docs
         hugo-content-dir: docs/content
         hugo-config: docs/config.yaml
