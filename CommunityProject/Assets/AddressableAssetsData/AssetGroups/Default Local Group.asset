@@ -16,7 +16,11 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: c6d10839bcd5147da8269d1fd2805bb9
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 9f8586856d63898b8a1c059d2a07fac0
+    m_Address: Assets/_Game/Scenes/Menus/Credits.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
