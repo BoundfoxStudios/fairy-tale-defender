@@ -23,6 +23,11 @@ namespace BoundfoxStudios.CommunityProject
         void Update()
         {
 	        _scrollRect.verticalNormalizedPosition -= Scrollspeed * Time.deltaTime;
+
+	        if (_scrollRect.verticalNormalizedPosition <= 0)
+	        {
+		        _scrollRect.verticalNormalizedPosition = 1;
+	        }
         }
     }
 }
