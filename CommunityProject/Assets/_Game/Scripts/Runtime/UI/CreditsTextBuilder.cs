@@ -6,6 +6,7 @@ using BoundfoxStudios.CommunityProject.Build.Contributors;
 using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BoundfoxStudios.CommunityProject
 {
@@ -17,6 +18,12 @@ namespace BoundfoxStudios.CommunityProject
 
 	    [SerializeField]
 	    private int CreditTextSize = 75;
+
+	    [SerializeField]
+	    private ScrollRect ScrollView;
+
+	    [SerializeField]
+	    private VerticalLayoutGroup ContentLayoutGroup;
 
         // Start is called before the first frame update
         void Start()
@@ -33,6 +40,11 @@ namespace BoundfoxStudios.CommunityProject
 
 	        BuildCreditsText(contributors);
 
+	        var scrollViewRect = ScrollView.GetComponent<RectTransform>().rect;
+	        var padding = Mathf.FloorToInt(scrollViewRect.height + 1);
+
+	        ContentLayoutGroup.padding = new(0, 0, padding, padding);
+	        ScrollView.verticalNormalizedPosition = 1;
         }
 
 
