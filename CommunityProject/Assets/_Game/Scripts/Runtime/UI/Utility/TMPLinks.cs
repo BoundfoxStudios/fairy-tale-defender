@@ -2,8 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-
-namespace BoundfoxStudios.CommunityProject.UI
+namespace BoundfoxStudios.CommunityProject.UI.Utility
 {
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class TMPLinks : MonoBehaviour, IPointerClickHandler

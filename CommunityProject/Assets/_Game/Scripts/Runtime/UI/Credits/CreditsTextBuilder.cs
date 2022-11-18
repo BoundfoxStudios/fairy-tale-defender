@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using BoundfoxStudios.CommunityProject.Build.Contributors;
 using Cysharp.Threading.Tasks;
@@ -8,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject
+namespace BoundfoxStudios.CommunityProject.UI.Credits
 {
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class CreditsTextBuilder : MonoBehaviour

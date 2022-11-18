@@ -1,11 +1,7 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject
+namespace BoundfoxStudios.CommunityProject.UI.Utility
 {
 	[RequireComponent(typeof(ScrollRect))]
 	public class AutoScroll : MonoBehaviour
