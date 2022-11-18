@@ -52,6 +52,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			{
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneButton("MainMenu", "Menus/MainMenu");
+				OpenSceneButton("Credits", "Menus/Credits");
 				EditorGUILayout.EndHorizontal();
 			}
 			EndFoldoutGroup("Menus", show);
