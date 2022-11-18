@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.UI
+namespace BoundfoxStudios.CommunityProject.UI.Utility
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(LoadingScreen))]
 	public class LoadingScreen : MonoBehaviour

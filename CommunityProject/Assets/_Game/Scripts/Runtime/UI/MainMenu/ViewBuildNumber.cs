@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace BoundfoxStudios.CommunityProject.UI
+namespace BoundfoxStudios.CommunityProject.UI.MainMenu
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
 	[RequireComponent(typeof(TextMeshProUGUI))]
