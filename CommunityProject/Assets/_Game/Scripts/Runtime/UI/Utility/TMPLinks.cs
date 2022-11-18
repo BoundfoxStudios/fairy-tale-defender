@@ -7,33 +7,33 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class TMPLinks : MonoBehaviour, IPointerClickHandler
 	{
-		private TextMeshProUGUI _pTextMeshPro;
-		private Canvas _pCanvas;
-		private Camera pCamera;
+		private Camera _camera;
+		private Canvas _canvas;
+		private TextMeshProUGUI _textMeshPro;
 
 		private void Awake()
 		{
-			_pTextMeshPro = GetComponent<TextMeshProUGUI>();
-			_pCanvas = GetComponentInParent<Canvas>();
+			_textMeshPro = GetComponent<TextMeshProUGUI>();
+			_canvas = GetComponentInParent<Canvas>();
 
 			// Get a reference to the camera if Canvas Render Mode is not ScreenSpace Overlay.
-			if (_pCanvas.renderMode == RenderMode.ScreenSpaceOverlay)
-				pCamera = null;
-			else
-				pCamera = _pCanvas.worldCamera;
+			_camera = _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera;
 		}
 
 		public void OnPointerClick(PointerEventData eventData)
 		{
-			int linkIndex = TMP_TextUtilities.FindIntersectingLink(_pTextMeshPro, UnityEngine.Input.mousePosition, pCamera);
-			if (linkIndex != -1)
-			{ // was a link clicked?
-				TMP_LinkInfo linkInfo = _pTextMeshPro.textInfo.linkInfo[linkIndex];
+			var linkIndex = TMP_TextUtilities.FindIntersectingLink(_textMeshPro, eventData.position, _camera);
 
-				// open the link id as a url, which is the metadata we added in the text field
-				Application.OpenURL(linkInfo.GetLinkID());
+			if (linkIndex == -1)
+			{
+				return;
 			}
-		}
 
+			// was a link clicked?
+			var linkInfo = _textMeshPro.textInfo.linkInfo[linkIndex];
+
+			// open the link id as a url, which is the metadata we added in the text field
+			Application.OpenURL(linkInfo.GetLinkID());
+		}
 	}
 }
