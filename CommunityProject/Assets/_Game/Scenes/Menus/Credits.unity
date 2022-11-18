@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d0bde36dd71e678a4e33d048d67e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Scrollspeed: 0.05
+  ScrollSpeed: 0.05
 --- !u!224 &1057845242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
@@ -892,7 +892,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -760.754, y: 0, z: -772.72064, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
