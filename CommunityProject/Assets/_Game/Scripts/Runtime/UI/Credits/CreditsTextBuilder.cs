@@ -1,18 +1,17 @@
 using System.Linq;
 using BoundfoxStudios.CommunityProject.Build.Contributors;
 using Cysharp.Threading.Tasks;
+using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace BoundfoxStudios.CommunityProject.UI.Credits
 {
+	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(CreditsTextBuilder))]
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class CreditsTextBuilder : MonoBehaviour
 	{
-		private TextMeshProUGUI _tmpText;
-		private ContributorsReader _contributorsReader;
-
 		[SerializeField]
 		private int CreditTextSize = 75;
 
@@ -22,16 +21,30 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 		[SerializeField]
 		private VerticalLayoutGroup ContentLayoutGroup;
 
-		// Start is called before the first frame update
-		void Start()
-		{
+		[SerializeField]
+		private string DeveloperPlaceholder = "{{Developer}}";
 
-		}
+		[SerializeField]
+		private string ArtistPlaceholder = "{{Artist}}";
 
+		[SerializeField]
+		private string DocPlaceholder = "{{Doc}}";
+
+		[SerializeField]
+		private string IdeaPlaceholder = "{{Idea}}";
+
+		[SerializeField]
+		private string AudioPlaceholder = "{{Audio}}";
+
+		private ContributorsReader _contributorsReader;
+		private TextMeshProUGUI _tmpText;
+
+		[UsedImplicitly]
+		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
 			_tmpText = GetComponent<TextMeshProUGUI>();
-			_contributorsReader = new ContributorsReader();
+			_contributorsReader = new();
 
 			var contributors = await _contributorsReader.LoadAsync();
 
@@ -44,103 +57,36 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 			ScrollView.verticalNormalizedPosition = 1;
 		}
 
-
 		private void BuildCreditsText(Contributor[] contributors)
 		{
-			var developerCredits = BuildDeveloperCredits(contributors);
-			var artistCredits = BuildArtistsCredits(contributors);
-			var documentationCredits = BuildDocumentationCredits(contributors);
-			var ideasCredits = BuildIdeasCredits(contributors);
-			var soundCredits = BuildSoundCredits(contributors);
+			var developerCredits = BuildContributorCredits(contributors, "code");
+			var artistCredits = BuildContributorCredits(contributors, "design");
+			var documentationCredits = BuildContributorCredits(contributors, "doc");
+			var ideasCredits = BuildContributorCredits(contributors, "ideas");
+			var soundCredits = BuildContributorCredits(contributors, "audio");
 
-			_tmpText.text = _tmpText.text.Replace("{{Developer}}", developerCredits);
-			_tmpText.text = _tmpText.text.Replace("{{Artist}}", artistCredits);
-			_tmpText.text = _tmpText.text.Replace("{{Doc}}", documentationCredits);
-			_tmpText.text = _tmpText.text.Replace("{{Idea}}", ideasCredits);
-			_tmpText.text = _tmpText.text.Replace("{{Audio}}", soundCredits);
+			var credits = _tmpText.text;
+			credits = credits
+				.Replace(DeveloperPlaceholder, developerCredits)
+				.Replace(ArtistPlaceholder, artistCredits)
+				.Replace(DocPlaceholder, documentationCredits)
+				.Replace(IdeaPlaceholder, ideasCredits)
+				.Replace(AudioPlaceholder, soundCredits);
+			_tmpText.text = credits;
 		}
 
-		private string BuildDeveloperCredits(Contributor[] contributors)
+		private string BuildContributorCredits(Contributor[] contributors, string type)
 		{
-			string credits = $"<size={CreditTextSize}>";
-			foreach (var contributor in contributors)
-			{
-				if (contributor.Contributions.Contains("code"))
-				{
-					credits = AddNextCreditItem(credits, contributor);
-				}
-			}
-
+			var credits = $"<size={CreditTextSize}>";
+			credits = contributors
+				.Where(contributor => contributor.Contributions.Contains(type))
+				.Aggregate(credits, CreateCreditItem);
 			credits = $"{credits}</size>";
 
 			return credits;
 		}
 
-		private string BuildArtistsCredits(Contributor[] contributors)
-		{
-			string credits = $"<size={CreditTextSize}>";
-			foreach (var contributor in contributors)
-			{
-				if (contributor.Contributions.Contains("design"))
-				{
-					credits = AddNextCreditItem(credits, contributor);
-				}
-			}
-
-			credits = $"{credits}</size>";
-
-			return credits;
-		}
-
-		private string BuildDocumentationCredits(Contributor[] contributors)
-		{
-			string credits = $"<size={CreditTextSize}>";
-			foreach (var contributor in contributors)
-			{
-				if (contributor.Contributions.Contains("doc"))
-				{
-					credits = AddNextCreditItem(credits, contributor);
-				}
-			}
-
-			credits = $"{credits}</size>";
-
-			return credits;
-		}
-
-		private string BuildIdeasCredits(Contributor[] contributors)
-		{
-			string credits = $"<size={CreditTextSize}>";
-			foreach (var contributor in contributors)
-			{
-				if (contributor.Contributions.Contains("ideas"))
-				{
-					credits = AddNextCreditItem(credits, contributor);
-				}
-			}
-
-			credits = $"{credits}</size>";
-
-			return credits;
-		}
-
-		private string BuildSoundCredits(Contributor[] contributors)
-		{
-			string credits = $"<size={CreditTextSize}>";
-			foreach (var contributor in contributors)
-			{
-				if (contributor.Contributions.Contains("audio"))
-				{
-					credits = AddNextCreditItem(credits, contributor);
-				}
-			}
-
-			credits = $"{credits}</size>";
-
-			return credits;
-		}
-
-		private string AddNextCreditItem(string original, Contributor contributor)
+		private string CreateCreditItem(string original, Contributor contributor)
 		{
 			var githubLink = contributor.ProfileUrl;
 			var displayName = contributor.User;
