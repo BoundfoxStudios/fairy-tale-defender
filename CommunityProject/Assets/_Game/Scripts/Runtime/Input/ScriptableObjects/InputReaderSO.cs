@@ -3,7 +3,7 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
-	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions, GameInput.IUIActions
+	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions
 	{
 		private GameInput _gameInput;
 
@@ -11,10 +11,9 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 		{
 			if (_gameInput == null)
 			{
-				_gameInput = new GameInput();
+				_gameInput = new();
 
 				_gameInput.Gameplay.SetCallbacks(this);
-				_gameInput.UI.SetCallbacks(this);
 			}
 		}
 
