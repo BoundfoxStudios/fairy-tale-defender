@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
+using System;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
@@ -9,6 +10,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Load Scene Event Channel")]
 	public class LoadSceneEventChannelSO : EventChannelSO<LoadSceneEventChannelSO.EventArgs>
 	{
+		[Serializable]
 		public struct EventArgs
 		{
 			public SceneSO Scene;
