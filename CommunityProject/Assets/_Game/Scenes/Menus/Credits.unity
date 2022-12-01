@@ -1024,7 +1024,29 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
         type: 3}
+      propertyPath: SceneToLoad
+      value: 
+      objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
+        type: 2}
+    - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: Settings.Scene
+      value: 
+      objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
+        type: 2}
+    - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: ShowLoadingScreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
       propertyPath: Args.ShowLoadingScreen
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: Settings.ShowLoadingScreen
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.SceneManagement
@@ -6,8 +7,12 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(SceneLoadRequester))]
 	public class SceneLoadRequester : MonoBehaviour
 	{
+		[Header("Settings")]
 		[SerializeField]
-		private LoadSceneEventChannelSO.EventArgs Settings;
+		private SceneSO SceneToLoad;
+
+		[SerializeField]
+		private bool ShowLoadingScreen;
 
 		[Header("Broadcasting on")]
 		[SerializeField]
@@ -15,7 +20,11 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		public void LoadScene()
 		{
-			LoadSceneEventChannel.Raise(Settings);
+			LoadSceneEventChannel.Raise(new()
+			{
+				Scene = SceneToLoad,
+				ShowLoadingScreen = ShowLoadingScreen
+			});
 		}
 	}
 }
