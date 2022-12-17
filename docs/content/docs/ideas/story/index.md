@@ -5,7 +5,6 @@ description: Story-Ideen von unserem Community-Mitglied Tipi.
 ---
 
 Diese Storys sind von unserem Community-Mitglied **Tipi** geschrieben worden. Sie sind gedacht, um eine Idee für die Handlung und damit die Umgebung und den grafischen Stil des Spiels zu setzen. Es sind jeweils die Startszenarien, die dann weiter ausgebaut werden, wenn die Community sich für eines entschieden hat (oder was ganz anderes will).
-
 ## Story 1 
 
 Unsere Protagonistin ist Tochter einer mittelständischen Familie, ihre Kindheit war so weit in Ordnung. Ihr Vater war Handwerker, die Mutter hauptsächlich Mutter und wenn sie Zeit hatte, hat sie versucht, mit Kleinigkeiten etwas Geld dazuzuverdienen. Es reichte zum Leben, viel mehr aber auch nicht. Mit dem Heranwachsen zeigte sich immer mehr eine zurückhaltende, aber sehr aufmerksame Persönlichkeit, ideal für den Besuch einer Bedienstetenschule.
