@@ -10,7 +10,8 @@ namespace BoundfoxStudios.CommunityProject.Navigation.PathProviders
 	/// </summary>
 	public class SplinePathProvider
 	{
-		public ISpline CreatePath(ISplineContainer container, ISplineLinkDecisionMaker splineLinkDecisionMaker, int startSplineIndex = 0, int startKnotIndex = 0)
+		public ISpline CreatePath(ISplineContainer container, ISplineLinkDecisionMaker splineLinkDecisionMaker,
+			int startSplineIndex = 0, int startKnotIndex = 0)
 		{
 			var pathSlices = new List<SplineSlice<Spline>>();
 			var endKnot = container.Splines[startSplineIndex][^1];
@@ -34,15 +35,14 @@ namespace BoundfoxStudios.CommunityProject.Navigation.PathProviders
 				knotIndex = traverseResult.SplineSlice.Range.End + 1;
 
 				if (TrySelectSplineForFurtherTraversal(container, splineLinkDecisionMaker, traverseResult.LinkedKnots,
-					    out var nextSpline, out var nextKnot))
+						out var nextSpline, out var nextKnot))
 				{
 					splineIndex = nextSpline;
 					knotIndex = nextKnot;
 				}
 
 				iteration++;
-			}
-			while (!endKnot.Equals(lastKnotInSlice) && iteration < maxIterations);
+			} while (!endKnot.Equals(lastKnotInSlice) && iteration < maxIterations);
 
 			if (iteration >= maxIterations)
 			{
