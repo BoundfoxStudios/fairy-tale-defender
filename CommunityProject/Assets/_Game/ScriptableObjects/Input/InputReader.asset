@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b257320d443ed546934124305db166c, type: 3}
   m_Name: InputReader
   m_EditorClassIdentifier: 
+  EnterBuildModeEventChannel: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+    type: 2}
+  ExitBuildModeEventChannel: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
+    type: 2}

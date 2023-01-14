@@ -546,6 +546,76 @@ namespace BoundfoxStudios.CommunityProject.Input
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""BuildSystem"",
+            ""id"": ""fca70570-7304-494e-bfd3-dcb79e948909"",
+            ""actions"": [
+                {
+                    ""name"": ""BuildPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""6e5cd196-659c-4cc9-9084-335792ebb867"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Build"",
+                    ""type"": ""Value"",
+                    ""id"": ""1aa7a8c4-5d36-45a4-b690-668a115a242b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fa2ea732-cc31-436d-9b02-0d768f9b5c1e"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""BuildPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""LeftMouseClick"",
+                    ""id"": ""d24ee188-5b3a-4f9e-afd2-2687d9a048e6"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Build"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""099a7d37-02c3-4615-985d-0151e2968c95"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Build"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""c5ba2aa6-b54a-4659-8e0c-9216bfbdfa2b"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Build"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -581,6 +651,10 @@ namespace BoundfoxStudios.CommunityProject.Input
             m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
             m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
             m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+            // BuildSystem
+            m_BuildSystem = asset.FindActionMap("BuildSystem", throwIfNotFound: true);
+            m_BuildSystem_BuildPosition = m_BuildSystem.FindAction("BuildPosition", throwIfNotFound: true);
+            m_BuildSystem_Build = m_BuildSystem.FindAction("Build", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -766,6 +840,47 @@ namespace BoundfoxStudios.CommunityProject.Input
             }
         }
         public UIActions @UI => new UIActions(this);
+
+        // BuildSystem
+        private readonly InputActionMap m_BuildSystem;
+        private IBuildSystemActions m_BuildSystemActionsCallbackInterface;
+        private readonly InputAction m_BuildSystem_BuildPosition;
+        private readonly InputAction m_BuildSystem_Build;
+        public struct BuildSystemActions
+        {
+            private @GameInput m_Wrapper;
+            public BuildSystemActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @BuildPosition => m_Wrapper.m_BuildSystem_BuildPosition;
+            public InputAction @Build => m_Wrapper.m_BuildSystem_Build;
+            public InputActionMap Get() { return m_Wrapper.m_BuildSystem; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(BuildSystemActions set) { return set.Get(); }
+            public void SetCallbacks(IBuildSystemActions instance)
+            {
+                if (m_Wrapper.m_BuildSystemActionsCallbackInterface != null)
+                {
+                    @BuildPosition.started -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildPosition;
+                    @BuildPosition.performed -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildPosition;
+                    @BuildPosition.canceled -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildPosition;
+                    @Build.started -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
+                    @Build.performed -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
+                    @Build.canceled -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
+                }
+                m_Wrapper.m_BuildSystemActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @BuildPosition.started += instance.OnBuildPosition;
+                    @BuildPosition.performed += instance.OnBuildPosition;
+                    @BuildPosition.canceled += instance.OnBuildPosition;
+                    @Build.started += instance.OnBuild;
+                    @Build.performed += instance.OnBuild;
+                    @Build.canceled += instance.OnBuild;
+                }
+            }
+        }
+        public BuildSystemActions @BuildSystem => new BuildSystemActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -790,6 +905,11 @@ namespace BoundfoxStudios.CommunityProject.Input
             void OnRightClick(InputAction.CallbackContext context);
             void OnTrackedDevicePosition(InputAction.CallbackContext context);
             void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        }
+        public interface IBuildSystemActions
+        {
+            void OnBuildPosition(InputAction.CallbackContext context);
+            void OnBuild(InputAction.CallbackContext context);
         }
     }
 }

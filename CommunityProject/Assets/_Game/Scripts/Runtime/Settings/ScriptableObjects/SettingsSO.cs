@@ -1,6 +1,6 @@
+using System;
 using BoundfoxStudios.CommunityProject.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
-using System;
 using UnityEngine;
 using UnityEngine.Localization;
 
