@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dacbc12eb87340398e0107e99c2e31d0, type: 3}
+  m_Name: SampleTower
+  m_EditorClassIdentifier: 
+  <Prefab>k__BackingField: {fileID: 1344278548517668222, guid: 65f56f73f75d94a2faa3d72091f0229b,
+    type: 3}
+  <BlueprintPrefab>k__BackingField: {fileID: 9013187241264066330, guid: e9c51145ac61348f0b17f648102a5d9b,
+    type: 3}

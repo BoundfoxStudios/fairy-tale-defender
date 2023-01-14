@@ -11,6 +11,8 @@ namespace BoundfoxStudios.CommunityProject
 			public const string Input = MenuName + "/Input";
 			public const string Audio = MenuName + "/Audio";
 			public const string Navigation = MenuName + "/Navigation";
+			public const string Buildings = MenuName + "/Buildings";
+			public const string Towers = Buildings + "/Towers";
 		}
 	}
 }

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 namespace BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects
 {
 	/// <summary>

@@ -21,18 +21,27 @@ MonoBehaviour:
     m_Address: Build/manifest.json
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: fd3cd69a326847a68461e0ea157b9a3f
     m_Address: Build/contributors.json
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 002fb4d6b7c244ca0bd5aee7c5e3034d
     m_Address: ScriptableObjects/Scenes
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: db4e4a6d0dbbead4db9135f4b61da8ac
     m_Address: Settings/GameSettings.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ef0df0b49a1d743bab9ac1b7413f1b93
+    m_Address: ScriptableObjects/Buildings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
