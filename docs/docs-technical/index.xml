@@ -116,6 +116,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 |- ScriptableObjects (Definition)
 |- UI
 |- Materials
+|- _Sandbox [6]
 |- ... (eventuelle Drittanbieterintegrationen)
 &lt;/code>&lt;/pre>&lt;ol>
 &lt;li>&lt;code>_Game&lt;/code>-Ordner, das ist unser Root-Ordner für das Spiel. Wir platzieren keinerlei Assets direkt im &lt;code>Assets&lt;/code>-Ordner von Unity. Diesen halten wir frei für Drittanbieterintegrationen, z.B. Steam.&lt;/li>
@@ -123,6 +124,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 &lt;li>Im Ordner &lt;code>Examples&lt;/code> kannst Du, wenn Du neue Systeme für das Spiel implementierst, eine Beispielszene ablegen, um anderen zu zeigen, wie es funktioniert.&lt;/li>
 &lt;li>Instanzen von ScriptableObjects legen wir separat in diesem Ordner ab.&lt;/li>
 &lt;li>In diesem Ordner legen wir alle Skripte ab, gruppiert nach jeweiligem System.&lt;/li>
+&lt;li>In diesem Ordner wird alles abgelegt, von dem wir wissen, dass es noch ausgetauscht werden muss. Eignet sich z.B. wenn man an einem Feature arbeitet, ein Beispiel-Modell dafür benutzt, dass dann später von einem Artist erst neu modelliert wird.&lt;/li>
 &lt;/ol>
 &lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</guid><description>
 &lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
