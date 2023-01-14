@@ -5,7 +5,10 @@ description: Story-Ideen von unserem Community-Mitglied Tipi.
 ---
 
 Diese Storys sind von unserem Community-Mitglied **Tipi** geschrieben worden. Sie sind gedacht, um eine Idee für die Handlung und damit die Umgebung und den grafischen Stil des Spiels zu setzen. Es sind jeweils die Startszenarien, die dann weiter ausgebaut werden, wenn die Community sich für eines entschieden hat (oder was ganz anderes will).
-## Story 1 
+
+Über eine Abstimmung über den YouTube-Kanal hat sich die Community für Story 2 entschieden.
+
+## Story 1 (Obsolet)
 
 Unsere Protagonistin ist Tochter einer mittelständischen Familie, ihre Kindheit war so weit in Ordnung. Ihr Vater war Handwerker, die Mutter hauptsächlich Mutter und wenn sie Zeit hatte, hat sie versucht, mit Kleinigkeiten etwas Geld dazuzuverdienen. Es reichte zum Leben, viel mehr aber auch nicht. Mit dem Heranwachsen zeigte sich immer mehr eine zurückhaltende, aber sehr aufmerksame Persönlichkeit, ideal für den Besuch einer Bedienstetenschule.
 
@@ -26,7 +29,7 @@ Wir spielen eine Geschichtenerzählerin. Sie zieht mit einem Jahrmarkt durchs La
 Wir können so jedes Märchen für uns nutzen und einbauen, worauf wir Lust haben, ohne die Modelle der Türme groß anzupassen. Und wegen Urheberrecht: Gebrüder Grimm sollte public-domain sein 😄 (Anmerkung des Lektors: Ja, solange wir den Original-Text nutzen, ist dieser gemeinfrei, denn die Urheber sind länger als 70 Jahre tot.),
 zumindest kenne ich genug andere Spiele, die das auch nutzen z.B. "Dark Parables" (die halt wirklich die ganzen Märchen durchmachen: Schneewittchen, Dornröschen, Jack und die wundererbse...) es gibt auch ein Gutenberg Projekt (oder so) in dem public-domain texte gehortet werden. Dieser Vorschlag hat den riesigen Vorteil, dass wir beim Design der Türme völlig eskalieren können, von Rotkäppchen Türmen mit Wolfsmotiven bis Rattenfänger Türmen, die Musik machen, oder Eiskönigin Tower, die Eisspeere und Schneestürme verschießen.
 
-## Story 3
+## Story 3 (Obsolet)
 
 In einem kleinen Walddorf ist es normal, dass alle 5 Jahre eine neue Kräuterfrau in die geheime Magie der Pflanzen und Tiere eingeweiht wird. Es braucht eine natürliche Begabung mit Pflanzen und ein gutes Verständnis der Heilkunde, um dafür infrage zu kommen. Unsere kleine Hexe hat beides. Zudem wird ein gutes Gespür für Magie und ein gesunder Abenteuerdrang benötigt, da man sein Dorf verlässt und die Welt kennenlernt oder genauer genommen einen sehr magischen Teil der Welt. Nach einigen Monaten der Ausbildung lernt man, wie Dinge dazu gebracht werden können, einfache Handlungen von selbst auszuführen, Töpfe, die sich selbst umrühren, Besen, die von selbst fegen, aber auch Bögen, die von selbst Pfeile verschießen. Sobald dieses Wissen gefestigt ist, bricht man auf zu seiner ersten Wanderschaft. Von dem Dorf aus geht es zu einem Breitenzirkel, der sich tief im Wald versteckt. Schlägt man an einem bestimmten Ort ein Lager auf, bittet man damit um Einlass und ein Auflösen der schützenden Magie, die die Druiden Siedlung versteckt hält. Natürlich muss man zuvor den Druiden beweisen, dass man nicht irgendwer ist. Ein normaler, nicht magischer Bürger würde in der Nacht von Wesen aus Laub mitsamt seinem Zelt aus der Lichtung getragen werden und irgendwo in der Wildnis aufwachen. Eine Hexe hingegen kann mit ihren magischen Geschützen diese Laubmonster abwehren. Dort endet die Reise jedoch nicht, es gibt andere Hexen und andere Länder, die man bereisen muss. Sümpfe, Moore, Dschungel, Küsten, Wüsten, sogar die hohe See und ferne Länder...
 
