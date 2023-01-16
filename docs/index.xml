@@ -820,7 +820,36 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
-&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Türme</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</guid><description>
+&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Towers</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</guid><description>
+&lt;p>Auf dieser Seite findet sich die Dokumentation, wie man einen Turm im Spiel erstellen und organisiert ablegen kann.&lt;/p>
+&lt;h2 id="prefab">Prefab&lt;/h2>
+&lt;p>Im Ordner &lt;code>_Game/Prefabs/Buildings/Towers&lt;/code> befinden sich alle vom Spieler baubaren Türme.
+Jeder Turm bekommt hier seinen eigenen Ordner.&lt;/p>
+&lt;p>Als Beispiel zeigt das Bild den &amp;ldquo;SampleTower&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="assets/towers.png" alt="SampleTower">&lt;/p>
+&lt;p>Im Bild unten zu sehen ist das Basis-Prefab &lt;code>Tower_Base&lt;/code>, das für alle Türme genutzt werden muss.
+Aus diesem Prefab wird eine Variante für den eigentlichen Tower erstellt.&lt;/p>
+&lt;p>Jeder Turm benötigt drei Prefabs:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>Turm_Gfx&lt;/code>: Beinhaltet die grafische Umsetzung des Turms ohne weitere Scripts.&lt;/li>
+&lt;li>&lt;code>Turm_Blueprint&lt;/code>: Ist eine Variante von &lt;code>Turm_Gfx&lt;/code>, bei dem die Materialen zum &lt;code>Blueprint&lt;/code> geändert wurden.
+Diese Repräsentation wird genutzt, um dem Spieler ein &amp;ldquo;Geist&amp;rdquo;-Element anzuzeigen, wo der Turm gebaut werden kann.
+Im Bild sieht man links den Blueprint/Geist und rechts den gebauten Turm.&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="assets/ghost.png" alt="Geist und echter Turm">&lt;/p>
+&lt;ol start="3">
+&lt;li>&lt;code>Turm&lt;/code>: Der eigentliche Turm. Er nutzt &lt;code>Turm_Gfx&lt;/code> für die visuelle Darstellung (siehe Abschnitt &lt;a href="#Turmaufbau">Turmaufbau&lt;/a>) und hat alle benötigten Scripts, um seine Funktion zu erfüllen.&lt;/li>
+&lt;/ol>
+&lt;h2 id="scriptableobject">ScriptableObject&lt;/h2>
+&lt;p>Zu jedem baubaren Turm gehört ein ScriptableObject, das im Ordner &lt;code>_Game/ScriptableObjects/Buildings/Towers&lt;/code> abgelegt wird.&lt;/p>
+&lt;p>&lt;img src="assets/scriptable-object.png" alt="ScriptableObject eines Turms">&lt;/p>
+&lt;p>In diesem ScriptableObject stehen aktuell nur, welches Prefab gebaut werden kann und welches Prefab als Blueprint dient.&lt;/p>
+&lt;p>Später werden hier noch weitere Informationen stehen, z.B. welche Basis-Reichweite, -Feuerkraft, etc. ein Turm hat.&lt;/p>
+&lt;h2 id="turmaufbau">Turmaufbau&lt;/h2>
+&lt;p>&lt;img src="assets/tower-organization.png" alt="Turmaufbau">&lt;/p>
+&lt;p>Jeder Turm besteht aus der &lt;code>Tower_Base&lt;/code>.
+In dessen GameObject &lt;code>GFX&lt;/code> wird das Prefab &lt;code>Turm_Gfx&lt;/code> abgelegt.
+Alle weiteren Scripts und was sonst so benötigt wird, um den Turm zum Leben zu erwecken, werden direkt auf Root-Objekt platziert.&lt;/p></description></item><item><title>Docs: Türme</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</guid><description>
 &lt;h1 id="allgemeine-ideen">Allgemeine Ideen&lt;/h1>
 &lt;h2 id="kanonenturm">Kanonenturm&lt;/h2>
 &lt;ul>
