@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dacbc12eb87340398e0107e99c2e31d0, type: 3}
-  m_Name: SampleTower
+  m_Name: CatapultTower
   m_EditorClassIdentifier: 
   <Prefab>k__BackingField: {fileID: 1344278548517668222, guid: 65f56f73f75d94a2faa3d72091f0229b,
     type: 3}
