@@ -11,12 +11,12 @@ PrefabInstance:
     - target: {fileID: 504969043303722149, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
         type: 3}
       propertyPath: m_Name
-      value: Sample_Tower
+      value: SampleTower
       objectReference: {fileID: 0}
     - target: {fileID: 6026353645680447152, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6026353645680447152, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
         type: 3}
