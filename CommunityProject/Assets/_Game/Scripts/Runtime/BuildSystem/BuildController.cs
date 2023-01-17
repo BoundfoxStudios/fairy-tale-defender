@@ -127,6 +127,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			var layerMask = hitInfo.collider.gameObject.layer;
 			var needsMaterialSwap = _buildContext.PreviousLayerMask != layerMask;
 			_buildContext.PreviousLayerMask = layerMask;
+
 			if (Physics.Linecast(tilePosition + Vector3.down, tilePosition + Vector3.up, out _, ObstaclesLayerMask))
 			{
 				if (needsMaterialSwap)
