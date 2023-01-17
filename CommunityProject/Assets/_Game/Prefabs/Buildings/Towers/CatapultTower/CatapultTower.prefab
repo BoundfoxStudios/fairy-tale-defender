@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 504969043303722149, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
         type: 3}
       propertyPath: m_Name
-      value: SampleTower
+      value: CatapultTower
       objectReference: {fileID: 0}
     - target: {fileID: 6026353645680447152, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
         type: 3}
@@ -149,7 +149,7 @@ PrefabInstance:
     - target: {fileID: 1519274917010188957, guid: 81653008d9f404d3d813e54795e46560,
         type: 3}
       propertyPath: m_Name
-      value: SampleTower_Gfx
+      value: CatapultTower_Gfx
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
