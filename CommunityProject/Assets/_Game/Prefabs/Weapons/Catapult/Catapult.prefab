@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1502883612331650735
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4899963143612925956, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899963143612925956, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899963143612925956, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899963143612925956, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5713935601976103614, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      propertyPath: m_Name
+      value: Catapult
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5713935601976103614, guid: 35b70d326562f40be8d0bc9c01a262a7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 86785880924538003}
+  m_SourcePrefab: {fileID: 100100000, guid: 35b70d326562f40be8d0bc9c01a262a7, type: 3}
+--- !u!4 &2668551817459129136 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3590434413593720223, guid: 35b70d326562f40be8d0bc9c01a262a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1502883612331650735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5151087069996432009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6027794085777380390, guid: 35b70d326562f40be8d0bc9c01a262a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1502883612331650735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6597960950005300241 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5713935601976103614, guid: 35b70d326562f40be8d0bc9c01a262a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1502883612331650735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &86785880924538003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6597960950005300241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2adafe2c8904757ac28cffaea31aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WeaponDefinition>k__BackingField: {fileID: 11400000, guid: a75983bad9e3844f4959ba58d440e03a,
+    type: 2}
+  TargetLocator: {fileID: 11400000, guid: 81bf26c4433264a0d9b7570654f9287b, type: 2}
+  <Arm>k__BackingField:
+    ArmPivot: {fileID: 5151087069996432009}
+    LaunchPoint: {fileID: 2668551817459129136}
+    XRotation: {x: 0, y: 45}
+    AnimationSpeed: 0.2
+  ProjectilePrefab: {fileID: -1564672828742544467, guid: 2c024160f4c8c43b3b9074d8ebfbe2c6,
+    type: 3}

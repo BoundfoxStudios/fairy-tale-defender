@@ -11,7 +11,12 @@ PrefabInstance:
     - target: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
         type: 3}
       propertyPath: m_Name
-      value: Tile_Grass_Spawn
+      value: Tile_Grass_End
+      objectReference: {fileID: 0}
+    - target: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8759677533206482384, guid: 6d111641095844beea5b3c09bd3ae23c,
         type: 3}
@@ -75,8 +80,39 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7158908301854856095}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1139252950759564017}
   m_SourcePrefab: {fileID: 100100000, guid: 6d111641095844beea5b3c09bd3ae23c, type: 3}
+--- !u!1 &2780439683654029269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3275613983708844686}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1139252950759564017
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2780439683654029269}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.26410502, z: 1}
+  m_Center: {x: 0, y: 0.09826573, z: 0}
 --- !u!4 &8270384304448002817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6895889697920403855, guid: 6d111641095844beea5b3c09bd3ae23c,

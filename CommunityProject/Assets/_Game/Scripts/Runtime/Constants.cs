@@ -14,6 +14,8 @@ namespace BoundfoxStudios.CommunityProject
 			public const string Buildings = MenuName + "/Buildings";
 			public const string Towers = Buildings + "/Towers";
 			public const string Enemies = MenuName + "/Enemies";
+			public const string Weapons = MenuName + "/Weapons";
+			public const string Targeting = Weapons + "/Targeting";
 		}
 	}
 }

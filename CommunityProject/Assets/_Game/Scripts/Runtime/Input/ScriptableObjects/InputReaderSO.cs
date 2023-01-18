@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -19,6 +20,7 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 
 		public PositionHandler BuildPosition = delegate { };
 		public PositionHandler Build = delegate { };
+		public Action BuildRotate = delegate { };
 
 		private void OnEnable()
 		{
@@ -91,6 +93,16 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 			}
 
 			Build(context.ReadValue<Vector2>());
+		}
+
+		public void OnBuildRotate(InputAction.CallbackContext context)
+		{
+			if (!context.performed)
+			{
+				return;
+			}
+
+			BuildRotate();
 		}
 	}
 }
