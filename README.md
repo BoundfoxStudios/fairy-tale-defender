@@ -120,6 +120,14 @@ Du musst:
 * Lizenz und Copyright Hinweis beilegen,
 * deine Änderungen unter gleicher Lizenz halten.
 
+## JetBrains Rider
+
+[JetBrains](https://jetbrains.com) sponsert unser Community-Projekt mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
+Jeder Entwickler, die sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
+
+![JetBrains](docs/content/docs/contributing/assets/jb_beam.png)
+![JetBrains Rider](docs/content/docs/contributing/assets/Rider.png)
+
 ## English
 
 Hi! 
