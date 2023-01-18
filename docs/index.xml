@@ -820,7 +820,12 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
-&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p></description></item><item><title>Docs: Towers</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</guid><description>
+&lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p>
+&lt;h2 id="jetbrains-rider-lizenz">JetBrains Rider Lizenz&lt;/h2>
+&lt;p>&lt;a href="https://jetbrains.com">JetBrains&lt;/a> sponsert unser Community-Projekt mit &lt;a href="https://jb.gg/OpenSourceSupport">Lizenzen&lt;/a> für JetBrains Rider!
+Jeder Entwickler, die sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.&lt;/p>
+&lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">
+&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Towers</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</guid><description>
 &lt;p>Auf dieser Seite findet sich die Dokumentation, wie man einen Turm im Spiel erstellen und organisiert ablegen kann.&lt;/p>
 &lt;h2 id="prefab">Prefab&lt;/h2>
 &lt;p>Im Ordner &lt;code>_Game/Prefabs/Buildings/Towers&lt;/code> befinden sich alle vom Spieler baubaren Türme.
