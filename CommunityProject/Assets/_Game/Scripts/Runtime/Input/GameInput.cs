@@ -568,6 +568,15 @@ namespace BoundfoxStudios.CommunityProject.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""BuildRotate"",
+                    ""type"": ""Button"",
+                    ""id"": ""99fa207f-184c-442d-8b44-85da7a135d7f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -614,6 +623,17 @@ namespace BoundfoxStudios.CommunityProject.Input
                     ""action"": ""Build"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c369f4ec-108f-4e6a-bc33-222bedc3f8e6"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""BuildRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -655,6 +675,7 @@ namespace BoundfoxStudios.CommunityProject.Input
             m_BuildSystem = asset.FindActionMap("BuildSystem", throwIfNotFound: true);
             m_BuildSystem_BuildPosition = m_BuildSystem.FindAction("BuildPosition", throwIfNotFound: true);
             m_BuildSystem_Build = m_BuildSystem.FindAction("Build", throwIfNotFound: true);
+            m_BuildSystem_BuildRotate = m_BuildSystem.FindAction("BuildRotate", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -846,12 +867,14 @@ namespace BoundfoxStudios.CommunityProject.Input
         private IBuildSystemActions m_BuildSystemActionsCallbackInterface;
         private readonly InputAction m_BuildSystem_BuildPosition;
         private readonly InputAction m_BuildSystem_Build;
+        private readonly InputAction m_BuildSystem_BuildRotate;
         public struct BuildSystemActions
         {
             private @GameInput m_Wrapper;
             public BuildSystemActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @BuildPosition => m_Wrapper.m_BuildSystem_BuildPosition;
             public InputAction @Build => m_Wrapper.m_BuildSystem_Build;
+            public InputAction @BuildRotate => m_Wrapper.m_BuildSystem_BuildRotate;
             public InputActionMap Get() { return m_Wrapper.m_BuildSystem; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -867,6 +890,9 @@ namespace BoundfoxStudios.CommunityProject.Input
                     @Build.started -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
                     @Build.performed -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
                     @Build.canceled -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuild;
+                    @BuildRotate.started -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildRotate;
+                    @BuildRotate.performed -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildRotate;
+                    @BuildRotate.canceled -= m_Wrapper.m_BuildSystemActionsCallbackInterface.OnBuildRotate;
                 }
                 m_Wrapper.m_BuildSystemActionsCallbackInterface = instance;
                 if (instance != null)
@@ -877,6 +903,9 @@ namespace BoundfoxStudios.CommunityProject.Input
                     @Build.started += instance.OnBuild;
                     @Build.performed += instance.OnBuild;
                     @Build.canceled += instance.OnBuild;
+                    @BuildRotate.started += instance.OnBuildRotate;
+                    @BuildRotate.performed += instance.OnBuildRotate;
+                    @BuildRotate.canceled += instance.OnBuildRotate;
                 }
             }
         }
@@ -910,6 +939,7 @@ namespace BoundfoxStudios.CommunityProject.Input
         {
             void OnBuildPosition(InputAction.CallbackContext context);
             void OnBuild(InputAction.CallbackContext context);
+            void OnBuildRotate(InputAction.CallbackContext context);
         }
     }
 }

@@ -544,6 +544,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "BuildRotate",
+                    "type": "Button",
+                    "id": "99fa207f-184c-442d-8b44-85da7a135d7f",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -590,6 +599,17 @@
                     "action": "Build",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "c369f4ec-108f-4e6a-bc33-222bedc3f8e6",
+                    "path": "<Keyboard>/r",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "BuildRotate",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

@@ -1,6 +1,7 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
+using DG.Tweening;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.BuildSystem
@@ -24,6 +25,9 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 
 		[SerializeField]
 		private Material BlueprintInvalidMaterial;
+
+		[SerializeField]
+		private float TimeToRotate = 0.133f;
 
 		[Header("Listening Channels")]
 		[SerializeField]
@@ -49,6 +53,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		{
 			InputReader.BuildPosition += ReadBuildPosition;
 			InputReader.Build += ReadBuild;
+			InputReader.BuildRotate += ReadBuildRotate;
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
 			ExitBuildModeEventChannel.Raised += ExitBuildMode;
 		}
@@ -57,6 +62,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		{
 			InputReader.BuildPosition -= ReadBuildPosition;
 			InputReader.Build -= ReadBuild;
+			InputReader.BuildRotate -= ReadBuildRotate;
 			EnterBuildModeEventChannel.Raised -= EnterBuildMode;
 			ExitBuildModeEventChannel.Raised -= ExitBuildMode;
 		}
@@ -97,8 +103,9 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 				return;
 			}
 
+			var rotation = _buildContext.BlueprintInstance.transform.rotation;
 			Destroy(_buildContext.BlueprintInstance);
-			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, Quaternion.identity);
+			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, rotation);
 			ExitBuildModeEventChannel.Raise();
 		}
 
@@ -144,6 +151,19 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			}
 
 			_buildContext.IsValidPosition = true;
+		}
+
+		private void ReadBuildRotate()
+		{
+			if (_buildContext is null)
+			{
+				return;
+			}
+
+			var blueprintTransform = _buildContext.BlueprintInstance.transform;
+			blueprintTransform.DOComplete();
+			blueprintTransform.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0),
+				TimeToRotate, RotateMode.FastBeyond360);
 		}
 
 		private void SwapMaterials(Material from, Material to, params MeshRenderer[] meshRenderers)

@@ -195,7 +195,7 @@ PrefabInstance:
     - target: {fileID: 1489119832408811952, guid: ce4f46e39468745c3af0af575293347f,
         type: 3}
       propertyPath: Speed
-      value: 2
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 1489119832408811952, guid: ce4f46e39468745c3af0af575293347f,
         type: 3}
@@ -286,6 +286,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Spline.m_Knots.Array.data[3].Rotation.value.w
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052367446084604737, guid: ce4f46e39468745c3af0af575293347f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 4508017015304133662, guid: ce4f46e39468745c3af0af575293347f,
         type: 3}
