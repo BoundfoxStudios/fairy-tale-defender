@@ -13,6 +13,7 @@ namespace BoundfoxStudios.CommunityProject
 			public const string Navigation = MenuName + "/Navigation";
 			public const string Buildings = MenuName + "/Buildings";
 			public const string Towers = Buildings + "/Towers";
+			public const string Enemies = MenuName + "/Enemies";
 		}
 	}
 }
