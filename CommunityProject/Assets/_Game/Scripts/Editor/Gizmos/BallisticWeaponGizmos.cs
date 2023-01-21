@@ -17,12 +17,14 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 		private static void DrawAttackAngle(BallisticWeapon ballisticWeapon)
 		{
 			var weaponTransform = ballisticWeapon.transform;
-			var towerForward = ballisticWeapon.Tower.transform.forward;
+
+			// If we're viewing the weapon prefab, we may not have a tower
+			var forward = ballisticWeapon.Tower ? ballisticWeapon.transform.forward : weaponTransform.forward;
 
 			UnityGizmos.color = new(1, 0.976f, 0.102f, 0.5f);
 			BallisticGizmoHelpers.DrawAttackSegment(
 				weaponTransform.position,
-				towerForward,
+				forward,
 				ballisticWeapon.WeaponDefinition.AttackAngle,
 				ballisticWeapon.WeaponDefinition.Range,
 				ballisticWeapon.WeaponDefinition.MinimumRange
