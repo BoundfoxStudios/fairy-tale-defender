@@ -42,6 +42,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 05721623ea3194775a5c0ba7c060939f
+    m_Address: ScriptableObjects/Weapons
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
