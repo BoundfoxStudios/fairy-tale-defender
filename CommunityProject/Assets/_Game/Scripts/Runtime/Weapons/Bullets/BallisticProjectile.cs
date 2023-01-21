@@ -9,12 +9,20 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Bullets
 		[field: SerializeField]
 		public Collider Collider { get; private set; }
 
+		[SerializeField]
+		private TrailRenderer TrailRenderer;
+
 		private Rigidbody _rigidbody;
 
 		private void Awake()
 		{
 			_rigidbody = GetComponent<Rigidbody>();
 			_rigidbody.useGravity = false;
+
+			if (TrailRenderer)
+			{
+				TrailRenderer.enabled = false;
+			}
 		}
 
 		public void Launch(Vector3 velocity, bool doUnparent = true)
@@ -26,6 +34,11 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Bullets
 
 			_rigidbody.useGravity = true;
 			_rigidbody.velocity = velocity;
+
+			if (TrailRenderer)
+			{
+				TrailRenderer.enabled = true;
+			}
 		}
 	}
 }
