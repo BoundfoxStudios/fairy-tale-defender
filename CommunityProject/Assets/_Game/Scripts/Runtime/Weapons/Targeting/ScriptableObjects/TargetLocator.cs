@@ -57,10 +57,18 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 
 			var target = targetType switch {
 				TargetType.Closest => ByClosestTargetTypeNonAlloc(weaponPosition, targets),
+				TargetType.Random => ByRandomTargetTypeNonAlloc(targets),
 				_ => throw new ArgumentOutOfRangeException(nameof(targetType), $"{targetType} is not implemented yet.")
 			};
 
 			return target ? target.GetComponent<TargetPoint>() : null;
+		}
+
+		private Collider ByRandomTargetTypeNonAlloc(NonAllocArrayResult<Collider> targets)
+		{
+			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
+
+			return targets.Result.PickRandom();
 		}
 
 		private Collider ByClosestTargetTypeNonAlloc(Vector3 weaponPosition, NonAllocArrayResult<Collider> targets)
