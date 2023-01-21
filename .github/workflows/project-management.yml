@@ -23,6 +23,8 @@ jobs:
     name: Assign Issue to Contributor
     if: github.event_name == 'issue_comment' && !github.event.issue.pull_request && !contains(github.event.issue.labels.*.name, 'Triage')
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
     steps:
       - uses: Bhacaz/checkout-files@v2
         with:
