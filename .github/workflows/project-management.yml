@@ -30,7 +30,7 @@ jobs:
         with:
           files: .github/actions
       - name: Assign issue
-        uses: bdougie/take-action@v1.4
+        uses: bdougie/take-action@main
         with:
           message: Danke, dass Du diese Aufgabe übernimmst! Falls Du Fragen hast, schreib sie einfach ins Issue!
           issueCurrentlyAssignedMessage: Die Aufgabe wird aktuell bereits von jemand anderem bearbeitet, daher kannst Du Dir diese leider nicht selbst zuweisen.
