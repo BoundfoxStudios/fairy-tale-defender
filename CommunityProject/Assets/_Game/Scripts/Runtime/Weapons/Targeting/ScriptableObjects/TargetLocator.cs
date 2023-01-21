@@ -55,7 +55,8 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 				return null;
 			}
 
-			var target = targetType switch {
+			var target = targetType switch
+			{
 				TargetType.Closest => ByClosestTargetTypeNonAlloc(weaponPosition, targets),
 				TargetType.Random => ByRandomTargetTypeNonAlloc(targets),
 				_ => throw new ArgumentOutOfRangeException(nameof(targetType), $"{targetType} is not implemented yet.")
