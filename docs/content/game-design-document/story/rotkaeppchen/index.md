@@ -5,33 +5,61 @@ description: Die erste Story zu Rotkäppchen
 weight: 1
 ---
 
-wir arbeiten als glücksfee, helfen der geschichte dabei so zu verlaufen wie sie verläuft.
+Der Spieler nimmt die Rolle einer Glücksfee ein.
+Sie begleitet bekannte Märchen (in diesem Fall Rotkäppchen) und hilft dabei, dass die Geschichte so verläuft, wie wir sie kennen.
 
 ## Intro
-wir haben unseren kleinen zirkus-wahrsager-wagen und die glücksfee in gestalter einer bunt gekleideten frau mittleren alters erzählt nach auswahl der rotkäppchen geschichte : "ah das gute rotkäppchen. es gibt viele wege wie die geschichte hätte verlaufen können. das glück musste ganz schön nachhelfen damit sie so stattfindet wie wir sie heute kennen". 
-umblende vom standbild und text zur battlemap.
 
-## level 1
-wolfis
-die junge frau besuchte ihre großmutter regelmäßig. und die tiere des waldes merkten eine regelmäßigkeit. und während es sie wenig störte das vögel und rehe die erwarteten oder ihr folgten um brotkrümel zu essen die sie manchmal verlohr. es wurden von den tieren und dem regelmäßigem fleischgeruch aber auchwälfe angelockt und lauerten ihr auf. aber ihr wisst, irgendwas hat das rudel vertrieben, so dass nur der größte wolf am ort des hinterhaltes auf sie lauerte.
+Wir haben unseren kleinen Zirkus-Wahrsagerwagen und die Glücksfee in Gestalt einer buntgekleideten Frau mittleren Alters erzählt nach Auswahl der Rotkäppchen-Geschichte:
+"Ah, das gute Rotkäppchen. Es gibt viele Wege, wie die Geschichte hätte verlaufen können.
+Das Glück musste ganz schön nachelfen, damit sie so stattfindet, wie wir sie heute kennen.".
 
-start : forrest map, wolfis abwehren. maybe wölfe laufen verletzt weg oder wir töten sie.
+> Umblende vom Standbild und Text zur Schlachtkarte
 
-## level 2
-banditen
-die hütte der großmutter ist aber auch bekannt und das rotkäppchen wein und gutes essen mitbringt lockt noch andere interessenten an. banditen haben in letzter zeit öfter das haus besucht und kleinigkeiten geklaut. jetzt mit dem wissen das die junge frau regelmäßig zu besuch kommt, planen sie einen überfall. das konnte aber glücklicherweise verhindert werden.
+## Level 1
 
-waldkarte 2 : hütte der großmutter beschützen.
+> Wölfe
 
-## level 3
+Rotkäppchen besuchte ihre Großmutter regelmäßig.
+Die Tiere des Waldes bemerkten diese Regelmäßigkeit.
+Während sie es wenig störte, das Vögel und Rehe sie erwarteten oder ihr folgten, um Brotkrümel zu essen, die sie manchmal verlor.
+Von den Tieren und dem regelmäßigen Fleischgereuch wurden aber auch Wölfe angelockt und lauerten ihr auf.
+Aber wie ihr wisst, hat irgendwas das Rudel vertrieben, sodass nur der größte Wolf am Ort des Hinterhaltes auf sie lauerte.
+
+> Wald-Karte, Wölfe abwehren
+
+## Level 2
+
+> Banditen
+
+Die Hütte der Großmutter ist aber auch bekannt und das Rotkäppchen Wein und gutes Essen mitbringt, lockt noch andere Interessenten an.
+Banditen habe in letzter Zeit öfter das Haus besucht und Kleinigkeite ngeklaut.
+Jetzt mit dem Wissen, dass Rotkäppchen regelmäßig zu Besuch kommt, planen sie einen Überfall.
+Doch das konnte glücklicherweise verhindert werden.
+
+> Wald-Karte, Bandidaten abwehren
+
+## Level 3
+
+> Jäger retten
+
 jäger retten
-nachdem nun der große böse wolf alleine beim haus der großmutter ankam, aber wegelagerer und raubtiere vertrieben waren, musste sich die glücksfee darum kümmern das der jäger bei der hütte ankam. auch ihim wurde im wald aufgelauert. einige soldaten wollten ihn wegen wilderrei einsperren, aber auch banditen hatten interesse an den teuren fellen und dem fleisch das er bei sich in der hütte hatte.
 
-wald karte 3 : hügelige wald umgebung der jägerhütte.
+Nachdem der große böse Wolf alleine bei der Hütte der Großmutter angekommen war, aber Wegelagerer und Raubtiere vertrieben worden waren, musste sich die Glücksfee darum kümmern, dass der Jäger bei der Hütte ankam.
+Auch ihm wurde im Wald aufgelauert.
+Einige Soldaten wollten ihn wegen Wilderei einsperren, aber auch Banditen hatten Interesse an den teuren Fellen und dem Fleisch, das er bei sich in der Hütte hatte.
 
-## level 4
-hütte beschützen
+> Wald-Karte, hügelige Umgebung, Jägerhütte
 
-nachdem der jäger sicher an der hütte ankam, von der glücksfee erst verteidigt und dann in die richtige richtung geleitet. traf er auf den bösen wolf und rettete die beiden frauen. das die aber danach sehr geschwächt waren ist wohl verständlich, auch das der jäger sich beim kampf mit dem großen bösen wolf ziemlich verausgabte ist klar. die nacht jedoch hatte nicht die freundlichkeit sie in ruhe zu lassen. im gegenteil. der kampf lockte nur noch mehr wesen an die sehen wollte was noch übrig war.
+## Level 4
 
-wald map 4 : bei nacht ähnlich karte 2 aber mehr wege und größer.
+> Hütte beschützen
+
+Nachdem der Jäger sicher an der Hütte angekommen war, von der Glücksfee erst verteidigt und dann in die richtige Richtung geleitet worden war, traf er auf den bösen Wolf und rettete die beiden Frauen.
+Das sie danach aber sehr geschwächt waren, ist wohl verständlich.
+Auch das der Jäger sich beim Kampf mit dem großen bösen Wolf ziemlich verausgabte, ist klar.
+Die Nacht jedoch hatte nicht die Freundlichkeit sie in Ruhe zu lassen.
+Im Gegenteil.
+Der Kampf lockte nur noch mehr Wesen an, die sehen wollten, was noch übrig war.
+
+> Wald-Karte, bei Nacht, ähnlich Karte 2, aber mehr Wege und größer
