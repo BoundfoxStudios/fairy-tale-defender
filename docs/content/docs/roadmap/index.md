@@ -22,15 +22,15 @@ Ein Pfeil markiert, an welcher Stelle wir uns aktuell befinden.
    
    ~~Hier werden wir auf Basis des Themas versuchen, einen grafischen Stil zu finden, an dem sich die kreativen Köpfe orientieren sollen.~~
 
-   Die Stilfindung wird zu einem späteren Zeitpunkt stattfinden, sobald das GDD etwas Inhalt hat und man durch den MVP erste kleine Dinge implementiert hat.
+   Die Stilfindung wird zu einem späteren Zeitpunkt stattfinden, sobald das GDD etwas Inhalt und man durch den MVP erste kleine Dinge implementiert hat.
 4. Erstellung des Game Design Documents. `<-`
    
    Hier halten wir grob fest, was genau wir eigentlich für ein Spiel entwickeln wollen.
    Hier drin werden wir auch den MVP (siehe weiter unten) definieren.
-5. Implementierung der Basis-Infrastruktur.
+5. Implementierung der Basis-Infrastruktur. `<-`
 
    Das hier wird bereits parallel zum aktuellen "Pfeil" mitlaufen, da diese Basis unabhängig vom Spieltyp ist und bereits implementiert werden kann.
-6. Umsetzung des MVPs.
+6. Umsetzung des MVPs. `<-`
    
    Das bedeutet natürlich, dass hier modelliert, designt, entwickelt, getestet, etc. wird.
 
