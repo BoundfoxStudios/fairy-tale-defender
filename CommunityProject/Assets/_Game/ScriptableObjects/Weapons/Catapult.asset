@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bda9a381774a16bf89e8744c58de81, type: 3}
   m_Name: Catapult
   m_EditorClassIdentifier: 
-  Range: 4
-  FireRateInSeconds: 3
-  AttackAngle: 90
+  <Range>k__BackingField: 4
+  <FireRateInSeconds>k__BackingField: 3
+  <AttackAngle>k__BackingField: 90
   <MinimumRange>k__BackingField: 1
   <RotationSpeedInDegreesPerSecond>k__BackingField: 45
   <LaunchAnimationSpeed>k__BackingField: 0.1

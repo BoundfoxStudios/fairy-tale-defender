@@ -4,10 +4,14 @@ namespace BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects
 {
 	public abstract class WeaponSO : ScriptableObject
 	{
-		public float Range;
-		public float FireRateInSeconds;
+		[field: SerializeField]
+		public float Range { get; private set; }
 
-		[Range(0, 360)]
-		public float AttackAngle;
+		[field: SerializeField]
+		public float FireRateInSeconds { get; private set; }
+
+		[field: SerializeField]
+		[field: Range(0, 360)]
+		public float AttackAngle { get; private set; }
 	}
 }
