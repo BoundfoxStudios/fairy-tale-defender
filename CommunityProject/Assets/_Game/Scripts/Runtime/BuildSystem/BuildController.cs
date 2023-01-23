@@ -38,6 +38,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		private VoidEventChannelSO ExitBuildModeEventChannel;
 
 		private BuildContext _buildContext;
+		private LayerMask _buildableAndObstacleLayerMask;
 
 		private class BuildContext
 		{
@@ -47,6 +48,11 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			public Vector3 TilePosition { get; set; }
 			public bool IsValidPosition { get; set; }
 			public LayerMask PreviousLayerMask { get; set; }
+		}
+
+		private void Awake()
+		{
+			_buildableAndObstacleLayerMask = BuildableLayerMask | ObstaclesLayerMask;
 		}
 
 		private void OnEnable()
@@ -120,7 +126,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			var blueprintInstance = _buildContext.BlueprintInstance;
 			var ray = Camera.ScreenPointToRay(position);
 
-			if (!Physics.Raycast(ray, out var hitInfo, 1000, BuildableLayerMask | ObstaclesLayerMask))
+			if (!Physics.Raycast(ray, out var hitInfo, 1000, _buildableAndObstacleLayerMask))
 			{
 				blueprintInstance.Deactivate();
 				return;
