@@ -62,7 +62,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 				_ => throw new ArgumentOutOfRangeException(nameof(targetType), $"{targetType} is not implemented yet.")
 			};
 
-			return target ? target.GetComponent<TargetPoint>() : null;
+			return target.GetComponent<TargetPoint>();
 		}
 
 		private Collider ByRandomTargetTypeNonAlloc(NonAllocArrayResult<Collider> targets)
