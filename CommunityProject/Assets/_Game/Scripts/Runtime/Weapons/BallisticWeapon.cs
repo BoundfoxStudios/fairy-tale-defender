@@ -77,8 +77,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 			var direction = target.transform.position - transform.position;
 			direction.y = 0;
 
-			var rotation = Quaternion.LookRotation(direction);
-			_targetRotation = rotation;
+			_targetRotation = Quaternion.LookRotation(direction);
 		}
 
 		protected override void Update()
