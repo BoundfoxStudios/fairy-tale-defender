@@ -141,7 +141,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			var needsMaterialSwap = _buildContext.PreviousLayerMask != layerMask;
 			_buildContext.PreviousLayerMask = layerMask;
 
-			if (Physics.Linecast(tilePosition + Vector3.up, tilePosition + Vector3.down, out _, ObstaclesLayerMask))
+			if (Physics.Linecast(tilePosition + Vector3.up, tilePosition, out _, ObstaclesLayerMask))
 			{
 				if (needsMaterialSwap)
 				{
