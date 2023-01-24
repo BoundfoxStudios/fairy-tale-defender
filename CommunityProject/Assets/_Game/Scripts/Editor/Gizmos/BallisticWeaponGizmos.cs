@@ -19,7 +19,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			var weaponTransform = ballisticWeapon.transform;
 
 			// If we're viewing the weapon prefab, we may not have a tower
-			var forward = ballisticWeapon.Tower ? ballisticWeapon.transform.forward : weaponTransform.forward;
+			var forward = ballisticWeapon.Tower ? ballisticWeapon.Tower.transform.forward : weaponTransform.forward;
 
 			UnityGizmos.color = new(1, 0.976f, 0.102f, 0.5f);
 			BallisticGizmoHelpers.DrawAttackSegment(
