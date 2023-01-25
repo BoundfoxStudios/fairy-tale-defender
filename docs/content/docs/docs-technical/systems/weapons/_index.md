@@ -4,7 +4,7 @@ linkTitle: Waffen
 description: Dokumentation über Waffen.
 ---
 
-Auf dieser Seite finden sich alle Informationen zu den im Spiel implementiert Waffen und wie man neue Waffen erstellen kann.
+Auf dieser Seite finden sich alle Informationen zu den im Spiel implementierten Waffen und wie man neue Waffen erstellen kann.
 Wichtig ist, dass mit Waffe nicht der Turm gemeint ist.
 Der [Turm](../towers/) ist eine recht dümmliche Struktur, die nur zum Tragen einer Waffe dient.
 

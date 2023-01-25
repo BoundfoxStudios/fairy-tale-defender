@@ -52,7 +52,7 @@ Im weiteren wird beschrieben, wie die drei Prefabs für einen Turm aufgebaut sin
 
 * Basis-Prefab.
 * Beinhaltet direkt das Modell oder Modelle für die visuelle Repräsentation.
-* Beinhaltet ein leeres GameObject "Weapon" das dort platziert, wo später die Waffe vom Turm stehen wird.
+* Beinhaltet ein leeres GameObject "Weapon" das dort platziert ist, wo später die Waffe vom Turm stehen wird.
 
 ### Blueprint-Prefab
 
