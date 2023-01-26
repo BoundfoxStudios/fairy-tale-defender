@@ -1,7 +1,7 @@
 using BoundfoxStudios.CommunityProject.Extensions;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Weapons.Targeting
+namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 {
 	/// <summary>
 	/// This class contains helper methods to calculate weapon ballistics.

@@ -1,13 +1,13 @@
 using System;
 using System.Threading;
-using BoundfoxStudios.CommunityProject.Weapons.Bullets;
-using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles;
+using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Weapons
+namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 {
 	/// <summary>
 	/// Class for all ballistic weapons, like a catapult.

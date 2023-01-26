@@ -1,7 +1,8 @@
+using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects
+namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Weapons + "/Ballistic Weapon")]
 	public class BallisticWeaponSO : WeaponSO

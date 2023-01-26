@@ -1,4 +1,4 @@
-using BoundfoxStudios.CommunityProject.Weapons;
+using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons;
 using UnityEditor;
 using UnityEngine;
 using UnityGizmos = UnityEngine.Gizmos;
@@ -7,9 +7,11 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 {
 	public static class BallisticWeaponGizmos
 	{
-		[DrawGizmo(GizmoType.Active | GizmoType.Selected | GizmoType.InSelectionHierarchy, typeof(BallisticWeapon))]
-		private static void DrawBallisticWeaponGizmos(BallisticWeapon ballisticWeapon, GizmoType gizmoType)
+		[DrawGizmo(GizmoType.Active | GizmoType.Selected | GizmoType.InSelectionHierarchy, typeof(BallisticWeaponDiagnostics))]
+		private static void DrawBallisticWeaponGizmos(BallisticWeaponDiagnostics ballisticWeaponDiagnostics, GizmoType gizmoType)
 		{
+			var ballisticWeapon = ballisticWeaponDiagnostics.Weapon;
+
 			DrawArmRotationAngle(ballisticWeapon);
 			DrawAttackAngle(ballisticWeapon);
 		}
