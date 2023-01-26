@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Weapons.Bullets
+namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 {
 	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(BallisticProjectile))]
 	[RequireComponent(typeof(Rigidbody))]

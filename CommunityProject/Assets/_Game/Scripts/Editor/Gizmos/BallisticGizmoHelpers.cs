@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting;
 using UnityEngine;
 using UnityGizmos = UnityEngine.Gizmos;

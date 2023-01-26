@@ -1,7 +1,8 @@
-using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Weapons.Targeting;
+using BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
+namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Targeting + "/" + nameof(BallisticTargetLocator))]
 	public class BallisticTargetLocator : TargetLocator<BallisticWeaponSO>
