@@ -8,6 +8,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableOb
 	public class BallisticWeaponSO : WeaponSO
 	{
 		[field: SerializeField]
+		[field: Range(0, 10)]
 		public float MinimumRange { get; private set; }
 
 		[field: SerializeField]
