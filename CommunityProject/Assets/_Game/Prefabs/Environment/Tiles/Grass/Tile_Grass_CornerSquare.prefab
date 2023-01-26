@@ -68,6 +68,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: tile_cornerSquare
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5149007981331410dbcc7ce5692e115c,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
