@@ -27,7 +27,8 @@ Als Beispiel zeigt das Bild das "Catapult":
 Jede Waffe besteht aus zwei Prefabs:
 
 1. `Waffenname_Gfx`: Beinhaltet die grafische Umsetzung der Waffe ohne weitere Scripts.
-2. `Waffenname`: Ist eine Variante von `Waffenname_Gfx` und beinhaltet alle Scripts, um die Waffe zum Leben zu erwecken.
+2. `Waffenname`: Ist eine Variante von `Weapon_Base` und beinhaltet alle Scripts, um die Waffe zum Leben zu erwecken.
+  Er nutzt `Waffenname_Gfx` für die visuelle Repräsentation.
 
 ### ScriptableObject
 
@@ -55,7 +56,7 @@ Diese Werte sind als Basiswerte zu verstehen und werden später durch Forschung 
 
 ### Waffe-Prefab
 
-* Varianten-Prefab vom obigen Gfx-Prefab.
+* Varianten-Prefab von `Weapon_Base`.
 * Beinhaltet alle Scripts, um die Waffe zum Leben zu erwecken.
 
 ![Waffe-Inspektor](assets/weapon-inspector.png)
