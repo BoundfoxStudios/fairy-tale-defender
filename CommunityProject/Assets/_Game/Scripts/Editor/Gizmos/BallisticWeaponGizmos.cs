@@ -43,7 +43,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			var distance = (armPosition - launchPointTransform.position).magnitude;
 			var startVector = Quaternion.AngleAxis(arm.XRotation.x, weaponTransform.right) * weaponTransform.forward;
 
-			Handles.color = new(1, 1, 1, 0.1f);
+			Handles.color = new(1, 1, 1, 0.3f);
 			Handles.DrawSolidArc(armPosition, armTransform.right, startVector, arm.XRotation.y - arm.XRotation.x, -distance);
 		}
 	}
