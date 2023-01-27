@@ -13,21 +13,27 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 			object result = property.propertyType switch
 			{
 				SerializedPropertyType.Float => property.floatValue,
+				SerializedPropertyType.Integer => property.intValue,
 				_ => throw new NotImplementedException($"Property type {property.propertyType} is not implemented yet.")
 			};
 
-			return (T)result;
+			;
+			return (T)Convert.ChangeType(result, typeof(T));
 		}
 
 		public static void SetValue<T>(this SerializedProperty property, T value)
 		{
 			// Unfortunately, we can not get rid of boxing here. But it's an editor script, so... :)
-			var valueAsObject = (object)value;
+			var valueAsObject = Convert.ChangeType(value, typeof(T));
 
 			switch (property.propertyType)
 			{
 				case SerializedPropertyType.Float:
 					property.floatValue = (float)valueAsObject;
+					break;
+
+				case SerializedPropertyType.Integer:
+					property.intValue = (int)valueAsObject;
 					break;
 
 				default:

@@ -14,6 +14,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects
 
 		[field: SerializeField]
 		[field: Range(0, 360)]
-		public float AttackAngle { get; private set; }
+		public int AttackAngle { get; private set; }
 	}
 }

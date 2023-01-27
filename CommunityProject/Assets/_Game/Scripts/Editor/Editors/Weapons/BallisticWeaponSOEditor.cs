@@ -64,7 +64,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 			var diagramRect = controlRect;
 			// Make it square, in the Inspector 99,99 % it's wider than long, so we don't care about the other case
 			diagramRect.width = diagramRect.height;
-			AttackAngleDiagram.Draw(controlRect, AttackAngleProperty.GetValue<float>());
+			AttackAngleDiagram.Draw(controlRect, AttackAngleProperty.GetValue<int>());
 
 			var halfPadding = EditorStyles.numberField.padding.horizontal / 2;
 			controlRect.x += diagramRect.width + halfPadding;
