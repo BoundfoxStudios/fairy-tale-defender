@@ -12,7 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableOb
 		public float MinimumRange { get; private set; }
 
 		[field: SerializeField]
-    [field: Range(0, 720)]
+		[field: Range(0, 720)]
 		public float RotationSpeedInDegreesPerSecond { get; private set; }
 
 		[field: SerializeField]
