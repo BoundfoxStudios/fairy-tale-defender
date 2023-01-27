@@ -64,33 +64,9 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		private void RenderParameters()
 		{
 			EditorGUILayout.PropertyField(FireRateInSecondsProperty);
+			AttackAngleControl.DrawEditorGUILayout(AttackAngleProperty);
 
-			RenderAttackAngle();
 			RenderRange();
-		}
-
-		private void RenderAttackAngle()
-		{
-			EditorGUILayout.BeginHorizontal();
-
-			const int diagramHeight = 50;
-			var controlRect = EditorGUILayout.GetControlRect(true, diagramHeight);
-			controlRect = EditorGUI.PrefixLabel(controlRect, new(AttackAngleProperty.displayName));
-
-			var diagramRect = controlRect;
-			// Make it square, in the Inspector 99,99 % it's wider than long, so we don't care about the other case
-			diagramRect.width = diagramRect.height;
-			AttackAngleDiagram.Draw(controlRect, AttackAngleProperty.GetValue<int>());
-
-			var halfPadding = EditorStyles.numberField.padding.horizontal / 2;
-			controlRect.x += diagramRect.width + halfPadding;
-			controlRect.width -= diagramRect.width + halfPadding;
-			controlRect.height = EditorGUIUtility.singleLineHeight;
-			controlRect.y += diagramHeight / 2f - EditorGUIUtility.singleLineHeight / 2;
-			EditorGUI.PropertyField(controlRect, AttackAngleProperty, GUIContent.none);
-
-			EditorGUILayout.EndHorizontal();
-			EditorGUILayout.Space();
 		}
 
 		private void RenderRange()
