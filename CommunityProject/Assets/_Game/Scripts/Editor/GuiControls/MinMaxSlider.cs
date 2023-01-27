@@ -6,7 +6,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 {
 	public static class MinMaxSlider
 	{
-		public static (float Min, float Max) ForFloat(string label, float min, float max, Vector2 limits, int roundToDigits = 2)
+		public static (float Min, float Max) DrawEditorGUILayout(string label, float min, float max, Vector2 limits, int roundToDigits = 2)
 		{
 			var numberFieldStyle = EditorStyles.numberField;
 			var halfHorizontalPadding = numberFieldStyle.padding.horizontal / 2;

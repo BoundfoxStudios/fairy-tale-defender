@@ -46,7 +46,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 			var rangeMin = minimumRangeProperty.GetValue<float>();
 			var rangeMax = maximumRangeProperty.GetValue<float>();
 
-			(rangeMin, rangeMax) = MinMaxSlider.ForFloat("Range", rangeMin, rangeMax, rangeLimits);
+			(rangeMin, rangeMax) = MinMaxSlider.DrawEditorGUILayout("Range", rangeMin, rangeMax, rangeLimits);
 
 			if (EditorGUI.EndChangeCheck())
 			{
