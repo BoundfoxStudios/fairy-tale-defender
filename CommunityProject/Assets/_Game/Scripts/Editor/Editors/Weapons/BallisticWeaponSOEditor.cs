@@ -80,14 +80,14 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 			if (idleTime < 0)
 			{
 				EditorGUILayout.HelpBox($"Careful! The total time of animation " +
-				                        $"({nameof(BallisticWeaponSO.LaunchAnimationSpeed)} + {nameof(BallisticWeaponSO.RewindAnimationSpeed)}; " +
-				                        $"{launchAnimationSpeed:F2} s + {rewindAnimationSpeed:F2} s = {animationTime:F2} s) " +
-				                        $"must be lower or equal than {nameof(BallisticWeaponSO.FireRateInSeconds)} ({fireRatePerSeconds:F2} s)", MessageType.Error);
+										$"({nameof(BallisticWeaponSO.LaunchAnimationSpeed)} + {nameof(BallisticWeaponSO.RewindAnimationSpeed)}; " +
+										$"{launchAnimationSpeed:F2} s + {rewindAnimationSpeed:F2} s = {animationTime:F2} s) " +
+										$"must be lower or equal than {nameof(BallisticWeaponSO.FireRateInSeconds)} ({fireRatePerSeconds:F2} s)", MessageType.Error);
 				return;
 			}
 
 			EditorGUILayout.TextArea($"<b>Idle Time:</b> {idleTime:F2} s\n" +
-			                        $"<b>Animation Time:</b> {animationTime:F2} s", HelpBoxRichTextStyle);
+									$"<b>Animation Time:</b> {animationTime:F2} s", HelpBoxRichTextStyle);
 		}
 	}
 }
