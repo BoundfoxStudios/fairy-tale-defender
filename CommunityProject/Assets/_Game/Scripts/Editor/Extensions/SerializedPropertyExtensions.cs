@@ -8,6 +8,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 {
 	public static class SerializedPropertyExtensions
 	{
+		/// <summary>
+		/// Gets the value of a <see cref="SerializedProperty"/>.
+		/// May fail, if <see cref="Convert.ChangeType(object, Type)"/> can not convert to the target type <typeparamref name="T"/>.
+		/// </summary>
 		public static T GetValue<T>(this SerializedProperty property)
 		{
 			object result = property.propertyType switch
@@ -21,6 +25,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 			return (T)Convert.ChangeType(result, typeof(T));
 		}
 
+		/// <summary>
+		/// Sets the value of a <see cref="SerializedProperty"/>.
+		/// May fail if <see cref="Convert.ChangeType(object, Type)"/> can not convert to the target type <typeparamref name="T"/>.
+		/// </summary>
 		public static void SetValue<T>(this SerializedProperty property, T value)
 		{
 			// Unfortunately, we can not get rid of boxing here. But it's an editor script, so... :)
@@ -90,9 +98,17 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 			return attribute is not null;
 		}
 
+		/// <summary>
+		/// Get the property's target object C# name.
+		/// </summary>
+		/// <returns>The name of the C# object</returns>
 		public static string GetTargetObjectName(this SerializedProperty property) =>
 			property.serializedObject.targetObject.GetType().Name;
 
+		/// <summary>
+		/// Returns a readable property path.
+		/// </summary>
+		/// <returns>"TargetObjectName -> PropertyName"</returns>
 		public static string GetReadablePropertyPath(this SerializedProperty property) =>
 			$"{property.GetTargetObjectName()} -> {property.name}";
 	}
