@@ -1,4 +1,4 @@
-using System;
+using BoundfoxStudios.CommunityProject.Utilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -47,22 +47,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 				(min, max) = (max, min);
 			}
 
-			min = Round(Mathf.Max(min, limits.x), roundToDigits);
-			max = Round(Mathf.Min(max, limits.y), roundToDigits);
+			min = MathfUtilities.Round(Mathf.Max(min, limits.x), roundToDigits);
+			max = MathfUtilities.Round(Mathf.Min(max, limits.y), roundToDigits);
 
 			return (min, max);
-		}
-
-		private static float Round(float value, int decimals)
-		{
-			if (decimals < 0)
-			{
-				throw new ArgumentOutOfRangeException(nameof(decimals), "Can not be smaller than 0");
-			}
-
-			var roundingMultiplier = Mathf.Pow(10, decimals);
-
-			return Mathf.Round(value * roundingMultiplier) / roundingMultiplier;
 		}
 	}
 }
