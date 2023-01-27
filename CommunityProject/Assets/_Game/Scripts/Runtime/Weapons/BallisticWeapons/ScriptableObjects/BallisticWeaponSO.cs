@@ -12,15 +12,18 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableOb
 		public float MinimumRange { get; private set; }
 
 		[field: SerializeField]
+    [field: Range(0, 720)]
 		public float RotationSpeedInDegreesPerSecond { get; private set; }
 
 		[field: SerializeField]
+		[field: Range(0, 5)]
 		public float LaunchAnimationSpeed { get; private set; } = 0.2f;
 
 		[field: SerializeField]
 		public Ease LaunchEasing { get; private set; } = Ease.InQuart;
 
 		[field: SerializeField]
+		[field: Range(0, 5)]
 		public float RewindAnimationSpeed { get; private set; } = 0.2f;
 
 		[field: SerializeField]
