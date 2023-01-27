@@ -89,5 +89,11 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 			attribute = GetAttributes<T>(property, inherit).FirstOrDefault();
 			return attribute is not null;
 		}
+
+		public static string GetTargetObjectName(this SerializedProperty property) =>
+			property.serializedObject.targetObject.GetType().Name;
+
+		public static string GetReadablePropertyPath(this SerializedProperty property) =>
+			$"{property.GetTargetObjectName()} -> {property.name}";
 	}
 }

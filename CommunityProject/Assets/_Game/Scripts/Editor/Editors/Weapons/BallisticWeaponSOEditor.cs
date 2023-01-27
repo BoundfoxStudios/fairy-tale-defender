@@ -17,9 +17,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		private SerializedProperty _rewindAnimationSpeedProperty;
 		private SerializedProperty _rewindEasingProperty;
 
-		private float _rangeMin;
-		private float _rangeMax;
-
 		private static GUIStyle _helpBoxRichTextStyle;
 		private static GUIStyle HelpBoxRichTextStyle => _helpBoxRichTextStyle ??= new(EditorStyles.helpBox)
 		{
@@ -39,9 +36,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 			_launchEasingProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.LaunchEasing));
 			_rewindAnimationSpeedProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RewindAnimationSpeed));
 			_rewindEasingProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RewindEasing));
-
-			_rangeMin = _minimumRangeProperty.GetValue<float>();
-			_rangeMax = RangeProperty.GetValue<float>();
 		}
 
 		protected override void RenderToolbar(int selectedToolbar)
@@ -65,50 +59,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		{
 			EditorGUILayout.PropertyField(FireRateInSecondsProperty);
 			AttackAngleControl.DrawEditorGUILayout(AttackAngleProperty);
-
-			RenderRange();
-		}
-
-		private void RenderRange()
-		{
-			var rangeLimits = Vector2.zero;
-
-			if (!_minimumRangeProperty.TryGetAttribute<RangeAttribute>(out var rangeMinAttribute))
-			{
-				EditorGUILayout.HelpBox($"{nameof(BallisticWeaponSO.MinimumRange)} does not have a RangeAttribute!", MessageType.Error);
-				return;
-			}
-
-			if (!RangeProperty.TryGetAttribute<RangeAttribute>(out var rangeMaxAttribute))
-			{
-				EditorGUILayout.HelpBox($"{nameof(BallisticWeaponSO.Range)} does not have a RangeAttribute!", MessageType.Error);
-				return;
-			}
-
-			if (rangeMinAttribute.min >= rangeMaxAttribute.max)
-			{
-				HelpBoxCodeError($"{nameof(BallisticWeaponSO.MinimumRange)} minimum must not be greater than or equal to {nameof(BallisticWeaponSO.Range)} maximum!");
-				return;
-			}
-
-			if (rangeMinAttribute.max <= rangeMaxAttribute.min)
-			{
-				HelpBoxCodeError($"{nameof(BallisticWeaponSO.MinimumRange)} maximum must be smaller than {nameof(BallisticWeaponSO.Range)}!");
-				return;
-			}
-
-			rangeLimits.x = rangeMinAttribute.min;
-			rangeLimits.y = rangeMaxAttribute.max;
-
-			EditorGUI.BeginChangeCheck();
-
-			(_rangeMin, _rangeMax) = MinMaxSlider.ForFloat("Range", _rangeMin, _rangeMax, rangeLimits);
-
-			if (EditorGUI.EndChangeCheck())
-			{
-				_minimumRangeProperty.SetValue(_rangeMin);
-				RangeProperty.SetValue(_rangeMax);
-			}
+			RangeControl.DrawEditorGUILayout(_minimumRangeProperty, RangeProperty);
 		}
 
 		private void RenderAnimation()
@@ -137,11 +88,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 
 			EditorGUILayout.TextArea($"<b>Idle Time:</b> {idleTime:F2} s\n" +
 			                        $"<b>Animation Time:</b> {animationTime:F2} s", HelpBoxRichTextStyle);
-		}
-
-		private void HelpBoxCodeError(string message)
-		{
-			EditorGUILayout.HelpBox($"{message} (This is an error in the code not the settings in the inspector)", MessageType.Error);
 		}
 	}
 }
