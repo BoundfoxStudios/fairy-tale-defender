@@ -20,7 +20,8 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		private float _rangeMin;
 		private float _rangeMax;
 
-		private static GUIStyle HelpBoxRichTextStyle => new(EditorStyles.helpBox)
+		private static GUIStyle _helpBoxRichTextStyle;
+		private static GUIStyle HelpBoxRichTextStyle => _helpBoxRichTextStyle ??= new(EditorStyles.helpBox)
 		{
 			richText = true
 		};
