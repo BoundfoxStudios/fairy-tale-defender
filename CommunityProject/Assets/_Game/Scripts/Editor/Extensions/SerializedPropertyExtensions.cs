@@ -21,7 +21,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 				_ => throw new NotImplementedException($"Property type {property.propertyType} is not implemented yet.")
 			};
 
-			;
 			return (T)Convert.ChangeType(result, typeof(T));
 		}
 
