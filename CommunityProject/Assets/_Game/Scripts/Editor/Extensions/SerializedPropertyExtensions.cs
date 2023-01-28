@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
@@ -48,49 +49,57 @@ namespace BoundfoxStudios.CommunityProject.Editor.Extensions
 			}
 		}
 
-		private static IEnumerable<T> GetAttributes<T>(this SerializedProperty property, bool inherit)
+		private static IEnumerable<T> GetAttributes<T>(SerializedProperty property, Type? type, bool inherit)
 			where T : Attribute
 		{
-			const BindingFlags bindingFlags = (BindingFlags)(-1);
-
-			var targetType = property.serializedObject.targetObject.GetType();
-
-			while (targetType is not null)
+			if (type is null)
 			{
-				var pathSegments = property.propertyPath.Split('.');
-
-				foreach (var pathSegment in pathSegments)
-				{
-					var fieldInfo = targetType.GetField(pathSegment, bindingFlags);
-
-					if (fieldInfo is not null)
-					{
-						return fieldInfo.GetCustomAttributes<T>(inherit);
-					}
-
-					var propertyInfo = targetType.GetProperty(pathSegment, bindingFlags);
-
-					if (propertyInfo is not null)
-					{
-						return propertyInfo.GetCustomAttributes<T>(inherit);
-					}
-				}
-
-				if (!inherit)
-				{
-					break;
-				}
-
-				targetType = targetType.BaseType;
+				return Array.Empty<T>();
 			}
 
-			return Array.Empty<T>();
+			const BindingFlags bindingFlags = (BindingFlags)(-1);
+			var pathSegments = property.propertyPath.Split('.');
+
+			foreach (var pathSegment in pathSegments)
+			{
+				var fieldInfo = type.GetField(pathSegment, bindingFlags);
+
+				if (fieldInfo is not null)
+				{
+					return fieldInfo.GetCustomAttributes<T>(inherit);
+				}
+
+				var propertyInfo = type.GetProperty(pathSegment, bindingFlags);
+
+				if (propertyInfo is not null)
+				{
+					return propertyInfo.GetCustomAttributes<T>(inherit);
+				}
+			}
+
+			if (!inherit)
+			{
+				return Array.Empty<T>();
+			}
+
+			return GetAttributes<T>(property, type.BaseType, inherit);
+		}
+
+		private static IEnumerable<T> GetAttributes<T>(SerializedProperty property, bool inherit)
+			where T : Attribute
+		{
+			var targetType = property.serializedObject.targetObject.GetType();
+			return GetAttributes<T>(property, targetType, inherit);
 		}
 
 		/// <summary>
 		/// Returns the first attribute of type <typeparamref name="T"/>.
 		/// </summary>
-		public static bool TryGetAttribute<T>(this SerializedProperty property, out T attribute, bool inherit = true)
+		public static bool TryGetAttribute<T>(
+			this SerializedProperty property,
+			[NotNullWhen(true)] out T? attribute,
+			bool inherit = true
+		)
 			where T : Attribute
 		{
 			attribute = GetAttributes<T>(property, inherit).FirstOrDefault();

@@ -10,14 +10,14 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 	[CustomEditor(typeof(BallisticWeaponSO))]
 	public class BallisticWeaponSOEditor : WeaponSOEditor
 	{
-		private SerializedProperty _minimumRangeProperty;
-		private SerializedProperty _rotationSpeedInDegreesPerSecondProperty;
-		private SerializedProperty _launchAnimationSpeedProperty;
-		private SerializedProperty _launchEasingProperty;
-		private SerializedProperty _rewindAnimationSpeedProperty;
-		private SerializedProperty _rewindEasingProperty;
+		private SerializedProperty _minimumRangeProperty = default!;
+		private SerializedProperty _rotationSpeedInDegreesPerSecondProperty = default!;
+		private SerializedProperty _launchAnimationSpeedProperty = default!;
+		private SerializedProperty _launchEasingProperty = default!;
+		private SerializedProperty _rewindAnimationSpeedProperty = default!;
+		private SerializedProperty _rewindEasingProperty = default!;
 
-		private static GUIStyle _helpBoxRichTextStyle;
+		private static GUIStyle? _helpBoxRichTextStyle;
 		private static GUIStyle HelpBoxRichTextStyle => _helpBoxRichTextStyle ??= new(EditorStyles.helpBox)
 		{
 			richText = true

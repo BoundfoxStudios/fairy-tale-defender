@@ -7,9 +7,9 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 {
 	public abstract class WeaponSOEditor : UnityEditor.Editor
 	{
-		protected SerializedProperty RangeProperty;
-		protected SerializedProperty FireRateInSecondsProperty;
-		protected SerializedProperty AttackAngleProperty;
+		protected SerializedProperty RangeProperty = default!;
+		protected SerializedProperty FireRateInSecondsProperty = default!;
+		protected SerializedProperty AttackAngleProperty = default!;
 
 		protected abstract string[] ToolbarEntries { get; }
 
