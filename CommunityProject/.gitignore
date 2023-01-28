@@ -565,3 +565,7 @@ FodyWeavers.xsd
 
 # OSX folder for generated addressable files
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/OSX.meta
+/[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/OSX.meta
+
+# Allow csc.rsp files
+!/Assets/_Game/Scripts/Editor/csc.rsp
