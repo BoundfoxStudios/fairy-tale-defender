@@ -9,9 +9,9 @@ namespace BoundfoxStudios.CommunityProject.Editor
 	public static class PrefabManager
 	{
 		private const string PrefabManagerAddressablesKey = "ScriptableObjects/PrefabManager.asset";
-		private static PrefabManagerSO _prefabManager;
+		private static PrefabManagerSO? _prefabManager;
 
-		private static async UniTask<PrefabManagerSO> LocatePrefabManagerAsync()
+		private static async UniTask<PrefabManagerSO?> LocatePrefabManagerAsync()
 		{
 			var prefabManager = await Addressables.LoadAssetAsync<PrefabManagerSO>(PrefabManagerAddressablesKey);
 
@@ -26,16 +26,11 @@ namespace BoundfoxStudios.CommunityProject.Editor
 
 		public static async UniTask SafeInvokeAsync(Action<PrefabManagerSO> callback)
 		{
-			if (!_prefabManager)
+			_prefabManager ??= await LocatePrefabManagerAsync();
+
+			if (_prefabManager is null)
 			{
-				var prefabManager = await LocatePrefabManagerAsync();
-
-				if (!prefabManager)
-				{
-					return;
-				}
-
-				_prefabManager = prefabManager;
+				return;
 			}
 
 			callback(_prefabManager);

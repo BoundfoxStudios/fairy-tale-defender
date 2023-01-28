@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace BoundfoxStudios.CommunityProject.Editor.Windows
 {
@@ -121,9 +122,9 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 
 		private bool IsSceneOpen(string sceneFile)
 		{
-			for (var i = 0; i < EditorSceneManager.sceneCount; i++)
+			for (var i = 0; i < SceneManager.sceneCount; i++)
 			{
-				if (EditorSceneManager.GetSceneAt(i).path == sceneFile)
+				if (SceneManager.GetSceneAt(i).path == sceneFile)
 				{
 					return true;
 				}

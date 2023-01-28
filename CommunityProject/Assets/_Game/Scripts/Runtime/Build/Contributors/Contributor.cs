@@ -22,7 +22,6 @@ namespace BoundfoxStudios.CommunityProject.Build.Contributors
 		// ReSharper disable once InconsistentNaming
 		private string[] contributions;
 
-
 		/// <summary>
 		/// Username as set in the GitHub profile information
 		/// </summary>
