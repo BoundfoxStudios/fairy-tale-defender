@@ -6,6 +6,6 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers
 	public class Tower : MonoBehaviour
 	{
 		[field: SerializeField]
-		public Collider Collider { get; private set; }
+		public Collider Collider { get; private set; } = default!;
 	}
 }

@@ -8,6 +8,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects
 	/// </summary>
 	public abstract class SceneSO : ScriptableObject
 	{
-		public AssetReference SceneReference;
+		[field: SerializeField]
+		public AssetReference SceneReference { get; private set; } = default!;
 	}
 }

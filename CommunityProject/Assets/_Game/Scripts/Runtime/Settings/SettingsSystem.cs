@@ -13,14 +13,14 @@ namespace BoundfoxStudios.CommunityProject.Settings
 	public class SettingsSystem : MonoBehaviour
 	{
 		[SerializeField]
-		private SettingsSO Settings;
+		private SettingsSO Settings = default!;
 
 		[SerializeField]
-		private AudioMixer MainMixer;
+		private AudioMixer MainMixer = default!;
 
 		[Header("Listening on")]
 		[SerializeField]
-		private VoidEventChannelSO GameSettingsChangedEventChannel;
+		private VoidEventChannelSO GameSettingsChangedEventChannel = default!;
 
 		private void Awake()
 		{

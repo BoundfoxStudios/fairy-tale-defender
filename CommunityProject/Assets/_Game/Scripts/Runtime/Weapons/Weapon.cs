@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using BoundfoxStudios.CommunityProject.Buildings.Towers;
 using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
@@ -14,13 +15,13 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 		where T : WeaponSO
 	{
 		[field: SerializeField]
-		public T WeaponDefinition { get; private set; }
+		public T WeaponDefinition { get; private set; } = default!;
 
 		[SerializeField]
-		protected TargetLocator<T> TargetLocator;
+		protected TargetLocator<T> TargetLocator = default!;
 
 		[field: SerializeField]
-		public Tower Tower { get; private set; }
+		public Tower Tower { get; private set; } = default!;
 
 		public TargetType TargetType;
 
@@ -45,8 +46,8 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 		/// </summary>
 		protected abstract void TrackTarget(TargetPoint target);
 
-		private CancellationTokenSource _cancellationTokenSource;
-		private TargetPoint _currentTarget;
+		private readonly CancellationTokenSource _cancellationTokenSource = new();
+		private TargetPoint? _currentTarget;
 		private Vector3 _towerForward;
 
 		protected void Start()
@@ -54,11 +55,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 			_towerForward = Tower.transform.forward;
 
 			StartLaunchSequenceAsync().Forget();
-		}
-
-		private void OnEnable()
-		{
-			_cancellationTokenSource = new();
 		}
 
 		private void OnDisable()
@@ -82,14 +78,14 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 				return;
 			}
 
-			TrackTarget(_currentTarget);
+			TrackTarget(_currentTarget!);
 		}
 
-		private bool IsTargetInRangeAndAlive(TargetPoint target) =>
-			target && TargetLocator.IsInAttackRange(transform.position, target.transform.position, _towerForward,
+		private bool IsTargetInRangeAndAlive(TargetPoint? target) =>
+			target is not null && target && TargetLocator.IsInAttackRange(transform.position, target.transform.position, _towerForward,
 				WeaponDefinition);
 
-		private bool TryAcquireTarget(out TargetPoint currentTarget)
+		private bool TryAcquireTarget([NotNullWhen(true)] out TargetPoint? currentTarget)
 		{
 			currentTarget = TargetLocator.Locate(transform.position, _towerForward, TargetType, WeaponDefinition);
 			return currentTarget;
@@ -112,7 +108,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 				await UniTask.WaitUntil(() => _currentTarget, cancellationToken: token);
 			}
 
-			var targetPosition = _currentTarget.transform.position;
+			var targetPosition = _currentTarget!.transform.position;
 
 			// Note: It could be that between start animation and launch projectile the current target is destroyed.
 			// In that case we still launch the projectile to the last known position.

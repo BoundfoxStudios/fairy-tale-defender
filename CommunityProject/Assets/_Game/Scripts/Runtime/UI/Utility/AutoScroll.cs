@@ -10,11 +10,13 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 		[SerializeField]
 		private float ScrollSpeed = 0.05f;
 
-		private ScrollRect _scrollRect;
+		private ScrollRect _scrollRect = default!;
 
 		private void Awake()
 		{
 			_scrollRect = GetComponent<ScrollRect>();
+
+			Debug.Assert(_scrollRect is not null, "_scrollRect is not null");
 		}
 
 		private void Update()

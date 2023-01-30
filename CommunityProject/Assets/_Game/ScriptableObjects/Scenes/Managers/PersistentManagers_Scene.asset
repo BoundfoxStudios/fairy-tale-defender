@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 205c8fd1b13841d8906b4c535477b9ef, type: 3}
   m_Name: PersistentManagers_Scene
   m_EditorClassIdentifier: 
-  SceneReference:
+  <SceneReference>k__BackingField:
     m_AssetGUID: 6ec9bcb7ae85c43c8b9c3bfd09b7d261
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
+    m_EditorAssetChanged: 1

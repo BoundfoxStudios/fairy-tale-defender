@@ -19,17 +19,17 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 #if UNITY_EDITOR
 		[Header("References")]
 		[SerializeField]
-		private SceneSO ThisScene;
+		private SceneSO ThisScene = default!;
 
 		[SerializeField]
-		private SettingsSO Settings;
+		private SettingsSO Settings = default!;
 
 		[SerializeField]
-		private PersistentManagersSceneSO PersistentManagersScene;
+		private PersistentManagersSceneSO PersistentManagersScene = default!;
 
 		[Header("Broadcasting Channels")]
 		[SerializeField]
-		private LoadSceneEventChannelSO NotifyColdStartupEventChannel;
+		private LoadSceneEventChannelSO NotifyColdStartupEventChannel = default!;
 
 		private bool _isColdStartup;
 

@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Extensions;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
@@ -7,16 +8,16 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 	public class BallisticProjectile : MonoBehaviour
 	{
 		[field: SerializeField]
-		public Collider Collider { get; private set; }
+		public Collider Collider { get; private set; } = default!;
 
 		[SerializeField]
-		private TrailRenderer TrailRenderer;
+		private TrailRenderer TrailRenderer = default!;
 
-		private Rigidbody _rigidbody;
+		private Rigidbody _rigidbody = default!;
 
 		private void Awake()
 		{
-			_rigidbody = GetComponent<Rigidbody>();
+			_rigidbody = gameObject.GetComponentSafe<Rigidbody>();
 			_rigidbody.useGravity = false;
 
 			if (TrailRenderer)

@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -12,13 +13,13 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 	[CreateAssetMenu(fileName = "GameSettings", menuName = Constants.MenuNames.MenuName + "/GameSettings")]
 	public class SettingsSO : ScriptableObject
 	{
-		private GameSettings _gameSettings;
+		private GameSettings? _gameSettings;
 
-		public AudioConfig Audio => _gameSettings.Audio;
-		public GraphicConfig Graphic => _gameSettings.Graphic;
-		public LocalizationConfig Localization => _gameSettings.Localization;
+		public AudioConfig Audio => _gameSettings.EnsureOrThrow().Audio;
+		public GraphicConfig Graphic => _gameSettings.EnsureOrThrow().Graphic;
+		public LocalizationConfig Localization => _gameSettings.EnsureOrThrow().Localization;
 
-		private JsonFileManager _jsonFileManager;
+		private JsonFileManager _jsonFileManager = default!;
 		private readonly string _jsonFileName = "config.json";
 
 		private void OnEnable()
@@ -29,7 +30,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 
 		public async UniTask SaveAsync()
 		{
-			await _jsonFileManager.WriteAsync<GameSettings>(_jsonFileName, _gameSettings);
+			await _jsonFileManager.WriteAsync(_jsonFileName, _gameSettings.EnsureOrThrow());
 		}
 
 		public async UniTask LoadAsync()
@@ -66,8 +67,8 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		[Serializable]
 		public class GraphicConfig
 		{
-			public int ScreenWidth = 0;
-			public int ScreenHeight = 0;
+			public int ScreenWidth;
+			public int ScreenHeight;
 			public bool IsFullscreen = true;
 			public int GraphicLevel = 1;
 		}
@@ -75,7 +76,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		[Serializable]
 		public class LocalizationConfig
 		{
-			public LocaleIdentifier Locale = default;
+			public LocaleIdentifier Locale;
 		}
 	}
 }

@@ -15,39 +15,46 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		private LayerMask ObstaclesLayerMask;
 
 		[SerializeField]
-		private Camera Camera;
+		private Camera Camera = default!;
 
 		[SerializeField]
-		private InputReaderSO InputReader;
+		private InputReaderSO InputReader = default!;
 
 		[SerializeField]
-		private Material BlueprintMaterial;
+		private Material BlueprintMaterial = default!;
 
 		[SerializeField]
-		private Material BlueprintInvalidMaterial;
+		private Material BlueprintInvalidMaterial = default!;
 
 		[SerializeField]
 		private float TimeToRotate = 0.133f;
 
 		[Header("Listening Channels")]
 		[SerializeField]
-		private BuildableEventChannelSO EnterBuildModeEventChannel;
+		private BuildableEventChannelSO EnterBuildModeEventChannel = default!;
 
 		[Header("Channels")]
 		[SerializeField]
-		private VoidEventChannelSO ExitBuildModeEventChannel;
+		private VoidEventChannelSO ExitBuildModeEventChannel = default!;
 
-		private BuildContext _buildContext;
+		private BuildContext? _buildContext;
 		private LayerMask _buildableAndObstacleLayerMask;
 
 		private class BuildContext
 		{
-			public IBuildable Buildable { get; set; }
-			public GameObject BlueprintInstance { get; set; }
-			public MeshRenderer[] MeshRenderers { get; set; }
+			public IBuildable Buildable { get; }
+			public GameObject BlueprintInstance { get; }
+			public MeshRenderer[] MeshRenderers { get; }
 			public Vector3 TilePosition { get; set; }
 			public bool IsValidPosition { get; set; }
 			public LayerMask PreviousLayerMask { get; set; }
+
+			public BuildContext(IBuildable buildable)
+			{
+				Buildable = buildable;
+				BlueprintInstance = Instantiate(buildable.BlueprintPrefab);
+				MeshRenderers = BlueprintInstance.GetComponentsInChildren<MeshRenderer>();
+			}
 		}
 
 		private void Awake()
@@ -82,18 +89,13 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		{
 			ClearBuildContext();
 
-			_buildContext = new()
-			{
-				Buildable = args.Buildable,
-				BlueprintInstance = Instantiate(args.Buildable.BlueprintPrefab)
-			};
-			_buildContext.MeshRenderers = _buildContext.BlueprintInstance.GetComponentsInChildren<MeshRenderer>();
+			_buildContext = new(args.Buildable);
 			_buildContext.BlueprintInstance.Deactivate();
 		}
 
 		private void ClearBuildContext()
 		{
-			if (_buildContext?.BlueprintInstance)
+			if (_buildContext is not null && _buildContext.BlueprintInstance)
 			{
 				Destroy(_buildContext.BlueprintInstance);
 			}
@@ -104,7 +106,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		private void ReadBuild(Vector2 position)
 		{
 			// We ignore the position parameter here, so we do not have to raycast for the correct position again.
-			if (_buildContext is { IsValidPosition: false })
+			if (_buildContext is null or { IsValidPosition: false })
 			{
 				return;
 			}

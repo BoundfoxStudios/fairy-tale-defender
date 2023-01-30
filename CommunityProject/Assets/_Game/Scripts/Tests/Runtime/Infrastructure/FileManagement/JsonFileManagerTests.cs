@@ -112,7 +112,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Infrastructure.FileManagement
 		[Serializable]
 		private class UnitTestSerializable
 		{
-			public string Property;
+			public string Property = string.Empty;
 		}
 	}
 }

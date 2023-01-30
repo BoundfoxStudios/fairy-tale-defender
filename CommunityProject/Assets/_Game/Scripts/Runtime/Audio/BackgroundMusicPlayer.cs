@@ -13,9 +13,9 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	public class BackgroundMusicPlayer : MonoBehaviour
 	{
 		[SerializeField]
-		private PlaylistSO Playlist;
+		private PlaylistSO Playlist = default!;
 
-		private AudioSource _audioSource;
+		private AudioSource _audioSource = default!;
 
 		private void Awake()
 		{
@@ -31,15 +31,11 @@ namespace BoundfoxStudios.CommunityProject.Audio
 			PlayMusicAsync().Forget();
 		}
 
+		// ReSharper disable once FunctionRecursiveOnAllPaths
+		// We want it to be recursive.
 		private async UniTaskVoid PlayMusicAsync()
 		{
 			var clip = GetNextClip();
-
-			if (!clip)
-			{
-				Debug.LogError("No valid Playlist", this);
-				return;
-			}
 
 			_audioSource.clip = clip;
 			_audioSource.Play();
@@ -49,9 +45,6 @@ namespace BoundfoxStudios.CommunityProject.Audio
 			PlayMusicAsync().Forget();
 		}
 
-		private AudioClip GetNextClip()
-		{
-			return Playlist.GetNextRandomClipWithoutImmediateRepeat();
-		}
+		private AudioClip GetNextClip() => Playlist.GetNextRandomClipWithoutImmediateRepeat();
 	}
 }

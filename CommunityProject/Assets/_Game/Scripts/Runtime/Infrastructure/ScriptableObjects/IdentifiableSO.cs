@@ -10,12 +10,11 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.ScriptableObjects
 	/// </summary>
 	public abstract class IdentifiableSO : ScriptableObject, IEquatable<IdentifiableSO>
 	{
-		[SerializeField]
-		[HideInInspector]
+		[field: SerializeField]
 		// ReSharper disable once InconsistentNaming
-		private string _guid;
+		private string _guid { get; set; } = string.Empty;
 
-		private ScriptableObjectIdentity _identity;
+		private ScriptableObjectIdentity? _identity;
 		public ScriptableObjectIdentity Identity => _identity ??= new() { Guid = _guid };
 
 		protected virtual void OnValidate()
@@ -26,7 +25,9 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.ScriptableObjects
 #endif
 		}
 
-		public bool Equals(IdentifiableSO other) => Identity.Equals(other == null ? null : other.Identity);
+		// ReSharper disable once MergeConditionalExpression
+		// Don't merge it, because "other" is a UnityEngine.Object and will suppress the internal UnityEngine.Object check.
+		public bool Equals(IdentifiableSO? other) => Identity.Equals(other is null ? null : other.Identity);
 
 		public static implicit operator ScriptableObjectIdentity(IdentifiableSO identifiable) => identifiable.Identity;
 	}

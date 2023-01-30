@@ -8,8 +8,8 @@ namespace BoundfoxStudios.CommunityProject.SpawnSystem
 	// TODO: This will be replaced later and is just a test script.
 	public class Spawner : MonoBehaviour
 	{
-		public SplineWalker ItemToSpawn;
-		public SplineContainer SplineContainer;
+		public SplineWalker ItemToSpawn = default!;
+		public SplineContainer SplineContainer = default!;
 		public int ToSpawn = 5;
 		public int Delay = 1000;
 

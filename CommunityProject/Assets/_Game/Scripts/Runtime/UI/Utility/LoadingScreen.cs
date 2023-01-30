@@ -15,13 +15,13 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 
 		[Header("References")]
 		[SerializeField]
-		private CanvasGroup LoadingScreenCanvasGroup;
+		private CanvasGroup LoadingScreenCanvasGroup = default!;
 
 		[Header("Listening Channels")]
 		[SerializeField]
-		private BoolEventChannelSO ToggleLoadingScreenEventChannel;
+		private BoolEventChannelSO ToggleLoadingScreenEventChannel = default!;
 
-		private Tween _runningTween;
+		private Tween? _runningTween;
 
 		private void Awake()
 		{

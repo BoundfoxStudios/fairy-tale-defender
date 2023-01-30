@@ -109,10 +109,10 @@ MonoBehaviour:
   <Tower>k__BackingField: {fileID: 0}
   TargetType: 0
   <Arm>k__BackingField:
-    ArmPivot: {fileID: 3005578239461552565}
-    LaunchPoint: {fileID: 5458708713455915020}
-    XRotation: {x: 0, y: 45}
-  ProjectilePrefab: {fileID: -1564672828742544467, guid: 2c024160f4c8c43b3b9074d8ebfbe2c6,
+    <ArmPivot>k__BackingField: {fileID: 8953687500045677425}
+    <LaunchPoint>k__BackingField: {fileID: 5458708713455915020}
+    <XRotation>k__BackingField: {x: 0, y: 45}
+  <ProjectilePrefab>k__BackingField: {fileID: -1564672828742544467, guid: 2c024160f4c8c43b3b9074d8ebfbe2c6,
     type: 3}
 --- !u!1 &8796360979027062118 stripped
 GameObject:
@@ -212,12 +212,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35b70d326562f40be8d0bc9c01a262a7, type: 3}
---- !u!4 &3005578239461552565 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6027794085777380390, guid: 35b70d326562f40be8d0bc9c01a262a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 8796360979954394515}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4472876181687365015 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4899963143612925956, guid: 35b70d326562f40be8d0bc9c01a262a7,
@@ -227,6 +221,12 @@ Transform:
 --- !u!4 &5458708713455915020 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3590434413593720223, guid: 35b70d326562f40be8d0bc9c01a262a7,
+    type: 3}
+  m_PrefabInstance: {fileID: 8796360979954394515}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8953687500045677425 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 455726556323124962, guid: 35b70d326562f40be8d0bc9c01a262a7,
     type: 3}
   m_PrefabInstance: {fileID: 8796360979954394515}
   m_PrefabAsset: {fileID: 0}

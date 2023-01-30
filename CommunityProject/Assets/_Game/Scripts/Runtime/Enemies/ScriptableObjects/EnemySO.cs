@@ -10,7 +10,7 @@ namespace BoundfoxStudios.CommunityProject.Enemies.ScriptableObjects
 	public class EnemySO : ScriptableObject
 	{
 		[field: SerializeField]
-		public LocalizedString Name { get; private set; }
+		public LocalizedString Name { get; private set; } = default!;
 
 		[field: SerializeField]
 		[field: Min(1)]

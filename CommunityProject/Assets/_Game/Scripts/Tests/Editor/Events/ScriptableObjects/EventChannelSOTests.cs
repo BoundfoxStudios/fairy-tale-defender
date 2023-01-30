@@ -9,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
 {
 	public class EventChannelSOTests
 	{
-		private VoidEventChannelSO _voidEventChannel;
+		private VoidEventChannelSO _voidEventChannel = default!;
 
 		[SetUp]
 		public void SetUp()
@@ -21,7 +21,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
 		[TearDown]
 		public void TearDown()
 		{
-			_voidEventChannel = null;
+			_voidEventChannel = null!;
 		}
 
 		[Test]
@@ -44,7 +44,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
 	// ReSharper disable once InconsistentNaming
 	public class EventChannelTSOTests
 	{
-		private ObjectEventChannelSO _objectEventChannel;
+		private ObjectEventChannelSO _objectEventChannel = default!;
 
 		[SetUp]
 		public void SetUp()
@@ -56,7 +56,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
 		[TearDown]
 		public void TearDown()
 		{
-			_objectEventChannel = null;
+			_objectEventChannel = null!;
 		}
 
 		[Test]
@@ -82,7 +82,7 @@ namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
 			public class EventArgs
 			{
 				public int Bar;
-				public string Foo;
+				public string Foo = string.Empty;
 
 				public override string ToString()
 				{

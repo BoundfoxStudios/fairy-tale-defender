@@ -11,7 +11,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableOb
 		[field: Tooltip("Specifies how much further a target can be reached depending on the height of the weapon.")]
 		public float HeightToRangeFactor { get; private set; } = 1.01f;
 
-		public override TargetPoint Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType, BallisticWeaponSO weaponDefinition)
+		public override TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType, BallisticWeaponSO weaponDefinition)
 		{
 			// TODO: Calculate in the HeightToRangeFactor, for this we also need the y-position of the weapon minus the tower's height.
 			var targets = LocateAllInRangeNonAlloc(weaponPosition, weaponDefinition.Range);

@@ -15,7 +15,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 		/// <summary>
 		/// Returns a single target that is reachable by the <paramref name="weaponDefinition"/>.
 		/// </summary>
-		public abstract TargetPoint Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType,
+		public abstract TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType,
 			T weaponDefinition);
 
 		/// <summary>
@@ -48,7 +48,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 		/// <summary>
 		/// Given an array of possible targets, the method will return a specific one depending on the <paramref name="targetType"/>.
 		/// </summary>
-		protected TargetPoint ByTargetTypeNonAlloc(Vector3 weaponPosition, NonAllocArrayResult<Collider> targets, TargetType targetType)
+		protected TargetPoint? ByTargetTypeNonAlloc(Vector3 weaponPosition, NonAllocArrayResult<Collider> targets, TargetType targetType)
 		{
 			if (targets == 0)
 			{
