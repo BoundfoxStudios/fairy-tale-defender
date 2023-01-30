@@ -9,6 +9,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 	public class BallisticWeaponDiagnostics : MonoBehaviour
 	{
 		[field: SerializeField]
-		public BallisticWeapon Weapon { get; private set; }
+		public BallisticWeapon Weapon { get; private set; } = default!;
 	}
 }

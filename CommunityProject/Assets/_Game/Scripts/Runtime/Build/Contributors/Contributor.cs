@@ -8,19 +8,15 @@ namespace BoundfoxStudios.CommunityProject.Build.Contributors
 	{
 		[SerializeField]
 		// ReSharper disable once InconsistentNaming
-		private string user;
+		private string user = string.Empty;
 
 		[SerializeField]
 		// ReSharper disable once InconsistentNaming
-		private string githubAccount;
+		private string githubAccount = string.Empty;
 
 		[SerializeField]
 		// ReSharper disable once InconsistentNaming
-		private string profileUrl;
-
-		[SerializeField]
-		// ReSharper disable once InconsistentNaming
-		private string[] contributions;
+		private string[] contributions = Array.Empty<string>();
 
 		/// <summary>
 		/// Username as set in the GitHub profile information

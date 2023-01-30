@@ -13,7 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 		[TextArea]
 		[SerializeField]
 		[UsedImplicitly]
-		private string Description;
+		private string Description = string.Empty;
 #endif
 	}
 
@@ -22,7 +22,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 	/// </summary>
 	public abstract class EventChannelSO : EventChannelBaseSO
 	{
-		public UnityAction Raised = delegate { };
+		public event UnityAction Raised = delegate { };
 
 		private void OnDisable()
 		{
@@ -50,7 +50,7 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 	/// </summary>
 	public abstract class EventChannelSO<T> : EventChannelBaseSO
 	{
-		public UnityAction<T> Raised = delegate { };
+		public event UnityAction<T> Raised = delegate { };
 
 		private void OnDisable()
 		{
@@ -69,7 +69,8 @@ namespace BoundfoxStudios.CommunityProject.Events.ScriptableObjects
 
 		private void Log(T value)
 		{
-			Debug.Log($"<b><color=yellow>Event</color></b> {name} raised with type {value.GetType().Name} and value {value}!");
+			Debug.Log(
+				$"<b><color=yellow>Event</color></b> {name} raised with type {value?.GetType().Name} and value {value}!");
 		}
 	}
 }

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab02e80c7fa5413abb93b73306430bc1, type: 3}
   m_Name: Credits_Scene
   m_EditorClassIdentifier: 
-  SceneReference:
+  <SceneReference>k__BackingField:
     m_AssetGUID: 9f8586856d63898b8a1c059d2a07fac0
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
+    m_EditorAssetChanged: 1

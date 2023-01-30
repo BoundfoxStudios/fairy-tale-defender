@@ -1,5 +1,6 @@
 using System;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Extensions;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,22 +10,23 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions, GameInput.IBuildSystemActions
 	{
 		[SerializeField]
-		private BuildableEventChannelSO EnterBuildModeEventChannel;
+		private BuildableEventChannelSO EnterBuildModeEventChannel = default!;
 
 		[SerializeField]
-		private VoidEventChannelSO ExitBuildModeEventChannel;
+		private VoidEventChannelSO ExitBuildModeEventChannel = default!;
 
-		private GameInput _gameInput;
+		private GameInput? _gameInput;
+		private GameInput GameInput => _gameInput.EnsureOrThrow();
 
 		public delegate void PositionHandler(Vector2 position);
 
-		public PositionHandler BuildPosition = delegate { };
-		public PositionHandler Build = delegate { };
-		public Action BuildRotate = delegate { };
+		public event PositionHandler BuildPosition = delegate { };
+		public event PositionHandler Build = delegate { };
+		public event Action BuildRotate = delegate { };
 
 		private void OnEnable()
 		{
-			if (_gameInput == null)
+			if (_gameInput is null)
 			{
 				_gameInput = new();
 
@@ -56,23 +58,23 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 
 		public void DisableAllInput()
 		{
-			_gameInput.Gameplay.Disable();
-			_gameInput.UI.Disable();
-			_gameInput.BuildSystem.Disable();
+			GameInput.Gameplay.Disable();
+			GameInput.UI.Disable();
+			GameInput.BuildSystem.Disable();
 		}
 
 		private void EnableBuildSystemInput()
 		{
-			_gameInput.Gameplay.Disable();
-			_gameInput.UI.Disable();
-			_gameInput.BuildSystem.Enable();
+			GameInput.Gameplay.Disable();
+			GameInput.UI.Disable();
+			GameInput.BuildSystem.Enable();
 		}
 
 		private void EnableGameplayInput()
 		{
-			_gameInput.BuildSystem.Disable();
-			_gameInput.Gameplay.Enable();
-			_gameInput.UI.Enable();
+			GameInput.BuildSystem.Disable();
+			GameInput.Gameplay.Enable();
+			GameInput.UI.Enable();
 		}
 
 		public void OnBuildPosition(InputAction.CallbackContext context)

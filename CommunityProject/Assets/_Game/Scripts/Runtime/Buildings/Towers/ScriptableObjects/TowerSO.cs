@@ -7,9 +7,9 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers.ScriptableObjects
 	public class TowerSO : ScriptableObject, IBuildable
 	{
 		[field: SerializeField]
-		public GameObject Prefab { get; private set; }
+		public GameObject Prefab { get; private set; } = default!;
 
 		[field: SerializeField]
-		public GameObject BlueprintPrefab { get; private set; }
+		public GameObject BlueprintPrefab { get; private set; } = default!;
 	}
 }

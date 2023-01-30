@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Infrastructure
 {
@@ -9,9 +10,10 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 	[Serializable]
 	public class ScriptableObjectIdentity : IEquatable<ScriptableObjectIdentity>
 	{
-		public string Guid;
+		[field: SerializeField]
+		public string Guid { get; set; } = string.Empty;
 
-		public bool Equals(ScriptableObjectIdentity other)
+		public bool Equals(ScriptableObjectIdentity? other)
 		{
 			if (ReferenceEquals(null, other))
 			{
@@ -26,9 +28,9 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			return string.Equals(Guid, other.Guid, StringComparison.InvariantCultureIgnoreCase);
 		}
 
-		public override bool Equals(object obj) => Equals(obj as ScriptableObjectIdentity);
+		public override bool Equals(object? obj) => Equals(obj as ScriptableObjectIdentity);
 
-		public static bool operator ==(ScriptableObjectIdentity lhs, ScriptableObjectIdentity rhs)
+		public static bool operator ==(ScriptableObjectIdentity lhs, ScriptableObjectIdentity? rhs)
 		{
 			if (ReferenceEquals(lhs, rhs))
 			{

@@ -14,36 +14,37 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 	public class PrefabManagerSO : ScriptableObject
 	{
 #if UNITY_EDITOR
-		public GameObject Canvas;
+		// Careful, please do not change to [field: SerializedField] in this class, it's just an Editor script
+		public GameObject Canvas = default!;
 
-		public TextPrefabs Texts;
-		public CameraPrefabs Cameras;
-		public LightPrefabs Lights;
-		public EditorPrefabs Editor;
+		public TextPrefabs Texts = default!;
+		public CameraPrefabs Cameras = default!;
+		public LightPrefabs Lights = default!;
+		public EditorPrefabs Editor = default!;
 
 		[Serializable]
 		public class TextPrefabs
 		{
-			public GameObject Text;
+			public GameObject Text = default!;
 		}
 
 		[Serializable]
 		public class CameraPrefabs
 		{
-			public GameObject Menu;
-			public GameObject Level;
+			public GameObject Menu = default!;
+			public GameObject Level = default!;
 		}
 
 		[Serializable]
 		public class LightPrefabs
 		{
-			public GameObject Sun;
+			public GameObject Sun = default!;
 		}
 
 		[Serializable]
 		public class EditorPrefabs
 		{
-			public GameObject EditorColdStartup;
+			public GameObject EditorColdStartup = default!;
 		}
 #endif
 	}

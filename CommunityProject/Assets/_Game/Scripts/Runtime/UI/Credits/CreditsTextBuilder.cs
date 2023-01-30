@@ -1,5 +1,6 @@
 using System.Linq;
 using BoundfoxStudios.CommunityProject.Build.Contributors;
+using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
@@ -16,10 +17,10 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 		private int CreditTextSize = 75;
 
 		[SerializeField]
-		private ScrollRect ScrollView;
+		private ScrollRect ScrollView = default!;
 
 		[SerializeField]
-		private VerticalLayoutGroup ContentLayoutGroup;
+		private VerticalLayoutGroup ContentLayoutGroup = default!;
 
 		[SerializeField]
 		private string DeveloperPlaceholder = "{{Developer}}";
@@ -36,15 +37,14 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 		[SerializeField]
 		private string AudioPlaceholder = "{{Audio}}";
 
-		private ContributorsReader _contributorsReader;
-		private TextMeshProUGUI _tmpText;
+		private readonly ContributorsReader _contributorsReader = new();
+		private TextMeshProUGUI _tmpText = default!;
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
-			_tmpText = GetComponent<TextMeshProUGUI>();
-			_contributorsReader = new();
+			_tmpText = gameObject.GetComponentSafe<TextMeshProUGUI>();
 
 			var contributors = await _contributorsReader.LoadAsync();
 

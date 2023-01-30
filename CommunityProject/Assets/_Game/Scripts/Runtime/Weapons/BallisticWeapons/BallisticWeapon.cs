@@ -1,5 +1,6 @@
 using System;
 using System.Threading;
+using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting;
@@ -16,22 +17,26 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 	public class BallisticWeapon : Weapon<BallisticWeaponSO>
 	{
 		[field: SerializeField]
-		public ArmSettings Arm { get; private set; }
+		public ArmSettings Arm { get; private set; } = default!;
 
-		[SerializeField]
-		private BallisticProjectile ProjectilePrefab;
+		[field: SerializeField]
+		private BallisticProjectile ProjectilePrefab { get; set; } = default!;
 
-		private BallisticProjectile _projectile;
+		private BallisticProjectile? _projectile;
 		private Quaternion _targetRotation;
 
 		[Serializable]
 		public class ArmSettings
 		{
-			public Transform ArmPivot;
-			public Transform LaunchPoint;
+			[field: SerializeField]
+			public Transform ArmPivot { get; private set; } = default!;
 
+			[field: SerializeField]
+			public Transform LaunchPoint { get; private set; } = default!;
+
+			[field: SerializeField]
 			[Tooltip("Defines the X start and X end rotation for the arm.")]
-			public Vector2 XRotation;
+			public Vector2 XRotation { get; private set; }
 		}
 
 		private void Awake()
@@ -55,7 +60,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 			var launchVelocity = BallisticCalculationUtilities
 				.CalculateBallisticArcVelocity(Arm.LaunchPoint.position, target, transform.forward);
 
-			_projectile.Launch(launchVelocity);
+			_projectile.EnsureOrThrow().Launch(launchVelocity);
 			_projectile = null;
 
 			return UniTask.CompletedTask;

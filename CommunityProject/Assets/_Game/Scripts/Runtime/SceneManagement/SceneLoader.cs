@@ -11,19 +11,19 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	{
 		[Header("Listening Channels")]
 		[SerializeField]
-		private LoadSceneEventChannelSO LoadSceneEventChannel;
+		private LoadSceneEventChannelSO LoadSceneEventChannel = default!;
 
 		[SerializeField]
-		private LoadSceneEventChannelSO NotifyEditorColdStartupEventChannel;
+		private LoadSceneEventChannelSO NotifyEditorColdStartupEventChannel = default!;
 
 		[Header("Broadcasting Channels")]
 		[SerializeField]
-		private VoidEventChannelSO SceneReadyEventChannel;
+		private VoidEventChannelSO SceneReadyEventChannel = default!;
 
 		[SerializeField]
-		private BoolEventChannelSO ToggleLoadingScreenEventChannel;
+		private BoolEventChannelSO ToggleLoadingScreenEventChannel = default!;
 
-		private SceneSO _currentlyLoadedScene;
+		private SceneSO? _currentlyLoadedScene;
 
 		private void OnEnable()
 		{
@@ -87,7 +87,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private async UniTask UnloadPreviousSceneAsync(LoadSceneData loadSceneData)
 		{
-			if (!_currentlyLoadedScene)
+			if (_currentlyLoadedScene is null)
 			{
 				return;
 			}

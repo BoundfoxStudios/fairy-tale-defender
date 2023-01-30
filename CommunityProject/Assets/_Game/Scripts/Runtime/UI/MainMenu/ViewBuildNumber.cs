@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Build.BuildManifest;
+using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
@@ -11,13 +12,13 @@ namespace BoundfoxStudios.CommunityProject.UI.MainMenu
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class ViewBuildNumber : MonoBehaviour, IPointerClickHandler
 	{
-		private TextMeshProUGUI _buildNumberText;
+		private TextMeshProUGUI _buildNumberText = default!;
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
-			_buildNumberText = gameObject.GetComponent<TextMeshProUGUI>();
+			_buildNumberText = gameObject.GetComponentSafe<TextMeshProUGUI>();
 			_buildNumberText.text = await CreateBuildNumberAsync();
 		}
 

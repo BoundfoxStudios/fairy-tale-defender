@@ -9,11 +9,11 @@ namespace BoundfoxStudios.CommunityProject.UI.BuildSystem
 	{
 		[Header("References")]
 		[SerializeField]
-		protected T Buildable;
+		protected T Buildable = default!;
 
 		[Header("Broadcasting Channels")]
 		[SerializeField]
-		protected BuildableEventChannelSO EnterBuildModeEventChannel;
+		protected BuildableEventChannelSO EnterBuildModeEventChannel = default!;
 
 		public void EnterBuildMode()
 		{

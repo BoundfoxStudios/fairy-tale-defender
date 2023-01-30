@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,14 +8,14 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class TMPLinks : MonoBehaviour, IPointerClickHandler
 	{
-		private Camera _camera;
-		private Canvas _canvas;
-		private TextMeshProUGUI _textMeshPro;
+		private Camera? _camera;
+		private Canvas _canvas = default!;
+		private TextMeshProUGUI _textMeshPro = default!;
 
 		private void Awake()
 		{
-			_textMeshPro = GetComponent<TextMeshProUGUI>();
-			_canvas = GetComponentInParent<Canvas>();
+			_textMeshPro = gameObject.GetComponentSafe<TextMeshProUGUI>();
+			_canvas = gameObject.GetComponentInParentSafe<Canvas>();
 
 			// Get a reference to the camera if Canvas Render Mode is not ScreenSpace Overlay.
 			_camera = _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _canvas.worldCamera;

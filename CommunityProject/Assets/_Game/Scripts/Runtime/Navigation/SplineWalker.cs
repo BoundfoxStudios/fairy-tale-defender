@@ -9,11 +9,11 @@ namespace BoundfoxStudios.CommunityProject.Navigation
 	public class SplineWalker : MonoBehaviour
 	{
 		[SerializeField]
-		private Rigidbody Rigidbody;
+		private Rigidbody Rigidbody = default!;
 
 		// TODO: Later, the Spline will be set by the WaveSpawner
-		private ISpline _spline;
-		public SplineContainer Container;
+		private ISpline _spline = default!;
+		public SplineContainer Container = default!;
 
 		// TODO: This will later be set by an SO
 		public float Speed = 1;

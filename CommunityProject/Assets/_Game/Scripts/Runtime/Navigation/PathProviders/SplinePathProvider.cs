@@ -56,7 +56,7 @@ namespace BoundfoxStudios.CommunityProject.Navigation.PathProviders
 		private bool TrySelectSplineForFurtherTraversal(
 			ISplineContainer container,
 			ISplineLinkDecisionMaker splineLinkDecisionMaker,
-			IReadOnlyList<SplineKnotIndex> linkedKnots,
+			IReadOnlyList<SplineKnotIndex>? linkedKnots,
 			out int splineIndex,
 			out int knotIndex)
 		{
@@ -99,14 +99,14 @@ namespace BoundfoxStudios.CommunityProject.Navigation.PathProviders
 		///   It will include the knot at <see cref="startKnotIndex" /> and either the link knot or the end knot of the spline.
 		///   The tuple possibly includes a <see cref="IReadOnlyList{T}" /> containing a list of <see cref="SplineKnotIndex" />.
 		/// </returns>
-		private (SplineSlice<Spline> SplineSlice, IReadOnlyList<SplineKnotIndex> LinkedKnots) TryTraverseToNextKnotLink(
+		private (SplineSlice<Spline> SplineSlice, IReadOnlyList<SplineKnotIndex>? LinkedKnots) TryTraverseToNextKnotLink(
 			ISplineContainer container, int splineIndex, int startKnotIndex)
 		{
 			var spline = container.Splines[splineIndex];
 			var links = container.KnotLinkCollection;
 
 			var knotIndex = startKnotIndex;
-			IReadOnlyList<SplineKnotIndex> linkedKnots = null;
+			IReadOnlyList<SplineKnotIndex>? linkedKnots = null;
 
 			while (knotIndex < spline.Count)
 			{

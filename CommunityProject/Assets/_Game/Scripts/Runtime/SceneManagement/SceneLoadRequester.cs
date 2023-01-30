@@ -9,14 +9,14 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	{
 		[Header("Settings")]
 		[SerializeField]
-		private SceneSO SceneToLoad;
+		private SceneSO SceneToLoad = default!;
 
 		[SerializeField]
 		private bool ShowLoadingScreen;
 
 		[Header("Broadcasting on")]
 		[SerializeField]
-		private LoadSceneEventChannelSO LoadSceneEventChannel;
+		private LoadSceneEventChannelSO LoadSceneEventChannel = default!;
 
 		public void LoadScene()
 		{

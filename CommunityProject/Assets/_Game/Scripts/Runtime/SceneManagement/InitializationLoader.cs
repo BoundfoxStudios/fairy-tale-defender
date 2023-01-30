@@ -18,18 +18,18 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	{
 		[Header("Scenes")]
 		[SerializeField]
-		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene;
+		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene = default!;
 
 		[SerializeField]
-		private AssetReferenceT<MenuSceneSO> MainMenuScene;
+		private AssetReferenceT<MenuSceneSO> MainMenuScene = default!;
 
 		[Header("Broadcasting Channels")]
 		[SerializeField]
-		private AssetReferenceT<LoadSceneEventChannelSO> LoadSceneEventChannel;
+		private AssetReferenceT<LoadSceneEventChannelSO> LoadSceneEventChannel = default!;
 
 		[Header("GameSettings Reference")]
 		[SerializeField]
-		private AssetReferenceT<SettingsSO> Settings;
+		private AssetReferenceT<SettingsSO> Settings = default!;
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature

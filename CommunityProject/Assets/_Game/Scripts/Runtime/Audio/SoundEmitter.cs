@@ -1,5 +1,4 @@
 using System;
-using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -8,23 +7,26 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(SoundEmitter))]
 	public class SoundEmitter : MonoBehaviour
 	{
-		private AudioSource _audioSource;
+		private AudioSource _audioSource = default!;
 
-		public event Action Finished;
+		public event Action? Finished;
 
 		private void OnEnable()
 		{
-			_audioSource = gameObject.GetComponent<AudioSource>();
+			if (!gameObject.TryGetComponent(out _audioSource))
+			{
+				Debug.LogError("No AudioSource found.", this);
+			}
 		}
 
-		public void PlayAudioCue(AudioCueSO audioCue)
+		public void PlayAudioClip(AudioClip audioClip)
 		{
-			Play(audioCue).Forget();
+			PlayAsync(audioClip).Forget();
 		}
 
-		private async UniTaskVoid Play(AudioCueSO audioCue)
+		private async UniTaskVoid PlayAsync(AudioClip audioClip)
 		{
-			_audioSource.clip = audioCue.AudioClip;
+			_audioSource.clip = audioClip;
 			_audioSource.Play();
 
 			var clipLengthInSeconds = TimeSpan.FromSeconds(_audioSource.clip.length);

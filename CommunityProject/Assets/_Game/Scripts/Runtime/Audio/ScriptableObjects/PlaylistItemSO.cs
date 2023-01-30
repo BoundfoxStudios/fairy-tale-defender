@@ -8,17 +8,21 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 	[CreateAssetMenu(menuName = Constants.MenuNames.Audio + "/Playlist Item")]
 	public class PlaylistItemSO : ScriptableObject
 	{
-		public AudioClip AudioClip;
-		public string Title;
-		public string Interpreter;
-		public string Url;
+		[field: SerializeField]
+		public AudioClip AudioClip { get; private set; } = default!;
+
+		[field: SerializeField]
+		public string Title { get; private set; } = string.Empty;
+
+		[field: SerializeField]
+		public string Interpreter { get; private set; } = string.Empty;
+
+		[field: SerializeField]
+		public string Url { get; private set; } = string.Empty;
 
 		private void OnValidate()
 		{
-			if (!AudioClip)
-			{
-				Debug.LogWarning("No AudioClip assigned", this);
-			}
+			Debug.Assert(AudioClip is not null, "No AudioClip assigned", this);
 		}
 	}
 }

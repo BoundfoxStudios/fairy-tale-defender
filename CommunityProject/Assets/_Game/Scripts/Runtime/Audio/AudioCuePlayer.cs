@@ -8,10 +8,10 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	public class AudioCuePlayer : MonoBehaviour
 	{
 		[SerializeField]
-		private AudioCueEventChannelSO AudioCueEventChannel;
+		private AudioCueEventChannelSO AudioCueEventChannel = default!;
 
 		[SerializeField]
-		private SoundEmitter SoundEmitterPrefab;
+		private SoundEmitter SoundEmitterPrefab = default!;
 
 		private void OnEnable()
 		{
@@ -25,9 +25,11 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private void Play(AudioCueSO audioCue)
 		{
+			var audioClip = audioCue.AudioClip;
+
 			var emitter = Instantiate(SoundEmitterPrefab, Vector3.zero, Quaternion.identity);
 
-			emitter.PlayAudioCue(audioCue);
+			emitter.PlayAudioClip(audioClip);
 
 			emitter.Finished += () =>
 			{
