@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
@@ -10,5 +11,10 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 	{
 		[field: SerializeField]
 		public BallisticWeapon Weapon { get; private set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Weapon, this);
+		}
 	}
 }
