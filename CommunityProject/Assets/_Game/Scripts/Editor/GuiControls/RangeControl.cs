@@ -40,15 +40,14 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 
 			EditorGUI.BeginChangeCheck();
 
-			var rangeMin = minimumRangeProperty.GetValue<float>();
-			var rangeMax = maximumRangeProperty.GetValue<float>();
+			var range = new Limits2(minimumRangeProperty.GetValue<float>(), maximumRangeProperty.GetValue<float>());
 
-			(rangeMin, rangeMax) = MinMaxSlider.DrawEditorGUILayout("Range", rangeMin, rangeMax, rangeLimits);
+			range = MinMaxSlider.DrawEditorGUILayout("Range", range, rangeLimits);
 
 			if (EditorGUI.EndChangeCheck())
 			{
-				minimumRangeProperty.SetValue(rangeMin);
-				maximumRangeProperty.SetValue(rangeMax);
+				minimumRangeProperty.SetValue(range.Minimum);
+				maximumRangeProperty.SetValue(range.Maximum);
 			}
 		}
 
