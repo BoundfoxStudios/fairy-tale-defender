@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
@@ -10,10 +11,16 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 		[field: SerializeField]
 		public Collider Collider { get; private set; } = default!;
 
-		[SerializeField]
-		private TrailRenderer TrailRenderer = default!;
+		[field: SerializeField]
+		private TrailRenderer TrailRenderer { get; set; } = default!;
 
 		private Rigidbody _rigidbody = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Collider, this);
+			Guard.AgainstNull(() => TrailRenderer, this);
+		}
 
 		private void Awake()
 		{
