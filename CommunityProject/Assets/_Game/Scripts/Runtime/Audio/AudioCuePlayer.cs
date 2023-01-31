@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure;
@@ -17,8 +16,8 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private void OnValidate()
 		{
-			Guard.AgainstNull(() => AudioCueEventChannel);
-			Guard.AgainstNull(() => SoundEmitterPrefab);
+			Guard.AgainstNull(() => AudioCueEventChannel, this);
+			Guard.AgainstNull(() => SoundEmitterPrefab, this);
 		}
 
 		private void OnEnable()
