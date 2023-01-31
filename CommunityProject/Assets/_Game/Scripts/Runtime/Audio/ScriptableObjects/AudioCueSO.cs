@@ -1,3 +1,5 @@
+using System;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
@@ -7,5 +9,10 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 	{
 		[field: SerializeField]
 		public AudioClip AudioClip { get; private set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => AudioClip);
+		}
 	}
 }
