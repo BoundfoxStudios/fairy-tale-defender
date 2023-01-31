@@ -117,7 +117,9 @@ Zusätzlich kann man ein `Debug.Assert` in den Code einfügen, um dem Benutzer d
 ```cs
 private void OnValidate()
 {
-  Debug.Assert(SomePrefab is not null, $"{nameof(SomePrefab)} is not set!");
+  // Guard.AgainstNull ist eine Funktion aus dem Community-Projekt und prüft, ob ein Feld oder Eigenschaft null ist.
+  // Falls dem der Fall ist, gibt sie eine Nachricht aus.
+  Guard.AgainstNull(() => SomePrefab);
 }
 ```
 
