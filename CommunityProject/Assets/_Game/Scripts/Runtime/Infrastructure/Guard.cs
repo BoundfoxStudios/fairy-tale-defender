@@ -8,6 +8,11 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 {
 	public static class Guard
 	{
+		/// <summary>
+		/// Use this method to check a property or field against null.
+		/// Best suitable in OnValidate to check serialized fields.
+		/// Take care, this method only works in editor and won't be compiled to the player build.
+		/// </summary>
 		[Conditional("UNITY_ASSERTIONS")]
 		public static void AgainstNull<T>(Expression<Func<T>> expression, Object? unityObject = null)
 		{
