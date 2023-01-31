@@ -1,5 +1,6 @@
 using BoundfoxStudios.CommunityProject.BuildSystem;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.UI.BuildSystem
@@ -7,13 +8,19 @@ namespace BoundfoxStudios.CommunityProject.UI.BuildSystem
 	public abstract class BuildButton<T> : MonoBehaviour
 		where T : IBuildable
 	{
-		[Header("References")]
-		[SerializeField]
-		protected T Buildable = default!;
+		[field: Header("References")]
+		[field: SerializeField]
+		protected T Buildable { get; set; } = default!;
 
-		[Header("Broadcasting Channels")]
-		[SerializeField]
-		protected BuildableEventChannelSO EnterBuildModeEventChannel = default!;
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		protected BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
+
+		protected void OnValidate()
+		{
+			Guard.AgainstNull(() => Buildable, this);
+			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
+		}
 
 		public void EnterBuildMode()
 		{
