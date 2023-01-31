@@ -10,5 +10,11 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			Minimum = minimum;
 			Maximum = maximum;
 		}
+
+		public void Deconstruct(out float minimum, out float maximum)
+		{
+			minimum = Minimum;
+			maximum = Maximum;
+		}
 	}
 }

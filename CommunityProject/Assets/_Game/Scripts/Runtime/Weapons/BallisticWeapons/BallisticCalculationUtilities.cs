@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
@@ -17,15 +18,14 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 			Vector3 weaponPosition,
 			Vector3 targetPosition,
 			Vector3 towerForward,
-			float minimumRange,
-			float range,
+			Limits2 range,
 			float attackAngle)
 		{
 			var weaponPositionVector2 = weaponPosition.ToXZ();
 			var targetPositionVector2 = targetPosition.ToXZ();
 			var towerForwardVector2 = towerForward.ToXZ();
-			var rangeSquared = Mathf.Pow(range, 2);
-			var minimumRangeSquared = Mathf.Pow(minimumRange, 2);
+			var rangeSquared = Mathf.Pow(range.Maximum, 2);
+			var minimumRangeSquared = Mathf.Pow(range.Minimum, 2);
 
 			var distanceSquared = weaponPositionVector2.DistanceSquaredTo(targetPositionVector2);
 

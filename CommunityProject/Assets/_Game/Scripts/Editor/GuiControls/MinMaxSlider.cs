@@ -10,7 +10,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 		/// <summary>
 		/// Draws a MinMaxSlider.
 		/// </summary>
-		public static (float Min, float Max) DrawEditorGUILayout(string label, float min, float max, Limits2 limits, int decimalPlaces = 2)
+		public static Limits2 DrawEditorGUILayout(string label, Limits2 values, Limits2 limits, int decimalPlaces = 2)
 		{
 			var numberFieldStyle = EditorStyles.numberField;
 			var halfHorizontalPadding = numberFieldStyle.padding.horizontal / 2;
@@ -35,25 +35,26 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 			// Shrink the size of the controlRect, because we're going to draw another control afterwards.
 			controlRect.width -= fieldControlRect.width + halfHorizontalPadding;
 
-			min = EditorGUI.FloatField(fieldControlRect, min);
+			var (minimum, maximum) = values;
+			minimum = EditorGUI.FloatField(fieldControlRect, minimum);
 
-			EditorGUI.MinMaxSlider(controlRect, ref min, ref max, limits.Minimum, limits.Maximum);
+			EditorGUI.MinMaxSlider(controlRect, ref minimum, ref maximum, limits.Minimum, limits.Maximum);
 
 			// Now, move the fieldControlRect at the end of the controlRect.
 			fieldControlRect.x = controlRect.x + controlRect.width + halfHorizontalPadding;
-			max = EditorGUI.FloatField(fieldControlRect, max);
+			maximum = EditorGUI.FloatField(fieldControlRect, maximum);
 
 			EditorGUILayout.EndHorizontal();
 
-			if (min > max)
+			if (minimum > maximum)
 			{
-				(min, max) = (max, min);
+				(minimum, maximum) = (maximum, minimum);
 			}
 
-			min = Mathf.Max(min, limits.Minimum).Round(decimalPlaces);
-			max = Mathf.Min(max, limits.Maximum).Round(decimalPlaces);
+			minimum = Mathf.Max(minimum, limits.Minimum).Round(decimalPlaces);
+			maximum = Mathf.Min(maximum, limits.Maximum).Round(decimalPlaces);
 
-			return (min, max);
+			return new(minimum, maximum);
 		}
 	}
 }

@@ -28,8 +28,8 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 				weaponTransform.position,
 				forward,
 				ballisticWeapon.WeaponDefinition.AttackAngle,
-				ballisticWeapon.WeaponDefinition.Range,
-				ballisticWeapon.WeaponDefinition.MinimumRange
+				ballisticWeapon.WeaponDefinition.Range.Maximum,
+				ballisticWeapon.WeaponDefinition.Range.Minimum
 			);
 		}
 

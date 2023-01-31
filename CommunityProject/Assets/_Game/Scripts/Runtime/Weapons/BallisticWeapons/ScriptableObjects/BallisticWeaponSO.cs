@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
@@ -10,6 +11,9 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableOb
 		[field: SerializeField]
 		[field: Range(0, 10)]
 		public float MinimumRange { get; private set; }
+
+		public float MaximumRange => base.Range;
+		public new Limits2 Range => new(MinimumRange, MaximumRange);
 
 		[field: SerializeField]
 		[field: Range(0, 720)]
