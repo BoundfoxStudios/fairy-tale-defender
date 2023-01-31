@@ -840,9 +840,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ed22d0a6ed51b4199d68bbad755f06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Settings: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac, type: 2}
-  MainMixer: {fileID: 24100000, guid: 3e3e965e639d8434fa54621eaf374ca5, type: 2}
-  GameSettingsChangedEventChannel: {fileID: 11400000, guid: 0ef4e493ebd7d934ca0b474d9fb3ac9c,
+  <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
+    type: 2}
+  <MainMixer>k__BackingField: {fileID: 24100000, guid: 3e3e965e639d8434fa54621eaf374ca5,
+    type: 2}
+  <GameSettingsChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 0ef4e493ebd7d934ca0b474d9fb3ac9c,
     type: 2}
 --- !u!4 &1767715563
 Transform:

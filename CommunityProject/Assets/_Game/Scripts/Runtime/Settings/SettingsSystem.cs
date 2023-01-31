@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -12,15 +13,22 @@ namespace BoundfoxStudios.CommunityProject.Settings
 	[AddComponentMenu(Constants.MenuNames.MenuName + "/" + nameof(SettingsSystem))]
 	public class SettingsSystem : MonoBehaviour
 	{
-		[SerializeField]
-		private SettingsSO Settings = default!;
+		[field: SerializeField]
+		private SettingsSO Settings { get; set; } = default!;
 
-		[SerializeField]
-		private AudioMixer MainMixer = default!;
+		[field: SerializeField]
+		private AudioMixer MainMixer { get; set; } = default!;
 
-		[Header("Listening on")]
-		[SerializeField]
-		private VoidEventChannelSO GameSettingsChangedEventChannel = default!;
+		[field: Header("Listening on")]
+		[field: SerializeField]
+		private VoidEventChannelSO GameSettingsChangedEventChannel { get; set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Settings, this);
+			Guard.AgainstNull(() => MainMixer, this);
+			Guard.AgainstNull(() => GameSettingsChangedEventChannel, this);
+		}
 
 		private void Awake()
 		{
@@ -93,7 +101,8 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void ApplyLocalizationSettings()
 		{
-			LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(Settings.Localization.Locale);
+			LocalizationSettings.SelectedLocale =
+				LocalizationSettings.AvailableLocales.GetLocale(Settings.Localization.Locale);
 		}
 	}
 }
