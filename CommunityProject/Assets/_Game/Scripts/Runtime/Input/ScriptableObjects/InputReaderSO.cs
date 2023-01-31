@@ -1,6 +1,7 @@
 using System;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,11 +10,11 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
 	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions, GameInput.IBuildSystemActions
 	{
-		[SerializeField]
-		private BuildableEventChannelSO EnterBuildModeEventChannel = default!;
+		[field: SerializeField]
+		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
 
-		[SerializeField]
-		private VoidEventChannelSO ExitBuildModeEventChannel = default!;
+		[field: SerializeField]
+		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
@@ -23,6 +24,12 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 		public event PositionHandler BuildPosition = delegate { };
 		public event PositionHandler Build = delegate { };
 		public event Action BuildRotate = delegate { };
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
+			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
+		}
 
 		private void OnEnable()
 		{
