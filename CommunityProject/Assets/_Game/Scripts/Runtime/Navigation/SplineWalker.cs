@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Navigation.PathProviders;
 using Unity.Mathematics;
 using UnityEngine;
@@ -8,12 +9,11 @@ namespace BoundfoxStudios.CommunityProject.Navigation
 	[AddComponentMenu(Constants.MenuNames.Navigation + "/" + nameof(SplineWalker))]
 	public class SplineWalker : MonoBehaviour
 	{
-		[SerializeField]
-		private Rigidbody Rigidbody = default!;
+		[field: SerializeField]
+		private Rigidbody Rigidbody { get; set; } = default!;
 
-		// TODO: Later, the Spline will be set by the WaveSpawner
-		private ISpline _spline = default!;
-		public SplineContainer Container = default!;
+		[field: SerializeField]
+		public SplineContainer Container { get; set; } = default!;
 
 		// TODO: This will later be set by an SO
 		public float Speed = 1;
@@ -29,6 +29,14 @@ namespace BoundfoxStudios.CommunityProject.Navigation
 		private float _normalizedTime;
 
 		private float _elapsedTime;
+
+		// TODO: Later, the Spline will be set by the WaveSpawner
+		private ISpline _spline = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Rigidbody, this);
+		}
 
 		private void Awake()
 		{

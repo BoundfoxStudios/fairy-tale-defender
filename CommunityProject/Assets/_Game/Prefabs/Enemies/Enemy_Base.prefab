@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13c75bd7b724484682e232b5eb6e58a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Rigidbody: {fileID: -3768004599823536257}
-  Container: {fileID: 0}
+  <Rigidbody>k__BackingField: {fileID: -3768004599823536257}
+  <Container>k__BackingField: {fileID: 0}
   Speed: 1
 --- !u!54 &-3768004599823536257
 Rigidbody:
