@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -8,20 +9,26 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(LoadingScreen))]
 	public class LoadingScreen : MonoBehaviour
 	{
-		[Header("Settings")]
-		[SerializeField]
-		[Min(0)]
-		private float FadeInOutTime = 0.133f;
+		[field: Header("Settings")]
+		[field: SerializeField]
+		[field: Min(0)]
+		private float FadeInOutTime { get; set; } = 0.133f;
 
-		[Header("References")]
-		[SerializeField]
-		private CanvasGroup LoadingScreenCanvasGroup = default!;
+		[field: Header("References")]
+		[field: SerializeField]
+		private CanvasGroup LoadingScreenCanvasGroup { get; set; } = default!;
 
-		[Header("Listening Channels")]
-		[SerializeField]
-		private BoolEventChannelSO ToggleLoadingScreenEventChannel = default!;
+		[field: Header("Listening Channels")]
+		[field: SerializeField]
+		private BoolEventChannelSO ToggleLoadingScreenEventChannel { get; set; } = default!;
 
 		private Tween? _runningTween;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => LoadingScreenCanvasGroup, this);
+			Guard.AgainstNull(() => ToggleLoadingScreenEventChannel, this);
+		}
 
 		private void Awake()
 		{
