@@ -44,9 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3466fc35504947b6b6551d241659ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ThisScene: {fileID: 0}
-  Settings: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac, type: 2}
-  PersistentManagersScene: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3,
+  <ThisScene>k__BackingField: {fileID: 0}
+  <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
     type: 2}
-  NotifyColdStartupEventChannel: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
+  <PersistentManagersScene>k__BackingField: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3,
+    type: 2}
+  <NotifyColdStartupEventChannel>k__BackingField: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
     type: 2}

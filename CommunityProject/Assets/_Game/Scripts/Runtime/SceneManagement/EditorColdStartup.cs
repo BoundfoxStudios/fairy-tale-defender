@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
@@ -17,21 +18,29 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	public class EditorColdStartup : MonoBehaviour
 	{
 #if UNITY_EDITOR
-		[Header("References")]
-		[SerializeField]
-		private SceneSO ThisScene = default!;
+		[field: Header("References")]
+		[field: SerializeField]
+		private SceneSO ThisScene { get; set; } = default!;
 
-		[SerializeField]
-		private SettingsSO Settings = default!;
+		[field: SerializeField]
+		private SettingsSO Settings { get; set; } = default!;
 
-		[SerializeField]
-		private PersistentManagersSceneSO PersistentManagersScene = default!;
+		[field: SerializeField]
+		private PersistentManagersSceneSO PersistentManagersScene { get; set; } = default!;
 
-		[Header("Broadcasting Channels")]
-		[SerializeField]
-		private LoadSceneEventChannelSO NotifyColdStartupEventChannel = default!;
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		private LoadSceneEventChannelSO NotifyColdStartupEventChannel { get; set; } = default!;
 
 		private bool _isColdStartup;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => ThisScene, this);
+			Guard.AgainstNull(() => Settings, this);
+			Guard.AgainstNull(() => PersistentManagersScene, this);
+			Guard.AgainstNull(() => NotifyColdStartupEventChannel, this);
+		}
 
 		private void Awake()
 		{
