@@ -3958,21 +3958,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1f0258ee8a4cd0b14d8aecd88bfabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BuildableLayerMask:
+  <BuildableLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 256
-  ObstaclesLayerMask:
+  <ObstaclesLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 640
-  Camera: {fileID: 1531109630}
-  InputReader: {fileID: 11400000, guid: 8b87fd4ff750d2348b3a6c6654e1c0fe, type: 2}
-  BlueprintMaterial: {fileID: 2100000, guid: 3a8ba38a64d15445d8c9c771a9524244, type: 2}
-  BlueprintInvalidMaterial: {fileID: 2100000, guid: f4c3daa87d7c34e8cbc007600cee41e8,
+  <Camera>k__BackingField: {fileID: 1531109630}
+  <InputReader>k__BackingField: {fileID: 11400000, guid: 8b87fd4ff750d2348b3a6c6654e1c0fe,
     type: 2}
-  TimeToRotate: 0.133
-  EnterBuildModeEventChannel: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+  <BlueprintMaterial>k__BackingField: {fileID: 2100000, guid: 3a8ba38a64d15445d8c9c771a9524244,
     type: 2}
-  ExitBuildModeEventChannel: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
+  <BlueprintInvalidMaterial>k__BackingField: {fileID: 2100000, guid: f4c3daa87d7c34e8cbc007600cee41e8,
+    type: 2}
+  <TimeToRotate>k__BackingField: 0.133
+  <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+    type: 2}
+  <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}
 --- !u!1001 &729908735
 PrefabInstance:
