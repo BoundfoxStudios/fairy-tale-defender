@@ -36,7 +36,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private void OnValidate()
 		{
-			Guard.AgainstNull(() => ThisScene, this);
+			Guard.AgainstNull(() => ThisScene, this, true);
 			Guard.AgainstNull(() => Settings, this);
 			Guard.AgainstNull(() => PersistentManagersScene, this);
 			Guard.AgainstNull(() => NotifyColdStartupEventChannel, this);

@@ -14,7 +14,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 		/// Take care, this method only works in editor and won't be compiled to the player build.
 		/// </summary>
 		[Conditional("UNITY_ASSERTIONS")]
-		public static void AgainstNull<T>(Expression<Func<T>> expression, Object? unityObject = null)
+		public static void AgainstNull<T>(Expression<Func<T>> expression, Object? unityObject = null,
+			bool suppressMessageInPrefabStage = false)
 		{
 			if (expression.Body is not MemberExpression member)
 			{
@@ -26,14 +27,17 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 
 			// ReSharper disable once RedundantAssignment
 			// Due to conditional code below
-			var isPrefab = false;
+			var showAssert = true;
 
 #if UNITY_EDITOR
-			isPrefab = UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() is not null
-			           || UnityEditor.PrefabUtility.IsPartOfPrefabAsset(unityObject);
+			showAssert = (
+				             !suppressMessageInPrefabStage
+				             && UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() is not null
+			             )
+			             && !UnityEditor.PrefabUtility.IsPartOfPrefabAsset(unityObject);
 #endif
 
-			if (!isPrefab)
+			if (showAssert)
 			{
 				var name = GetName(member);
 				Debug.Assert(@object is not null, $"{name} is null", unityObject);
