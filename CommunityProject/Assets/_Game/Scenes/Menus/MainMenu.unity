@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -128,6 +128,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1390857201}
     m_Modifications:
     - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
@@ -284,12 +285,22 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d50ddc819c0eea47ab26d6409c2299e, type: 3}
+--- !u!224 &700975053 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 673820982054601409, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+    type: 3}
+  m_PrefabInstance: {fileID: 700975052}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1099218060
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7329999705680356850, guid: 42707aee6922e4159909253356ec706a,
@@ -403,6 +414,17 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4251457162498795674}
+    - targetCorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 700975053}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42707aee6922e4159909253356ec706a, type: 3}
 --- !u!224 &1390857201 stripped
 RectTransform:
@@ -517,24 +539,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
+  m_Version: 2
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
   m_LightLayerMask: 1
+  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
   m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 1
 --- !u!1001 &510804134346451633
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 510804133511062542, guid: 110ebe51c4ba84a6380c1994ab337b3d,
         type: 3}
       propertyPath: ThisScene
+      value: 
+      objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
+        type: 2}
+    - target: {fileID: 510804133511062542, guid: 110ebe51c4ba84a6380c1994ab337b3d,
+        type: 3}
+      propertyPath: <ThisScene>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
         type: 2}
@@ -599,12 +631,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 110ebe51c4ba84a6380c1994ab337b3d, type: 3}
 --- !u!1001 &1832447427038467775
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1832447427165650724, guid: 100589ffc7925479092daf17f2da1ccd,
@@ -668,12 +704,16 @@ PrefabInstance:
       value: CameraRig_Menu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
 --- !u!1001 &4251457162498795671
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1390857201}
     m_Modifications:
     - target: {fileID: 3989091456175089792, guid: f044ccc8a6e784128a33f514b5385ffe,
@@ -812,6 +852,17 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4251457162498795673}
+    - targetCorrespondingSourceObject: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4251457162498795677}
   m_SourcePrefab: {fileID: 100100000, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
 --- !u!1 &4251457162498795672 stripped
 GameObject:
@@ -831,6 +882,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8588941f324a5cceb0ff053d1b87ad2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4251457162498795674 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3989091456175089792, guid: f044ccc8a6e784128a33f514b5385ffe,
+    type: 3}
+  m_PrefabInstance: {fileID: 4251457162498795671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4251457162498795677
 MonoBehaviour:
   m_ObjectHideFlags: 0
