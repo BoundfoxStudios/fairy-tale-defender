@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Buildings.Towers
@@ -7,5 +8,10 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers
 	{
 		[field: SerializeField]
 		public Collider Collider { get; private set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Collider, this);
+		}
 	}
 }

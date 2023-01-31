@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.BuildSystem;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Buildings.Towers.ScriptableObjects
@@ -11,5 +12,11 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers.ScriptableObjects
 
 		[field: SerializeField]
 		public GameObject BlueprintPrefab { get; private set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Prefab, this);
+			Guard.AgainstNull(() => BlueprintPrefab, this);
+		}
 	}
 }
