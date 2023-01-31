@@ -169,7 +169,7 @@ RectTransform:
   m_Children:
   - {fileID: 673820980554452699}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -283,8 +283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6167720319e1be34481240b24c18aa2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Args:
-    Scene: {fileID: 0}
-    ShowLoadingScreen: 0
-  LoadSceneEventChannel: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
+  <SceneToLoad>k__BackingField: {fileID: 0}
+  <ShowLoadingScreen>k__BackingField: 1
+  <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
     type: 2}
