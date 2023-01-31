@@ -1,6 +1,6 @@
 namespace BoundfoxStudios.CommunityProject.Infrastructure
 {
-	public struct NonAllocArrayResult<T>
+	public struct NoAllocArrayResult<T>
 	{
 		public int Size { get; set; }
 		public T[] Result { get; set; }
@@ -11,6 +11,6 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			set => Result[index] = value;
 		}
 
-		public static implicit operator int(NonAllocArrayResult<T> item) => item.Size;
+		public static implicit operator int(NoAllocArrayResult<T> item) => item.Size;
 	}
 }

@@ -35,7 +35,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 		/// Does an OverlapSphere to get all targets around the tower.
 		/// It does not check, if the target is in attack range.
 		/// </summary>
-		protected NonAllocArrayResult<Collider> LocateAllInRangeNonAlloc(Vector3 position, float range)
+		protected NoAllocArrayResult<Collider> LocateAllInRangeNonAlloc(Vector3 position, float range)
 		{
 			var size = Physics.OverlapSphereNonAlloc(position, range, _targetPointsCache, EnemyLayerMask);
 			return new()
@@ -48,7 +48,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 		/// <summary>
 		/// Given an array of possible targets, the method will return a specific one depending on the <paramref name="targetType"/>.
 		/// </summary>
-		protected TargetPoint? ByTargetTypeNonAlloc(Vector3 weaponPosition, NonAllocArrayResult<Collider> targets, TargetType targetType)
+		protected TargetPoint? ByTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets, TargetType targetType)
 		{
 			if (targets == 0)
 			{
@@ -65,14 +65,14 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 			return target.GetComponent<TargetPoint>();
 		}
 
-		private Collider ByRandomTargetTypeNonAlloc(NonAllocArrayResult<Collider> targets)
+		private Collider ByRandomTargetTypeNonAlloc(NoAllocArrayResult<Collider> targets)
 		{
 			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
 
 			return targets.Result.PickRandom();
 		}
 
-		private Collider ByClosestTargetTypeNonAlloc(Vector3 weaponPosition, NonAllocArrayResult<Collider> targets)
+		private Collider ByClosestTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets)
 		{
 			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
 
