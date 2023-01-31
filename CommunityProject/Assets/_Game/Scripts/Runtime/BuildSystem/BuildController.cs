@@ -1,5 +1,6 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
@@ -8,34 +9,34 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 {
 	public class BuildController : MonoBehaviour
 	{
-		[SerializeField]
-		private LayerMask BuildableLayerMask;
+		[field: SerializeField]
+		private LayerMask BuildableLayerMask { get; set; }
 
-		[SerializeField]
-		private LayerMask ObstaclesLayerMask;
+		[field: SerializeField]
+		private LayerMask ObstaclesLayerMask { get; set; }
 
-		[SerializeField]
-		private Camera Camera = default!;
+		[field: SerializeField]
+		private Camera Camera { get; set; } = default!;
 
-		[SerializeField]
-		private InputReaderSO InputReader = default!;
+		[field: SerializeField]
+		private InputReaderSO InputReader { get; set; } = default!;
 
-		[SerializeField]
-		private Material BlueprintMaterial = default!;
+		[field: SerializeField]
+		private Material BlueprintMaterial { get; set; } = default!;
 
-		[SerializeField]
-		private Material BlueprintInvalidMaterial = default!;
+		[field: SerializeField]
+		private Material BlueprintInvalidMaterial { get; set; } = default!;
 
-		[SerializeField]
-		private float TimeToRotate = 0.133f;
+		[field: SerializeField]
+		private float TimeToRotate { get; set; } = 0.133f;
 
-		[Header("Listening Channels")]
-		[SerializeField]
-		private BuildableEventChannelSO EnterBuildModeEventChannel = default!;
+		[field: Header("Listening Channels")]
+		[field: SerializeField]
+		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
 
-		[Header("Channels")]
-		[SerializeField]
-		private VoidEventChannelSO ExitBuildModeEventChannel = default!;
+		[field: Header("Channels")]
+		[field: SerializeField]
+		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
 		private BuildContext? _buildContext;
 		private LayerMask _buildableAndObstacleLayerMask;
@@ -55,6 +56,16 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 				BlueprintInstance = Instantiate(buildable.BlueprintPrefab);
 				MeshRenderers = BlueprintInstance.GetComponentsInChildren<MeshRenderer>();
 			}
+		}
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Camera, this);
+			Guard.AgainstNull(() => InputReader, this);
+			Guard.AgainstNull(() => BlueprintMaterial, this);
+			Guard.AgainstNull(() => BlueprintInvalidMaterial, this);
+			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
+			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
 		}
 
 		private void Awake()
