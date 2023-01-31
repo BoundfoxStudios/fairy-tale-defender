@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -38,5 +39,10 @@ namespace BoundfoxStudios.CommunityProject.Enemies.ScriptableObjects
 		[field: Min(0)]
 		[field: Tooltip("The amount of currency awarded to player on kill.")]
 		public int CurrencyOnKill { get; private set; } = 1;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Name, this);
+		}
 	}
 }
