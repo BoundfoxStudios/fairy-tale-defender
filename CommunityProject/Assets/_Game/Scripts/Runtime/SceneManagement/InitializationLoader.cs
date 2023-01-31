@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
@@ -16,20 +17,28 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(InitializationLoader))]
 	public class InitializationLoader : MonoBehaviour
 	{
-		[Header("Scenes")]
-		[SerializeField]
-		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene = default!;
+		[field: Header("Scenes")]
+		[field: SerializeField]
+		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene { get; set; } = default!;
 
-		[SerializeField]
-		private AssetReferenceT<MenuSceneSO> MainMenuScene = default!;
+		[field: SerializeField]
+		private AssetReferenceT<MenuSceneSO> MainMenuScene { get; set; } = default!;
 
-		[Header("Broadcasting Channels")]
-		[SerializeField]
-		private AssetReferenceT<LoadSceneEventChannelSO> LoadSceneEventChannel = default!;
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		private AssetReferenceT<LoadSceneEventChannelSO> LoadSceneEventChannel { get; set; } = default!;
 
-		[Header("GameSettings Reference")]
-		[SerializeField]
-		private AssetReferenceT<SettingsSO> Settings = default!;
+		[field: Header("GameSettings Reference")]
+		[field: SerializeField]
+		private AssetReferenceT<SettingsSO> Settings { get; set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => PersistentManagersScene.editorAsset, this);
+			Guard.AgainstNull(() => MainMenuScene.editorAsset, this);
+			Guard.AgainstNull(() => LoadSceneEventChannel.editorAsset, this);
+			Guard.AgainstNull(() => Settings.editorAsset, this);
+		}
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature

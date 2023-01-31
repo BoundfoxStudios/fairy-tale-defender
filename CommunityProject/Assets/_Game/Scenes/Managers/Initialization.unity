@@ -104,7 +104,7 @@ NavMeshSettings:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_BuildSettings:
-    serializedVersion: 2
+    serializedVersion: 3
     agentTypeID: 0
     agentRadius: 0.5
     agentHeight: 2
@@ -117,7 +117,7 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualTileSize: 0
     tileSize: 256
-    accuratePlacement: 0
+    buildHeightMesh: 0
     maxJobWorkers: 0
     preserveTilesOutsideBounds: 0
     debug:
@@ -152,26 +152,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c9f2efacf794beaae09a779fa4f33c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PersistentManagersScene:
+  <PersistentManagersScene>k__BackingField:
     m_AssetGUID: 5e5ad133a99a54988a82ec22840b89d3
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  MainMenuScene:
+    m_EditorAssetChanged: 1
+  <MainMenuScene>k__BackingField:
     m_AssetGUID: df402765d19514e9c9d8b331e8d43989
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  LoadSceneEventChannel:
+    m_EditorAssetChanged: 1
+  <LoadSceneEventChannel>k__BackingField:
     m_AssetGUID: 0de4913d3098c42fba13eb9f7000c72e
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
-  Settings:
+    m_EditorAssetChanged: 1
+  <Settings>k__BackingField:
     m_AssetGUID: db4e4a6d0dbbead4db9135f4b61da8ac
     m_SubObjectName: 
     m_SubObjectType: 
-    m_EditorAssetChanged: 0
+    m_EditorAssetChanged: 1
 --- !u!4 &1802424
 Transform:
   m_ObjectHideFlags: 0
