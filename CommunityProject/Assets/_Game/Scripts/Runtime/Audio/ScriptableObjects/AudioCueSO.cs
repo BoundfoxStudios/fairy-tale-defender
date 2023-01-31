@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
@@ -12,7 +11,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private void OnValidate()
 		{
-			Guard.AgainstNull(() => AudioClip);
+			Guard.AgainstNull(() => AudioClip, this);
 		}
 	}
 }
