@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Editor.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
@@ -10,8 +11,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 		public static void DrawEditorGUILayout(SerializedProperty minimumRangeProperty,
 			SerializedProperty maximumRangeProperty)
 		{
-			var rangeLimits = Vector2.zero;
-
 			if (!minimumRangeProperty.TryGetAttribute<RangeAttribute>(out var rangeMinAttribute))
 			{
 				NoRangeAttributeHelpBox(minimumRangeProperty);
@@ -38,8 +37,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 				return;
 			}
 
-			rangeLimits.x = rangeMinAttribute.min;
-			rangeLimits.y = rangeMaxAttribute.max;
+			var rangeLimits = new Limits2(rangeMinAttribute.min, rangeMaxAttribute.max);
 
 			EditorGUI.BeginChangeCheck();
 
@@ -60,6 +58,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
 			MessageType.Error);
 
 		private static void CodeErrorHelpBox(string message) => EditorGUILayout.HelpBox(
-			$"{message} (This is an error in the code not the settings in the inspector)", MessageType.Error);
+			$"{message} (This is an error in the code, not the settings in the inspector)", MessageType.Error);
 	}
 }
