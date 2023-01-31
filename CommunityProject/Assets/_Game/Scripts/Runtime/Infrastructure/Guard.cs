@@ -29,7 +29,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			var isPrefab = false;
 
 #if UNITY_EDITOR
-			isPrefab = UnityEditor.PrefabUtility.IsPartOfPrefabAsset(unityObject);
+			isPrefab = UnityEditor.SceneManagement.PrefabStageUtility.GetCurrentPrefabStage() is not null
+			           || UnityEditor.PrefabUtility.IsPartOfPrefabAsset(unityObject);
 #endif
 
 			if (!isPrefab)
