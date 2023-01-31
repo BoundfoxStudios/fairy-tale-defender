@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Collider>k__BackingField: {fileID: 5885950034070737681}
-  TrailRenderer: {fileID: 4428090315763681877}
+  <TrailRenderer>k__BackingField: {fileID: 4428090315763681877}
 --- !u!33 &177307508736010507
 MeshFilter:
   m_ObjectHideFlags: 0
