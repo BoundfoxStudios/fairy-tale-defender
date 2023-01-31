@@ -1,5 +1,6 @@
 using System;
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -12,21 +13,19 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(BackgroundMusicPlayer))]
 	public class BackgroundMusicPlayer : MonoBehaviour
 	{
-		[SerializeField]
-		private PlaylistSO Playlist = default!;
+		[field: SerializeField]
+		private PlaylistSO Playlist { get; set; } = default!;
 
 		private AudioSource _audioSource = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => Playlist, this);
+		}
 
 		private void Awake()
 		{
 			_audioSource = GetComponent<AudioSource>();
-
-			if (!Playlist)
-			{
-				Debug.LogError("No Playlist on this BackgroundMusicPlayer", this);
-
-				return;
-			}
 
 			PlayMusicAsync().Forget();
 		}
