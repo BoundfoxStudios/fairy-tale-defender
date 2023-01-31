@@ -24,7 +24,18 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			var method = expression.Compile();
 			var @object = method();
 
-			Debug.Assert(@object is not null, $"{member.Member.Name} is null", unityObject);
+			// ReSharper disable once RedundantAssignment
+			// Due to conditional code below
+			var isPrefab = false;
+
+#if UNITY_EDITOR
+			isPrefab = UnityEditor.PrefabUtility.IsPartOfPrefabAsset(unityObject);
+#endif
+
+			if (!isPrefab)
+			{
+				Debug.Assert(@object is not null, $"{member.Member.Name} is null", unityObject);
+			}
 		}
 	}
 }
