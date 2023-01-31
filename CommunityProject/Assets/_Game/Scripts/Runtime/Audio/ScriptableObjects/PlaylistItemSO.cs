@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
@@ -22,7 +23,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private void OnValidate()
 		{
-			Debug.Assert(AudioClip is not null, "No AudioClip assigned", this);
+			Guard.AgainstNull(() => AudioClip, this);
 		}
 	}
 }

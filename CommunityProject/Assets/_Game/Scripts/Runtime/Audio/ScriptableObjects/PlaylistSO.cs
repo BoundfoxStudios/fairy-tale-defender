@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,15 +10,16 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 	[CreateAssetMenu(menuName = Constants.MenuNames.Audio + "/Playlist")]
 	public class PlaylistSO : ScriptableObject
 	{
-		[SerializeField]
-		private PlaylistItemSO[] Clips = default!;
+		[field: SerializeField]
+		private PlaylistItemSO[] Clips { get; set; } = default!;
 
 		private int _lastClipIndex;
 		private int _nextClipIndex;
 
 		private void OnValidate()
 		{
-			Debug.Assert(Clips is not null || Clips!.Length > 0, "No PlaylistItems", this);
+			Guard.AgainstNull(() => Clips, this);
+			Debug.Assert(Clips.Length > 0, "No PlaylistItems", this);
 		}
 
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
