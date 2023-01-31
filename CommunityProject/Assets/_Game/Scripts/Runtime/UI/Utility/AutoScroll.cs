@@ -7,8 +7,8 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 	[RequireComponent(typeof(ScrollRect))]
 	public class AutoScroll : MonoBehaviour
 	{
-		[SerializeField]
-		private float ScrollSpeed = 0.05f;
+		[field: SerializeField]
+		private float ScrollSpeed { get; set; } = 0.05f;
 
 		private ScrollRect _scrollRect = default!;
 
