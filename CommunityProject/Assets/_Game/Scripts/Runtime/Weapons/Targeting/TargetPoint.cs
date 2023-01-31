@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Extensions;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.Targeting
@@ -11,7 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting
 	{
 		private void Awake()
 		{
-			var sphereCollider = GetComponent<SphereCollider>();
+			var sphereCollider = gameObject.GetComponentSafe<SphereCollider>();
 			sphereCollider.isTrigger = true;
 		}
 	}

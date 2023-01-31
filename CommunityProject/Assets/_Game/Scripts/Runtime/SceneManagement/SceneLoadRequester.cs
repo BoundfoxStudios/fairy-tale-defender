@@ -19,7 +19,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[field: SerializeField]
 		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => SceneToLoad, this);
 			Guard.AgainstNull(() => LoadSceneEventChannel, this);

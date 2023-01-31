@@ -26,7 +26,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private SceneSO? _currentlyLoadedScene;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => LoadSceneEventChannel, this);
 			Guard.AgainstNull(() => NotifyEditorColdStartupEventChannel, this);

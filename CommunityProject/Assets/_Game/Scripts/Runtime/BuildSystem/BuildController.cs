@@ -58,7 +58,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			}
 		}
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Camera, this);
 			Guard.AgainstNull(() => InputReader, this);
@@ -66,10 +66,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 			Guard.AgainstNull(() => BlueprintInvalidMaterial, this);
 			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
 			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
-		}
 
-		private void Awake()
-		{
 			_buildableAndObstacleLayerMask = BuildableLayerMask | ObstaclesLayerMask;
 		}
 

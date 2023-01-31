@@ -13,7 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers.ScriptableObjects
 		[field: SerializeField]
 		public GameObject BlueprintPrefab { get; private set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Prefab, this);
 			Guard.AgainstNull(() => BlueprintPrefab, this);

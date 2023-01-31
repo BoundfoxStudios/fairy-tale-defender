@@ -18,13 +18,11 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private AudioSource _audioSource = default!;
 
-		private void OnValidate()
-		{
-			Guard.AgainstNull(() => Playlist, this);
-		}
 
 		private void Awake()
 		{
+			Guard.AgainstNull(() => Playlist, this);
+
 			_audioSource = GetComponent<AudioSource>();
 
 			PlayMusicAsync().Forget();

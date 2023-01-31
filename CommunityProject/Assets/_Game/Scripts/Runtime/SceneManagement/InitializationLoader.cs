@@ -32,7 +32,7 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[field: SerializeField]
 		private AssetReferenceT<SettingsSO> Settings { get; set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => PersistentManagersScene.editorAsset, this);
 			Guard.AgainstNull(() => MainMenuScene.editorAsset, this);

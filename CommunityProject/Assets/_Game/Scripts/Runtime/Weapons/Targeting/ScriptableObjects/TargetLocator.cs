@@ -9,8 +9,8 @@ namespace BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects
 	public abstract class TargetLocator<T> : ScriptableObject
 		where T : WeaponSO
 	{
-		[SerializeField]
-		private LayerMask EnemyLayerMask;
+		[field: SerializeField]
+		private LayerMask EnemyLayerMask { get; set; }
 
 		/// <summary>
 		/// Returns a single target that is reachable by the <paramref name="weaponDefinition"/>.

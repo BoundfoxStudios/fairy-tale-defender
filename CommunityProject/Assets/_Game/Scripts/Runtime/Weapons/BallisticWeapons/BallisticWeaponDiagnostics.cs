@@ -12,7 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 		[field: SerializeField]
 		public BallisticWeapon Weapon { get; private set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Weapon, this);
 		}

@@ -23,15 +23,12 @@ namespace BoundfoxStudios.CommunityProject.Settings
 		[field: SerializeField]
 		private VoidEventChannelSO GameSettingsChangedEventChannel { get; set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Settings, this);
 			Guard.AgainstNull(() => MainMixer, this);
 			Guard.AgainstNull(() => GameSettingsChangedEventChannel, this);
-		}
 
-		private void Awake()
-		{
 			SetStartLocale();
 			SetStartResolution();
 			ApplySettings();

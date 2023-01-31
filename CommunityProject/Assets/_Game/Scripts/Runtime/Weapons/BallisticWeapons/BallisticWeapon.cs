@@ -40,14 +40,11 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 			public Vector2 XRotation { get; private set; }
 		}
 
-		protected override void OnValidate()
+		protected override void Awake()
 		{
-			base.OnValidate();
+			base.Awake();
 			Guard.AgainstNull(() => ProjectilePrefab, this);
-		}
 
-		private void Awake()
-		{
 			PrepareProjectile();
 		}
 
