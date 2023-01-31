@@ -24,12 +24,6 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 
 		public override void OnInspectorGUI()
 		{
-			if (serializedObject.isEditingMultipleObjects)
-			{
-				EditorGUILayout.HelpBox("Editing multiple weapons is not implemented yet.", MessageType.Warning);
-				return;
-			}
-
 			serializedObject.Update();
 
 			_selectedToolbar = GUILayout.Toolbar(_selectedToolbar, ToolbarEntries);
