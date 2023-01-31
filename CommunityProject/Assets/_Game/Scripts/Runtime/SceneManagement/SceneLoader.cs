@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -9,21 +10,29 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(SceneLoader))]
 	public class SceneLoader : MonoBehaviour
 	{
-		[Header("Listening Channels")]
-		[SerializeField]
-		private LoadSceneEventChannelSO LoadSceneEventChannel = default!;
+		[field: Header("Listening Channels")]
+		[field: SerializeField]
+		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
 
-		[SerializeField]
-		private LoadSceneEventChannelSO NotifyEditorColdStartupEventChannel = default!;
+		[field: SerializeField]
+		private LoadSceneEventChannelSO NotifyEditorColdStartupEventChannel { get; set; } = default!;
 
-		[Header("Broadcasting Channels")]
-		[SerializeField]
-		private VoidEventChannelSO SceneReadyEventChannel = default!;
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		private VoidEventChannelSO SceneReadyEventChannel { get; set; } = default!;
 
-		[SerializeField]
-		private BoolEventChannelSO ToggleLoadingScreenEventChannel = default!;
+		[field: SerializeField]
+		private BoolEventChannelSO ToggleLoadingScreenEventChannel { get; set; } = default!;
 
 		private SceneSO? _currentlyLoadedScene;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => LoadSceneEventChannel, this);
+			Guard.AgainstNull(() => NotifyEditorColdStartupEventChannel, this);
+			Guard.AgainstNull(() => SceneReadyEventChannel, this);
+			Guard.AgainstNull(() => ToggleLoadingScreenEventChannel, this);
+		}
 
 		private void OnEnable()
 		{

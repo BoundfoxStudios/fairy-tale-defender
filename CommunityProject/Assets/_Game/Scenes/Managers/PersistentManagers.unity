@@ -449,13 +449,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bbed602083845d2aae7727d27e63dc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoadSceneEventChannel: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
+  <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
     type: 2}
-  NotifyEditorColdStartupEventChannel: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
+  <NotifyEditorColdStartupEventChannel>k__BackingField: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
     type: 2}
-  SceneReadyEventChannel: {fileID: 11400000, guid: 3ac76ef19a58741a881c904120fe86a6,
+  <SceneReadyEventChannel>k__BackingField: {fileID: 11400000, guid: 3ac76ef19a58741a881c904120fe86a6,
     type: 2}
-  ToggleLoadingScreenEventChannel: {fileID: 11400000, guid: d41721ad5f41f4f7490888893437d989,
+  <ToggleLoadingScreenEventChannel>k__BackingField: {fileID: 11400000, guid: d41721ad5f41f4f7490888893437d989,
     type: 2}
 --- !u!4 &1424808642
 Transform:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36463fcffce055b479bdba57e910ea05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Playlist: {fileID: 0}
+  <Playlist>k__BackingField: {fileID: 0}
 --- !u!82 &1426170393
 AudioSource:
   m_ObjectHideFlags: 0
