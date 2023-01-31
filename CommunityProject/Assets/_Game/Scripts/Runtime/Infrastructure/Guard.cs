@@ -34,8 +34,22 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 
 			if (!isPrefab)
 			{
-				Debug.Assert(@object is not null, $"{member.Member.Name} is null", unityObject);
+				var name = GetName(member);
+				Debug.Assert(@object is not null, $"{name} is null", unityObject);
 			}
+		}
+
+		private static string GetName(MemberExpression? memberExpression)
+		{
+			var name = string.Empty;
+
+			while (memberExpression is { } innerMemberExpression)
+			{
+				name = innerMemberExpression.Member.Name + ".";
+				memberExpression = innerMemberExpression.Expression as MemberExpression;
+			}
+
+			return name.TrimEnd('.');
 		}
 	}
 }
