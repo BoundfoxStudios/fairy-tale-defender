@@ -5,6 +5,7 @@ namespace BoundfoxStudios.CommunityProject.Extensions
 {
 	public static class VectorExtensions
 	{
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static Vector2 ToXZ(this Vector3 vector) => new(vector.x, vector.z);
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
