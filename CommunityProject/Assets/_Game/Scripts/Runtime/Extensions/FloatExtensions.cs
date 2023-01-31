@@ -1,11 +1,14 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Utilities
+namespace BoundfoxStudios.CommunityProject.Extensions
 {
-	public static class MathfUtilities
+	public static class FloatExtensions
 	{
-		public static float Round(float value, int decimals)
+		/// <summary>
+		/// Rounds the given <paramref name="value"/> with a specific amount of <paramref name="decimals"/> places.
+		/// </summary>
+		public static float Round(this float value, int decimals)
 		{
 			if (decimals < 0)
 			{
