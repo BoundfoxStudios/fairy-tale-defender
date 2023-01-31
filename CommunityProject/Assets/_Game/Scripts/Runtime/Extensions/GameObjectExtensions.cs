@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Extensions
@@ -27,7 +28,7 @@ namespace BoundfoxStudios.CommunityProject.Extensions
 		public static T GetComponentSafe<T>(this GameObject gameObject)
 		{
 			var component = gameObject.GetComponent<T>();
-			Debug.Assert(component is not null, $"Did not find {typeof(T).Name}", gameObject);
+			Guard.AgainstNull(() => component, gameObject);
 			return component;
 		}
 
@@ -35,7 +36,7 @@ namespace BoundfoxStudios.CommunityProject.Extensions
 		public static T GetComponentInParentSafe<T>(this GameObject gameObject, bool includeInactive = false)
 		{
 			var component = gameObject.GetComponentInParent<T>(includeInactive);
-			Debug.Assert(component is not null, $"Did not find {typeof(T).Name}", gameObject);
+			Guard.AgainstNull(() => component, gameObject);
 			return component;
 		}
 	}
