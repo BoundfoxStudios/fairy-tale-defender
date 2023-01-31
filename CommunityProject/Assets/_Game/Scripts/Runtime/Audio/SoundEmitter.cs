@@ -1,22 +1,21 @@
 using System;
+using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio
 {
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(SoundEmitter))]
+	[RequireComponent(typeof(AudioSource))]
 	public class SoundEmitter : MonoBehaviour
 	{
 		private AudioSource _audioSource = default!;
 
 		public event Action? Finished;
 
-		private void OnEnable()
+		private void Awake()
 		{
-			if (!gameObject.TryGetComponent(out _audioSource))
-			{
-				Debug.LogError("No AudioSource found.", this);
-			}
+			_audioSource = gameObject.GetComponentSafe<AudioSource>();
 		}
 
 		public void PlayAudioClip(AudioClip audioClip)
