@@ -1061,8 +1061,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f27962b82531448c8b68ad8515fe4468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Buildable: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240, type: 2}
-  EnterBuildModeEventChannel: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+  <Buildable>k__BackingField: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240,
+    type: 2}
+  <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
 --- !u!1001 &176282915
 PrefabInstance:
