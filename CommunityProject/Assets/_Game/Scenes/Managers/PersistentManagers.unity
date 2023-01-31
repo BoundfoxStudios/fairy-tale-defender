@@ -718,9 +718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b18fedf88be459abce47b3ca8256fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FadeInOutTime: 0.133
-  LoadingScreenCanvasGroup: {fileID: 47576559}
-  ToggleLoadingScreenEventChannel: {fileID: 11400000, guid: d41721ad5f41f4f7490888893437d989,
+  <FadeInOutTime>k__BackingField: 0.133
+  <LoadingScreenCanvasGroup>k__BackingField: {fileID: 47576559}
+  <ToggleLoadingScreenEventChannel>k__BackingField: {fileID: 11400000, guid: d41721ad5f41f4f7490888893437d989,
     type: 2}
 --- !u!1 &1747360099
 GameObject:
