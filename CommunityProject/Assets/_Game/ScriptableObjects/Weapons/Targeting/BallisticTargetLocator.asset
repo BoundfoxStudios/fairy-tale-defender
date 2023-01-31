@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30a090bdf126474e97a7041ec5f15351, type: 3}
   m_Name: BallisticTargetLocator
   m_EditorClassIdentifier: 
-  EnemyLayerMask:
+  <EnemyLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 1024
   <HeightToRangeFactor>k__BackingField: 1.01
