@@ -1,5 +1,7 @@
+using System;
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio
@@ -7,11 +9,17 @@ namespace BoundfoxStudios.CommunityProject.Audio
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(AudioCuePlayer))]
 	public class AudioCuePlayer : MonoBehaviour
 	{
-		[SerializeField]
-		private AudioCueEventChannelSO AudioCueEventChannel = default!;
+		[field: SerializeField]
+		private AudioCueEventChannelSO AudioCueEventChannel { get; set; } = default!;
 
-		[SerializeField]
-		private SoundEmitter SoundEmitterPrefab = default!;
+		[field: SerializeField]
+		private SoundEmitter SoundEmitterPrefab { get; set; } = default!;
+
+		private void OnValidate()
+		{
+			Guard.AgainstNull(() => AudioCueEventChannel);
+			Guard.AgainstNull(() => SoundEmitterPrefab);
+		}
 
 		private void OnEnable()
 		{
