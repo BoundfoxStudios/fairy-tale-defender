@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d0bde36dd71e678a4e33d048d67e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ScrollSpeed: 0.05
+  <ScrollSpeed>k__BackingField: 0.05
 --- !u!224 &1057845242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
@@ -687,14 +687,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0608b45043b16f421b31db1b089bc15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CreditTextSize: 75
-  ScrollView: {fileID: 491231181}
-  ContentLayoutGroup: {fileID: 1880433268}
-  DeveloperPlaceholder: '{{Developer}}'
-  ArtistPlaceholder: '{{Artist}}'
-  DocPlaceholder: '{{Doc}}'
-  IdeaPlaceholder: '{{Idea}}'
-  AudioPlaceholder: '{{Audio}}'
+  <CreditTextSize>k__BackingField: 75
+  <ScrollView>k__BackingField: {fileID: 491231181}
+  <ContentLayoutGroup>k__BackingField: {fileID: 1880433268}
+  <DeveloperPlaceholder>k__BackingField: '{{Developer}}'
+  <ArtistPlaceholder>k__BackingField: '{{Artist}}'
+  <DocPlaceholder>k__BackingField: '{{Doc}}'
+  <IdeaPlaceholder>k__BackingField: '{{Idea}}'
+  <AudioPlaceholder>k__BackingField: '{{Audio}}'
 --- !u!1 &1880433265
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,6 +1076,12 @@ PrefabInstance:
       propertyPath: Settings.ShowLoadingScreen
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 673820982054601437, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: <SceneToLoad>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

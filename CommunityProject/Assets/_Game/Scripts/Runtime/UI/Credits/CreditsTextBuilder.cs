@@ -13,29 +13,29 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class CreditsTextBuilder : MonoBehaviour
 	{
-		[SerializeField]
-		private int CreditTextSize = 75;
+		[field: SerializeField]
+		private int CreditTextSize { get; set; } = 75;
 
-		[SerializeField]
-		private ScrollRect ScrollView = default!;
+		[field: SerializeField]
+		private ScrollRect ScrollView { get; set; } = default!;
 
-		[SerializeField]
-		private VerticalLayoutGroup ContentLayoutGroup = default!;
+		[field: SerializeField]
+		private VerticalLayoutGroup ContentLayoutGroup { get; set; } = default!;
 
-		[SerializeField]
-		private string DeveloperPlaceholder = "{{Developer}}";
+		[field: SerializeField]
+		private string DeveloperPlaceholder { get; set; } = "{{Developer}}";
 
-		[SerializeField]
-		private string ArtistPlaceholder = "{{Artist}}";
+		[field: SerializeField]
+		private string ArtistPlaceholder { get; set; } = "{{Artist}}";
 
-		[SerializeField]
-		private string DocPlaceholder = "{{Doc}}";
+		[field: SerializeField]
+		private string DocPlaceholder { get; set; } = "{{Doc}}";
 
-		[SerializeField]
-		private string IdeaPlaceholder = "{{Idea}}";
+		[field: SerializeField]
+		private string IdeaPlaceholder { get; set; } = "{{Idea}}";
 
-		[SerializeField]
-		private string AudioPlaceholder = "{{Audio}}";
+		[field: SerializeField]
+		private string AudioPlaceholder { get; set; } = "{{Audio}}";
 
 		private readonly ContributorsReader _contributorsReader = new();
 		private TextMeshProUGUI _tmpText = default!;
