@@ -14,7 +14,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 		[field: SerializeField]
 		private SoundEmitter SoundEmitterPrefab { get; set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => AudioCueEventChannel, this);
 			Guard.AgainstNull(() => SoundEmitterPrefab, this);

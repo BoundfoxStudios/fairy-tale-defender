@@ -16,14 +16,11 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 
 		private Rigidbody _rigidbody = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Collider, this);
 			Guard.AgainstNull(() => TrailRenderer, this);
-		}
 
-		private void Awake()
-		{
 			_rigidbody = gameObject.GetComponentSafe<Rigidbody>();
 			_rigidbody.useGravity = false;
 

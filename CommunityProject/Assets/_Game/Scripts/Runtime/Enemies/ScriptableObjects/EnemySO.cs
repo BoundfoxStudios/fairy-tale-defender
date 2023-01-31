@@ -40,7 +40,7 @@ namespace BoundfoxStudios.CommunityProject.Enemies.ScriptableObjects
 		[field: Tooltip("The amount of currency awarded to player on kill.")]
 		public int CurrencyOnKill { get; private set; } = 1;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Name, this);
 		}

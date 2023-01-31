@@ -33,13 +33,10 @@ namespace BoundfoxStudios.CommunityProject.Navigation
 		// TODO: Later, the Spline will be set by the WaveSpawner
 		private ISpline _spline = default!;
 
-		private void OnValidate()
-		{
-			Guard.AgainstNull(() => Rigidbody, this);
-		}
-
 		private void Awake()
 		{
+			Guard.AgainstNull(() => Rigidbody, this);
+
 			var pathProvider = new SplinePathProvider();
 			_spline = pathProvider.CreatePath(Container, new RandomSplineLinkDecisionMaker());
 			_duration = _spline.GetLength() / Speed;

@@ -16,7 +16,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 		private int _lastClipIndex;
 		private int _nextClipIndex;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Clips, this);
 			Debug.Assert(Clips.Length > 0, "No PlaylistItems", this);

@@ -9,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 		[field: SerializeField]
 		public AudioClip AudioClip { get; private set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => AudioClip, this);
 		}

@@ -16,7 +16,7 @@ namespace BoundfoxStudios.CommunityProject.UI.BuildSystem
 		[field: SerializeField]
 		protected BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
 
-		protected void OnValidate()
+		protected void Awake()
 		{
 			Guard.AgainstNull(() => Buildable, this);
 			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);

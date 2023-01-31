@@ -24,14 +24,11 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 
 		private Tween? _runningTween;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => LoadingScreenCanvasGroup, this);
 			Guard.AgainstNull(() => ToggleLoadingScreenEventChannel, this);
-		}
 
-		private void Awake()
-		{
 			LoadingScreenCanvasGroup.alpha = 0;
 		}
 

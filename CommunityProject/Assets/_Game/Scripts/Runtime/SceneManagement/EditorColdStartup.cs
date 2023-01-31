@@ -34,16 +34,13 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private bool _isColdStartup;
 
-		private void OnValidate()
+		private void Awake()
 		{
-			Guard.AgainstNull(() => ThisScene, this, true);
+			Guard.AgainstNull(() => ThisScene, this);
 			Guard.AgainstNull(() => Settings, this);
 			Guard.AgainstNull(() => PersistentManagersScene, this);
 			Guard.AgainstNull(() => NotifyColdStartupEventChannel, this);
-		}
 
-		private void Awake()
-		{
 			if (!SceneManager.GetSceneByName(PersistentManagersScene.SceneReference.editorAsset.name).isLoaded)
 			{
 				_isColdStartup = true;

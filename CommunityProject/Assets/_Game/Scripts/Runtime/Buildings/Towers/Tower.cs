@@ -9,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Buildings.Towers
 		[field: SerializeField]
 		public Collider Collider { get; private set; } = default!;
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => Collider, this);
 		}

@@ -25,7 +25,7 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 		public event PositionHandler Build = delegate { };
 		public event Action BuildRotate = delegate { };
 
-		private void OnValidate()
+		private void Awake()
 		{
 			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
 			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
