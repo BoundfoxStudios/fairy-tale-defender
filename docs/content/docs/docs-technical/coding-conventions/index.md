@@ -32,14 +32,99 @@ Wir nutzen als Basis die [.NET Standards](https://docs.microsoft.com/en-us/dotne
 
 ### Programmierung
 
-* Halte den Code in englischer Sprache (dict.cc hilft beim Übersetzen), Ausnahme [siehe Kommentare](#kommentare)
+* Halte den Code in englischer Sprache (dict.cc, deepl.com helfen beim Übersetzen).
 * Felder und Methoden bleiben private, außer man benötigt öffentlichen Zugriff.
-* Wenn Du Felder im Inspektor sehen willst, aber den öffentlichen Zugriff nicht benötigt, dann verwende `[SerializeField]` zusammen mit `private`.
-  Falls Du dann die Warnung erhälst _"Field is never assigned to, will always have its default value"_, dann mache eine `= default` Zuweisung
 * Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject ([1](https://www.youtube.com/watch?v=TjTL-MXPnbo), [2](https://www.youtube.com/watch?v=qqzZZfgtQyU), [3](https://www.youtube.com/watch?v=QkVpYHc1s60)) implementierst.
 * Vermeide statische Variablen.
 * Vermeide Magic Numbers ("magische Nummer"), z.B. `value * 0.08`, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.
 * Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist `BoundfoxStudios.CommunityProject`.
+
+#### Serialisierte Felder aka [SerializeField] aka Dinge, die im Inspector angezeigt werden
+
+Du bist es von Unity gewohnt, serialisierte Felder auf diese Art und Weise anzulegen:
+
+```cs
+public class Something : MonoBehaviour
+{
+  [SerializeField]
+  private GameObject SomePrefab;
+}
+```
+
+Diese Variante nutzen wir **nicht** im Community-Projekt, sondern wir bevorzugen diese Schreibweise:
+
+```cs
+public class Something : MonoBehaviour
+{
+  [field: SerializeField]
+  private GameObject SomePrefab { get; set; }
+}
+```
+
+Dies hat den Vorteil, dass wir später diese Eigenschaft öffentlich machen können, aber nur Lese- und keinen Schreibzugriff für andere erlauben, z.B. so:
+
+```cs
+public class Something : MonoBehaviour
+{
+  [field: SerializeField]
+  public GameObject SomePrefab { get; private set; }
+}
+```
+
+#### Nullable Reference Types
+
+Wir nutzen im Projekt [Nullable Reference Types](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types).
+Das bedeutet das alles, was `null` sein könnte, explizit auch so markiert werden muss.
+
+```cs
+// Ohne Nullable Reference Types
+GameObject foo;
+foo = null;
+
+// Mit Nullable Reference Types
+GameObject? foo;
+foo = null;
+```
+
+Durch Nullable Reference Types würde der obere Teil des Beispiel-Codes auch eine Warnung erzeugen.
+
+Durch das Unity-Serialisierungssystem (`[SerializeField]`) kommt es allerdings dazu, dass serialisierte Felder etwas anders geschrieben werden müssen:
+
+```cs
+// Erzeugt eine Warnung:
+[field: SerializeField]
+private GameObject SomePrefab { get; set; }
+
+// Alternative 1, falls das Feld nicht optional ist:
+[field: SerializeField]
+private GameObject SomePrefab { get; set; } = default!;
+
+// Alternative 2, falls das Feld optional ist:
+[field: SerializeField]
+private GameObject? SomePrefab { get; set; }
+```
+
+##### Alternative 1
+
+Oft wird im Projekt Alternative 1 genutzt, da man Verknüpfungen zu anderen Assets und Skripten hat.
+Durch das `default!` überlisten wir den Compiler und teilen ihm quasi mit, dass das Feld bereits mit einem "nicht-null-Wert" belegt ist.
+Das bedeutet, dass die Definition `private GameObject` aussagt, dass das Feld nicht null ist, es im Code aber dennoch zu einer `NullReferenceException` kommen kann, schlicht weil man das Feld im Unity Inspector nicht gesetzt hat.
+Allerdings wollen wir auch nicht jedes Feld als nullable `GameObject?` markieren, da es das weitere Arbeiten im Code erschwert.
+Daher akzeptieren wir in diesem Fall einfach die NullReferenceException, da man das Setzen des Wertes im Inspector vergessen hat.
+
+Zusätzlich kann man ein `Debug.Assert` in den Code einfügen, um dem Benutzer direkt mitzuteilen, das etwas fehlt:
+
+```cs
+private void OnValidate()
+{
+  Debug.Assert(SomePrefab is not null, $"{nameof(SomePrefab)} is not set!");
+}
+```
+
+##### Alternative 2
+
+Diese kannst Du immer dann nutzen, sobald ein Referenztyp auch wirklich `null` sein kann.
+Entsprechend muss man im Verlauf des Codes darauf achten, was passieren soll, wenn die Eigenschaft `null` ist.
 
 #### Asynchrone Entwicklung / Coroutines
 
@@ -57,6 +142,8 @@ Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via `asyn
 Zum Unit-Testen nutzen wir zusätzlich das [FluentAssertions-Framework](https://fluentassertions.com), was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte `Assert`.
 Damit es in Unity genutzt werden kann, nutzen wir den [Unity-Adapter](https://github.com/BoundfoxStudios/fluentassertions-unity).
 
+Außerdem steht [Moq](https://github.com/moq/moq4) zur Verfügung, um Fake-Objekte zu erzeugen.
+
 ### Formatierung
 
 * Verwende **1 Tab** pro Spalte, keine Leerzeichen.
@@ -64,7 +151,7 @@ Damit es in Unity genutzt werden kann, nutzen wir den [Unity-Adapter](https://gi
 
 ### Kommentare
 
-* Auch wenn der Code in Englisch gehalten wird, schreibe Deine Kommentare auf Deutsch.
+* Schreibe Kommentare auf Englisch (dict.cc, deepl.com helfen beim Übersetzen).
 * Versuche Kommentare zu vermeiden, der Code sollte für sich sprechen. 
 * Füge Kommentare dort hinzu, wo es wirklich sinnvoll ist, bspw. wenn eine gewisse Ablaufreihenfolge besteht, die eingehalten werden muss.
 * Nutze VSDoc für Beschreibungen von Klassen, Methoden, etc.
