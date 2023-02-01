@@ -18,7 +18,10 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 		[field: SerializeField]
 		private SettingsSO Settings { get; set; } = default!;
 
-		private Vector2 _deltaMovement;
+		[field: SerializeField]
+		private BoxCollider WorldBounds { get; set; } = default!;
+
+		private Vector3 _deltaMovement;
 		private Transform _followTarget = default!;
 
 		private void Awake()
@@ -26,8 +29,23 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 			Guard.AgainstNull(() => VirtualCamera, this);
 			Guard.AgainstNull(() => InputReader, this);
 			Guard.AgainstNull(() => Settings, this);
+			Guard.AgainstNull(() => WorldBounds, this);
 
 			_followTarget = VirtualCamera.Follow;
+
+			AdjustWorldBounds();
+		}
+
+		private void AdjustWorldBounds()
+		{
+			// TODO: we will need to adjust this somehow and calculate it based on the AspectRatio.
+			// Right now, it just adjust the collider size, so you can not move the camera too far from the board.
+			// We will revisit this once we've some real levels so we know the real size.
+			var bounds = WorldBounds.bounds;
+			var quarterSize = bounds.size;
+			quarterSize /= 4;
+			quarterSize.y = bounds.size.y;
+			WorldBounds.size = quarterSize;
 		}
 
 		private void OnEnable()
@@ -44,17 +62,23 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 
 		private void ReadPan(Vector2 delta)
 		{
-			_deltaMovement = delta;
+			_deltaMovement.x = delta.x;
+			_deltaMovement.z = delta.y;
 		}
 
 		private void ReadPanStop()
 		{
-			_deltaMovement = Vector2.zero;
+			_deltaMovement = Vector3.zero;
 		}
 
 		private void Update()
 		{
-			_followTarget.Translate(_deltaMovement * Settings.Camera.PanSpeed * Time.deltaTime);
+			var speed = Settings.Camera.PanSpeed * Time.deltaTime;
+			var movement = Quaternion.Euler(0, _followTarget.eulerAngles.y, 0) * _deltaMovement;
+
+			var position = _followTarget.position + movement * speed;
+			position = WorldBounds.ClosestPoint(position);
+			_followTarget.position = position;
 		}
 	}
 }
