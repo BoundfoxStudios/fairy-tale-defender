@@ -34,7 +34,7 @@ namespace BoundfoxStudios.CommunityProject.Input
                     ""type"": ""Value"",
                     ""id"": ""0b628e71-0451-4029-aec5-1b0fdc18dc3c"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""EdgePan"",
+                    ""processors"": ""EdgePan,ClampMagnitudeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
                 },

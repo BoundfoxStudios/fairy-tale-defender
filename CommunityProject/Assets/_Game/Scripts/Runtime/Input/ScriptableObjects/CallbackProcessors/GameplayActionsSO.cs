@@ -15,13 +15,16 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProce
 		public event InputReaderSO.DeltaHandler Pan = delegate { };
 		public event Action PanStop = delegate { };
 
-		private bool _isPanning;
 		private Vector2 _previousPanDelta = Vector2.zero;
+		private int? _previousInputDeviceId;
 
 		private void Awake()
 		{
 			Guard.AgainstNull(() => Settings, this);
 		}
+
+		private bool CanProcessPan(int inputDeviceId) =>
+			_previousInputDeviceId is null || _previousInputDeviceId == inputDeviceId;
 
 		public void OnEdgePan(InputAction.CallbackContext context)
 		{
@@ -30,7 +33,7 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProce
 				return;
 			}
 
-			ProcessPan(context.ReadValue<Vector2>());
+			ProcessPan(context);
 		}
 
 		public void OnCameraMovement(InputAction.CallbackContext context)
@@ -40,24 +43,38 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProce
 				return;
 			}
 
-			ProcessPan(context.ReadValue<Vector2>());
+			ProcessPan(context);
 		}
 
-		private void ProcessPan(Vector2 deltaMovement)
+		private void ProcessPan(InputAction.CallbackContext context)
 		{
+			var inputDeviceId = context.control.device.deviceId;
+
+			// Check, if we can process the pan based on the current device id.
+			// This helps to prevent that moving the mouse overrides the keyboard movement and vice-versa.
+			if (!CanProcessPan(inputDeviceId))
+			{
+				return;
+			}
+
+			var deltaMovement = context.ReadValue<Vector2>();
+
 			if (deltaMovement == Vector2.zero && _previousPanDelta != Vector2.zero)
 			{
 				PanStop();
 				_previousPanDelta = deltaMovement;
+				_previousInputDeviceId = null;
 				return;
 			}
 
-			if (deltaMovement != _previousPanDelta)
+			if (deltaMovement == _previousPanDelta)
 			{
-				Pan(deltaMovement);
+				return;
 			}
 
+			Pan(deltaMovement);
 			_previousPanDelta = deltaMovement;
+			_previousInputDeviceId = inputDeviceId;
 		}
 	}
 }
