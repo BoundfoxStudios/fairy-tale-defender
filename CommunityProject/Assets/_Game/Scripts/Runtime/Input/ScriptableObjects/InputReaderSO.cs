@@ -1,14 +1,13 @@
-using System;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProcessors;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
-	public class InputReaderSO : ScriptableObject, GameInput.IGameplayActions, GameInput.IBuildSystemActions
+	public class InputReaderSO : ScriptableObject
 	{
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -16,19 +15,25 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 		[field: SerializeField]
 		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		public BuildSystemActionsSO BuildSystemActions { get; private set; } = default!;
+
+		[field: SerializeField]
+		public GameplayActionsSO GameplayActions { get; private set; } = default!;
+
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
 
-		public delegate void PositionHandler(Vector2 position);
+		public delegate void ScreenPositionHandler(Vector2 position);
 
-		public event PositionHandler BuildPosition = delegate { };
-		public event PositionHandler Build = delegate { };
-		public event Action BuildRotate = delegate { };
+		public delegate void DeltaHandler(Vector2 delta);
 
 		private void Awake()
 		{
 			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
 			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
+			Guard.AgainstNull(() => BuildSystemActions, this);
+			Guard.AgainstNull(() => GameplayActions, this);
 		}
 
 		private void OnEnable()
@@ -37,8 +42,8 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 			{
 				_gameInput = new();
 
-				_gameInput.Gameplay.SetCallbacks(this);
-				_gameInput.BuildSystem.SetCallbacks(this);
+				_gameInput.Gameplay.SetCallbacks(GameplayActions);
+				_gameInput.BuildSystem.SetCallbacks(BuildSystemActions);
 			}
 
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
@@ -82,36 +87,6 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 			GameInput.BuildSystem.Disable();
 			GameInput.Gameplay.Enable();
 			GameInput.UI.Enable();
-		}
-
-		public void OnBuildPosition(InputAction.CallbackContext context)
-		{
-			if (!context.performed)
-			{
-				return;
-			}
-
-			BuildPosition(context.ReadValue<Vector2>());
-		}
-
-		public void OnBuild(InputAction.CallbackContext context)
-		{
-			if (!context.performed)
-			{
-				return;
-			}
-
-			Build(context.ReadValue<Vector2>());
-		}
-
-		public void OnBuildRotate(InputAction.CallbackContext context)
-		{
-			if (!context.performed)
-			{
-				return;
-			}
-
-			BuildRotate();
 		}
 	}
 }

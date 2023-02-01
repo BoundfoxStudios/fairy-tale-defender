@@ -72,18 +72,18 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 
 		private void OnEnable()
 		{
-			InputReader.BuildPosition += ReadBuildPosition;
-			InputReader.Build += ReadBuild;
-			InputReader.BuildRotate += ReadBuildRotate;
+			InputReader.BuildSystemActions.Position += ReadBuildPosition;
+			InputReader.BuildSystemActions.Build += ReadBuild;
+			InputReader.BuildSystemActions.Rotate += ReadBuildRotate;
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
 			ExitBuildModeEventChannel.Raised += ExitBuildMode;
 		}
 
 		private void OnDisable()
 		{
-			InputReader.BuildPosition -= ReadBuildPosition;
-			InputReader.Build -= ReadBuild;
-			InputReader.BuildRotate -= ReadBuildRotate;
+			InputReader.BuildSystemActions.Position -= ReadBuildPosition;
+			InputReader.BuildSystemActions.Build -= ReadBuild;
+			InputReader.BuildSystemActions.Rotate -= ReadBuildRotate;
 			EnterBuildModeEventChannel.Raised -= EnterBuildMode;
 			ExitBuildModeEventChannel.Raised -= ExitBuildMode;
 		}

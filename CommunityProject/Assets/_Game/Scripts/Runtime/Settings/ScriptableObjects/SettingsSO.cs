@@ -18,6 +18,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		public AudioConfig Audio => _gameSettings.EnsureOrThrow().Audio;
 		public GraphicConfig Graphic => _gameSettings.EnsureOrThrow().Graphic;
 		public LocalizationConfig Localization => _gameSettings.EnsureOrThrow().Localization;
+		public CameraConfig Camera => _gameSettings.EnsureOrThrow().Camera;
 
 		private JsonFileManager _jsonFileManager = default!;
 		private readonly string _jsonFileName = "config.json";
@@ -49,6 +50,7 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 			public AudioConfig Audio = new();
 			public GraphicConfig Graphic = new();
 			public LocalizationConfig Localization = new();
+			public CameraConfig Camera = new();
 		}
 
 		[Serializable]
@@ -77,6 +79,16 @@ namespace BoundfoxStudios.CommunityProject.Settings.ScriptableObjects
 		public class LocalizationConfig
 		{
 			public LocaleIdentifier Locale;
+		}
+
+		[Serializable]
+		public class CameraConfig
+		{
+			public bool EnableEdgePanning = true;
+			public bool EnableKeyboardPanning = true;
+
+			[Range(0, 15)]
+			public float PanSpeed = 7.5f;
 		}
 	}
 }

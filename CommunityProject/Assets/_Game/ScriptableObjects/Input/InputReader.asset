@@ -16,3 +16,7 @@ MonoBehaviour:
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}
+  <BuildSystemActions>k__BackingField: {fileID: 11400000, guid: 182a8397742a34d12a2c863279da76bd,
+    type: 2}
+  <GameplayActions>k__BackingField: {fileID: 11400000, guid: 730d40e9be9784625b732523096bbd17,
+    type: 2}
