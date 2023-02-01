@@ -15,8 +15,6 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 		private void Awake()
 		{
 			_scrollRect = GetComponent<ScrollRect>();
-
-			Debug.Assert(_scrollRect is not null, "_scrollRect is not null");
 		}
 
 		private void Update()

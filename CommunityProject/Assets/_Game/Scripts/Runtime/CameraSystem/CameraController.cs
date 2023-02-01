@@ -1,4 +1,3 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cinemachine;
@@ -26,11 +25,6 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => VirtualCamera, this);
-			Guard.AgainstNull(() => InputReader, this);
-			Guard.AgainstNull(() => Settings, this);
-			Guard.AgainstNull(() => WorldBounds, this);
-
 			_followTarget = VirtualCamera.Follow;
 
 			AdjustWorldBounds();

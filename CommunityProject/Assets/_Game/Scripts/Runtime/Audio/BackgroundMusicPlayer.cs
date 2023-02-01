@@ -1,6 +1,5 @@
 using System;
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -18,11 +17,8 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private AudioSource _audioSource = default!;
 
-
 		private void Awake()
 		{
-			Guard.AgainstNull(() => Playlist, this);
-
 			_audioSource = GetComponent<AudioSource>();
 
 			PlayMusicAsync().Forget();

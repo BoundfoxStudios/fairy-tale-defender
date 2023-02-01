@@ -1,6 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
@@ -60,13 +59,6 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => Camera, this);
-			Guard.AgainstNull(() => InputReader, this);
-			Guard.AgainstNull(() => BlueprintMaterial, this);
-			Guard.AgainstNull(() => BlueprintInvalidMaterial, this);
-			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
-			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
-
 			_buildableAndObstacleLayerMask = BuildableLayerMask | ObstaclesLayerMask;
 		}
 

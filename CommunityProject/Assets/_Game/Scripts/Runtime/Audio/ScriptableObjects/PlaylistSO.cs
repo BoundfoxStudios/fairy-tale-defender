@@ -1,6 +1,4 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
-using Random = UnityEngine.Random;
 
 namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 {
@@ -15,12 +13,6 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		private int _lastClipIndex;
 		private int _nextClipIndex;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => Clips, this);
-			Debug.Assert(Clips.Length > 0, "No PlaylistItems", this);
-		}
 
 		public AudioClip GetNextRandomClipWithoutImmediateRepeat()
 		{

@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -25,10 +24,6 @@ namespace BoundfoxStudios.CommunityProject.Settings
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => Settings, this);
-			Guard.AgainstNull(() => MainMixer, this);
-			Guard.AgainstNull(() => GameSettingsChangedEventChannel, this);
-
 			SetStartLocale();
 			SetStartResolution();
 			ApplySettings();

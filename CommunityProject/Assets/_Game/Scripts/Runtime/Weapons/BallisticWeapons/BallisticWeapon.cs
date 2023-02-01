@@ -1,7 +1,6 @@
 using System;
 using System.Threading;
 using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting;
@@ -40,11 +39,8 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons
 			public Vector2 XRotation { get; private set; }
 		}
 
-		protected override void Awake()
+		private void Awake()
 		{
-			base.Awake();
-			Guard.AgainstNull(() => ProjectilePrefab, this);
-
 			PrepareProjectile();
 		}
 

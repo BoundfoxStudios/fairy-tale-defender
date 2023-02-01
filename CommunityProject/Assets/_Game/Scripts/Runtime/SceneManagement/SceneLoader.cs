@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -25,14 +24,6 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		private BoolEventChannelSO ToggleLoadingScreenEventChannel { get; set; } = default!;
 
 		private SceneSO? _currentlyLoadedScene;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => LoadSceneEventChannel, this);
-			Guard.AgainstNull(() => NotifyEditorColdStartupEventChannel, this);
-			Guard.AgainstNull(() => SceneReadyEventChannel, this);
-			Guard.AgainstNull(() => ToggleLoadingScreenEventChannel, this);
-		}
 
 		private void OnEnable()
 		{

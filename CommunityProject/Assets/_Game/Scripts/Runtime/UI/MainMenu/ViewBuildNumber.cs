@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Build.BuildManifest;
-using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
@@ -18,7 +17,7 @@ namespace BoundfoxStudios.CommunityProject.UI.MainMenu
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
-			_buildNumberText = gameObject.GetComponentSafe<TextMeshProUGUI>();
+			_buildNumberText = GetComponent<TextMeshProUGUI>();
 			_buildNumberText.text = await CreateBuildNumberAsync();
 		}
 

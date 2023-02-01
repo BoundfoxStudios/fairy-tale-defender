@@ -1,4 +1,3 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Navigation.PathProviders;
 using Unity.Mathematics;
 using UnityEngine;
@@ -35,8 +34,6 @@ namespace BoundfoxStudios.CommunityProject.Navigation
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => Rigidbody, this);
-
 			var pathProvider = new SplinePathProvider();
 			_spline = pathProvider.CreatePath(Container, new RandomSplineLinkDecisionMaker());
 			_duration = _spline.GetLength() / Speed;
