@@ -20,11 +20,12 @@ Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
 &lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
 Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="../multi-scene-management/">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
-Action[&amp;#34;Aktion/Trigger (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Raise()&amp;#34;| Event[&amp;#34;Event (ScriptableObject)&amp;#34;]
-EventListener[&amp;#34;Event Listener (MonoBehaviour)&amp;#34;] --&amp;gt;|&amp;#34;Horcht auf&amp;#34;| Event
-EventListener --&amp;gt; Response[&amp;#34;Antwort auf Event&amp;#34;]
-&lt;/code>&lt;/pre>&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
+&lt;div class="mermaid">flowchart LR
+Action["Aktion/Trigger (MonoBehaviour)"] -->|"Raise()"| Event["Event (ScriptableObject)"]
+EventListener["Event Listener (MonoBehaviour)"] -->|"Horcht auf"| Event
+EventListener --> Response["Antwort auf Event"]
+&lt;/div>
+&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
 &lt;p>Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.&lt;/p>
 &lt;p>Nehmen wir als Beispiel mal das Leben des Spielers.
 Wenn der Spieler Leben verliert oder bekommt, möchte man das in der Regel im UI anzeigen.
@@ -32,14 +33,15 @@ Jetzt könnte der Spieler eine Referenz auf das UI haben (oder auch umgekehrt) u
 Weiter möchten wir, dass die Gegner sich anders verhalten, je nach dem, wie viel Leben der Spieler hat.
 Auch hier könnte jetzt der Spieler alle Gegner kennen und ihnen mitteilen, wenn sich das Leben verändert.
 Weiter geht&amp;rsquo;s mit anderen Systemen: Post Processing zum Effekte je nach Leben anzeigen, Audio System, dass entsprechend den Sound ändert etc.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
-Spieler --&amp;gt; UI
-Spieler --&amp;gt; Gegner1
-Spieler --&amp;gt; ...
-Spieler --&amp;gt; GegnerX
-Spieler --&amp;gt; PostProcessing
-Spieler --&amp;gt; AudioSystem
-&lt;/code>&lt;/pre>&lt;p>Wenn der Spieler all diese Systeme direkt kennen würde, nennt man dies auch eine hohe Kopplung.
+&lt;div class="mermaid">flowchart LR
+Spieler --> UI
+Spieler --> Gegner1
+Spieler --> ...
+Spieler --> GegnerX
+Spieler --> PostProcessing
+Spieler --> AudioSystem
+&lt;/div>
+&lt;p>Wenn der Spieler all diese Systeme direkt kennen würde, nennt man dies auch eine hohe Kopplung.
 In der Softwareentwicklung versucht man, genau diese hohe Kopplung zu vermeiden.
 Auch wenn dieses Beispiel hier sehr einfach gehalten ist, führt diese Kopplung langsam aber sicher zu schlecht wartbarem Code.
 Denn, wann immer man sich die Spieler-Klasse ansieht, sehen wir viele Abhängigkeiten im Code.
@@ -47,13 +49,14 @@ Jetzt muss jeder Entwickler schauen, was genau diese Abhängigkeiten machen, um 
 Außerdem hat die Spieler-Klasse viel mehr Verantwortung, als sie eigentlich haben müsste, da sie viele Bereiche der Gesamtanwendung kennt und bearbeitet.&lt;/p>
 &lt;p>Das ist in der Softwareentwicklung &lt;em>kein&lt;/em> erstrebenswerter Zustand.&lt;/p>
 &lt;p>Viel mehr wollen wir eine Entkopplung erreichen und hier tritt unser Event-System ein:&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">flowchart LR
-Spieler --&amp;gt;|Leben: 50| EventSystem
-EventSystem --&amp;gt;|Leben: 50| UI
-EventSystem --&amp;gt;|Leben: 50| GegnerX
-EventSystem --&amp;gt;|Leben: 50| PostProcessing
-EventSystem --&amp;gt;|Leben: 50| AudioSystem
-&lt;/code>&lt;/pre>&lt;p>Leider sieht es jetzt durch die Grafik so aus, als hätten wir das Problem zum Event-System verschoben, dass jetzt alle anderen kennt.
+&lt;div class="mermaid">flowchart LR
+Spieler -->|Leben: 50| EventSystem
+EventSystem -->|Leben: 50| UI
+EventSystem -->|Leben: 50| GegnerX
+EventSystem -->|Leben: 50| PostProcessing
+EventSystem -->|Leben: 50| AudioSystem
+&lt;/div>
+&lt;p>Leider sieht es jetzt durch die Grafik so aus, als hätten wir das Problem zum Event-System verschoben, dass jetzt alle anderen kennt.
 Dem ist aber nicht so.
 Anstelle dass der Spieler jedes Einzelsystem bearbeitet, nutzt es einfach nur das Event-System und teilt sein aktuelles Leben mit.
 Was jetzt damit passiert, &lt;em>das ist dem Spieler vollkommen egal&lt;/em>.
@@ -71,22 +74,23 @@ In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
 &lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="../event-system/">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich im Community-Projekt &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
 &lt;/ul>
 &lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
-&lt;pre tabindex="0">&lt;code class="language-mermaid" data-lang="mermaid">sequenceDiagram
+&lt;div class="mermaid">sequenceDiagram
 autonumber
-Spielstart -&amp;gt;&amp;gt; Initialization: Lädt
+Spielstart ->> Initialization: Lädt
 activate Spielstart
 activate Initialization
-Initialization -&amp;gt;&amp;gt; PersistentManagers: Lädt
+Initialization ->> PersistentManagers: Lädt
 activate PersistentManagers
-Initialization -&amp;gt;&amp;gt; PersistentManagers: Event: LoadScene &amp;#34;MainMenu&amp;#34;
-PersistentManagers -&amp;gt;&amp;gt; MainMenu: Lädt
-Initialization -&amp;gt;&amp;gt; Initialization: Entlädt sich selbst
+Initialization ->> PersistentManagers: Event: LoadScene "MainMenu"
+PersistentManagers ->> MainMenu: Lädt
+Initialization ->> Initialization: Entlädt sich selbst
 deactivate Initialization
-Note over PersistentManagers, MainMenu: Typischer Spielablauf...&amp;lt;br&amp;gt;Spiel wird gespielt...
-PersistentManagers -&amp;gt;&amp;gt; Spielstart: Spiel beenden
+Note over PersistentManagers, MainMenu: Typischer Spielablauf...&lt;br>Spiel wird gespielt...
+PersistentManagers ->> Spielstart: Spiel beenden
 deactivate PersistentManagers
 deactivate Spielstart
-&lt;/code>&lt;/pre>&lt;h2 id="vorteile">Vorteile&lt;/h2>
+&lt;/div>
+&lt;h2 id="vorteile">Vorteile&lt;/h2>
 &lt;h3 id="kein-dontdestroyonload-notwendig">Kein &lt;code>DontDestroyOnLoad&lt;/code> notwendig&lt;/h3>
 &lt;p>&lt;code>DontDestroyOnLoad&lt;/code> (DDOL) bringt einige Nachteile mitsich:&lt;/p>
 &lt;ul>
@@ -142,32 +146,106 @@ Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;
 &lt;p>Wähle die &lt;strong>Menu Szene&lt;/strong>, wenn Du ein neues Menü anlegen möchtest.
 Darunter zählen alle FullScreen-Menüs, z.B. MainMenu, Optionen, Credits.&lt;/p>
 &lt;p>Wähle die &lt;strong>Level Szene&lt;/strong>, wenn Du ein neues Leven anlegen möchtest.&lt;/p></description></item><item><title>Docs: Towers</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/towers/</guid><description>
-&lt;p>Auf dieser Seite findet sich die Dokumentation, wie man einen Turm im Spiel erstellen und organisiert ablegen kann.&lt;/p>
-&lt;h2 id="prefab">Prefab&lt;/h2>
+&lt;p>Auf dieser Seite findet sich die Dokumentation, wie man einen Turm im Spiel erstellen und organisiert ablegen kann.
+Wichtig zu verstehen ist, dass der Turm selbst keine großartige Funktion hat.
+Oft würde die Funktion, z.B. von einem Katapult-Turm, direkt &amp;ldquo;in den Turm&amp;rdquo; implementiert werden.
+Wir gehen im Spiel allerdings einen anderen Ansatz und sehen die Waffe als eigenständige Waffe, die die eigentliche Funktion implementiert hat.
+Der Turm ist nur ein &amp;ldquo;Etwas&amp;rdquo;, das die Waffe trägt.
+Daher ist es wichtig, sich auch den Abschnitt über &lt;a href="../weapons/">Waffen&lt;/a> durchzulesen.&lt;/p>
+&lt;h2 id="organisation">Organisation&lt;/h2>
+&lt;h3 id="prefabs">Prefabs&lt;/h3>
 &lt;p>Im Ordner &lt;code>_Game/Prefabs/Buildings/Towers&lt;/code> befinden sich alle vom Spieler baubaren Türme.
 Jeder Turm bekommt hier seinen eigenen Ordner.&lt;/p>
-&lt;p>Als Beispiel zeigt das Bild den &amp;ldquo;SampleTower&amp;rdquo;:&lt;/p>
-&lt;p>&lt;img src="assets/towers.png" alt="SampleTower">&lt;/p>
-&lt;p>Im Bild unten zu sehen ist das Basis-Prefab &lt;code>Tower_Base&lt;/code>, das für alle Türme genutzt werden muss.
-Aus diesem Prefab wird eine Variante für den eigentlichen Tower erstellt.&lt;/p>
-&lt;p>Jeder Turm benötigt drei Prefabs:&lt;/p>
+&lt;p>Als Beispiel zeigt das Bild den &amp;ldquo;CatapultTower&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="assets/towers.png" alt="CatapultTower">&lt;/p>
+&lt;p>Jeder Turm besteht aus drei Prefabs:&lt;/p>
 &lt;ol>
-&lt;li>&lt;code>Turm_Gfx&lt;/code>: Beinhaltet die grafische Umsetzung des Turms ohne weitere Scripts.&lt;/li>
-&lt;li>&lt;code>Turm_Blueprint&lt;/code>: Ist eine Variante von &lt;code>Turm_Gfx&lt;/code>, bei dem die Materialen zum &lt;code>Blueprint&lt;/code> geändert wurden.
+&lt;li>&lt;code>Turmname_Gfx&lt;/code>: Beinhaltet die grafische Umsetzung des Turms ohne weitere Scripts.&lt;/li>
+&lt;li>&lt;code>Turmname_Blueprint&lt;/code>: Ist eine Variante von &lt;code>Turmname_Gfx&lt;/code>, bei dem die Materialen zum &lt;code>Blueprint&lt;/code> geändert wurden.
 Diese Repräsentation wird genutzt, um dem Spieler ein &amp;ldquo;Geist&amp;rdquo;-Element anzuzeigen, wo der Turm gebaut werden kann.
 Im Bild sieht man links den Blueprint/Geist und rechts den gebauten Turm.&lt;/li>
 &lt;/ol>
 &lt;p>&lt;img src="assets/ghost.png" alt="Geist und echter Turm">&lt;/p>
 &lt;ol start="3">
-&lt;li>&lt;code>Turm&lt;/code>: Der eigentliche Turm. Er nutzt &lt;code>Turm_Gfx&lt;/code> für die visuelle Darstellung (siehe Abschnitt &lt;a href="#Turmaufbau">Turmaufbau&lt;/a>) und hat alle benötigten Scripts, um seine Funktion zu erfüllen.&lt;/li>
+&lt;li>&lt;code>Turmname&lt;/code>: Der eigentliche funktionierende Turm, der im Spiel platziert wird. Er nutzt &lt;code>Tower_Base&lt;/code> als Basis-Prefab,
+&lt;code>Turmname_Gfx&lt;/code> für die visuelle Darstellung und eine Waffe. Wie genau alles zusammengestöpselt ist, erklärt der Abschnitt &lt;a href="#Turmaufbau">Turmaufbau&lt;/a>.&lt;/li>
 &lt;/ol>
-&lt;h2 id="scriptableobject">ScriptableObject&lt;/h2>
+&lt;h3 id="scriptableobject">ScriptableObject&lt;/h3>
 &lt;p>Zu jedem baubaren Turm gehört ein ScriptableObject, das im Ordner &lt;code>_Game/ScriptableObjects/Buildings/Towers&lt;/code> abgelegt wird.&lt;/p>
 &lt;p>&lt;img src="assets/scriptable-object.png" alt="ScriptableObject eines Turms">&lt;/p>
 &lt;p>In diesem ScriptableObject stehen aktuell nur, welches Prefab gebaut werden kann und welches Prefab als Blueprint dient.&lt;/p>
-&lt;p>Später werden hier noch weitere Informationen stehen, z.B. welche Basis-Reichweite, -Feuerkraft, etc. ein Turm hat.&lt;/p>
 &lt;h2 id="turmaufbau">Turmaufbau&lt;/h2>
+&lt;p>Im weiteren wird beschrieben, wie die drei Prefabs für einen Turm aufgebaut sind.&lt;/p>
+&lt;h3 id="gfx-prefab">Gfx-Prefab&lt;/h3>
+&lt;p>&lt;img src="assets/gfx-organization.png" alt="Gfx-Prefab">&lt;/p>
+&lt;ul>
+&lt;li>Basis-Prefab.&lt;/li>
+&lt;li>Beinhaltet direkt das Modell oder Modelle für die visuelle Repräsentation.&lt;/li>
+&lt;li>Beinhaltet ein leeres GameObject &amp;ldquo;Weapon&amp;rdquo; das dort platziert ist, wo später die Waffe vom Turm stehen wird.&lt;/li>
+&lt;/ul>
+&lt;h3 id="blueprint-prefab">Blueprint-Prefab&lt;/h3>
+&lt;p>&lt;img src="assets/blueprint-organization.png" alt="Blueprint-Prefab">&lt;/p>
+&lt;ul>
+&lt;li>Varianten-Prefab vom obigen Gfx-Prefab.&lt;/li>
+&lt;li>Hier werden alle Materialen (sofern nötig) zum Blueprint-Material geändert.&lt;/li>
+&lt;li>Sollte der Turm irgendwelche Effekte haben, die wir im Baumodus nicht benötigen, dann können sie hier ausgeschaltet werden.&lt;/li>
+&lt;li>In das GameObject &lt;code>Weapon&lt;/code> wird jetzt die visuelle Repräsentation einer Waffe gelegt (siehe &lt;a href="../weapons/#Waffenaufbau">Waffenaufbau&lt;/a>.&lt;/li>
+&lt;/ul>
+&lt;h3 id="turm-prefab">Turm-Prefab&lt;/h3>
 &lt;p>&lt;img src="assets/tower-organization.png" alt="Turmaufbau">&lt;/p>
-&lt;p>Jeder Turm besteht aus der &lt;code>Tower_Base&lt;/code>.
-In dessen GameObject &lt;code>GFX&lt;/code> wird das Prefab &lt;code>Turm_Gfx&lt;/code> abgelegt.
-Alle weiteren Scripts und was sonst so benötigt wird, um den Turm zum Leben zu erwecken, werden direkt auf Root-Objekt platziert.&lt;/p></description></item></channel></rss>
+&lt;ul>
+&lt;li>Varianten-Prefab von &lt;code>Tower_Base&lt;/code>.&lt;/li>
+&lt;li>In das GameObject &lt;code>GFX&lt;/code> wird das Gfx-Prefab (siehe oben) abgelegt.&lt;/li>
+&lt;li>Beinhaltet alle Scripts, um den Turm zum Leben zu erwecken.&lt;/li>
+&lt;/ul></description></item><item><title>Docs: Waffen</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/weapons/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/weapons/</guid><description>
+&lt;p>Auf dieser Seite finden sich alle Informationen zu den im Spiel implementierten Waffen und wie man neue Waffen erstellen kann.
+Wichtig ist, dass mit Waffe nicht der Turm gemeint ist.
+Der &lt;a href="../towers/">Turm&lt;/a> ist eine recht dümmliche Struktur, die nur zum Tragen einer Waffe dient.&lt;/p>
+&lt;p>Die Waffe implementiert die Funktion, um z.B. ein Katapult zum Abschuss zu bringen.
+Daher unterscheiden wir die &lt;a href="weapon-types/">Waffen nach ihrer Art&lt;/a>, z.B. ballistische Waffen (Katapult), direkte Waffen (Gewehre), etc.&lt;/p>
+&lt;h2 id="organisation">Organisation&lt;/h2>
+&lt;p>Ähnlich wie &lt;a href="../towers/">Türme&lt;/a> bestehen Waffen aus Prefabs und ScriptableObjects.&lt;/p>
+&lt;h3 id="prefabs">Prefabs&lt;/h3>
+&lt;p>Im Ordner &lt;code>_Game/Prefabs/Weapons&lt;/code> befinden sich alle Waffen.
+Jede Waffe bekommt hier einen eigenen Ordner.&lt;/p>
+&lt;p>Als Beispiel zeigt das Bild das &amp;ldquo;Catapult&amp;rdquo;:&lt;/p>
+&lt;p>&lt;img src="assets/weapons.png" alt="Waffen-Prefabs">&lt;/p>
+&lt;p>Jede Waffe besteht aus zwei Prefabs:&lt;/p>
+&lt;ol>
+&lt;li>&lt;code>Waffenname_Gfx&lt;/code>: Beinhaltet die grafische Umsetzung der Waffe ohne weitere Scripts.&lt;/li>
+&lt;li>&lt;code>Waffenname&lt;/code>: Ist eine Variante von &lt;code>Weapon_Base&lt;/code> und beinhaltet alle Scripts, um die Waffe zum Leben zu erwecken.
+Er nutzt &lt;code>Waffenname_Gfx&lt;/code> für die visuelle Repräsentation.&lt;/li>
+&lt;/ol>
+&lt;h3 id="scriptableobject">ScriptableObject&lt;/h3>
+&lt;p>Zu jeder Waffe gehört ein ScriptableObject, das im Ordner &lt;code>_Game/ScriptableObjects/Weapons&lt;/code> abgelegt wird.&lt;/p>
+&lt;p>&lt;img src="assets/weapon-so.png" alt="ScriptableObject einer Waffe">&lt;/p>
+&lt;p>In diesem ScriptableObject werden alle Parameter für eine Waffe festgehalten, z.B.&lt;/p>
+&lt;ul>
+&lt;li>Reichweite&lt;/li>
+&lt;li>Mindestreichweite&lt;/li>
+&lt;li>Angriffswinkel&lt;/li>
+&lt;li>etc.&lt;/li>
+&lt;/ul>
+&lt;p>Diese Werte sind als Basiswerte zu verstehen und werden später durch Forschung verbessert werden können.&lt;/p>
+&lt;h2 id="waffenaufbau">Waffenaufbau&lt;/h2>
+&lt;h3 id="gfx-prefab">Gfx-Prefab&lt;/h3>
+&lt;p>&lt;img src="assets/weapon-gfx.png" alt="Gfx-Prefab">&lt;/p>
+&lt;ul>
+&lt;li>Basis-Prefab.&lt;/li>
+&lt;li>Beinhaltet direkt das Modell oder Modelle für die visuelle Repräsentation.&lt;/li>
+&lt;/ul>
+&lt;h3 id="waffe-prefab">Waffe-Prefab&lt;/h3>
+&lt;ul>
+&lt;li>Varianten-Prefab von &lt;code>Weapon_Base&lt;/code>.&lt;/li>
+&lt;li>Beinhaltet alle Scripts, um die Waffe zum Leben zu erwecken.&lt;/li>
+&lt;/ul>
+&lt;p>&lt;img src="assets/weapon-inspector.png" alt="Waffe-Inspektor">&lt;/p>
+&lt;ul>
+&lt;li>Eine Waffe nutzt je nach Waffenart ein bestimmtes Script.
+&lt;ul>
+&lt;li>z.B. benutzt eine ballistische Waffe das Script &lt;code>BallisticWeapon&lt;/code>.&lt;/li>
+&lt;li>Hier wird das ScriptableObject für die Waffendefinition verknüpft (siehe &lt;a href="#ScriptableObject">oben&lt;/a> als auch ein &lt;a href="target-locator/">Target Locator&lt;/a>.&lt;/li>
+&lt;li>Zusätzlich wird das Prefab für ein &lt;a href="weapon-types/#Projektile">Projektil&lt;/a> bestimmt.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul></description></item></channel></rss>

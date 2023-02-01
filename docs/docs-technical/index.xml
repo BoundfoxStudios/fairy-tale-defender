@@ -28,15 +28,71 @@
 &lt;/ul>
 &lt;h3 id="programmierung">Programmierung&lt;/h3>
 &lt;ul>
-&lt;li>Halte den Code in englischer Sprache (dict.cc hilft beim Übersetzen), Ausnahme &lt;a href="#kommentare">siehe Kommentare&lt;/a>&lt;/li>
+&lt;li>Halte den Code in englischer Sprache (dict.cc, deepl.com helfen beim Übersetzen).&lt;/li>
 &lt;li>Felder und Methoden bleiben private, außer man benötigt öffentlichen Zugriff.&lt;/li>
-&lt;li>Wenn Du Felder im Inspektor sehen willst, aber den öffentlichen Zugriff nicht benötigt, dann verwende &lt;code>[SerializeField]&lt;/code> zusammen mit &lt;code>private&lt;/code>.
-Falls Du dann die Warnung erhälst &lt;em>&amp;ldquo;Field is never assigned to, will always have its default value&amp;rdquo;&lt;/em>, dann mache eine &lt;code>= default&lt;/code> Zuweisung&lt;/li>
 &lt;li>Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject (&lt;a href="https://www.youtube.com/watch?v=TjTL-MXPnbo">1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU">2&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=QkVpYHc1s60">3&lt;/a>) implementierst.&lt;/li>
 &lt;li>Vermeide statische Variablen.&lt;/li>
 &lt;li>Vermeide Magic Numbers (&amp;ldquo;magische Nummer&amp;rdquo;), z.B. &lt;code>value * 0.08&lt;/code>, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.&lt;/li>
 &lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.CommunityProject&lt;/code>.&lt;/li>
 &lt;/ul>
+&lt;h4 id="serialisierte-felder-aka-serializefield-aka-dinge-die-im-inspector-angezeigt-werden">Serialisierte Felder aka [SerializeField] aka Dinge, die im Inspector angezeigt werden&lt;/h4>
+&lt;p>Du bist es von Unity gewohnt, serialisierte Felder auf diese Art und Weise anzulegen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">Something&lt;/span> : MonoBehaviour
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">private&lt;/span> GameObject SomePrefab;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diese Variante nutzen wir &lt;strong>nicht&lt;/strong> im Community-Projekt, sondern wir bevorzugen diese Schreibweise:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">Something&lt;/span> : MonoBehaviour
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">private&lt;/span> GameObject SomePrefab { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Dies hat den Vorteil, dass wir später diese Eigenschaft öffentlich machen können, aber nur Lese- und keinen Schreibzugriff für andere erlauben, z.B. so:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">Something&lt;/span> : MonoBehaviour
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">public&lt;/span> GameObject SomePrefab { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="nullable-reference-types">Nullable Reference Types&lt;/h4>
+&lt;p>Wir nutzen im Projekt &lt;a href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/nullable-reference-types">Nullable Reference Types&lt;/a>.
+Das bedeutet das alles, was &lt;code>null&lt;/code> sein könnte, explizit auch so markiert werden muss.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Ohne Nullable Reference Types&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GameObject foo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>foo = &lt;span style="color:#00f">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Mit Nullable Reference Types&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>GameObject? foo;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>foo = &lt;span style="color:#00f">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Durch Nullable Reference Types würde der obere Teil des Beispiel-Codes auch eine Warnung erzeugen.&lt;/p>
+&lt;p>Durch das Unity-Serialisierungssystem (&lt;code>[SerializeField]&lt;/code>) kommt es allerdings dazu, dass serialisierte Felder etwas anders geschrieben werden müssen:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Erzeugt eine Warnung:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> GameObject SomePrefab { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Alternative 1, falls das Feld nicht optional ist:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> GameObject SomePrefab { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">set&lt;/span>; } = &lt;span style="color:#00f">default&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Alternative 2, falls das Feld optional ist:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> GameObject? SomePrefab { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="alternative-1">Alternative 1&lt;/h5>
+&lt;p>Oft wird im Projekt Alternative 1 genutzt, da man Verknüpfungen zu anderen Assets und Skripten hat.
+Durch das &lt;code>default!&lt;/code> überlisten wir den Compiler und teilen ihm quasi mit, dass das Feld bereits mit einem &amp;ldquo;nicht-null-Wert&amp;rdquo; belegt ist.
+Das bedeutet, dass die Definition &lt;code>private GameObject&lt;/code> aussagt, dass das Feld nicht null ist, es im Code aber dennoch zu einer &lt;code>NullReferenceException&lt;/code> kommen kann, schlicht weil man das Feld im Unity Inspector nicht gesetzt hat.
+Allerdings wollen wir auch nicht jedes Feld als nullable &lt;code>GameObject?&lt;/code> markieren, da es das weitere Arbeiten im Code erschwert.
+Daher akzeptieren wir in diesem Fall einfach die NullReferenceException, da man das Setzen des Wertes im Inspector vergessen hat.&lt;/p>
+&lt;p>Zusätzlich kann man ein &lt;code>Debug.Assert&lt;/code> in den Code einfügen, um dem Benutzer direkt mitzuteilen, das etwas fehlt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> OnValidate()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// Guard.AgainstNull ist eine Funktion aus dem Community-Projekt und prüft, ob ein Feld oder Eigenschaft null ist.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// Falls dem der Fall ist, gibt sie eine Nachricht aus.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Guard.AgainstNull(() =&amp;gt; SomePrefab);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h5 id="alternative-2">Alternative 2&lt;/h5>
+&lt;p>Diese kannst Du immer dann nutzen, sobald ein Referenztyp auch wirklich &lt;code>null&lt;/code> sein kann.
+Entsprechend muss man im Verlauf des Codes darauf achten, was passieren soll, wenn die Eigenschaft &lt;code>null&lt;/code> ist.&lt;/p>
 &lt;h4 id="asynchrone-entwicklung--coroutines">Asynchrone Entwicklung / Coroutines&lt;/h4>
 &lt;p>Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# &lt;code>async/await&lt;/code> nutzen können: &lt;a href="https://github.com/Cysharp/UniTask">UniTask&lt;/a>.
 Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).&lt;/p>
@@ -49,6 +105,7 @@ Mehr Info siehe ein &lt;a href="https://blog.unity.com/technology/unity-and-net-
 &lt;h4 id="unit-tests">Unit-Tests&lt;/h4>
 &lt;p>Zum Unit-Testen nutzen wir zusätzlich das &lt;a href="https://fluentassertions.com">FluentAssertions-Framework&lt;/a>, was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte &lt;code>Assert&lt;/code>.
 Damit es in Unity genutzt werden kann, nutzen wir den &lt;a href="https://github.com/BoundfoxStudios/fluentassertions-unity">Unity-Adapter&lt;/a>.&lt;/p>
+&lt;p>Außerdem steht &lt;a href="https://github.com/moq/moq4">Moq&lt;/a> zur Verfügung, um Fake-Objekte zu erzeugen.&lt;/p>
 &lt;h3 id="formatierung">Formatierung&lt;/h3>
 &lt;ul>
 &lt;li>Verwende &lt;strong>1 Tab&lt;/strong> pro Spalte, keine Leerzeichen.
@@ -56,7 +113,7 @@ Das gibt einfach jedem die Möglichkeit, den Code visuell so darzustellen, wie m
 &lt;/ul>
 &lt;h3 id="kommentare">Kommentare&lt;/h3>
 &lt;ul>
-&lt;li>Auch wenn der Code in Englisch gehalten wird, schreibe Deine Kommentare auf Deutsch.&lt;/li>
+&lt;li>Schreibe Kommentare auf Englisch (dict.cc, deepl.com helfen beim Übersetzen).&lt;/li>
 &lt;li>Versuche Kommentare zu vermeiden, der Code sollte für sich sprechen.&lt;/li>
 &lt;li>Füge Kommentare dort hinzu, wo es wirklich sinnvoll ist, bspw. wenn eine gewisse Ablaufreihenfolge besteht, die eingehalten werden muss.&lt;/li>
 &lt;li>Nutze VSDoc für Beschreibungen von Klassen, Methoden, etc.&lt;/li>
