@@ -1,6 +1,5 @@
 using BoundfoxStudios.CommunityProject.Audio.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio
@@ -13,12 +12,6 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		[field: SerializeField]
 		private SoundEmitter SoundEmitterPrefab { get; set; } = default!;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => AudioCueEventChannel, this);
-			Guard.AgainstNull(() => SoundEmitterPrefab, this);
-		}
 
 		private void OnEnable()
 		{

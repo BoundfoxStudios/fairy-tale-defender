@@ -1,5 +1,3 @@
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
@@ -18,10 +16,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => Collider, this);
-			Guard.AgainstNull(() => TrailRenderer, this);
-
-			_rigidbody = gameObject.GetComponentSafe<Rigidbody>();
+			_rigidbody = GetComponent<Rigidbody>();
 			_rigidbody.useGravity = false;
 
 			if (TrailRenderer)

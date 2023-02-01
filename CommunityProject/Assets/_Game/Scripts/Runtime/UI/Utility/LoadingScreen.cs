@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -26,9 +25,6 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => LoadingScreenCanvasGroup, this);
-			Guard.AgainstNull(() => ToggleLoadingScreenEventChannel, this);
-
 			LoadingScreenCanvasGroup.alpha = 0;
 		}
 

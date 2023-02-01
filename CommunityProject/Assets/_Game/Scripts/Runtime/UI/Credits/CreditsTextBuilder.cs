@@ -1,6 +1,5 @@
 using System.Linq;
 using BoundfoxStudios.CommunityProject.Build.Contributors;
-using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
@@ -44,7 +43,7 @@ namespace BoundfoxStudios.CommunityProject.UI.Credits
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Awake()
 		{
-			_tmpText = gameObject.GetComponentSafe<TextMeshProUGUI>();
+			_tmpText = GetComponent<TextMeshProUGUI>();
 
 			var contributors = await _contributorsReader.LoadAsync();
 

@@ -1,6 +1,5 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProcessors;
 using UnityEngine;
 
@@ -27,14 +26,6 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects
 		public delegate void ScreenPositionHandler(Vector2 position);
 
 		public delegate void DeltaHandler(Vector2 delta);
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => EnterBuildModeEventChannel, this);
-			Guard.AgainstNull(() => ExitBuildModeEventChannel, this);
-			Guard.AgainstNull(() => BuildSystemActions, this);
-			Guard.AgainstNull(() => GameplayActions, this);
-		}
 
 		private void OnEnable()
 		{

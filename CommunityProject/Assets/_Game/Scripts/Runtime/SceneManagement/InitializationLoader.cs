@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
@@ -31,14 +30,6 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[field: Header("GameSettings Reference")]
 		[field: SerializeField]
 		private AssetReferenceT<SettingsSO> Settings { get; set; } = default!;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => PersistentManagersScene.editorAsset, this);
-			Guard.AgainstNull(() => MainMenuScene.editorAsset, this);
-			Guard.AgainstNull(() => LoadSceneEventChannel.editorAsset, this);
-			Guard.AgainstNull(() => Settings.editorAsset, this);
-		}
 
 		[UsedImplicitly]
 		// ReSharper disable once Unity.IncorrectMethodSignature

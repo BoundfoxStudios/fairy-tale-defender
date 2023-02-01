@@ -1,4 +1,3 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
@@ -20,10 +19,5 @@ namespace BoundfoxStudios.CommunityProject.Audio.ScriptableObjects
 
 		[field: SerializeField]
 		public string Url { get; private set; } = string.Empty;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => AudioClip, this);
-		}
 	}
 }

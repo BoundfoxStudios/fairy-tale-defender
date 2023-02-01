@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
@@ -18,12 +17,6 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 		[field: Header("Broadcasting on")]
 		[field: SerializeField]
 		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => SceneToLoad, this);
-			Guard.AgainstNull(() => LoadSceneEventChannel, this);
-		}
 
 		public void LoadScene()
 		{

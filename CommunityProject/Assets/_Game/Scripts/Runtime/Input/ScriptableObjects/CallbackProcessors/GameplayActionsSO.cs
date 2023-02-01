@@ -1,5 +1,4 @@
 using System;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -17,11 +16,6 @@ namespace BoundfoxStudios.CommunityProject.Input.ScriptableObjects.CallbackProce
 
 		private Vector2 _previousPanDelta = Vector2.zero;
 		private int? _previousInputDeviceId;
-
-		private void Awake()
-		{
-			Guard.AgainstNull(() => Settings, this);
-		}
 
 		private bool CanProcessPan(int inputDeviceId) =>
 			_previousInputDeviceId is null || _previousInputDeviceId == inputDeviceId;

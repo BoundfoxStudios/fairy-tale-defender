@@ -2,7 +2,6 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
 using BoundfoxStudios.CommunityProject.Buildings.Towers;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting;
 using BoundfoxStudios.CommunityProject.Weapons.Targeting.ScriptableObjects;
@@ -51,13 +50,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 		private readonly CancellationTokenSource _cancellationTokenSource = new();
 		private TargetPoint? _currentTarget;
 		private Vector3 _towerForward;
-
-		protected virtual void Awake()
-		{
-			Guard.AgainstNull(() => WeaponDefinition, this);
-			Guard.AgainstNull(() => TargetLocator, this);
-			Guard.AgainstNull(() => Tower, this);
-		}
 
 		protected void Start()
 		{

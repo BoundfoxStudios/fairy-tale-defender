@@ -1,5 +1,4 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
 using BoundfoxStudios.CommunityProject.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cysharp.Threading.Tasks;
@@ -36,11 +35,6 @@ namespace BoundfoxStudios.CommunityProject.SceneManagement
 
 		private void Awake()
 		{
-			Guard.AgainstNull(() => ThisScene, this);
-			Guard.AgainstNull(() => Settings, this);
-			Guard.AgainstNull(() => PersistentManagersScene, this);
-			Guard.AgainstNull(() => NotifyColdStartupEventChannel, this);
-
 			if (!SceneManager.GetSceneByName(PersistentManagersScene.SceneReference.editorAsset.name).isLoaded)
 			{
 				_isColdStartup = true;

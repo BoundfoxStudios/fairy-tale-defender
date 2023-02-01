@@ -1,5 +1,4 @@
 using System;
-using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -15,7 +14,7 @@ namespace BoundfoxStudios.CommunityProject.Audio
 
 		private void Awake()
 		{
-			_audioSource = gameObject.GetComponentSafe<AudioSource>();
+			_audioSource = GetComponent<AudioSource>();
 		}
 
 		public void PlayAudioClip(AudioClip audioClip)
