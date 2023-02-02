@@ -4038,7 +4038,8 @@ MonoBehaviour:
   <ObstaclesLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 640
-  <Camera>k__BackingField: {fileID: 784125520}
+  <CameraRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 7048ec874fb204b739bb13db30662c7a,
+    type: 2}
   <InputReader>k__BackingField: {fileID: 11400000, guid: 8b87fd4ff750d2348b3a6c6654e1c0fe,
     type: 2}
   <BlueprintMaterial>k__BackingField: {fileID: 2100000, guid: 3a8ba38a64d15445d8c9c771a9524244,
@@ -4421,12 +4422,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c38d225ca4c9e46d8bf54d795a7a61ae,
     type: 3}
   m_PrefabInstance: {fileID: 775101965}
-  m_PrefabAsset: {fileID: 0}
---- !u!20 &784125520 stripped
-Camera:
-  m_CorrespondingSourceObject: {fileID: 1633943522015870932, guid: 35d7ecd3de7fe484793c6fd2f5bff083,
-    type: 3}
-  m_PrefabInstance: {fileID: 184857216}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &786872633
 PrefabInstance:
@@ -11294,7 +11289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2012149175
 MonoBehaviour:
   m_ObjectHideFlags: 0
