@@ -1,3 +1,5 @@
+using System;
+using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
 using Cinemachine;
@@ -8,6 +10,9 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 	[AddComponentMenu(Constants.MenuNames.CameraSystem + "/" + nameof(CameraController))]
 	public class CameraController : MonoBehaviour
 	{
+		[field: SerializeField]
+		private Camera MainCamera { get; set; } = default!;
+
 		[field: SerializeField]
 		private CinemachineVirtualCamera VirtualCamera { get; set; } = default!;
 
@@ -20,14 +25,24 @@ namespace BoundfoxStudios.CommunityProject.CameraSystem
 		[field: SerializeField]
 		private BoxCollider WorldBounds { get; set; } = default!;
 
+		[field: SerializeField]
+		private CameraRuntimeAnchorSO CameraRuntimeAnchor { get; set; } = default!;
+
 		private Vector3 _deltaMovement;
 		private Transform _followTarget = default!;
 
 		private void Awake()
 		{
+			CameraRuntimeAnchor.Item = MainCamera;
+
 			_followTarget = VirtualCamera.Follow;
 
 			AdjustWorldBounds();
+		}
+
+		private void OnDestroy()
+		{
+			CameraRuntimeAnchor.Item = null;
 		}
 
 		private void AdjustWorldBounds()
