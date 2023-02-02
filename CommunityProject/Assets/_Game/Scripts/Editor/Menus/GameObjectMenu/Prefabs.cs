@@ -19,13 +19,13 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 		private static bool SelectionHasCanvasValidate() =>
 			Selection.activeGameObject && Selection.activeGameObject.GetComponentInParent<Canvas>();
 
-		private static async UniTask SafeInstantiateAsync(Func<PrefabManagerSO, GameObject> itemSelector)
+		private static async UniTask SafeInstantiateAsync(Func<PrefabManagerSO, GameObject?> itemSelector)
 		{
 			await PrefabManager.SafeInvokeAsync(prefabManager =>
 			{
 				var item = itemSelector(prefabManager);
 
-				if (!item)
+				if (item is null)
 				{
 					Debug.LogWarning($"{nameof(SafeInstantiateAsync)} invoked, but {nameof(itemSelector)} returned null. " +
 									 "Did you forget to fill the slot in the inspector?");
