@@ -1,5 +1,6 @@
 using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using DG.Tweening;
 using UnityEngine;
@@ -15,7 +16,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 		private LayerMask ObstaclesLayerMask { get; set; }
 
 		[field: SerializeField]
-		private Camera Camera { get; set; } = default!;
+		private CameraRuntimeAnchorSO CameraRuntimeAnchor { get; set; } = default!;
 
 		[field: SerializeField]
 		private InputReaderSO InputReader { get; set; } = default!;
@@ -126,7 +127,7 @@ namespace BoundfoxStudios.CommunityProject.BuildSystem
 
 			_buildContext.IsValidPosition = false;
 			var blueprintInstance = _buildContext.BlueprintInstance;
-			var ray = Camera.ScreenPointToRay(position);
+			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(position);
 
 			if (!Physics.Raycast(ray, out var hitInfo, 1000, _buildableAndObstacleLayerMask))
 			{
