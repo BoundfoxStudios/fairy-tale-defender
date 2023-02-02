@@ -11,5 +11,12 @@ namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
 		{
 			await SafeInstantiateAsync(prefabManager => prefabManager.Canvas);
 		}
+
+		[MenuItem(Constants.MenuNames.GameObjectMenus.UI + "/WorldSpace Canvas", priority = UIMenuPriority * 2)]
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateWorldSpaceCanvasAsync()
+		{
+			await SafeInstantiateAsync(prefabManager => prefabManager.WorldSpaceCanvas);
+		}
 	}
 }

@@ -16,6 +16,7 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 #if UNITY_EDITOR
 		// Careful, please do not change to [field: SerializedField] in this class, it's just an Editor script
 		public GameObject Canvas = default!;
+		public GameObject WorldSpaceCanvas = default!;
 
 		public TextPrefabs Texts = default!;
 		public CameraPrefabs Cameras = default!;
