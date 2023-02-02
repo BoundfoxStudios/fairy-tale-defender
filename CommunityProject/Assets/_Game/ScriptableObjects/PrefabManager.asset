@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: PrefabManager
   m_EditorClassIdentifier: 
   Canvas: {fileID: 7329999705680356850, guid: 42707aee6922e4159909253356ec706a, type: 3}
+  WorldSpaceCanvas: {fileID: 1503765103410030807, guid: 43b381893e1ed40c1878fc30ceed6c27,
+    type: 3}
   Texts:
     Text: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
   Cameras:
