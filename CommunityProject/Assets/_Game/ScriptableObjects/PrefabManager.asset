@@ -17,6 +17,8 @@ MonoBehaviour:
     type: 3}
   Texts:
     Text: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
+  Bars:
+    Bar: {fileID: 2006493411456039425, guid: 256bb3b0e04594619a0190b6ea8bb8c1, type: 3}
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
     Level: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083, type: 3}
