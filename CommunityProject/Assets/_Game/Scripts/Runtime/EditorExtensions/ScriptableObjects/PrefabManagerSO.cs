@@ -19,6 +19,7 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 		public GameObject WorldSpaceCanvas = default!;
 
 		public TextPrefabs Texts = default!;
+		public BarPrefabs Bars = default!;
 		public CameraPrefabs Cameras = default!;
 		public LightPrefabs Lights = default!;
 		public EditorPrefabs Editor = default!;
@@ -27,6 +28,12 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 		public class TextPrefabs
 		{
 			public GameObject Text = default!;
+		}
+
+		[Serializable]
+		public class BarPrefabs
+		{
+			public GameObject Bar = default!;
 		}
 
 		[Serializable]
