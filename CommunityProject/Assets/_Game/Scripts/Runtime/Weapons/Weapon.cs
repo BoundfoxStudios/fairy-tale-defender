@@ -47,7 +47,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 		/// </summary>
 		protected abstract void TrackTarget(TargetPoint target);
 
-		private readonly CancellationTokenSource _cancellationTokenSource = new();
 		private TargetPoint? _currentTarget;
 		private Vector3 _towerForward;
 
@@ -56,12 +55,6 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 			_towerForward = Tower.transform.forward;
 
 			StartLaunchSequenceAsync().Forget();
-		}
-
-		private void OnDisable()
-		{
-			_cancellationTokenSource.Cancel();
-			_cancellationTokenSource.Dispose();
 		}
 
 		protected virtual void Update()
@@ -97,7 +90,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons
 		/// </summary>
 		private async UniTaskVoid StartLaunchSequenceAsync()
 		{
-			var token = _cancellationTokenSource.Token;
+			var token = destroyCancellationToken;
 
 			// First get the launch delay (fire rate) to wait before we can launch a projectile
 			var launchDelay = CalculateLaunchDelay();

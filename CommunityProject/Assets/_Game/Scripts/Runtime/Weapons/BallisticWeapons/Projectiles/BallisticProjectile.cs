@@ -1,3 +1,5 @@
+using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.CommunityProject.HealthSystem;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
@@ -39,6 +41,16 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 			{
 				TrailRenderer.enabled = true;
 			}
+		}
+
+		private void OnCollisionEnter(Collision collision)
+		{
+			if (collision.collider.TryGetComponentInParent<IAmDamageable>(out var damageable))
+			{
+				damageable.Health.TakeDamage(10);
+			}
+
+			Destroy(gameObject);
 		}
 	}
 }
