@@ -34,6 +34,7 @@ namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
 		public class BarPrefabs
 		{
 			public GameObject Bar = default!;
+			public GameObject HealthBar = default!;
 		}
 
 		[Serializable]

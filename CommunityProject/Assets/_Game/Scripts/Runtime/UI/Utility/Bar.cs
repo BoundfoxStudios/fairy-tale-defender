@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
@@ -31,7 +32,7 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 			}
 		}
 
-		public void Initialize(float maximumValue, float value)
+		public void Initialize(float value, float maximumValue)
 		{
 			_maximumValue = maximumValue;
 			_value = Mathf.Clamp(value, 0, maximumValue);
@@ -48,7 +49,9 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 			var normalizedValue = NormalizedValue;
 
 			directChangeBar.fillAmount = normalizedValue;
-			animateChangeBar.DOFillAmount(normalizedValue, AnimationSpeed);
+			animateChangeBar
+				.DOFillAmount(normalizedValue, AnimationSpeed)
+				.WithCancellation(destroyCancellationToken);
 		}
 
 		private void UpdateBarsInstant()

@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Input.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Settings.ScriptableObjects;
