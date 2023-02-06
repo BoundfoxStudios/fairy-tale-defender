@@ -1,4 +1,4 @@
-using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons;
+using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons;
 using UnityEditor;
 using UnityEngine;
 using UnityGizmos = UnityEngine.Gizmos;

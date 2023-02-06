@@ -1,5 +1,5 @@
 using BoundfoxStudios.CommunityProject.Editor.Extensions;
-using BoundfoxStudios.CommunityProject.Weapons.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 

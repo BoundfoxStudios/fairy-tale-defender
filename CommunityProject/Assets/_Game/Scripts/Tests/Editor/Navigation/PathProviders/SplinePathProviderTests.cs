@@ -1,6 +1,6 @@
 using System;
 using System.Linq;
-using BoundfoxStudios.CommunityProject.Navigation.PathProviders;
+using BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders;
 using BoundfoxStudios.CommunityProject.Tests.Editor.Extensions;
 using FluentAssertions;
 using Moq;

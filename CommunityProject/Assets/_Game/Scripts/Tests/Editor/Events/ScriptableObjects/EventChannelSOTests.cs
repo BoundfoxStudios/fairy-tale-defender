@@ -1,5 +1,5 @@
 using System.Text.RegularExpressions;
-using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using FluentAssertions;
 using NUnit.Framework;
 using UnityEngine;

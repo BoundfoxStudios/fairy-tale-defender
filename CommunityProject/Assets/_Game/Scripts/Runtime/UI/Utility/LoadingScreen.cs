@@ -1,4 +1,4 @@
-using BoundfoxStudios.CommunityProject.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
