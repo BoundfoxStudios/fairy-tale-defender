@@ -1,5 +1,7 @@
+using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons;
+using UnityEditor;
 using UnityEngine;
 using UnityGizmos = UnityEngine.Gizmos;
 
@@ -12,6 +14,26 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 	/// </summary>
 	public static class BallisticGizmoHelpers
 	{
+		private static readonly Vector3[] LineCache = new Vector3[4];
+		private static readonly Dictionary<int, Vector3[]> SegmentCache = new();
+
+		[InitializeOnLoadMethod]
+		private static void ResetSegmentCache()
+		{
+			SegmentCache.Clear();
+		}
+
+		private static Vector3[] GetSegmentCache(int size)
+		{
+			if (SegmentCache.TryGetValue(size, out var result))
+			{
+				return result;
+			}
+
+			SegmentCache[size] = new Vector3[size];
+			return SegmentCache[size];
+		}
+
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		private static Vector3
 			CalculateAngledPosition(Vector3 center, Vector3 normalizedDirection, float angle, float radius) =>
@@ -24,7 +46,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			var step = angle / segments;
 			var halfAngle = angle / 2;
 
-			var points = new Vector3[segments + 1];
+			var points = GetSegmentCache(segments + 1);
 
 			for (var i = 0; i <= segments; i++)
 			{
@@ -61,13 +83,13 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			}
 
 			var halfAngle = angle / 2;
-			UnityGizmos.DrawLineList(new Vector3[4]
-			{
-				CalculateAngledPosition(center, direction, -halfAngle, radius),
-				CalculateAngledPosition(center, direction, -halfAngle, minimumRadius),
-				CalculateAngledPosition(center, direction, halfAngle, radius),
-				CalculateAngledPosition(center, direction, halfAngle, minimumRadius)
-			});
+
+			LineCache[0] = CalculateAngledPosition(center, direction, -halfAngle, radius);
+			LineCache[1] = CalculateAngledPosition(center, direction, -halfAngle, minimumRadius);
+			LineCache[2] = CalculateAngledPosition(center, direction, halfAngle, radius);
+			LineCache[3] = CalculateAngledPosition(center, direction, halfAngle, minimumRadius);
+
+			UnityGizmos.DrawLineList(LineCache);
 		}
 	}
 }
