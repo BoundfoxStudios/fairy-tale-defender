@@ -19,21 +19,19 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			radius;
 
 		private static void DrawAttackArc(Vector3 center, Vector3 normalizedDirection, float angle, float radius,
-			float segments = 20)
+			int segments = 20)
 		{
 			var step = angle / segments;
 			var halfAngle = angle / 2;
 
-			var lastPosition = CalculateAngledPosition(center, normalizedDirection, -halfAngle, radius);
+			var points = new Vector3[segments + 1];
 
 			for (var i = 0; i <= segments; i++)
 			{
-				var position = CalculateAngledPosition(center, normalizedDirection, i * step - halfAngle, radius);
-
-				UnityGizmos.DrawLine(lastPosition, position);
-
-				lastPosition = position;
+				points[i] = CalculateAngledPosition(center, normalizedDirection, i * step - halfAngle, radius);
 			}
+
+			UnityGizmos.DrawLineStrip(points, false);
 		}
 
 		/// <summary>
@@ -46,15 +44,15 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			float angle,
 			float radius,
 			float minimumRadius = 0,
-			float resolution = 20)
+			int segments = 20)
 		{
 			direction = direction.normalized;
 
-			DrawAttackArc(center, direction, angle, radius, resolution);
+			DrawAttackArc(center, direction, angle, radius, segments);
 
 			if (minimumRadius is not 0)
 			{
-				DrawAttackArc(center, direction, angle, minimumRadius, resolution);
+				DrawAttackArc(center, direction, angle, minimumRadius, segments);
 			}
 
 			if (angle is 0 or 360)
@@ -63,14 +61,13 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 			}
 
 			var halfAngle = angle / 2;
-			UnityGizmos.DrawLine(
+			UnityGizmos.DrawLineList(new Vector3[4]
+			{
 				CalculateAngledPosition(center, direction, -halfAngle, radius),
-				CalculateAngledPosition(center, direction, -halfAngle, minimumRadius)
-			);
-			UnityGizmos.DrawLine(
+				CalculateAngledPosition(center, direction, -halfAngle, minimumRadius),
 				CalculateAngledPosition(center, direction, halfAngle, radius),
 				CalculateAngledPosition(center, direction, halfAngle, minimumRadius)
-			);
+			});
 		}
 	}
 }
