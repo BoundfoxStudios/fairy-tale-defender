@@ -1,7 +1,7 @@
 using System;
 using BoundfoxStudios.CommunityProject.Editor.Extensions;
 using BoundfoxStudios.CommunityProject.Editor.GuiControls;
-using BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
