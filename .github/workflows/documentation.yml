@@ -36,7 +36,7 @@ jobs:
 
             const PNG = pngjs.PNG;
 
-            const psdData = fs.readFileSync('./resources/ColorPalette/ColorPalette_Summer.psd');
+            const psdData = fs.readFileSync('./resources/ColorPalettes/ColorPalette_Summer.psd');
             const psdFile = Psd.parse(psdData.buffer);
 
             const pixelData = await psdFile.composite();
