@@ -6,8 +6,10 @@ namespace BoundfoxStudios.CommunityProject.HealthSystem
 	[AddComponentMenu(Constants.MenuNames.HealthSystem + "/" + nameof(Health))]
 	public class Health : MonoBehaviour
 	{
+		public delegate void HealthHandler(int current, int change);
+
 		public event Action Dead = delegate { };
-		public event Action Change = delegate { };
+		public event HealthHandler Change = delegate { };
 		public int Current { get; private set; }
 		public int Maximum { get; private set; }
 
@@ -16,15 +18,15 @@ namespace BoundfoxStudios.CommunityProject.HealthSystem
 			Current = health;
 			Maximum = maxHealth;
 
-			Change();
+			Change(health, 0);
 		}
 
 		public void TakeDamage(int damage)
 		{
-			Debug.Assert(damage > 0, "Damage is negative");
+			Debug.Assert(damage >= 0, "Damage is negative");
 
 			Current -= damage;
-			Change();
+			Change(Current, damage);
 
 			if (Current <= 0)
 			{
