@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.CommunityProject.Characters.Enemies.ScriptableObjects;
 using UnityEngine;
 
