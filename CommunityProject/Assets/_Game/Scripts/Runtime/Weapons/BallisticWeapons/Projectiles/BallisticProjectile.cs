@@ -47,6 +47,7 @@ namespace BoundfoxStudios.CommunityProject.Weapons.BallisticWeapons.Projectiles
 		{
 			if (collision.collider.TryGetComponentInParent<IAmDamageable>(out var damageable))
 			{
+				// TODO: Use information from SO or somewhere else, no magic numbers
 				damageable.Health.TakeDamage(10);
 			}
 
