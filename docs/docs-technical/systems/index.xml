@@ -136,7 +136,70 @@ Du findest die Instanz unter &lt;code>ScriptableObjects/PrefabManager&lt;/code>,
 &lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
 &lt;h3 id="ich-finde-nicht-was-ich-brauche">Ich finde nicht, was ich brauche.&lt;/h3>
 &lt;p>Es kann durchaus sein, dass Du UI umsetzen möchtest, aber es dafür noch keine passenden Prefabs findest.
-Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</guid><description>
+Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Runtime Anchors</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/runtime-anchors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/runtime-anchors/</guid><description>
+&lt;p>Oft benötgt man in Unity Referenzen auf andere GameObjects.
+Gerade durch den Ansatz mit &lt;a href="../multi-scene-management/">Multi-Scene-Management&lt;/a> kommt es vor, dass ein GameObject nicht in der eigenen Scene, sondern in einer anderen liegt.
+Leider wird zur Lösung hier oft ein Singleton-Pattern im Code implementiert, was die Wartbarkeit und Testbarkeit erschwert.&lt;/p>
+&lt;p>Anstelle von Singletons im Code verwenden wir Runtime Anchors.
+Ein Runtime Anchor ist ein ScriptableObject, was eine Referenz auf ein bestimmtes GameObject kennt.
+Dadurch entkoppeln wir verschiedene Systeme und es entsteht keine harte Abhängigkeit.
+Als prominentes Beispiel wäre hier die MainCamera zu nennen, diese wird öfter mal in einem Spiel gebraucht, sei es zur Berechnung von Raycasts oder für Billboard-UI-Elemente.&lt;/p>
+&lt;p>Die Basis vom Runtime Anchor ist wie folgt implementiert:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">abstract&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">RuntimeAnchorBaseSO&lt;/span>&amp;lt;T&amp;gt; : ScriptableObject
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">where&lt;/span> T : &lt;span style="color:#00f">class&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#2b91af">bool&lt;/span> IsSet { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">set&lt;/span>; }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">private&lt;/span> T? _item;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">public&lt;/span> T? Item
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">get&lt;/span> =&amp;gt; _item;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">set&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _item = &lt;span style="color:#00f">value&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IsSet = _item &lt;span style="color:#00f">is&lt;/span> not &lt;span style="color:#00f">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> OnDisable()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> _item = &lt;span style="color:#00f">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> IsSet = &lt;span style="color:#00f">false&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Eine konkrete Implementierung für eine Camera wäre:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">using&lt;/span> UnityEngine;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>[CreateAssetMenu]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">CameraRuntimeAnchorSO&lt;/span> : RuntimeAnchorBaseSO&amp;lt;Camera&amp;gt; { }
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Jetzt werden zwei Dinge benötigt:&lt;/p>
+&lt;ol>
+&lt;li>Ein Skript muss den Wert des &lt;code>CameraRuntimeAnchorSO&lt;/code>s setzen.&lt;/li>
+&lt;li>Jemand muss diesen Wert konsumieren.&lt;/li>
+&lt;/ol>
+&lt;p>In beiden Fällen wird in einem &lt;code>MonoBehaviour&lt;/code> oder auch in einem weiteren &lt;code>ScriptableObject&lt;/code> ein Feld dafür angelegt:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>[field: SerializeField]
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> CameraRuntimeAnchorSO CameraRuntimeAnchor { &lt;span style="color:#00f">get&lt;/span>; &lt;span style="color:#00f">set&lt;/span>; } = &lt;span style="color:#00f">default&lt;/span>!;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Anchor setzen:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> Awake()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CameraRuntimeAnchor.Item = GetComponent&amp;lt;Camera&amp;gt;();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> OnDestroy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> CameraRuntimeAnchor.Item = &lt;span style="color:#00f">null&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">// Anchor nutzen:&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> DoSomething()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#2b91af">var&lt;/span> camera = CameraRuntimeAnchor.Item;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// camera.ScreenPointToRay...&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Scene Templates</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/scene-templates/</guid><description>
 &lt;p>Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü &lt;code>File&lt;/code> -&amp;gt; &lt;code>New Scene&lt;/code> gehst.
 Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:&lt;/p>
 &lt;ul>
