@@ -30,9 +30,9 @@ namespace BoundfoxStudios.CommunityProject.UI.HealthSystem
 			Health.Change -= Change;
 		}
 
-		private void Change()
+		private void Change(int current, int change)
 		{
-			Bar.Value = Health.Current;
+			Bar.Value = current;
 		}
 
 		private void Dead()
