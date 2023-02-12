@@ -1,6 +1,5 @@
 using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Input;
 using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
 using UnityEngine;
 
