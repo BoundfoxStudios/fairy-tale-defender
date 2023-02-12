@@ -51,7 +51,7 @@ Frag gerne auf dem [Discord]({{< param "project_links.discord.url" >}}) nach, we
 ## JetBrains Rider Lizenz
 
 [JetBrains](https://jetbrains.com) sponsert unser Community-Projekt mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
-Jeder Entwickler, die sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
+Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
 
 ![JetBrains](../assets/jb_beam.png)
 ![JetBrains Rider](../assets/Rider.png)
