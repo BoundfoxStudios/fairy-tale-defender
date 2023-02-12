@@ -29,3 +29,5 @@ jobs:
               - 'docs/**'
               - '**/*.md'
               - '.all-contributorsrc'
+              - 'resources/BlenderStarterKit/**'
+              - 'resources/ColorPalettes/**'
