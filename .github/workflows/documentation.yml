@@ -67,7 +67,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: BlenderStarterKit
-          path: docs/static
+          path: docs/content/docs/docs-visual/starter-kit/assets
       - uses: ./.github/actions/hugo-check-broken-links
 
   deploy:
