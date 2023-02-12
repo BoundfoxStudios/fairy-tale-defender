@@ -9,5 +9,5 @@ runs:
         path: docs/content/docs/docs-visual/starter-kit/assets
     - uses: actions/download-artifact@v3
       with:
-        name: ColorPalette_Summer.png
+        name: ColorPalette_Summer_Description.png
         path: docs/content/docs/docs-visual/colors/assets
