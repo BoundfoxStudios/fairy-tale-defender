@@ -51,7 +51,6 @@ jobs:
             const png = new PNG({ width: psdFile.width, height: psdFile.height });
             png.data = Buffer.from(pixelData);
             png.pack().pipe(fs.createWriteStream('./.blender-tmp/ColorPalette_Summer.png'));
-      - run: rm ./.blender-tmp/*.psd
       - run: zip ./.blender-tmp/BlenderStarterKit.zip ./.blender-tmp/*.*
       - uses: actions/upload-artifact@v3
         with:
