@@ -39,11 +39,9 @@ jobs:
       - uses: actions/github-script@v6
         with:
           script: |
-            import Psd from "@webtoon/psd";
-            import pngjs from 'pngjs';
-            import * as fs from 'fs';
-
-            const PNG = pngjs.PNG;
+            const { default: Psd } = await import('${{ github.workspace }}/node_modules/@webtoon/psd/dist/index.js');
+            const PNG = require('pngjs').PNG;
+            const fs = require('fs');
 
             const psdData = fs.readFileSync('./resources/ColorPalettes/ColorPalette_Summer.psd');
             const psdFile = Psd.parse(psdData.buffer);
