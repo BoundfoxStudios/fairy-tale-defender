@@ -26,16 +26,13 @@ jobs:
         with:
           labels: ci-ready-to-merge
 
-  hugo-check-broken-links:
-    name: Check documentation for broken links
+  build-documentation:
+    name: Build the documentation
     needs: change-detection
     if: needs.change-detection.outputs.docs == 'true'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          ref: "refs/pull/${{ github.event.number }}/merge"
-      - uses: ./.github/actions/hugo-check-broken-links
+    uses: ./.github/workflows/documentation.yml
+    with:
+      ref: "refs/pull/${{ github.event.number }}/merge"
 
   lint:
     name: Lint code base
@@ -66,7 +63,7 @@ jobs:
       ref: "refs/pull/${{ github.event.number }}/merge"
 
   label-successful-build:
-    needs: [change-detection, build, hugo-check-broken-links]
+    needs: [change-detection, build, build-documentation]
     if: always()
     name: Label successful build
     runs-on: ubuntu-latest
@@ -78,7 +75,7 @@ jobs:
       - uses: actions-ecosystem/action-add-labels@v1
         if: | 
           (needs.change-detection.outputs.unity == 'true' && needs.build.result == 'success')
-          || (needs.change-detection.outputs.docs == 'true' && needs.hugo-check-broken-links.result == 'success')
+          || (needs.change-detection.outputs.docs == 'true' && needs.build-documentation.result == 'success')
         with:
           labels: ci-ready-to-merge
 

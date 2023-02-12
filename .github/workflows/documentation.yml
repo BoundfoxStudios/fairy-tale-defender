@@ -8,8 +8,15 @@ on:
       - 'docs/**'
       - '.all-contributorsrc'
       - 'resources/BlenderStarterKit/**'
-      - 'resources/ColorPalette/**'
+      - 'resources/ColorPalettes/**'
   workflow_dispatch:
+  workflow_call:
+    inputs:
+      ref:
+        default: ''
+        required: true
+        description: The ref to checkout.
+        type: string
   schedule:
     - cron: '5 17 * * 1' # deploy the documentation website every monday after the new video went live
 
@@ -21,6 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
       - run: mkdir .blender-tmp
       - run: cp ./resources/BlenderStarterKit/*.blend ./.blender-tmp
       - uses: actions/setup-node@v3
@@ -56,6 +65,8 @@ jobs:
     needs: [create-blender-starter-kit]
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}
       - uses: actions/download-artifact@v3
         with:
           name: BlenderStarterKit
