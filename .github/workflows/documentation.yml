@@ -30,8 +30,8 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
-      - run: mkdir .blender-tmp
-      - run: cp ./resources/BlenderStarterKit/*.blend ./.blender-tmp
+      - run: mkdir BlenderStarterKit
+      - run: cp ./resources/BlenderStarterKit/*.blend ./BlenderStarterKit
       - uses: actions/setup-node@v3
         with:
           node-version: 16
@@ -50,12 +50,12 @@ jobs:
 
             const png = new PNG({ width: psdFile.width, height: psdFile.height });
             png.data = Buffer.from(pixelData);
-            png.pack().pipe(fs.createWriteStream('./.blender-tmp/ColorPalette_Summer.png'));
-      - run: zip ./.blender-tmp/BlenderStarterKit.zip ./.blender-tmp/*.*
+            png.pack().pipe(fs.createWriteStream('./BlenderStarterKit/ColorPalette_Summer.png'));
+      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*.*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStarterKit
-          path: ./.blender-tmp/BlenderStarterKit.zip
+          path: ./BlenderStarterKit/BlenderStarterKit.zip
   
   check-broken-links:
     runs-on: ubuntu-latest
