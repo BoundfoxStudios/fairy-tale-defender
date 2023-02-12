@@ -1,5 +1,4 @@
 using System;
-using BoundfoxStudios.CommunityProject.Input;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

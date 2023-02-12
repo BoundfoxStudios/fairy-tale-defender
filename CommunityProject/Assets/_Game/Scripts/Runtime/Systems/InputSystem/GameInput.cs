@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace BoundfoxStudios.CommunityProject.Input
+namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 {
     public partial class @GameInput : IInputActionCollection2, IDisposable
     {
