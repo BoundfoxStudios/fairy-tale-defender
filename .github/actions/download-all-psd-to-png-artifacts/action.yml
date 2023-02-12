@@ -1,0 +1,13 @@
+name: Download all PSD to PNG artifacts
+description: Downloads all PSD to PNG artifacts to the correct places within the current workflow.  
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: BlenderStarterKit
+        path: docs/content/docs/docs-visual/starter-kit/assets
+    - uses: actions/download-artifact@v3
+      with:
+        name: ColorPalette_Summer.png
+        path: docs/content/docs/docs-visual/colors/assets

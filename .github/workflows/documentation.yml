@@ -24,33 +24,33 @@ env:
   HUGO_YOUTUBE_API_KEY: ${{ secrets.HUGO_YOUTUBE_API_KEY }}
 
 jobs:
+  convert-color-palette-summer:
+    uses: ./.github/workflows/psd-to-png.yml
+    with:
+       ref: ${{ inputs.ref }}
+       input-file: ./resources/ColorPalettes/ColorPalette_Summer.psd
+       output-filename: ColorPalette_Summer.png
+
+  convert-color-palette-summer-description:
+    uses: ./.github/workflows/psd-to-png.yml
+    with:
+       ref: ${{ inputs.ref }}
+       input-file: ./resources/ColorPalettes/ColorPalette_Summer_Description.psd
+       output-filename: ColorPalette_Summer_Description.png
+
   create-blender-starter-kit:
     runs-on: ubuntu-latest
+    needs: [convert-color-palette-summer]
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
       - run: mkdir BlenderStarterKit
       - run: cp ./resources/BlenderStarterKit/*.blend ./BlenderStarterKit
-      - uses: actions/setup-node@v3
+      - uses: actions/download-artifact@v3
         with:
-          node-version: 16
-      - run: npm install @webtoon/psd@0.3.0 pngjs@6.0.0
-      - uses: actions/github-script@v6
-        with:
-          script: |
-            const { default: Psd } = await import('${{ github.workspace }}/node_modules/@webtoon/psd/dist/index.js');
-            const PNG = require('pngjs').PNG;
-            const fs = require('fs');
-
-            const psdData = fs.readFileSync('./resources/ColorPalettes/ColorPalette_Summer.psd');
-            const psdFile = Psd.parse(psdData.buffer);
-
-            const pixelData = await psdFile.composite();
-
-            const png = new PNG({ width: psdFile.width, height: psdFile.height });
-            png.data = Buffer.from(pixelData);
-            png.pack().pipe(fs.createWriteStream('./BlenderStarterKit/ColorPalette_Summer.png'));
+          name: ColorPalette_Summer.png
+          path: ./BlenderStarterKit
       - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*.*
       - uses: actions/upload-artifact@v3
         with:
@@ -59,28 +59,23 @@ jobs:
   
   check-broken-links:
     runs-on: ubuntu-latest
-    needs: [create-blender-starter-kit]
+    needs: [create-blender-starter-kit, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
-      - uses: actions/download-artifact@v3
-        with:
-          name: BlenderStarterKit
-          path: docs/content/docs/docs-visual/starter-kit/assets
+      - uses: ./.github/actions/download-all-psd-to-png-artifacts
       - uses: ./.github/actions/hugo-check-broken-links
 
   deploy:
     runs-on: ubuntu-latest
-    needs: [check-broken-links, create-blender-starter-kit]
+    if: github.event_name != 'workflow_call'
+    needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: actions/download-artifact@v3
-        with:
-          name: BlenderStarterKit
-          path: docs/static
+      - uses: ./.github/actions/download-all-psd-to-png-artifacts
       - uses: actions/setup-node@v3
         with:
           node-version: 16
