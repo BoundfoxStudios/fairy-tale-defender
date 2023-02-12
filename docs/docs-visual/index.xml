@@ -1,0 +1,40 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Visuelle Dokumentation</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/</link><description>Recent content in Visuelle Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/docs-visual/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Blender Starter-Kit</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/starter-kit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/starter-kit/</guid><description>
+&lt;p>Hier findest Du das Blender Starter-Kit.
+Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle aktuellen &lt;a href="../colors/">Farbpaletten&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p></description></item><item><title>Docs: Farbpalette</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</guid><description>
+&lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
+Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
+&lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
+Das sollte mehr als ausreichend sein.&lt;/p>
+&lt;p>Anwenden kannst Du Farben in &lt;a href="https://www.youtube.com/watch?v=8NEmx0cHwoI">Blender via UV Editing&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>Wenn Dir eine Farbe fehlt, schreib uns auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> eine Nachricht, sodass wir die Farbe hinzufügen können.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="sommer">Sommer&lt;/h2>
+&lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
+&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p></description></item><item><title>Docs: Tiles</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</guid><description>
+&lt;h2 id="basis-tile">Basis-Tile&lt;/h2>
+&lt;p>Eine Tile ist der Grundbaustein zum Zusammensetzen des Terrains.
+Es ist ein 1 Meter langer, 1 Meter breiter und 0,2 Meter hoher Quader.&lt;/p>
+&lt;p>Die Höhe, 0,2 Meter, teilt sich auf 0,1 Meter Boden und 0,1 Meter Oberfläche.&lt;/p>
+&lt;p>&lt;img src="assets/Tile.svg" alt="Tile">&lt;/p>
+&lt;p>An diesem Tile orientieren sich alle weiteren Modellierungen.&lt;/p>
+&lt;h2 id="weg-tile">Weg-Tile&lt;/h2>
+&lt;p>Ein Weg-Tile beschreibt ein Tile, auf dem die Gegner laufen.&lt;/p>
+&lt;p>Der Weg ist 0,8 Meter breit.
+Die Seiten sind jeweils 0,1 Meter breit.&lt;/p>
+&lt;p>Auf dem Weg wird über Farbe eine leichte Schattierung erzeugt.
+Hierzu werden seitlich am Weg jeweils 0,1 Meter genutzt.
+Siehe gestrichelte Linie in der Beschreibung &amp;ldquo;Dunkler Boden&amp;rdquo; im Bild.&lt;/p>
+&lt;p>Bitte achte darauf, diese Maße exakt einzuhalten, ansonsten können wir die Tiles im Spiel nicht zusammensetzen.&lt;/p>
+&lt;p>&lt;img src="assets/Way-Tile.svg" alt="Way Tile">&lt;/p>
+&lt;p>So sieht z.B. ein Weg-Tile fertig modelliert und gerendert aus:&lt;/p>
+&lt;p>&lt;img src="assets/Way-Tile.png" alt="Way Tile Render">&lt;/p>
+&lt;h2 id="turm">Turm&lt;/h2>
+&lt;p>Ein Turm wird auf einem Tile platziert.
+Darf maximal 0,9 Meter breit und lang sein, sodass er niemals das ganze Tile einnimmt (sähe sonst komisch aus, wenn man Türme nebeneinander baut).
+Die Höhe kann je nach Turm etwas variieren und sollte auch um 1 Meter herum sein.
+Die Basis vom Turm kann rund oder eckig sein.&lt;/p>
+&lt;p>&lt;img src="assets/TileWithTower.svg" alt="Tile mit Tower">&lt;/p>
+&lt;h2 id="origin">Origin&lt;/h2>
+&lt;p>Der Origin aller Objekte befindet sich unten in der Mitte vom Objekt.&lt;/p></description></item></channel></rss>

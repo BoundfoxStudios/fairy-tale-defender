@@ -238,7 +238,10 @@ In diesem Modus werden:&lt;/p>
 &lt;p>Der Spieler spielt aus einer Vogelperspektive.
 Er hat keinen steuerbaren Charakter.&lt;/p>
 &lt;p>Der Spieler kann die Kamera rein-/rauszoomen, bewegen und auf der Y-Achse drehen.
-Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item><item><title>Docs: Coding Conventions</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</guid><description>
+Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item><item><title>Docs: Blender Starter-Kit</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/starter-kit/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/starter-kit/</guid><description>
+&lt;p>Hier findest Du das Blender Starter-Kit.
+Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle aktuellen &lt;a href="../colors/">Farbpaletten&lt;/a>.&lt;/p>
+&lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p></description></item><item><title>Docs: Coding Conventions</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</guid><description>
 &lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
 &lt;blockquote>
 &lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
@@ -449,7 +452,43 @@ Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
 &lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
 &lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
 Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
-&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</guid><description>
+&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Farbpalette</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</guid><description>
+&lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
+Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
+&lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
+Das sollte mehr als ausreichend sein.&lt;/p>
+&lt;p>Anwenden kannst Du Farben in &lt;a href="https://www.youtube.com/watch?v=8NEmx0cHwoI">Blender via UV Editing&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>Wenn Dir eine Farbe fehlt, schreib uns auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> eine Nachricht, sodass wir die Farbe hinzufügen können.&lt;/p>
+&lt;/blockquote>
+&lt;h2 id="sommer">Sommer&lt;/h2>
+&lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
+&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p></description></item><item><title>Docs: Tiles</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</guid><description>
+&lt;h2 id="basis-tile">Basis-Tile&lt;/h2>
+&lt;p>Eine Tile ist der Grundbaustein zum Zusammensetzen des Terrains.
+Es ist ein 1 Meter langer, 1 Meter breiter und 0,2 Meter hoher Quader.&lt;/p>
+&lt;p>Die Höhe, 0,2 Meter, teilt sich auf 0,1 Meter Boden und 0,1 Meter Oberfläche.&lt;/p>
+&lt;p>&lt;img src="assets/Tile.svg" alt="Tile">&lt;/p>
+&lt;p>An diesem Tile orientieren sich alle weiteren Modellierungen.&lt;/p>
+&lt;h2 id="weg-tile">Weg-Tile&lt;/h2>
+&lt;p>Ein Weg-Tile beschreibt ein Tile, auf dem die Gegner laufen.&lt;/p>
+&lt;p>Der Weg ist 0,8 Meter breit.
+Die Seiten sind jeweils 0,1 Meter breit.&lt;/p>
+&lt;p>Auf dem Weg wird über Farbe eine leichte Schattierung erzeugt.
+Hierzu werden seitlich am Weg jeweils 0,1 Meter genutzt.
+Siehe gestrichelte Linie in der Beschreibung &amp;ldquo;Dunkler Boden&amp;rdquo; im Bild.&lt;/p>
+&lt;p>Bitte achte darauf, diese Maße exakt einzuhalten, ansonsten können wir die Tiles im Spiel nicht zusammensetzen.&lt;/p>
+&lt;p>&lt;img src="assets/Way-Tile.svg" alt="Way Tile">&lt;/p>
+&lt;p>So sieht z.B. ein Weg-Tile fertig modelliert und gerendert aus:&lt;/p>
+&lt;p>&lt;img src="assets/Way-Tile.png" alt="Way Tile Render">&lt;/p>
+&lt;h2 id="turm">Turm&lt;/h2>
+&lt;p>Ein Turm wird auf einem Tile platziert.
+Darf maximal 0,9 Meter breit und lang sein, sodass er niemals das ganze Tile einnimmt (sähe sonst komisch aus, wenn man Türme nebeneinander baut).
+Die Höhe kann je nach Turm etwas variieren und sollte auch um 1 Meter herum sein.
+Die Basis vom Turm kann rund oder eckig sein.&lt;/p>
+&lt;p>&lt;img src="assets/TileWithTower.svg" alt="Tile mit Tower">&lt;/p>
+&lt;h2 id="origin">Origin&lt;/h2>
+&lt;p>Der Origin aller Objekte befindet sich unten in der Mitte vom Objekt.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
@@ -553,7 +592,7 @@ Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-pro
 &lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
 &lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
 &lt;h2 id="implementierung">Implementierung&lt;/h2>
-&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Events/ScriptableObjects">hier&lt;/a>.
+&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects">hier&lt;/a>.
 Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
 &lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
@@ -784,10 +823,10 @@ Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder
 In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
 &lt;p>Der Ablauf ist aktuell wie folgt:&lt;/p>
 &lt;ul>
-&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
-&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="../event-system/">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich im Community-Projekt &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
+&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
+&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="../event-system/">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich im Community-Projekt &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
+&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
 &lt;div class="mermaid">sequenceDiagram
 autonumber
 Spielstart ->> Initialization: Lädt
