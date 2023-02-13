@@ -1,6 +1,7 @@
 name: Repository Visualization
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'
 
@@ -23,7 +24,7 @@ jobs:
           logo_url: docs/static/bfs-head.png
           gource_file_filter: '\.meta$'
 
-      - uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
           node-version: 16
       - run: npm install vimeo
