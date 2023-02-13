@@ -1,9 +1,13 @@
 ---
-title: Blender Starter-Kit
-linkTitle: Blender Starter-Kit
+title: Blender
+linkTitle: Blender
 weight: 100
-description: Starter-Kit für Blender.
+description: Informationen zur Modellierung in Blender.
 ---
+
+Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen musst.
+
+## Blender Starter-Kit
 
 Hier findest Du das Blender Starter-Kit.
 Enthalten ist einmal das [Basis-Tile-Set](../tiles/) und alle aktuellen [Farbpaletten](../colors/).
