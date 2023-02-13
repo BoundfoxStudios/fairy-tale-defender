@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 0
         
-      - uses: nbprojekt/gource-action@v1
+      - uses: nbprojekt/gource-action@v1.2.1
         with:
           gource_title: Community-Projekt
           gource_resolution: 1440p
