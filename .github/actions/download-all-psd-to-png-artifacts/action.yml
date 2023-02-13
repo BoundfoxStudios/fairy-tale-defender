@@ -6,7 +6,7 @@ runs:
     - uses: actions/download-artifact@v3
       with:
         name: BlenderStarterKit
-        path: docs/content/docs/docs-visual/starter-kit/assets
+        path: docs/content/docs/docs-visual/blender/assets
     - uses: actions/download-artifact@v3
       with:
         name: ColorPalette_Summer_Description.png
