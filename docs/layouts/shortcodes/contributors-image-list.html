@@ -19,6 +19,7 @@
           {{ else if eq . "maintenance" }}<span title="Maintenance">🚧</span>
           {{ else if eq . "projectManagement" }}<span title="Projektmanagement">📆</span>
           {{ else if eq . "review" }}<span title="Reviews">👀</span>
+          {{ else if eq . "question"}}<span title="Answers questions">💬</span>
           {{ else }}
           {{ . }}
           {{ end }}
