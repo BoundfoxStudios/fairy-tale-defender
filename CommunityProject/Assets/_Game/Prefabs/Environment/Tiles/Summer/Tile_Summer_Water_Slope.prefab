@@ -62,6 +62,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tile_Summer_Water_Slope
       objectReference: {fileID: 0}
+    - target: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8759677533206482384, guid: 6d111641095844beea5b3c09bd3ae23c,
         type: 3}
       propertyPath: m_RootOrder
@@ -124,7 +129,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7705279250581849365}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5136225813992592278}
   m_SourcePrefab: {fileID: 100100000, guid: 6d111641095844beea5b3c09bd3ae23c, type: 3}
 --- !u!4 &3663397916530557237 stripped
 Transform:
@@ -132,3 +141,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7882460269830965434}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7387967598165104097 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+    type: 3}
+  m_PrefabInstance: {fileID: 7882460269830965434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5136225813992592278
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7387967598165104097}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 0.4136554, z: 1}
+  m_Center: {x: 0, y: 0.20502901, z: 0}
