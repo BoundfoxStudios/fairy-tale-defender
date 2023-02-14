@@ -22,7 +22,7 @@ jobs:
           gource_auto_skip_seconds: 0.1
           gource_seconds_per_day: 0.5
           logo_url: docs/static/bfs-head.png
-          gource_file_filter: '\.meta$'
+          gource_file_filter: \.meta$
 
       - uses: actions/setup-node@v3
         with:
