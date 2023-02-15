@@ -9,6 +9,10 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(SceneLoader))]
 	public class SceneLoader : MonoBehaviour
 	{
+		[field: Header("References")]
+		[field: SerializeField]
+		private GameplaySceneSO GameplayScene { get; set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
@@ -60,6 +64,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 			}
 
 			await UnloadPreviousSceneAsync(loadSceneData);
+			await HandleGameplaySceneAsync(loadSceneData.Scene);
 
 			var sceneInstance = await loadSceneData.Scene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive, true, 0);
 			_currentlyLoadedScene = loadSceneData.Scene;
@@ -74,6 +79,38 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 			StartScene();
 		}
 
+		private async UniTask HandleGameplaySceneAsync(SceneSO scene)
+		{
+			switch (scene)
+			{
+				case MenuSO:
+					// Unload the gameplay scene when we're switching to a menu.
+					// Also don't wait for it to be unloaded so we can switch faster to the menu.
+					UnloadGameplaySceneAsync().Forget();
+					break;
+
+				case LevelSO:
+					await LoadGameplaySceneAsync();
+					break;
+			}
+		}
+
+		private async UniTask LoadGameplaySceneAsync()
+		{
+			if (!GameplayScene.SceneReference.IsValid())
+			{
+				await GameplayScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+			}
+		}
+
+		private async UniTask UnloadGameplaySceneAsync()
+		{
+			if (GameplayScene.SceneReference.IsValid())
+			{
+				await GameplayScene.SceneReference.UnLoadScene();
+			}
+		}
+
 		private void InitializeScene(Scene scene)
 		{
 			SceneManager.SetActiveScene(scene);
@@ -82,6 +119,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 
 		private void StartScene()
 		{
+			Time.timeScale = 1;
 			SceneReadyEventChannel.Raise();
 		}
 
@@ -92,7 +130,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 				return;
 			}
 
-			if (_currentlyLoadedScene.SceneReference.OperationHandle.IsValid())
+			if (_currentlyLoadedScene.SceneReference.IsValid())
 			{
 				var unloadSceneOperation = _currentlyLoadedScene.SceneReference.UnLoadScene();
 
@@ -105,18 +143,22 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 			else
 			{
 				// This will happen on editor cold startup and the player switches to another scene.
-#pragma warning disable CS4014
-				// Disable the warning that we're not awaiting an async operation here, we simply don't care. :)
-				SceneManager.UnloadSceneAsync(_currentlyLoadedScene.SceneReference.editorAsset.name);
-#pragma warning restore CS4014
+				SceneManager.UnloadSceneAsync(_currentlyLoadedScene.SceneReference.editorAsset.name).ToUniTask().Forget();
 			}
 #endif
 		}
 
 #if UNITY_EDITOR
-		private void EditorColdStartup(LoadSceneEventChannelSO.EventArgs args)
+		private void EditorColdStartup(LoadSceneEventChannelSO.EventArgs args) => EditorColdStartupAsync(args).Forget();
+
+		private async UniTaskVoid EditorColdStartupAsync(LoadSceneEventChannelSO.EventArgs args)
 		{
 			_currentlyLoadedScene = args.Scene;
+
+			if (_currentlyLoadedScene is LevelSO)
+			{
+				await GameplayScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+			}
 		}
 #endif
 
