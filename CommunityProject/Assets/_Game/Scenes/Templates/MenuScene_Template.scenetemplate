@@ -15,8 +15,8 @@ MonoBehaviour:
   templateScene: {fileID: 102900000, guid: 81bfd1aeb7a1d4f28b197f9a025b3791, type: 3}
   templateName: Menu Szene
   description: "Diese Vorlage ist f\xFCr neue FullScreen Men\xFCs gedacht (z.B. MainMenu,
-    Credits, Optionen, ...).\n\nBitte darauf achten, auch ein MenuSceneSO anzulegen
-    und mit dem EditorColdStartup zu verkn\xFCpfen."
+    Credits, Optionen, ...).\n\nBitte darauf achten, auch ein MenuSO anzulegen und
+    mit dem EditorColdStartup zu verkn\xFCpfen."
   preview: {fileID: 0}
   dependencies:
   - dependency: {fileID: 7329999705680356850, guid: 42707aee6922e4159909253356ec706a,
@@ -35,4 +35,5 @@ MonoBehaviour:
       type: 3}
     instantiationMode: 1
   templatePipeline: {fileID: 0}
+  badge: {fileID: 0}
   addToDefaults: 1

@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
 {
 	/// <summary>
-	/// Event that can be used whenever a scene needs to be loaded, e.g. <see cref="MenuSceneSO"/>.
+	/// Event that can be used whenever a scene needs to be loaded, e.g. <see cref="MenuSO"/>.
 	/// </summary>
 	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Load Scene Event Channel")]
 	public class LoadSceneEventChannelSO : EventChannelSO<LoadSceneEventChannelSO.EventArgs>

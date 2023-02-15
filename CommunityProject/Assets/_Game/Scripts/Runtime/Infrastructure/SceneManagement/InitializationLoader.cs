@@ -21,7 +21,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene { get; set; } = default!;
 
 		[field: SerializeField]
-		private AssetReferenceT<MenuSceneSO> MainMenuScene { get; set; } = default!;
+		private AssetReferenceT<MenuSO> MainMenuScene { get; set; } = default!;
 
 		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
