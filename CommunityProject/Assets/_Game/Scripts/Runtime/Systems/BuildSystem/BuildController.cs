@@ -144,7 +144,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			var needsMaterialSwap = _buildContext.PreviousLayerMask != layerMask;
 			_buildContext.PreviousLayerMask = layerMask;
 
-			if (Physics.Linecast(tilePosition + Vector3.up, tilePosition, out _, ObstaclesLayerMask))
+			// We create a line cast that casts from 10 units above down to the tile position, so we can hit a collider's
+			// front face. No Tower will be 10 units tall, so that should be safe (famous last words...:))
+			if (Physics.Linecast(tilePosition + Vector3.up * 10, tilePosition + Vector3.down, out _, ObstaclesLayerMask))
 			{
 				if (needsMaterialSwap)
 				{
