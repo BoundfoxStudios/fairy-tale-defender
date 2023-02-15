@@ -1,3 +1,5 @@
+using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
@@ -10,21 +12,35 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 		private bool _openAdditive;
 		private Vector2 _scrollPosition;
 
+		private readonly AssetLocator<AllLevelPacksSO> _allLevelPacksLocator =
+			new("ScriptableObjects/Levels/AllLevelPacks.asset");
+
+		private AllLevelPacksSO? _allLevelPacks;
+
 		[MenuItem(Constants.MenuNames.LevelSelection, priority = 10000)]
 		private static void ShowWindow()
 		{
 			var window = GetWindow<LevelSelectionEditorWindow>();
-			window.titleContent = new GUIContent("Level Selection");
+			window.titleContent = new("Level Selection");
 			window.Show();
+		}
+
+		private void OnEnable()
+		{
+			_allLevelPacksLocator.SafeInvokeAsync(allLevelPacks =>
+			{
+				_allLevelPacks = allLevelPacks;
+				Repaint();
+			}).Forget();
 		}
 
 		private void OnGUI()
 		{
 			_openAdditive = IsControlPressed();
 			EditorGUILayout.LabelField(
-			  _openAdditive
-				? "Will open scenes additively."
-				: "Press control to open scenes additively."
+				_openAdditive
+					? "Will open scenes additively."
+					: "Press control to open scenes additively."
 			);
 
 			_scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
@@ -44,7 +60,67 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 		{
 			RenderMenuScenes();
 			RenderManagerScenes();
+			RenderLevelPacks();
 			RenderTestScenes();
+		}
+
+		private void RenderLevelPacks()
+		{
+			if (_allLevelPacks is null)
+			{
+				EditorGUILayout.HelpBox("AllLevelPacks could not be located. Check console for potential errors",
+					MessageType.Warning);
+				return;
+			}
+
+			foreach (var levelPack in _allLevelPacks.LevelPacks)
+			{
+				RenderLevelPack(levelPack);
+			}
+		}
+
+		private void RenderLevelPack(LevelPackSO levelPack)
+		{
+			var show = BeginFoldoutGroup(levelPack.name);
+
+			if (show)
+			{
+				var needsToEndHorizontal = false;
+
+				var allLevels = levelPack.Levels;
+				for (var index = 0; index < allLevels.Length; index++)
+				{
+					if (index % 3 == 0)
+					{
+						needsToEndHorizontal = true;
+						EditorGUILayout.BeginHorizontal();
+					}
+
+					var level = allLevels[index];
+
+					EditorGUI.BeginDisabledGroup(SceneManager.GetActiveScene().name == level.SceneReference.editorAsset.name);
+
+					if (OpenSceneButton(level.name, AssetDatabase.GetAssetPath(level.SceneReference.editorAsset)))
+					{
+						Selection.activeObject = level;
+					}
+
+					EditorGUI.EndDisabledGroup();
+
+					if (index % 3 == 2)
+					{
+						needsToEndHorizontal = false;
+						EditorGUILayout.EndHorizontal();
+					}
+				}
+
+				if (needsToEndHorizontal)
+				{
+					EditorGUILayout.EndHorizontal();
+				}
+			}
+
+			EndFoldoutGroup(levelPack.name, show);
 		}
 
 		private void RenderTestScenes()
@@ -53,11 +129,13 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 
 			if (show)
 			{
-				EditorGUILayout.HelpBox("This scenes are only for testing some stuff until we have real game play scenes.", MessageType.Info);
+				EditorGUILayout.HelpBox("This scenes are only for testing some stuff until we have real game play scenes.",
+					MessageType.Info);
 				EditorGUILayout.BeginHorizontal();
-				OpenSceneButton("Level", "Levels/Level_Test");
+				OpenSceneByNameButton("Level", "Levels/Level_Test");
 				EditorGUILayout.EndHorizontal();
 			}
+
 			EndFoldoutGroup("Tests", show);
 		}
 
@@ -67,10 +145,11 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			if (show)
 			{
 				EditorGUILayout.BeginHorizontal();
-				OpenSceneButton("MainMenu", "Menus/MainMenu");
-				OpenSceneButton("Credits", "Menus/Credits");
+				OpenSceneByNameButton("MainMenu", "Menus/MainMenu");
+				OpenSceneByNameButton("Credits", "Menus/Credits");
 				EditorGUILayout.EndHorizontal();
 			}
+
 			EndFoldoutGroup("Menus", show);
 		}
 
@@ -80,10 +159,11 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			if (show)
 			{
 				EditorGUILayout.BeginHorizontal();
-				OpenSceneButton("Initialization", "Managers/Initialization");
-				OpenSceneButton("PersistentManagers", "Managers/PersistentManagers");
+				OpenSceneByNameButton("Initialization", "Managers/Initialization");
+				OpenSceneByNameButton("PersistentManagers", "Managers/PersistentManagers");
 				EditorGUILayout.EndHorizontal();
 			}
+
 			EndFoldoutGroup("Managers", show);
 		}
 
@@ -105,19 +185,25 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			EditorPrefs.SetBool($"foldout_{groupName}", show);
 		}
 
-		private void OpenSceneButton(string label, string sceneName)
+		private bool OpenSceneByNameButton(string label, string sceneName) =>
+			OpenSceneButton(label, $"Assets/_Game/Scenes/{sceneName}.unity");
+
+		private bool OpenSceneButton(string label, string sceneFile)
 		{
-			var sceneFile = $"Assets/_Game/Scenes/{sceneName}.unity";
 			EditorGUI.BeginDisabledGroup(IsSceneOpen(sceneFile));
 			if (GUILayout.Button(label))
 			{
 				if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
 				{
-					return;
+					return false;
 				}
+
 				EditorSceneManager.OpenScene(sceneFile, _openAdditive ? OpenSceneMode.Additive : OpenSceneMode.Single);
+				return true;
 			}
+
 			EditorGUI.EndDisabledGroup();
+			return false;
 		}
 
 		private bool IsSceneOpen(string sceneFile)
@@ -129,6 +215,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 					return true;
 				}
 			}
+
 			return false;
 		}
 	}
