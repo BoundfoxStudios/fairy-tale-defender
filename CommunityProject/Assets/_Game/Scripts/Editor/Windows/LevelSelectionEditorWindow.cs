@@ -13,7 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 		private Vector2 _scrollPosition;
 
 		private readonly AssetLocator<AllLevelPacksSO> _allLevelPacksLocator =
-			new("ScriptableObjects/Levels/AllLevelPacks.asset");
+			new("ScriptableObjects/Scenes/Levels/AllLevelPacks.asset");
 
 		private AllLevelPacksSO? _allLevelPacks;
 
@@ -161,6 +161,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneByNameButton("Initialization", "Managers/Initialization");
 				OpenSceneByNameButton("PersistentManagers", "Managers/PersistentManagers");
+				OpenSceneByNameButton("Gameplay", "Managers/Gameplay");
 				EditorGUILayout.EndHorizontal();
 			}
 
@@ -185,7 +186,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 			EditorPrefs.SetBool($"foldout_{groupName}", show);
 		}
 
-		private bool OpenSceneByNameButton(string label, string sceneName) =>
+		private void OpenSceneByNameButton(string label, string sceneName) =>
 			OpenSceneButton(label, $"Assets/_Game/Scenes/{sceneName}.unity");
 
 		private bool OpenSceneButton(string label, string sceneFile)
