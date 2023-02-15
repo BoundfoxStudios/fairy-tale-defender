@@ -21,14 +21,22 @@ MonoBehaviour:
     m_Address: Scenes/Managers/PersistentManagers.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 2fd65329b2a594e478bacdbc6c82002f
     m_Address: Scenes/Menus/MainMenu.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9f8586856d63898b8a1c059d2a07fac0
     m_Address: Assets/_Game/Scenes/Menus/Credits.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db6b682dfb5b6466fbb3131fcc218802
+    m_Address: Assets/_Game/Scenes/Levels/LittleRedRidingHood/Level_1.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
