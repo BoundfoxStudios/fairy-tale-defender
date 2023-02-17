@@ -1,13 +1,12 @@
 using System;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects
 {
-	public abstract class TargetLocator<T> : ScriptableObject
-		where T : WeaponSO
+	public abstract class TargetLocatorSO<T> : ScriptableObject
+		where T : EffectiveWeaponDefinition
 	{
 		[field: SerializeField]
 		private LayerMask EnemyLayerMask { get; set; }
