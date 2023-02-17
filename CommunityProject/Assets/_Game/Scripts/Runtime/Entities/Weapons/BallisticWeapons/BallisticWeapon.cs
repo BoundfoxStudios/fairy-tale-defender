@@ -14,7 +14,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
 	/// Class for all ballistic weapons, like a catapult.
 	/// </summary>
 	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(BallisticWeapon))]
-	public class BallisticWeapon : Weapon<BallisticWeaponSO>
+	public class BallisticWeapon : Weapon<BallisticWeaponSO, BallisticTargetLocatorSO, EffectiveBallisticWeaponDefinition>
 	{
 		[field: SerializeField]
 		public ArmSettings Arm { get; private set; } = default!;

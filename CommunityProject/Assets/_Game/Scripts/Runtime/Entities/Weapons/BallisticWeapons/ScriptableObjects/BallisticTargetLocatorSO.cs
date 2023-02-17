@@ -1,19 +1,15 @@
+using System;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects
 {
-	[CreateAssetMenu(menuName = Constants.MenuNames.Targeting + "/" + nameof(BallisticTargetLocator))]
-	public class BallisticTargetLocator : TargetLocator<BallisticWeaponSO>
+	[CreateAssetMenu(menuName = Constants.MenuNames.Targeting + "/" + nameof(BallisticTargetLocatorSO))]
+	public class BallisticTargetLocatorSO : TargetLocatorSO<EffectiveBallisticWeaponDefinition>
 	{
-		[field: SerializeField]
-		[field: Tooltip("Specifies how much further a target can be reached depending on the height of the weapon.")]
-		public float HeightToRangeFactor { get; private set; } = 1.01f;
-
-		public override TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType, BallisticWeaponSO weaponDefinition)
+		public override TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType, EffectiveBallisticWeaponDefinition weaponDefinition)
 		{
-			// TODO: Calculate in the HeightToRangeFactor, for this we also need the y-position of the weapon minus the tower's height.
 			var targets = LocateAllInRangeNonAlloc(weaponPosition, weaponDefinition.Range.Maximum);
 			var newSize = 0;
 
@@ -35,7 +31,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.Scr
 		}
 
 		public override bool IsInAttackRange(Vector3 weaponPosition, Vector3 targetPosition, Vector3 towerForward,
-			BallisticWeaponSO weaponDefinition) =>
+			EffectiveBallisticWeaponDefinition weaponDefinition) =>
 			BallisticCalculationUtilities.IsTargetInAttackSegment(weaponPosition, targetPosition, towerForward,
 				weaponDefinition.Range, weaponDefinition.AttackAngle);
 	}

@@ -11,20 +11,28 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	[SelectionBase]
-	public abstract class Weapon<T> : MonoBehaviour
-		where T : WeaponSO
+	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour
+		where TWeaponSO : WeaponSO
+		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
+		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
 	{
 		[field: SerializeField]
-		public T WeaponDefinition { get; private set; } = default!;
+		public TWeaponSO WeaponDefinition { get; private set; } = default!;
 
 		[SerializeField]
-		protected TargetLocator<T> TargetLocator = default!;
+		protected TTargetLocatorSO TargetLocator = default!;
+
+		[SerializeField]
+		protected EffectiveWeaponCalculatorSO<TWeaponSO, TEffectiveWeaponDefinition> EffectiveWeaponCalculatorSO = default!;
 
 		[field: SerializeField]
 		public Tower Tower { get; private set; } = default!;
 
 		[field: SerializeField]
 		public TargetType TargetType { get; private set; }
+
+		public TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
+			_effectiveWeaponDefinition ??= CalculateEffectiveWeaponDefinition();
 
 		/// <summary>
 		/// Launches the actual projectile to the target.
@@ -47,6 +55,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		/// </summary>
 		protected abstract void TrackTarget(TargetPoint target);
 
+		private TEffectiveWeaponDefinition? _effectiveWeaponDefinition;
 		private TargetPoint? _currentTarget;
 		private Vector3 _towerForward;
 
@@ -55,6 +64,12 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 			_towerForward = Tower.transform.forward;
 
 			StartLaunchSequenceAsync().Forget();
+		}
+
+		public TEffectiveWeaponDefinition CalculateEffectiveWeaponDefinition()
+		{
+			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, transform.position);
+			return _effectiveWeaponDefinition;
 		}
 
 		protected virtual void Update()
@@ -77,11 +92,11 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 
 		private bool IsTargetInRangeAndAlive(TargetPoint? target) =>
 			target is not null && target && TargetLocator.IsInAttackRange(transform.position, target.transform.position, _towerForward,
-				WeaponDefinition);
+				EffectiveWeaponDefinition);
 
 		private bool TryAcquireTarget([NotNullWhen(true)] out TargetPoint? currentTarget)
 		{
-			currentTarget = TargetLocator.Locate(transform.position, _towerForward, TargetType, WeaponDefinition);
+			currentTarget = TargetLocator.Locate(transform.position, _towerForward, TargetType, EffectiveWeaponDefinition);
 			return currentTarget;
 		}
 

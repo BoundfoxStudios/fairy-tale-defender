@@ -22,14 +22,14 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 
 			// If we're viewing the weapon prefab, we may not have a tower
 			var forward = ballisticWeapon.Tower ? ballisticWeapon.Tower.transform.forward : weaponTransform.forward;
-
+			var effectiveWeaponDefinition = ballisticWeapon.CalculateEffectiveWeaponDefinition();
 			UnityGizmos.color = new(1, 0.976f, 0.102f, 0.5f);
 			BallisticGizmoHelpers.DrawAttackSegment(
 				weaponTransform.position,
 				forward,
-				ballisticWeapon.WeaponDefinition.AttackAngle,
-				ballisticWeapon.WeaponDefinition.Range.Maximum,
-				ballisticWeapon.WeaponDefinition.Range.Minimum
+				effectiveWeaponDefinition.AttackAngle,
+				effectiveWeaponDefinition.Range.Maximum,
+				effectiveWeaponDefinition.Range.Minimum
 			);
 		}
 
