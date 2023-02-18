@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b257320d443ed546934124305db166c, type: 3}
   m_Name: InputReader
   m_EditorClassIdentifier: 
+  <BuildSystemActions>k__BackingField: {fileID: 11400000, guid: 182a8397742a34d12a2c863279da76bd,
+    type: 2}
+  <GameplayActions>k__BackingField: {fileID: 11400000, guid: 730d40e9be9784625b732523096bbd17,
+    type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}
-  <BuildSystemActions>k__BackingField: {fileID: 11400000, guid: 182a8397742a34d12a2c863279da76bd,
-    type: 2}
-  <GameplayActions>k__BackingField: {fileID: 11400000, guid: 730d40e9be9784625b732523096bbd17,
+  <GameplayStartEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
     type: 2}
