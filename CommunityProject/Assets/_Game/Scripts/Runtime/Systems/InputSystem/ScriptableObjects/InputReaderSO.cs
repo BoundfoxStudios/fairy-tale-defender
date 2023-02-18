@@ -8,6 +8,15 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
 	public class InputReaderSO : ScriptableObject
 	{
+		[field: Header("References")]
+		[field: SerializeField]
+		public BuildSystemActionsSO BuildSystemActions { get; private set; } = default!;
+
+		[field: SerializeField]
+		public GameplayActionsSO GameplayActions { get; private set; } = default!;
+
+
+		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
 
@@ -15,10 +24,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		public BuildSystemActionsSO BuildSystemActions { get; private set; } = default!;
-
-		[field: SerializeField]
-		public GameplayActionsSO GameplayActions { get; private set; } = default!;
+		private VoidEventChannelSO GameplayStartEventChannel { get; set; } = default!;
 
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
@@ -39,6 +45,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
 			ExitBuildModeEventChannel.Raised += ExitBuildMode;
+			GameplayStartEventChannel.Raised += GameplayStart;
 		}
 
 		private void EnterBuildMode(BuildableEventChannelSO.EventArgs args)
@@ -55,8 +62,14 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		{
 			EnterBuildModeEventChannel.Raised -= EnterBuildMode;
 			ExitBuildModeEventChannel.Raised -= ExitBuildMode;
+			GameplayStartEventChannel.Raised -= GameplayStart;
 
 			DisableAllInput();
+		}
+
+		private void GameplayStart()
+		{
+			EnableGameplayInput();
 		}
 
 		public void DisableAllInput()

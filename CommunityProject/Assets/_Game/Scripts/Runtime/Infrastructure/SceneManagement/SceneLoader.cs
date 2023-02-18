@@ -159,6 +159,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 			{
 				await GameplayScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
 			}
+
+			StartScene();
 		}
 #endif
 

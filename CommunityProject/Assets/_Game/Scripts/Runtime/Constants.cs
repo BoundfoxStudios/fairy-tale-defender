@@ -18,6 +18,7 @@ namespace BoundfoxStudios.CommunityProject
 			public const string Weapons = MenuName + "/Weapons";
 			public const string Targeting = Weapons + "/Targeting";
 			public const string CameraSystem = Weapons + "/Camera System";
+			public const string GameplaySystem = Weapons + "/Gameplay System";
 			public const string RuntimeAnchors = MenuName + "/Runtime Anchors";
 		}
 	}
