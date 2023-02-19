@@ -451,6 +451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <GameplayScene>k__BackingField: {fileID: 11400000, guid: b810e2dfa250d4396b42d2df9778eb3c,
     type: 2}
+  <LevelRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: b12e537301c554260b06a1dec1263463,
+    type: 2}
   <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
     type: 2}
   <NotifyEditorColdStartupEventChannel>k__BackingField: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,

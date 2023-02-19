@@ -5,6 +5,7 @@ using BoundfoxStudios.CommunityProject.Entities.Buildings.Towers;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -91,7 +92,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		}
 
 		private bool IsTargetInRangeAndAlive(TargetPoint? target) =>
-			target is not null && target && TargetLocator.IsInAttackRange(transform.position, target.transform.position, _towerForward,
+			target.Exists() && TargetLocator.IsInAttackRange(transform.position, target.transform.position, _towerForward,
 				EffectiveWeaponDefinition);
 
 		private bool TryAcquireTarget([NotNullWhen(true)] out TargetPoint? currentTarget)

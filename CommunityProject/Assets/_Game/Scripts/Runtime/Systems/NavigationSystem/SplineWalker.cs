@@ -1,4 +1,4 @@
-using BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders;
+using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -12,10 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 		private Rigidbody Rigidbody { get; set; } = default!;
 
 		[field: SerializeField]
-		public SplineContainer Container { get; set; } = default!;
-
-		// TODO: This will later be set by an SO
-		public float Speed = 1;
+		public WaySplineRuntimeAnchorSO WaySplineRuntimeAnchor { get; set; } = default!;
 
 		/// <summary>
 		/// Overall duration it will take to traverse <see cref="_spline"/>
@@ -28,15 +25,14 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 		private float _normalizedTime;
 
 		private float _elapsedTime;
-
-		// TODO: Later, the Spline will be set by the WaveSpawner
+		private float _movementSpeed = 1;
 		private ISpline _spline = default!;
 
-		private void Awake()
+		public void Initialize(ISpline spline, float movementSpeed)
 		{
-			var pathProvider = new SplinePathProvider();
-			_spline = pathProvider.CreatePath(Container, new RandomSplineLinkDecisionMaker());
-			_duration = _spline.GetLength() / Speed;
+			_spline = spline;
+			_duration = spline.GetLength() / _movementSpeed;
+			_movementSpeed = movementSpeed;
 		}
 
 		private void CalculateNormalizedTime(float deltaTime)
@@ -51,11 +47,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 
 		private void FixedUpdate()
 		{
-			CalculateNormalizedTime(Time.deltaTime);
+			CalculateNormalizedTime(Time.deltaTime * _movementSpeed);
 
-			Container.Evaluate(_spline, _normalizedTime, out var position, out var tangent, out _);
-
-			var rotation = Quaternion.LookRotation(tangent);
+			var (position, rotation) = EvaluateSpline(_normalizedTime);
 
 			Rigidbody.Move(position, rotation);
 
@@ -63,6 +57,15 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 			{
 				Destroy(gameObject);
 			}
+		}
+
+		private (float3 Position, Quaternion Tangent) EvaluateSpline(float normalizedTime)
+		{
+			WaySplineRuntimeAnchor.ItemSafe.Evaluate(_spline, normalizedTime, out var position, out var tangent, out _);
+
+			var rotation = tangent.Equals(float3.zero) ? Quaternion.identity : Quaternion.LookRotation(tangent);
+
+			return (position, rotation);
 		}
 	}
 }

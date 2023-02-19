@@ -1,7 +1,7 @@
 ---
-title: Event-System
-linkTitle: Event-System
-description: Dokumentation des Event-Systems.
+title: Erklärung Event-System
+linkTitle: Erklärung
+description: Erklärung zu Event-Systemen.
 ---
 
 [ [Boundfox YouTube Tutorial](https://www.youtube.com/watch?v=qqzZZfgtQyU&list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&index=2) ]
