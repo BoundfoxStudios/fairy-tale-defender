@@ -17,3 +17,17 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Waves>k__BackingField: {fileID: 11400000, guid: 14ea98d944de3434ab04cdfdd7b5eecd,
+    type: 2}
+  references:
+    version: 2
+    RefIds: []

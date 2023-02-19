@@ -1,4 +1,5 @@
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -12,6 +13,9 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 		[field: Header("References")]
 		[field: SerializeField]
 		private GameplaySceneSO GameplayScene { get; set; } = default!;
+
+		[field: SerializeField]
+		private LevelRuntimeAnchorSO LevelRuntimeAnchor { get; set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
@@ -58,6 +62,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 
 		private async UniTaskVoid LoadSceneAsync(LoadSceneData loadSceneData)
 		{
+			LevelRuntimeAnchor.Item = null;
+
 			if (loadSceneData.ShowLoadingScreen)
 			{
 				ToggleLoadingScreenEventChannel.Raise(true);
@@ -89,7 +95,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 					UnloadGameplaySceneAsync().Forget();
 					break;
 
-				case LevelSO:
+				case LevelSO level:
+					LevelRuntimeAnchor.Item = level;
 					await LoadGameplaySceneAsync();
 					break;
 			}
@@ -155,8 +162,9 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
 		{
 			_currentlyLoadedScene = args.Scene;
 
-			if (_currentlyLoadedScene is LevelSO)
+			if (_currentlyLoadedScene is LevelSO level)
 			{
+				LevelRuntimeAnchor.Item = level;
 				await GameplayScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
 			}
 

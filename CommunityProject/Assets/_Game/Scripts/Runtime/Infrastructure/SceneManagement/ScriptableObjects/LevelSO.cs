@@ -1,3 +1,4 @@
+using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Localization;
 
@@ -11,5 +12,8 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.Script
 	{
 		[field: SerializeField]
 		public LocalizedString Name { get; private set; } = default!;
+
+		[field: SerializeField]
+		public WavesSO Waves { get; private set; } = default!;
 	}
 }
