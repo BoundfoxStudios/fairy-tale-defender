@@ -1,4 +1,4 @@
-﻿using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
 {

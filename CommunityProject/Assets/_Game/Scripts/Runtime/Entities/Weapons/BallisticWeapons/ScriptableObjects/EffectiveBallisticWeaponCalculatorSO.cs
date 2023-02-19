@@ -1,4 +1,4 @@
-﻿using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 
