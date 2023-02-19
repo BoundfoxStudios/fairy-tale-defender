@@ -1,4 +1,4 @@
-﻿namespace BoundfoxStudios.CommunityProject.Entities.Weapons
+namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	public abstract class EffectiveWeaponDefinition
 	{
