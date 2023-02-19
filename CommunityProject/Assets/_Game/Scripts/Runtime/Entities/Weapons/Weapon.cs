@@ -31,7 +31,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		[field: SerializeField]
 		public TargetType TargetType { get; private set; }
 
-		public TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
+		private TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
 			_effectiveWeaponDefinition ??= CalculateEffectiveWeaponDefinition();
 
 		/// <summary>
@@ -68,7 +68,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 
 		public TEffectiveWeaponDefinition CalculateEffectiveWeaponDefinition()
 		{
-			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, transform.position);
+			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, Tower.transform.position);
 			return _effectiveWeaponDefinition;
 		}
 

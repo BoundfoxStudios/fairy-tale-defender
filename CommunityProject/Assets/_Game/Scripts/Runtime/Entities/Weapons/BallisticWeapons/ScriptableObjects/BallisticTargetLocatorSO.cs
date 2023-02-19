@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects;
 using UnityEngine;
