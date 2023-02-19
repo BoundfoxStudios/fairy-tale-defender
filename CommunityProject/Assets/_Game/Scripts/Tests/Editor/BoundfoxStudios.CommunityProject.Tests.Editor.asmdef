@@ -7,7 +7,8 @@
         "BoundfoxStudios.CommunityProject",
         "BoundfoxStudios.FluentAssertions",
         "Unity.Mathematics",
-        "Unity.Splines"
+        "Unity.Splines",
+        "BoundfoxStudios.CommunityProject.Editor"
     ],
     "includePlatforms": [
         "Editor"
