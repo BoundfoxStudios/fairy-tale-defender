@@ -137,14 +137,14 @@ jobs:
           target-platform: ${{ matrix.target-platform }}
       - name: write manifest.json
         if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
-        uses: BoundfoxStudios/action-write-file@v1
+        uses: DamianReeves/write-file-action@v1.2
         with:
          path: ${{ inputs.project-path }}/Assets/_Game/Build/manifest.json
          write-mode: overwrite
          contents: ${{ needs.manifest.outputs.content }}
       - name: write contributors.json
         if: github.ref == 'refs/heads/develop' || github.ref == 'refs/heads/main'
-        uses: BoundfoxStudios/action-write-file@v1
+        uses: DamianReeves/write-file-action@v1.2
         with:
          path: ${{ inputs.project-path }}/Assets/_Game/Build/contributors.json
          write-mode: overwrite
