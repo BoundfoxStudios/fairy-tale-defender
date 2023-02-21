@@ -83,41 +83,44 @@ namespace BoundfoxStudios.CommunityProject.Editor.Windows
 		{
 			var show = BeginFoldoutGroup(levelPack.name);
 
-			if (show)
+			if (!show)
 			{
-				var needsToEndHorizontal = false;
+				EndFoldoutGroup(levelPack.name, show);
+				return;
+			}
 
-				var allLevels = levelPack.Levels;
-				for (var index = 0; index < allLevels.Length; index++)
+			var needsToEndHorizontal = false;
+
+			var allLevels = levelPack.Levels;
+			for (var index = 0; index < allLevels.Length; index++)
+			{
+				if (index % 3 == 0)
 				{
-					if (index % 3 == 0)
-					{
-						needsToEndHorizontal = true;
-						EditorGUILayout.BeginHorizontal();
-					}
-
-					var level = allLevels[index];
-
-					EditorGUI.BeginDisabledGroup(SceneManager.GetActiveScene().name == level.SceneReference.editorAsset.name);
-
-					if (OpenSceneButton(level.name, AssetDatabase.GetAssetPath(level.SceneReference.editorAsset)))
-					{
-						Selection.activeObject = level;
-					}
-
-					EditorGUI.EndDisabledGroup();
-
-					if (index % 3 == 2)
-					{
-						needsToEndHorizontal = false;
-						EditorGUILayout.EndHorizontal();
-					}
+					needsToEndHorizontal = true;
+					EditorGUILayout.BeginHorizontal();
 				}
 
-				if (needsToEndHorizontal)
+				var level = allLevels[index];
+
+				EditorGUI.BeginDisabledGroup(SceneManager.GetActiveScene().name == level.SceneReference.editorAsset.name);
+
+				if (OpenSceneButton(level.name, AssetDatabase.GetAssetPath(level.SceneReference.editorAsset)))
 				{
+					Selection.activeObject = level;
+				}
+
+				EditorGUI.EndDisabledGroup();
+
+				if (index % 3 == 2)
+				{
+					needsToEndHorizontal = false;
 					EditorGUILayout.EndHorizontal();
 				}
+			}
+
+			if (needsToEndHorizontal)
+			{
+				EditorGUILayout.EndHorizontal();
 			}
 
 			EndFoldoutGroup(levelPack.name, show);
