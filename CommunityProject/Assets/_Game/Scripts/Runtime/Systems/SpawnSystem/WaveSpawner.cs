@@ -1,6 +1,8 @@
+using System.Collections.Generic;
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders;
+using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
@@ -18,36 +20,50 @@ namespace BoundfoxStudios.CommunityProject.Systems.SpawnSystem
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
+		private VoidEventChannelSO GameplayStartEventChannel { get; set; } = default!;
+
+		[field: SerializeField]
 		private VoidEventChannelSO SpawnNextWaveEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
 		private BoolEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
 
-		private int _nextWave;
+		private Queue<Wave> _waves = new();
 
 		private void OnEnable()
 		{
+			GameplayStartEventChannel.Raised += GameplayStart;
 			SpawnNextWaveEventChannel.Raised += SpawnNextWave;
 		}
 
 		private void OnDisable()
 		{
+			GameplayStartEventChannel.Raised -= GameplayStart;
 			SpawnNextWaveEventChannel.Raised -= SpawnNextWave;
+		}
+
+		private void GameplayStart()
+		{
+			PrepareWaveQueue();
+		}
+
+		private void PrepareWaveQueue()
+		{
+			_waves = new(LevelRuntimeAnchor.ItemSafe.Waves.Waves);
 		}
 
 		private void SpawnNextWave()
 		{
-			SpawnWaveAsync(_nextWave).Forget();
-			_nextWave++;
+			SpawnWaveAsync().Forget();
 		}
 
-		private async UniTask SpawnWaveAsync(int waveIndex)
+		private async UniTask SpawnWaveAsync()
 		{
 			var pathProvider = new SplinePathProvider();
 			var spline = pathProvider.CreatePath(WaySplineRuntimeAnchor.ItemSafe, new RandomSplineLinkDecisionMaker());
-			var wave = LevelRuntimeAnchor.ItemSafe.Waves.Waves[waveIndex];
+			var wave = _waves.Dequeue();
 			await wave.SpawnAsync(spline, WaySplineRuntimeAnchor.ItemSafe, destroyCancellationToken);
-			WaveSpawnedEventChannel.Raise(waveIndex + 1 < LevelRuntimeAnchor.ItemSafe.Waves.Waves.Length);
+			WaveSpawnedEventChannel.Raise(_waves.Count > 0);
 		}
 	}
 }
