@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 
 		[field: SerializeField]
 		public WaySplineRuntimeAnchorSO WaySplineRuntimeAnchor { get; set; } = default!;
+
+		public event Action ReachedEndOfSpline = delegate { };
 
 		/// <summary>
 		/// Overall duration it will take to traverse <see cref="_spline"/>
@@ -55,7 +58,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
 
 			if (_normalizedTime > 1)
 			{
-				Destroy(gameObject);
+				ReachedEndOfSpline();
 			}
 		}
 

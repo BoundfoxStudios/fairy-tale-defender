@@ -1,17 +1,26 @@
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 {
-	[AddComponentMenu(Constants.MenuNames.CameraSystem + "/" + nameof(GameplayController))]
+	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(GameplayController))]
 	public class GameplayController : MonoBehaviour
 	{
+		// TODO: Will be removed later
+		[field: Header("References")]
+		[field: SerializeField]
+		private MenuSO MainMenuScene { get; set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private VoidEventChannelSO SceneReadyEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
 		private BoolEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
+
+		[field: SerializeField]
+		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
 
 		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
@@ -20,16 +29,27 @@ namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 		[field: SerializeField]
 		private VoidEventChannelSO SpawnNextWaveEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
+
 		private void OnEnable()
 		{
 			SceneReadyEventChannel.Raised += SceneReady;
 			WaveSpawnedEventChannel.Raised += WaveSpawned;
+			GameOverEventChannel.Raised += GameOver;
 		}
 
 		private void OnDisable()
 		{
 			SceneReadyEventChannel.Raised -= SceneReady;
 			WaveSpawnedEventChannel.Raised -= WaveSpawned;
+			GameOverEventChannel.Raised -= GameOver;
+		}
+
+		private void GameOver()
+		{
+			// TODO: Will be removed later
+			LoadSceneEventChannel.Raise(new() { Scene = MainMenuScene });
 		}
 
 		private void WaveSpawned(bool hasMoreWaves)
