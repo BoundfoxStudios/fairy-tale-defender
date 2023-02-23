@@ -2,6 +2,7 @@ using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
@@ -173,8 +174,10 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 
 			var blueprintTransform = _buildContext.BlueprintInstance.transform;
 			blueprintTransform.DOComplete();
-			blueprintTransform.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0),
-				TimeToRotate, RotateMode.FastBeyond360);
+			blueprintTransform
+				.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0), TimeToRotate,
+					RotateMode.FastBeyond360)
+				.WithCancellation(destroyCancellationToken);
 		}
 
 		private void SwapMaterials(Material from, Material to, params MeshRenderer[] meshRenderers)
