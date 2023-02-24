@@ -21,14 +21,14 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.Scr
 
 		[field: SerializeField]
 		[field: Range(0, 5)]
-		public float LaunchAnimationSpeed { get; private set; } = 0.2f;
+		public float LaunchAnimationTimeInSeconds { get; private set; } = 0.2f;
 
 		[field: SerializeField]
 		public Ease LaunchEasing { get; private set; } = Ease.InQuart;
 
 		[field: SerializeField]
 		[field: Range(0, 5)]
-		public float RewindAnimationSpeed { get; private set; } = 0.2f;
+		public float RewindAnimationTimeInSeconds { get; private set; } = 0.2f;
 
 		[field: SerializeField]
 		public Ease RewindEasing { get; private set; } = Ease.OutCirc;

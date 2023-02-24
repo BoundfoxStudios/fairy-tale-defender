@@ -67,12 +67,12 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
 		}
 
 		protected override async UniTask StartAnimationAsync(CancellationToken cancellationToken) => await Arm.ArmPivot
-			.DOLocalRotate(new(Arm.XRotation.y, 0, 0), WeaponDefinition.LaunchAnimationSpeed)
+			.DOLocalRotate(new(Arm.XRotation.y, 0, 0), WeaponDefinition.LaunchAnimationTimeInSeconds)
 			.SetEase(WeaponDefinition.LaunchEasing)
 			.WithCancellation(cancellationToken);
 
 		protected override async UniTask RewindAnimationAsync(CancellationToken cancellationToken) =>
-			await Arm.ArmPivot.DOLocalRotate(new(Arm.XRotation.x, 0, 0), WeaponDefinition.RewindAnimationSpeed)
+			await Arm.ArmPivot.DOLocalRotate(new(Arm.XRotation.x, 0, 0), WeaponDefinition.RewindAnimationTimeInSeconds)
 				.SetEase(WeaponDefinition.RewindEasing)
 				.OnComplete(PrepareProjectile)
 				.WithCancellation(cancellationToken);
@@ -93,6 +93,6 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
 				WeaponDefinition.RotationSpeedInDegreesPerSecond * Time.deltaTime);
 		}
 
-		protected override float CalculateLaunchAnimationDelay() => WeaponDefinition.LaunchAnimationSpeed + WeaponDefinition.RewindAnimationSpeed;
+		protected override float CalculateLaunchAnimationDelay() => WeaponDefinition.LaunchAnimationTimeInSeconds + WeaponDefinition.RewindAnimationTimeInSeconds;
 	}
 }

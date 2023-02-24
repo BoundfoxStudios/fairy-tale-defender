@@ -12,9 +12,9 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 	{
 		private SerializedProperty _minimumRangeProperty = default!;
 		private SerializedProperty _rotationSpeedInDegreesPerSecondProperty = default!;
-		private SerializedProperty _launchAnimationSpeedProperty = default!;
+		private SerializedProperty _launchAnimationTimeInSecondsProperty = default!;
 		private SerializedProperty _launchEasingProperty = default!;
-		private SerializedProperty _rewindAnimationSpeedProperty = default!;
+		private SerializedProperty _rewindAnimationTimeInSecondsProperty = default!;
 		private SerializedProperty _rewindEasingProperty = default!;
 
 		private static GUIStyle? _helpBoxRichTextStyle;
@@ -32,9 +32,9 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 			_minimumRangeProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.MinimumRange));
 			_rotationSpeedInDegreesPerSecondProperty =
 				serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RotationSpeedInDegreesPerSecond));
-			_launchAnimationSpeedProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.LaunchAnimationSpeed));
+			_launchAnimationTimeInSecondsProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.LaunchAnimationTimeInSeconds));
 			_launchEasingProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.LaunchEasing));
-			_rewindAnimationSpeedProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RewindAnimationSpeed));
+			_rewindAnimationTimeInSecondsProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RewindAnimationTimeInSeconds));
 			_rewindEasingProperty = serializedObject.FindRealProperty(nameof(BallisticWeaponSO.RewindEasing));
 		}
 
@@ -65,13 +65,13 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		private void RenderAnimation()
 		{
 			EditorGUILayout.PropertyField(_rotationSpeedInDegreesPerSecondProperty);
-			EditorGUILayout.PropertyField(_launchAnimationSpeedProperty);
+			EditorGUILayout.PropertyField(_launchAnimationTimeInSecondsProperty);
 			EditorGUILayout.PropertyField(_launchEasingProperty);
-			EditorGUILayout.PropertyField(_rewindAnimationSpeedProperty);
+			EditorGUILayout.PropertyField(_rewindAnimationTimeInSecondsProperty);
 			EditorGUILayout.PropertyField(_rewindEasingProperty);
 
-			var launchAnimationSpeed = _launchAnimationSpeedProperty.GetValue<float>();
-			var rewindAnimationSpeed = _rewindAnimationSpeedProperty.GetValue<float>();
+			var launchAnimationSpeed = _launchAnimationTimeInSecondsProperty.GetValue<float>();
+			var rewindAnimationSpeed = _rewindAnimationTimeInSecondsProperty.GetValue<float>();
 			var fireRatePerSeconds = FireRateInSecondsProperty.GetValue<float>();
 
 			var animationTime = launchAnimationSpeed + rewindAnimationSpeed;
@@ -80,7 +80,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 			if (idleTime < 0)
 			{
 				EditorGUILayout.HelpBox($"Careful! The total time of animation " +
-										$"({nameof(BallisticWeaponSO.LaunchAnimationSpeed)} + {nameof(BallisticWeaponSO.RewindAnimationSpeed)}; " +
+										$"({nameof(BallisticWeaponSO.LaunchAnimationTimeInSeconds)} + {nameof(BallisticWeaponSO.RewindAnimationTimeInSeconds)}; " +
 										$"{launchAnimationSpeed:F2} s + {rewindAnimationSpeed:F2} s = {animationTime:F2} s) " +
 										$"must be lower or equal than {nameof(BallisticWeaponSO.FireRateInSeconds)} ({fireRatePerSeconds:F2} s)", MessageType.Error);
 				return;
