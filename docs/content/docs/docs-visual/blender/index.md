@@ -34,7 +34,8 @@ Kopiere dann folgendes Script in den leeren Text-Editor.
 Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.
 
 1. Export der aktiven Collection: Wähle hierzu einfach eine Scene-Collection an und starte das Skript. Es wird eine FBX-Datei erzeugt mit allem in der Scene-Collection.
-2. Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt.
+   Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!
+2. Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt. Außerdem wird jedes Objekt automatisch beim Export in den Ursprung geschoben.
 
 In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.
 
