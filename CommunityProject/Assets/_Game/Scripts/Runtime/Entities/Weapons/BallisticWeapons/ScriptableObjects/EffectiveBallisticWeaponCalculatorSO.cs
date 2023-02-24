@@ -14,7 +14,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.Scr
 		public override EffectiveBallisticWeaponDefinition Calculate(BallisticWeaponSO weaponDefinition, Vector3 towerPosition)
 		{
 			var range = CalculateMaximumRange(weaponDefinition, towerPosition);
-			var result = new EffectiveBallisticWeaponDefinition(range, weaponDefinition.FireRateInSeconds, weaponDefinition.AttackAngle);
+			var result = new EffectiveBallisticWeaponDefinition(range, weaponDefinition.FireRateEverySeconds, weaponDefinition.AttackAngle);
 			return result;
 		}
 

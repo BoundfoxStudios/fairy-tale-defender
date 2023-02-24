@@ -8,7 +8,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 	public abstract class WeaponSOEditor : UnityEditor.Editor
 	{
 		protected SerializedProperty RangeProperty = default!;
-		protected SerializedProperty FireRateInSecondsProperty = default!;
+		protected SerializedProperty FireRateEverySecondsProperty = default!;
 		protected SerializedProperty AttackAngleProperty = default!;
 
 		protected abstract string[] ToolbarEntries { get; }
@@ -18,7 +18,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 		protected virtual void OnEnable()
 		{
 			RangeProperty = serializedObject.FindRealProperty(nameof(WeaponSO.Range));
-			FireRateInSecondsProperty = serializedObject.FindRealProperty(nameof(WeaponSO.FireRateInSeconds));
+			FireRateEverySecondsProperty = serializedObject.FindRealProperty(nameof(WeaponSO.FireRateEverySeconds));
 			AttackAngleProperty = serializedObject.FindRealProperty(nameof(WeaponSO.AttackAngle));
 		}
 

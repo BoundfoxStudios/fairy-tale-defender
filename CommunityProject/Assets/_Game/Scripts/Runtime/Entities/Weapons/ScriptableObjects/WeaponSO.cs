@@ -10,7 +10,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects
 
 		[field: SerializeField]
 		[field: Range(0, 10)]
-		public float FireRateInSeconds { get; private set; }
+		public float FireRateEverySeconds { get; private set; }
 
 		[field: SerializeField]
 		[field: Range(0, 360)]
