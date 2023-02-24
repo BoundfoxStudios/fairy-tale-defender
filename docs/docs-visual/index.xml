@@ -16,8 +16,12 @@ Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle a
 &lt;h3 id="export-script">Export-Script&lt;/h3>
 &lt;p>Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
 Kopiere dann folgendes Script in den leeren Text-Editor.&lt;/p>
-&lt;p>Danach musst Du alle Modelle, die Du exportieren willst, in der Scene Collection markieren und dann auf den &amp;ldquo;Play&amp;rdquo;-Button in Blender drücken.
-Blender wird daraufhin alle Modelle mit unseren gewünschten Einstellungen exportieren und dort ablegen, wo auch die Blender-Datei liegt.&lt;/p>
+&lt;p>Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.&lt;/p>
+&lt;ol>
+&lt;li>Export der aktiven Collection: Wähle hierzu einfach eine Scene-Collection an und starte das Skript. Es wird eine FBX-Datei erzeugt mit allem in der Scene-Collection.&lt;/li>
+&lt;li>Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt.&lt;/li>
+&lt;/ol>
+&lt;p>In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># exports each selected object into its own file&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
@@ -33,10 +37,28 @@ Blender wird daraufhin alle Modelle mit unseren gewünschten Einstellungen expor
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>obj_active = view_layer.objects.active
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection = bpy.context.selected_objects
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection_count = len(selection)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># use active collection if no object is selected&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">if&lt;/span> selection_count == 0:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name = bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fn = os.path.join(basedir, name)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.export_scene.fbx(
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_active_collection=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> object_types= {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>},
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -59,8 +81,7 @@ Blender wird daraufhin alle Modelle mit unseren gewünschten Einstellungen expor
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Restore the old location &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = oldLocation
@@ -70,9 +91,9 @@ Blender wird daraufhin alle Modelle mit unseren gewünschten Einstellungen expor
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#a31515">&amp;#34;written:&amp;#34;&lt;/span>, fn)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>view_layer.objects.active = obj_active
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> view_layer.objects.active = obj_active
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Farbpalette</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</guid><description>
 &lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
