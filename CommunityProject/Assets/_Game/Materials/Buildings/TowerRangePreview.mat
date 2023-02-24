@@ -132,7 +132,7 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OuterRingThickness: 0.0241
-    - _OutlineThickness: 0.1
+    - _OutlineThickness: 0.01
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _RadialFill: 0.588
@@ -150,9 +150,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InnerColor: {r: 0.8634453, g: 0.9528302, b: 0.24719654, a: 0}
+    - _InnerColor: {r: 0.40214118, g: 0.842781, b: 0.9529412, a: 0}
     - _MinMaxRange: {r: 1, g: 4, b: 0, a: 0}
-    - _OutlineColor: {r: 0.9150943, g: 0.32370245, b: 0.056114297, a: 0}
+    - _OutlineColor: {r: 0.17837036, g: 0.58607394, b: 0.688, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
