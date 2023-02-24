@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Catapult
   m_EditorClassIdentifier: 
   <Range>k__BackingField: 4
-  <FireRateInSeconds>k__BackingField: 3
+  <FireRateEverySeconds>k__BackingField: 3
   <AttackAngle>k__BackingField: 90
   <MinimumRange>k__BackingField: 1
   <RotationSpeedInDegreesPerSecond>k__BackingField: 45
-  <LaunchAnimationSpeed>k__BackingField: 0.1
+  <LaunchAnimationTimeInSeconds>k__BackingField: 0.1
   <LaunchEasing>k__BackingField: 1
-  <RewindAnimationSpeed>k__BackingField: 1.2
+  <RewindAnimationTimeInSeconds>k__BackingField: 1.2
   <RewindEasing>k__BackingField: 21

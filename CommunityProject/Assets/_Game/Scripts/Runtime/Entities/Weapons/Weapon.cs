@@ -144,7 +144,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 
 		private TimeSpan CalculateLaunchDelay()
 		{
-			var delay = WeaponDefinition.FireRateInSeconds - CalculateLaunchAnimationDelay();
+			var delay = WeaponDefinition.FireRateEverySeconds - CalculateLaunchAnimationDelay();
 
 			Debug.Assert(delay > 0, $"{nameof(CalculateLaunchDelay)} returns delay {delay} that is smaller or equal than 0, that is not valid!");
 

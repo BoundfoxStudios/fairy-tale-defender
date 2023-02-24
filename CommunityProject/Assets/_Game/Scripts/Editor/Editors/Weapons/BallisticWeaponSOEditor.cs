@@ -57,7 +57,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 
 		private void RenderParameters()
 		{
-			EditorGUILayout.PropertyField(FireRateInSecondsProperty);
+			EditorGUILayout.PropertyField(FireRateEverySecondsProperty);
 			AttackAngleControl.DrawEditorGUILayout(AttackAngleProperty);
 			RangeControl.DrawEditorGUILayout(_minimumRangeProperty, RangeProperty);
 		}
@@ -72,7 +72,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 
 			var launchAnimationSpeed = _launchAnimationTimeInSecondsProperty.GetValue<float>();
 			var rewindAnimationSpeed = _rewindAnimationTimeInSecondsProperty.GetValue<float>();
-			var fireRatePerSeconds = FireRateInSecondsProperty.GetValue<float>();
+			var fireRatePerSeconds = FireRateEverySecondsProperty.GetValue<float>();
 
 			var animationTime = launchAnimationSpeed + rewindAnimationSpeed;
 			var idleTime = fireRatePerSeconds - animationTime;
@@ -82,7 +82,7 @@ namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
 				EditorGUILayout.HelpBox($"Careful! The total time of animation " +
 										$"({nameof(BallisticWeaponSO.LaunchAnimationTimeInSeconds)} + {nameof(BallisticWeaponSO.RewindAnimationTimeInSeconds)}; " +
 										$"{launchAnimationSpeed:F2} s + {rewindAnimationSpeed:F2} s = {animationTime:F2} s) " +
-										$"must be lower or equal than {nameof(BallisticWeaponSO.FireRateInSeconds)} ({fireRatePerSeconds:F2} s)", MessageType.Error);
+										$"must be lower or equal than {nameof(BallisticWeaponSO.FireRateEverySeconds)} ({fireRatePerSeconds:F2} s)", MessageType.Error);
 				return;
 			}
 
