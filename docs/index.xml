@@ -258,8 +258,9 @@ Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle a
 Kopiere dann folgendes Script in den leeren Text-Editor.&lt;/p>
 &lt;p>Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.&lt;/p>
 &lt;ol>
-&lt;li>Export der aktiven Collection: Wähle hierzu einfach eine Scene-Collection an und starte das Skript. Es wird eine FBX-Datei erzeugt mit allem in der Scene-Collection.&lt;/li>
-&lt;li>Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt.&lt;/li>
+&lt;li>Export der aktiven Collection: Wähle hierzu einfach eine Scene-Collection an und starte das Skript. Es wird eine FBX-Datei erzeugt mit allem in der Scene-Collection.
+Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
+&lt;li>Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt. Außerdem wird jedes Objekt automatisch beim Export in den Ursprung geschoben.&lt;/li>
 &lt;/ol>
 &lt;p>In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># exports each selected object into its own file&lt;/span>
