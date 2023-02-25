@@ -13,7 +13,7 @@ namespace BoundfoxStudios.CommunityProject.Editor
 		public int callbackOrder { get { return 0; } }
 		public void OnProcessScene(Scene scene, BuildReport report)
 		{
-			if(report == null) return;
+			if(report == null)return;
 			if (!report.summary.options.HasFlag(UnityEditor.BuildOptions.Development))
 			{
 				GameObject[] objToDestroyOnBuild = GameObject.FindGameObjectsWithTag("DevelopmentOnly");
