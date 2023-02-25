@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TowerRangePreview
+  m_Name: WeaponRangePreview
   m_Shader: {fileID: -6465566751694194690, guid: 14b2e3ab2bcb3c84583a6ff668e9029e,
     type: 3}
   m_Parent: {fileID: 0}

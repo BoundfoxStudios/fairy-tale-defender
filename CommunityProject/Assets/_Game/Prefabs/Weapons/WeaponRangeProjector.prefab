@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8974376439884702614}
   - component: {fileID: 8974376439884702617}
+  - component: {fileID: 7484005888287465442}
   m_Layer: 0
-  m_Name: TowerRangeProjector
+  m_Name: WeaponRangeProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &8974376439884702617
 MonoBehaviour:
@@ -56,3 +57,16 @@ MonoBehaviour:
   m_Offset: {x: 0, y: 0, z: 2}
   m_Size: {x: 7.99, y: 7.99, z: 4}
   m_FadeFactor: 1
+--- !u!114 &7484005888287465442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974376439884702616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1362bf3e605d1cf4bb36183cf7295472, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ProjectionDepth>k__BackingField: 20
