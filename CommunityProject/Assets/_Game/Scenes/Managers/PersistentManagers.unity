@@ -977,6 +977,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1530947384116922339, guid: 64554faf4b2b6ee4ea7a72aea016db47,
+        type: 3}
+      propertyPath: m_keepAlive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1530947384116922339, guid: 64554faf4b2b6ee4ea7a72aea016db47,
+        type: 3}
+      propertyPath: m_enableHotkeys
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1530947384282546642, guid: 64554faf4b2b6ee4ea7a72aea016db47,
         type: 3}
       propertyPath: m_Name
