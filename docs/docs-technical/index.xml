@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Technische Dokumentation</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/</link><description>Recent content in Technische Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/docs-technical/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Coding Conventions</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/coding-conventions/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Technische Dokumentation</title><link>https://docs.fairytaledefender.de/docs/docs-technical/</link><description>Recent content in Technische Dokumentation on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/docs-technical/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Coding Conventions</title><link>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</guid><description>
 &lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
 &lt;blockquote>
 &lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
@@ -42,7 +42,7 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [SerializeField]
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">private&lt;/span> GameObject SomePrefab;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diese Variante nutzen wir &lt;strong>nicht&lt;/strong> im Community-Projekt, sondern wir bevorzugen diese Schreibweise:&lt;/p>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Diese Variante nutzen wir &lt;strong>nicht&lt;/strong>, sondern wir bevorzugen diese Schreibweise:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">Something&lt;/span> : MonoBehaviour
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> [field: SerializeField]
@@ -86,7 +86,7 @@ Daher akzeptieren wir in diesem Fall einfach die NullReferenceException, da man 
 &lt;p>Zusätzlich kann man ein &lt;code>Debug.Assert&lt;/code> in den Code einfügen, um dem Benutzer direkt mitzuteilen, das etwas fehlt:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> OnValidate()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// Guard.AgainstNull ist eine Funktion aus dem Community-Projekt und prüft, ob ein Feld oder Eigenschaft null ist.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// Guard.AgainstNull ist eine Funktion aus von Fairy Tale Defender und prüft, ob ein Feld oder Eigenschaft null ist.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// Falls dem der Fall ist, gibt sie eine Nachricht aus.&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> Guard.AgainstNull(() =&amp;gt; SomePrefab);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
@@ -94,7 +94,7 @@ Daher akzeptieren wir in diesem Fall einfach die NullReferenceException, da man 
 &lt;p>Diese kannst Du immer dann nutzen, sobald ein Referenztyp auch wirklich &lt;code>null&lt;/code> sein kann.
 Entsprechend muss man im Verlauf des Codes darauf achten, was passieren soll, wenn die Eigenschaft &lt;code>null&lt;/code> ist.&lt;/p>
 &lt;h4 id="asynchrone-entwicklung--coroutines">Asynchrone Entwicklung / Coroutines&lt;/h4>
-&lt;p>Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# &lt;code>async/await&lt;/code> nutzen können: &lt;a href="https://github.com/Cysharp/UniTask">UniTask&lt;/a>.
+&lt;p>Wir setzen bei Fairy Tale Defender auf eine externe Bibliothek, sodass wir C# &lt;code>async/await&lt;/code> nutzen können: &lt;a href="https://github.com/Cysharp/UniTask">UniTask&lt;/a>.
 Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).&lt;/p>
 &lt;p>Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via &lt;code>async/await&lt;/code> implementierbar ist.&lt;/p>
 &lt;blockquote>
@@ -183,7 +183,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 &lt;li>In diesem Ordner legen wir alle Skripte ab, gruppiert nach jeweiligem System.&lt;/li>
 &lt;li>In diesem Ordner wird alles abgelegt, von dem wir wissen, dass es noch ausgetauscht werden muss. Eignet sich z.B. wenn man an einem Feature arbeitet, ein Beispiel-Modell dafür benutzt, dass dann später von einem Artist erst neu modelliert wird.&lt;/li>
 &lt;/ol>
-&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/ci-cd/</guid><description>
+&lt;p>Generell gilt, dass zusammengehörende Dinge in einem Ordner gruppiert werden sollen. Im Zweifel lieber einen Ordner mehr als zu wenig.&lt;/p></description></item><item><title>Docs: Continuous Integration &amp; Continuous Delivery</title><link>https://docs.fairytaledefender.de/docs/docs-technical/ci-cd/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/ci-cd/</guid><description>
 &lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
 &lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
 &lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
@@ -209,9 +209,9 @@ Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
 &lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
 &lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
 Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
-&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Systeme</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/systems/</guid><description>
+&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Systeme</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/</guid><description>
 &lt;p>In dieser Sektion findest Du Dokumentation über bestehende Systeme, die bereits implementiert wurden.&lt;/p>
-&lt;p>Bitte nutze die Navigation links, um die System-Dokumentationen zu finden.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-technical/faq/</guid><description>
+&lt;p>Bitte nutze die Navigation links, um die System-Dokumentationen zu finden.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>

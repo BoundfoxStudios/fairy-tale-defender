@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/</link><description>Recent content in Mitmachen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/auditory/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/</link><description>Recent content in Mitmachen on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/contributing/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Auditiv (Effekte, Musik) mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/auditory/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/auditory/</guid><description>
 &lt;div class="alert alert-danger" role="alert">
 &lt;h4 class="alert-heading">TODO&lt;/h4>
 Diese Seite ist aktuell noch nicht soweit ausgearbeitet, da es soundtechnisch leider noch nichts zu machen gibt. :)
@@ -30,7 +30,7 @@ Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwa
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
 Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
-&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/technical/</guid><description>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/technical/</guid><description>
 &lt;h2 id="inhaltsverzeichnis">Inhaltsverzeichnis&lt;/h2>
 &lt;p>Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du&lt;/p>
 &lt;ul>
@@ -70,10 +70,10 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
 &lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p>
 &lt;h2 id="jetbrains-rider-lizenz">JetBrains Rider Lizenz&lt;/h2>
-&lt;p>&lt;a href="https://jetbrains.com">JetBrains&lt;/a> sponsert unser Community-Projekt mit &lt;a href="https://jb.gg/OpenSourceSupport">Lizenzen&lt;/a> für JetBrains Rider!
+&lt;p>&lt;a href="https://jetbrains.com">JetBrains&lt;/a> sponsert Fairy Tale Defender mit &lt;a href="https://jb.gg/OpenSourceSupport">Lizenzen&lt;/a> für JetBrains Rider!
 Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.&lt;/p>
 &lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">
-&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>https://boundfoxstudios.github.io/community-project/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/contributing/visual/</guid><description>
+&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/visual/</guid><description>
 &lt;p>Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h. Du&lt;/p>
 &lt;ul>
 &lt;li>modellierst 3D-Modelle,&lt;/li>

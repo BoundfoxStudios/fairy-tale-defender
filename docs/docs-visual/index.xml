@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Visuelle Dokumentation</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/</link><description>Recent content in Visuelle Dokumentation on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/docs-visual/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Blender</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/blender/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/blender/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Visuelle Dokumentation</title><link>https://docs.fairytaledefender.de/docs/docs-visual/</link><description>Recent content in Visuelle Dokumentation on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/docs-visual/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Blender</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/blender/</guid><description>
 &lt;p>Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen musst.&lt;/p>
 &lt;h2 id="blender-starter-kit">Blender Starter-Kit&lt;/h2>
 &lt;p>Hier findest Du das Blender Starter-Kit.
@@ -96,7 +96,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Farbpalette</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/colors/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Farbpalette</title><link>https://docs.fairytaledefender.de/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/colors/</guid><description>
 &lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
 Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
 &lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
@@ -107,7 +107,7 @@ Das sollte mehr als ausreichend sein.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="sommer">Sommer&lt;/h2>
 &lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
-&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p></description></item><item><title>Docs: Tiles</title><link>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/docs-visual/tiles/</guid><description>
+&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p></description></item><item><title>Docs: Tiles</title><link>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</guid><description>
 &lt;h2 id="basis-tile">Basis-Tile&lt;/h2>
 &lt;p>Eine Tile ist der Grundbaustein zum Zusammensetzen des Terrains.
 Es ist ein 1 Meter langer, 1 Meter breiter und 0,2 Meter hoher Quader.&lt;/p>

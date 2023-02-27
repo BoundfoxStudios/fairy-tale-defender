@@ -1,4 +1,4 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Boundfox Studios Community-Projekt – Ideen</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/</link><description>Recent content in Ideen on Boundfox Studios Community-Projekt</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://boundfoxstudios.github.io/community-project/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Forschung</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/research/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Ideen</title><link>https://docs.fairytaledefender.de/docs/ideas/</link><description>Recent content in Ideen on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/ideas/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Forschung</title><link>https://docs.fairytaledefender.de/docs/ideas/research/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/research/</guid><description>
 &lt;p>Durch forschen können weitere Inhalte und Verbesserungen freigeschaltet werden.
 Wie und wann man die Möglichkeit bekommt weiter zu forschen, steht noch offen.
 Dies könnte durch Sammeln von Erfahrung, beim Besiegen von Gegnern und ganzen Leveln der Fall sein, könnte aber auch z.B. Geld erfordern.&lt;/p>
@@ -38,7 +38,7 @@ Dies könnte durch Sammeln von Erfahrung, beim Besiegen von Gegnern und ganzen L
 &lt;li>Könnte zum freischalten auch z.B. X-Kills an dem Gegnertyp benötigen&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: Gegner</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/enemies/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Gegner</title><link>https://docs.fairytaledefender.de/docs/ideas/enemies/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/enemies/</guid><description>
 &lt;h2 id="gegnerarten">Gegnerarten&lt;/h2>
 &lt;p>Bisher wurden folgende Gegner vorgeschlagen:&lt;/p>
 &lt;ul>
@@ -132,7 +132,7 @@ Dies könnte durch Sammeln von Erfahrung, beim Besiegen von Gegnern und ganzen L
 &lt;td style="text-align:center">Flug&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table></description></item><item><title>Docs: Gegner-Navigation</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/navigation/</guid><description>
+&lt;/table></description></item><item><title>Docs: Gegner-Navigation</title><link>https://docs.fairytaledefender.de/docs/ideas/navigation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/navigation/</guid><description>
 &lt;p>Gemäß dem &lt;a href="../../../game-design-document/gameplay/enemies/">GDD&lt;/a> laufen Gegner auf vorgefertigten Wegen.
 Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 &lt;h2 id="ideen-zu-wegen-von-gegnern">Ideen zu Wegen von Gegnern&lt;/h2>
@@ -164,7 +164,7 @@ Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 &lt;li>Stärkere Gegner?&lt;/li>
 &lt;/ul>
 &lt;/li>
-&lt;/ul></description></item><item><title>Docs: Magie</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/magic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/magic/</guid><description>
+&lt;/ul></description></item><item><title>Docs: Magie</title><link>https://docs.fairytaledefender.de/docs/ideas/magic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/magic/</guid><description>
 &lt;h2 id="elementarmagie">Elementarmagie&lt;/h2>
 &lt;p>Folgende Elemente sollen als Magie ihren Weg in das Spiel finden:&lt;/p>
 &lt;ul>
@@ -174,7 +174,7 @@ Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 &lt;li>Feuer&lt;/li>
 &lt;/ul>
 &lt;h2 id="türme">Türme&lt;/h2>
-&lt;p>Einige Ideen wie Türme Magie einsetzen könnten, finden sich &lt;a href="../../../docs/ideas/towers/#feuerwasserlufterde-turm">hier&lt;/a>.&lt;/p></description></item><item><title>Docs: Story</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/story/</guid><description>
+&lt;p>Einige Ideen wie Türme Magie einsetzen könnten, finden sich &lt;a href="../../../docs/ideas/towers/#feuerwasserlufterde-turm">hier&lt;/a>.&lt;/p></description></item><item><title>Docs: Story</title><link>https://docs.fairytaledefender.de/docs/ideas/story/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/story/</guid><description>
 &lt;p>Diese Storys sind von unserem Community-Mitglied &lt;strong>Tipi&lt;/strong> geschrieben worden. Sie sind gedacht, um eine Idee für die Handlung und damit die Umgebung und den grafischen Stil des Spiels zu setzen. Es sind jeweils die Startszenarien, die dann weiter ausgebaut werden, wenn die Community sich für eines entschieden hat (oder was ganz anderes will).&lt;/p>
 &lt;p>Über eine Abstimmung über den YouTube-Kanal hat sich die Community für Story 2 entschieden.&lt;/p>
 &lt;h2 id="story-1-obsolet">Story 1 (Obsolet)&lt;/h2>
@@ -192,7 +192,7 @@ Diese Wege sollen allerdings durch den Spieler beeinflussbar sein.&lt;/p>
 zumindest kenne ich genug andere Spiele, die das auch nutzen z.B. &amp;ldquo;Dark Parables&amp;rdquo; (die halt wirklich die ganzen Märchen durchmachen: Schneewittchen, Dornröschen, Jack und die wundererbse&amp;hellip;) es gibt auch ein Gutenberg Projekt (oder so) in dem public-domain texte gehortet werden. Dieser Vorschlag hat den riesigen Vorteil, dass wir beim Design der Türme völlig eskalieren können, von Rotkäppchen Türmen mit Wolfsmotiven bis Rattenfänger Türmen, die Musik machen, oder Eiskönigin Tower, die Eisspeere und Schneestürme verschießen.&lt;/p>
 &lt;h2 id="story-3-obsolet">Story 3 (Obsolet)&lt;/h2>
 &lt;p>In einem kleinen Walddorf ist es normal, dass alle 5 Jahre eine neue Kräuterfrau in die geheime Magie der Pflanzen und Tiere eingeweiht wird. Es braucht eine natürliche Begabung mit Pflanzen und ein gutes Verständnis der Heilkunde, um dafür infrage zu kommen. Unsere kleine Hexe hat beides. Zudem wird ein gutes Gespür für Magie und ein gesunder Abenteuerdrang benötigt, da man sein Dorf verlässt und die Welt kennenlernt oder genauer genommen einen sehr magischen Teil der Welt. Nach einigen Monaten der Ausbildung lernt man, wie Dinge dazu gebracht werden können, einfache Handlungen von selbst auszuführen, Töpfe, die sich selbst umrühren, Besen, die von selbst fegen, aber auch Bögen, die von selbst Pfeile verschießen. Sobald dieses Wissen gefestigt ist, bricht man auf zu seiner ersten Wanderschaft. Von dem Dorf aus geht es zu einem Breitenzirkel, der sich tief im Wald versteckt. Schlägt man an einem bestimmten Ort ein Lager auf, bittet man damit um Einlass und ein Auflösen der schützenden Magie, die die Druiden Siedlung versteckt hält. Natürlich muss man zuvor den Druiden beweisen, dass man nicht irgendwer ist. Ein normaler, nicht magischer Bürger würde in der Nacht von Wesen aus Laub mitsamt seinem Zelt aus der Lichtung getragen werden und irgendwo in der Wildnis aufwachen. Eine Hexe hingegen kann mit ihren magischen Geschützen diese Laubmonster abwehren. Dort endet die Reise jedoch nicht, es gibt andere Hexen und andere Länder, die man bereisen muss. Sümpfe, Moore, Dschungel, Küsten, Wüsten, sogar die hohe See und ferne Länder&amp;hellip;&lt;/p>
-&lt;p>Hier können wir halt fröhlich alle Terrains einbauen und verschiedenste Magierichtungen mit einbeziehen: Druiden, Hexen, Magier, Heilige, dämonische Kreaturen: alles ist möglich.&lt;/p></description></item><item><title>Docs: Türme</title><link>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://boundfoxstudios.github.io/community-project/docs/ideas/towers/</guid><description>
+&lt;p>Hier können wir halt fröhlich alle Terrains einbauen und verschiedenste Magierichtungen mit einbeziehen: Druiden, Hexen, Magier, Heilige, dämonische Kreaturen: alles ist möglich.&lt;/p></description></item><item><title>Docs: Türme</title><link>https://docs.fairytaledefender.de/docs/ideas/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/ideas/towers/</guid><description>
 &lt;h1 id="allgemeine-ideen">Allgemeine Ideen&lt;/h1>
 &lt;h2 id="kanonenturm">Kanonenturm&lt;/h2>
 &lt;ul>
