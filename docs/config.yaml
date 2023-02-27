@@ -5,12 +5,15 @@ languageCode: de-de
 defaultContentLanguage: de
 title: Fairy Tale Defender
 
+languages:
+  de:
+    description: Fairy Tale Defender - Ein Boundfox Studios Community-Projekt
+
 cascade:
   - type: docs
     toc_root: true
     _target:
       path: "/game-design-document/**"
-
 
 enableRobotsTXT: true
 enableGitInfo: true
