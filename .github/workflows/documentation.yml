@@ -70,7 +70,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.event_name != 'workflow_call'
-    needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer-description]
+    # needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer-description]
+    needs: [create-blender-starter-kit, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
