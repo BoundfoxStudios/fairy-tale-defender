@@ -165,7 +165,7 @@ jobs:
           unityVersion: ${{ matrix.unity-version }}
           targetPlatform: ${{ matrix.target-platform }}
           versioning: Semantic
-          buildName: CommunityProject
+          buildName: FairyTaleDefender
           customParameters: ${{ inputs.custom-parameters }}
       - uses: actions/upload-artifact@v3
         name: Upload Game Binaries

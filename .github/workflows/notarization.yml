@@ -51,30 +51,30 @@ jobs:
           keychain-password: ${{ steps.password.outputs.value }}
           keychain-name: BoundfoxStudiosTemporaryKeychain
       - name: Copy .entitlements file
-        run: cp build-resources/macOS/CommunityProject.entitlements Build-${{ github.run_id }}-StandaloneOSX
+        run: cp build-resources/macOS/FairyTaleDefender.entitlements Build-${{ github.run_id }}-StandaloneOSX
       - name: Fix permissions
-        run: chmod -R a+xr CommunityProject.app
+        run: chmod -R a+xr FairyTaleDefender.app
         working-directory: Build-${{ github.run_id }}-StandaloneOSX
       - name: Sign
-        run: codesign --deep --force --verify --verbose --timestamp --options runtime --entitlements "CommunityProject.entitlements" --sign "${{ secrets.APPLE_TEAM_NAME }}" CommunityProject.app
+        run: codesign --deep --force --verify --verbose --timestamp --options runtime --entitlements "FairyTaleDefender.entitlements" --sign "${{ secrets.APPLE_TEAM_NAME }}" FairyTaleDefender.app
         working-directory: Build-${{ github.run_id }}-StandaloneOSX
       - name: Notarize
         uses: BoundfoxStudios/action-xcode-notarize@v1
         with:
-          product-path: Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.app
+          product-path: Build-${{ github.run_id }}-StandaloneOSX/FairyTaleDefender.app
           appstore-connect-username: ${{ secrets.APPLE_NOTARIZATION_USERNAME }}
           appstore-connect-password: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
       - name: Staple
         uses: BoundfoxStudios/action-xcode-staple@v1
         with:
-          product-path: Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.app
+          product-path: Build-${{ github.run_id }}-StandaloneOSX/FairyTaleDefender.app
       # We need to create a TAR archive before uploading due to possible permission loss
       # See: 
       #   - https://github.com/actions/upload-artifact#permission-loss
       #   - https://github.com/game-ci/unity-actions/issues/152
       - name: Create TAR archive
         run: |
-          rm Build-${{ github.run_id }}-StandaloneOSX/CommunityProject.entitlements
+          rm Build-${{ github.run_id }}-StandaloneOSX/FairyTaleDefender.entitlements
           tar -czf Build-${{ github.run_id }}-StandaloneOSX.tar Build-${{ github.run_id }}-StandaloneOSX
         shell: bash
       - uses: actions/upload-artifact@v3

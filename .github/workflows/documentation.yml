@@ -91,3 +91,4 @@ jobs:
           user_name: "Boundfox Studios Publish Bot"
           user_email: "info@boundfoxstudios.com"
           commit_message: ":rocket: Deploy Docs"
+          cname: docs.fairytaledefender.de
