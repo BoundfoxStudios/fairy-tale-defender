@@ -1,6 +1,6 @@
 # More config possibility see here: https://github.com/google/docsy-example/blob/master/config.toml
 
-baseURL: https://boundfoxstudios.github.io/community-project/
+baseURL: https://docs.fairytaledefender.de/
 languageCode: de-de
 defaultContentLanguage: de
 title: Fairy Tale Defender
@@ -20,7 +20,7 @@ params:
   pygmentsStyle: vs
   copyright: Boundfox Studios
   privacy_policy: https://boundfoxstudios.com/privacy-policy
-  url_latest_version: https://boundfoxstudios.github.io/community-project
+  url_latest_version: https://docs.fairytaledefender.de
   github_repo: https://github.com/boundfoxstudios/community-project
   github_subdir: docs
   github_branch: develop

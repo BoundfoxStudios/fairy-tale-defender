@@ -49,5 +49,5 @@ Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.co
     <dt>GDD</dt>
     <dd>Game Design Document</dd>
     <dt>MVP</dt>
-    <dd>Minimal Viable Product, <a href="https://boundfoxstudios.github.io/community-project/docs/roadmap#mvp">siehe hier</a></dd>
+    <dd>Minimal Viable Product, <a href="https://docs.fairytaledefender.de/docs/roadmap#mvp">siehe hier</a></dd>
 </dl>

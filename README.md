@@ -8,14 +8,14 @@
 
 [_I speak english._](#english)
 
-[ [Dokumentation](https://boundfoxstudios.github.io/community-project) ] [ [Mitmachen](https://boundfoxstudios.github.io/community-project/docs/contributing/) ] [ [Roadmap](https://boundfoxstudios.github.io/community-project/docs/roadmap) ]
+[ [Dokumentation](https://docs.fairytaledefender.de) ] [ [Mitmachen](https://docs.fairytaledefender.de/docs/contributing/) ] [ [Roadmap](https://docs.fairytaledefender.de/docs/roadmap) ]
 
 Hallo!
 
 Schön, dass Du hier her gefunden hast zu unserem Community-Projekt (oder eher auch ein Community-Experiment).
 In diesem Repository (kurz Repo) findest Du so ziemlich alles, was zu Fairy Tale Defender gehört.
 
-Am besten liest Du Dich erstmal etwas durch die [Dokumentation](https://boundfoxstudios.github.io/community-project).
+Am besten liest Du Dich erstmal etwas durch die [Dokumentation](https://docs.fairytaledefender.de).
 Diese ist umfangreich und enthält alle wichtigen Informationen.
 
 Als Genre wollen wir gemeinsam ein Tower Defense im Mittelalter-Theme umsetzen.
@@ -39,7 +39,7 @@ Das Community-Projekt verfolgt mehrere Ziele:
 
 ## Roadmap
 
-Eine kleine Roadmap findest Du [hier](https://boundfoxstudios.github.io/community-project/docs/roadmap).
+Eine kleine Roadmap findest Du [hier](https://docs.fairytaledefender.de/docs/roadmap).
 
 Eine MindMap mit aktuell allen verrückten Ideen findest Du [hier](https://miro.com/app/board/uXjVPSFGLlk=/?share_link_id=580613867296). 
 Falls Du hier noch was ergänzen möchtest, schreib gerne ein [Issue](https://github.com/BoundfoxStudios/community-project/issues/new?assignees=&labels=Triage&template=misc.yml) oder direkt in [Discord][2].
@@ -52,7 +52,7 @@ _Ich kann aber gar nicht programmieren._
 Kein Problem! Ein Spiel zu entwickeln bedeutet viel mehr als Programmieren zu können. 
 Beispielsweise werden auch 3D-Modellierer, 2D-Designer, Musiker, Effekt-Designer, Spieletester, Übersetzer und vieles mehr benötigt.
 
-Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an, danach kannst Du [hier](https://boundfoxstudios.github.io/community-project/docs/contributing/) in der [Dokumentation](https://boundfoxstudios.github.io/community-project/docs/) lesen, wie Du Dich bei Fairy Tale Defender beteiligen kannst. 
+Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an, danach kannst Du [hier](https://docs.fairytaledefender.de/docs/contributing/) in der [Dokumentation](https://docs.fairytaledefender.de/docs/) lesen, wie Du Dich bei Fairy Tale Defender beteiligen kannst. 
 
 Beachte beim Mitmachen auch unseren [Code of Conduct](CODE_OF_CONDUCT.md), sodass wir hier alle, die mitmachen möchten, respektvoll miteinander umgehen.
 
@@ -94,7 +94,7 @@ Diese wundervollen Menschen haben sich bisher bei Fairy Tale Defender beteiligt:
 ## Was bedeutet denn ...?
 
 Du wirst im Laufe der Dokumentation sicher über Begrifflichkeiten stolpern, die Du so noch nicht kennst.
-Dann wirf am Besten einen Blick in das [Glossar](https://boundfoxstudios.github.io/community-project/docs/glossary).
+Dann wirf am Besten einen Blick in das [Glossar](https://docs.fairytaledefender.de/docs/glossary).
 Hier versuchen wir alle Begriffe zu sammeln und zu erklären, um das allgemeine Verständnis zu verbessern.
 
 ## Ansprechpartner

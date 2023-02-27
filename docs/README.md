@@ -4,7 +4,7 @@ In diesem Ordner findest Du das Game Design Document von Fairy Tale Defender.
 
 Um es zu bearbeiten reicht ein einfacher Text-Editor, der mit Markdown-Dateien umgehen kann.
 
-Das Game Design Document wird automatisch auf [https://boundfoxstudios.github.io/community-project](https://boundfoxstudios.github.io/community-project) zur Verfügung gestellt, sobald Änderungen in den develop-Branch integriert wurden.
+Das Game Design Document wird automatisch auf [https://docs.fairytaledefender.de](https://docs.fairytaledefender.de) zur Verfügung gestellt, sobald Änderungen in den develop-Branch integriert wurden.
 
 ## Änderungen lokal ansehen
 
