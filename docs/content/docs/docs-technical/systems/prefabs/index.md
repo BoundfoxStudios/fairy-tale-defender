@@ -6,7 +6,7 @@ description: Dokumentation über Prefabs.
 
 ## UI Prefabs
 
-Im Community-Projekt nutzen wir ein kleines System, um einfacher Prefabs für das UI finden zu können.
+Wir nutzen ein kleines System, um einfacher Prefabs für das UI finden zu können.
 Generell liegen die Prefabs im Ordner `Prefabs/UI`.
 
 Um komfortabel ein UI zusammenbauen zu können, integrieren wir unsere eigenen Prefabs auch in das Menü von Unity (Rechtsklick in der Hierarchy).

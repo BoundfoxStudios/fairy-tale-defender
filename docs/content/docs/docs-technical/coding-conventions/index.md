@@ -51,7 +51,7 @@ public class Something : MonoBehaviour
 }
 ```
 
-Diese Variante nutzen wir **nicht** im Community-Projekt, sondern wir bevorzugen diese Schreibweise:
+Diese Variante nutzen wir **nicht**, sondern wir bevorzugen diese Schreibweise:
 
 ```cs
 public class Something : MonoBehaviour
@@ -117,7 +117,7 @@ Zusätzlich kann man ein `Debug.Assert` in den Code einfügen, um dem Benutzer d
 ```cs
 private void OnValidate()
 {
-  // Guard.AgainstNull ist eine Funktion aus dem Community-Projekt und prüft, ob ein Feld oder Eigenschaft null ist.
+  // Guard.AgainstNull ist eine Funktion aus von Fairy Tale Defender und prüft, ob ein Feld oder Eigenschaft null ist.
   // Falls dem der Fall ist, gibt sie eine Nachricht aus.
   Guard.AgainstNull(() => SomePrefab);
 }
@@ -130,7 +130,7 @@ Entsprechend muss man im Verlauf des Codes darauf achten, was passieren soll, we
 
 #### Asynchrone Entwicklung / Coroutines
 
-Wir setzen im Community-Projekt auf eine externe Bibliothek, sodass wir C# `async/await` nutzen können: [UniTask](https://github.com/Cysharp/UniTask).
+Wir setzen bei Fairy Tale Defender auf eine externe Bibliothek, sodass wir C# `async/await` nutzen können: [UniTask](https://github.com/Cysharp/UniTask).
 Die Bibliothek integriert sich komplett in Unity und ersetzt oft die Nutzung von Coroutines (oder macht deren Nutzung deutlich angenehmer).
 
 Vermeide daher das Implementieren von Coroutinen, falls das ganze auch via `async/await` implementierbar ist.

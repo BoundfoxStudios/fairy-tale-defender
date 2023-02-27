@@ -1,7 +1,7 @@
 ---
 title: Mitmachen
 linkTitle: Mitmachen
-description: Info, wie man beim Community-Projekt mitwirken kann.
+description: Info, wie man bei Fairy Tale Defender mitwirken kann.
 menu:
   main:
     weight: 1
@@ -10,9 +10,9 @@ weight: 100
 icon: fa-solid fa-people-group
 ---
 
-![Boundfox Studios Community-Projekt](assets/cover.png)
+![Fairy Tale Defender](assets/cover.png)
 
-Es freut uns sehr, wenn wir Dein Interesse geweckt haben, dass Du Dich in irgendeiner Form am Community-Projekt beteiligen möchtest.
+Es freut uns sehr, wenn wir Dein Interesse geweckt haben, dass Du Dich in irgendeiner Form bei Fairy Tale Defender beteiligen möchtest.
 Schau Dir am besten zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an und lies dann hier weiter.
 Bitte beachte zudem unseren [Code of Conduct][3], sodass wir hier alle miteinander respektvoll umgehen und eine angenehme Atmosphäre schaffen.
 
@@ -109,7 +109,7 @@ Sobald es mal "mehr vom Spiel gibt", werden weitere Rollen sich am Spiel beteili
 
 ## Wo finde ich, was es zu tun gibt? Wo sind die Aufgaben?
 
-Eine Liste von Aufgaben wirst Du auf der [Issue-Seite][1] von unserem Community-Projekt finden.
+Eine Liste von Aufgaben wirst Du auf der [Issue-Seite][1] von Fairy Tale Defender finden.
 Alternativ kannst Du auch einen Blick auf das [Projekt-Board][2] werfen.
 Das bedeutet aber nicht, dass Du nur an diesen Aufgaben arbeiten kannst.
 Wenn Du einen Bug gefunden hast oder Dir eine tolle Idee kommt, dann lass uns gerne darüber reden und eventuell machen wir daraus eine neue Aufgabe für Dich.

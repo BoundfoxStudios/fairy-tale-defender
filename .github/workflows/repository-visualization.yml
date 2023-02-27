@@ -15,7 +15,7 @@ jobs:
         
       - uses: nbprojekt/gource-action@v1.2.1
         with:
-          gource_title: Community-Projekt
+          gource_title: Fairy Tale Defender
           gource_resolution: 1440p
           gource_fps: 60
           gource_font_size: 40

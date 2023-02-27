@@ -1,6 +1,6 @@
 # Game Design Document
 
-In diesem Ordner findest Du das Game Design Document des Community-Projekts.
+In diesem Ordner findest Du das Game Design Document von Fairy Tale Defender.
 
 Um es zu bearbeiten reicht ein einfacher Text-Editor, der mit Markdown-Dateien umgehen kann.
 

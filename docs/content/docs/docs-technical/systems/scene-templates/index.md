@@ -5,7 +5,7 @@ description: Dokumentation der Scene Templates.
 ---
 
 Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü `File` -> `New Scene` gehst.
-Dort findest Du im Dialog zwei Templates, die vom Community-Projekt stammen:
+Dort findest Du im Dialog zwei Templates, die von Fairy Tale Defender stammen:
 
 * Menu Szene
 * Level Szene

@@ -1,8 +1,10 @@
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCf54CbMEHpI3fXE-SwMg0Ug?style=social)][1] [![Discord](https://img.shields.io/discord/454361389935493124?logo=discord&logoColor=white)][2] ![GitHub contributors (via allcontributors.org)](https://img.shields.io/github/all-contributors/BoundfoxStudios/community-project)
 
-# Boundfox Studios Community-Projekt
+# Fairy Tale Defender
 
-![Boundfox Studios Community-Projekt](docs/content/docs/contributing/assets/cover.png)
+> Ein Boundfox Studios Community-Projekt
+
+![Boundfox Studios Fairy Tale Defender](docs/content/docs/contributing/assets/cover.png)
 
 [_I speak english._](#english)
 
@@ -11,7 +13,7 @@
 Hallo!
 
 Schön, dass Du hier her gefunden hast zu unserem Community-Projekt (oder eher auch ein Community-Experiment).
-In diesem Repository (kurz Repo) findest Du so ziemlich alles, was zum Community-Projekt gehört.
+In diesem Repository (kurz Repo) findest Du so ziemlich alles, was zu Fairy Tale Defender gehört.
 
 Am besten liest Du Dich erstmal etwas durch die [Dokumentation](https://boundfoxstudios.github.io/community-project).
 Diese ist umfangreich und enthält alle wichtigen Informationen.
@@ -50,13 +52,13 @@ _Ich kann aber gar nicht programmieren._
 Kein Problem! Ein Spiel zu entwickeln bedeutet viel mehr als Programmieren zu können. 
 Beispielsweise werden auch 3D-Modellierer, 2D-Designer, Musiker, Effekt-Designer, Spieletester, Übersetzer und vieles mehr benötigt.
 
-Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an, danach kannst Du [hier](https://boundfoxstudios.github.io/community-project/docs/contributing/) in der [Dokumentation](https://boundfoxstudios.github.io/community-project/docs/) lesen, wie Du Dich am Community-Projekt beteiligen kannst. 
+Am Besten schaust Du Dir zuerst das [Intro-Video auf YouTube](https://youtu.be/QFcMmSl0cWA) an, danach kannst Du [hier](https://boundfoxstudios.github.io/community-project/docs/contributing/) in der [Dokumentation](https://boundfoxstudios.github.io/community-project/docs/) lesen, wie Du Dich bei Fairy Tale Defender beteiligen kannst. 
 
 Beachte beim Mitmachen auch unseren [Code of Conduct](CODE_OF_CONDUCT.md), sodass wir hier alle, die mitmachen möchten, respektvoll miteinander umgehen.
 
 ### Wer macht bereits mit?
 
-Diese wundervollen Menschen haben sich bisher am Community-Projekt beteiligt:
+Diese wundervollen Menschen haben sich bisher bei Fairy Tale Defender beteiligt:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -125,7 +127,7 @@ Du musst:
 
 ## JetBrains Rider
 
-[JetBrains](https://jetbrains.com) sponsert unser Community-Projekt mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
+[JetBrains](https://jetbrains.com) sponsert unser Fairy Tale Defender mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
 Jeder Entwickler, die sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
 
 ![JetBrains](docs/content/docs/contributing/assets/jb_beam.png)

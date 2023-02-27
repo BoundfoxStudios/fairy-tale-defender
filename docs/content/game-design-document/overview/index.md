@@ -6,7 +6,7 @@ weight: 1
 ---
 
 Dieses Dokument sollte von allen gelesen werden, die Interesse haben, bei der Entwicklung und beim Testen des Spiels mitzuhelfen.
-Es beschreibt das Design für das Community-Projekt Tower Defense Spiel.
+Es beschreibt das Design für Fairy Tale Defender.
 
 ## Titel
 
@@ -32,7 +32,7 @@ Es beschreibt das Design für das Community-Projekt Tower Defense Spiel.
 
 ## Technologie
 
-* Unity 2021 LTS
+* Unity 2022 LTS
   * 3D URP
   * Shader Graph
   * Input System
