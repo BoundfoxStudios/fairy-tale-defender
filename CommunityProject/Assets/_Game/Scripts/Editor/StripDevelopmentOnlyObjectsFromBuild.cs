@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
@@ -12,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Editor
 	public class StripDevelopmentOnlyObjectsFromBuild : IProcessSceneWithReport
 	{
 		public int callbackOrder { get; }
-		public void OnProcessScene(Scene scene, BuildReport report)
+		public void OnProcessScene(Scene scene, BuildReport? report)
 		{
 			if (report is null || report.summary.options.HasFlag(BuildOptions.Development))
 			{
