@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: WeaponRangePreview
-  m_Shader: {fileID: -6465566751694194690, guid: 14b2e3ab2bcb3c84583a6ff668e9029e,
+  m_Shader: {fileID: -6465566751694194690, guid: 6843edefbacc345839cde2f382b37ceb,
     type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -104,10 +104,10 @@ Material:
     m_Ints: []
     m_Floats:
     - Normal_Blend: 0.5
-    - _Alpha: 0.745
+    - _Alpha: 0.795
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AttackAngle: 90
+    - _AttackAngle: 1
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
@@ -132,12 +132,12 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _OuterRingThickness: 0.0241
-    - _OutlineThickness: 0.01
+    - _OutlineThickness: 0.03
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _RadialFill: 0.588
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 0.03
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -150,9 +150,9 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _InnerColor: {r: 0.40214118, g: 0.842781, b: 0.9529412, a: 0}
+    - _InnerColor: {r: 0.40214115, g: 0.842781, b: 0.9529411, a: 1}
     - _MinMaxRange: {r: 1, g: 4, b: 0, a: 0}
-    - _OutlineColor: {r: 0.17837036, g: 0.58607394, b: 0.688, a: 0}
+    - _OutlineColor: {r: 0.1783703, g: 0.5860739, b: 0.688, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _Vector2: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
