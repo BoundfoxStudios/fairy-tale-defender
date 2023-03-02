@@ -1,13 +1,14 @@
 using System;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons;
+using BoundfoxStudios.CommunityProject.Infrastructure;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	[RequireComponent(typeof(DecalProjector))]
-	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(WeaponRangeDecalPreview))]
-	public class WeaponRangeDecalPreview : MonoBehaviour
+	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(WeaponRangePreview))]
+	public class WeaponRangePreview : MonoBehaviour
 	{
 		[field: SerializeField]
 		private float ProjectionDepth { get; set; } = 20f;
@@ -16,8 +17,6 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		private static readonly int AttackAngle = Shader.PropertyToID("_AttackAngle");
 
 		private DecalProjector _decalProjector = default!;
-
-		private const float ProjectorSizeFactor = 0.01f;
 
 		private void Awake()
 		{
@@ -28,29 +27,25 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		{
 			transform.position = weaponPosition;
 
-			Vector3 range = weaponDefinition switch
+			var range = weaponDefinition switch
 			{
 				EffectiveBallisticWeaponDefinition effectiveBallisticWeaponDefinition =>
-					new Vector3(effectiveBallisticWeaponDefinition.MinimumRange,
+					new Limits2(effectiveBallisticWeaponDefinition.MinimumRange,
 						effectiveBallisticWeaponDefinition.MaximumRange),
 				_ => throw new ArgumentOutOfRangeException(nameof(weaponDefinition),
 					$"{weaponDefinition} is not implemented yet.")
 			};
 
-			SetProjectorSize(range.y);
+			SetProjectorSize(range.Maximum);
 			SetShaderProperties(weaponDefinition.AttackAngle, range);
 
 			_decalProjector.enabled = true;
 		}
 
-		private void SetProjectorSize(float weaponRange)
-		{
-			var boxWidth = weaponRange * 2 - ProjectorSizeFactor;
-			var newSize = new Vector3(boxWidth, boxWidth, ProjectionDepth);
-			_decalProjector.size = newSize;
-		}
+		private void SetProjectorSize(float weaponRange) =>
+			_decalProjector.size = new(weaponRange * 2, weaponRange * 2, ProjectionDepth);
 
-		private void SetShaderProperties(float attackAngle, Vector3 weaponRange)
+		private void SetShaderProperties(float attackAngle, Limits2 weaponRange)
 		{
 			_decalProjector.material.SetFloat(AttackAngle, attackAngle);
 			_decalProjector.material.SetVector(MinMaxRange, weaponRange);

@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace BoundfoxStudios.CommunityProject.Infrastructure
 {
 	public struct Limits2
@@ -16,5 +18,9 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure
 			minimum = Minimum;
 			maximum = Maximum;
 		}
+
+		public static implicit operator Vector2(Limits2 limits) => new(limits.Minimum, limits.Maximum);
+		public static implicit operator Vector3(Limits2 limits) => new(limits.Minimum, limits.Maximum);
+		public static implicit operator Vector4(Limits2 limits) => new(limits.Minimum, limits.Maximum);
 	}
 }
