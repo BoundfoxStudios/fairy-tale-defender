@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8974376439884702617}
   - component: {fileID: 7484005888287465442}
   m_Layer: 0
-  m_Name: WeaponRangeProjector
+  m_Name: WeaponRangePreviewProjector
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
