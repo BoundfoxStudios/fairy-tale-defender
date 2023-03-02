@@ -107,7 +107,7 @@ Material:
     - _Alpha: 0.795
     - _AlphaClip: 0
     - _AlphaToMask: 0
-    - _AttackAngle: 1
+    - _AttackAngle: 90
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BumpScale: 1
