@@ -45,7 +45,7 @@ jobs:
           path: build/StandaloneOSX
       - name: Untar macOS artifact
         run: |
-          cd Build-${{ github.run_id }}-StandaloneOSX
+          cd build/StandaloneOSX
           tar -xf Build-${{ github.run_id }}-StandaloneOSX.tar --strip-components=1
           rm Build-${{ github.run_id }}-StandaloneOSX.tar
         shell: bash
