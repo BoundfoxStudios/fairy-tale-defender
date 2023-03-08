@@ -34,9 +34,21 @@ Daher funktioniert es in unserem Repo wie folgt:
 
 Vereinfacht beschreibt Continuous Delivery aus ständige Ausliefern von Änderungen an die Nutzer der Anwendung.
 
-Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.
+In unserem Fall ist das ein automatisches Ausliefern in einen Steam-Beta-Branch mit dem Namen `CI`.
 
-Nach jedem Push auf `develop` soll in Zukunft zuerst der CI-Durchlauf erfolgen.
-Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.
-
+Nach jedem Push auf `develop` erfolgt eine automatische Auslieferung. 
 Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist. 
+
+### Technische Steam Infos
+
+Unser Spiel hat auf Steam die App Id: `2350330`.
+
+Folgende Depots sind konfiguriert:
+
+| Depot ID | Beschreibung |
+|----------|--------------|
+| 2350331  | Windows      |
+| 2350332  | macOS        |
+| 2350333  | Linux        |
+
+Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.
