@@ -76,6 +76,7 @@ jobs:
         run: |
           rm Build-${{ github.run_id }}-StandaloneOSX/FairyTaleDefender.entitlements
           tar -czf Build-${{ github.run_id }}-StandaloneOSX.tar Build-${{ github.run_id }}-StandaloneOSX
+          rm Build-${{ github.run_id }}-StandaloneOSX/FairyTaleDefender.app
         shell: bash
       - uses: actions/upload-artifact@v3
         with:

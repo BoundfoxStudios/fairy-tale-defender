@@ -43,4 +43,18 @@ jobs:
       APPLE_TEAM_NAME: ${{ secrets.APPLE_TEAM_NAME }}
       APPLE_NOTARIZATION_USERNAME: ${{ secrets.APPLE_NOTARIZATION_USERNAME }}
       APPLE_NOTARIZATION_PASSWORD: ${{ secrets.APPLE_NOTARIZATION_PASSWORD }}
-        
+  
+  deploy-to-steam:
+    needs: [build, notarize]
+    name: Upload the game to the CI steam branch
+    uses: ./.github/workflows/steam.yml
+    with:
+      app-id: 2350330
+      branch: CI
+      build-description: ${{ needs.build.outputs.build-version }}-${{ github.run_id }}
+    secrets:
+      USERNAME: ${{ secrets.STEAM_BUILDER_USERNAME }}
+      PASSWORD: ${{ secrets.STEAM_BUILDER_PASSWORD }}
+      CONFIG_VDF: ${{ secrets.STEAM_BUILDER_CONFIG_VDF }}
+      SSFN_FILE_NAME: ${{ secrets.STEAM_BUILDER_SSFN_FILE_NAME }}
+      SSFN_FILE_CONTENTS: ${{ secrets.STEAM_BUILDER_SSFN_FILE_CONTENTS }}

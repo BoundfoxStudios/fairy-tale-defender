@@ -44,6 +44,10 @@ on:
         required: true
         description: the git ref to checkout
         type: string
+    outputs:
+      build-version:
+        description: The game's version
+        value: ${{ jobs.build.outputs.build-version }}
     secrets:
       UNITY_EMAIL: 
         required: true
@@ -125,6 +129,8 @@ jobs:
     name: Build for ${{ matrix.target-platform }}
     runs-on: ${{ matrix.os }}
     needs: [manifest, contributors]
+    outputs:
+      build-version: ${{ steps.unity-build.outputs.buildVersion }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -154,7 +160,8 @@ jobs:
         uses: EndBug/add-and-commit@v9
         with:
           push: false
-      - uses: game-ci/unity-builder@v2
+      - id: unity-build
+        uses: game-ci/unity-builder@v2
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
