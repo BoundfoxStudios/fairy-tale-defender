@@ -206,10 +206,35 @@ Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
 &lt;/ol>
 &lt;h2 id="continuous-delivery">Continuous Delivery&lt;/h2>
 &lt;p>Vereinfacht beschreibt Continuous Delivery aus ständige Ausliefern von Änderungen an die Nutzer der Anwendung.&lt;/p>
-&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
-&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
-Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
-&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Systeme</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/</guid><description>
+&lt;p>In unserem Fall ist das ein automatisches Ausliefern in einen Steam-Beta-Branch mit dem Namen &lt;code>CI&lt;/code>.&lt;/p>
+&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> erfolgt eine automatische Auslieferung.
+Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p>
+&lt;h3 id="technische-steam-infos">Technische Steam Infos&lt;/h3>
+&lt;p>Unser Spiel hat auf Steam die App Id: &lt;code>2350330&lt;/code>.&lt;/p>
+&lt;p>Folgende Depots sind konfiguriert:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Depot ID&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>2350331&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2350332&lt;/td>
+&lt;td>macOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2350333&lt;/td>
+&lt;td>Linux&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p></description></item><item><title>Docs: Systeme</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/</guid><description>
 &lt;p>In dieser Sektion findest Du Dokumentation über bestehende Systeme, die bereits implementiert wurden.&lt;/p>
 &lt;p>Bitte nutze die Navigation links, um die System-Dokumentationen zu finden.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>

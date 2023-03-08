@@ -544,10 +544,35 @@ Daher funktioniert es in unserem Repo wie folgt:&lt;/p>
 &lt;/ol>
 &lt;h2 id="continuous-delivery">Continuous Delivery&lt;/h2>
 &lt;p>Vereinfacht beschreibt Continuous Delivery aus ständige Ausliefern von Änderungen an die Nutzer der Anwendung.&lt;/p>
-&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p>
-&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> soll in Zukunft zuerst der CI-Durchlauf erfolgen.
-Ist dieser erfolgt, soll die Anwendung paketiert werden und in einen Steam-Deployment-Branch hochgeladen werden.&lt;/p>
-&lt;p>Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p></description></item><item><title>Docs: Farbpalette</title><link>https://docs.fairytaledefender.de/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/colors/</guid><description>
+&lt;p>In unserem Fall ist das ein automatisches Ausliefern in einen Steam-Beta-Branch mit dem Namen &lt;code>CI&lt;/code>.&lt;/p>
+&lt;p>Nach jedem Push auf &lt;code>develop&lt;/code> erfolgt eine automatische Auslieferung.
+Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs innerhalb 1-2 Stunden spielbar auf einem Steam-Branch ist.&lt;/p>
+&lt;h3 id="technische-steam-infos">Technische Steam Infos&lt;/h3>
+&lt;p>Unser Spiel hat auf Steam die App Id: &lt;code>2350330&lt;/code>.&lt;/p>
+&lt;p>Folgende Depots sind konfiguriert:&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>Depot ID&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>2350331&lt;/td>
+&lt;td>Windows&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2350332&lt;/td>
+&lt;td>macOS&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2350333&lt;/td>
+&lt;td>Linux&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>Dies ist bisher im Projekt noch nicht genutzt, soll aber implementiert werden.&lt;/p></description></item><item><title>Docs: Farbpalette</title><link>https://docs.fairytaledefender.de/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/colors/</guid><description>
 &lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
 Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
 &lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
