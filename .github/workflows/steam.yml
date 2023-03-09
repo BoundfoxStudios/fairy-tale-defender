@@ -22,11 +22,7 @@ on:
         required: true
       PASSWORD:
         required: true
-      CONFIG_VDF:
-        required: true
-      SSFN_FILE_NAME:
-        required: true
-      SSFN_FILE_CONTENTS:
+      shared_secret:
         required: true
 
 jobs:
@@ -54,13 +50,16 @@ jobs:
         with:
           name: Build-${{ github.run_id }}-StandaloneLinux64
           path: build/StandaloneLinux64
+      - uses: CyberAndrii/steam-totp@v1
+        name: Generate TOTP
+        id: steam-totp
+        with:
+          shared_secret: ${{ secrets.SHARED_SECRET }}
       - uses: game-ci/steam-deploy@v2
         with:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
-          configVdf: ${{ secrets.CONFIG_VDF }}
-          ssfnFileName: ${{ secrets.SSFN_FILE_NAME }}
-          ssfnFileContents: ${{ secrets.SSFN_FILE_CONTENTS }}
+          totp: ${{ steps.steam-totp.outputs.code }}
           appId: ${{ inputs.app-id }}
           buildDescription: ${{ inputs.build-description }}
           rootPath: build
