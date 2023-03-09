@@ -22,7 +22,7 @@ on:
         required: true
       PASSWORD:
         required: true
-      SHARED_SECRET:
+      shared_secret:
         required: true
 
 jobs:
