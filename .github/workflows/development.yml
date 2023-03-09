@@ -50,7 +50,7 @@ jobs:
     uses: ./.github/workflows/steam.yml
     with:
       app-id: 2350330
-      branch: CI
+      branch: develop
       build-description: ${{ needs.build.outputs.build-version }}-${{ github.run_id }}
     secrets:
       USERNAME: ${{ secrets.STEAM_BUILDER_USERNAME }}
