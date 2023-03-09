@@ -110,8 +110,8 @@ Am besten erreichst Du ihn auf [Discord][2].
 
 ## Lizenz
 
-Die [Lizenz](LICENSE) dieses Repos ist die GPLv3.
-Das bedeutet ganz grob folgendes; alle weiteren Informationen siehst Du in der [Lizenz](LICENSE) oder [hier](https://choosealicense.com/licenses/gpl-3.0/).
+Die [Lizenz](LICENSE) dieses Repos ist die MIT-Lizenz.
+Das bedeutet ganz grob folgendes; alle weiteren Informationen siehst Du in der [Lizenz](LICENSE) oder [hier](https://choosealicense.com/licenses/mit).
 
 Du darfst:
 
@@ -121,9 +121,7 @@ Du darfst:
 
 Du musst:
 
-* den Quelltext offen legen,
-* Lizenz und Copyright Hinweis beilegen,
-* deine Änderungen unter gleicher Lizenz halten.
+* Lizenz und Copyright Hinweis beilegen
 
 ## JetBrains Rider
 
