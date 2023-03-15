@@ -1,40 +1,49 @@
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Systems.HealthSystem;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 {
-	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(PlayerController))]
-	public class PlayerController : MonoBehaviour, IAmDamageable
+	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(PlayerHealthController))]
+	public class PlayerHealthController : MonoBehaviour, IAmDamageable
 	{
 		[field: Header("References")]
 		[field: SerializeField]
 		public Health Health { get; set; } = default!;
 
+		[field: SerializeField]
+		public LevelRuntimeAnchorSO LevelRuntimeAnchor { get; private set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private IntEventChannelSO EnemyDamagesPlayerEventChannel { get; set; } = default!;
+
+		[field: SerializeField]
+		public VoidEventChannelSO SceneReadyEventChannel { get; private set; } = default!;
 
 		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
 		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
 
-		private void Awake()
-		{
-			// TODO: Where should we get this information from?
-			Health.Initialize(10, 10);
-		}
-
 		private void OnEnable()
 		{
 			EnemyDamagesPlayerEventChannel.Raised += EnemyDamagesPlayer;
 			Health.Dead += GameOver;
+			SceneReadyEventChannel.Raised += PrepareHealth;
 		}
 
 		private void OnDisable()
 		{
 			EnemyDamagesPlayerEventChannel.Raised -= EnemyDamagesPlayer;
 			Health.Dead -= GameOver;
+			SceneReadyEventChannel.Raised -= PrepareHealth;
+		}
+
+		private void PrepareHealth()
+		{
+			Health.Initialize(LevelRuntimeAnchor.ItemSafe.PlayerStartResources.Health,
+				LevelRuntimeAnchor.ItemSafe.PlayerStartResources.Health);
 		}
 
 		private void GameOver()

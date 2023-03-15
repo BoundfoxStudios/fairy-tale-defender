@@ -17,6 +17,9 @@ namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies
 		[field: SerializeField]
 		private IntEventChannelSO EnemyDamagesPlayerEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		public EnemyEventChannelSO EnemyDestroyedByPlayer { get; private set; } = default!;
+
 		public void Initialize(ISpline spline)
 		{
 			SplineWalker.Initialize(spline, Definition.MovementSpeed);
@@ -24,13 +27,13 @@ namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies
 
 		private void OnEnable()
 		{
-			Health.Dead += Dead;
+			Health.Dead += DestroyedByPlayer;
 			SplineWalker.ReachedEndOfSpline += ReachedEndOfSpline;
 		}
 
 		private void OnDisable()
 		{
-			Health.Dead -= Dead;
+			Health.Dead -= DestroyedByPlayer;
 			SplineWalker.ReachedEndOfSpline -= ReachedEndOfSpline;
 		}
 
@@ -38,12 +41,13 @@ namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies
 		{
 			// TODO: Get this info from the SO
 			EnemyDamagesPlayerEventChannel.Raise(1);
-			Dead();
+			DestroyCharacter();
 		}
 
-		private void Dead()
+		private void DestroyedByPlayer()
 		{
-			Destroy(gameObject);
+			EnemyDestroyedByPlayer.Raise(Definition);
+			DestroyCharacter();
 		}
 	}
 }

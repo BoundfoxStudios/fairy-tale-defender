@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -15,5 +16,20 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.Script
 
 		[field: SerializeField]
 		public WavesSO Waves { get; private set; } = default!;
+
+		[field: SerializeField]
+		public PlayerResources PlayerStartResources { get; private set; } = default!;
+
+		[Serializable]
+		public class PlayerResources
+		{
+			[field: SerializeField]
+			[field: Range(10, 50)]
+			public int Health { get; private set; } = 10;
+
+			[field: SerializeField]
+			[field: Range(50, 200)]
+			public int Coins { get; private set; } = 100;
+		}
 	}
 }

@@ -86,6 +86,8 @@ MonoBehaviour:
   <SplineWalker>k__BackingField: {fileID: 1489119832408811952}
   <EnemyDamagesPlayerEventChannel>k__BackingField: {fileID: 11400000, guid: 71190fa050e4a4a6399e26e30393957b,
     type: 2}
+  <EnemyDestroyedByPlayer>k__BackingField: {fileID: 11400000, guid: bd1e991bea9504358ade3ecefa748b64,
+    type: 2}
 --- !u!114 &1877689021823224971
 MonoBehaviour:
   m_ObjectHideFlags: 0
