@@ -8,7 +8,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjec
 	{
 		public struct EventArgs
 		{
-			public IBuildable Buildable;
+			public IAmBuildable Buildable;
 		}
 	}
 }

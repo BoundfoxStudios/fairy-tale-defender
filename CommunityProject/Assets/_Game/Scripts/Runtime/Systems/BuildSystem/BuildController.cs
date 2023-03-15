@@ -35,6 +35,10 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
 
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		public BuildableEventChannelSO BuiltEventChannel { get; private set; } = default!;
+
 		[field: Header("Channels")]
 		[field: SerializeField]
 		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
@@ -44,14 +48,14 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 
 		private class BuildContext
 		{
-			public IBuildable Buildable { get; }
+			public IAmBuildable Buildable { get; }
 			public GameObject BlueprintInstance { get; }
 			public MeshRenderer[] MeshRenderers { get; }
 			public Vector3 TilePosition { get; set; }
 			public bool IsValidPosition { get; set; }
 			public LayerMask PreviousLayerMask { get; set; }
 
-			public BuildContext(IBuildable buildable)
+			public BuildContext(IAmBuildable buildable)
 			{
 				Buildable = buildable;
 				BlueprintInstance = Instantiate(buildable.BlueprintPrefab);
@@ -116,6 +120,8 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			var rotation = _buildContext.BlueprintInstance.transform.rotation;
 			Destroy(_buildContext.BlueprintInstance);
 			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, rotation);
+
+			BuiltEventChannel.Raise(new() { Buildable = _buildContext.Buildable });
 			ExitBuildModeEventChannel.Raise();
 		}
 
