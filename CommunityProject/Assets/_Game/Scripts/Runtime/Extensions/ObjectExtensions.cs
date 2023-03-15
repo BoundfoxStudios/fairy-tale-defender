@@ -21,6 +21,7 @@ namespace BoundfoxStudios.CommunityProject.Extensions
 		/// <summary>
 		/// Checks if a <see cref="UnityEngine.Object"/> is not null and that the native object is alive.
 		/// </summary>
+		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public static bool Exists([NotNullWhen(true)] this UnityEngine.Object? unityObject) => unityObject is not null && unityObject;
 	}
 }
