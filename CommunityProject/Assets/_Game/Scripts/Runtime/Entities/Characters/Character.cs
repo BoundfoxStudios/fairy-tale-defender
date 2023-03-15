@@ -17,5 +17,10 @@ namespace BoundfoxStudios.CommunityProject.Entities.Characters
 		{
 			Health.Initialize(Definition.MaxHealth, Definition.MaxHealth);
 		}
+
+		protected void DestroyCharacter()
+		{
+			Destroy(gameObject);
+		}
 	}
 }
