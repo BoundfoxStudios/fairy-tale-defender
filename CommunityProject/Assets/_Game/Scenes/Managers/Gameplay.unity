@@ -464,6 +464,10 @@ MonoBehaviour:
     type: 2}
   <EnemyDestroyedByPlayerEventChannel>k__BackingField: {fileID: 11400000, guid: bd1e991bea9504358ade3ecefa748b64,
     type: 2}
+  <BuiltEventChannel>k__BackingField: {fileID: 11400000, guid: 7ecdd2f74b0d943cea4ce5325c4f3454,
+    type: 2}
+  <CoinsChangeEventChannel>k__BackingField: {fileID: 11400000, guid: 42b83e1defef54d16bedaf305ec0489e,
+    type: 2}
 --- !u!1 &556209361
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,6 +695,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Buildable>k__BackingField: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240,
+    type: 2}
+  <Button>k__BackingField: {fileID: 1032635710}
+  <CoinsChangeEventChannel>k__BackingField: {fileID: 11400000, guid: 42b83e1defef54d16bedaf305ec0489e,
     type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
@@ -1164,6 +1171,8 @@ MonoBehaviour:
     type: 2}
   <TimeToRotate>k__BackingField: 0.133
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+    type: 2}
+  <BuiltEventChannel>k__BackingField: {fileID: 11400000, guid: 7ecdd2f74b0d943cea4ce5325c4f3454,
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}

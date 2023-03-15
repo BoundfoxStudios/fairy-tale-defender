@@ -1,6 +1,7 @@
 using BoundfoxStudios.CommunityProject.Entities.Characters.Enemies.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.CommunityProject.Systems.BuildSystem;
 using TMPro;
 using UnityEngine;
 
@@ -23,6 +24,13 @@ namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 		[field: SerializeField]
 		public EnemyEventChannelSO EnemyDestroyedByPlayerEventChannel { get; private set; } = default!;
 
+		[field: SerializeField]
+		public BuildableEventChannelSO BuiltEventChannel { get; private set; } = default!;
+
+		[field: Header("Broadcasting Channels")]
+		[field: SerializeField]
+		public IntDeltaEventChannelSO CoinsChangeEventChannel { get; private set; } = default!;
+
 		private int _coins;
 
 		private int Coins
@@ -30,8 +38,12 @@ namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 			get => _coins;
 			set
 			{
+				var delta = value - _coins;
+
 				_coins = value;
+
 				CoinsText.text = _coins.ToString();
+				CoinsChangeEventChannel.Raise(new() { Value = _coins, Delta = delta });
 			}
 		}
 
@@ -39,12 +51,14 @@ namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 		{
 			SceneReadyEventChannel.Raised += PrepareResources;
 			EnemyDestroyedByPlayerEventChannel.Raised += EnemyDestroyedByPlayer;
+			BuiltEventChannel.Raised += Built;
 		}
 
 		private void OnDisable()
 		{
 			SceneReadyEventChannel.Raised -= PrepareResources;
 			EnemyDestroyedByPlayerEventChannel.Raised -= EnemyDestroyedByPlayer;
+			BuiltEventChannel.Raised -= Built;
 		}
 
 		private void EnemyDestroyedByPlayer(EnemySO enemy)
@@ -55,6 +69,16 @@ namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
 		private void PrepareResources()
 		{
 			Coins = LevelRuntimeAnchor.ItemSafe.PlayerStartResources.Coins;
+		}
+
+		private void Built(BuildableEventChannelSO.EventArgs args)
+		{
+			var buildable = args.Buildable;
+
+			if (buildable is IHaveAPrice buildableWithPrice)
+			{
+				Coins -= buildableWithPrice.Price;
+			}
 		}
 	}
 }

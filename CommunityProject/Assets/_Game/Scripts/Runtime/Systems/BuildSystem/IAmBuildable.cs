@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 {
-	public interface IBuildable
+	public interface IAmBuildable
 	{
 		/// <summary>
 		/// The real object to place.

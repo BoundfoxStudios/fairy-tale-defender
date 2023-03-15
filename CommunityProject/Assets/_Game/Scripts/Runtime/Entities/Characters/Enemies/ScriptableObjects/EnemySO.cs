@@ -21,7 +21,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies.Scriptabl
 
 		[field: SerializeField]
 		[field: Min(0)]
-		[field: Tooltip("The amount of currency awarded to player on kill.")]
+		[field: Tooltip("The amount of coins awarded to player on kill.")]
 		public int CoinsOnKill { get; private set; } = 1;
 	}
 }
