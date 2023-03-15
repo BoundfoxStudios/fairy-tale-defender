@@ -6,7 +6,7 @@ using UnityEngine.AddressableAssets;
 namespace BoundfoxStudios.CommunityProject.Editor
 {
 	public class AssetLocator<T>
-		where T: class
+		where T : class
 	{
 		private readonly string _addressablesKey;
 		private T? _locatedAsset;
