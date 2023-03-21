@@ -136,24 +136,30 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			var blueprintInstance = _buildContext.BlueprintInstance;
 			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(position);
 
-			if (!Physics.Raycast(ray, out var hitInfo, 1000, _buildableAndObstacleLayerMask))
+			if (!Physics.Raycast(ray, out var raycastHitInfo, 1000, _buildableAndObstacleLayerMask))
 			{
 				blueprintInstance.Deactivate();
 				return;
 			}
 
 			blueprintInstance.Activate();
-			var tilePosition = hitInfo.collider.transform.position;
+			var tilePosition = raycastHitInfo.collider.transform.position;
 			_buildContext.TilePosition = tilePosition;
 			_buildContext.BlueprintInstance.transform.position = tilePosition;
 
-			var layerMask = hitInfo.collider.gameObject.layer;
+			var layerMask = raycastHitInfo.collider.gameObject.layer;
 			var needsMaterialSwap = _buildContext.PreviousLayerMask != layerMask;
 			_buildContext.PreviousLayerMask = layerMask;
 
-			// We create a line cast that casts from 10 units above down to the tile position, so we can hit a collider's
-			// front face. No Tower will be 10 units tall, so that should be safe (famous last words...:))
-			if (Physics.Linecast(tilePosition + Vector3.up * 10, tilePosition + Vector3.down, out _, ObstaclesLayerMask))
+			if (!Physics.Linecast(tilePosition + Vector3.up * 10,
+				tilePosition + Vector3.down,
+				out var linecastHitInfo,
+				_buildableAndObstacleLayerMask))
+			{
+				return;
+			}
+
+			if (linecastHitInfo.collider.gameObject.IsInLayerMask(ObstaclesLayerMask))
 			{
 				if (needsMaterialSwap)
 				{
@@ -181,7 +187,8 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			var blueprintTransform = _buildContext.BlueprintInstance.transform;
 			blueprintTransform.DOComplete();
 			blueprintTransform
-				.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0), TimeToRotate,
+				.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0),
+					TimeToRotate,
 					RotateMode.FastBeyond360)
 				.WithCancellation(destroyCancellationToken);
 		}
