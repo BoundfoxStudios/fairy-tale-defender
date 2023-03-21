@@ -819,6 +819,34 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""ToolTips"",
+            ""id"": ""97af8790-3658-4aa5-991e-eb6232c63773"",
+            ""actions"": [
+                {
+                    ""name"": ""ToolTipPosition"",
+                    ""type"": ""Value"",
+                    ""id"": ""99eadddf-a54e-4e1a-94b3-9304db62daa6"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""fef865c7-c6fb-4741-a4a2-b1c604057283"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""ToolTipPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -862,6 +890,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             m_BuildSystem_BuildPosition = m_BuildSystem.FindAction("BuildPosition", throwIfNotFound: true);
             m_BuildSystem_Build = m_BuildSystem.FindAction("Build", throwIfNotFound: true);
             m_BuildSystem_BuildRotate = m_BuildSystem.FindAction("BuildRotate", throwIfNotFound: true);
+            // ToolTips
+            m_ToolTips = asset.FindActionMap("ToolTips", throwIfNotFound: true);
+            m_ToolTips_ToolTipPosition = m_ToolTips.FindAction("ToolTipPosition", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1120,6 +1151,39 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             }
         }
         public BuildSystemActions @BuildSystem => new BuildSystemActions(this);
+
+        // ToolTips
+        private readonly InputActionMap m_ToolTips;
+        private IToolTipsActions m_ToolTipsActionsCallbackInterface;
+        private readonly InputAction m_ToolTips_ToolTipPosition;
+        public struct ToolTipsActions
+        {
+            private @GameInput m_Wrapper;
+            public ToolTipsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @ToolTipPosition => m_Wrapper.m_ToolTips_ToolTipPosition;
+            public InputActionMap Get() { return m_Wrapper.m_ToolTips; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(ToolTipsActions set) { return set.Get(); }
+            public void SetCallbacks(IToolTipsActions instance)
+            {
+                if (m_Wrapper.m_ToolTipsActionsCallbackInterface != null)
+                {
+                    @ToolTipPosition.started -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
+                    @ToolTipPosition.performed -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
+                    @ToolTipPosition.canceled -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
+                }
+                m_Wrapper.m_ToolTipsActionsCallbackInterface = instance;
+                if (instance != null)
+                {
+                    @ToolTipPosition.started += instance.OnToolTipPosition;
+                    @ToolTipPosition.performed += instance.OnToolTipPosition;
+                    @ToolTipPosition.canceled += instance.OnToolTipPosition;
+                }
+            }
+        }
+        public ToolTipsActions @ToolTips => new ToolTipsActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1153,6 +1217,10 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             void OnBuildPosition(InputAction.CallbackContext context);
             void OnBuild(InputAction.CallbackContext context);
             void OnBuildRotate(InputAction.CallbackContext context);
+        }
+        public interface IToolTipsActions
+        {
+            void OnToolTipPosition(InputAction.CallbackContext context);
         }
     }
 }
