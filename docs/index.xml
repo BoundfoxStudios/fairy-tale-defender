@@ -708,7 +708,7 @@ Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwa
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
 Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
-&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Event-System</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/</guid><description>
+&lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Erklärung Event-System</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</guid><description>
 &lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
 &lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
 &lt;h2 id="implementierung">Implementierung&lt;/h2>
@@ -716,7 +716,7 @@ Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-pro
 Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
 &lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
-Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="../multi-scene-management/">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
+Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="../../multi-scene-management/">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
 &lt;div class="mermaid">flowchart LR
 Action["Aktion/Trigger (MonoBehaviour)"] -->|"Raise()"| Event["Event (ScriptableObject)"]
 EventListener["Event Listener (MonoBehaviour)"] -->|"Horcht auf"| Event

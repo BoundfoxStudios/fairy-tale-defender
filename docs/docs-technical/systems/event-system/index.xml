@@ -1,0 +1,54 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Event-System</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/</link><description>Recent content in Event-System on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Erklärung Event-System</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</guid><description>
+&lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
+&lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
+&lt;h2 id="implementierung">Implementierung&lt;/h2>
+&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects">hier&lt;/a>.
+Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
+Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
+&lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
+Dadurch das wir hier auf ScriptableObjects setzen, können Sender und Empfänger in unterschiedlichen Szenen sein, was z.B. für das &lt;a href="../../multi-scene-management/">Multi-Scene-Management&lt;/a> sehr praktisch ist.&lt;/p>
+&lt;div class="mermaid">flowchart LR
+Action["Aktion/Trigger (MonoBehaviour)"] -->|"Raise()"| Event["Event (ScriptableObject)"]
+EventListener["Event Listener (MonoBehaviour)"] -->|"Horcht auf"| Event
+EventListener --> Response["Antwort auf Event"]
+&lt;/div>
+&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
+&lt;p>Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.&lt;/p>
+&lt;p>Nehmen wir als Beispiel mal das Leben des Spielers.
+Wenn der Spieler Leben verliert oder bekommt, möchte man das in der Regel im UI anzeigen.
+Jetzt könnte der Spieler eine Referenz auf das UI haben (oder auch umgekehrt) und sobald der Spieler Leben verliert oder gewinnt, diese Änderung direkt an das UI übertragen.
+Weiter möchten wir, dass die Gegner sich anders verhalten, je nach dem, wie viel Leben der Spieler hat.
+Auch hier könnte jetzt der Spieler alle Gegner kennen und ihnen mitteilen, wenn sich das Leben verändert.
+Weiter geht&amp;rsquo;s mit anderen Systemen: Post Processing zum Effekte je nach Leben anzeigen, Audio System, dass entsprechend den Sound ändert etc.&lt;/p>
+&lt;div class="mermaid">flowchart LR
+Spieler --> UI
+Spieler --> Gegner1
+Spieler --> ...
+Spieler --> GegnerX
+Spieler --> PostProcessing
+Spieler --> AudioSystem
+&lt;/div>
+&lt;p>Wenn der Spieler all diese Systeme direkt kennen würde, nennt man dies auch eine hohe Kopplung.
+In der Softwareentwicklung versucht man, genau diese hohe Kopplung zu vermeiden.
+Auch wenn dieses Beispiel hier sehr einfach gehalten ist, führt diese Kopplung langsam aber sicher zu schlecht wartbarem Code.
+Denn, wann immer man sich die Spieler-Klasse ansieht, sehen wir viele Abhängigkeiten im Code.
+Jetzt muss jeder Entwickler schauen, was genau diese Abhängigkeiten machen, um zu verstehen, wie die Spieler-Klasse funktioniert.
+Außerdem hat die Spieler-Klasse viel mehr Verantwortung, als sie eigentlich haben müsste, da sie viele Bereiche der Gesamtanwendung kennt und bearbeitet.&lt;/p>
+&lt;p>Das ist in der Softwareentwicklung &lt;em>kein&lt;/em> erstrebenswerter Zustand.&lt;/p>
+&lt;p>Viel mehr wollen wir eine Entkopplung erreichen und hier tritt unser Event-System ein:&lt;/p>
+&lt;div class="mermaid">flowchart LR
+Spieler -->|Leben: 50| EventSystem
+EventSystem -->|Leben: 50| UI
+EventSystem -->|Leben: 50| GegnerX
+EventSystem -->|Leben: 50| PostProcessing
+EventSystem -->|Leben: 50| AudioSystem
+&lt;/div>
+&lt;p>Leider sieht es jetzt durch die Grafik so aus, als hätten wir das Problem zum Event-System verschoben, dass jetzt alle anderen kennt.
+Dem ist aber nicht so.
+Anstelle dass der Spieler jedes Einzelsystem bearbeitet, nutzt es einfach nur das Event-System und teilt sein aktuelles Leben mit.
+Was jetzt damit passiert, &lt;em>das ist dem Spieler vollkommen egal&lt;/em>.
+In diesem Moment haben wir alles voneinander entkoppelt.
+Die Spieler-Klasse hat viel weniger Verantwortlichkeiten, auch für den Entwickler ist es jetzt sehr viel einfacher zu verstehen, da statt viele Einzelsysteme nur noch das Event-System angesprochen wird.
+Damit haben wir jetzt eine &lt;em>lose Kopplung&lt;/em> erreicht.&lt;/p>
+&lt;p>Einfach ausgedrückt kann man sich das Event-System als eine Art Walkie-Talkie vorstellen.
+Jemand teilt seinen Zustand über das Walkie-Talkie mit, ohne zu wissen, wer diese Nachricht hört, ob sich jemand dafür interessiert und was mit der Information passiert.&lt;/p></description></item></channel></rss>
