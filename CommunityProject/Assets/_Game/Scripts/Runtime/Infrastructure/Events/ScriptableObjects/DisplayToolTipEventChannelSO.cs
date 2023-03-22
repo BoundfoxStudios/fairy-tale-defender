@@ -14,7 +14,7 @@ namespace BoundfoxStudios.CommunityProject
 		public event InputReaderSO.ScreenPositionHandler Position = delegate { };
 		public void OnToolTipPosition(InputAction.CallbackContext context)
 		{
-			if(!context.performed)
+			if (!context.performed)
 			{
 				return;
 			}
