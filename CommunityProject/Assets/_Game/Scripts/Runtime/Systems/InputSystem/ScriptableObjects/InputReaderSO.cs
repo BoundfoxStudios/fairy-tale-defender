@@ -28,7 +28,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		private VoidEventChannelSO GameplayStartEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private	DisplayToolTipEventChannelSO DisplayToolTipEventChannel { get; set; } = default!;
+		private DisplayToolTipEventChannelSO DisplayToolTipEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
 		private VoidEventChannelSO DisableToolTipEventChannel { get; set; } = default!;
@@ -58,7 +58,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 			DisableToolTipEventChannel.Raised += DisableToolTip;
 		}
 
-		
+
 
 		private void DisableToolTip()
 		{
@@ -81,7 +81,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		{
 			EnableGameplayInput();
 		}
-		
+
 
 		private void OnDisable()
 		{
