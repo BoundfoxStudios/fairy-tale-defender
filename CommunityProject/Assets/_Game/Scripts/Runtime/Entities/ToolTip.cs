@@ -15,16 +15,29 @@ namespace BoundfoxStudios.CommunityProject
 
 		public string ToolTipText { get { return toolTip!; } }
 
+		private void OnEnable()
+		{
+			if(Camera.main.gameObject.GetComponent<PhysicsRaycaster>() == null)
+			{
+				Camera.main.gameObject.AddComponent<PhysicsRaycaster>();
+			}
+		}
+		private void OnDisable()
+		{
+			if(Camera.main.gameObject.GetComponent<PhysicsRaycaster>() != null)
+			{
+				Destroy(Camera.main.gameObject.GetComponent<PhysicsRaycaster>());
+				
+			}
+		}
 		public void OnPointerEnter(PointerEventData eventData)
 		{
 			ToolTipManager.Instance.DisplayToolTipEventChannel!.Raise(ToolTipText);
-			Debug.Log("MouseEnter");
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
 			ToolTipManager.Instance.DisableToolTipEventChannel!.Raise();
-			Debug.Log("MouseExit");
 		}
 	}
 }
