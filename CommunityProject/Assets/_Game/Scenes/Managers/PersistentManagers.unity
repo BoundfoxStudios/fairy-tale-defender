@@ -415,6 +415,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3968985765161118188, guid: 70f16d547cc61d6489472a6e4f89d784,
         type: 3}
+      propertyPath: <ToolTipText>k__BackingField
+      value: 
+      objectReference: {fileID: 1318708122}
+    - target: {fileID: 3968985765161118188, guid: 70f16d547cc61d6489472a6e4f89d784,
+        type: 3}
       propertyPath: <toolTipText>k__BackingField
       value: 
       objectReference: {fileID: 1318708122}
