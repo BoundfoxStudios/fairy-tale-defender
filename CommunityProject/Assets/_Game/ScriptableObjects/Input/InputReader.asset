@@ -22,3 +22,7 @@ MonoBehaviour:
     type: 2}
   <GameplayStartEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
     type: 2}
+  <DisplayToolTipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
+    type: 2}
+  <DisableToolTipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
+    type: 2}
