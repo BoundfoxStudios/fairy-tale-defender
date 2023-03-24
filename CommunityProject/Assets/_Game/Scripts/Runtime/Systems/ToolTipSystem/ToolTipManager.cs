@@ -11,58 +11,57 @@ using UnityEngine.Windows;
 using UnityEngine.InputSystem;
 using UnityEditor;
 using UnityEngine.UIElements;
+using UnityEngine.InputSystem.Interactions;
+using System.Runtime.CompilerServices;
 
 namespace BoundfoxStudios.CommunityProject
 {
 	public class ToolTipManager : MonoBehaviour
 	{
-		public static ToolTipManager? Instance;
+		//public static ToolTipManager? Instance;
 
-		[field: SerializeField] TMP_Text? ToolTipText = default!;
-		[field: SerializeField] public DisplayToolTipEventChannelSO? DisplayToolTipEventChannel = default!;
-		[field: SerializeField] public VoidEventChannelSO? DisableToolTipEventChannel = default!;
+		[field: SerializeField]
+		private TMP_Text ToolTipText { get; set; } = default!;
+
+		[field: SerializeField]
+		public DisplayToolTipEventChannelSO DisplayToolTipEventChannel { get; private set; } = default!;
+
+		[field: SerializeField]
+		public VoidEventChannelSO DisableToolTipEventChannel { get; private set; } = default!;
 
 		List<ToolTip> textToolTips = new List<ToolTip>();
 		float toolTipOffsetX;
 		float toolTipOffsetY;
 
-		private void Awake()
+
+
+		private void OnEnable()
 		{
-			Instance = this;
-			if (ToolTipText != null)
-			{
-				toolTipOffsetX = ToolTipText.rectTransform.sizeDelta.x;
-				toolTipOffsetY = ToolTipText.rectTransform.sizeDelta.y;
-			}
+			toolTipOffsetX = ToolTipText.rectTransform.sizeDelta.x;
+			toolTipOffsetY = ToolTipText.rectTransform.sizeDelta.y;
+
 			textToolTips = FindObjectsByType<ToolTip>(FindObjectsSortMode.None).ToList();
-		}
 
 
-		//suscribing methods to events
-
-		public void OnEnable()
-		{
 			DisplayToolTipEventChannel!.Raised += DisplayToolTip;
 			DisableToolTipEventChannel!.Raised += DisableToolTip;
 
 			DisplayToolTipEventChannel!.Position += SetToolTipTextPosition;
 		}
-		public void OnDisable()
+		private void OnDisable()
 		{
 			DisplayToolTipEventChannel!.Raised -= DisplayToolTip;
 			DisableToolTipEventChannel!.Raised -= DisableToolTip;
 
 			DisplayToolTipEventChannel!.Position -= SetToolTipTextPosition;
 		}
-		void DisplayToolTip(string tip)
+		private void DisplayToolTip(string tip)
 		{
 			foreach (var textTip in textToolTips)
 			{
 				if (textTip.ToolTipText == tip)
 				{
-					ToolTipText!.text = tip;
-
-
+					ToolTipText.text = tip;
 
 					ToolTipText.gameObject.SetActive(true);
 				}
@@ -93,7 +92,7 @@ namespace BoundfoxStudios.CommunityProject
 
 		}
 
-		void DisableToolTip()
+		private void DisableToolTip()
 		{
 			if (ToolTipText.gameObject.activeSelf)
 				ToolTipText.gameObject.SetActive(false);

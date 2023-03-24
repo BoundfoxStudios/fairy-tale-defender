@@ -10,10 +10,12 @@ namespace BoundfoxStudios.CommunityProject
 	public class ToolTip : MonoBehaviour, ITextToolTip, IPointerEnterHandler, IPointerExitHandler
 	{
 		[field: SerializeField]
-		string? toolTip = default!;
+		private string ToolTipContent { get; set; } = default!;
+		[field: SerializeField]
+		private ToolTipManager ToolTipManager { get; set; } = default!;
 		public Vector3 Position => throw new System.NotImplementedException();
 
-		public string ToolTipText { get { return toolTip!; } }
+		public string ToolTipText { get { return ToolTipContent!; } }
 
 		private void OnEnable()
 		{
@@ -32,12 +34,12 @@ namespace BoundfoxStudios.CommunityProject
 		}
 		public void OnPointerEnter(PointerEventData eventData)
 		{
-			ToolTipManager.Instance.DisplayToolTipEventChannel!.Raise(ToolTipText);
+			ToolTipManager.DisplayToolTipEventChannel!.Raise(ToolTipText);
 		}
 
 		public void OnPointerExit(PointerEventData eventData)
 		{
-			ToolTipManager.Instance.DisableToolTipEventChannel!.Raise();
+			ToolTipManager.DisableToolTipEventChannel!.Raise();
 		}
 	}
 }
