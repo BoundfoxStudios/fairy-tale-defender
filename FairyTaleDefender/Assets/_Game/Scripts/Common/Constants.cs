@@ -23,6 +23,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public const string RuntimeAnchors = MenuName + "/Runtime Anchors";
 			public const string Integrations = MenuName + "/Integrations";
 			public const string SteamIntegration = Integrations + "/Steam";
+			public const string BuildSystem = MenuName + "/Build System";
 		}
 	}
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731704, g: 0.1341472, b: 0.121078566, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1334,7 +1334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1f0258ee8a4cd0b14d8aecd88bfabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BuildableLayerMask>k__BackingField:
+  <TerrainLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 256
   <ObstaclesLayerMask>k__BackingField:
@@ -1350,6 +1350,7 @@ MonoBehaviour:
     type: 2}
   <TimeToRotate>k__BackingField: 0.133
   <WeaponRangePreview>k__BackingField: {fileID: 2003418655}
+  <LevelContainerRuntimeAnchor>k__BackingField: {fileID: 0}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <BuiltEventChannel>k__BackingField: {fileID: 11400000, guid: 7ecdd2f74b0d943cea4ce5325c4f3454,

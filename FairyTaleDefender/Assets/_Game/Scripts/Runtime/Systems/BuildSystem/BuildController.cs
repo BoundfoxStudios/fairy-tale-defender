@@ -1,4 +1,5 @@
 using System.Threading;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
@@ -9,10 +10,11 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 {
+	[AddComponentMenu(Constants.MenuNames.BuildSystem + "/" + nameof(BuildController))]
 	public class BuildController : MonoBehaviour
 	{
 		[field: SerializeField]
-		private LayerMask BuildableLayerMask { get; set; }
+		private LayerMask TerrainLayerMask { get; set; }
 
 		[field: SerializeField]
 		private LayerMask ObstaclesLayerMask { get; set; }
@@ -35,6 +37,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		private WeaponRangePreview WeaponRangePreview { get; set; } = default!;
 
+		[field: SerializeField]
+		public TransformRuntimeAnchorSO LevelContainerRuntimeAnchor { get; private set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -48,28 +53,42 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
 		private BuildContext? _buildContext;
-		private LayerMask _buildableAndObstacleLayerMask;
+		private LayerMask _terrainAndObstacleLayerMask;
 
 		private class BuildContext
 		{
+			private Vector3 _tilePosition;
+
 			public IAmBuildable Buildable { get; }
 			public GameObject BlueprintInstance { get; }
 			public MeshRenderer[] MeshRenderers { get; }
-			public Vector3 TilePosition { get; set; }
+
+			public Vector3 TilePosition
+			{
+				get => _tilePosition;
+				set
+				{
+					_tilePosition = value;
+					BlueprintInstance.transform.position = value;
+				}
+			}
+
 			public bool IsValidPosition { get; set; }
-			public LayerMask PreviousLayerMask { get; set; }
+			public bool PreviousHasValidPosition { get; set; }
+			public ICanCalculateEffectiveWeaponDefinition WeaponDefinition { get; }
 
 			public BuildContext(IAmBuildable buildable)
 			{
 				Buildable = buildable;
 				BlueprintInstance = Instantiate(buildable.BlueprintPrefab);
 				MeshRenderers = BlueprintInstance.GetComponentsInChildren<MeshRenderer>();
+				WeaponDefinition = Buildable.Prefab.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
 			}
 		}
 
 		private void Awake()
 		{
-			_buildableAndObstacleLayerMask = BuildableLayerMask | ObstaclesLayerMask;
+			_terrainAndObstacleLayerMask = TerrainLayerMask | ObstaclesLayerMask;
 		}
 
 		private void OnEnable()
@@ -130,7 +149,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			ExitBuildModeEventChannel.Raise();
 		}
 
-		private void ReadBuildPosition(Vector2 position)
+		private bool TryFindFromRay(Ray ray, out RaycastHit hit, LayerMask layerMask) =>
+			Physics.Raycast(ray, out hit, 1000, layerMask);
+
+		private void ReadBuildPosition(Vector2 screenPosition)
 		{
 			if (_buildContext == null)
 			{
@@ -140,52 +162,56 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			WeaponRangePreview.StopDisplayingWeaponRange();
 			_buildContext.IsValidPosition = false;
 			var blueprintInstance = _buildContext.BlueprintInstance;
-			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(position);
 
-			if (!Physics.Raycast(ray, out var raycastHitInfo, 1000, _buildableAndObstacleLayerMask))
+			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(screenPosition);
+
+			if (!TryFindFromRay(ray, out var terrainHit, TerrainLayerMask))
 			{
 				blueprintInstance.Deactivate();
 				return;
 			}
 
 			blueprintInstance.Activate();
-			var tilePosition = raycastHitInfo.collider.transform.position;
+
+			// We're adjusting the position for the tile by 0.5f because the tile's pivot is at the center.
+			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + 0.5f), terrainHit.collider.bounds.center.y,
+				Mathf.Floor(terrainHit.point.z + 0.5f));
+
 			_buildContext.TilePosition = tilePosition;
-			_buildContext.BlueprintInstance.transform.position = tilePosition;
 
-			var layerMask = raycastHitInfo.collider.gameObject.layer;
-			var needsMaterialSwap = _buildContext.PreviousLayerMask != layerMask;
-			_buildContext.PreviousLayerMask = layerMask;
+			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
+			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down, out var terrainBoxHit,
+				Quaternion.identity, 20, _terrainAndObstacleLayerMask);
 
-			if (!Physics.Linecast(tilePosition + Vector3.up * 10,
-				tilePosition + Vector3.down,
-				out var linecastHitInfo,
-				_buildableAndObstacleLayerMask))
-			{
-				return;
-			}
+			var hasValidPosition = terrainBoxHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
+			                       && terrainBoxHit.collider.TryGetComponent<BuildInformation>(out var buildInformation)
+			                       && buildInformation.IsBuildable;
 
-			if (linecastHitInfo.collider.gameObject.IsInLayerMask(ObstaclesLayerMask))
-			{
-				if (needsMaterialSwap)
-				{
-					SwapMaterials(BlueprintMaterial, BlueprintInvalidMaterial, _buildContext.MeshRenderers);
-				}
+			var needsMaterialSwap = _buildContext.PreviousHasValidPosition != hasValidPosition;
+			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
-				return;
-			}
-
-			if (needsMaterialSwap)
+			if (needsMaterialSwap && hasValidPosition)
 			{
 				SwapMaterials(BlueprintInvalidMaterial, BlueprintMaterial, _buildContext.MeshRenderers);
 			}
+			else if (needsMaterialSwap && !hasValidPosition)
+			{
+				SwapMaterials(BlueprintMaterial, BlueprintInvalidMaterial, _buildContext.MeshRenderers);
+				// We don't need to process further, because we can not build
+				return;
+			}
+
+			if (!hasValidPosition)
+			{
+				return;
+			}
 
 			_buildContext.IsValidPosition = true;
-			var weaponDefinition = _buildContext.Buildable.Prefab.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
+
 			WeaponRangePreview.DisplayWeaponRange(new()
 			{
 				Transform = _buildContext.BlueprintInstance.transform,
-				EffectiveWeaponDefinition = weaponDefinition
+				EffectiveWeaponDefinition = _buildContext.WeaponDefinition
 			});
 		}
 
@@ -200,7 +226,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			RotateBlueprintWithRangePreview(blueprintTransform, TimeToRotate, destroyCancellationToken);
 		}
 
-		private void RotateBlueprintWithRangePreview(Transform blueprintTransform, float timeToRotate, CancellationToken cancellationToken)
+		private void RotateBlueprintWithRangePreview(Transform blueprintTransform, float timeToRotate,
+			CancellationToken cancellationToken)
 		{
 			blueprintTransform.DOQuarterRotationAroundY(timeToRotate, cancellationToken);
 			WeaponRangePreview.transform.DOQuarterRotationAroundY(timeToRotate, cancellationToken);
