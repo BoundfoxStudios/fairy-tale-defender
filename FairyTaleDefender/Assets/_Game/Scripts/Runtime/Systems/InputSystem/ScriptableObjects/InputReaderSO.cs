@@ -38,7 +38,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
 
-		public delegate void ScreenPositionHandler(Vector2 position);
+		public delegate void ScreenPositionHandler(Vector2 screenPosition);
 
 		public delegate void DeltaHandler(Vector2 delta);
 
