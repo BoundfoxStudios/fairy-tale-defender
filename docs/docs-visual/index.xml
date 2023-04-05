@@ -3,7 +3,10 @@
 &lt;h2 id="blender-starter-kit">Blender Starter-Kit&lt;/h2>
 &lt;p>Hier findest Du das Blender Starter-Kit.
 Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle aktuellen &lt;a href="../colors/">Farbpaletten&lt;/a>.&lt;/p>
-&lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Download&lt;/h4>
+&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.
+&lt;/div>
 &lt;h2 id="export-einstellungen">Export-Einstellungen&lt;/h2>
 &lt;p>Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:&lt;/p>
 &lt;ul>
@@ -101,6 +104,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
 &lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
 Das sollte mehr als ausreichend sein.&lt;/p>
+&lt;p>Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starter-Kit herunterladen.&lt;/p>
 &lt;p>Anwenden kannst Du Farben in &lt;a href="https://www.youtube.com/watch?v=8NEmx0cHwoI">Blender via UV Editing&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>Wenn Dir eine Farbe fehlt, schreib uns auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> eine Nachricht, sodass wir die Farbe hinzufügen können.&lt;/p>
