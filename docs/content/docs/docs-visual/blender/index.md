@@ -12,7 +12,9 @@ Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen muss
 Hier findest Du das Blender Starter-Kit.
 Enthalten ist einmal das [Basis-Tile-Set](../tiles/) und alle aktuellen [Farbpaletten](../colors/).
 
+{{% alert title="Download" %}}
 [Klicke hier, um das Blender Starter-Kit herunterzuladen](assets/BlenderStarterKit.zip).
+{{% /alert %}}
 
 ## Export-Einstellungen
 

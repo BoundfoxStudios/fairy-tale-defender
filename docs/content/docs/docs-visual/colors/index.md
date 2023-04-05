@@ -11,6 +11,8 @@ Es wird "pro Jahreszeit" eine Farppalette geben.
 Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
 Das sollte mehr als ausreichend sein.
 
+Du kannst die Farbpalette [hier](../blender/) im Blender Starter-Kit herunterladen.
+
 Anwenden kannst Du Farben in [Blender via UV Editing](https://www.youtube.com/watch?v=8NEmx0cHwoI).
 
 > Wenn Dir eine Farbe fehlt, schreib uns auf dem [Discord]({{< param "project_links.discord.url" >}}) eine Nachricht, sodass wir die Farbe hinzufügen können.
