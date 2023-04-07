@@ -16,13 +16,15 @@ MonoBehaviour:
     type: 2}
   <GameplayActions>k__BackingField: {fileID: 11400000, guid: 730d40e9be9784625b732523096bbd17,
     type: 2}
+  <TooltipActions>k__BackingField: {fileID: 11400000, guid: a41fe3d13605843e98b25071e8f7cc01,
+    type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}
   <GameplayStartEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
     type: 2}
-  <DisplayToolTipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
+  <ShowTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
     type: 2}
-  <DisableToolTipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
+  <HideTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
     type: 2}
