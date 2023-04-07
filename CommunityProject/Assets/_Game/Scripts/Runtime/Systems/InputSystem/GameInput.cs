@@ -46,6 +46,15 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     ""processors"": ""ClampMagnitudeVector2"",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Value"",
+                    ""id"": ""46ba8697-23f1-4290-8cc2-849963e8e7be"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -167,6 +176,39 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""LeftMouseClick"",
+                    ""id"": ""93992887-d295-480f-9222-fc26d4db1539"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Click"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""75de1900-7fe6-4fa3-8736-a5d76f5168de"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""f73f1a84-b850-45b8-a390-b377805f8fda"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Click"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 }
@@ -802,6 +844,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_EdgePan = m_Gameplay.FindAction("EdgePan", throwIfNotFound: true);
             m_Gameplay_CameraMovement = m_Gameplay.FindAction("CameraMovement", throwIfNotFound: true);
+            m_Gameplay_Click = m_Gameplay.FindAction("Click", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -880,12 +923,14 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
         private IGameplayActions m_GameplayActionsCallbackInterface;
         private readonly InputAction m_Gameplay_EdgePan;
         private readonly InputAction m_Gameplay_CameraMovement;
+        private readonly InputAction m_Gameplay_Click;
         public struct GameplayActions
         {
             private @GameInput m_Wrapper;
             public GameplayActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @EdgePan => m_Wrapper.m_Gameplay_EdgePan;
             public InputAction @CameraMovement => m_Wrapper.m_Gameplay_CameraMovement;
+            public InputAction @Click => m_Wrapper.m_Gameplay_Click;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -901,6 +946,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     @CameraMovement.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraMovement;
                     @CameraMovement.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraMovement;
                     @CameraMovement.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnCameraMovement;
+                    @Click.started -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
+                    @Click.performed -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
+                    @Click.canceled -= m_Wrapper.m_GameplayActionsCallbackInterface.OnClick;
                 }
                 m_Wrapper.m_GameplayActionsCallbackInterface = instance;
                 if (instance != null)
@@ -911,6 +959,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     @CameraMovement.started += instance.OnCameraMovement;
                     @CameraMovement.performed += instance.OnCameraMovement;
                     @CameraMovement.canceled += instance.OnCameraMovement;
+                    @Click.started += instance.OnClick;
+                    @Click.performed += instance.OnClick;
+                    @Click.canceled += instance.OnClick;
                 }
             }
         }
@@ -1082,6 +1133,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
         {
             void OnEdgePan(InputAction.CallbackContext context);
             void OnCameraMovement(InputAction.CallbackContext context);
+            void OnClick(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {

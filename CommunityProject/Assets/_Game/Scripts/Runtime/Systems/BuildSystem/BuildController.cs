@@ -1,9 +1,10 @@
+using System.Threading;
+using BoundfoxStudios.CommunityProject.Entities.Weapons;
+using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
 using BoundfoxStudios.CommunityProject.Extensions;
 using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
-using Cysharp.Threading.Tasks;
-using DG.Tweening;
 using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
@@ -30,6 +31,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 
 		[field: SerializeField]
 		private float TimeToRotate { get; set; } = 0.133f;
+
+		[field: SerializeField]
+		private WeaponRangePreview WeaponRangePreview { get; set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
@@ -117,6 +121,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 				return;
 			}
 
+			WeaponRangePreview.StopDisplayingWeaponRange();
 			var rotation = _buildContext.BlueprintInstance.transform.rotation;
 			Destroy(_buildContext.BlueprintInstance);
 			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, rotation);
@@ -132,6 +137,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 				return;
 			}
 
+			WeaponRangePreview.StopDisplayingWeaponRange();
 			_buildContext.IsValidPosition = false;
 			var blueprintInstance = _buildContext.BlueprintInstance;
 			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(position);
@@ -175,6 +181,12 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			}
 
 			_buildContext.IsValidPosition = true;
+			var weaponDefinition = _buildContext.Buildable.Prefab.GetComponentInChildren<ICanCalculateWeaponDefinition>();
+			WeaponRangePreview.DisplayWeaponRange(new()
+			{
+				Transform = _buildContext.BlueprintInstance.transform,
+				WeaponDefinition = weaponDefinition
+			});
 		}
 
 		private void ReadBuildRotate()
@@ -185,12 +197,13 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			}
 
 			var blueprintTransform = _buildContext.BlueprintInstance.transform;
-			blueprintTransform.DOComplete();
-			blueprintTransform
-				.DOLocalRotate(blueprintTransform.rotation.eulerAngles + new Vector3(0, 90, 0),
-					TimeToRotate,
-					RotateMode.FastBeyond360)
-				.WithCancellation(destroyCancellationToken);
+			RotateBlueprintWithRangePreview(blueprintTransform, TimeToRotate, destroyCancellationToken);
+		}
+
+		private void RotateBlueprintWithRangePreview(Transform blueprintTransform, float timeToRotate, CancellationToken cancellationToken)
+		{
+			blueprintTransform.DOQuarterRotationAroundY(timeToRotate, cancellationToken);
+			WeaponRangePreview.transform.DOQuarterRotationAroundY(timeToRotate, cancellationToken);
 		}
 
 		private void SwapMaterials(Material from, Material to, params MeshRenderer[] meshRenderers)

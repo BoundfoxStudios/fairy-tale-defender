@@ -1,10 +1,11 @@
 using System;
 using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons;
 using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons
+namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
 {
 	[RequireComponent(typeof(DecalProjector))]
 	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(WeaponRangePreview))]
@@ -23,21 +24,24 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 			_decalProjector = GetComponent<DecalProjector>();
 		}
 
-		private void DisplayWeaponRange(Vector3 weaponPosition, EffectiveWeaponDefinition weaponDefinition)
+		public void DisplayWeaponRange(WeaponSelectedEventChannelSO.EventArgs eventArgs)
 		{
-			transform.position = weaponPosition;
+			var rotation = Quaternion.Euler(90f, eventArgs.Transform.rotation.eulerAngles.y, 0f);
+			transform.SetPositionAndRotation(eventArgs.Transform.position, rotation);
 
-			var range = weaponDefinition switch
+			var effectiveWeaponDefinition = eventArgs.WeaponDefinition.CalculateEffectiveWeaponDefinition(eventArgs.Transform.position);
+
+			var range = effectiveWeaponDefinition switch
 			{
 				EffectiveBallisticWeaponDefinition effectiveBallisticWeaponDefinition =>
 					new Limits2(effectiveBallisticWeaponDefinition.MinimumRange,
 						effectiveBallisticWeaponDefinition.MaximumRange),
-				_ => throw new ArgumentOutOfRangeException(nameof(weaponDefinition),
-					$"{weaponDefinition} is not implemented yet.")
+				_ => throw new ArgumentOutOfRangeException(nameof(effectiveWeaponDefinition),
+					$"{effectiveWeaponDefinition} is not implemented yet.")
 			};
 
 			SetProjectorSize(range.Maximum);
-			SetShaderProperties(weaponDefinition.AttackAngle, range);
+			SetShaderProperties(effectiveWeaponDefinition.AttackAngle, range);
 
 			_decalProjector.enabled = true;
 		}
@@ -51,7 +55,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 			_decalProjector.material.SetVector(MinMaxRange, weaponRange);
 		}
 
-		private void StopDisplayingWeaponRange()
+		public void StopDisplayingWeaponRange()
 		{
 			_decalProjector.enabled = false;
 		}

@@ -12,7 +12,7 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	[SelectionBase]
-	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour
+	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour, ICanCalculateWeaponDefinition
 		where TWeaponSO : WeaponSO
 		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
 		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
@@ -67,10 +67,15 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 			StartLaunchSequenceAsync().Forget();
 		}
 
+		public EffectiveWeaponDefinition CalculateEffectiveWeaponDefinition(Vector3 position)
+		{
+			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, position);
+			return _effectiveWeaponDefinition;
+		}
+
 		public TEffectiveWeaponDefinition CalculateEffectiveWeaponDefinition()
 		{
-			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, Tower.transform.position);
-			return _effectiveWeaponDefinition;
+			return (TEffectiveWeaponDefinition)CalculateEffectiveWeaponDefinition(Tower.transform.position);
 		}
 
 		protected virtual void Update()
