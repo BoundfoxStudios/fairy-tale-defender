@@ -1146,9 +1146,9 @@ Z.B. kann ein Katapult Gegner treffen, die in einem 90°-Winkel vor der Waffe si
 &lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
 &lt;ul>
 &lt;li>Lies Dir die &lt;a href="../../docs-technical/">Technische Dokumentation&lt;/a> durch.&lt;/li>
-&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.5f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/tree/develop/FairyTaleDefender/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
+&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.14f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/tree/develop/FairyTaleDefender/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
 &lt;ul>
-&lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2022.2.5f1/551d45108343">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
+&lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2022.2.14f1/b2c9b1ac6cc0">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
 Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/archive">hier auf der Unity-Seite&lt;/a> nach der Version.&lt;/li>
 &lt;/ul>
 &lt;/li>
