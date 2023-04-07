@@ -20,7 +20,7 @@ MonoBehaviour:
     RefIds:
     - rid: 7263322530678308866
       type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves,
-        asm: BoundfoxStudios.CommunityProject}
+        asm: BoundfoxStudios.FairyTaleDefender}
       data:
         <DelayBetweenEachSpawnInSeconds>k__BackingField: 0.5
         <EnemiesToSpawn>k__BackingField: 10
@@ -28,7 +28,7 @@ MonoBehaviour:
           type: 3}
     - rid: 7263322530678308871
       type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves,
-        asm: BoundfoxStudios.CommunityProject}
+        asm: BoundfoxStudios.FairyTaleDefender}
       data:
         <DelayBetweenEachSpawnInSeconds>k__BackingField: 2
         <EnemiesToSpawn>k__BackingField: 15
