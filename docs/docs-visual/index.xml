@@ -136,4 +136,17 @@ Die Höhe kann je nach Turm etwas variieren und sollte auch um 1 Meter herum sei
 Die Basis vom Turm kann rund oder eckig sein.&lt;/p>
 &lt;p>&lt;img src="assets/TileWithTower.svg" alt="Tile mit Tower">&lt;/p>
 &lt;h2 id="origin">Origin&lt;/h2>
-&lt;p>Der Origin aller Objekte befindet sich unten in der Mitte vom Objekt.&lt;/p></description></item></channel></rss>
+&lt;p>Der Origin aller Objekte befindet sich unten in der Mitte vom Objekt.&lt;/p></description></item><item><title>Docs: Wind-Effekt</title><link>https://docs.fairytaledefender.de/docs/docs-visual/wind/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/wind/</guid><description>
+&lt;p>Wir haben in Unity einen Fragment-Shader, der einen Wind-Effekt bei Natur-Elementen (z.B. Bäume, Gräser, Blumen) simulieren kann.
+Die nötige Information, welche Teile des Modells wie stark im Wind bewegt werden, speichern wir auf den Modellen im 2. UV-Kanal.&lt;/p>
+&lt;p>Diesen 2. UV-Kanal kannst Du in Blender anlegen, in dem Du das Mesh auswählst, dann bei den Properties auf den &amp;ldquo;Object Data Properties&amp;rdquo;-Tab wechselst und dort beim Punkt &amp;ldquo;UV Maps&amp;rdquo; eine zweite Map anlegst.
+Wie Du diese nennst, spielt keine Rolle, wir empfehlen aber den Namen &amp;ldquo;Wind&amp;rdquo;, damit man weiß, für was diese UV Map existiert.&lt;/p>
+&lt;p>Jetzt ist wichtig zu wissen, wie die Vertices in dieser UV angeordnet werden müssen.
+Vorab: Die X-Achse spielt keine Rolle, für den Wind-Effekt ist ausschließlich die Y-Achse relevant.&lt;/p>
+&lt;p>Die UV Map geht 0/0 (links unten) nach 1/1 (rechts oben).
+Die Y-Achse bestimmt nun, wie stark der Wind Einfluss auf den Vertex hat.
+Ist dieser bei 0, wird er nicht vom Wind beeinflusst und ist dieser bei 1, dann wird er maximal vom Wind beeinflusst.&lt;/p>
+&lt;p>Wenn man z.B. einen Baum nimmt, der aus einem Stamm und einer Krone besteht, dann könnte man alle Vertices vom Stamm auf 0 setzen, sodass dieser nicht im Wind mitbewegt wird und die Vertices der Krone auf 1, sodass diese maximal vom Wind erfasst wird.&lt;/p>
+&lt;p>Alle Stuffen zwischen 0 und 1 bestimmen prozentual wie stark die Vertices vom Wind bewegt werden.
+So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzieren, sodass der obere Teil vom Stamm auch etwas vom Wind bewegt wird.&lt;/p>
+&lt;p>Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre.&lt;/p></description></item></channel></rss>
