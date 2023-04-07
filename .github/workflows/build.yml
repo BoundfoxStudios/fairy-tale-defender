@@ -89,7 +89,7 @@ jobs:
       max-parallel: ${{ inputs.max-parallel }}
       matrix:
         unity-version:
-          - 2022.2.5f1
+          - 2022.2.14f1
         os:
           - ubuntu-latest
           # Game CI does not support MacOS yet for executing the tests
@@ -198,7 +198,7 @@ jobs:
       max-parallel: ${{ inputs.max-parallel }}
       matrix:
         unity-version:
-          - 2022.2.5f1
+          - 2022.2.14f1
         os:
           - windows-2019
           - macos-12
