@@ -2,12 +2,12 @@ using UnityEngine.Localization;
 
 namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 {
-	public interface ITooltip2
+	public interface ITooltip
 	{
 		// Marker.
 	}
 
-	public interface ITextTooltip : ITooltip2
+	public interface ITextTooltip : ITooltip
 	{
 		LocalizedString Text { get; }
 	}

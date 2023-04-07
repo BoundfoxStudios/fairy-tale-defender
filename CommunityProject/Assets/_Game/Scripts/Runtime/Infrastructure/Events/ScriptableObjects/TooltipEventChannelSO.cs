@@ -8,7 +8,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjec
 	{
 		public struct EventArgs
 		{
-			public ITooltip2 Tooltip;
+			public ITooltip Tooltip;
 			public Vector2 ScreenPosition;
 		}
 	}
