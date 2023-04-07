@@ -16,7 +16,7 @@ Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du
 ## Worauf muss ich achten?
 
 * Lies Dir die [Technische Dokumentation](../../docs-technical/) durch.
-* Du musst die korrekte Unity-Version installieren, das ist aktuell **Unity 2022.2.5f1**. Schaue gerne [hier](https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt) nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren. 
+* Du musst die korrekte Unity-Version installieren, das ist aktuell **Unity 2022.2.5f1**. Schaue gerne [hier](https://github.com/boundfoxstudios/community-project/tree/develop/FairyTaleDefender/ProjectSettings/ProjectVersion.txt) nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren. 
   * Um Unity in dieser Version zu installieren, klicke [hier](unityhub://2022.2.5f1/551d45108343), wenn Du den Unity Hub installiert hast. 
     Alternativ, schaue gerne [hier auf der Unity-Seite](https://unity3d.com/get-unity/download/archive) nach der Version.
 * Unity tendiert gerne dazu, dass es Dinge mitändert, die man nicht oder vermeintlich nicht angefasst hat.

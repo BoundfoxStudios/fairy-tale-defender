@@ -4,7 +4,7 @@ inputs:
   project-path:
     required: false
     description: Path that points to the Unity project folder
-    default: CommunityProject
+    default: FairyTaleDefender
   
 runs:
   using: 'composite'

@@ -8,7 +8,7 @@ on:
       project-path:
         required: false
         description: Path that points to the Unity project
-        default: CommunityProject
+        default: FairyTaleDefender
         type: string
       custom-parameters:
         required: false

@@ -37,7 +37,7 @@ Wir nutzen als Basis die [.NET Standards](https://docs.microsoft.com/en-us/dotne
 * Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject ([1](https://www.youtube.com/watch?v=TjTL-MXPnbo), [2](https://www.youtube.com/watch?v=qqzZZfgtQyU), [3](https://www.youtube.com/watch?v=QkVpYHc1s60)) implementierst.
 * Vermeide statische Variablen.
 * Vermeide Magic Numbers ("magische Nummer"), z.B. `value * 0.08`, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.
-* Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist `BoundfoxStudios.CommunityProject`.
+* Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist `BoundfoxStudios.FairyTaleDefender`.
 
 #### Serialisierte Felder aka [SerializeField] aka Dinge, die im Inspector angezeigt werden
 
