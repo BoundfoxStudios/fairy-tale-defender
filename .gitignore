@@ -1,8 +1,8 @@
 .DS_Store
 Thumbs.db
 .env
-/CommunityProject/Assets/AddressableAssetsData/link.xml.meta
-/CommunityProject/Assets/AddressableAssetsData/link.xml
+/FairyTaleDefender/Assets/AddressableAssetsData/link.xml.meta
+/FairyTaleDefender/Assets/AddressableAssetsData/link.xml
 *.blend1
-/CommunityProject/Assets/ShaderGraphScreenshots.meta
-/CommunityProject/Assets/ShaderGraphScreenshots
+/FairyTaleDefender/Assets/ShaderGraphScreenshots.meta
+/FairyTaleDefender/Assets/ShaderGraphScreenshots
