@@ -9,7 +9,7 @@ namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjec
 		public struct EventArgs
 		{
 			public Transform Transform;
-			public ICanCalculateWeaponDefinition WeaponDefinition;
+			public ICanCalculateEffectiveWeaponDefinition EffectiveWeaponDefinition;
 		}
 	}
 }

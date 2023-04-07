@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
-	public interface ICanCalculateWeaponDefinition
+	public interface ICanCalculateEffectiveWeaponDefinition
 	{
 		EffectiveWeaponDefinition CalculateEffectiveWeaponDefinition(Vector3 position);
 	}

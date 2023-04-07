@@ -12,7 +12,7 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	[SelectionBase]
-	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour, ICanCalculateWeaponDefinition
+	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour, ICanCalculateEffectiveWeaponDefinition
 		where TWeaponSO : WeaponSO
 		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
 		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
