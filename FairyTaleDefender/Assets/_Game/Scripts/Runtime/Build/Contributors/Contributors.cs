@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Build.Contributors
+namespace BoundfoxStudios.FairyTaleDefender.Build.Contributors
 {
 	/// <summary>
 	/// This class abstracts the manifest.json file.

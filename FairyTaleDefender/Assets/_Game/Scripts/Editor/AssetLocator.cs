@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace BoundfoxStudios.CommunityProject.Editor
+namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
 	public class AssetLocator<T>
 		where T : class

@@ -1,6 +1,6 @@
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
 	public interface ITooltip
 	{

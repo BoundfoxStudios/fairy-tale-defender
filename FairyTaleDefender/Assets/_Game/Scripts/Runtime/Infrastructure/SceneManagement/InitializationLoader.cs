@@ -1,13 +1,13 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 {
 	/// <summary>
 	/// This component should be the very first component that is loaded by an initialization scene.

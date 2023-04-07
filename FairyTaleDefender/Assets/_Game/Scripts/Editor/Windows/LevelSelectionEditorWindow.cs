@@ -1,11 +1,11 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Windows
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 {
 	public class LevelSelectionEditorWindow : EditorWindow
 	{

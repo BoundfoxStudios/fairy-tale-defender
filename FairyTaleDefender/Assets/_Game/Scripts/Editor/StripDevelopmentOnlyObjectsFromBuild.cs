@@ -4,7 +4,7 @@ using UnityEditor.Build.Reporting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Editor
+namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
 	public class StripDevelopmentOnlyObjectsFromBuild : IProcessSceneWithReport
 	{

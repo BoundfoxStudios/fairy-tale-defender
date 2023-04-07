@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.AudioSystem.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Audio + "/Audio Cue")]
 	public class AudioCueSO : ScriptableObject

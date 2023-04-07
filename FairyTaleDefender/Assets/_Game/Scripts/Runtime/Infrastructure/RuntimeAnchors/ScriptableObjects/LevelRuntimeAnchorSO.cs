@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.RuntimeAnchors + "/Level")]
 	public class LevelRuntimeAnchorSO : RuntimeAnchorBaseSO<LevelSO>

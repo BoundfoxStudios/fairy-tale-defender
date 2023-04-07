@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Systems.HealthSystem;
+using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using TMPro;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem.UI
+namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 {
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(PlayerHealth))]
 	public class PlayerHealth : MonoBehaviour

@@ -1,9 +1,9 @@
 using System;
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects
 {
 	public abstract class TargetLocatorSO<T> : ScriptableObject
 		where T : EffectiveWeaponDefinition

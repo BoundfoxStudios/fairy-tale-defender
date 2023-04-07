@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Infrastructure
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure
 {
 	public struct NoAllocArrayResult<T>
 	{

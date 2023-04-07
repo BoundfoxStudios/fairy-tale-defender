@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects
 {
 	/// <summary>
 	/// Abstract scene definition.

@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
 	public abstract class TooltipDisplay : MonoBehaviour
 	{

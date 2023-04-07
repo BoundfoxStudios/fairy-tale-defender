@@ -2,7 +2,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.AudioSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem
 {
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(SoundEmitter))]
 	[RequireComponent(typeof(AudioSource))]

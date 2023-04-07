@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Build
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 {
 	public class SetVersionFromEnvironment : IPreprocessBuildWithReport
 	{

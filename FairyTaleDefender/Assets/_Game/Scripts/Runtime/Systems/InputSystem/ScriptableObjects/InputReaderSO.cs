@@ -1,10 +1,9 @@
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
-using System;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Input Reader")]
 	public class InputReaderSO : ScriptableObject

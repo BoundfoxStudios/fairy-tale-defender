@@ -1,14 +1,14 @@
 using System;
 using System.Threading;
-using BoundfoxStudios.CommunityProject.Entities.Characters.Enemies;
-using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using Cysharp.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 using Object = UnityEngine.Object;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves
 {
 	[Serializable]
 	public class SingleEnemyTypeWave : Wave

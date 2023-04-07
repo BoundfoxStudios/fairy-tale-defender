@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Entities.Characters.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.HealthSystem;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Characters
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters
 {
 	public abstract class Character<TDefinition> : MonoBehaviour, IAmDamageable
 		where TDefinition : CharacterSO

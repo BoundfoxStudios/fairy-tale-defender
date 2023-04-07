@@ -2,7 +2,7 @@ using FluentAssertions;
 using Unity.Mathematics;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Extensions
 {
 	public static class BezierKnotExtensions
 	{

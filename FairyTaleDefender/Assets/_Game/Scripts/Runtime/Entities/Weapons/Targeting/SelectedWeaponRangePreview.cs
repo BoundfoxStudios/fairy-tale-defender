@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 {
 	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(SelectedWeaponRangePreview))]
 	public class SelectedWeaponRangePreview : WeaponRangePreview

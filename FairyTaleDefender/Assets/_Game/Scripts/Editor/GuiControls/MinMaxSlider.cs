@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
+namespace BoundfoxStudios.FairyTaleDefender.Editor.GuiControls
 {
 	public static class MinMaxSlider
 	{

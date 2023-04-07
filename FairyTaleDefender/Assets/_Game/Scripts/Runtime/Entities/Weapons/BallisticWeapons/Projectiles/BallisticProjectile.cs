@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Systems.HealthSystem;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.Projectiles
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles
 {
 	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(BallisticProjectile))]
 	[RequireComponent(typeof(Rigidbody))]

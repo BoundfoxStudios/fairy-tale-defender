@@ -1,10 +1,10 @@
-using BoundfoxStudios.CommunityProject.Entities.Weapons;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 {
 	public class SelectionController : MonoBehaviour
 	{

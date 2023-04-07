@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Editor.Extensions;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.Weapons
 {
 	public abstract class WeaponSOEditor : UnityEditor.Editor
 	{

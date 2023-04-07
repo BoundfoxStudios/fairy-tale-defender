@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
-using NUnit.Framework;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using FluentAssertions;
+using NUnit.Framework;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Infrastructure
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 {
 	public class ScriptableObjectIdentityTests
 	{

@@ -1,11 +1,11 @@
 using System;
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure.FileManagement;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects
 {
 	/// <summary>
 	/// Holding information about game settings.

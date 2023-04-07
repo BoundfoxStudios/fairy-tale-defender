@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Characters.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.ScriptableObjects
 {
 	public abstract class CharacterSO : ScriptableObject
 	{

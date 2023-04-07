@@ -2,7 +2,7 @@ using System;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.ScriptableObjects
 {
 	/// <summary>
 	/// Base class for ScriptableObjects to have a specific identity.

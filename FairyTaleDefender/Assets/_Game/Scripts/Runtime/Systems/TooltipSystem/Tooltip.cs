@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
 	public abstract class Tooltip : MonoBehaviour, ITooltip, IPointerEnterHandler, IPointerExitHandler
 	{

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects
 {
 	/// <summary>
 	/// Collection of all level packs

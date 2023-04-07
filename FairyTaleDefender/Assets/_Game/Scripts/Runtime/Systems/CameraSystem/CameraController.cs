@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cinemachine;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.CameraSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
 {
 	[AddComponentMenu(Constants.MenuNames.CameraSystem + "/" + nameof(CameraController))]
 	public class CameraController : MonoBehaviour

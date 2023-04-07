@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Entities.Characters.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies.ScriptableObjects
 {
 	/// <summary>
 	/// Base Information about an enemy

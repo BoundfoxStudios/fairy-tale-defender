@@ -1,11 +1,11 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 {
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(SceneLoader))]
 	public class SceneLoader : MonoBehaviour

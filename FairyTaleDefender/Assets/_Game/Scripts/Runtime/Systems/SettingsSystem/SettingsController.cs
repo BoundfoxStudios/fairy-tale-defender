@@ -1,10 +1,10 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.Localization.Settings;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SettingsSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 {
 	/// <summary>
 	/// Responsible for applying game settings to their systems.

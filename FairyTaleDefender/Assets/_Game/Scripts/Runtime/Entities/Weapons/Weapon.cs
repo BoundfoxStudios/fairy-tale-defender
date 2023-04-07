@@ -1,15 +1,15 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Threading;
-using BoundfoxStudios.CommunityProject.Entities.Buildings.Towers;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 {
 	[SelectionBase]
 	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour,

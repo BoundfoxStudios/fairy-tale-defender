@@ -1,9 +1,9 @@
 using System;
-using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects
 {
 	/// <summary>
 	/// Describes a playable level.

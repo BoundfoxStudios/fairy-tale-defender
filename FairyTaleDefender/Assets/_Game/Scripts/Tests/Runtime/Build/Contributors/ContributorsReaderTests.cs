@@ -1,10 +1,10 @@
 using System.Collections;
-using BoundfoxStudios.CommunityProject.Build.Contributors;
+using BoundfoxStudios.FairyTaleDefender.Build.Contributors;
 using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Build.Contributors
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Build.Contributors
 {
 	public class ContributorsReaderTests
 	{

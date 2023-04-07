@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects
 {
 	public abstract class EffectiveWeaponCalculatorSO<TWeaponSO, TEffectiveWeaponDefinition> : ScriptableObject
 		where TWeaponSO : WeaponSO

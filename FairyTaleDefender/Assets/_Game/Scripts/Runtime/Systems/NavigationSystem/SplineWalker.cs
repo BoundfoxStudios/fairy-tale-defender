@@ -1,10 +1,10 @@
 using System;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 {
 	[AddComponentMenu(Constants.MenuNames.Navigation + "/" + nameof(SplineWalker))]
 	public class SplineWalker : MonoBehaviour

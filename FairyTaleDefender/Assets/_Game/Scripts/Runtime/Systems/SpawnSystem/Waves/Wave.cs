@@ -4,7 +4,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves
 {
 	/// <summary>
 	/// Represents a single wave of one enemy type.

@@ -1,10 +1,10 @@
 using System.Collections;
-using BoundfoxStudios.CommunityProject.Build.BuildManifest;
+using BoundfoxStudios.FairyTaleDefender.Build.BuildManifest;
 using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Build.BuildManifest
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Build.BuildManifest
 {
 	public class BuildManifestReaderTests
 	{

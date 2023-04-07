@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 {
 	public interface ICanCalculateEffectiveWeaponDefinition
 	{

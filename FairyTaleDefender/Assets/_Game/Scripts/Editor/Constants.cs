@@ -1,6 +1,6 @@
-using RuntimeConstants = BoundfoxStudios.CommunityProject.Constants;
+using RuntimeConstants = BoundfoxStudios.FairyTaleDefender.Constants;
 
-namespace BoundfoxStudios.CommunityProject.Editor
+namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
 	public static class Constants
 	{

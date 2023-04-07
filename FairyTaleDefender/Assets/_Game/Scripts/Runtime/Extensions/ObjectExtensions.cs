@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 
-namespace BoundfoxStudios.CommunityProject.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
 	public static class ObjectExtensions
 	{

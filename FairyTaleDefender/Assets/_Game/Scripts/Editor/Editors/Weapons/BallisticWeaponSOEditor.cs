@@ -1,11 +1,11 @@
 using System;
-using BoundfoxStudios.CommunityProject.Editor.Extensions;
-using BoundfoxStudios.CommunityProject.Editor.GuiControls;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Editor.GuiControls;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Editors.Weapons
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.Weapons
 {
 	[CustomEditor(typeof(BallisticWeaponSO))]
 	public class BallisticWeaponSOEditor : WeaponSOEditor

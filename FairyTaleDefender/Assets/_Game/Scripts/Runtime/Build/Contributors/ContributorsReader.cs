@@ -2,7 +2,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-namespace BoundfoxStudios.CommunityProject.Build.Contributors
+namespace BoundfoxStudios.FairyTaleDefender.Build.Contributors
 {
 	/// <summary>
 	/// This class can read the contributors.json.

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(TextTooltipDisplay))]
 	public class TextTooltipDisplay : TooltipDisplay

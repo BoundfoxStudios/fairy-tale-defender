@@ -1,6 +1,6 @@
-using BoundfoxStudios.CommunityProject.Entities.Buildings.Towers.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects;
 
-namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem.UI
+namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 {
 	public class TowerBuildButton : BuildButton<TowerSO>
 	{

@@ -1,11 +1,11 @@
-using BoundfoxStudios.CommunityProject.Entities.Characters.Enemies.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.BuildSystem;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem;
 using TMPro;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 {
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(PlayerCoinsController))]
 	public class PlayerCoinsController : MonoBehaviour

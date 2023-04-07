@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 {
 	/// <summary>
 	/// The target point is _the point_ any weapon will aim at and shoot to.

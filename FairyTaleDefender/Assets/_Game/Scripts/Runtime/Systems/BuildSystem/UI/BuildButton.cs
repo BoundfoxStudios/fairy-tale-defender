@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem.UI
+namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 {
 	public abstract class BuildButton<T> : MonoBehaviour
 		where T : IAmBuildable, IHaveAPrice

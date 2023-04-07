@@ -1,8 +1,8 @@
 using System;
-using BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 
-namespace BoundfoxStudios.CommunityProject.Editor
+namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
 	public static class PrefabManager
 	{

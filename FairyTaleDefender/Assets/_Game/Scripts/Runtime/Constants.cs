@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject
+namespace BoundfoxStudios.FairyTaleDefender
 {
 	public static class Constants
 	{

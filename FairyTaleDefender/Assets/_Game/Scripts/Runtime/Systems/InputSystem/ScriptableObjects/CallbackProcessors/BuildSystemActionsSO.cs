@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects.CallbackProcessors
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Build System Actions")]
 	public class BuildSystemActionsSO : ScriptableObject, GameInput.IBuildSystemActions

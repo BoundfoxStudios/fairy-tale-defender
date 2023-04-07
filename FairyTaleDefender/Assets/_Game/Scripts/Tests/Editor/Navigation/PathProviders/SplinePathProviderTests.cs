@@ -1,13 +1,13 @@
 using System;
 using System.Linq;
-using BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders;
-using BoundfoxStudios.CommunityProject.Tests.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem.PathProviders;
+using BoundfoxStudios.FairyTaleDefender.Tests.Editor.Extensions;
 using FluentAssertions;
 using Moq;
 using NUnit.Framework;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Navigation.PathProviders
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProviders
 {
 	/*
 	 Notice: We're not using mocks of ISpline here, otherwise we'd need to mock an enumerator to make the tests work.

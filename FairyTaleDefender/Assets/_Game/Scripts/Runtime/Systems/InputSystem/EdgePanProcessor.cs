@@ -2,7 +2,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 {
 #if UNITY_EDITOR
 	[InitializeOnLoad]

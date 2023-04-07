@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 {
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(GameplayController))]
 	public class GameplayController : MonoBehaviour

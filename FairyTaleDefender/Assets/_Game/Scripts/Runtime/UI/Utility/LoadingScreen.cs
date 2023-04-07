@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.UI.Utility
+namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(LoadingScreen))]
 	public class LoadingScreen : MonoBehaviour

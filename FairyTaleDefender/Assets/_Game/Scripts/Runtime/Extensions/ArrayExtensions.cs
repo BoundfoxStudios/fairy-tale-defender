@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
 	public static class ArrayExtensions
 	{

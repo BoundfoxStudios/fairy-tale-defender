@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 {
 	/// <summary>
 	///   This class manages the prefabs that the user can select in the editor.

@@ -3,7 +3,7 @@ using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
 	public static class TransformExtensions
 	{
