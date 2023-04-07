@@ -18,19 +18,6 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 
 		private DrivenRectTransformTracker _tracker;
 
-		public Vector2 MaxSize
-		{
-			get => _maxSize;
-			set
-			{
-				if (_maxSize != value)
-				{
-					_maxSize = value;
-					SetDirty();
-				}
-			}
-		}
-
 		protected override void OnEnable()
 		{
 			_rectTransform = GetComponent<RectTransform>();
@@ -58,7 +45,7 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 		{
 			if (_maxSize.x > 0f && _rectTransform.rect.width > _maxSize.x)
 			{
-				_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, MaxSize.x);
+				_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Horizontal, _maxSize.x);
 				_tracker.Add(this, _rectTransform, DrivenTransformProperties.SizeDeltaX);
 			}
 		}
@@ -67,7 +54,7 @@ namespace BoundfoxStudios.CommunityProject.UI.Utility
 		{
 			if (_maxSize.y > 0f && _rectTransform.rect.height > _maxSize.y)
 			{
-				_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, MaxSize.y);
+				_rectTransform.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, _maxSize.y);
 				_tracker.Add(this, _rectTransform, DrivenTransformProperties.SizeDeltaY);
 			}
 		}
