@@ -93,7 +93,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 		}
 
 		private TooltipDisplay ResolveDisplay<T>(T tooltip)
-			where T : class, ITooltip => tooltip switch
+			where T : class, ITooltip2 => tooltip switch
 		{
 			ITextTooltip => TextTooltipDisplay,
 			_ => throw new($"{typeof(T)} is not implemented yet.")

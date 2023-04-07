@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 
 namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 {
-	public abstract class Tooltip : MonoBehaviour, ITooltip, IPointerEnterHandler, IPointerExitHandler
+	public abstract class Tooltip : MonoBehaviour, ITooltip2, IPointerEnterHandler, IPointerExitHandler
 	{
 		[field: SerializeField]
 		public TooltipEventChannelSO ShowTooltipEventChannel { get; private set; } = default!;
@@ -12,7 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 		[field: SerializeField]
 		public VoidEventChannelSO HideTooltipEventChannel { get; private set; } = default!;
 
-		protected abstract ITooltip GetTooltip();
+		protected abstract ITooltip2 GetTooltip();
 
 		public void OnPointerEnter(PointerEventData eventData)
 		{
