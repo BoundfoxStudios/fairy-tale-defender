@@ -7,8 +7,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 {
 	public static class BallisticWeaponGizmos
 	{
-		[DrawGizmo(GizmoType.Active | GizmoType.Selected | GizmoType.InSelectionHierarchy, typeof(BallisticWeaponDiagnostics))]
-		private static void DrawBallisticWeaponGizmos(BallisticWeaponDiagnostics ballisticWeaponDiagnostics, GizmoType gizmoType)
+		[DrawGizmo(GizmoType.Active | GizmoType.Selected | GizmoType.InSelectionHierarchy,
+			typeof(BallisticWeaponDiagnostics))]
+		private static void DrawBallisticWeaponGizmos(BallisticWeaponDiagnostics ballisticWeaponDiagnostics,
+			GizmoType gizmoType)
 		{
 			var ballisticWeapon = ballisticWeaponDiagnostics.Weapon;
 
@@ -22,7 +24,10 @@ namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
 
 			// If we're viewing the weapon prefab, we may not have a tower
 			var forward = ballisticWeapon.Tower ? ballisticWeapon.Tower.transform.forward : weaponTransform.forward;
-			var effectiveWeaponDefinition = ballisticWeapon.CalculateEffectiveWeaponDefinition();
+			var effectiveWeaponDefinition =
+				(EffectiveBallisticWeaponDefinition)ballisticWeapon.CalculateEffectiveWeaponDefinition(ballisticWeapon.Tower
+					? ballisticWeapon.Tower.transform.position
+					: weaponTransform.position);
 			UnityGizmos.color = new(1, 0.976f, 0.102f, 0.5f);
 			BallisticGizmoHelpers.DrawAttackSegment(
 				weaponTransform.position,

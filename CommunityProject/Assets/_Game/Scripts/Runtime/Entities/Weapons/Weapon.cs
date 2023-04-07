@@ -12,7 +12,8 @@ using UnityEngine;
 namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 {
 	[SelectionBase]
-	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour, ICanCalculateEffectiveWeaponDefinition
+	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour,
+		ICanCalculateEffectiveWeaponDefinition
 		where TWeaponSO : WeaponSO
 		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
 		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
@@ -33,7 +34,8 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		public TargetType TargetType { get; private set; }
 
 		private TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
-			_effectiveWeaponDefinition ??= CalculateEffectiveWeaponDefinition();
+			_effectiveWeaponDefinition ??=
+				(TEffectiveWeaponDefinition)CalculateEffectiveWeaponDefinition(Tower.transform.position);
 
 		/// <summary>
 		/// Launches the actual projectile to the target.
@@ -71,11 +73,6 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		{
 			_effectiveWeaponDefinition = EffectiveWeaponCalculatorSO.Calculate(WeaponDefinition, position);
 			return _effectiveWeaponDefinition;
-		}
-
-		public TEffectiveWeaponDefinition CalculateEffectiveWeaponDefinition()
-		{
-			return (TEffectiveWeaponDefinition)CalculateEffectiveWeaponDefinition(Tower.transform.position);
 		}
 
 		protected virtual void Update()
@@ -152,7 +149,8 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons
 		{
 			var delay = WeaponDefinition.FireRateEverySeconds - CalculateLaunchAnimationDelay();
 
-			Debug.Assert(delay > 0, $"{nameof(CalculateLaunchDelay)} returns delay {delay} that is smaller or equal than 0, that is not valid!");
+			Debug.Assert(delay > 0,
+				$"{nameof(CalculateLaunchDelay)} returns delay {delay} that is smaller or equal than 0, that is not valid!");
 
 			return TimeSpan.FromSeconds(delay);
 		}
