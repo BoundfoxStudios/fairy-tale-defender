@@ -1164,7 +1164,20 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;p>&lt;a href="https://jetbrains.com">JetBrains&lt;/a> sponsert Fairy Tale Defender mit &lt;a href="https://jb.gg/OpenSourceSupport">Lizenzen&lt;/a> für JetBrains Rider!
 Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.&lt;/p>
 &lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">
-&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Towers</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/towers/</guid><description>
+&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Tooltips</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/tooltips-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/tooltips-system/</guid><description>
+&lt;p>Im Community-Projekt können wir sowohl für UI-Elemente als auch für GameObjects Tooltips anzeigen.
+Tooltips sind Hinweistexte/Bilder, die erscheinen, sobald man mit der Maus über bestimmte Elemente fährt.&lt;/p>
+&lt;p>Um einen Tooltip zu nutzen, kann eine der Klassen von &lt;a href="#tooltip-typen">Tooltip-Typen&lt;/a> auf einem GameObject platziert werden.
+Sobald man das Spiel startet und über das Element fährt, wird der entsprechende Tooltip angezeigt.&lt;/p>
+&lt;p>Wichtig ist, dass alle GameObjects, die ein Tooltip anzeigen sollen, einen Collider benötigen!
+Im Moment reagieren die Tooltips auch nur bei Objekten, die auf dem Layer &amp;ldquo;Tower&amp;rdquo; sind.
+Falls weitere benötigt werden, können wir das anpassen.&lt;/p>
+&lt;p>Bei UI-Elementen funktioniert es direkt, sofern der Canvas einen GraphicsRaycaster hat (per Standard so) und das UI-Element irgendwas hat, was raycast-bar ist (z.B. ein Image).&lt;/p>
+&lt;p>Aktuell sind folgende Tooltips implementiert.
+Weitere können bei Bedarf hinzugefügt werden.&lt;/p>
+&lt;h2 id="tooltip-typen">Tooltip-Typen&lt;/h2>
+&lt;h3 id="texttooltip">TextTooltip&lt;/h3>
+&lt;p>Nutzt einen lokalisierbaren String.&lt;/p></description></item><item><title>Docs: Towers</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/towers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/towers/</guid><description>
 &lt;p>Auf dieser Seite findet sich die Dokumentation, wie man einen Turm im Spiel erstellen und organisiert ablegen kann.
 Wichtig zu verstehen ist, dass der Turm selbst keine großartige Funktion hat.
 Oft würde die Funktion, z.B. von einem Katapult-Turm, direkt &amp;ldquo;in den Turm&amp;rdquo; implementiert werden.
