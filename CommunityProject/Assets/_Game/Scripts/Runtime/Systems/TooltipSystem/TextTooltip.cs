@@ -8,7 +8,5 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 	{
 		[field: SerializeField]
 		public LocalizedString Text { get; private set; } = default!;
-
-		protected override ITooltip GetTooltip() => this;
 	}
 }
