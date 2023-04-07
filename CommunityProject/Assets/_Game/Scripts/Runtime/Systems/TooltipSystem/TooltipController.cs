@@ -25,10 +25,6 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 		[field: SerializeField]
 		public VoidEventChannelSO HideTooltipEventChannel { get; private set; } = default!;
 
-		/*private float _toolTipOffsetX;
-		private float _toolTipOffsetY;
-		*/
-
 		private TooltipDisplay? _activeTooltipDisplay;
 
 		private void Awake()
@@ -38,12 +34,6 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 
 		private void OnEnable()
 		{
-			/*_toolTipOffsetX = TooltipText.rectTransform.sizeDelta.x;
-			_toolTipOffsetY = TooltipText.rectTransform.sizeDelta.y;
-
-			_textToolTips = FindObjectsByType<Tooltip>(FindObjectsSortMode.None).ToList();*/
-
-
 			ShowTooltipEventChannel.Raised += ShowTooltip;
 			HideTooltipEventChannel.Raised += HideTooltip;
 
