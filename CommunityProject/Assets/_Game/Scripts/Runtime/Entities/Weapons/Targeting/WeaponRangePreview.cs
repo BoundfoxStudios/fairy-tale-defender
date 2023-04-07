@@ -29,7 +29,7 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
 			var rotation = Quaternion.Euler(90f, eventArgs.Transform.rotation.eulerAngles.y, 0f);
 			transform.SetPositionAndRotation(eventArgs.Transform.position, rotation);
 
-			var effectiveWeaponDefinition = eventArgs.WeaponDefinition.CalculateEffectiveWeaponDefinition(eventArgs.Transform.position);
+			var effectiveWeaponDefinition = eventArgs.EffectiveWeaponDefinition.CalculateEffectiveWeaponDefinition(eventArgs.Transform.position);
 
 			var range = effectiveWeaponDefinition switch
 			{

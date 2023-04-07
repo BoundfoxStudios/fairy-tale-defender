@@ -46,11 +46,11 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 			}
 
 			var hitTransform = hitInfo.transform;
-			var canCalculateWeaponDefinition = hitTransform.GetComponentInChildren<ICanCalculateWeaponDefinition>();
+			var canCalculateWeaponDefinition = hitTransform.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
 			WeaponSelectedEventChannel.Raise(new()
 			{
 				Transform = hitTransform,
-				WeaponDefinition = canCalculateWeaponDefinition
+				EffectiveWeaponDefinition = canCalculateWeaponDefinition
 			});
 		}
 	}

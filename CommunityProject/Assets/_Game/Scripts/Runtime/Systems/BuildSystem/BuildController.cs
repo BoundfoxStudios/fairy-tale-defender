@@ -181,11 +181,11 @@ namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
 			}
 
 			_buildContext.IsValidPosition = true;
-			var weaponDefinition = _buildContext.Buildable.Prefab.GetComponentInChildren<ICanCalculateWeaponDefinition>();
+			var weaponDefinition = _buildContext.Buildable.Prefab.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
 			WeaponRangePreview.DisplayWeaponRange(new()
 			{
 				Transform = _buildContext.BlueprintInstance.transform,
-				WeaponDefinition = weaponDefinition
+				EffectiveWeaponDefinition = weaponDefinition
 			});
 		}
 
