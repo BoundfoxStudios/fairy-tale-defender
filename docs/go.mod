@@ -1,4 +1,4 @@
-module github.com/boundfoxstudios/community-project-docs
+module github.com/boundfoxstudios/fairy-tale-defender-docs
 
 go 1.19
 

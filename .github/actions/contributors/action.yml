@@ -22,7 +22,7 @@ runs:
       env:
         GH_TOKEN: ${{ inputs.github-token }}
       run: |
-        echo "contributors=$(gh api -H 'Accept: application/vnd.github.VERSION.raw' '/repos/BoundfoxStudios/community-project/contents/.all-contributorsrc?ref=${{ inputs.ref }}' | jq --compact-output '[.contributors[] | { user: .name, githubAccount: .login, contributions: .contributions }]' )" >> $GITHUB_OUTPUT
+        echo "contributors=$(gh api -H 'Accept: application/vnd.github.VERSION.raw' '/repos/BoundfoxStudios/fairy-tale-defender/contents/.all-contributorsrc?ref=${{ inputs.ref }}' | jq --compact-output '[.contributors[] | { user: .name, githubAccount: .login, contributions: .contributions }]' )" >> $GITHUB_OUTPUT
       shell: sh
     - name: Write Build Manifest to JSON file
       id: content

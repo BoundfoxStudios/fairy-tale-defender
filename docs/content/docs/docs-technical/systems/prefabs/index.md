@@ -23,7 +23,7 @@ Im Inspektor siehst Du, welche Prefabs verknüpft sind und genutzt werden könne
 
 ![Prefab Manager](assets/prefab-manager.png)
 
-Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den [PrefabManager im Code](https://github.com/BoundfoxStudios/community-project/blob/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs) und die [Menü-Einträge](https://github.com/BoundfoxStudios/community-project/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu) erweitern.
+Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den [PrefabManager im Code](https://github.com/BoundfoxStudios/fairy-tale-defender/blob/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs) und die [Menü-Einträge](https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu) erweitern.
 
 ### Ich finde nicht, was ich brauche.
 

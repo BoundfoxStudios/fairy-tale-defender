@@ -42,6 +42,6 @@ Wenn Dein Benutzername `DerMusterMensch` ist und Du einen Plopp-Effekt erstellt 
 ### Hilfe, ich komme mit Git gar nicht klar
 
 Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
-Spreche bitte einen [Ansprechpartner](https://github.com/boundfoxstudios/community-project/#ansprechpartner) an, eventuell kann er die Arbeit mit Git für Dich übernehmen.
+Spreche bitte einen [Ansprechpartner](https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner) an, eventuell kann er die Arbeit mit Git für Dich übernehmen.
 
 _Für die Erweiterung Deiner Skills ist's natürlich cool, wenn Du Dir Git aneignest._

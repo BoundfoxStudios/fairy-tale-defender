@@ -1,4 +1,4 @@
-{{ with getJSON "https://raw.githubusercontent.com/BoundfoxStudios/community-project/develop/.all-contributorsrc" }}
+{{ with getJSON "https://raw.githubusercontent.com/BoundfoxStudios/fairy-tale-defender/develop/.all-contributorsrc" }}
 <div class="container-fluid">
   <div class="row row-cols-xxxl-9 row-cols-xl-5 row-cols-lg-4 row-cols-sm-3 row-cols-2">
     {{ range $index, $element := sort .contributors "name" }}
@@ -11,7 +11,7 @@
         <div class="card-footer text-center">
           {{ range $element.contributions }}
           {{ if eq . "code" }}<a
-          href="https://github.com/BoundfoxStudios/community-project/commits?author={{ $element.login }}"
+          href="https://github.com/BoundfoxStudios/fairy-tale-defender/commits?author={{ $element.login }}"
           target="_blank" title="Code">💻</a>
           {{ else if eq . "doc" }}<span title="Dokumentation">📖</span>
           {{ else if eq . "ideas" }}<span title="Ideen">🤔</span>

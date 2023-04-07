@@ -10,7 +10,7 @@ description: Dokumentation über Continuous Integration & Continuous Delivery
 Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.
 
 Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
-Alle Workflows finden sich unter [.github/workflows](https://github.com/BoundfoxStudios/community-project/tree/develop/.github/workflows).
+Alle Workflows finden sich unter [.github/workflows](https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/.github/workflows).
 Wir setzen hier stark auf [Game CI](https://game.ci), die eine Build-Umgebung für Unity bereitstellen.
 
 In unserem Fall gibt es mehrere Prüfungen, die loslaufen, sobald ein Push auf `develop` erfolgt oder ein PR gestellt wird.
