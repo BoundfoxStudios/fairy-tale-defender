@@ -821,11 +821,11 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             ]
         },
         {
-            ""name"": ""ToolTips"",
+            ""name"": ""Tooltips"",
             ""id"": ""97af8790-3658-4aa5-991e-eb6232c63773"",
             ""actions"": [
                 {
-                    ""name"": ""ToolTipPosition"",
+                    ""name"": ""TooltipPosition"",
                     ""type"": ""Value"",
                     ""id"": ""99eadddf-a54e-4e1a-94b3-9304db62daa6"",
                     ""expectedControlType"": ""Vector2"",
@@ -842,7 +842,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""ToolTipPosition"",
+                    ""action"": ""TooltipPosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -890,9 +890,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             m_BuildSystem_BuildPosition = m_BuildSystem.FindAction("BuildPosition", throwIfNotFound: true);
             m_BuildSystem_Build = m_BuildSystem.FindAction("Build", throwIfNotFound: true);
             m_BuildSystem_BuildRotate = m_BuildSystem.FindAction("BuildRotate", throwIfNotFound: true);
-            // ToolTips
-            m_ToolTips = asset.FindActionMap("ToolTips", throwIfNotFound: true);
-            m_ToolTips_ToolTipPosition = m_ToolTips.FindAction("ToolTipPosition", throwIfNotFound: true);
+            // Tooltips
+            m_Tooltips = asset.FindActionMap("Tooltips", throwIfNotFound: true);
+            m_Tooltips_TooltipPosition = m_Tooltips.FindAction("TooltipPosition", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1152,38 +1152,38 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
         }
         public BuildSystemActions @BuildSystem => new BuildSystemActions(this);
 
-        // ToolTips
-        private readonly InputActionMap m_ToolTips;
-        private IToolTipsActions m_ToolTipsActionsCallbackInterface;
-        private readonly InputAction m_ToolTips_ToolTipPosition;
-        public struct ToolTipsActions
+        // Tooltips
+        private readonly InputActionMap m_Tooltips;
+        private ITooltipsActions m_TooltipsActionsCallbackInterface;
+        private readonly InputAction m_Tooltips_TooltipPosition;
+        public struct TooltipsActions
         {
             private @GameInput m_Wrapper;
-            public ToolTipsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-            public InputAction @ToolTipPosition => m_Wrapper.m_ToolTips_ToolTipPosition;
-            public InputActionMap Get() { return m_Wrapper.m_ToolTips; }
+            public TooltipsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @TooltipPosition => m_Wrapper.m_Tooltips_TooltipPosition;
+            public InputActionMap Get() { return m_Wrapper.m_Tooltips; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
             public bool enabled => Get().enabled;
-            public static implicit operator InputActionMap(ToolTipsActions set) { return set.Get(); }
-            public void SetCallbacks(IToolTipsActions instance)
+            public static implicit operator InputActionMap(TooltipsActions set) { return set.Get(); }
+            public void SetCallbacks(ITooltipsActions instance)
             {
-                if (m_Wrapper.m_ToolTipsActionsCallbackInterface != null)
+                if (m_Wrapper.m_TooltipsActionsCallbackInterface != null)
                 {
-                    @ToolTipPosition.started -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
-                    @ToolTipPosition.performed -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
-                    @ToolTipPosition.canceled -= m_Wrapper.m_ToolTipsActionsCallbackInterface.OnToolTipPosition;
+                    @TooltipPosition.started -= m_Wrapper.m_TooltipsActionsCallbackInterface.OnTooltipPosition;
+                    @TooltipPosition.performed -= m_Wrapper.m_TooltipsActionsCallbackInterface.OnTooltipPosition;
+                    @TooltipPosition.canceled -= m_Wrapper.m_TooltipsActionsCallbackInterface.OnTooltipPosition;
                 }
-                m_Wrapper.m_ToolTipsActionsCallbackInterface = instance;
+                m_Wrapper.m_TooltipsActionsCallbackInterface = instance;
                 if (instance != null)
                 {
-                    @ToolTipPosition.started += instance.OnToolTipPosition;
-                    @ToolTipPosition.performed += instance.OnToolTipPosition;
-                    @ToolTipPosition.canceled += instance.OnToolTipPosition;
+                    @TooltipPosition.started += instance.OnTooltipPosition;
+                    @TooltipPosition.performed += instance.OnTooltipPosition;
+                    @TooltipPosition.canceled += instance.OnTooltipPosition;
                 }
             }
         }
-        public ToolTipsActions @ToolTips => new ToolTipsActions(this);
+        public TooltipsActions @Tooltips => new TooltipsActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1218,9 +1218,9 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
             void OnBuild(InputAction.CallbackContext context);
             void OnBuildRotate(InputAction.CallbackContext context);
         }
-        public interface IToolTipsActions
+        public interface ITooltipsActions
         {
-            void OnToolTipPosition(InputAction.CallbackContext context);
+            void OnTooltipPosition(InputAction.CallbackContext context);
         }
     }
 }

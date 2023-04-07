@@ -1112,6 +1112,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Buildable>k__BackingField: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240,
     type: 2}
+  <Button>k__BackingField: {fileID: 146154919}
+  <CoinsChangeEventChannel>k__BackingField: {fileID: 11400000, guid: 42b83e1defef54d16bedaf305ec0489e,
+    type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
 --- !u!1001 &151288130
@@ -4278,6 +4281,7 @@ MonoBehaviour:
   <TimeToRotate>k__BackingField: 0.133
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
+  <BuiltEventChannel>k__BackingField: {fileID: 0}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
     type: 2}
 --- !u!1001 &741545070
@@ -11784,14 +11788,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 2012149174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6abdb8e670c447da16050e703b4373b, type: 3}
+  m_Script: {fileID: 11500000, guid: d6a0319385ab4bd1be0137455c2597c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemToSpawn: {fileID: 3119131367663771553, guid: 65694d77ec30841a4be9f8719dd637bb,
-    type: 3}
-  SplineContainer: {fileID: 697528374}
-  ToSpawn: 5
-  Delay: 2000
+  <LevelRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: b12e537301c554260b06a1dec1263463,
+    type: 2}
+  <WaySplineRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 392fa5f7bc6124fbaabcd11031584bc2,
+    type: 2}
+  <GameplayStartEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
+    type: 2}
+  <SpawnNextWaveEventChannel>k__BackingField: {fileID: 11400000, guid: 9e65efb2fb26c4e6e963ecd008163895,
+    type: 2}
+  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 209e08c2fac3644e99ab0702be102457,
+    type: 2}
 --- !u!4 &2012149176
 Transform:
   m_ObjectHideFlags: 0

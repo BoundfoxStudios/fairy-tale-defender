@@ -16,6 +16,8 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		[field: SerializeField]
 		public GameplayActionsSO GameplayActions { get; private set; } = default!;
 
+		[field: SerializeField]
+		public TooltipActionsSO TooltipActions { get; private set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
@@ -28,10 +30,10 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		private VoidEventChannelSO GameplayStartEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private DisplayToolTipEventChannelSO DisplayToolTipEventChannel { get; set; } = default!;
+		private TooltipEventChannelSO ShowTooltipEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private VoidEventChannelSO DisableToolTipEventChannel { get; set; } = default!;
+		private VoidEventChannelSO HideTooltipEventChannel { get; set; } = default!;
 
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
@@ -48,29 +50,25 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 
 				_gameInput.Gameplay.SetCallbacks(GameplayActions);
 				_gameInput.BuildSystem.SetCallbacks(BuildSystemActions);
-				_gameInput.ToolTips.SetCallbacks(DisplayToolTipEventChannel);
+				_gameInput.Tooltips.SetCallbacks(TooltipActions);
 			}
 
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
 			ExitBuildModeEventChannel.Raised += ExitBuildMode;
 
-			DisplayToolTipEventChannel.Raised += DisplayToolTip;
-			DisableToolTipEventChannel.Raised += DisableToolTip;
+			ShowTooltipEventChannel.Raised += ShowTooltip;
+			HideTooltipEventChannel.Raised += HideTooltip;
 		}
 
-
-
-		private void DisableToolTip()
+		private void HideTooltip()
 		{
-			DisableToolTipInput();
-			GameplayStartEventChannel.Raised += GameplayStart;
+			DisableTooltipInput();
 		}
 
-		private void DisplayToolTip(string tip)
+		private void ShowTooltip(TooltipEventChannelSO.EventArgs args)
 		{
-			EnableToolTipInput();
+			EnableTooltipInput();
 		}
-
 
 		private void EnterBuildMode(BuildableEventChannelSO.EventArgs args)
 		{
@@ -81,7 +79,6 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		{
 			EnableGameplayInput();
 		}
-
 
 		private void OnDisable()
 		{
@@ -102,7 +99,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 			GameInput.Gameplay.Disable();
 			GameInput.UI.Disable();
 			GameInput.BuildSystem.Disable();
-			GameInput.ToolTips.Disable();
+			GameInput.Tooltips.Disable();
 		}
 
 		private void EnableBuildSystemInput()
@@ -118,14 +115,15 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 			GameInput.Gameplay.Enable();
 			GameInput.UI.Enable();
 		}
-		private void DisableToolTipInput()
+
+		private void DisableTooltipInput()
 		{
-			GameInput.ToolTips.Disable();
+			GameInput.Tooltips.Disable();
 		}
 
-		private void EnableToolTipInput()
+		private void EnableTooltipInput()
 		{
-			GameInput.ToolTips.Enable();
+			GameInput.Tooltips.Enable();
 		}
 	}
 }

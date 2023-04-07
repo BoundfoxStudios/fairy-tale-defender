@@ -797,11 +797,11 @@
             ]
         },
         {
-            "name": "ToolTips",
+            "name": "Tooltips",
             "id": "97af8790-3658-4aa5-991e-eb6232c63773",
             "actions": [
                 {
-                    "name": "ToolTipPosition",
+                    "name": "TooltipPosition",
                     "type": "Value",
                     "id": "99eadddf-a54e-4e1a-94b3-9304db62daa6",
                     "expectedControlType": "Vector2",
@@ -818,7 +818,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "ToolTipPosition",
+                    "action": "TooltipPosition",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

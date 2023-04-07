@@ -80,15 +80,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2c6b785f9b441ab4cbd3dd60b6114f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <MainCamera>k__BackingField: {fileID: 1633943522015870932}
   <VirtualCamera>k__BackingField: {fileID: 7545943087246542470}
   <InputReader>k__BackingField: {fileID: 11400000, guid: 8b87fd4ff750d2348b3a6c6654e1c0fe,
     type: 2}
   <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
     type: 2}
   <WorldBounds>k__BackingField: {fileID: 184857218}
-  <CameraRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 7048ec874fb204b739bb13db30662c7a,
-    type: 2}
 --- !u!1 &6087582997723236243
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,6 +152,7 @@ GameObject:
   - component: {fileID: 6443268071305306634}
   - component: {fileID: 6669389950617646350}
   - component: {fileID: 6751052080334158199}
+  - component: {fileID: 3782350523301801192}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -319,6 +317,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Anchor>k__BackingField: {fileID: 11400000, guid: 7048ec874fb204b739bb13db30662c7a,
     type: 2}
+--- !u!114 &3782350523301801192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288128567604122611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EventMask:
+    serializedVersion: 2
+    m_Bits: 512
+  m_MaxRayIntersections: 0
 --- !u!1 &7071776955472855275
 GameObject:
   m_ObjectHideFlags: 0
