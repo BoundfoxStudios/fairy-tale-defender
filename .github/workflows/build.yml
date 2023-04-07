@@ -93,7 +93,7 @@ jobs:
         os:
           - ubuntu-latest
           # Game CI does not support MacOS yet for executing the tests
-          # Regarding Windows see: https://github.com/BoundfoxStudios/community-project/issues/20
+          # Regarding Windows see: https://github.com/BoundfoxStudios/fairy-tale-defender/issues/20
         include:
           - os: ubuntu-latest
             target-platform: StandaloneLinux64

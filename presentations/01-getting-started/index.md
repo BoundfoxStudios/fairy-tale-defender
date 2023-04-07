@@ -105,7 +105,7 @@ Viele Informationen, die hier in der Präsentation stehen, werd ich auch nochmal
 
 ## GitHub
 
-* https://github.com/boundfoxstudios/community-project
+* https://github.com/boundfoxstudios/fairy-tale-defender
 * Hosting vom Code, Assets, etc.
 * Bug-Management
 * Am besten GitHub Desktop als Software nutzen für den Zugriff

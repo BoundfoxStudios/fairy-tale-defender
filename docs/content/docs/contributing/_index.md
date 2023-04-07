@@ -36,7 +36,7 @@ Wichtig ist, dass Du Lust und Laune mitbringst und natürlich Spaß an der ganze
 Es wird (fast) keine Rolle spielen, ob Du ein Anfänger oder bereits ein alter Hase bist.
 Im Laufe des Projektes werden wir viele Aufgaben haben, sodass jeder etwas für sich finden kann.
 
-Wir alle werden an diesem Projekt sehr viel lernen und das ist auch eines der [Ziele](https://github.com/boundfoxstudios/community-project#ziele) - gerade als Tutorial-Kanal auf YouTube.
+Wir alle werden an diesem Projekt sehr viel lernen und das ist auch eines der [Ziele](https://github.com/boundfoxstudios/fairy-tale-defender#ziele) - gerade als Tutorial-Kanal auf YouTube.
 
 {{% alert title="Lerne Git!" color="warning" %}}
 Eine Sache ist allerdings für alle Mitmacher wichtig: Die Benutzung von [Git](https://git-scm.org), bspw. mit einer Software wie GitHub-Desktop.
@@ -104,7 +104,7 @@ Kommunikation ist an dieser Stelle essentiell. Auch wenn Du Dir z.B. eine Aufgab
 
 Fühlst Du Dich in dieser Liste noch nicht zu Hause, da Du z.B. eher Spieletester sein möchtest, kein Problem!
 Dann bist Du zum aktuellen Stand des Projekte noch etwas zu früh dran.
-[Verfolge gerne das Projekt](https://github.com/boundfoxstudios/community-project#projektfortschritt-verfolgen) und schau später wieder rein.
+[Verfolge gerne das Projekt](https://github.com/boundfoxstudios/fairy-tale-defender#projektfortschritt-verfolgen) und schau später wieder rein.
 Sobald es mal "mehr vom Spiel gibt", werden weitere Rollen sich am Spiel beteiligen können.
 
 ## Wo finde ich, was es zu tun gibt? Wo sind die Aufgaben?
@@ -139,7 +139,7 @@ Zudem wirst Du, falls Du Dich länger nicht um Deine Aufgabe kümmerst, automati
 Wenn Du eine Aufgabe fertig hast, dann hast Du in der Regel auch eine oder mehrere Dateien verändert, hinzugefügt, gelöscht, etc.
 Jetzt wirst Du einen Pull Request erstellen, in dem Deine Änderungen sind und auch die Aufgabe verlinkt.
 Bitte aktiviere beim Erstellen des Pull Requests die Option "Allow edits from maintainers".
-Falls alles passt, werden Deine Änderungen von den [Ansprechpartnern](https://github.com/boundfoxstudios/community-project#ansprechpartner) ins Spiel übernommen werden.
+Falls alles passt, werden Deine Änderungen von den [Ansprechpartnern](https://github.com/boundfoxstudios/fairy-tale-defender#ansprechpartner) ins Spiel übernommen werden.
 Falls etwas nicht passt oder noch was unklar ist, dann wird es entsprechende Rückfragen geben.
 Eventuell bedeutet das auch, dass Du erneut etwas anpassen musst, damit es dann schlussendlich zum Spiel passt.
 
@@ -170,6 +170,6 @@ Und jetzt viel Spaß beim Mitmachen!
 
 <!-- Reference Links -->
 
-[1]: https://github.com/BoundfoxStudios/community-project/issues
+[1]: https://github.com/BoundfoxStudios/fairy-tale-defender/issues
 [2]: https://github.com/orgs/BoundfoxStudios/projects/1/views/1
-[3]: https://github.com/BoundfoxStudios/community-project/blob/develop/CODE_OF_CONDUCT.md
+[3]: https://github.com/BoundfoxStudios/fairy-tale-defender/blob/develop/CODE_OF_CONDUCT.md

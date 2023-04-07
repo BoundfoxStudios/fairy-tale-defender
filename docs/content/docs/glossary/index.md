@@ -10,7 +10,7 @@ In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unte
 Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
 Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.
 
-Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.com/BoundfoxStudios/community-project/issues/new/choose) ("Sonstiges").
+Sollte Dir hier ein Begriff fehlen, eröffne gerne ein [Issue](https://github.com/BoundfoxStudios/fairy-tale-defender/issues/new/choose) ("Sonstiges").
 
 ## Git & Co.
 
