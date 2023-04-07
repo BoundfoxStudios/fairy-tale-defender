@@ -33,7 +33,7 @@
 &lt;li>Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject (&lt;a href="https://www.youtube.com/watch?v=TjTL-MXPnbo">1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU">2&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=QkVpYHc1s60">3&lt;/a>) implementierst.&lt;/li>
 &lt;li>Vermeide statische Variablen.&lt;/li>
 &lt;li>Vermeide Magic Numbers (&amp;ldquo;magische Nummer&amp;rdquo;), z.B. &lt;code>value * 0.08&lt;/code>, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.&lt;/li>
-&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.CommunityProject&lt;/code>.&lt;/li>
+&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.FairyTaleDefender&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;h4 id="serialisierte-felder-aka-serializefield-aka-dinge-die-im-inspector-angezeigt-werden">Serialisierte Felder aka [SerializeField] aka Dinge, die im Inspector angezeigt werden&lt;/h4>
 &lt;p>Du bist es von Unity gewohnt, serialisierte Felder auf diese Art und Weise anzulegen:&lt;/p>
@@ -187,7 +187,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 &lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
 &lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
 &lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
-Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/.github/workflows">.github/workflows&lt;/a>.
+Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/.github/workflows">.github/workflows&lt;/a>.
 Wir setzen hier stark auf &lt;a href="https://game.ci">Game CI&lt;/a>, die eine Build-Umgebung für Unity bereitstellen.&lt;/p>
 &lt;p>In unserem Fall gibt es mehrere Prüfungen, die loslaufen, sobald ein Push auf &lt;code>develop&lt;/code> erfolgt oder ein PR gestellt wird.&lt;/p>
 &lt;ol>
@@ -240,7 +240,7 @@ Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
-&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>CommunityProject&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
+&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>FairyTaleDefender&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Windows:&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>format.bat
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>

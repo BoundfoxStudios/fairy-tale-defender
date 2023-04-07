@@ -29,7 +29,7 @@ Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwa
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
-Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
 &lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Technisch mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/technical/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/technical/</guid><description>
 &lt;h2 id="inhaltsverzeichnis">Inhaltsverzeichnis&lt;/h2>
 &lt;p>Du bist hier richtig, wenn Du Dich für die Entwicklung interessierst, d.h. Du&lt;/p>
@@ -42,7 +42,7 @@ Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-pro
 &lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
 &lt;ul>
 &lt;li>Lies Dir die &lt;a href="../../docs-technical/">Technische Dokumentation&lt;/a> durch.&lt;/li>
-&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.5f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
+&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.5f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/tree/develop/FairyTaleDefender/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
 &lt;ul>
 &lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2022.2.5f1/551d45108343">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
 Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/archive">hier auf der Unity-Seite&lt;/a> nach der Version.&lt;/li>
@@ -52,7 +52,7 @@ Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/arch
 Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du auch nur die Sachen committest, die Du auch wirklich geändert hast.&lt;/li>
 &lt;/ul>
 &lt;h2 id="was-soll-ich-nicht-tun">Was soll ich nicht tun?&lt;/h2>
-&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
+&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
 &lt;ul>
 &lt;li>Aktualisierung der Unity-Version.&lt;/li>
 &lt;li>Neues Package dem Projekt hinzufügen.&lt;/li>
@@ -100,5 +100,5 @@ Git und große Dateien sind nicht unbedingt Freunde, je mehr Du daher optimierst
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
-Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
 &lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item></channel></rss>

@@ -374,7 +374,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;li>Versuche Singletons zu vermeiden, in dem du z.B. ein ScriptableObject (&lt;a href="https://www.youtube.com/watch?v=TjTL-MXPnbo">1&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU">2&lt;/a>, &lt;a href="https://www.youtube.com/watch?v=QkVpYHc1s60">3&lt;/a>) implementierst.&lt;/li>
 &lt;li>Vermeide statische Variablen.&lt;/li>
 &lt;li>Vermeide Magic Numbers (&amp;ldquo;magische Nummer&amp;rdquo;), z.B. &lt;code>value * 0.08&lt;/code>, warum wird hier der Wert mit 0,08 multipliziert? Nutze stattdessen eine Konstante oder ein Feld, um der Zahl einen Namen zu geben.&lt;/li>
-&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.CommunityProject&lt;/code>.&lt;/li>
+&lt;li>Nutze Namespaces, wie es in C# üblich ist, jeder Ordner ist automatisch ein Namespace. Das Basis-Namespace ist &lt;code>BoundfoxStudios.FairyTaleDefender&lt;/code>.&lt;/li>
 &lt;/ul>
 &lt;h4 id="serialisierte-felder-aka-serializefield-aka-dinge-die-im-inspector-angezeigt-werden">Serialisierte Felder aka [SerializeField] aka Dinge, die im Inspector angezeigt werden&lt;/h4>
 &lt;p>Du bist es von Unity gewohnt, serialisierte Felder auf diese Art und Weise anzulegen:&lt;/p>
@@ -528,7 +528,7 @@ Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity
 &lt;h2 id="continuous-integration">Continuous Integration&lt;/h2>
 &lt;p>Vereinfacht beschreibt CI automatisierte Systeme, die bei Änderungen im Repo loslaufen und diese Änderungen prüfen, ob sie gewisse Dinge einhalten.&lt;/p>
 &lt;p>Dieses Repo nutzt GitHub Actions zur Umsetzung von Continuous Integration (CI).
-Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/.github/workflows">.github/workflows&lt;/a>.
+Alle Workflows finden sich unter &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/.github/workflows">.github/workflows&lt;/a>.
 Wir setzen hier stark auf &lt;a href="https://game.ci">Game CI&lt;/a>, die eine Build-Umgebung für Unity bereitstellen.&lt;/p>
 &lt;p>In unserem Fall gibt es mehrere Prüfungen, die loslaufen, sobald ein Push auf &lt;code>develop&lt;/code> erfolgt oder ein PR gestellt wird.&lt;/p>
 &lt;ol>
@@ -629,7 +629,7 @@ So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzie
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
-&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>CommunityProject&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
+&lt;p>Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner &lt;code>FairyTaleDefender&lt;/code> geöffnet wurde, folgendes ausführen:&lt;/p>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Windows:&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>format.bat
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
@@ -644,7 +644,7 @@ Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.
 &lt;p>In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.
 Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
 Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.&lt;/p>
-&lt;p>Sollte Dir hier ein Begriff fehlen, eröffne gerne ein &lt;a href="https://github.com/BoundfoxStudios/community-project/issues/new/choose">Issue&lt;/a> (&amp;ldquo;Sonstiges&amp;rdquo;).&lt;/p>
+&lt;p>Sollte Dir hier ein Begriff fehlen, eröffne gerne ein &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/issues/new/choose">Issue&lt;/a> (&amp;ldquo;Sonstiges&amp;rdquo;).&lt;/p>
 &lt;h2 id="git--co">Git &amp;amp; Co.&lt;/h2>
 &lt;dl>
 &lt;dt>&lt;a href="https://git-scm.com" target="_blank">Git&lt;/a>&lt;/dt>
@@ -724,12 +724,12 @@ Falls Dein Programm kein &lt;code>.wav&lt;/code> exportieren kann (was sehr unwa
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
-Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
 &lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Erklärung Event-System</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/event-system/explanation/</guid><description>
 &lt;p>[ &lt;a href="https://www.youtube.com/watch?v=qqzZZfgtQyU&amp;amp;list=PLxVAs8AY4TgeLrapbKxWAmbfwAbTOaLDc&amp;amp;index=2">Boundfox YouTube Tutorial&lt;/a> ]&lt;/p>
 &lt;p>Wenn Du noch nicht weißt, was ein Event-System ist, dann ist &lt;a href="#was-ist-ein-event-system">weiter unten&lt;/a> eine kleine Erklärung.&lt;/p>
 &lt;h2 id="implementierung">Implementierung&lt;/h2>
-&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects">hier&lt;/a>.
+&lt;p>Im Code findest Du das Event-System &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects">hier&lt;/a>.
 Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.&lt;/p>
 &lt;p>Jeder kann Informationen in ein Event Channel geben und jeder kann diese Informationen mitbekommen.
@@ -960,10 +960,10 @@ Dabei können wir als Entwickler bestimmen, wann wir neue Szenen dazu laden oder
 In Unity-sprech ist das ein &lt;em>additives Laden von Szenen&lt;/em>.&lt;/p>
 &lt;p>Der Ablauf ist aktuell wie folgt:&lt;/p>
 &lt;ul>
-&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
-&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="../event-system/">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich bei Fairy Tale Defender &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
+&lt;li>Wir laden zum Start des Spiels die &lt;code>Initialization&lt;/code>-Szene. Sie hat nur ein einziges Objekt mit dem &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/blob/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/InitializationLoader.cs">InitializationLoader&lt;/a>-Script. Dieses Script startet das eigentliche Spiel, in dem es zwei weitere Szenen lädt: &lt;code>PersistentManagers&lt;/code> und das &lt;code>MainMenu&lt;/code>. Danach wird die &lt;code>Initialization&lt;/code>-Szene entladen.&lt;/li>
+&lt;li>&lt;code>PersistentManagers&lt;/code> ist eine Szene, die einmalig geladen wird und während der gesamten Laufzeit vom Spiel nie wieder entladen wird. In dieser Szene liegen Objekte/Manager, die wir das gesamte Spiel über benötigen, z.B. Hintergrundmusik oder das Laden von anderen Szenen (via &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/blob/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement/SceneLoader.cs">SceneLoader&lt;/a>-Skript). Über ein &lt;a href="../event-system/">Event-System&lt;/a> können andere Szenen und Objekte mit den &lt;code>PersistentManagers&lt;/code> kommunizieren. Für den Fall, dass man in Unity den Play Mode von einer anderen Szene aus startet (was durchaus üblich ist), kümmert sich ein &lt;code>EditorOnly&lt;/code>-GameObject darum, diese &lt;code>PersistentManagers&lt;/code> zu laden. So, als hätte man das Spiel über die &lt;code>Initialization&lt;/code>-Szene gestartet. Dieser Vorgang nennt sich bei Fairy Tale Defender &amp;ldquo;EditorColdStartup&amp;rdquo;.&lt;/li>
 &lt;/ul>
-&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
+&lt;p>Die Implementierung des Multi Scene Managements findet sich im Ordner &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/Infrastructure/SceneManagement">SceneManagement&lt;/a>.&lt;/p>
 &lt;div class="mermaid">sequenceDiagram
 autonumber
 Spielstart ->> Initialization: Lädt
@@ -1023,7 +1023,7 @@ Du findest die Instanz unter &lt;code>ScriptableObjects/PrefabManager&lt;/code>,
 &lt;p>&lt;img src="assets/select-prefab-manager.png" alt="Select Prefab Manager">&lt;/p>
 &lt;p>Im Inspektor siehst Du, welche Prefabs verknüpft sind und genutzt werden können.&lt;/p>
 &lt;p>&lt;img src="assets/prefab-manager.png" alt="Prefab Manager">&lt;/p>
-&lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/community-project/blob/develop/CommunityProject/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
+&lt;p>Wenn Du hier eigene Prefabs hinzufügen möchtest, musst Du den &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/blob/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/EditorExtensions/ScriptableObjects/PrefabManagerSO.cs">PrefabManager im Code&lt;/a> und die &lt;a href="https://github.com/BoundfoxStudios/fairy-tale-defender/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Editor/Menus/GameObjectMenu">Menü-Einträge&lt;/a> erweitern.&lt;/p>
 &lt;h3 id="ich-finde-nicht-was-ich-brauche">Ich finde nicht, was ich brauche.&lt;/h3>
 &lt;p>Es kann durchaus sein, dass Du UI umsetzen möchtest, aber es dafür noch keine passenden Prefabs findest.
 Am Besten legst Du diese dann an und fügst wie, wie im Abschnitt zuvor beschrieben, dem PrefabManager hinzu.&lt;/p></description></item><item><title>Docs: Runtime Anchors</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/runtime-anchors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/runtime-anchors/</guid><description>
@@ -1146,7 +1146,7 @@ Z.B. kann ein Katapult Gegner treffen, die in einem 90°-Winkel vor der Waffe si
 &lt;h2 id="worauf-muss-ich-achten">Worauf muss ich achten?&lt;/h2>
 &lt;ul>
 &lt;li>Lies Dir die &lt;a href="../../docs-technical/">Technische Dokumentation&lt;/a> durch.&lt;/li>
-&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.5f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/community-project/tree/develop/CommunityProject/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
+&lt;li>Du musst die korrekte Unity-Version installieren, das ist aktuell &lt;strong>Unity 2022.2.5f1&lt;/strong>. Schaue gerne &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/tree/develop/FairyTaleDefender/ProjectSettings/ProjectVersion.txt">hier&lt;/a> nach, welche Version im Projekt eingesetzt wird, falls vergessen wurde, dieses Dokument zu aktualisieren.
 &lt;ul>
 &lt;li>Um Unity in dieser Version zu installieren, klicke &lt;a href="unityhub://2022.2.5f1/551d45108343">hier&lt;/a>, wenn Du den Unity Hub installiert hast.
 Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/archive">hier auf der Unity-Seite&lt;/a> nach der Version.&lt;/li>
@@ -1156,7 +1156,7 @@ Alternativ, schaue gerne &lt;a href="https://unity3d.com/get-unity/download/arch
 Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du auch nur die Sachen committest, die Du auch wirklich geändert hast.&lt;/li>
 &lt;/ul>
 &lt;h2 id="was-soll-ich-nicht-tun">Was soll ich nicht tun?&lt;/h2>
-&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
+&lt;p>Bitte mache folgende Dinge &lt;strong>nicht&lt;/strong> oder nur nach Rücksprache mit einem &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a>:&lt;/p>
 &lt;ul>
 &lt;li>Aktualisierung der Unity-Version.&lt;/li>
 &lt;li>Neues Package dem Projekt hinzufügen.&lt;/li>
@@ -1178,7 +1178,7 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.&lt;/p>
 &lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">
 &lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Tooltips</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/tooltips-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/tooltips-system/</guid><description>
-&lt;p>Im Community-Projekt können wir sowohl für UI-Elemente als auch für GameObjects Tooltips anzeigen.
+&lt;p>In Fairy Tale Defender können wir sowohl für UI-Elemente als auch für GameObjects Tooltips anzeigen.
 Tooltips sind Hinweistexte/Bilder, die erscheinen, sobald man mit der Maus über bestimmte Elemente fährt.&lt;/p>
 &lt;p>Um einen Tooltip zu nutzen, kann eine der Klassen von &lt;a href="#tooltip-typen">Tooltip-Typen&lt;/a> auf einem GameObject platziert werden.
 Sobald man das Spiel startet und über das Element fährt, wird der entsprechende Tooltip angezeigt.&lt;/p>
@@ -1462,7 +1462,7 @@ Git und große Dateien sind nicht unbedingt Freunde, je mehr Du daher optimierst
 &lt;p>&lt;a href="../#ich-habe-eine-aufgabe-fertig-was-mache-ich-damit">Siehe hier&lt;/a>.&lt;/p>
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als kreativer Mensch hat man oft noch keinen Berührungspunkt mit dem sehr technischen Git gehabt.
-Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/community-project/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
+Spreche bitte einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender/#ansprechpartner">Ansprechpartner&lt;/a> an, eventuell kann er die Arbeit mit Git für Dich übernehmen.&lt;/p>
 &lt;p>&lt;em>Für die Erweiterung Deiner Skills ist&amp;rsquo;s natürlich cool, wenn Du Dir Git aneignest.&lt;/em>&lt;/p></description></item><item><title>Docs: Waffenarten</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/weapons/weapon-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/weapons/weapon-types/</guid><description>
 &lt;p>Die Idee der Gruppierung in Waffenarten ist, dass man ähnliche Waffen nicht mehrfach implementieren muss.
 Ein Beispiel wäre ein Katapult und ein Trebuchet.
