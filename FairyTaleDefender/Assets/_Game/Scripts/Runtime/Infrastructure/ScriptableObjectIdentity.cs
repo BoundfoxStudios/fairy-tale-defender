@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure
 {
 	/// <summary>
 	/// This class can be used for ScriptableObjects that should have an identity.

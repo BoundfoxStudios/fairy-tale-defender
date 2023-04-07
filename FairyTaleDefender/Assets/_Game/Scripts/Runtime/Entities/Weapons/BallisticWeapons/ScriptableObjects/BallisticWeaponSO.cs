@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Weapons + "/Ballistic Weapon")]
 	public class BallisticWeaponSO : WeaponSO

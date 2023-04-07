@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 {
 	public abstract class EffectiveWeaponDefinition
 	{

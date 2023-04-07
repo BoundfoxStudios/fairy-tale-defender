@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Menus
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 {
 	public static class FileManagerMenus
 	{

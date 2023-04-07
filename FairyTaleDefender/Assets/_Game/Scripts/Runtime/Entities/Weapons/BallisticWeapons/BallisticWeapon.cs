@@ -1,14 +1,14 @@
 using System;
 using System.Threading;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.Projectiles;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
-using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 {
 	/// <summary>
 	/// Class for all ballistic weapons, like a catapult.

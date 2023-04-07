@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.HealthSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 {
 	[AddComponentMenu(Constants.MenuNames.HealthSystem + "/" + nameof(Health))]
 	public class Health : MonoBehaviour

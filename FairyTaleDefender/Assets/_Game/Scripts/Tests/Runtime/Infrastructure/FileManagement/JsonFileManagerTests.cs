@@ -2,14 +2,14 @@ using System;
 using System.Collections;
 using System.IO;
 using System.Threading.Tasks;
-using BoundfoxStudios.CommunityProject.Infrastructure.FileManagement;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
 using FluentAssertions;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Infrastructure.FileManagement
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Infrastructure.FileManagement
 {
 	/// <summary>
 	///   Contains Integration Tests

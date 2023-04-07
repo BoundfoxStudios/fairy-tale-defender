@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.AudioSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.AudioSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem
 {
 	[AddComponentMenu(Constants.MenuNames.Audio + "/" + nameof(AudioCuePlayer))]
 	public class AudioCuePlayer : MonoBehaviour

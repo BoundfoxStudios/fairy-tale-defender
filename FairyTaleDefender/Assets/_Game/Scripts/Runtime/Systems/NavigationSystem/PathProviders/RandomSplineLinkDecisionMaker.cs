@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders
+namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem.PathProviders
 {
 	public class RandomSplineLinkDecisionMaker : ISplineLinkDecisionMaker
 	{

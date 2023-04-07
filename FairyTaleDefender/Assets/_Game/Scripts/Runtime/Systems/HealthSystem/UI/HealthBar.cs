@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.UI.Utility;
+using BoundfoxStudios.FairyTaleDefender.UI.Utility;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.HealthSystem.UI
+namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem.UI
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(HealthBar))]
 	public class HealthBar : MonoBehaviour

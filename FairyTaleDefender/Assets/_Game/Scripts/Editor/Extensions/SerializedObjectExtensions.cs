@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Extensions
 {
 	public static class SerializedObjectExtensions
 	{

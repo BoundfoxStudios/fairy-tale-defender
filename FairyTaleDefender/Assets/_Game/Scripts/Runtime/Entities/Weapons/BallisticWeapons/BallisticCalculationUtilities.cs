@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 {
 	/// <summary>
 	/// This class contains helper methods to calculate weapon ballistics.

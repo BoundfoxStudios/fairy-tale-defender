@@ -259,8 +259,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 673820982054601437}
-        m_TargetAssemblyTypeName: BoundfoxStudios.CommunityProject.SceneManagement.SceneLoadRequester,
-          BoundfoxStudios.CommunityProject
+        m_TargetAssemblyTypeName: BoundfoxStudios.FairyTaleDefender.SceneManagement.SceneLoadRequester,
+          BoundfoxStudios.FairyTaleDefender
         m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:

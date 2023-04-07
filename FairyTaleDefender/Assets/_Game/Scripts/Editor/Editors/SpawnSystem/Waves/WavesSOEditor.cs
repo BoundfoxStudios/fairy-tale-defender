@@ -1,11 +1,11 @@
 using System.Linq;
-using BoundfoxStudios.CommunityProject.Editor.Extensions;
-using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves;
-using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves;
+using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Editors.SpawnSystem.Waves
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.SpawnSystem.Waves
 {
 	[CustomEditor(typeof(WavesSO))]
 	public class WavesSOEditor : UnityEditor.Editor

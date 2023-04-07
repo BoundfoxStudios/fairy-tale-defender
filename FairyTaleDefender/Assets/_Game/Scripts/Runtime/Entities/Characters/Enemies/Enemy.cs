@@ -1,10 +1,10 @@
-using BoundfoxStudios.CommunityProject.Entities.Characters.Enemies.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.NavigationSystem;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem;
 using UnityEngine;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Characters.Enemies
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 {
 	[AddComponentMenu(Constants.MenuNames.Characters + "/" + nameof(Enemy))]
 	public class Enemy : Character<EnemySO>

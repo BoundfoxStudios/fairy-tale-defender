@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects
 {
 	/// <summary>
 	/// Describes the persistent managers scene that will exist during the whole runtime of the game.

@@ -1,9 +1,9 @@
 using System;
-using BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects.CallbackProcessors
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Gameplay Actions")]
 	public class GameplayActionsSO : ScriptableObject, GameInput.IGameplayActions

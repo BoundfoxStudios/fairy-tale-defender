@@ -5,7 +5,7 @@ using System.Linq;
 using System.Reflection;
 using UnityEditor;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Extensions
 {
 	public static class SerializedPropertyExtensions
 	{

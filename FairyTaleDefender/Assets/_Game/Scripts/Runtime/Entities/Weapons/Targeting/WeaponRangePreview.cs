@@ -1,11 +1,11 @@
 using System;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons;
-using BoundfoxStudios.CommunityProject.Infrastructure;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 {
 	[RequireComponent(typeof(DecalProjector))]
 	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(WeaponRangePreview))]

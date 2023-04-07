@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine.InputSystem.Utilities;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 {
     public partial class @GameInput : IInputActionCollection2, IDisposable
     {

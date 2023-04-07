@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects.CallbackProcessors
+namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Input + "/Tooltip Actions")]
 	public class TooltipActionsSO : ScriptableObject, GameInput.ITooltipsActions

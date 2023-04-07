@@ -19,7 +19,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 7263322530678308866
-      type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves,
+      type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves,
         asm: BoundfoxStudios.FairyTaleDefender}
       data:
         <DelayBetweenEachSpawnInSeconds>k__BackingField: 0.5
@@ -27,7 +27,7 @@ MonoBehaviour:
         <EnemyPrefab>k__BackingField: {fileID: 5748376400373774719, guid: 65694d77ec30841a4be9f8719dd637bb,
           type: 3}
     - rid: 7263322530678308871
-      type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves,
+      type: {class: SingleEnemyTypeWave, ns: BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves,
         asm: BoundfoxStudios.FairyTaleDefender}
       data:
         <DelayBetweenEachSpawnInSeconds>k__BackingField: 2

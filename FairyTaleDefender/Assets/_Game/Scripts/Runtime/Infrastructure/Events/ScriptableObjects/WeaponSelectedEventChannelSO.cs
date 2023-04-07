@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Entities.Weapons;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Tower Selected Event Channel")]
 	public class WeaponSelectedEventChannelSO : EventChannelSO<WeaponSelectedEventChannelSO.EventArgs>

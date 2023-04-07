@@ -1,10 +1,10 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
-using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects
 {
 	public abstract class RuntimeAnchorBaseSO : ScriptableObject
 	{

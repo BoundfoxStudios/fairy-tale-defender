@@ -2,7 +2,7 @@ using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
 	public abstract class EventChannelBaseSO : ScriptableObject
 	{

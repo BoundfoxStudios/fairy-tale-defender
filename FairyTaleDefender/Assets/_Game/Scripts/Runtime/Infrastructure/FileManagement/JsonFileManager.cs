@@ -2,7 +2,7 @@ using System.IO;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 {
 	public class JsonFileManager : IFileManager
 	{

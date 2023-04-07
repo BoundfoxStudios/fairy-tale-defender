@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.AudioSystem.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem.ScriptableObjects
 {
 	/// <summary>
 	/// <see cref="ScriptableObject"/> for holding a reference to an <see cref="AudioClip"/> and some Information about it.

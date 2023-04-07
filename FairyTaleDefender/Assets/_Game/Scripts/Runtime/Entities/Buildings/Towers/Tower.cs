@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Buildings.Towers
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers
 {
 	[SelectionBase]
 	public class Tower : MonoBehaviour

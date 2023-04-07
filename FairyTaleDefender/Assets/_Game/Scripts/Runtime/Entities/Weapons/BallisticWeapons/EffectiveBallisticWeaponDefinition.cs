@@ -1,6 +1,6 @@
-using BoundfoxStudios.CommunityProject.Infrastructure;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 {
 	public class EffectiveBallisticWeaponDefinition : EffectiveWeaponDefinition
 	{

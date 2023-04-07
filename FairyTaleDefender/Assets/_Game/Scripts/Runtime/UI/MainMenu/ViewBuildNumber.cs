@@ -1,11 +1,11 @@
-using BoundfoxStudios.CommunityProject.Build.BuildManifest;
+using BoundfoxStudios.FairyTaleDefender.Build.BuildManifest;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace BoundfoxStudios.CommunityProject.UI.MainMenu
+namespace BoundfoxStudios.FairyTaleDefender.UI.MainMenu
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(ViewBuildNumber))]
 	[RequireComponent(typeof(TextMeshProUGUI))]

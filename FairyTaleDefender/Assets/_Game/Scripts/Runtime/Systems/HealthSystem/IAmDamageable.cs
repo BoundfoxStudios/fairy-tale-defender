@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Systems.HealthSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 {
 	public interface IAmDamageable
 	{

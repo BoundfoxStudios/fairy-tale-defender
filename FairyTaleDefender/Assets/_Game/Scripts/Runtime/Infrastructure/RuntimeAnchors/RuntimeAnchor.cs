@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors
 {
 	[DefaultExecutionOrder(-1000)]
 	public class RuntimeAnchor : MonoBehaviour

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.SpawnSystem + "/Waves")]
 	public class WavesSO : ScriptableObject

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 {
 	/// <summary>
 	/// Helper class for Gizmos, see Editor Assembly -> BallisticWeaponGizmos

@@ -1,9 +1,9 @@
 using System;
-using BoundfoxStudios.CommunityProject.Systems.AudioSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.AudioSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem
 {
 	/// <summary>
 	/// This component plays <see cref="AudioClip"/>s from a given <see cref="PlaylistSO"/> on the <see cref="AudioSource"/> on same GameObject.

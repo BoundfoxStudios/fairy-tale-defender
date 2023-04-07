@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Systems.TooltipSystem;
+using BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Tooltip Event Channel")]
 	public class TooltipEventChannelSO : EventChannelSO<TooltipEventChannelSO.EventArgs>

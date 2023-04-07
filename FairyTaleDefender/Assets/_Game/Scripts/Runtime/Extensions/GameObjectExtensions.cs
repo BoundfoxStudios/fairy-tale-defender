@@ -2,7 +2,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
 	public static class GameObjectExtensions
 	{

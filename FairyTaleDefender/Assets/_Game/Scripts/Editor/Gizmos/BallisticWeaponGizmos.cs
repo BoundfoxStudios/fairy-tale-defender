@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons;
 using UnityEditor;
 using UnityEngine;
 using UnityGizmos = UnityEngine.Gizmos;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Gizmos
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Gizmos
 {
 	public static class BallisticWeaponGizmos
 	{

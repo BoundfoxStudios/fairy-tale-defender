@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves;
+using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Editors.SpawnSystem.Waves
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.SpawnSystem.Waves
 {
 	[CustomPropertyDrawer(typeof(Wave))]
 	public class WaveEditor : PropertyDrawer

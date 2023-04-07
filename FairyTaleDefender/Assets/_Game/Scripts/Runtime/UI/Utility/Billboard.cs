@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.UI.Utility
+namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(Billboard))]
 	public class Billboard : MonoBehaviour

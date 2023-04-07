@@ -1,12 +1,12 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.SettingsSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 {
 	/// <summary>
 	///   A cold start in the editor is when the user is in any scene except the initialization scene and enters the play mode.

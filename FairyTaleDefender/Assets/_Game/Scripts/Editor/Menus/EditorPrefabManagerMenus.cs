@@ -1,7 +1,7 @@
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Menus
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 {
 	public static class EditorPrefabManagerMenus
 	{

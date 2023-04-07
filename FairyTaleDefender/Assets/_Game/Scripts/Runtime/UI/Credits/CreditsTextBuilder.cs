@@ -1,12 +1,12 @@
 using System.Linq;
-using BoundfoxStudios.CommunityProject.Build.Contributors;
+using BoundfoxStudios.FairyTaleDefender.Build.Contributors;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject.UI.Credits
+namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(CreditsTextBuilder))]
 	[RequireComponent(typeof(TextMeshProUGUI))]

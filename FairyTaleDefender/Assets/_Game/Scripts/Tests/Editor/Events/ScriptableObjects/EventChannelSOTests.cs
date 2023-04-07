@@ -1,11 +1,11 @@
 using System.Text.RegularExpressions;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using FluentAssertions;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Events.ScriptableObjects
 {
 	public class EventChannelSOTests
 	{

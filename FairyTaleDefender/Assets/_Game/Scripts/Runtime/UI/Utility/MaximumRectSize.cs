@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 // From: https://forum.unity.com/threads/rect-transform-size-limiter.620860/#post-6285554
 
-namespace BoundfoxStudios.CommunityProject.UI.Utility
+namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[RequireComponent(typeof(RectTransform))]
 	[ExecuteInEditMode]

@@ -1,7 +1,7 @@
 using System.Runtime.CompilerServices;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Extensions
+namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
 	public static class SplineExtensions
 	{

@@ -1,8 +1,8 @@
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Targeting + "/" + nameof(BallisticTargetLocatorSO))]
 	public class BallisticTargetLocatorSO : TargetLocatorSO<EffectiveBallisticWeaponDefinition>

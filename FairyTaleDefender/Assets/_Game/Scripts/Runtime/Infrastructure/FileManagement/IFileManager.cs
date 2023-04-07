@@ -1,6 +1,6 @@
 using Cysharp.Threading.Tasks;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.FileManagement
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 {
 	public interface IFileManager
 	{

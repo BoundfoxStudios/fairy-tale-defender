@@ -1,12 +1,12 @@
 using System.Collections.Generic;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders;
-using BoundfoxStudios.CommunityProject.Systems.SpawnSystem.Waves;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem.PathProviders;
+using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.SpawnSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem
 {
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(WaveSpawner))]
 	public class WaveSpawner : MonoBehaviour

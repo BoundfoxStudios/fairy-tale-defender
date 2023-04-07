@@ -1,9 +1,9 @@
 using System;
-using BoundfoxStudios.CommunityProject.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Editor.Extensions;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.GuiControls
+namespace BoundfoxStudios.FairyTaleDefender.Editor.GuiControls
 {
 	public static class AttackAngleControl
 	{

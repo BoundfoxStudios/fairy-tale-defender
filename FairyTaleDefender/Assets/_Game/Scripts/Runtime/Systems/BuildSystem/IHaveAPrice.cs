@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 {
 	public interface IHaveAPrice
 	{

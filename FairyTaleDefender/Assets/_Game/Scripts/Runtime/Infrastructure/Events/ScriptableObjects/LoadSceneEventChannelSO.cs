@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
 	/// <summary>
 	/// Event that can be used whenever a scene needs to be loaded, e.g. <see cref="MenuSO"/>.

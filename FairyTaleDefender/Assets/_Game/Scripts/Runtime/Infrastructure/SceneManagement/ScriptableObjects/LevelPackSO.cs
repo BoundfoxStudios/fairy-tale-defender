@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.SceneManagement.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects
 {
 	/// <summary>
 	/// Contains a collection of scenes.

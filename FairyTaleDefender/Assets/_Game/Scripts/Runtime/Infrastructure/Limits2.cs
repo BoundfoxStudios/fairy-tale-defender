@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure
 {
 	public struct Limits2
 	{

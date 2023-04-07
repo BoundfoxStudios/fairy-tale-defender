@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Systems.BuildSystem;
+using BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Buildable Event Channel")]
 	public class BuildableEventChannelSO : EventChannelSO<BuildableEventChannelSO.EventArgs>

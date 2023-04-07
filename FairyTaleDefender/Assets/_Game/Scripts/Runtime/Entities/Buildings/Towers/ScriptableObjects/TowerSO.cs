@@ -1,7 +1,7 @@
-using BoundfoxStudios.CommunityProject.Systems.BuildSystem;
+using BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Entities.Buildings.Towers.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Towers + "/Tower")]
 	public class TowerSO : ScriptableObject, IAmBuildable, IHaveAPrice

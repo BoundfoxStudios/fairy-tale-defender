@@ -1,9 +1,9 @@
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.HealthSystem;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.GameplaySystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 {
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(PlayerHealthController))]
 	public class PlayerHealthController : MonoBehaviour, IAmDamageable

@@ -1,10 +1,10 @@
 using System;
-using BoundfoxStudios.CommunityProject.EditorExtensions.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Editor.Menus.GameObjectMenu
+namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 {
 	public static partial class Prefabs
 	{

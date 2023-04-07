@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
+namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 {
 	public enum TargetType
 	{

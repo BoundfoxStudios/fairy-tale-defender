@@ -3,7 +3,7 @@ using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject.UI.Utility
+namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(Bar))]
 	public class Bar : MonoBehaviour

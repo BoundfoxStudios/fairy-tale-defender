@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace BoundfoxStudios.CommunityProject.UI.Utility
+namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(AutoScroll))]
 	[RequireComponent(typeof(ScrollRect))]

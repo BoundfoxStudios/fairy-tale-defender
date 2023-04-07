@@ -1,13 +1,13 @@
 using System.Threading;
-using BoundfoxStudios.CommunityProject.Entities.Weapons;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting;
-using BoundfoxStudios.CommunityProject.Extensions;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Infrastructure.RuntimeAnchors.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.BuildSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 {
 	public class BuildController : MonoBehaviour
 	{

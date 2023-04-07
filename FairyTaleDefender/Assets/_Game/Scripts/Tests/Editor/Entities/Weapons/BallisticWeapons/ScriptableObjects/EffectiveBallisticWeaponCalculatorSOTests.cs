@@ -1,12 +1,12 @@
-using BoundfoxStudios.CommunityProject.Editor.Extensions;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.BallisticWeapons.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Editor.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using FluentAssertions;
 using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Tests.Editor.Entities.Weapons.BallisticWeapons.ScriptableObjects
+namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Entities.Weapons.BallisticWeapons.ScriptableObjects
 {
 	public class EffectiveBallisticWeaponCalculatorSOTests
 	{

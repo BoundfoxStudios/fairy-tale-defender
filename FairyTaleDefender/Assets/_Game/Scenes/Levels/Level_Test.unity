@@ -1048,8 +1048,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 146154922}
-        m_TargetAssemblyTypeName: BoundfoxStudios.CommunityProject.UI.BuildSystem.BuildButton`1[[BoundfoxStudios.CommunityProject.Buildings.Towers.ScriptableObjects.TowerSO,
-          BoundfoxStudios.CommunityProject
+        m_TargetAssemblyTypeName: BoundfoxStudios.FairyTaleDefender.UI.BuildSystem.BuildButton`1[[BoundfoxStudios.FairyTaleDefender.Buildings.Towers.ScriptableObjects.TowerSO,
+          BoundfoxStudios.FairyTaleDefender
         m_MethodName: EnterBuildMode
         m_Mode: 1
         m_Arguments:

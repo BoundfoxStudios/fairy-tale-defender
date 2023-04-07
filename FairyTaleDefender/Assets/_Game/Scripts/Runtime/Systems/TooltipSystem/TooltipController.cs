@@ -1,9 +1,8 @@
-using System;
-using BoundfoxStudios.CommunityProject.Infrastructure.Events.ScriptableObjects;
-using BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using UnityEngine;
 
-namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
+namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(TooltipController))]
 	public class TooltipController : MonoBehaviour

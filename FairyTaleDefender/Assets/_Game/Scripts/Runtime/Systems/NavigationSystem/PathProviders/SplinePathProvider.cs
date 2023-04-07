@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using BoundfoxStudios.CommunityProject.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using UnityEngine.Splines;
 
-namespace BoundfoxStudios.CommunityProject.Systems.NavigationSystem.PathProviders
+namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem.PathProviders
 {
 	/// <summary>
 	///   The <see cref="SplinePathProvider" /> will create a path through a <see cref="ISplineContainer" />.
