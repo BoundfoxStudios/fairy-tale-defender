@@ -8,11 +8,11 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 		[field: SerializeField]
 		protected RectTransform ContainerRectTransform { get; private set; } = default!;
 
-		protected abstract void SetTooltip<T>(T tooltip) where T : ITooltip2;
+		protected abstract void SetTooltip<T>(T tooltip) where T : ITooltip;
 
 		protected TResult ResolveTooltip<TResult, T>(T tooltip)
-			where TResult : ITooltip2
-			where T : ITooltip2
+			where TResult : ITooltip
+			where T : ITooltip
 		{
 			if (tooltip is TResult result)
 			{
@@ -22,7 +22,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.TooltipSystem
 			throw new($"{typeof(TResult).Name} expected, but got {typeof(T).Name}");
 		}
 
-		public void Show<T>(T tooltip, Vector2 screenPosition) where T : ITooltip2
+		public void Show<T>(T tooltip, Vector2 screenPosition) where T : ITooltip
 		{
 			SetTooltip(tooltip);
 			SetPosition(screenPosition);
