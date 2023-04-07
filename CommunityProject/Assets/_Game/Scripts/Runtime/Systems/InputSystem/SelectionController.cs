@@ -20,7 +20,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 		public WeaponSelectedEventChannelSO WeaponSelectedEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
-		public VoidEventChannelSO WeaponDeselectEventChannel { get; private set; } = default!;
+		public VoidEventChannelSO WeaponDeselectedEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
 		private LayerMask TowerLayerMask { get; set; }
@@ -45,7 +45,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 			{
 				if (_currentSelection is not null)
 				{
-					WeaponDeselectEventChannel.Raise();
+					WeaponDeselectedEventChannel.Raise();
 					_currentSelection = null;
 				}
 

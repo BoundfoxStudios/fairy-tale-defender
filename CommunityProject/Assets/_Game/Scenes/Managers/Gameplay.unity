@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0.12731689, g: 0.13414702, b: 0.1210784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -588,7 +589,7 @@ MonoBehaviour:
   <ProjectionDepth>k__BackingField: 20
   <WeaponSelectedEventChannel>k__BackingField: {fileID: 11400000, guid: 6bcda8772031e764ea22183523b7e9f7,
     type: 2}
-  <WeaponDeselectEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
+  <WeaponDeselectedEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
     type: 2}
 --- !u!1 &556209361
 GameObject:
@@ -1125,7 +1126,7 @@ MonoBehaviour:
     type: 2}
   <WeaponSelectedEventChannel>k__BackingField: {fileID: 11400000, guid: 6bcda8772031e764ea22183523b7e9f7,
     type: 2}
-  <WeaponDeselectEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
+  <WeaponDeselectedEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
     type: 2}
   <TowerLayerMask>k__BackingField:
     serializedVersion: 2

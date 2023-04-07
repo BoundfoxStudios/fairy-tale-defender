@@ -11,18 +11,18 @@ namespace BoundfoxStudios.CommunityProject.Entities.Weapons.Targeting
 		public WeaponSelectedEventChannelSO WeaponSelectedEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
-		public VoidEventChannelSO WeaponDeselectEventChannel { get; private set; } = default!;
+		public VoidEventChannelSO WeaponDeselectedEventChannel { get; private set; } = default!;
 
 		private void OnEnable()
 		{
 			WeaponSelectedEventChannel.Raised += DisplayWeaponRange;
-			WeaponDeselectEventChannel.Raised += StopDisplayingWeaponRange;
+			WeaponDeselectedEventChannel.Raised += StopDisplayingWeaponRange;
 		}
 
 		private void OnDisable()
 		{
 			WeaponSelectedEventChannel.Raised -= DisplayWeaponRange;
-			WeaponDeselectEventChannel.Raised -= StopDisplayingWeaponRange;
+			WeaponDeselectedEventChannel.Raised -= StopDisplayingWeaponRange;
 		}
 	}
 }
