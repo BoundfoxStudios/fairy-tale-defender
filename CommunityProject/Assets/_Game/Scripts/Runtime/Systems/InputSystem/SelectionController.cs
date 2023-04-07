@@ -25,6 +25,8 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 		[field: SerializeField]
 		private LayerMask TowerLayerMask { get; set; }
 
+		private Transform? _currentSelection;
+
 		private void OnEnable()
 		{
 			InputReader.GameplayActions.Click += GameplayActionsOnClick;
@@ -41,15 +43,26 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem
 
 			if (!Physics.Raycast(ray, out var hitInfo, 1000, TowerLayerMask))
 			{
-				WeaponDeselectEventChannel.Raise();
+				if (_currentSelection is not null)
+				{
+					WeaponDeselectEventChannel.Raise();
+					_currentSelection = null;
+				}
+
 				return;
 			}
 
-			var hitTransform = hitInfo.transform;
-			var canCalculateWeaponDefinition = hitTransform.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
+			// Prevent selecting the same transform multiple times
+			if (hitInfo.transform == _currentSelection)
+			{
+				return;
+			}
+
+			_currentSelection = hitInfo.transform;
+			var canCalculateWeaponDefinition = _currentSelection.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
 			WeaponSelectedEventChannel.Raise(new()
 			{
-				Transform = hitTransform,
+				Transform = _currentSelection,
 				EffectiveWeaponDefinition = canCalculateWeaponDefinition
 			});
 		}
