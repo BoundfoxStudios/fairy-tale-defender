@@ -10,7 +10,7 @@ Wenn Du noch nicht weißt, was ein Event-System ist, dann ist [weiter unten](#wa
 
 ## Implementierung
 
-Im Code findest Du das Event-System [hier](https://github.com/BoundfoxStudios/community-project/tree/develop/CommunityProject/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects).
+Im Code findest Du das Event-System [hier](https://github.com/BoundfoxStudios/community-project/tree/develop/FairyTaleDefender/Assets/_Game/Scripts/Runtime/Infrastructure/Events/ScriptableObjects).
 Es besteht aus mehreren Event Channels in Form von ScriptableObjects.
 Ein Event Channel ist schlicht ein Kanal über den Informationen laufen.
 

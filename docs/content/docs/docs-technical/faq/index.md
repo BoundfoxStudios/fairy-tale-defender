@@ -10,7 +10,7 @@ description: Häufig gestellte Fragen zum Projekt.
 Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.
 
-Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner `CommunityProject` geöffnet wurde, folgendes ausführen:
+Um das Problem zu behben, musst Du in einer Kommandozeile, die im Ordner `FairyTaleDefender` geöffnet wurde, folgendes ausführen:
 
 ```bash
 # Windows:
