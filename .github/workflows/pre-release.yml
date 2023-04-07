@@ -1,4 +1,4 @@
-name: Release
+name: Pre-Release
 concurrency: no-concurrency-due-to-license-activation
 
 on: 
