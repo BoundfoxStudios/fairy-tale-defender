@@ -4,7 +4,7 @@ linkTitle: Tooltips
 description: Dokumentation über Tooltips.
 ---
 
-Im Community-Projekt können wir sowohl für UI-Elemente als auch für GameObjects Tooltips anzeigen.
+In Fairy Tale Defender können wir sowohl für UI-Elemente als auch für GameObjects Tooltips anzeigen.
 Tooltips sind Hinweistexte/Bilder, die erscheinen, sobald man mit der Maus über bestimmte Elemente fährt. 
 
 Um einen Tooltip zu nutzen, kann eine der Klassen von [Tooltip-Typen](#tooltip-typen) auf einem GameObject platziert werden.
