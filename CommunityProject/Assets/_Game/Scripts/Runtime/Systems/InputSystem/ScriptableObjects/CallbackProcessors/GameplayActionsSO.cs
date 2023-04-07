@@ -12,6 +12,7 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 		private SettingsSO Settings { get; set; } = default!;
 
 		public event InputReaderSO.DeltaHandler Pan = delegate { };
+		public event InputReaderSO.ScreenPositionHandler Click = delegate { };
 		public event Action PanStop = delegate { };
 
 		private Vector2 _previousPanDelta = Vector2.zero;
@@ -38,6 +39,16 @@ namespace BoundfoxStudios.CommunityProject.Systems.InputSystem.ScriptableObjects
 			}
 
 			ProcessPan(context);
+		}
+
+		public void OnClick(InputAction.CallbackContext context)
+		{
+			if (!context.performed)
+			{
+				return;
+			}
+
+			Click(context.ReadValue<Vector2>());
 		}
 
 		private void ProcessPan(InputAction.CallbackContext context)
