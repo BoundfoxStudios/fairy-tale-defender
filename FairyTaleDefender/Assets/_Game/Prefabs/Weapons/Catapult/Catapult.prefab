@@ -16,7 +16,7 @@ PrefabInstance:
     - target: {fileID: 4417085996939291567, guid: 58040a623dccf48739eb35e77740a26f,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4417085996939291567, guid: 58040a623dccf48739eb35e77740a26f,
         type: 3}
@@ -109,7 +109,8 @@ MonoBehaviour:
   EffectiveWeaponCalculatorSO: {fileID: 11400000, guid: 115fb7de805fc5a4cb4df258470d53f2,
     type: 2}
   <Tower>k__BackingField: {fileID: 0}
-  <TargetType>k__BackingField: 0
+  <TargetType>k__BackingField: {fileID: 11400000, guid: 60b758fae1fe95b44b420de43903e9d1,
+    type: 2}
   <Arm>k__BackingField:
     <ArmPivot>k__BackingField: {fileID: 8953687500045677425}
     <LaunchPoint>k__BackingField: {fileID: 5458708713455915020}

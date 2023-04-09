@@ -1,5 +1,3 @@
-using System;
-using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEngine;
 
@@ -14,7 +12,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 		/// <summary>
 		/// Returns a single target that is reachable by the <paramref name="weaponDefinition"/>.
 		/// </summary>
-		public abstract TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType,
+		public abstract TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetTypeSO targetType,
 			T weaponDefinition);
 
 		/// <summary>
@@ -47,58 +45,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 		/// <summary>
 		/// Given an array of possible targets, the method will return a specific one depending on the <paramref name="targetType"/>.
 		/// </summary>
-		protected TargetPoint? ByTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets, TargetType targetType)
+		protected TargetPoint? ByTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets, TargetTypeSO targetType)
 		{
 			if (targets == 0)
 			{
 				return null;
 			}
 
-			var target = targetType switch
-			{
-				TargetType.Closest => ByClosestTargetTypeNonAlloc(weaponPosition, targets),
-				TargetType.Random => ByRandomTargetTypeNonAlloc(targets),
-				_ => throw new ArgumentOutOfRangeException(nameof(targetType), $"{targetType} is not implemented yet.")
-			};
+			var target = targetType.GetTargetNonAlloc(weaponPosition, targets);
 
 			return target.GetComponent<TargetPoint>();
-		}
-
-		private Collider ByRandomTargetTypeNonAlloc(NoAllocArrayResult<Collider> targets)
-		{
-			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
-
-			return targets.Result.PickRandom(targets)!;
-		}
-
-		private Collider ByClosestTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets)
-		{
-			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
-
-			var closestCollider = targets[0];
-
-			if (targets == 1)
-			{
-				return closestCollider;
-			}
-
-			var smallestDistance = float.PositiveInfinity;
-
-			for (var i = 0; i < targets; i++)
-			{
-				var target = targets[i];
-
-				// Using the squared distance here to avoid using sqrt.
-				var distanceSquared = weaponPosition.DistanceSquaredTo(target.transform.position);
-
-				if (distanceSquared < smallestDistance)
-				{
-					smallestDistance = distanceSquared;
-					closestCollider = target;
-				}
-			}
-
-			return closestCollider;
 		}
 	}
 }

@@ -7,7 +7,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Sc
 	[CreateAssetMenu(menuName = Constants.MenuNames.Targeting + "/" + nameof(BallisticTargetLocatorSO))]
 	public class BallisticTargetLocatorSO : TargetLocatorSO<EffectiveBallisticWeaponDefinition>
 	{
-		public override TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetType targetType, EffectiveBallisticWeaponDefinition weaponDefinition)
+		public override TargetPoint? Locate(Vector3 weaponPosition, Vector3 towerForward, TargetTypeSO targetType, EffectiveBallisticWeaponDefinition weaponDefinition)
 		{
 			var targets = LocateAllInRangeNonAlloc(weaponPosition, weaponDefinition.Range.Maximum);
 			var newSize = 0;
