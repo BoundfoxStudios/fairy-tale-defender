@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
 

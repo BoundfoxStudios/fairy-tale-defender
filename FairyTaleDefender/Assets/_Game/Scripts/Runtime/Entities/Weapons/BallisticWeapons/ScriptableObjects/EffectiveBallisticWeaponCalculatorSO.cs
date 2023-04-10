@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEngine;
