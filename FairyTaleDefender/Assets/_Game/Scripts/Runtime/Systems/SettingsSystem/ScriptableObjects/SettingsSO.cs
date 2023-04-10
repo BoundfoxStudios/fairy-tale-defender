@@ -79,6 +79,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 		[Serializable]
 		public class LocalizationConfig
 		{
+			[NonSerialized]
+			public bool LocaleSetViaSteam = false;
 			public LocaleIdentifier Locale;
 		}
 
