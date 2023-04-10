@@ -8,7 +8,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 		{
 			public const string MenuName = RuntimeConstants.MenuNames.MenuName;
 			public const string Windows = MenuName + "/Windows";
-			public const string LevelSelection = Windows + "/Level Selection";
 
 			public static class GameObjectMenus
 			{
