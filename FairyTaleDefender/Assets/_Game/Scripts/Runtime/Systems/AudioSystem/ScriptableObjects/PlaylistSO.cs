@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.AudioSystem.ScriptableObjects

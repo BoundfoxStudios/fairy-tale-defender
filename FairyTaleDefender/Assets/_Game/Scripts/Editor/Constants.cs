@@ -1,4 +1,4 @@
-using RuntimeConstants = BoundfoxStudios.FairyTaleDefender.Constants;
+using RuntimeConstants = BoundfoxStudios.FairyTaleDefender.Common.Constants;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
