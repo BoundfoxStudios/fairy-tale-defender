@@ -29,3 +29,22 @@ Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei "Lint code 
 
 Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit. 
 Bitte installiere das [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download)
+
+## Wie kann ich Dinge entwickeln, für die ich Steam benötige?
+
+Um permanente Fehlermeldungen zu vermeiden, ist im Unity-Projekt die Steam-Integration per Standard ausgeschaltet.
+Erst durch den Build durch GitHub wird die Steam-Integration aktiviert.
+
+Wenn Du eine Aufgabe übernimmst, bei der Du etwas implementieren möchtest, dass mit Steam zu tun hat, kannst Du auf folgendem Wege die Integration in Unity aktivieren:
+
+![Steam Integration Menu](assets/steam-integration-menu.png)
+
+Wähle im Menü "Fairy Tale Defender" -> "Windows" -> "Steam Integration".
+
+Danach erscheint in Fenster, in dem Du via Button-Klick die Steam-Integration ein/ausschalten kannst:
+
+![Steam Integration Window](assets/steam-integration-window.png)
+
+{{% alert title="Achtung" color="success" %}}
+Bevor Du einen PR stellst, musst Du die Steam Integration wieder ausschalten, ansonsten werden die automatischen Prüfungen Deines PR fehlschlagen.
+{{% /alert %}}
