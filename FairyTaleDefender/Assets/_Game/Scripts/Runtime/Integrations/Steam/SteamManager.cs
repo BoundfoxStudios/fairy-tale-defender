@@ -1,11 +1,12 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam;
 using Steamworks;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Integrations.Steam
 {
 	[AddComponentMenu("")] // Hide in component menu.
-	public class SteamManager : MonoBehaviour
+	public class SteamManagerImpl : SteamManager
 	{
 		public bool IsInitialized { get; private set; }
 
@@ -15,7 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Integrations.Steam
 		/// </summary>
 		private const uint AppId = 2350330;
 
-		public void Initialize()
+		public override void Initialize()
 		{
 			PerformPacksizeTest();
 			PerformDllCheck();
