@@ -1586,6 +1586,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4d0986387db4c559b2e8e2cccaa20ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <SteamRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 045553e154d74432693139cd15ae22d0,
+    type: 2}
 --- !u!1 &1867396249
 GameObject:
   m_ObjectHideFlags: 0
