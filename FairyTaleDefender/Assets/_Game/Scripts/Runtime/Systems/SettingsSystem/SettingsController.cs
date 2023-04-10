@@ -94,6 +94,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 
 		private void ApplyLocalizationSettings()
 		{
+			// Don't set the saved localization if it was already determined via Steam.
+			if (Settings.Localization.LocaleSetViaSteam)
+			{
+				return;
+			}
+
 			LocalizationSettings.SelectedLocale =
 				LocalizationSettings.AvailableLocales.GetLocale(Settings.Localization.Locale);
 		}
