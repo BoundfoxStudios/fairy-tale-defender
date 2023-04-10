@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam
 {
+	[AddComponentMenu("")] // Hide in component menu.
 	public class SteamManager : MonoBehaviour
 	{
 		public virtual void Initialize()
