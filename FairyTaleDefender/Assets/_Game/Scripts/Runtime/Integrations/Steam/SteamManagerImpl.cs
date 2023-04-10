@@ -5,6 +5,12 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Integrations.Steam
 {
+	/// <summary>
+	/// To actually use the SteamManager in the game, please use the SteamRuntimeAnchor that will hold an instance
+	/// of the correct class.
+	///
+	/// For more information please refer to <see cref="SteamManager"/>.
+	/// </summary>
 	[AddComponentMenu("")] // Hide in component menu.
 	public class SteamManagerImpl : SteamManager
 	{
