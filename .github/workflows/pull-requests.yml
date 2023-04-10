@@ -45,8 +45,26 @@ jobs:
           ref: "refs/pull/${{ github.event.number }}/merge"
       - uses: ./.github/actions/linter
 
+  fail-on-enabled-steam-integration:
+    name: Fail on enabled Steam integration
+    needs: change-detection
+    if: needs.change-detection.outputs.unity == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "refs/pull/${{ github.event.number }}/merge"
+      - name: Check if Steam integration is enabled
+        shell: sh
+        working-directory: FairyTaleDefender/ProjectSettings
+        run: |
+          if egrep -q 'Standalone:(.*?)ENABLE_STEAM(.*?)$' ProjectSettings.asset; then
+            echo "PR is not valid due to enabled Steam integration. Please turn it off."
+            exit 1
+          fi
+
   build:
-    needs: [lint, change-detection]
+    needs: [lint, fail-on-enabled-steam-integration, change-detection]
     if: |
       needs.change-detection.outputs.unity == 'true'
       && github.event.action == 'labeled' 
