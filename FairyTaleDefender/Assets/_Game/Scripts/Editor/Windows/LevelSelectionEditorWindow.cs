@@ -17,7 +17,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 
 		private AllLevelPacksSO? _allLevelPacks;
 
-		[MenuItem(Constants.MenuNames.LevelSelection, priority = 10000)]
+		[MenuItem(Constants.MenuNames.Windows + "/Level Selection", priority = 10000)]
 		private static void ShowWindow()
 		{
 			var window = GetWindow<LevelSelectionEditorWindow>();
