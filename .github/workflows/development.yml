@@ -32,6 +32,7 @@ jobs:
       do-upload-debug-symbols: true
       fail-fast: true
       ref: ${{ github.ref }}
+      custom-parameters: -Development -AllowDebugging
 
   notarize:
     needs: build
