@@ -1,0 +1,14 @@
+{
+    "name": "BoundfoxStudios.FairyTaleDefender.Common",
+    "rootNamespace": "BoundfoxStudios.FairyTaleDefender.Common",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

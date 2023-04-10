@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Localization;

@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem;
 using UnityEngine;
 

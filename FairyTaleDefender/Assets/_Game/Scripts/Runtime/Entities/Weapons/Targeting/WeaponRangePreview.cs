@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;

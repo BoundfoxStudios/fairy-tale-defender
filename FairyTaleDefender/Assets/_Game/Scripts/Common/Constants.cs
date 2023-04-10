@@ -1,4 +1,4 @@
-namespace BoundfoxStudios.FairyTaleDefender
+namespace BoundfoxStudios.FairyTaleDefender.Common
 {
 	public static class Constants
 	{
@@ -21,6 +21,8 @@ namespace BoundfoxStudios.FairyTaleDefender
 			public const string GameplaySystem = MenuName + "/Gameplay System";
 			public const string SpawnSystem = MenuName + "/Spawn System";
 			public const string RuntimeAnchors = MenuName + "/Runtime Anchors";
+			public const string Integrations = MenuName + "/Integrations";
+			public const string SteamIntegration = Integrations + "/Steam";
 		}
 	}
 }

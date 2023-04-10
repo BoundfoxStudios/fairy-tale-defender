@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Build.BuildManifest;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;

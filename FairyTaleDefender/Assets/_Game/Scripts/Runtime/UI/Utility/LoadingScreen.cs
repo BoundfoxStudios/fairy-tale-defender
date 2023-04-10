@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;

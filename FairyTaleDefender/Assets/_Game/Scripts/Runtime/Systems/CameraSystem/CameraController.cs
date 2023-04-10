@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cinemachine;
