@@ -2,6 +2,7 @@ using System;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
+using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 {
@@ -15,6 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 
 			if (!string.IsNullOrWhiteSpace(version))
 			{
+				Debug.Log($"Setting version: {version}");
 				PlayerSettings.bundleVersion = version;
 			}
 		}
