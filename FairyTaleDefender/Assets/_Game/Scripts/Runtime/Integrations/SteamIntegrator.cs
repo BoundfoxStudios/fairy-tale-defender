@@ -15,13 +15,9 @@ namespace BoundfoxStudios.FairyTaleDefender
 		[field: SerializeField]
 		public SteamRuntimeAnchorSO SteamRuntimeAnchor { get; private set; } = default!;
 
-		private void Awake()
+		public void Integrate()
 		{
-			Integrate();
-		}
-
-		private void Integrate()
-		{
+			Debug.Log("Steam init");
 #if ENABLE_STEAM
 			var steamGameObject = new GameObject(nameof(SteamManager), typeof(SteamManagerImpl));
 #else
