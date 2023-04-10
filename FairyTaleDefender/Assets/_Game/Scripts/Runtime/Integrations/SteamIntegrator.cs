@@ -17,7 +17,6 @@ namespace BoundfoxStudios.FairyTaleDefender
 
 		public void Integrate()
 		{
-			Debug.Log("Steam init");
 #if ENABLE_STEAM
 			var steamGameObject = new GameObject(nameof(SteamManager), typeof(SteamManagerImpl));
 #else

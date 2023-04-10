@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: LocalizationSettings
   m_EditorClassIdentifier: 
   m_StartupSelectors:
+  - rid: 254696606026432527
   - rid: 1133509013137784832
   - rid: 1133509013137784833
   - rid: 1133509013137784834
@@ -30,6 +31,12 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 254696606026432527
+      type: {class: SteamStartupLocaleSelector, ns: BoundfoxStudios.FairyTaleDefender,
+        asm: BoundfoxStudios.FairyTaleDefender}
+      data:
+        <SteamRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 045553e154d74432693139cd15ae22d0,
+          type: 2}
     - rid: 1133509013137784832
       type: {class: CommandLineLocaleSelector, ns: UnityEngine.Localization.Settings,
         asm: Unity.Localization}

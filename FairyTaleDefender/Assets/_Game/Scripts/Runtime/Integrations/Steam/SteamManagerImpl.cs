@@ -1,7 +1,10 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam;
+using BoundfoxStudios.FairyTaleDefender.Integrations.Steam.Wrappers;
 using Steamworks;
 using UnityEngine;
+
+using SteamApps = BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam.SteamApps;
 
 namespace BoundfoxStudios.FairyTaleDefender.Integrations.Steam
 {
@@ -14,6 +17,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Integrations.Steam
 	[AddComponentMenu("")] // Hide in component menu.
 	public class SteamManagerImpl : SteamManager
 	{
+		public override SteamApps SteamApps { get; } = new SteamAppsWrapper();
+
 		public bool IsInitialized { get; private set; }
 
 		/// <summary>
