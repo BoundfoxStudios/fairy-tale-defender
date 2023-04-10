@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: German (de)
   m_EditorClassIdentifier: 
   m_Identifier:
-    m_Code: de
+    m_Code: german
   m_Metadata:
     m_Items: []
   m_LocaleName: German (de)

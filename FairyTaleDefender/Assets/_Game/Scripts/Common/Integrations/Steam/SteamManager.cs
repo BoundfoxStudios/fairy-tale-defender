@@ -23,7 +23,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam
 	[AddComponentMenu("")] // Hide in component menu.
 	public class SteamManager : MonoBehaviour
 	{
-		public virtual void Initialize() =>
+		public virtual SteamApps SteamApps { get; } = new();
+
+		public virtual void Initialize()
 			Debug.Log(
 				"Steam integration has been turned off. To enable press the Steam button at the top right toolbar in the Unity Editor");
 	}
