@@ -68,7 +68,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 		{
 			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
 
-			return targets.Result.PickRandom();
+			return targets.Result.PickRandom(targets)!;
 		}
 
 		private Collider ByClosestTargetTypeNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets)
