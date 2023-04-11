@@ -88,7 +88,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 
 		private void ApplyGraphicSettings()
 		{
-			QualitySettings.SetQualityLevel((int) Settings.Graphic.GraphicLevel);
+			QualitySettings.SetQualityLevel((int)Settings.Graphic.GraphicLevel);
 		}
 
 		private void ApplyLocalizationSettings()
