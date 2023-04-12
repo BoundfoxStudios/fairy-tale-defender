@@ -23,5 +23,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 				private const string GameObjectRoot = "GameObject/" + MenuName;
 			}
 		}
+
+		public static class CompilerDirectives
+		{
+			public const string EnableSteam = "ENABLE_STEAM";
+		}
 	}
 }

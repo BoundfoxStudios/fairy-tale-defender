@@ -14,10 +14,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 
 		public void OnPreprocessBuild(BuildReport report)
 		{
-			var enableSteamEnvironmentVariable = Environment.GetEnvironmentVariable("ENABLE_STEAM");
+			var enableSteamEnvironmentVariable = Environment.GetEnvironmentVariable(Constants.CompilerDirectives.EnableSteam);
 			var enableSteam = (enableSteamEnvironmentVariable ?? "false").ToLower() == "true";
 
-			Debug.Log($"ENABLE_STEAM: {enableSteam} (environment variable raw value: {enableSteamEnvironmentVariable})");
+			Debug.Log(
+				$"{Constants.CompilerDirectives.EnableSteam}: {enableSteam} (environment variable raw value: {enableSteamEnvironmentVariable})");
 
 			if (!enableSteam)
 			{
@@ -27,7 +28,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 			PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
 				out var defines);
 
-			var uniqueDefines = new HashSet<string>(defines) { "ENABLE_STEAM" };
+			var uniqueDefines = new HashSet<string>(defines) { Constants.CompilerDirectives.EnableSteam };
 
 			PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
 				uniqueDefines.ToArray());
