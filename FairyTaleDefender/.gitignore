@@ -567,7 +567,4 @@ FodyWeavers.xsd
 /[Aa]ssets/[Aa]ddressable[Aa]ssets[Dd]ata/OSX.meta
 
 # Allow csc.rsp files
-!/Assets/_Game/Scripts/Runtime/csc.rsp
-!/Assets/_Game/Scripts/Editor/csc.rsp
-!/Assets/_Game/Scripts/Tests/Runtime/csc.rsp
-!/Assets/_Game/Scripts/Tests/Editor/csc.rsp
+!/Assets/_Game/Scripts/**/csc.rsp
