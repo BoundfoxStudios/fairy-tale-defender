@@ -35,16 +35,13 @@ Bitte installiere das [.NET 6 SDK](https://dotnet.microsoft.com/en-us/download)
 Um permanente Fehlermeldungen zu vermeiden, ist im Unity-Projekt die Steam-Integration per Standard ausgeschaltet.
 Erst durch den Build durch GitHub wird die Steam-Integration aktiviert.
 
-Wenn Du eine Aufgabe übernimmst, bei der Du etwas implementieren möchtest, dass mit Steam zu tun hat, kannst Du auf folgendem Wege die Integration in Unity aktivieren:
+Wenn Du eine Aufgabe übernimmst, bei der Du etwas implementieren möchtest, dass mit Steam zu tun hat, kannst Du die Steam-Integration lokal aktivieren.
+Dazu findest Du rechts oben im Editor einen Steam-Button, der per Standard rot (= aus) ist.
+Wenn Du diesen Button klickst, wird er grün und damit aktiviert sich die Steam-Integration.
+Klicke ihn erneut an, um die Integration wieder auszuschalten.
 
-![Steam Integration Menu](assets/steam-integration-menu.png)
-
-Wähle im Menü "Fairy Tale Defender" -> "Windows" -> "Steam Integration".
-
-Danach erscheint in Fenster, in dem Du via Button-Klick die Steam-Integration ein/ausschalten kannst:
-
-![Steam Integration Window](assets/steam-integration-window.png)
+![Steam-Integration](assets/steam-integration.png)
 
 {{% alert title="Achtung" color="success" %}}
-Bevor Du einen PR stellst, musst Du die Steam Integration wieder ausschalten, ansonsten werden die automatischen Prüfungen Deines PR fehlschlagen.
+Bevor Du einen PR stellst, musst Du die Steam-Integration wieder ausschalten, ansonsten werden die automatischen Prüfungen Deines PR fehlschlagen.
 {{% /alert %}}
