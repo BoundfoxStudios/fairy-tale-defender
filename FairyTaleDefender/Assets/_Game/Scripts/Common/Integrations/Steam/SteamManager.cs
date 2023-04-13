@@ -25,7 +25,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common.Integrations.Steam
 	{
 		public virtual SteamApps SteamApps { get; } = new();
 
-		public virtual void Initialize()
+		public virtual void Initialize() =>
 			Debug.Log(
 				"Steam integration has been turned off. To enable press the Steam button at the top right toolbar in the Unity Editor");
 	}
