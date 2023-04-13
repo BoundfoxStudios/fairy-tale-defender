@@ -48,8 +48,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 
 			var persistentManagersSceneInstance = await LoadPersistentManagersAsync();
 
-				// Because we load the Steam API here and not via the PersistentManager scene, we move the GameObject there
-				// in order to survive the unloading of the initialization scene.
+			// Because we load the Steam API here and not via the PersistentManager scene, we move the GameObject there
+			// in order to survive the unloading of the initialization scene.
 			SceneManager.MoveGameObjectToScene(SteamIntegrator.gameObject, persistentManagersSceneInstance.Scene);
 			SteamIntegrator.transform.SetAsFirstSibling();
 
