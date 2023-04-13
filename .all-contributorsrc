@@ -142,6 +142,24 @@
       "contributions": [
         "design"
       ]
+    },
+    {
+      "login": "DIY-Blub",
+      "name": "Christian",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60984430?v=4",
+      "profile": "https://www.cenz.at",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "LotteMakesStuff",
+      "name": "LotteMakesStuff",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25138110?v=4",
+      "profile": "http://twitter.com/LotteMakesStuff",
+      "contributions": [
+        "mentoring"
+      ]
     }
   ],
   "files": [
