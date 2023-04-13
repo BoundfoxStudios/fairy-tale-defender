@@ -630,7 +630,10 @@ So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzie
 &lt;p>Anhand dieser Skala kannst Du Dich orientieren, wie du das UV-Mapping gestaltest.
 Du kannst gerne die Grafik herunterladen und als Bild im 2. UV-Kanal hinterlegen.
 Da wir in Unity nur den 1. UV-Kanal zum Rendern benutzen, taucht das Bild im Spiel später nicht auf.&lt;/p>
-&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
+&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p>
+&lt;h3 id="beispiel-in-blender">Beispiel in Blender&lt;/h3>
+&lt;p>So sieht es aus, wenn Du das Bild in den 2. UV-Kanal in Blender lädst:&lt;/p>
+&lt;p>&lt;img src="assets/wind-scale-in-blender.png" alt="Windskala in Blender">&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>

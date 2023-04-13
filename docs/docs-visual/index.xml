@@ -154,4 +154,7 @@ So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzie
 &lt;p>Anhand dieser Skala kannst Du Dich orientieren, wie du das UV-Mapping gestaltest.
 Du kannst gerne die Grafik herunterladen und als Bild im 2. UV-Kanal hinterlegen.
 Da wir in Unity nur den 1. UV-Kanal zum Rendern benutzen, taucht das Bild im Spiel später nicht auf.&lt;/p>
-&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p></description></item></channel></rss>
+&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p>
+&lt;h3 id="beispiel-in-blender">Beispiel in Blender&lt;/h3>
+&lt;p>So sieht es aus, wenn Du das Bild in den 2. UV-Kanal in Blender lädst:&lt;/p>
+&lt;p>&lt;img src="assets/wind-scale-in-blender.png" alt="Windskala in Blender">&lt;/p></description></item></channel></rss>
