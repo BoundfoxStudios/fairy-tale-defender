@@ -72,7 +72,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			public int ScreenWidth;
 			public int ScreenHeight;
 			public bool IsFullscreen = true;
-			public int GraphicLevel = 1;
+			public GraphicLevels GraphicLevel = GraphicLevels.HighFidelity;
 		}
 
 		[Serializable]

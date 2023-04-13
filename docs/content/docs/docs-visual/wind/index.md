@@ -24,3 +24,17 @@ Alle Stuffen zwischen 0 und 1 bestimmen prozentual wie stark die Vertices vom Wi
 So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzieren, sodass der obere Teil vom Stamm auch etwas vom Wind bewegt wird.
 
 Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre. 
+
+## Windskala
+
+Anhand dieser Skala kannst Du Dich orientieren, wie du das UV-Mapping gestaltest.
+Du kannst gerne die Grafik herunterladen und als Bild im 2. UV-Kanal hinterlegen.
+Da wir in Unity nur den 1. UV-Kanal zum Rendern benutzen, taucht das Bild im Spiel später nicht auf.
+
+![Windskala](assets/wind-scale.png)
+
+### Beispiel in Blender
+
+So sieht es aus, wenn Du das Bild in den 2. UV-Kanal in Blender lädst:
+
+![Windskala in Blender](assets/wind-scale-in-blender.png)
