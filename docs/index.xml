@@ -625,7 +625,12 @@ Ist dieser bei 0, wird er nicht vom Wind beeinflusst und ist dieser bei 1, dann 
 &lt;p>Wenn man z.B. einen Baum nimmt, der aus einem Stamm und einer Krone besteht, dann könnte man alle Vertices vom Stamm auf 0 setzen, sodass dieser nicht im Wind mitbewegt wird und die Vertices der Krone auf 1, sodass diese maximal vom Wind erfasst wird.&lt;/p>
 &lt;p>Alle Stuffen zwischen 0 und 1 bestimmen prozentual wie stark die Vertices vom Wind bewegt werden.
 So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzieren, sodass der obere Teil vom Stamm auch etwas vom Wind bewegt wird.&lt;/p>
-&lt;p>Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre.&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
+&lt;p>Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre.&lt;/p>
+&lt;h2 id="windskala">Windskala&lt;/h2>
+&lt;p>Anhand dieser Skala kannst Du Dich orientieren, wie du das UV-Mapping gestaltest.
+Du kannst gerne die Grafik herunterladen und als Bild im 2. UV-Kanal hinterlegen.
+Da wir in Unity nur den 1. UV-Kanal zum Rendern benutzen, taucht das Bild im Spiel später nicht auf.&lt;/p>
+&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p></description></item><item><title>Docs: Häufig gestellte Fragen</title><link>https://docs.fairytaledefender.de/docs/docs-technical/faq/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/faq/</guid><description>
 &lt;h2 id="wenn-ich-pr-gestellt-habe-bricht-es-ab-beim-lint-code-base-check">Wenn ich PR gestellt habe, bricht es ab beim &amp;ldquo;Lint code base&amp;rdquo;-Check.&lt;/h2>
 &lt;p>Linting bedeutet, dass automatisiert eine Software (in diesem Fall dotnet-format) prüft, ob Du den Code so formatiert hast, wie wir es gerne in diesem Projekt hätten.
 Wenn dies fehlschlägt, dann ist Dein Code noch nicht korrekt formatiert.&lt;/p>
@@ -640,19 +645,7 @@ Die geänderten Dateien (und prüfe bitte, ob es wirklich nur Deine Dateien sind
 &lt;p>Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei &amp;ldquo;Lint code base&amp;rdquo; kein Problem mehr machen.&lt;/p>
 &lt;h2 id="ich-erhalte-einen-fehler-beim-ausführen-von-formatbatformatsh">Ich erhalte einen Fehler beim Ausführen von format.bat/format.sh.&lt;/h2>
 &lt;p>Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit.
-Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p>
-&lt;h2 id="wie-kann-ich-dinge-entwickeln-für-die-ich-steam-benötige">Wie kann ich Dinge entwickeln, für die ich Steam benötige?&lt;/h2>
-&lt;p>Um permanente Fehlermeldungen zu vermeiden, ist im Unity-Projekt die Steam-Integration per Standard ausgeschaltet.
-Erst durch den Build durch GitHub wird die Steam-Integration aktiviert.&lt;/p>
-&lt;p>Wenn Du eine Aufgabe übernimmst, bei der Du etwas implementieren möchtest, dass mit Steam zu tun hat, kannst Du die Steam-Integration lokal aktivieren.
-Dazu findest Du rechts oben im Editor einen Steam-Button, der per Standard rot (= aus) ist.
-Wenn Du diesen Button klickst, wird er grün und damit aktiviert sich die Steam-Integration.
-Klicke ihn erneut an, um die Integration wieder auszuschalten.&lt;/p>
-&lt;p>&lt;img src="assets/steam-integration.png" alt="Steam-Integration">&lt;/p>
-&lt;div class="alert alert-success" role="alert">
-&lt;h4 class="alert-heading">Achtung&lt;/h4>
-Bevor Du einen PR stellst, musst Du die Steam-Integration wieder ausschalten, ansonsten werden die automatischen Prüfungen Deines PR fehlschlagen.
-&lt;/div></description></item><item><title>Docs: Glossar</title><link>https://docs.fairytaledefender.de/docs/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/glossary/</guid><description>
+Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item><item><title>Docs: Glossar</title><link>https://docs.fairytaledefender.de/docs/glossary/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/glossary/</guid><description>
 &lt;p>In diesem Glossar sollen einige Begrifflichkeiten definiert werden, die man unter Umständen so noch nicht kennt.
 Bitte beachte, dass diese Begrifflichkeiten in diesem Glossar oft sehr vereinfacht beschrieben werden, um ein Grundverständnis zu erzeugen.
 Du solltest natürlich auch die Suchmaschine Deiner Wahl bemühen, um Dein Verständnis zu vergrößern.&lt;/p>

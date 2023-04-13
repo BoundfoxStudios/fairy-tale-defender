@@ -251,16 +251,4 @@ Die geänderten Dateien (und prüfe bitte, ob es wirklich nur Deine Dateien sind
 &lt;p>Durch den Push wird Dein PR erneut geprüft und sollte zumindest bei &amp;ldquo;Lint code base&amp;rdquo; kein Problem mehr machen.&lt;/p>
 &lt;h2 id="ich-erhalte-einen-fehler-beim-ausführen-von-formatbatformatsh">Ich erhalte einen Fehler beim Ausführen von format.bat/format.sh.&lt;/h2>
 &lt;p>Es scheint, als hättest Du nicht .NET 6 installiert, dort kommt dotnet-format, was von format.bat/format.sh ausgeführt wird, mit.
-Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p>
-&lt;h2 id="wie-kann-ich-dinge-entwickeln-für-die-ich-steam-benötige">Wie kann ich Dinge entwickeln, für die ich Steam benötige?&lt;/h2>
-&lt;p>Um permanente Fehlermeldungen zu vermeiden, ist im Unity-Projekt die Steam-Integration per Standard ausgeschaltet.
-Erst durch den Build durch GitHub wird die Steam-Integration aktiviert.&lt;/p>
-&lt;p>Wenn Du eine Aufgabe übernimmst, bei der Du etwas implementieren möchtest, dass mit Steam zu tun hat, kannst Du die Steam-Integration lokal aktivieren.
-Dazu findest Du rechts oben im Editor einen Steam-Button, der per Standard rot (= aus) ist.
-Wenn Du diesen Button klickst, wird er grün und damit aktiviert sich die Steam-Integration.
-Klicke ihn erneut an, um die Integration wieder auszuschalten.&lt;/p>
-&lt;p>&lt;img src="assets/steam-integration.png" alt="Steam-Integration">&lt;/p>
-&lt;div class="alert alert-success" role="alert">
-&lt;h4 class="alert-heading">Achtung&lt;/h4>
-Bevor Du einen PR stellst, musst Du die Steam-Integration wieder ausschalten, ansonsten werden die automatischen Prüfungen Deines PR fehlschlagen.
-&lt;/div></description></item></channel></rss>
+Bitte installiere das &lt;a href="https://dotnet.microsoft.com/en-us/download">.NET 6 SDK&lt;/a>&lt;/p></description></item></channel></rss>

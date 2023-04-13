@@ -149,4 +149,9 @@ Ist dieser bei 0, wird er nicht vom Wind beeinflusst und ist dieser bei 1, dann 
 &lt;p>Wenn man z.B. einen Baum nimmt, der aus einem Stamm und einer Krone besteht, dann könnte man alle Vertices vom Stamm auf 0 setzen, sodass dieser nicht im Wind mitbewegt wird und die Vertices der Krone auf 1, sodass diese maximal vom Wind erfasst wird.&lt;/p>
 &lt;p>Alle Stuffen zwischen 0 und 1 bestimmen prozentual wie stark die Vertices vom Wind bewegt werden.
 So könnte man z.B. den Teil vom Stamm, der in die Krone reicht, bei 0.5 platzieren, sodass der obere Teil vom Stamm auch etwas vom Wind bewegt wird.&lt;/p>
-&lt;p>Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre.&lt;/p></description></item></channel></rss>
+&lt;p>Somit kann man gut bestimmen, welche Teile vom Modell wie stark vom Wind erfasst werden, ganz so, wie es in der echten Natur auch wäre.&lt;/p>
+&lt;h2 id="windskala">Windskala&lt;/h2>
+&lt;p>Anhand dieser Skala kannst Du Dich orientieren, wie du das UV-Mapping gestaltest.
+Du kannst gerne die Grafik herunterladen und als Bild im 2. UV-Kanal hinterlegen.
+Da wir in Unity nur den 1. UV-Kanal zum Rendern benutzen, taucht das Bild im Spiel später nicht auf.&lt;/p>
+&lt;p>&lt;img src="assets/wind-scale.png" alt="Windskala">&lt;/p></description></item></channel></rss>
