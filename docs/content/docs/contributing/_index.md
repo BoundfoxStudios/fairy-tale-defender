@@ -122,7 +122,7 @@ Sowohl auf der [Issue-Seite][1] und auf dem [Projekt-Board][2] findest Du alle a
 Alle Aufgaben, die mit `Triage` markiert sind, bzw. beim Projekt-Board in der Spalte `Triage` sind, müssen noch vorsortiert werden.
 
 Für Dich relevant sind daher alle Aufgaben, die **nicht** mit Triage markiert sind.
-Wenn Dich eine konkrete Aufgabe interessiert, klicke sie an, um die Dateilseite zu kommen.
+Wenn Dich eine konkrete Aufgabe interessiert, klicke sie an, um zur Detailseite zu kommen.
 Lese Dir hier durch, um was es genau geht und stelle gerne Rückfragen, falls Dir eine Information fehlt.
 Sobald Du Dich entschließt, dass Du diese Aufgabe bearbeiten möchtest, schreibe einen Kommentar in dem folgender Text vorkommt: `.meine-aufgabe` - Du musst es exakt so schreiben, wie es dort steht, mit dem Punkt am Anfang, alles kleingeschrieben und dem Bindestrich.
 Sobald Du den Kommentar abgeschickt hast, wird es ca. 30-60 Sekunden dauern, bis GitHub Dir diese Aufgabe zuweist. Ab jetzt kannst Du daran arbeiten. :-)
