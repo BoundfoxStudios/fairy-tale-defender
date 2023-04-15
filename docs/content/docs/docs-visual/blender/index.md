@@ -49,8 +49,6 @@ Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.
 In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.
 
 ```python
-# exports each selected object into its own file
-
 import bpy
 import os
 
@@ -81,6 +79,10 @@ if selection_count == 0:
         use_custom_props=True,
         bake_anim_use_nla_strips=False,
         bake_anim_use_all_actions=False,
+        use_space_transform=True,
+        bake_space_transform=True,
+        axis_forward='-Z',
+        axis_up='Y',
         apply_scale_options='FBX_SCALE_ALL')
 else:
     bpy.ops.object.select_all(action='DESELECT')
@@ -108,6 +110,10 @@ else:
             use_custom_props=True,
             bake_anim_use_nla_strips=False,
             bake_anim_use_all_actions=False,
+            use_space_transform=True,
+            bake_space_transform=True,
+            axis_forward='-Z',
+            axis_up='Y',
             apply_scale_options='FBX_SCALE_ALL')
 
         # Restore the old location    
