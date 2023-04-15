@@ -241,11 +241,16 @@ Er hat keinen steuerbaren Charakter.&lt;/p>
 Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item><item><title>Docs: Blender</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/blender/</guid><description>
 &lt;p>Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen musst.&lt;/p>
 &lt;h2 id="blender-starter-kit">Blender Starter-Kit&lt;/h2>
-&lt;p>Hier findest Du das Blender Starter-Kit.
-Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle aktuellen &lt;a href="../colors/">Farbpaletten&lt;/a>.&lt;/p>
+&lt;p>Hier findest Du das Blender Starter-Kit.&lt;/p>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Download&lt;/h4>
-&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.
+&lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p>
+&lt;p>Es beinhaltet:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>Reference.blend&lt;/code>: Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.&lt;/li>
+&lt;li>&lt;code>Starter.blend&lt;/code>: Hiermit startest Du ein neues Asset für das Spiel.&lt;/li>
+&lt;li>&lt;code>ColorPalette_Summer.png&lt;/code>: Die sommerliche &lt;a href="../colors/">Farbpalette&lt;/a>.&lt;/li>
+&lt;/ul>
 &lt;/div>
 &lt;h2 id="export-einstellungen">Export-Einstellungen&lt;/h2>
 &lt;p>Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:&lt;/p>
@@ -257,6 +262,9 @@ Enthalten ist einmal das &lt;a href="../tiles/">Basis-Tile-Set&lt;/a> und alle a
 &lt;p>&lt;img src="assets/blender-settings.png" alt="Blender Einstellungen">&lt;/p>
 &lt;p>Wenn Du mehrere Modelle in einer Blender-Datei hast, dann ist folgendes Script nützlich für den Export:&lt;/p>
 &lt;h3 id="export-script">Export-Script&lt;/h3>
+&lt;blockquote>
+&lt;p>Das Export-Script ist in der &lt;code>Starter.blend&lt;/code> im Blender Starter-Kit bereits enthalten.&lt;/p>
+&lt;/blockquote>
 &lt;p>Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
 Kopiere dann folgendes Script in den leeren Text-Editor.&lt;/p>
 &lt;p>Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.&lt;/p>
@@ -266,9 +274,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;li>Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt. Außerdem wird jedes Objekt automatisch beim Export in den Ursprung geschoben.&lt;/li>
 &lt;/ol>
 &lt;p>In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># exports each selected object into its own file&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> os
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># export to blend file location&lt;/span>
@@ -298,6 +304,10 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">else&lt;/span>:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
@@ -325,6 +335,10 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Restore the old location &lt;/span>
