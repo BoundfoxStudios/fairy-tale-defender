@@ -247,10 +247,14 @@ Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p
 &lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p>
 &lt;p>Es beinhaltet:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>Reference.blend&lt;/code>: Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.&lt;/li>
+&lt;li>&lt;code>Props.blend&lt;/code>: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.&lt;/li>
+&lt;li>&lt;code>Tiles.blend&lt;/code>: Referenz-Datei mit den Tiles aus dem Spiel für Größen.&lt;/li>
 &lt;li>&lt;code>Starter.blend&lt;/code>: Hiermit startest Du ein neues Asset für das Spiel.&lt;/li>
-&lt;li>&lt;code>ColorPalette_Summer.png&lt;/code>: Die sommerliche &lt;a href="../colors/">Farbpalette&lt;/a>.&lt;/li>
+&lt;li>&lt;code>textures/ColorPalette_Summer.png&lt;/code>: Die sommerliche &lt;a href="../colors/">Farbpalette&lt;/a>.&lt;/li>
+&lt;li>&lt;code>textures/Windscale.png&lt;/code>: Die Skala für &lt;a href="../wind/">Wind-Effekte&lt;/a>.&lt;/li>
 &lt;/ul>
+&lt;p>Bitte beachte, dass die Texture und das passende Material bereits in der &lt;code>Starter.blend&lt;/code> eingebunden sind.
+Du musst diese nur noch benutzen.&lt;/p>
 &lt;/div>
 &lt;h2 id="export-einstellungen">Export-Einstellungen&lt;/h2>
 &lt;p>Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:&lt;/p>
