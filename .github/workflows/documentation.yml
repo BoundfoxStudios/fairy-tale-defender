@@ -62,12 +62,12 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
-          path: ./textures/BlenderStarterKit
+          path: ./BlenderStarterKit/textures/
       - uses: actions/download-artifact@v3
         with:
           name: Windscale.png
-          path: ./textures/BlenderStarterKit
-      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/**/*
+          path: ./BlenderStarterKit/textures
+      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/**/*.*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStarterKit
