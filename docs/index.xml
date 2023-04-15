@@ -587,7 +587,97 @@ Das sollte mehr als ausreichend sein.&lt;/p>
 &lt;/blockquote>
 &lt;h2 id="sommer">Sommer&lt;/h2>
 &lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
-&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p></description></item><item><title>Docs: Tiles</title><link>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</guid><description>
+&lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th>#&lt;/th>
+&lt;th>Beschreibung&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td>1&lt;/td>
+&lt;td>Erde&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>17&lt;/td>
+&lt;td>Dunkle Erde&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>2&lt;/td>
+&lt;td>Gras&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>18&lt;/td>
+&lt;td>Blatt Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>34&lt;/td>
+&lt;td>Blatt Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>3&lt;/td>
+&lt;td>Stein&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>19&lt;/td>
+&lt;td>Dunkler Stein&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>4&lt;/td>
+&lt;td>Wasser&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>5&lt;/td>
+&lt;td>Holz Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>21&lt;/td>
+&lt;td>Holz Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>37&lt;/td>
+&lt;td>Holz Schattierung 3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>53&lt;/td>
+&lt;td>Holz Schattierung 4&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>69&lt;/td>
+&lt;td>Dachziegel&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>6&lt;/td>
+&lt;td>Blume Lila Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>22&lt;/td>
+&lt;td>Blume Lila Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>38&lt;/td>
+&lt;td>Blume Lila Schattierung 3&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>7&lt;/td>
+&lt;td>Blume Gelb Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>Blume Gelb Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>8&lt;/td>
+&lt;td>Blume Blau Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>Blume Blau Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table></description></item><item><title>Docs: Tiles</title><link>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</guid><description>
 &lt;h2 id="basis-tile">Basis-Tile&lt;/h2>
 &lt;p>Eine Tile ist der Grundbaustein zum Zusammensetzen des Terrains.
 Es ist ein 1 Meter langer, 1 Meter breiter und 0,2 Meter hoher Quader.&lt;/p>
