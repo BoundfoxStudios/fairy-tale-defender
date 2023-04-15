@@ -31,6 +31,13 @@ jobs:
        input-file: ./resources/ColorPalettes/ColorPalette_Summer.psd
        output-filename: ColorPalette_Summer.png
 
+  convert-windscale:
+    uses: ./.github/workflows/psd-to-png.yml
+    with:
+       ref: ${{ inputs.ref }}
+       input-file: ./resources/Windscale/Windscale.psd
+       output-filename: Windscale.png
+
   convert-color-palette-summer-description:
     uses: ./.github/workflows/psd-to-png.yml
     with:
@@ -40,17 +47,22 @@ jobs:
 
   create-blender-starter-kit:
     runs-on: ubuntu-latest
-    needs: [convert-color-palette-summer]
+    needs: [convert-color-palette-summer, convert-windscale]
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
       - run: mkdir BlenderStarterKit
-      - run: cp ./resources/BlenderStarterKit/*.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/StarterKit/Reference.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/StarterKit/Starter.blend ./BlenderStarterKit
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
-          path: ./BlenderStarterKit
+          path: ./textures/BlenderStarterKit
+      - uses: actions/download-artifact@v3
+        with:
+          name: Windscale.png
+          path: ./textures/BlenderStarterKit
       - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*.*
       - uses: actions/upload-artifact@v3
         with:
