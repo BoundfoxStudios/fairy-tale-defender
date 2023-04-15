@@ -16,9 +16,14 @@ Hier findest Du das Blender Starter-Kit.
 
 Es beinhaltet:
 
-* `Reference.blend`: Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.
+* `Props.blend`: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.
+* `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
 * `Starter.blend`: Hiermit startest Du ein neues Asset für das Spiel.
-* `ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
+* `textures/ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
+* `textures/Windscale.png`: Die Skala für [Wind-Effekte](../wind/).
+
+Bitte beachte, dass die Texture und das passende Material bereits in der `Starter.blend` eingebunden sind. 
+Du musst diese nur noch benutzen.
 {{% /alert %}}
 
 ## Export-Einstellungen
