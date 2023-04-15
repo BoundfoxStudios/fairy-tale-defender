@@ -67,7 +67,7 @@ jobs:
         with:
           name: Windscale.png
           path: ./textures/BlenderStarterKit
-      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*.*
+      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/**/*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStarterKit
