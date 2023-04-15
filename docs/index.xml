@@ -580,11 +580,14 @@ Wenn alles gut läuft bedeutet das, dass jede erfolgreiche Integration eines PRs
 Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
 &lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
 Das sollte mehr als ausreichend sein.&lt;/p>
-&lt;p>Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starter-Kit herunterladen.&lt;/p>
 &lt;p>Anwenden kannst Du Farben in &lt;a href="https://www.youtube.com/watch?v=8NEmx0cHwoI">Blender via UV Editing&lt;/a>.&lt;/p>
 &lt;blockquote>
 &lt;p>Wenn Dir eine Farbe fehlt, schreib uns auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> eine Nachricht, sodass wir die Farbe hinzufügen können.&lt;/p>
 &lt;/blockquote>
+&lt;div class="alert alert-primary" role="alert">
+&lt;h4 class="alert-heading">Download&lt;/h4>
+Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starter-Kit herunterladen.
+&lt;/div>
 &lt;h2 id="sommer">Sommer&lt;/h2>
 &lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
 &lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p>
