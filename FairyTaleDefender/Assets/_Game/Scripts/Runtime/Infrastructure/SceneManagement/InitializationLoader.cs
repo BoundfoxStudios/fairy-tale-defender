@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
@@ -5,6 +6,7 @@ using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using UnityEngine.SceneManagement;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
@@ -16,6 +18,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 	[AddComponentMenu(Constants.MenuNames.SceneManagement + "/" + nameof(InitializationLoader))]
 	public class InitializationLoader : MonoBehaviour
 	{
+		[field: SerializeField]
+		public SteamIntegrator SteamIntegrator { get; private set; } = default!;
+
 		[field: Header("Scenes")]
 		[field: SerializeField]
 		private AssetReferenceT<PersistentManagersSceneSO> PersistentManagersScene { get; set; } = default!;
@@ -35,8 +40,19 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private async UniTaskVoid Start()
 		{
+			// We must start the Steam integration as soon as possible to have API available.
+			// It could also be that the application will need to close and restart in order to run via Steam.
+			SteamIntegrator.Integrate();
+
 			await LoadSettingsAsync();
-			await LoadPersistentManagersAsync();
+
+			var persistentManagersSceneInstance = await LoadPersistentManagersAsync();
+
+			// Because we load the Steam API here and not via the PersistentManager scene, we move the GameObject there
+			// in order to survive the unloading of the initialization scene.
+			SceneManager.MoveGameObjectToScene(SteamIntegrator.gameObject, persistentManagersSceneInstance.Scene);
+			SteamIntegrator.transform.SetAsFirstSibling();
+
 			await LoadIntoMainMenuAsync();
 			await UnloadInitializationSceneAsync();
 		}
@@ -47,10 +63,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 			await settings.LoadAsync();
 		}
 
-		private async UniTask LoadPersistentManagersAsync()
+		private async UniTask<SceneInstance> LoadPersistentManagersAsync()
 		{
 			var persistentManagersScene = await PersistentManagersScene.LoadAssetAsync();
-			await persistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+			var sceneInstance = await persistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+
+			return sceneInstance;
 		}
 
 		private async UniTask LoadIntoMainMenuAsync()

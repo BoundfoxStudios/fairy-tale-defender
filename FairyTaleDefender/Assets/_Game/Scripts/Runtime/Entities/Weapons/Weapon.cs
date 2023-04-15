@@ -31,7 +31,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 		public Tower Tower { get; private set; } = default!;
 
 		[field: SerializeField]
-		public TargetType TargetType { get; private set; }
+		public TargetTypeSO TargetType { get; private set; } = default!;
 
 		private TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
 			_effectiveWeaponDefinition ??=

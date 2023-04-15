@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
@@ -20,6 +21,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 		[field: Header("References")]
 		[field: SerializeField]
 		private SceneSO ThisScene { get; set; } = default!;
+
+		[field: SerializeField]
+		public SteamIntegrator SteamIntegrator { get; private set; } = default!;
 
 		[field: SerializeField]
 		private SettingsSO Settings { get; set; } = default!;
@@ -50,9 +54,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 				return;
 			}
 
+			SteamIntegrator.Integrate();
+
 			await Settings.LoadAsync();
 
-			await PersistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+			var persistentManagersSceneInstance = await PersistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+
+			// Because we load the Steam API here and not via the PersistentManager scene, we move the GameObject there
+			// in order to survive the unloading of the initialization scene.
+			SteamIntegrator.transform.SetParent(null);
+			SceneManager.MoveGameObjectToScene(SteamIntegrator.gameObject, persistentManagersSceneInstance.Scene);
+			SteamIntegrator.transform.SetAsFirstSibling();
 
 			if (ThisScene)
 			{

@@ -1,0 +1,25 @@
+{
+    "name": "BoundfoxStudios.FairyTaleDefender.Integrations.Steam",
+    "rootNamespace": "BoundfoxStudios.FairyTaleDefender.Integrations.Steam",
+    "references": [
+        "GUID:68bd7fdb68ef2684e982e8a9825b18a5",
+        "GUID:5c9744d4c22c84847b6ef80142c79f5e",
+        "GUID:eec0964c48f6f4e40bc3ec2257ccf8c5"
+    ],
+    "includePlatforms": [
+        "Editor",
+        "LinuxStandalone64",
+        "macOSStandalone",
+        "WindowsStandalone64"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [
+        "ENABLE_STEAM"
+    ],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

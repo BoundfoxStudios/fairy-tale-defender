@@ -44,6 +44,10 @@ on:
         required: true
         description: the git ref to checkout
         type: string
+      enable-steam-integration:
+        default: true
+        description: Set to true to enable a build that integrates the Steam API
+        type: boolean
     outputs:
       build-version:
         description: The game's version
@@ -167,6 +171,7 @@ jobs:
           UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+          ENABLE_STEAM: ${{ inputs.enable-steam-integration }}
         with:
           projectPath: ${{ inputs.project-path }}
           unityVersion: ${{ matrix.unity-version }}

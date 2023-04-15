@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
@@ -78,6 +79,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 		[Serializable]
 		public class LocalizationConfig
 		{
+			[NonSerialized]
+			public bool LocaleSetViaSteam = false;
 			public LocaleIdentifier Locale;
 		}
 

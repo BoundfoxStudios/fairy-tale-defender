@@ -1,4 +1,4 @@
-using RuntimeConstants = BoundfoxStudios.FairyTaleDefender.Constants;
+using RuntimeConstants = BoundfoxStudios.FairyTaleDefender.Common.Constants;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor
 {
@@ -8,7 +8,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 		{
 			public const string MenuName = RuntimeConstants.MenuNames.MenuName;
 			public const string Windows = MenuName + "/Windows";
-			public const string LevelSelection = Windows + "/Level Selection";
 
 			public static class GameObjectMenus
 			{
@@ -23,6 +22,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 				// This must be "GameObject" to integrate into the Unity GameObject menu.
 				private const string GameObjectRoot = "GameObject/" + MenuName;
 			}
+		}
+
+		public static class CompilerDirectives
+		{
+			public const string EnableSteam = "ENABLE_STEAM";
 		}
 	}
 }
