@@ -7,8 +7,11 @@ on:
     paths:
       - 'docs/**'
       - '.all-contributorsrc'
-      - 'resources/BlenderStarterKit/**'
+      - 'resources/Blendfiles/Props.blend'
+      - 'resources/Blendfiles/Starter.blend'
+      - 'resources/Blendfiles/Tiles.blend'
       - 'resources/ColorPalettes/**'
+      - 'resources/Windscale/**'
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -53,8 +56,9 @@ jobs:
         with:
           ref: ${{ inputs.ref }}
       - run: mkdir BlenderStarterKit
-      - run: cp ./resources/Blendfiles/StarterKit/Reference.blend ./BlenderStarterKit
-      - run: cp ./resources/Blendfiles/StarterKit/Starter.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Props.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Starter.blend ./BlenderStarterKit
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
