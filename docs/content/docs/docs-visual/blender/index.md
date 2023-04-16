@@ -26,6 +26,15 @@ Bitte beachte, dass die Texture und das passende Material bereits in der `Starte
 Du musst diese nur noch benutzen.
 {{% /alert %}}
 
+## Blender-Einstellungen
+
+Am besten ist es, wenn Du die `Starter.blend` als Grundlage nutzt, um eigene Assets zu erstellen.
+Dort ist bereits die Farbpaletten-Textur und das [Export-Script](#export-script) hinterlegt.
+
+Achte bitte darauf, dass Du das bestehende Material `ColorPalette` nutzt.
+Bitte erstelle keine weiteren Materialien und nenne das bestehende Material auch nicht um. 
+Das Material muss `ColorPalette` heißen, da wir beim Import in Unity nach diesem Suchen und mit dem Material der Engine ersetzen.
+
 ## Export-Einstellungen
 
 Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:
