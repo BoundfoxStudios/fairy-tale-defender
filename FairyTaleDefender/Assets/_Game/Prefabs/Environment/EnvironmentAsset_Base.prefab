@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8759677533206482384}
   m_Layer: 0
-  m_Name: Tile_Base
+  m_Name: EnvironmentAsset_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
