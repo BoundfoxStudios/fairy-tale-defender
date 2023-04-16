@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
         
-      - uses: BoundfoxStudios/gource-action@master
+      - uses: BoundfoxStudios/action-gource@v2
         with:
           gource_title: Fairy Tale Defender
           gource_resolution: 1440p
