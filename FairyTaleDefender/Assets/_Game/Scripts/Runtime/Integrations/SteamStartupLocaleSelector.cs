@@ -18,10 +18,15 @@ namespace BoundfoxStudios.FairyTaleDefender
 
 		public Locale? GetStartupLocale(ILocalesProvider availableLocales)
 		{
-			var gameLanguage = SteamRuntimeAnchor.ItemSafe.SteamApps.GetCurrentGameLanguage();
+			var steam = SteamRuntimeAnchor.Item;
 
-			Debug.Log($"Game language: {gameLanguage}");
+			if (steam is null)
+			{
+				return null;
+			}
 
+			var gameLanguage = steam.SteamApps.GetCurrentGameLanguage();
+			
 			if (gameLanguage is null)
 			{
 				return null;
