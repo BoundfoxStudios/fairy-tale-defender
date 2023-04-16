@@ -11,11 +11,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 		private static readonly AssetLocator<GameObject> AssetLocator =
 			new("Prefabs/Environment/EnvironmentAsset_Base.prefab");
 
-		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Prefab", priority = 0)]
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Prefab", priority = 20)]
 		private static void ConvertToPrefab()
 		{
 			AssetLocator.SafeInvokeAsync(environmentAssetPrefab =>
-					ConvertToPrefab(GetFilteredAssets(), environmentAssetPrefab))
+				{
+					var convertedObjects = ConvertToPrefab(GetFilteredAssets(), environmentAssetPrefab);
+
+					Selection.objects = convertedObjects;
+				})
 				.Forget();
 		}
 
@@ -44,15 +48,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			return filteredSelection;
 		}
 
-		private static void ConvertToPrefab(GameObject[] gameObjects, GameObject basePrefab)
+		private static Object[] ConvertToPrefab(GameObject[] gameObjects, GameObject basePrefab)
 		{
-			foreach (var gameObject in gameObjects)
-			{
-				ConvertToPrefab(gameObject, basePrefab);
-			}
+			return gameObjects.Select(gameObject => ConvertToPrefab(gameObject, basePrefab))
+				.Where(converted => converted is not null)
+				.ToArray()!;
 		}
 
-		private static void ConvertToPrefab(GameObject gameObject, GameObject basePrefab)
+		private static Object? ConvertToPrefab(GameObject gameObject, GameObject basePrefab)
 		{
 			var originalAssetPath = AssetDatabase.GetAssetPath(gameObject);
 			var originalAssetFolder = Path.GetDirectoryName(originalAssetPath)!;
@@ -67,7 +70,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			{
 				Debug.LogError(
 					$"Can not create a prefab from {gameObject.name}. No child named \"GFX\" found in {basePrefab.name}", basePrefab);
-				return;
+				return null;
 			}
 
 			var staticFlags = GameObjectUtility.GetStaticEditorFlags(gfxChild.gameObject);
@@ -78,15 +81,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			var savedPrefab = PrefabUtility.SaveAsPrefabAsset(basePrefabVariant, prefabAssetPath, out var success);
 			GameObjectUtility.SetStaticEditorFlags(savedPrefab, staticFlags);
 
-			if (!success)
-			{
-				Debug.Log($"Creating a prefab from {gameObject.name} was not successful", gameObject);
-			}
-
 			if (basePrefabVariant)
 			{
 				Object.DestroyImmediate(basePrefabVariant);
 			}
+
+			if (!success)
+			{
+				Debug.Log($"Creating a prefab from {gameObject.name} was not successful", gameObject);
+				return null;
+			}
+
+			return savedPrefab;
 		}
 	}
 }
