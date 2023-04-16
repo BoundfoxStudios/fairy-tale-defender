@@ -68,7 +68,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			RenderMenuScenes();
 			RenderManagerScenes();
 			RenderLevelPacks();
-			RenderTestScenes();
+			RenderDevelopmentScenes();
 		}
 
 		private void RenderLevelPacks()
@@ -133,20 +133,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			EndFoldoutGroup(levelPack.name, show);
 		}
 
-		private void RenderTestScenes()
+		private void RenderDevelopmentScenes()
 		{
-			var show = BeginFoldoutGroup("Tests");
+			var show = BeginFoldoutGroup("Development");
 
 			if (show)
 			{
-				EditorGUILayout.HelpBox("This scenes are only for testing some stuff until we have real game play scenes.",
+				EditorGUILayout.HelpBox("The scenes in this group are not included in the build and are for development only.",
 					MessageType.Info);
 				EditorGUILayout.BeginHorizontal();
-				OpenSceneByNameButton("Level", "Levels/Level_Test");
+				OpenSceneByNameButton("Models", "Development/Models");
 				EditorGUILayout.EndHorizontal();
 			}
 
-			EndFoldoutGroup("Tests", show);
+			EndFoldoutGroup("Development", show);
 		}
 
 		private void RenderMenuScenes()

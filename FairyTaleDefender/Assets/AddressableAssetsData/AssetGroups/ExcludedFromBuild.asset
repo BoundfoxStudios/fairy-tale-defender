@@ -21,18 +21,27 @@ MonoBehaviour:
     m_Address: Build/README
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bea5f0b98d9864056a867f4ffbfa22b1
     m_Address: Tutorials
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a64164336e171400caecee7615f1d536
     m_Address: ScriptableObjects/PrefabManager.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5c35e69f2befe437287a8a10b29e6a24
     m_Address: Scenes/Templates
     m_ReadOnly: 0
     m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: f1ebe3bc81c024d959dad376a4a21bdc
+    m_Address: Assets/_Game/Scenes/Development
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: fbae45bd11e5d4e3fb4d29e7f0a08824, type: 2}
   m_SchemaSet:
