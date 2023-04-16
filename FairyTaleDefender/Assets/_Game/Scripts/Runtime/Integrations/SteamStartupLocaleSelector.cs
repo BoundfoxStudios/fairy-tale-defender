@@ -26,7 +26,7 @@ namespace BoundfoxStudios.FairyTaleDefender
 			}
 
 			var gameLanguage = steam.SteamApps.GetCurrentGameLanguage();
-			
+
 			if (gameLanguage is null)
 			{
 				return null;

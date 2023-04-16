@@ -62,7 +62,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			var prefabAssetPath = Path.Combine(originalAssetFolder, $"{gameObject.name}.prefab");
 			prefabAssetPath = AssetDatabase.GenerateUniqueAssetPath(prefabAssetPath);
 
-			var basePrefabVariant = (GameObject) PrefabUtility.InstantiatePrefab(basePrefab);
+			var basePrefabVariant = (GameObject)PrefabUtility.InstantiatePrefab(basePrefab);
 
 			var gfxChild = basePrefabVariant.transform.Find("GFX");
 
@@ -75,7 +75,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 
 			var staticFlags = GameObjectUtility.GetStaticEditorFlags(gfxChild.gameObject);
 
-			var gameObjectInstance = (GameObject) PrefabUtility.InstantiatePrefab(gameObject, gfxChild);
+			var gameObjectInstance = (GameObject)PrefabUtility.InstantiatePrefab(gameObject, gfxChild);
 			GameObjectUtility.SetStaticEditorFlags(gameObjectInstance, staticFlags);
 
 			var savedPrefab = PrefabUtility.SaveAsPrefabAsset(basePrefabVariant, prefabAssetPath, out var success);
