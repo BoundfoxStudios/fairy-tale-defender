@@ -38,7 +38,12 @@ MonoBehaviour:
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: f1ebe3bc81c024d959dad376a4a21bdc
-    m_Address: Assets/_Game/Scenes/Development
+    m_Address: Scenes/Development
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0d8faef22d334976852bffb3d4c4813
+    m_Address: EditorCustomization
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

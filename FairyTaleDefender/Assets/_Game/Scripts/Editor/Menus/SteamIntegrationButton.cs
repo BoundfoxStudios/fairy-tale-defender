@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEditor;
+using UnityEditor.Experimental;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 using UnityEngine.UIElements;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
@@ -58,7 +60,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			_parentRight.Add(new() { style = { flexGrow = 1 } });
 
 			var isSteamIntegrationEnabled = IsSteamIntegrationEnabled(out _);
-			_parentRight.Add(CreateToolbarIcon("steam_icon_32x32",
+			_parentRight.Add(CreateToolbarIcon("EditorCustomization/steam_icon_32x32.png",
 				$"Steam Integration is {(isSteamIntegrationEnabled ? "enabled" : "disabled")}",
 				isSteamIntegrationEnabled
 					? Color.green
@@ -104,7 +106,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 
 			VisualElement icon = new();
 			icon.AddToClassList("unity-editor-toolbar-element__icon");
-			icon.style.backgroundImage = Background.FromTexture2D(Resources.Load<Texture2D>(iconName));
+			icon.style.backgroundImage = Background.FromTexture2D(Addressables.LoadAssetAsync<Texture2D>(iconName).Result);
 
 			if (iconTint is { } tint)
 			{
