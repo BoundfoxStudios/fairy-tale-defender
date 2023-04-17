@@ -686,7 +686,7 @@ Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starte
 &lt;td>Blume Gelb Schattierung 1&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>8&lt;/td>
+&lt;td>23&lt;/td>
 &lt;td>Blume Gelb Schattierung 2&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -694,8 +694,20 @@ Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starte
 &lt;td>Blume Blau Schattierung 1&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td>9&lt;/td>
+&lt;td>24&lt;/td>
 &lt;td>Blume Blau Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>9&lt;/td>
+&lt;td>Weiß&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>25&lt;/td>
+&lt;td>Schwarz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>10&lt;/td>
+&lt;td>Pilz-Rot&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table></description></item><item><title>Docs: Tiles</title><link>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/tiles/</guid><description>
