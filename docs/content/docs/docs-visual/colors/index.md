@@ -44,6 +44,9 @@ Hier siehst Du die Farbpalette für den Sommer:
 | 22  | Blume Lila Schattierung 2 |
 | 38  | Blume Lila Schattierung 3 |
 | 7   | Blume Gelb Schattierung 1 |
-| 8   | Blume Gelb Schattierung 2 |
+| 23  | Blume Gelb Schattierung 2 |
 | 8   | Blume Blau Schattierung 1 |
-| 9   | Blume Blau Schattierung 2 |
+| 24  | Blume Blau Schattierung 2 |
+| 9   | Weiß                      |
+| 25  | Schwarz                   |
+| 10  | Pilz-Rot                  | 
