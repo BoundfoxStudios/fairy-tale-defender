@@ -49,4 +49,7 @@ Hier siehst Du die Farbpalette für den Sommer:
 | 24  | Blume Blau Schattierung 2 |
 | 9   | Weiß                      |
 | 25  | Schwarz                   |
+| 41  | Grau Schattierung 1       |
+| 57  | Grau Schattierung 2       |
+| 73  | Grau Schattierung 3       |
 | 10  | Pilz-Rot                  | 
