@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,10 +11,21 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.AssetProcessors
 
 		private Material? OnAssignMaterialModel(Material material, Renderer renderer)
 		{
-			if (!renderer.sharedMaterial && material.name == "ColorPalette")
+			if (material.name != "ColorPalette")
 			{
-				return FindColorPaletteSummer();
+				return null;
 			}
+
+			var importer = (ModelImporter)assetImporter;
+			var existingRemaps = importer.GetExternalObjectMap();
+			var hasColorPaletteRemap = existingRemaps.Any(kvp => kvp.Key.name == "ColorPalette");
+
+			if (hasColorPaletteRemap)
+			{
+				return null;
+			}
+
+			importer.AddRemap(new(typeof(Material), "ColorPalette"), FindColorPaletteSummer());
 
 			return null;
 		}
