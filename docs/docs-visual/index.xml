@@ -128,9 +128,11 @@ Das sollte mehr als ausreichend sein.&lt;/p>
 &lt;/blockquote>
 &lt;div class="alert alert-primary" role="alert">
 &lt;h4 class="alert-heading">Download&lt;/h4>
-Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starter-Kit herunterladen.
+&lt;p>Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starter-Kit herunterladen, falls Du noch kein Asset erstellt hast.&lt;/p>
+&lt;p>Falls Du nur die Farbpalette runterladen möchtest, schaue unten bei den einzelnen Paletten.&lt;/p>
 &lt;/div>
 &lt;h2 id="sommer">Sommer&lt;/h2>
+&lt;p>[ &lt;a href="assets/ColorPalette_Summer.png">Download&lt;/a> ]&lt;/p>
 &lt;p>Hier siehst Du die Farbpalette für den Sommer:&lt;/p>
 &lt;p>&lt;img src="assets/ColorPalette_Summer_Description.png" alt="Sommer-Farbpalette">&lt;/p>
 &lt;table>
@@ -228,6 +230,18 @@ Du kannst die Farbpalette &lt;a href="../blender/">hier&lt;/a> im Blender Starte
 &lt;tr>
 &lt;td>25&lt;/td>
 &lt;td>Schwarz&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>41&lt;/td>
+&lt;td>Grau Schattierung 1&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>57&lt;/td>
+&lt;td>Grau Schattierung 2&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td>73&lt;/td>
+&lt;td>Grau Schattierung 3&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td>10&lt;/td>
