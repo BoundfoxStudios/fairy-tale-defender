@@ -11,3 +11,7 @@ runs:
       with:
         name: ColorPalette_Summer_Description.png
         path: docs/content/docs/docs-visual/colors/assets
+    - uses: actions/download-artifact@v3
+      with:
+        name: ColorPalette_Summer.png
+        path: docs/content/docs/docs-visual/colors/assets

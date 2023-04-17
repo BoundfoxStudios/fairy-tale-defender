@@ -16,10 +16,14 @@ Anwenden kannst Du Farben in [Blender via UV Editing](https://www.youtube.com/wa
 > Wenn Dir eine Farbe fehlt, schreib uns auf dem [Discord]({{< param "project_links.discord.url" >}}) eine Nachricht, sodass wir die Farbe hinzufügen können.
 
 {{% alert title="Download" %}}
-Du kannst die Farbpalette [hier](../blender/) im Blender Starter-Kit herunterladen.
+Du kannst die Farbpalette [hier](../blender/) im Blender Starter-Kit herunterladen, falls Du noch kein Asset erstellt hast.
+
+Falls Du nur die Farbpalette runterladen möchtest, schaue unten bei den einzelnen Paletten.
 {{% /alert %}}
 
 ## Sommer
+
+[ [Download](assets/ColorPalette_Summer.png) ]
 
 Hier siehst Du die Farbpalette für den Sommer:
 
