@@ -179,6 +179,9 @@ jobs:
           versioning: Semantic
           buildName: FairyTaleDefender
           customParameters: ${{ inputs.custom-parameters }}
+      - name: Return license
+        uses: game-ci/unity-return-license@v2
+        if: failure() || cancelled()
       - uses: actions/upload-artifact@v3
         name: Upload Game Binaries
         if: inputs.do-upload-game-binaries
