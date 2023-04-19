@@ -16,6 +16,12 @@
 &lt;p>Bitte beachte, dass die Texture und das passende Material bereits in der &lt;code>Starter.blend&lt;/code> eingebunden sind.
 Du musst diese nur noch benutzen.&lt;/p>
 &lt;/div>
+&lt;h2 id="blender-einstellungen">Blender-Einstellungen&lt;/h2>
+&lt;p>Am besten ist es, wenn Du die &lt;code>Starter.blend&lt;/code> als Grundlage nutzt, um eigene Assets zu erstellen.
+Dort ist bereits die Farbpaletten-Textur und das &lt;a href="#export-script">Export-Script&lt;/a> hinterlegt.&lt;/p>
+&lt;p>Achte bitte darauf, dass Du das bestehende Material &lt;code>ColorPalette&lt;/code> nutzt.
+Bitte erstelle keine weiteren Materialien und nenne das bestehende Material auch nicht um.
+Das Material muss &lt;code>ColorPalette&lt;/code> heißen, da wir beim Import in Unity nach diesem Suchen und mit dem Material der Engine ersetzen.&lt;/p>
 &lt;h2 id="export-einstellungen">Export-Einstellungen&lt;/h2>
 &lt;p>Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:&lt;/p>
 &lt;ul>
