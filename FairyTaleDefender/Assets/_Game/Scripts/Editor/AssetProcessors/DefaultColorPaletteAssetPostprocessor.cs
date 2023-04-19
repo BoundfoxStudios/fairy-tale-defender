@@ -1,11 +1,10 @@
-using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor.AssetProcessors
 {
-	public class DefaultColorPalette : AssetPostprocessor
+	public class DefaultColorPaletteAssetPostprocessor : AssetPostprocessor
 	{
 		private const string ColorPaletteSummerGuid = "178b74dc53be54709b84d85209d03744";
 
@@ -25,15 +24,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.AssetProcessors
 				return null;
 			}
 
-			importer.AddRemap(new(typeof(Material), "ColorPalette"), FindColorPaletteSummer());
-
-			return null;
+			return FindColorPaletteSummer();
 		}
 
 		private Material? FindColorPaletteSummer()
 		{
+			GUID.TryParse(ColorPaletteSummerGuid, out var guid);
+			context.DependsOnSourceAsset(guid);
 			var path = AssetDatabase.GUIDToAssetPath(ColorPaletteSummerGuid);
 			return AssetDatabase.LoadAssetAtPath<Material>(path);
 		}
+
+		 public override uint GetVersion() => 2;
 	}
 }

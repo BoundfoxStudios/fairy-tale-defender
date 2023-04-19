@@ -7,11 +7,6 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ColorPalette
-    second: {fileID: 2100000, guid: 178b74dc53be54709b84d85209d03744, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
       name: Water
     second: {fileID: 2100000, guid: a1f9d6ecd1007477d8b4ed7d00559b3e, type: 2}
   materials:
