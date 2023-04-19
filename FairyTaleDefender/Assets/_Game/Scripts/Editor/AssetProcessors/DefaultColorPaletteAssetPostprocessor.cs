@@ -35,6 +35,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.AssetProcessors
 			return AssetDatabase.LoadAssetAtPath<Material>(path);
 		}
 
-		 public override uint GetVersion() => 2;
+		public override uint GetVersion() => 2;
 	}
 }
