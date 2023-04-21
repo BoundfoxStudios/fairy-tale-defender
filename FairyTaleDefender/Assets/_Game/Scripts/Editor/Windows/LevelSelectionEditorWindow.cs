@@ -2,6 +2,7 @@ using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.Scriptabl
 using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.SceneManagement;
+using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -10,6 +11,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 	public class LevelSelectionEditorWindow : EditorWindow
 	{
 		private bool _openAdditive;
+		private bool _selectAsset;
 		private Vector2 _scrollPosition;
 
 		private readonly AssetLocator<AllLevelPacksSO> _allLevelPacksLocator =
@@ -37,10 +39,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 		private void OnGUI()
 		{
 			_openAdditive = IsControlPressed();
+			_selectAsset = IsAltPressed();
+
 			EditorGUILayout.LabelField(
 				_openAdditive
 					? "Will open scenes additively."
-					: "Press control to open scenes additively."
+					:
+					_selectAsset
+						? "Will select the Scene in project view"
+						: "Press control to open scenes additively. Press alt to select the scene in project view."
 			);
 
 			_scrollPosition = EditorGUILayout.BeginScrollView(_scrollPosition);
@@ -61,7 +68,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			RenderMenuScenes();
 			RenderManagerScenes();
 			RenderLevelPacks();
-			RenderTestScenes();
+			RenderDevelopmentScenes();
 		}
 
 		private void RenderLevelPacks()
@@ -126,20 +133,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			EndFoldoutGroup(levelPack.name, show);
 		}
 
-		private void RenderTestScenes()
+		private void RenderDevelopmentScenes()
 		{
-			var show = BeginFoldoutGroup("Tests");
+			var show = BeginFoldoutGroup("Development");
 
 			if (show)
 			{
-				EditorGUILayout.HelpBox("This scenes are only for testing some stuff until we have real game play scenes.",
+				EditorGUILayout.HelpBox("The scenes in this group are not included in the build and are for development only.",
 					MessageType.Info);
 				EditorGUILayout.BeginHorizontal();
-				OpenSceneByNameButton("Level", "Levels/Level_Test");
+				OpenSceneByNameButton("Models", "Development/Models");
 				EditorGUILayout.EndHorizontal();
 			}
 
-			EndFoldoutGroup("Tests", show);
+			EndFoldoutGroup("Development", show);
 		}
 
 		private void RenderMenuScenes()
@@ -177,6 +184,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			return currentEvent.control;
 		}
 
+		private bool IsAltPressed()
+		{
+			var currentEvent = Event.current;
+			return currentEvent.alt;
+		}
+
 		private bool BeginFoldoutGroup(string groupName)
 		{
 			var show = EditorPrefs.GetBool($"foldout_{groupName}", false);
@@ -197,6 +210,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			EditorGUI.BeginDisabledGroup(IsSceneOpen(sceneFile));
 			if (GUILayout.Button(label))
 			{
+				if (_selectAsset)
+				{
+					SearchUtils.PingAsset(sceneFile);
+					return false;
+				}
+
 				if (!EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo())
 				{
 					return false;

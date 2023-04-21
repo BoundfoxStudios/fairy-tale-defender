@@ -85,6 +85,7 @@ Diese wundervollen Menschen haben sich bisher bei Fairy Tale Defender beteiligt:
     </tr>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://kordesii.itch.io/"><img src="https://avatars.githubusercontent.com/u/24779607?v=4?s=100" width="100px;" alt="Tobby"/><br /><sub><b>Tobby</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/fairy-tale-defender/commits?author=realTobby" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ProTools3000"><img src="https://avatars.githubusercontent.com/u/44295856?v=4?s=100" width="100px;" alt="Tommy"/><br /><sub><b>Tommy</b></sub></a><br /><a href="#design-ProTools3000" title="Design">🎨</a> <a href="#ideas-ProTools3000" title="Ideas, Planning, & Feedback">🤔</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/fastFox2"><img src="https://avatars.githubusercontent.com/u/72040701?v=4?s=100" width="100px;" alt="fastFox2"/><br /><sub><b>fastFox2</b></sub></a><br /><a href="https://github.com/BoundfoxStudios/fairy-tale-defender/commits?author=fastFox2" title="Code">💻</a> <a href="https://github.com/BoundfoxStudios/fairy-tale-defender/commits?author=fastFox2" title="Documentation">📖</a> <a href="#ideas-fastFox2" title="Ideas, Planning, & Feedback">🤔</a></td>
     </tr>
   </tbody>

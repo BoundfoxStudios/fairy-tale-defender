@@ -18,23 +18,34 @@ MonoBehaviour:
     ein LevelSO anzulegen und mit dem EditorColdStartup zu verkn\xFCpfen."
   preview: {fileID: 0}
   dependencies:
-  - dependency: {fileID: 11400000, guid: 182a8397742a34d12a2c863279da76bd, type: 2}
-    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083,
       type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 045553e154d74432693139cd15ae22d0, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 8635163af75ae42ad8c78aed76bd72b6, type: 2}
+    instantiationMode: 1
+  - dependency: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
+      type: 3}
+    instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: 182a8397742a34d12a2c863279da76bd, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 7890647129816737892, guid: 3bc16c3b51ceb4220a1c165954209c34,
       type: 3}
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 730d40e9be9784625b732523096bbd17, type: 2}
     instantiationMode: 1
-  - dependency: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3, type: 2}
-    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac, type: 2}
-    instantiationMode: 1
-  - dependency: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: f20112bdeec2e8d4d9f80e8390e37263, type: 3}
     instantiationMode: 1
@@ -44,19 +55,16 @@ MonoBehaviour:
     instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 7048ec874fb204b739bb13db30662c7a, type: 2}
     instantiationMode: 1
+  - dependency: {fileID: 11400000, guid: a41fe3d13605843e98b25071e8f7cc01, type: 2}
+    instantiationMode: 1
   - dependency: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 5791790944473240252, guid: 7638dd7b4f9514dd780979270ef27f17,
       type: 3}
     instantiationMode: 1
-  - dependency: {fileID: 11400000, guid: 8635163af75ae42ad8c78aed76bd72b6, type: 2}
+  - dependency: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678, type: 2}
     instantiationMode: 1
   - dependency: {fileID: 2800000, guid: 5f2a108eb023faf43a809979fd3d38f2, type: 3}
-    instantiationMode: 1
-  - dependency: {fileID: 510804133511062543, guid: 110ebe51c4ba84a6380c1994ab337b3d,
-      type: 3}
-    instantiationMode: 1
-  - dependency: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678, type: 2}
     instantiationMode: 1
   templatePipeline: {fileID: 0}
   badge: {fileID: 0}

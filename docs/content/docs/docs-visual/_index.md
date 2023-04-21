@@ -32,9 +32,20 @@ Wenn Du Dich interessiert, [Dich visuell zu beteiligen](../contributing/visual/)
   Wenn wir Dein Modell in Unity importieren, muss es mit einem 1/1/1 Scaling bereits die korrekte Größe haben.
 * Benutze bitte keinerlei Texturen, außer die [Farbpaletten-Texture](colors/).
 * Bitte beachte, dass die Shader Deiner Modellierungssoftware nicht mit Unity kompatibel sind. D.h. im Idealfall benötigt Dein Modell keinen eigenen Shader. Falls Du allerdings, Ausnahmen bestätigen die Regel, ein Modell/Aufgabe hast, die einen eigenen Shader benötigt, muss dieser Shader in Unity entwickelt werden. Du kannst ihn zwar in Deiner Modellierungssoftware auch erstellen, er dient dann allerdings nur als Referenz für die Unity-Shader-Entwicklung.
-* Benenne Deine Meshes, Animationen etc. korrekt (und auf Englisch, dict.cc hilft beim Übersetzen), denn niemand weiß, was `Cube 1` und `Animation 3` nachher wirklich ist. 
 * Einfache Modelle sollten aus nur einem Mesh bestehen.
 * Exportiere Deine Modelle als `.fbx` (speziell für [Blender siehe hier](blender/)).
+
+#### Wie benenne ich meine Modelle?
+
+* Benenne Deine Meshes, Animationen etc. korrekt (und auf Englisch, dict.cc hilft beim Übersetzen), denn niemand weiß, was `Cube 1` und `Animation 3` nachher wirklich ist. 
+* Benenne Dein Objekt so:
+  * Zuerst mit dem Typ, z.B. `Tree` (Baum), `Bush` (Busch), 
+  * dann mit dem Namen der Variante, z.B. `1`, `2`
+  * und dann abgetrennt mit einem Unterstrich `_` die Modifikation davon (z.B. `Large` (Groß), `Small` (Klein)).
+  * Beispiele:
+    * Ein großer und kleiner Baum: `Tree_1_Large`, `Tree_1_Small`
+    * Ein Schatzkiste: `TreasureChest`
+    * Eine grüne/gelbe Blume: `Flower_Green`, `Flower_Yellow`
 
 ### 2D
 

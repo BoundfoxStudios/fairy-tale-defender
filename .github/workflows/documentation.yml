@@ -7,8 +7,11 @@ on:
     paths:
       - 'docs/**'
       - '.all-contributorsrc'
-      - 'resources/BlenderStarterKit/**'
+      - 'resources/Blendfiles/Props.blend'
+      - 'resources/Blendfiles/Starter.blend'
+      - 'resources/Blendfiles/Tiles.blend'
       - 'resources/ColorPalettes/**'
+      - 'resources/Windscale/**'
   workflow_dispatch:
   workflow_call:
     inputs:
@@ -31,6 +34,13 @@ jobs:
        input-file: ./resources/ColorPalettes/ColorPalette_Summer.psd
        output-filename: ColorPalette_Summer.png
 
+  convert-windscale:
+    uses: ./.github/workflows/psd-to-png.yml
+    with:
+       ref: ${{ inputs.ref }}
+       input-file: ./resources/Windscale/Windscale.psd
+       output-filename: Windscale.png
+
   convert-color-palette-summer-description:
     uses: ./.github/workflows/psd-to-png.yml
     with:
@@ -40,18 +50,24 @@ jobs:
 
   create-blender-starter-kit:
     runs-on: ubuntu-latest
-    needs: [convert-color-palette-summer]
+    needs: [convert-color-palette-summer, convert-windscale]
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
       - run: mkdir BlenderStarterKit
-      - run: cp ./resources/BlenderStarterKit/*.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Props.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Starter.blend ./BlenderStarterKit
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
-          path: ./BlenderStarterKit
-      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*.*
+          path: ./BlenderStarterKit/textures/
+      - uses: actions/download-artifact@v3
+        with:
+          name: Windscale.png
+          path: ./BlenderStarterKit/textures
+      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/textures/*.* ./BlenderStarterKit/*.*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStarterKit
@@ -59,7 +75,7 @@ jobs:
   
   check-broken-links:
     runs-on: ubuntu-latest
-    needs: [create-blender-starter-kit, convert-color-palette-summer-description]
+    needs: [create-blender-starter-kit, convert-color-palette-summer, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
@@ -70,7 +86,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     if: github.event_name != 'workflow_call'
-    needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer-description]
+    needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:

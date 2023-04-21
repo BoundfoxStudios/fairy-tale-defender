@@ -10,11 +10,30 @@ Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen muss
 ## Blender Starter-Kit
 
 Hier findest Du das Blender Starter-Kit.
-Enthalten ist einmal das [Basis-Tile-Set](../tiles/) und alle aktuellen [Farbpaletten](../colors/).
 
 {{% alert title="Download" %}}
 [Klicke hier, um das Blender Starter-Kit herunterzuladen](assets/BlenderStarterKit.zip).
+
+Es beinhaltet:
+
+* `Props.blend`: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.
+* `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
+* `Starter.blend`: Hiermit startest Du ein neues Asset für das Spiel.
+* `textures/ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
+* `textures/Windscale.png`: Die Skala für [Wind-Effekte](../wind/).
+
+Bitte beachte, dass die Texture und das passende Material bereits in der `Starter.blend` eingebunden sind. 
+Du musst diese nur noch benutzen.
 {{% /alert %}}
+
+## Blender-Einstellungen
+
+Am besten ist es, wenn Du die `Starter.blend` als Grundlage nutzt, um eigene Assets zu erstellen.
+Dort ist bereits die Farbpaletten-Textur und das [Export-Script](#export-script) hinterlegt.
+
+Achte bitte darauf, dass Du das bestehende Material `ColorPalette` nutzt.
+Bitte erstelle keine weiteren Materialien und nenne das bestehende Material auch nicht um. 
+Das Material muss `ColorPalette` heißen, da wir beim Import in Unity nach diesem Suchen und mit dem Material der Engine ersetzen.
 
 ## Export-Einstellungen
 
@@ -30,6 +49,8 @@ Wenn Du mehrere Modelle in einer Blender-Datei hast, dann ist folgendes Script n
 
 ### Export-Script
 
+> Das Export-Script ist in der `Starter.blend` im Blender Starter-Kit bereits enthalten.
+
 Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
 Kopiere dann folgendes Script in den leeren Text-Editor.
 
@@ -42,8 +63,6 @@ Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.
 In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.
 
 ```python
-# exports each selected object into its own file
-
 import bpy
 import os
 
@@ -74,6 +93,10 @@ if selection_count == 0:
         use_custom_props=True,
         bake_anim_use_nla_strips=False,
         bake_anim_use_all_actions=False,
+        use_space_transform=True,
+        bake_space_transform=True,
+        axis_forward='-Z',
+        axis_up='Y',
         apply_scale_options='FBX_SCALE_ALL')
 else:
     bpy.ops.object.select_all(action='DESELECT')
@@ -101,6 +124,10 @@ else:
             use_custom_props=True,
             bake_anim_use_nla_strips=False,
             bake_anim_use_all_actions=False,
+            use_space_transform=True,
+            bake_space_transform=True,
+            axis_forward='-Z',
+            axis_up='Y',
             apply_scale_options='FBX_SCALE_ALL')
 
         # Restore the old location    
