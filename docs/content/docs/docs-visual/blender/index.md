@@ -104,6 +104,10 @@ else:
     for obj in selection:
 
         obj.select_set(True)
+        bpy.ops.object.select_grouped(
+            extend=True,
+            type='CHILDREN_RECURSIVE'
+        )
         
         # Save the initial location and set the object to 0/0/0
         oldLocation = obj.location.copy()
