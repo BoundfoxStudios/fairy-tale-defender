@@ -66,6 +66,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 			SceneManager.MoveGameObjectToScene(SteamIntegrator.gameObject, persistentManagersSceneInstance.Scene);
 			SteamIntegrator.transform.SetAsFirstSibling();
 
+			// To avoid Cross Scene Reference Warning in editor mode
+			SteamIntegrator = null!;
+
 			if (ThisScene)
 			{
 				NotifyColdStartupEventChannel.Raise(new()
