@@ -23,6 +23,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 		private void Awake()
 		{
 			_decalProjector = GetComponent<DecalProjector>();
+
+			// Clone material to avoid writing to the original one
+			_decalProjector.material = Instantiate(_decalProjector.material);
 		}
 
 		public void DisplayWeaponRange(WeaponSelectedEventChannelSO.EventArgs eventArgs)
