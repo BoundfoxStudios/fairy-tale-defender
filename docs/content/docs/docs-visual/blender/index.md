@@ -62,6 +62,8 @@ Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.
 
 In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.
 
+Bitte beachte, dass Du im Object-Mode sein musst zum Exportieren.
+
 ```python
 import bpy
 import os
@@ -103,6 +105,7 @@ else:
 
     for obj in selection:
 
+        bpy.context.view_layer.objects.active = obj
         obj.select_set(True)
         bpy.ops.object.select_grouped(
             extend=True,
