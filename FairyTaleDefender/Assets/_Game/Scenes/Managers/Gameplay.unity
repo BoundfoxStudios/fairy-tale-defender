@@ -1304,7 +1304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c1f0258ee8a4cd0b14d8aecd88bfabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <BuildableLayerMask>k__BackingField:
+  <TerrainLayerMask>k__BackingField:
     serializedVersion: 2
     m_Bits: 256
   <ObstaclesLayerMask>k__BackingField:
