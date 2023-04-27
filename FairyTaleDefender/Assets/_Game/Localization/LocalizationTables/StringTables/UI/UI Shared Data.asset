@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: PersistentManagers/LoadingScreen_Canvas/LoadingScreen/Panel/Text
     m_Metadata:
       m_Items: []
+  - m_Id: 79127719739121664
+    m_Key: Tooltips/CatapultTower
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
