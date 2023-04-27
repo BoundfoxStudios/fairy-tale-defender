@@ -37,9 +37,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		private WeaponRangePreview WeaponRangePreview { get; set; } = default!;
 
-		[field: SerializeField]
-		public TransformRuntimeAnchorSO LevelContainerRuntimeAnchor { get; private set; } = default!;
-
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
