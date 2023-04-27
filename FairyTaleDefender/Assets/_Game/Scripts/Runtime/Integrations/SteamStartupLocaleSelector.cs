@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using UnityEngine;
@@ -10,6 +11,12 @@ namespace BoundfoxStudios.FairyTaleDefender
 	[Serializable]
 	public class SteamStartupLocaleSelector : IStartupLocaleSelector
 	{
+		private static readonly Dictionary<string, string> SteamLanguageToLocaleMap = new()
+		{
+			{ "german", "de" },
+			{ "english", "en" }
+		};
+
 		[field: SerializeField]
 		public SteamRuntimeAnchorSO SteamRuntimeAnchor { get; private set; } = default!;
 
@@ -32,7 +39,14 @@ namespace BoundfoxStudios.FairyTaleDefender
 				return null;
 			}
 
-			var locale = availableLocales.GetLocale(gameLanguage);
+			var mappedLocale = SteamLanguageToLocaleMap.GetValueOrDefault(gameLanguage, string.Empty);
+
+			if (string.IsNullOrWhiteSpace(mappedLocale))
+			{
+				return null;
+			}
+
+			var locale = availableLocales.GetLocale(mappedLocale);
 
 			if (locale is null)
 			{
