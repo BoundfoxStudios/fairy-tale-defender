@@ -21,6 +21,9 @@ MonoBehaviour:
     Bar: {fileID: 2006493411456039425, guid: 256bb3b0e04594619a0190b6ea8bb8c1, type: 3}
     HealthBar: {fileID: 6978134812381698621, guid: 67a0226c7b19846d39685c7c6a17bd7f,
       type: 3}
+  Buttons:
+    BrownButton: {fileID: 7626598446852593320, guid: 21e93d599064244fb8196a653f9fb7d7,
+      type: 3}
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
     Level: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083, type: 3}

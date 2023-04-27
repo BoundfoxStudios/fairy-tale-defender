@@ -322,16 +322,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1390857201}
     m_Modifications:
-    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
-        type: 3}
-      propertyPath: m_text
-      value: Credits
-      objectReference: {fileID: 0}
-    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 44.75
-      objectReference: {fileID: 0}
     - target: {fileID: 3025122040544386479, guid: ac7cc51efde2645bab55d748fbf5a6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -480,6 +470,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: m_text
+      value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -645,16 +645,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1868377719}
     m_Modifications:
-    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
-        type: 3}
-      propertyPath: m_text
-      value: Credits
-      objectReference: {fileID: 0}
-    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
-        type: 3}
-      propertyPath: m_fontSize
-      value: 44.75
-      objectReference: {fileID: 0}
     - target: {fileID: 3025122040544386479, guid: ac7cc51efde2645bab55d748fbf5a6ec,
         type: 3}
       propertyPath: m_Pivot.x
@@ -808,6 +798,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_text
       value: First Level
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: m_text
+      value: Credits
+      objectReference: {fileID: 0}
+    - target: {fileID: 673820980554452696, guid: 4d50ddc819c0eea47ab26d6409c2299e,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 44.75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

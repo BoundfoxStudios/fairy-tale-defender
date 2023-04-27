@@ -14,6 +14,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 				public const string UI = GameObjectRoot + "/UI";
 				public const string Texts = UI + "/Texts";
 				public const string Bars = UI + "/Bars";
+				public const string Buttons = UI + "/Buttons";
 
 				public const string Cameras = GameObjectRoot + "/Cameras";
 				public const string Lights = GameObjectRoot + "/Lights";
