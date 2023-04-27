@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Cysharp.Threading.Tasks;
 using UnityEditor;
 using UnityEditor.Experimental;
 using UnityEngine;
@@ -48,10 +49,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 
 			var visualElementRoot = rawRoot as VisualElement;
 
-			AttachToolbarRight(visualElementRoot.Q("ToolbarZoneRightAlign"));
+			AttachToolbarRightAsync(visualElementRoot.Q("ToolbarZoneRightAlign")).Forget();
 		}
 
-		private static void AttachToolbarRight(VisualElement root)
+		private static async UniTaskVoid AttachToolbarRightAsync(VisualElement root)
 		{
 			_parentRight?.RemoveFromHierarchy();
 
@@ -60,7 +61,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			_parentRight.Add(new() { style = { flexGrow = 1 } });
 
 			var isSteamIntegrationEnabled = IsSteamIntegrationEnabled(out _);
-			_parentRight.Add(CreateToolbarIcon("EditorCustomization/steam_icon_32x32.png",
+			_parentRight.Add(await CreateToolbarIconAsync("EditorCustomization/steam_icon_32x32.png",
 				$"Steam Integration is {(isSteamIntegrationEnabled ? "enabled" : "disabled")}",
 				isSteamIntegrationEnabled
 					? Color.green
@@ -99,14 +100,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 				uniqueDefines.ToArray());
 		}
 
-		private static VisualElement CreateToolbarIcon(string iconName, string tooltip, Color? iconTint, Action onClick)
+		private static async UniTask<VisualElement> CreateToolbarIconAsync(string iconName, string tooltip, Color? iconTint, Action onClick)
 		{
 			Button button = new(onClick) { tooltip = tooltip };
 			FitToolbarIconChildrenStyle(button);
 
 			VisualElement icon = new();
 			icon.AddToClassList("unity-editor-toolbar-element__icon");
-			icon.style.backgroundImage = Background.FromTexture2D(Addressables.LoadAssetAsync<Texture2D>(iconName).Result);
+			icon.style.backgroundImage = Background.FromTexture2D(await Addressables.LoadAssetAsync<Texture2D>(iconName));
 
 			if (iconTint is { } tint)
 			{
