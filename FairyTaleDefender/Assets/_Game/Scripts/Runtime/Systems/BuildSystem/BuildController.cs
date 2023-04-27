@@ -159,10 +159,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 				return;
 			}
 
+			// This method is the algorithm for placing a tower in the game.
+
+			// 1. Assume we have a invalid position.
 			WeaponRangePreview.StopDisplayingWeaponRange();
 			_buildContext.IsValidPosition = false;
 			var blueprintInstance = _buildContext.BlueprintInstance;
 
+			// 2. Check, if we hit any terrain in the scene. If not, turn off the blueprint.
 			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(screenPosition);
 
 			if (!TryFindFromRay(ray, out var terrainHit, TerrainLayerMask))
@@ -173,27 +177,54 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 
 			blueprintInstance.Activate();
 
-			// We're adjusting the position for the tile by 0.5f because the tile's pivot is at the center.
-			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + 0.5f), terrainHit.point.y,
-				Mathf.Floor(terrainHit.point.z + 0.5f));
+			// This threshold is used for casting and determine positions.
+			// For casting: we adjust any casting box to not overlap with other terrain tile colliders.
+			// For positions: to get the tile-center we need to add 0.5f. However that will lead to getting the wrong tile
+			//   if the mouse cursor hovers over a wall of a tile. To counter that, we place it slightly off-center, so we
+			//   find the tile of the wall and not its neighbour. For the final calculation we'll add 0.5f later to get
+			//   the real center.
+			const float threshold = 0.49f;
 
+			// 3. From the raycast position, create a new one that is in the middle of the hit terrain tile.
+			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + threshold), terrainHit.point.y,
+				Mathf.Floor(terrainHit.point.z + threshold));
+
+			// 4. Make a box cast from above the tile down to the tile, also hitting anything on the ObstacleLayerMask.
+			// We need it to check, if there is an obstacle placed on the tile.
 			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
-			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down,
-				out var terrainBoxWithObstaclesHit,
-				Quaternion.identity, 20, _terrainAndObstacleLayerMask);
+			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
+				out var terrainBoxWithObstaclesHit, Quaternion.identity, 20, _terrainAndObstacleLayerMask);
 
-			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down, out var terrainBoxHit,
+			// 5. Additionally, cast one more box cast only hitting the TerrainLayerMask to determine the correct position
+			// to place the tower.
+			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
+				out var terrainBoxHit,
 				Quaternion.identity, 20, TerrainLayerMask);
 
+			// It could be, that we do not hit anything if we cast exactly in a gap of colliders or on some collider walls.
+			// In that case we just exit here and hide the blueprint.
+			if (!hitsTerrainOrObstacle || !hitsTerrain)
+			{
+				blueprintInstance.Deactivate();
+				return;
+			}
+
+			// 6. From the hit terrain, determine the real position for the blueprint.
+			// For the final position, aka the tile's center, we add 0.5f.
 			tilePosition = new(Mathf.Floor(terrainBoxHit.point.x + 0.5f), terrainBoxHit.collider.bounds.center.y,
 				Mathf.Floor(terrainBoxHit.point.z + 0.5f));
 			_buildContext.TilePosition = tilePosition;
 
+			// 7. Determine if we have a valid position. A valid positions means:
+			//   - The BoxCast only hits Terrain -> no obstacle is on top of it
+			//   - The hit TerrainTile needs a BuildInformation script. That script knows, if the tile is buildable or not.
+			//   - If we got a BuildInformation script, we check, if it is buildable.
 			var hasValidPosition = terrainBoxWithObstaclesHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
-			                       && terrainBoxWithObstaclesHit.collider.TryGetComponent<BuildInformation>(
-				                       out var buildInformation)
+			                       && terrainBoxWithObstaclesHit.collider
+				                       .TryGetComponent<BuildInformation>(out var buildInformation)
 			                       && buildInformation.IsBuildable;
 
+			// 8. Check, if we need to swap the material if we change from a valid to an invalid position and vice-versa.
 			var needsMaterialSwap = _buildContext.PreviousHasValidPosition != hasValidPosition;
 			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
