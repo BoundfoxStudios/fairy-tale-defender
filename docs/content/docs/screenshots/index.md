@@ -23,3 +23,19 @@ Klicke Screenshots an, um sie zu vergrößern.
 [![Credits](assets/2023-04-27/credits.png)](assets/2023-04-27/credits.png)
 {{< /card >}}
 {{< /cardpane >}}
+
+## 07.04.2023
+
+{{< cardpane >}}
+{{< card header="Main Menu">}}
+[![Main Menu](assets/2023-04-07/main-menu.png)](assets/2023-04-07/main-menu.png)
+{{< /card >}}
+
+{{< card header="Level 1">}}
+[![Level 1](assets/2023-04-07/level-1.png)](assets/2023-04-07/level-1.png)
+{{< /card >}}
+
+{{< card header="Credits">}}
+[![Credits](assets/2023-04-07/credits.png)](assets/2023-04-07/credits.png)
+{{< /card >}}
+{{< /cardpane >}}
