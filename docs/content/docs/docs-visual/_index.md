@@ -19,15 +19,18 @@ Wenn Du Dich interessiert, [Dich visuell zu beteiligen](../contributing/visual/)
 * Bitte achte darauf, dass alle Pivots korrekt gesetzt sind, gerade bei Dingen, die animiert werden sollen oder von Dir animiert wurden.
   Das Pivot vom Gesamtmodell soll unten in der Mitte des Modells sein.
 * Orientierung an den Unity-Achsen:
-  * X-Achse: nach rechts
-  * Y-Achse: nach oben
-  * Z-Achse: nach vorne
+  * X-Achse: entspricht X+ in Blender
+  * Y-Achse: entspricht Z+ in Blender
+  * Z-Achse: entspricht Y- in Blender
     
-    Wenn Du die Achsenorientierung prüfen möchtest, geht das leider nur mit Unity. Hierzu kannst Du Dir irgendeine Unity-Version installieren, ein neues leeres Projekt erstellen, Deine `.fbx` Datei ins Projekt ziehen und dann in der Scene ablegen.
-    
-    ![Achsenorientierung](assets/achsenorientierung-by-unity.png)
-    
-    (Originalbild vom Unity Open Game "Chop Chop")
+    Wenn Du etwas modellierst, dass eine Richtung hat (z.B. ein Tier, ein Charaketer, ein Waffe), dann musst Du diese in Blender so ausrichten, dass die Richtung, in die das Objekt schaut, in Richtung Y- orientiert ist. Siehe hier z.B. unseren Wolf:
+
+    ![Wolf in Blender](assets/axis-blender.png)
+
+    In Unity orientiert sich das Objekt dann mithilfe unseres [Export-Scripts](blender/) automatisch korrekt der Z-Achse.
+
+    ![Wolf in Unity](assets/axis-unity.png)
+
 * Skalierung: 1 Blender Unit = 1 Meter = 1 Unity Unit.
   Wenn wir Dein Modell in Unity importieren, muss es mit einem 1/1/1 Scaling bereits die korrekte Größe haben.
 * Benutze bitte keinerlei Texturen, außer die [Farbpaletten-Texture](colors/).
