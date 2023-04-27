@@ -174,17 +174,24 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			blueprintInstance.Activate();
 
 			// We're adjusting the position for the tile by 0.5f because the tile's pivot is at the center.
-			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + 0.5f), terrainHit.collider.bounds.center.y,
+			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + 0.5f), terrainHit.point.y,
 				Mathf.Floor(terrainHit.point.z + 0.5f));
 
-			_buildContext.TilePosition = tilePosition;
-
 			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
-			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down, out var terrainBoxHit,
+			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down,
+				out var terrainBoxWithObstaclesHit,
 				Quaternion.identity, 20, _terrainAndObstacleLayerMask);
 
-			var hasValidPosition = terrainBoxHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
-			                       && terrainBoxHit.collider.TryGetComponent<BuildInformation>(out var buildInformation)
+			Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * 0.45f, Vector3.down, out var terrainBoxHit,
+				Quaternion.identity, 20, TerrainLayerMask);
+
+			tilePosition = new(Mathf.Floor(terrainBoxHit.point.x + 0.5f), terrainBoxHit.collider.bounds.center.y,
+				Mathf.Floor(terrainBoxHit.point.z + 0.5f));
+			_buildContext.TilePosition = tilePosition;
+
+			var hasValidPosition = terrainBoxWithObstaclesHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
+			                       && terrainBoxWithObstaclesHit.collider.TryGetComponent<BuildInformation>(
+				                       out var buildInformation)
 			                       && buildInformation.IsBuildable;
 
 			var needsMaterialSwap = _buildContext.PreviousHasValidPosition != hasValidPosition;
