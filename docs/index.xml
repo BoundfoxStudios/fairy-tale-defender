@@ -154,7 +154,74 @@ Dieser könnte wie folgt aussehen.&lt;/p>
 Das ist zu diesem Zeitpunkt auch noch nicht wichtig und wird nach dem MVP angegangen.
 Natürlich kann, wenn sich genug beteiligen, auch in der MVP-Phase bereits eine Implementierung von Menüs, Optionen etc. geschehen.
 Bei gewissen Implementierungen kommt man sich hier ja auch nicht in die Quere.&lt;/p>
-&lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Game-Design-Document: Terrain</title><link>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</guid><description>
+&lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Docs: Screenshots-Historie</title><link>https://docs.fairytaledefender.de/docs/screenshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/screenshots/</guid><description>
+&lt;p>Klicke Screenshots an, um sie zu vergrößern.&lt;/p>
+&lt;h2 id="27042023">27.04.2023&lt;/h2>
+&lt;div class="td-card-deck card-deck mb-4">
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Main Menu
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-27/main-menu.png">&lt;img src="assets/2023-04-27/main-menu.png" alt="Main Menu">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Level 1
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-27/level-1.png">&lt;img src="assets/2023-04-27/level-1.png" alt="Level 1">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Credits
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-27/credits.png">&lt;img src="assets/2023-04-27/credits.png" alt="Credits">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;h2 id="07042023">07.04.2023&lt;/h2>
+&lt;div class="td-card-deck card-deck mb-4">
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Main Menu
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-07/main-menu.png">&lt;img src="assets/2023-04-07/main-menu.png" alt="Main Menu">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Level 1
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-07/level-1.png">&lt;img src="assets/2023-04-07/level-1.png" alt="Level 1">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;div class="td-card card mb-4">
+&lt;div class="card-header">
+Credits
+&lt;/div>
+&lt;div class="card-body">
+&lt;p class="card-text">
+&lt;a href="assets/2023-04-07/credits.png">&lt;img src="assets/2023-04-07/credits.png" alt="Credits">&lt;/a>
+&lt;/p>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Game-Design-Document: Terrain</title><link>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</guid><description>
 &lt;p>Die Karten innerhalb der verschiedenen Level sind grundsätzlich rasterbasiert. Dabei handelt es sich nicht um flache Karten, sondern es sollen auch bergige Welten möglich sein.
 Es sollen abrupte größere Sprünge in der Höhe möglich sein, wie z.B. bei Bergen, um die Höhenunterschiede nicht ausschließlich kontinuierlich in Stufen zu gestalten. Damit würde die Landschaft nicht vollkommen homogen aussehen und etwas mehr Abwechslung für das Auge bieten.&lt;/p>
 &lt;p>Die einzelnen Wege werden ebenfalls auf diesem Raster platziert, andere Dekoelemente wie Bäume hingegen sollen absolut frei von Designern platziert werden können.&lt;/p>
