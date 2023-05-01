@@ -1350,7 +1350,6 @@ MonoBehaviour:
     type: 2}
   <TimeToRotate>k__BackingField: 0.133
   <WeaponRangePreview>k__BackingField: {fileID: 2003418655}
-  <LevelContainerRuntimeAnchor>k__BackingField: {fileID: 0}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <BuiltEventChannel>k__BackingField: {fileID: 11400000, guid: 7ecdd2f74b0d943cea4ce5325c4f3454,
