@@ -190,13 +190,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			// We need it to check, if there is an obstacle placed on the tile.
 			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
 			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
-				out var terrainBoxWithObstaclesHit, Quaternion.identity, 20, _terrainAndObstacleLayerMask);
+				out var terrainWithObstaclesBoxHit, Quaternion.identity, 20, _terrainAndObstacleLayerMask);
 
 			// 5. Additionally, cast one more box cast only hitting the TerrainLayerMask to determine the correct position
 			// to place the tower.
 			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
-				out var terrainBoxHit,
-				Quaternion.identity, 20, TerrainLayerMask);
+				out var terrainBoxHit, Quaternion.identity, 20, TerrainLayerMask);
 
 			// It could be, that we do not hit anything if we cast exactly in a gap of colliders or on some collider walls.
 			// In that case we just exit here and hide the blueprint.
@@ -216,14 +215,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			//   - The BoxCast only hits Terrain -> no obstacle is on top of it
 			//   - The hit TerrainTile needs a BuildInformation script. That script knows, if the tile is buildable or not.
 			//   - If we got a BuildInformation script, we check, if it is buildable.
-			var hasValidPosition = terrainBoxWithObstaclesHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
-								   && terrainBoxWithObstaclesHit.collider
+			var hasValidPosition = terrainWithObstaclesBoxHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
+								   && terrainWithObstaclesBoxHit.collider
 									   .TryGetComponent<BuildInformation>(out var buildInformation)
 								   && buildInformation.IsBuildable;
 
 			// 8. Check, if we need to swap the material if we change from a valid to an invalid position and vice-versa.
 			var needsMaterialSwap = _buildContext.PreviousHasValidPosition is null
-			                        || _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
+									|| _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
 			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
 			if (needsMaterialSwap && hasValidPosition)
