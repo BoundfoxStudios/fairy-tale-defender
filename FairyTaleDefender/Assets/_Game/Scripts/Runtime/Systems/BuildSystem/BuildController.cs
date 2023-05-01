@@ -181,6 +181,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			//   find the tile of the wall and not its neighbour. For the final calculation we'll add 0.5f later to get
 			//   the real center.
 			const float threshold = 0.49f;
+			const float centerAdjustment = 0.5f;
+			const int boxCastHeight = 20;
 
 			// 3. From the raycast position, create a new one that is in the middle of the hit terrain tile.
 			var tilePosition = new Vector3(Mathf.Floor(terrainHit.point.x + threshold), terrainHit.point.y,
@@ -189,13 +191,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			// 4. Make a box cast from above the tile down to the tile, also hitting anything on the ObstacleLayerMask.
 			// We need it to check, if there is an obstacle placed on the tile.
 			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
-			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
-				out var terrainWithObstaclesBoxHit, Quaternion.identity, 20, _terrainAndObstacleLayerMask);
+			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold, Vector3.down,
+				out var terrainWithObstaclesBoxHit, Quaternion.identity, boxCastHeight, _terrainAndObstacleLayerMask);
 
 			// 5. Additionally, cast one more box cast only hitting the TerrainLayerMask to determine the correct position
 			// to place the tower.
-			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * 20, Vector3.one * threshold, Vector3.down,
-				out var terrainBoxHit, Quaternion.identity, 20, TerrainLayerMask);
+			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold, Vector3.down,
+				out var terrainBoxHit, Quaternion.identity, boxCastHeight, TerrainLayerMask);
 
 			// It could be, that we do not hit anything if we cast exactly in a gap of colliders or on some collider walls.
 			// In that case we just exit here and hide the blueprint.
@@ -207,8 +209,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 
 			// 6. From the hit terrain, determine the real position for the blueprint.
 			// For the final position, aka the tile's center, we add 0.5f.
-			tilePosition = new(Mathf.Floor(terrainBoxHit.point.x + 0.5f), terrainBoxHit.collider.bounds.center.y,
-				Mathf.Floor(terrainBoxHit.point.z + 0.5f));
+			tilePosition = new(Mathf.Floor(terrainBoxHit.point.x + centerAdjustment), terrainBoxHit.collider.bounds.center.y,
+				Mathf.Floor(terrainBoxHit.point.z + centerAdjustment));
 			_buildContext.TilePosition = tilePosition;
 
 			// 7. Determine if we have a valid position. A valid positions means:
