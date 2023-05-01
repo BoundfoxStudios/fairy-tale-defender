@@ -88,6 +88,9 @@ jobs:
           projectPath: ${{ inputs.project-path }}
           unityVersion: ${{ matrix.unity-version }}
           githubToken: ${{ secrets.GITHUB_TOKEN }}
+      - name: Return license
+        uses: game-ci/unity-return-license@v2
+        if: failure() || cancelled()
     strategy:
       fail-fast: ${{ inputs.fail-fast }}
       max-parallel: ${{ inputs.max-parallel }}
