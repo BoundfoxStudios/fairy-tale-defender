@@ -71,7 +71,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			}
 
 			public bool IsValidPosition { get; set; }
-			public bool PreviousHasValidPosition { get; set; }
+			public bool? PreviousHasValidPosition { get; set; }
 			public ICanCalculateEffectiveWeaponDefinition WeaponDefinition { get; }
 
 			public BuildContext(IAmBuildable buildable)
@@ -222,7 +222,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 								   && buildInformation.IsBuildable;
 
 			// 8. Check, if we need to swap the material if we change from a valid to an invalid position and vice-versa.
-			var needsMaterialSwap = _buildContext.PreviousHasValidPosition != hasValidPosition;
+			var needsMaterialSwap = _buildContext.PreviousHasValidPosition is null
+			                        || _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
 			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
 			if (needsMaterialSwap && hasValidPosition)
