@@ -12,14 +12,9 @@ runs:
       id: variables
       run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
       shell: sh
-    - name: Write Build Manifest to outputs
-      uses: BoundfoxStudios/action-set-text-output@v1
+    - name: Set ouput
       id: content
-      with:
-        text: |
-          {
-            "sha": "${{ github.sha }}",
-            "shortSha": "${{ steps.variables.outputs.sha_short }}",
-            "runId": ${{ github.run_id }},
-            "runNumber": ${{ github.run_number }}
-          }     
+      shell: sh
+      run: | 
+        echo "value={ \"sha\": \"${{ github.sha }}\", \"shortSha\": \"${{ steps.variables.outputs.sha_short }}\", \"runId\": ${{ github.run_id }}, \"runNumber\": ${{ github.run_number }} }" >> $GITHUB_OUTPUT 
+        
