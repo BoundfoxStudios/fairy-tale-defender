@@ -17,7 +17,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public const string HealthSystem = MenuName + "/Health System";
 			public const string Weapons = MenuName + "/Weapons";
 			public const string Targeting = Weapons + "/Targeting";
-			public const string CameraSystem = Weapons + "/Camera System";
+			public const string CameraSystem = MenuName + "/Camera System";
 			public const string GameplaySystem = MenuName + "/Gameplay System";
 			public const string SpawnSystem = MenuName + "/Spawn System";
 			public const string RuntimeAnchors = MenuName + "/Runtime Anchors";
