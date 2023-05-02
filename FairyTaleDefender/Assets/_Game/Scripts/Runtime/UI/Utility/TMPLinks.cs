@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -5,6 +6,7 @@ using UnityEngine.EventSystems;
 namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[RequireComponent(typeof(TextMeshProUGUI))]
+	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(TMPLinks))]
 	public class TMPLinks : MonoBehaviour, IPointerClickHandler
 	{
 		private Camera? _camera;

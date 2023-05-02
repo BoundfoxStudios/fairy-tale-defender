@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -8,6 +9,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
 	[RequireComponent(typeof(RectTransform))]
 	[ExecuteInEditMode]
+	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(MaximumRectSize))]
 	public class MaximumRectSize : UIBehaviour, ILayoutSelfController
 	{
 		private RectTransform _rectTransform = default!;

@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
@@ -6,6 +7,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 {
+	[AddComponentMenu(Constants.MenuNames.Input + "/" + nameof(SelectionController))]
 	public class SelectionController : MonoBehaviour
 	{
 		[field: Header("References")]
