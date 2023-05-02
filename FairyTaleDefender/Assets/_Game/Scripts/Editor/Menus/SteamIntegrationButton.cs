@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Cysharp.Threading.Tasks;
 using UnityEditor;
-using UnityEditor.Experimental;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.UIElements;
@@ -74,7 +74,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 
 		private static bool IsSteamIntegrationEnabled(out HashSet<string> uniqueDefines)
 		{
-			PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
+			PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.Standalone,
 				out var defines);
 
 			uniqueDefines = new(defines);
@@ -89,14 +89,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			if (isSteamIntegrationEnabled)
 			{
 				uniqueDefines.Remove(Constants.CompilerDirectives.EnableSteam);
-				PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
-					uniqueDefines.ToArray());
-
-				return;
+			}
+			else
+			{
+				uniqueDefines.Add(Constants.CompilerDirectives.EnableSteam);
 			}
 
-			uniqueDefines.Add(Constants.CompilerDirectives.EnableSteam);
-			PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
+			PlayerSettings.SetScriptingDefineSymbols(NamedBuildTarget.Standalone,
 				uniqueDefines.ToArray());
 		}
 
