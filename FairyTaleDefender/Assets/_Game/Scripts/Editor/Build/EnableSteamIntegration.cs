@@ -25,12 +25,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 				return;
 			}
 
-			PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
+			PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.Standalone,
 				out var defines);
 
 			var uniqueDefines = new HashSet<string>(defines) { Constants.CompilerDirectives.EnableSteam };
 
-			PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup,
+			PlayerSettings.SetScriptingDefineSymbols(NamedBuildTarget.Standalone,
 				uniqueDefines.ToArray());
 		}
 	}
