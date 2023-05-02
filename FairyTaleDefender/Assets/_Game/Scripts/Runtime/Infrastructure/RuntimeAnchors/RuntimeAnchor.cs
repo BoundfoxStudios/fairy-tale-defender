@@ -1,9 +1,11 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors
 {
 	[DefaultExecutionOrder(-1000)]
+	[AddComponentMenu(Constants.MenuNames.RuntimeAnchors + "/" + nameof(RuntimeAnchor))]
 	public class RuntimeAnchor : MonoBehaviour
 	{
 		[field: SerializeField]
