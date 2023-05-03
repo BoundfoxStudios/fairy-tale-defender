@@ -451,6 +451,16 @@ PrefabInstance:
       objectReference: {fileID: 745936063}
     - target: {fileID: 9091412135412897676, guid: 70f16d547cc61d6489472a6e4f89d784,
         type: 3}
+      propertyPath: <CanvasScaler>k__BackingField
+      value: 
+      objectReference: {fileID: 1669035950}
+    - target: {fileID: 9091412135412897676, guid: 70f16d547cc61d6489472a6e4f89d784,
+        type: 3}
+      propertyPath: <TooltipCanvas>k__BackingField
+      value: 
+      objectReference: {fileID: 1669035951}
+    - target: {fileID: 9091412135412897676, guid: 70f16d547cc61d6489472a6e4f89d784,
+        type: 3}
       propertyPath: <ContainerRectTransform>k__BackingField
       value: 
       objectReference: {fileID: 745936064}
@@ -1163,6 +1173,24 @@ PrefabInstance:
 --- !u!224 &1669035949 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1669035948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1669035950 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7329999705680356852, guid: 42707aee6922e4159909253356ec706a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1669035948}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!223 &1669035951 stripped
+Canvas:
+  m_CorrespondingSourceObject: {fileID: 7329999705680356853, guid: 42707aee6922e4159909253356ec706a,
     type: 3}
   m_PrefabInstance: {fileID: 1669035948}
   m_PrefabAsset: {fileID: 0}
