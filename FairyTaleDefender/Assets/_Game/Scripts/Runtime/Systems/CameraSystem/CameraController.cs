@@ -1,7 +1,7 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
-using Cinemachine;
+using Unity.Cinemachine;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
@@ -10,7 +10,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
 	public class CameraController : MonoBehaviour
 	{
 		[field: SerializeField]
-		private CinemachineVirtualCamera VirtualCamera { get; set; } = default!;
+		private CinemachineCamera VirtualCamera { get; set; } = default!;
 
 		[field: SerializeField]
 		private InputReaderSO InputReader { get; set; } = default!;
