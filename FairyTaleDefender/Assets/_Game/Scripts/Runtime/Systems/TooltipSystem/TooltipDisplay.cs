@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
@@ -6,6 +7,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 	{
 		[field: SerializeField]
 		protected RectTransform ContainerRectTransform { get; private set; } = default!;
+
+		[field: SerializeField]
+		private Canvas TooltipCanvas { get; set; } = default!;
 
 		protected abstract void SetTooltip<T>(T tooltip) where T : ITooltip;
 
@@ -36,9 +40,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 
 		public void SetPosition(Vector2 screenPosition)
 		{
+			var normalizedScreenPosition = screenPosition / TooltipCanvas.scaleFactor;
 			var size = ContainerRectTransform.sizeDelta;
 			var halfSizeX = size.x / 2;
-			var offsetPosition = screenPosition + new Vector2(-halfSizeX, 5);
+			var offsetPosition = normalizedScreenPosition + new Vector2(-halfSizeX, 5);
 
 			offsetPosition = ContainPositionInScreenBoundary(offsetPosition, size);
 
@@ -47,22 +52,26 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 
 		private Vector2 ContainPositionInScreenBoundary(Vector2 offsetPosition, Vector2 size)
 		{
+			var scaleFactor = TooltipCanvas.scaleFactor;
+			var normalizedScreenWidth = Screen.width / scaleFactor;
+			var normalizedScreenHeight = Screen.height / scaleFactor;
+
 			if (offsetPosition.x < 0)
 			{
 				offsetPosition.x = 0;
 			}
-			else if (offsetPosition.x + size.x > Screen.width)
+			else if (offsetPosition.x + size.x > normalizedScreenWidth)
 			{
-				offsetPosition.x = Screen.width - size.x;
+				offsetPosition.x = normalizedScreenWidth - size.x;
 			}
 
 			if (offsetPosition.y < 0)
 			{
 				offsetPosition.y = 0;
 			}
-			else if (offsetPosition.y + size.y > Screen.height)
+			else if (offsetPosition.y + size.y > normalizedScreenHeight)
 			{
-				offsetPosition.y = Screen.height - size.y;
+				offsetPosition.y = normalizedScreenHeight - size.y;
 			}
 
 			return offsetPosition;
