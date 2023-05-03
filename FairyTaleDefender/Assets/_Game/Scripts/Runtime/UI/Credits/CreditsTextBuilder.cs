@@ -14,7 +14,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 	public class CreditsTextBuilder : MonoBehaviour
 	{
 		[field: SerializeField]
-		private int CreditTextSize { get; set; } = 75;
+		private int CreditTextSize { get; set; } = 150;
 
 		[field: SerializeField]
 		private ScrollRect ScrollView { get; set; } = default!;
@@ -77,7 +77,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 
 		private string BuildContributorCredits(Contributor[] contributors, string type)
 		{
-			var credits = $"<size={CreditTextSize}>";
+			var credits = $"<size={CreditTextSize}%>";
 			credits = contributors
 				.Where(contributor => contributor.Contributions.Contains(type))
 				.Aggregate(credits, CreateCreditItem);
