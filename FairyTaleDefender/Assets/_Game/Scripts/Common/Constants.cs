@@ -25,5 +25,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public const string SteamIntegration = Integrations + "/Steam";
 			public const string BuildSystem = MenuName + "/Build System";
 		}
+
+		public static class SocialLinks
+		{
+			public const string GitHub = "https://github.com/boundfoxstudios/fairy-tale-defender";
+
+			public const string FairyTaleDefenderYouTubePlaylist =
+				"https://www.youtube.com/playlist?list=PLxVAs8AY4TgchOtBZqg4qvFeq6w74ZtAm";
+
+			public const string Discord = "https://discord.gg/tHqNzMT";
+		}
 	}
 }
