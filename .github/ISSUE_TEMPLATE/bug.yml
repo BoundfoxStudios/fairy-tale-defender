@@ -38,9 +38,8 @@ body:
         - Windows 8
         - Windows 10
         - Linux (genaue Distribution bitte in der Fehlerbeschreibung angeben)
-        - macOS Monterey
-        - macOS Big Sur
-        - macOS Catalina
+        - macOS Ventura (13)
+        - macOS Monterey (12)
         - Anderes (bitte in der Fehlerbeschreibung angeben)
     validations:
       required: true
