@@ -73,25 +73,50 @@ jobs:
           name: BlenderStarterKit
           path: ./BlenderStarterKit/BlenderStarterKit.zip
   
+  create-blender-studio:
+    runs-on: ubuntu-latest
+    needs: [convert-color-palette-summer]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: ${{ inputs.ref }}  
+      - run: mkdir BlenderStudio
+      - run: cp ./resources/Blendfiles/Blender-Studio.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Props.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Towers.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Mushroom.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Grass-Reed-Flowers-Bushes.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/House.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStudio
+      - uses: actions/download-artifact@v3
+        with:
+          name: ColorPalette_Summer.png
+          path: ./BlenderStudio/textures/
+      - run: zip ./BlenderStudio/BlenderStudio.zip ./BlenderStudio/textures/*.* ./BlenderStudio/*.*
+      - uses: actions/upload-artifact@v3
+        with:
+          name: BlenderStudio
+          path: ./BlenderStudio/BlenderStudio.zip
+  
   check-broken-links:
     runs-on: ubuntu-latest
-    needs: [create-blender-starter-kit, convert-color-palette-summer, convert-color-palette-summer-description]
+    needs: [create-blender-starter-kit, create-blender-studio, convert-color-palette-summer, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
-      - uses: ./.github/actions/download-all-psd-to-png-artifacts
+      - uses: ./.github/actions/download-all-artifacts
       - uses: ./.github/actions/hugo-check-broken-links
 
   deploy:
     runs-on: ubuntu-latest
     if: github.event_name != 'workflow_call'
-    needs: [check-broken-links, create-blender-starter-kit, convert-color-palette-summer, convert-color-palette-summer-description]
+    needs: [check-broken-links, create-blender-starter-kit, create-blender-studio, convert-color-palette-summer, convert-color-palette-summer-description]
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: ./.github/actions/download-all-psd-to-png-artifacts
+      - uses: ./.github/actions/download-all-artifacts
       - uses: actions/setup-node@v3
         with:
           node-version: 16
