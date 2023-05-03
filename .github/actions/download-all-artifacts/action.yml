@@ -1,0 +1,21 @@
+name: Download all artifacts
+description: Downloads all artifacts to the correct places within the current workflow.  
+runs:
+  using: 'composite'
+  steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: BlenderStarterKit
+        path: docs/content/docs/docs-visual/blender/assets
+    - uses: actions/download-artifact@v3
+      with:
+        name: BlenderStudio
+        path: docs/content/docs/docs-visual/blender/studio/assets
+    - uses: actions/download-artifact@v3
+      with:
+        name: ColorPalette_Summer_Description.png
+        path: docs/content/docs/docs-visual/colors/assets
+    - uses: actions/download-artifact@v3
+      with:
+        name: ColorPalette_Summer.png
+        path: docs/content/docs/docs-visual/colors/assets
