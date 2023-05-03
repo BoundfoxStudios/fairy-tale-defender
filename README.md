@@ -107,6 +107,12 @@ Hier versuchen wir alle Begriffe zu sammeln und zu erklären, um das allgemeine 
 Aktuell ist [Manu](https://github.com/ManuelRauber) Ansprechpartner für alles zum Projekt.
 Am besten erreichst Du ihn auf [Discord][2].
 
+## Screenshots vom Spiel
+
+![Screenshot](docs/content/docs/screenshots//assets/2023-04-27/level-1.png)
+
+Mehr Screenshots findest Du [hier](https://docs.fairytaledefender.de/docs/screenshots/).
+
 ## Wichtige Links
 
 * [YouTube-Kanal][1]
