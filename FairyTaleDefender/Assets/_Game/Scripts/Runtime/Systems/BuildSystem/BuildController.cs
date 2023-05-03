@@ -6,6 +6,7 @@ using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
+using DG.Tweening;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
@@ -137,6 +138,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 				return;
 			}
 
+			_buildContext.BlueprintInstance.transform.DOComplete();
 			WeaponRangePreview.StopDisplayingWeaponRange();
 			var rotation = _buildContext.BlueprintInstance.transform.rotation;
 			Destroy(_buildContext.BlueprintInstance);
