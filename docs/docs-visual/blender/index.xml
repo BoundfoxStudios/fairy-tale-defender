@@ -1,0 +1,77 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Fairy Tale Defender – Blender</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/</link><description>Recent content in Blender on Fairy Tale Defender</description><generator>Hugo -- gohugo.io</generator><language>de-de</language><atom:link href="https://docs.fairytaledefender.de/docs/docs-visual/blender/index.xml" rel="self" type="application/rss+xml"/><item><title>Docs: Blender-Studio</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/studio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/blender/studio/</guid><description>
+&lt;p>Studio für Videosequenzen für das Spiel.&lt;/p>
+&lt;ul>
+&lt;li>Software: Blender v3.5&lt;/li>
+&lt;li>Add-ons erforderlich: nein&lt;/li>
+&lt;/ul>
+&lt;p>&lt;a href="assets/BlenderStudio.zip">Download&lt;/a>&lt;/p>
+&lt;p>&lt;img src="assets/Blender-Studio.png" alt="Screenshot Blender-Studio">&lt;/p>
+&lt;h2 id="assets">Assets&lt;/h2>
+&lt;p>In der Collection &lt;code>ASSETS/&lt;/code> befinden sich die referenzierten 3D-Modelle aus den externen Dateien (Props, Tiles, usw.).&lt;/p>
+&lt;h2 id="himmel-mit-wolken">Himmel mit Wolken&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Sky&lt;/strong>&lt;/p>
+&lt;p>Viele kleine Wolken in tieferer Ebene und einige größere Wolken am Himmel.&lt;/p>
+&lt;ul>
+&lt;li>Wolken wurden mittels Particle System vervielfacht und händisch etwas aufgeteilt&lt;/li>
+&lt;/ul>
+&lt;h3 id="steuerung">Steuerung&lt;/h3>
+&lt;p>Steuerbar sind die Wolken über den Z-Winkel vom Objekt: ENVIRONMENT/clouds-rotation&lt;/p>
+&lt;p>Für eine sanfte Bewegung der Wolken wurde eine Action erstellt die per Blending:Add 1° Drehung hinzufügt.
+Für die andere Bewegungsrichtung genügt es auf Blending:Subtract umzustellen.&lt;/p>
+&lt;h2 id="sonne--licht">Sonne / Licht&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>/sun-object
+&lt;ul>
+&lt;li>Light_1-Key&lt;/li>
+&lt;li>Light_1-Keyhelper&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>/sun-focus&lt;/li>
+&lt;li>/Light-Fill-.. (.. = 1,2,3,usw.)&lt;/li>
+&lt;/ul>
+&lt;p>Die Sonne dient auch als primäre Lichtquelle (Key).
+Die sekundären Lichtquellen (Fill) imitieren die indirekte Beleuchtung.
+Für manche Szenen könnte auch eine Sonne interessant sein, deshalb die grafische Umsetzung.&lt;/p>
+&lt;h3 id="steuerung-1">Steuerung&lt;/h3>
+&lt;p>Platzierung der Sonne über die Winkel (X,Y,Z) vom Objekt: ENVIRONMENT/sun-object&lt;/p>
+&lt;p>Steuerung/Fokus vom Lichtkegel der Sonne mittels Objekt: ENVIRONMENT/sun-focus&lt;/p>
+&lt;h2 id="waldgebiet-wald-im-hintergrund">Waldgebiet (Wald im Hintergrund)&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Forest&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Waldgebiet wird mittels Particle System (PS) generiert&lt;/li>
+&lt;li>nur Objekte die in der Collection &amp;ldquo;Forest_PS-Objects&amp;rdquo; enthalten sind werden berücksichtigt&lt;/li>
+&lt;/ul>
+&lt;h2 id="nebel">Nebel&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Fog&lt;/strong>&lt;/p>
+&lt;p>Ein leichter Nebel auf ganzer Map und etwas stärkere Nebel-Abschnitte im Waldgebiet.&lt;/p>
+&lt;ul>
+&lt;li>einzelne kleine Abschnitte für das Waldgebiet&lt;/li>
+&lt;li>Umsetzung Nebel mittels Shader&lt;/li>
+&lt;/ul>
+&lt;h2 id="wassereffekte">Wassereffekte&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Water-effects&lt;/strong>&lt;/p>
+&lt;h3 id="strömung-water-flow">Strömung &amp;ldquo;Water-flow&amp;rdquo;&lt;/h3>
+&lt;ul>
+&lt;li>eigenes Objekt über dem Tiles&lt;/li>
+&lt;li>Umsetzung mittels Shader&lt;/li>
+&lt;/ul>
+&lt;h3 id="wasserringe-water-ripples-ringe-bei-hindernisse">Wasserringe &amp;ldquo;Water-ripples&amp;rdquo; (Ringe bei Hindernisse)&lt;/h3>
+&lt;ul>
+&lt;li>eigenes Objekt über dem Tiles&lt;/li>
+&lt;li>Umsetzung durch eine Mischung aus Geometry Nodes, Mesh Attributs und Shader&lt;/li>
+&lt;li>nur Objekte die in der Collection &amp;ldquo;water_Edge-cutters&amp;rdquo; enthalten sind werden berücksichtigt&lt;/li>
+&lt;/ul>
+&lt;h2 id="wind">Wind&lt;/h2>
+&lt;ul>
+&lt;li>Umsetzung durch eine Mischung aus Simple Deform Modifier und Drivers zur zentralen Steuerung&lt;/li>
+&lt;li>alle Objekte die vom Wind beeinflusst werden sollen (z.B. Bäume, Sträucher) benötigen den Modifier&lt;/li>
+&lt;li>Windstärke wird durch &amp;ldquo;Angle&amp;rdquo; beeinflusst, die Feineinstellung erfolgt durch &amp;ldquo;Limits&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="steuerung-2">Steuerung&lt;/h3>
+&lt;p>Zur einfacheren Regulierung wurden Actions erstellt, Objekt: ENVIRONMENT/wind-force&lt;/p>
+&lt;p>In der NLA kann ein sanfter Wind mit Windböen zusammengestellt werden.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Wind: Geometry Nodes&lt;/h4>
+Wir hätten den Wind in Blender gerne wie in Unity (mittels UV-Map, anhand der Y-Achse) umgesetzt. Falls Du die Umsetzung mit Geometry Nodes probieren möchtest, dann wende Dich an einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender#ansprechpartner">Ansprechpartner&lt;/a>.
+&lt;/div></description></item></channel></rss>

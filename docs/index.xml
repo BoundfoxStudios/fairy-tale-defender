@@ -305,138 +305,83 @@ In diesem Modus werden:&lt;/p>
 &lt;p>Der Spieler spielt aus einer Vogelperspektive.
 Er hat keinen steuerbaren Charakter.&lt;/p>
 &lt;p>Der Spieler kann die Kamera rein-/rauszoomen, bewegen und auf der Y-Achse drehen.
-Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item><item><title>Docs: Blender</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/blender/</guid><description>
-&lt;p>Auf dieser Seite findest Du alles, was Du zum Modellieren in Blender wissen musst.&lt;/p>
-&lt;h2 id="blender-starter-kit">Blender Starter-Kit&lt;/h2>
-&lt;p>Hier findest Du das Blender Starter-Kit.&lt;/p>
-&lt;div class="alert alert-primary" role="alert">
-&lt;h4 class="alert-heading">Download&lt;/h4>
-&lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p>
-&lt;p>Es beinhaltet:&lt;/p>
+Die Standardeinstellung ist eine isometrische Darstellung des Spielfeldes.&lt;/p></description></item><item><title>Docs: Blender-Studio</title><link>https://docs.fairytaledefender.de/docs/docs-visual/blender/studio/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/blender/studio/</guid><description>
+&lt;p>Studio für Videosequenzen für das Spiel.&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>Props.blend&lt;/code>: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.&lt;/li>
-&lt;li>&lt;code>Tiles.blend&lt;/code>: Referenz-Datei mit den Tiles aus dem Spiel für Größen.&lt;/li>
-&lt;li>&lt;code>Starter.blend&lt;/code>: Hiermit startest Du ein neues Asset für das Spiel.&lt;/li>
-&lt;li>&lt;code>textures/ColorPalette_Summer.png&lt;/code>: Die sommerliche &lt;a href="../colors/">Farbpalette&lt;/a>.&lt;/li>
-&lt;li>&lt;code>textures/Windscale.png&lt;/code>: Die Skala für &lt;a href="../wind/">Wind-Effekte&lt;/a>.&lt;/li>
+&lt;li>Software: Blender v3.5&lt;/li>
+&lt;li>Add-ons erforderlich: nein&lt;/li>
 &lt;/ul>
-&lt;p>Bitte beachte, dass die Texture und das passende Material bereits in der &lt;code>Starter.blend&lt;/code> eingebunden sind.
-Du musst diese nur noch benutzen.&lt;/p>
-&lt;/div>
-&lt;h2 id="blender-einstellungen">Blender-Einstellungen&lt;/h2>
-&lt;p>Am besten ist es, wenn Du die &lt;code>Starter.blend&lt;/code> als Grundlage nutzt, um eigene Assets zu erstellen.
-Dort ist bereits die Farbpaletten-Textur und das &lt;a href="#export-script">Export-Script&lt;/a> hinterlegt.&lt;/p>
-&lt;p>Achte bitte darauf, dass Du das bestehende Material &lt;code>ColorPalette&lt;/code> nutzt.
-Bitte erstelle keine weiteren Materialien und nenne das bestehende Material auch nicht um.
-Das Material muss &lt;code>ColorPalette&lt;/code> heißen, da wir beim Import in Unity nach diesem Suchen und mit dem Material der Engine ersetzen.&lt;/p>
-&lt;h2 id="export-einstellungen">Export-Einstellungen&lt;/h2>
-&lt;p>Wenn Du mit Deinem Modell fertig bist und es exportieren willst, dann beachte bitte folgende Dinge:&lt;/p>
+&lt;p>&lt;a href="assets/BlenderStudio.zip">Download&lt;/a>&lt;/p>
+&lt;p>&lt;img src="assets/Blender-Studio.png" alt="Screenshot Blender-Studio">&lt;/p>
+&lt;h2 id="assets">Assets&lt;/h2>
+&lt;p>In der Collection &lt;code>ASSETS/&lt;/code> befinden sich die referenzierten 3D-Modelle aus den externen Dateien (Props, Tiles, usw.).&lt;/p>
+&lt;h2 id="himmel-mit-wolken">Himmel mit Wolken&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Sky&lt;/strong>&lt;/p>
+&lt;p>Viele kleine Wolken in tieferer Ebene und einige größere Wolken am Himmel.&lt;/p>
 &lt;ul>
-&lt;li>Exportiere pro Modell eine eigene FBX-Datei.&lt;/li>
-&lt;li>Achte darauf, dass das Modell im Ursprung liegt, bevor Du es exportierst.&lt;/li>
-&lt;li>Stelle die folgenden Einstellungen im Export-Dialog ein:&lt;/li>
+&lt;li>Wolken wurden mittels Particle System vervielfacht und händisch etwas aufgeteilt&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="assets/blender-settings.png" alt="Blender Einstellungen">&lt;/p>
-&lt;p>Wenn Du mehrere Modelle in einer Blender-Datei hast, dann ist folgendes Script nützlich für den Export:&lt;/p>
-&lt;h3 id="export-script">Export-Script&lt;/h3>
-&lt;blockquote>
-&lt;p>Das Export-Script ist in der &lt;code>Starter.blend&lt;/code> im Blender Starter-Kit bereits enthalten.&lt;/p>
-&lt;/blockquote>
-&lt;p>Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
-Kopiere dann folgendes Script in den leeren Text-Editor.&lt;/p>
-&lt;p>Mit dem Skript hast Du zwei Möglichkeiten, einen Export anzustoßen.&lt;/p>
-&lt;ol>
-&lt;li>Export der aktiven Collection: Wähle hierzu einfach eine Scene-Collection an und starte das Skript. Es wird eine FBX-Datei erzeugt mit allem in der Scene-Collection.
-Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
-&lt;li>Export der selektierten Objekte: Wähle ein oder mehrere Objekte an und starte das Skript. Es wird pro Objekt eine eigene FBX-Datei erzeugt. Außerdem wird jedes Objekt automatisch beim Export in den Ursprung geschoben.&lt;/li>
-&lt;/ol>
-&lt;p>In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.&lt;/p>
-&lt;p>Bitte beachte, dass Du im Object-Mode sein musst zum Exportieren.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> os
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># export to blend file location&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>basedir = os.path.dirname(bpy.data.filepath)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">if&lt;/span> &lt;span style="color:#00f">not&lt;/span> basedir:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">raise&lt;/span> Exception(&lt;span style="color:#a31515">&amp;#34;Blend file is not saved&amp;#34;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>view_layer = bpy.context.view_layer
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>obj_active = view_layer.objects.active
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection = bpy.context.selected_objects
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection_count = len(selection)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># use active collection if no object is selected&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">if&lt;/span> selection_count == 0:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name = bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fn = os.path.join(basedir, name)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.export_scene.fbx(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_active_collection=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> object_types= {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>},
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">else&lt;/span>:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.context.view_layer.objects.active = obj
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_grouped(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> extend=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> type=&lt;span style="color:#a31515">&amp;#39;CHILDREN_RECURSIVE&amp;#39;&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> )
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Save the initial location and set the object to 0/0/0&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oldLocation = obj.location.copy()
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = (0, 0, 0)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># some exporters only use the active object&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> view_layer.objects.active = obj
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name = bpy.path.clean_name(obj.name)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fn = os.path.join(basedir, name)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.export_scene.fbx(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_selection=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> object_types= {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>},
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Restore the old location &lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = oldLocation
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">False&lt;/span>)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#a31515">&amp;#34;written:&amp;#34;&lt;/span>, fn)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> view_layer.objects.active = obj_active
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Coding Conventions</title><link>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</guid><description>
+&lt;h3 id="steuerung">Steuerung&lt;/h3>
+&lt;p>Steuerbar sind die Wolken über den Z-Winkel vom Objekt: ENVIRONMENT/clouds-rotation&lt;/p>
+&lt;p>Für eine sanfte Bewegung der Wolken wurde eine Action erstellt die per Blending:Add 1° Drehung hinzufügt.
+Für die andere Bewegungsrichtung genügt es auf Blending:Subtract umzustellen.&lt;/p>
+&lt;h2 id="sonne--licht">Sonne / Licht&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>/sun-object
+&lt;ul>
+&lt;li>Light_1-Key&lt;/li>
+&lt;li>Light_1-Keyhelper&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>/sun-focus&lt;/li>
+&lt;li>/Light-Fill-.. (.. = 1,2,3,usw.)&lt;/li>
+&lt;/ul>
+&lt;p>Die Sonne dient auch als primäre Lichtquelle (Key).
+Die sekundären Lichtquellen (Fill) imitieren die indirekte Beleuchtung.
+Für manche Szenen könnte auch eine Sonne interessant sein, deshalb die grafische Umsetzung.&lt;/p>
+&lt;h3 id="steuerung-1">Steuerung&lt;/h3>
+&lt;p>Platzierung der Sonne über die Winkel (X,Y,Z) vom Objekt: ENVIRONMENT/sun-object&lt;/p>
+&lt;p>Steuerung/Fokus vom Lichtkegel der Sonne mittels Objekt: ENVIRONMENT/sun-focus&lt;/p>
+&lt;h2 id="waldgebiet-wald-im-hintergrund">Waldgebiet (Wald im Hintergrund)&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Forest&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>Waldgebiet wird mittels Particle System (PS) generiert&lt;/li>
+&lt;li>nur Objekte die in der Collection &amp;ldquo;Forest_PS-Objects&amp;rdquo; enthalten sind werden berücksichtigt&lt;/li>
+&lt;/ul>
+&lt;h2 id="nebel">Nebel&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Fog&lt;/strong>&lt;/p>
+&lt;p>Ein leichter Nebel auf ganzer Map und etwas stärkere Nebel-Abschnitte im Waldgebiet.&lt;/p>
+&lt;ul>
+&lt;li>einzelne kleine Abschnitte für das Waldgebiet&lt;/li>
+&lt;li>Umsetzung Nebel mittels Shader&lt;/li>
+&lt;/ul>
+&lt;h2 id="wassereffekte">Wassereffekte&lt;/h2>
+&lt;p>&lt;strong>Collection: ENVIRONMENT/Water-effects&lt;/strong>&lt;/p>
+&lt;h3 id="strömung-water-flow">Strömung &amp;ldquo;Water-flow&amp;rdquo;&lt;/h3>
+&lt;ul>
+&lt;li>eigenes Objekt über dem Tiles&lt;/li>
+&lt;li>Umsetzung mittels Shader&lt;/li>
+&lt;/ul>
+&lt;h3 id="wasserringe-water-ripples-ringe-bei-hindernisse">Wasserringe &amp;ldquo;Water-ripples&amp;rdquo; (Ringe bei Hindernisse)&lt;/h3>
+&lt;ul>
+&lt;li>eigenes Objekt über dem Tiles&lt;/li>
+&lt;li>Umsetzung durch eine Mischung aus Geometry Nodes, Mesh Attributs und Shader&lt;/li>
+&lt;li>nur Objekte die in der Collection &amp;ldquo;water_Edge-cutters&amp;rdquo; enthalten sind werden berücksichtigt&lt;/li>
+&lt;/ul>
+&lt;h2 id="wind">Wind&lt;/h2>
+&lt;ul>
+&lt;li>Umsetzung durch eine Mischung aus Simple Deform Modifier und Drivers zur zentralen Steuerung&lt;/li>
+&lt;li>alle Objekte die vom Wind beeinflusst werden sollen (z.B. Bäume, Sträucher) benötigen den Modifier&lt;/li>
+&lt;li>Windstärke wird durch &amp;ldquo;Angle&amp;rdquo; beeinflusst, die Feineinstellung erfolgt durch &amp;ldquo;Limits&amp;rdquo;&lt;/li>
+&lt;/ul>
+&lt;h3 id="steuerung-2">Steuerung&lt;/h3>
+&lt;p>Zur einfacheren Regulierung wurden Actions erstellt, Objekt: ENVIRONMENT/wind-force&lt;/p>
+&lt;p>In der NLA kann ein sanfter Wind mit Windböen zusammengestellt werden.&lt;/p>
+&lt;div class="alert alert-warning" role="alert">
+&lt;h4 class="alert-heading">Wind: Geometry Nodes&lt;/h4>
+Wir hätten den Wind in Blender gerne wie in Unity (mittels UV-Map, anhand der Y-Achse) umgesetzt. Falls Du die Umsetzung mit Geometry Nodes probieren möchtest, dann wende Dich an einen &lt;a href="https://github.com/boundfoxstudios/fairy-tale-defender#ansprechpartner">Ansprechpartner&lt;/a>.
+&lt;/div></description></item><item><title>Docs: Coding Conventions</title><link>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/coding-conventions/</guid><description>
 &lt;p>Wir nutzen als Basis die &lt;a href="https://docs.microsoft.com/en-us/dotnet/standard/design-guidelines/names-of-type-members">.NET Standards&lt;/a> und folgen diesen weiteren Anpassungen.&lt;/p>
 &lt;blockquote>
 &lt;p>Angepasst und übersetzt vom &lt;a href="https://docs.google.com/document/d/1-eUWZ0lWREFu5iH-ggofwnixDDQqalOoT4Yc0NpWR3k/edit">Unity Open Project&lt;/a>.&lt;/p>
