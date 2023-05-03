@@ -50,6 +50,12 @@ Wenn Du Dich interessiert, [Dich visuell zu beteiligen](../contributing/visual/)
     * Ein Schatzkiste: `TreasureChest`
     * Eine grüne/gelbe Blume: `Flower_Green`, `Flower_Yellow`
 
+#### Mixamo
+
+Leider kannst Du im Projekt nicht auf die Animationen von Mixamo zurückgreifen. 
+Mixamo erlaubt zwar das Nutzen von Animationen in privaten und kommerziellen Projekten, aber [nicht das Verteilen der Animationen](https://community.adobe.com/t5/mixamo-discussions/redistribute-mixamo-animations-as-part-of/m-p/11554550).
+In dem Moment, in dem wir die Animationen hier auf GitHub hochladen, verteilen wir diese und verstoßen damit gegen die Lizenz.
+
 ### 2D
 
 * Dein Bild sollte so klein wie möglich und so groß wie nötig sein.
