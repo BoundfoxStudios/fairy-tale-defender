@@ -1,6 +1,8 @@
+using System;
 using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Build.Contributors;
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.UI.Credits.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
 using TMPro;
@@ -13,6 +15,9 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 	[RequireComponent(typeof(TextMeshProUGUI))]
 	public class CreditsTextBuilder : MonoBehaviour
 	{
+		[field: SerializeField]
+		private CreditSO[] AdditionalCredits { get; set; } = Array.Empty<CreditSO>();
+
 		[field: SerializeField]
 		private int CreditTextSize { get; set; } = 150;
 
@@ -48,7 +53,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 
 			var contributors = await _contributorsReader.LoadAsync();
 
-			BuildCreditsText(contributors);
+			BuildCreditsText(contributors.Concat(AdditionalCredits.Select(credit => credit.Contributor)).ToArray());
 
 			var scrollViewRect = ScrollView.GetComponent<RectTransform>().rect;
 			var padding = Mathf.FloorToInt(scrollViewRect.height + 1);
@@ -91,9 +96,20 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Credits
 			var githubLink = contributor.ProfileUrl;
 			var displayName = contributor.User;
 
-			var newString = $"{original}<link={githubLink}>{displayName}</link>\n";
+			var result = $"{original}";
 
-			return newString;
+			if (string.IsNullOrWhiteSpace(contributor.GitHubAccount))
+			{
+				result += displayName;
+			}
+			else
+			{
+				result += $"<link={githubLink}>{displayName}</link>";
+			}
+
+			result += "\n";
+
+			return result;
 		}
 	}
 }
