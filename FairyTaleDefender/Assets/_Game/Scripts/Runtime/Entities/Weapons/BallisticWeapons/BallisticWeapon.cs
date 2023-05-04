@@ -82,7 +82,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 
 		protected override void TrackTarget(TargetPoint target)
 		{
-			var direction = target.transform.position - transform.position;
+			var direction = target.Center - transform.position;
 			direction.y = 0;
 
 			_targetRotation = Quaternion.LookRotation(direction);
@@ -96,6 +96,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 				WeaponDefinition.RotationSpeedInDegreesPerSecond * Time.deltaTime);
 		}
 
-		protected override float CalculateLaunchAnimationDelay() => WeaponDefinition.LaunchAnimationTimeInSeconds + WeaponDefinition.RewindAnimationTimeInSeconds;
+		protected override float CalculateLaunchAnimationDelay() => WeaponDefinition.LaunchAnimationTimeInSeconds +
+																	WeaponDefinition.RewindAnimationTimeInSeconds;
 	}
 }

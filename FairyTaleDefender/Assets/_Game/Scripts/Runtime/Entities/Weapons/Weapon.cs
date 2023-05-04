@@ -120,7 +120,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 				await UniTask.WaitUntil(() => _currentTarget, cancellationToken: token);
 			}
 
-			var targetPosition = _currentTarget!.transform.position;
+			var targetPosition = _currentTarget!.Center;
 
 			// Note: It could be that between start animation and launch projectile the current target is destroyed.
 			// In that case we still launch the projectile to the last known position.
