@@ -7,6 +7,7 @@ using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 {
+	[SelectionBase]
 	[AddComponentMenu(Constants.MenuNames.Characters + "/" + nameof(Enemy))]
 	public class Enemy : Character<EnemySO>
 	{
