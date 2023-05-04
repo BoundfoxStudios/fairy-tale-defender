@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca035c2234c78fe438aa679d10558102, type: 3}
-  m_Name: Ufo
+  m_Name: Wolf
   m_EditorClassIdentifier: 
   <Name>k__BackingField:
     m_TableReference:
