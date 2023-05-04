@@ -755,6 +755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0608b45043b16f421b31db1b089bc15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <AdditionalCredits>k__BackingField:
+  - {fileID: 11400000, guid: a5a91d0b829bc4101bcb62c6da77a177, type: 2}
+  - {fileID: 11400000, guid: 1cedab9c596dc4c8a9708d29700faaa0, type: 2}
   <CreditTextSize>k__BackingField: 150
   <ScrollView>k__BackingField: {fileID: 491231181}
   <ContentLayoutGroup>k__BackingField: {fileID: 1880433268}
