@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine;
@@ -52,7 +53,8 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			directChangeBar.fillAmount = normalizedValue;
 			animateChangeBar
 				.DOFillAmount(normalizedValue, AnimationSpeed)
-				.WithCancellation(destroyCancellationToken);
+				.AwaitWithCancellation(destroyCancellationToken)
+				.Forget();
 		}
 
 		private void UpdateBarsInstant()

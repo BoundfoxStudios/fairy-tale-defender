@@ -67,16 +67,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 			return UniTask.CompletedTask;
 		}
 
-		protected override async UniTask StartAnimationAsync(CancellationToken cancellationToken) => await Arm.ArmPivot
-			.DOLocalRotate(new(Arm.XRotation.y, 0, 0), WeaponDefinition.LaunchAnimationTimeInSeconds)
-			.SetEase(WeaponDefinition.LaunchEasing)
-			.WithCancellation(cancellationToken);
+		protected override async UniTask StartAnimationAsync(CancellationToken cancellationToken) =>
+			await Arm.ArmPivot
+				.DOLocalRotate(new(Arm.XRotation.y, 0, 0), WeaponDefinition.LaunchAnimationTimeInSeconds)
+				.SetEase(WeaponDefinition.LaunchEasing)
+				.AwaitWithCancellation(cancellationToken);
 
 		protected override async UniTask RewindAnimationAsync(CancellationToken cancellationToken) =>
-			await Arm.ArmPivot.DOLocalRotate(new(Arm.XRotation.x, 0, 0), WeaponDefinition.RewindAnimationTimeInSeconds)
+			await Arm.ArmPivot
+				.DOLocalRotate(new(Arm.XRotation.x, 0, 0), WeaponDefinition.RewindAnimationTimeInSeconds)
 				.SetEase(WeaponDefinition.RewindEasing)
 				.OnComplete(PrepareProjectile)
-				.WithCancellation(cancellationToken);
+				.AwaitWithCancellation(cancellationToken);
 
 		protected override void TrackTarget(TargetPoint target)
 		{

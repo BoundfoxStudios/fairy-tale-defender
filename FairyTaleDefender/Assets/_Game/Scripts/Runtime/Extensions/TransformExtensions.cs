@@ -13,7 +13,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Extensions
 			transform.DOLocalRotate(transform.rotation.eulerAngles + new Vector3(0, 90, 0),
 					timeToRotate,
 					RotateMode.FastBeyond360)
-				.WithCancellation(destroyCancellationToken);
+				.AwaitWithCancellation(destroyCancellationToken)
+				.Forget();
 		}
 	}
 }
