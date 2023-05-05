@@ -135,7 +135,7 @@ jobs:
   build:
     name: Build for ${{ matrix.target-platform }}
     runs-on: ${{ matrix.os }}
-    needs: [manifest, contributors]
+    needs: [test, manifest, contributors]
     outputs:
       build-version: ${{ steps.unity-build.outputs.buildVersion }}
     steps:
