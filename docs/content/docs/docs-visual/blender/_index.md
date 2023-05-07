@@ -16,9 +16,9 @@ Hier findest Du das Blender Starter-Kit.
 
 Es beinhaltet:
 
-* `Props.blend`: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.
-* `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
 * `Blender-Starter.blend`: Hiermit startest Du ein neues Asset für das Spiel.
+* `House.blend`: Referenz-Datei mit den Häuser aus dem Spiel für Größen.
+* `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
 * `textures/ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
 * `textures/Windscale.png`: Die Skala für [Wind-Effekte](../wind/).
 * `scripts/Boxfound-Export.py`: Referenz-Datei mit dem Skript zum Exportieren der Modelle.
