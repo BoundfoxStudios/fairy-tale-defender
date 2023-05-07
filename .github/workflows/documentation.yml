@@ -7,7 +7,7 @@ on:
     paths:
       - 'docs/**'
       - '.all-contributorsrc'
-      - 'resources/Blendfiles/Props.blend'
+      - 'resources/Blendfiles/House.blend'
       - 'resources/Blendfiles/Blender-Starter.blend'
       - 'resources/Blendfiles/Tiles.blend'
       - 'resources/ColorPalettes/**'
@@ -56,7 +56,7 @@ jobs:
         with:
           ref: ${{ inputs.ref }}
       - run: mkdir BlenderStarterKit
-      - run: cp ./resources/Blendfiles/Props.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/House.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Blender-Starter.blend ./BlenderStarterKit
       - uses: actions/download-artifact@v3
@@ -82,12 +82,21 @@ jobs:
           ref: ${{ inputs.ref }}  
       - run: mkdir BlenderStudio
       - run: cp ./resources/Blendfiles/Blender-Studio.blend ./BlenderStudio
-      - run: cp ./resources/Blendfiles/Props.blend ./BlenderStudio
-      - run: cp ./resources/Blendfiles/Towers.blend ./BlenderStudio
-      - run: cp ./resources/Blendfiles/Mushroom.blend ./BlenderStudio
-      - run: cp ./resources/Blendfiles/Grass-Reed-Flowers-Bushes.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Bush.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Container.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Fence.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Flower.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Grass.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/House.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/LogPile.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Mushroom.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Reed.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Sunflower.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Tent.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Towers.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Transitions.blend ./BlenderStudio
+      - run: cp ./resources/Blendfiles/Tree.blend ./BlenderStudio
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
