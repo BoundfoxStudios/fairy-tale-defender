@@ -18,17 +18,18 @@ Es beinhaltet:
 
 * `Props.blend`: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.
 * `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
-* `Starter.blend`: Hiermit startest Du ein neues Asset für das Spiel.
+* `Blender-Starter.blend`: Hiermit startest Du ein neues Asset für das Spiel.
 * `textures/ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
 * `textures/Windscale.png`: Die Skala für [Wind-Effekte](../wind/).
+* `scripts/Boxfound-Export.py`: Referenz-Datei mit dem Skript zum Exportieren der Modelle.
 
-Bitte beachte, dass die Texture und das passende Material bereits in der `Starter.blend` eingebunden sind. 
+Bitte beachte, dass die Texture und das passende Material bereits in der `Blender-Starter.blend` eingebunden sind. 
 Du musst diese nur noch benutzen.
 {{% /alert %}}
 
 ## Blender-Einstellungen
 
-Am besten ist es, wenn Du die `Starter.blend` als Grundlage nutzt, um eigene Assets zu erstellen.
+Am besten ist es, wenn Du die `Blender-Starter.blend` als Grundlage nutzt, um eigene Assets zu erstellen.
 Dort ist bereits die Farbpaletten-Textur und das [Export-Script](#export-script) hinterlegt.
 
 Achte bitte darauf, dass Du das bestehende Material `ColorPalette` nutzt.
@@ -49,7 +50,7 @@ Wenn Du mehrere Modelle in einer Blender-Datei hast, dann ist folgendes Script n
 
 ### Export-Script
 
-> Das Export-Script ist in der `Starter.blend` im Blender Starter-Kit bereits enthalten.
+> Das Export-Script ist in der `Blender-Starter.blend` im Blender Starter-Kit bereits enthalten.
 
 Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
 Kopiere dann folgendes Script in den leeren Text-Editor.
