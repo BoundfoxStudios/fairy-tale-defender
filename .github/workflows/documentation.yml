@@ -8,7 +8,7 @@ on:
       - 'docs/**'
       - '.all-contributorsrc'
       - 'resources/Blendfiles/Props.blend'
-      - 'resources/Blendfiles/Starter.blend'
+      - 'resources/Blendfiles/Blender-Starter.blend'
       - 'resources/Blendfiles/Tiles.blend'
       - 'resources/ColorPalettes/**'
       - 'resources/Windscale/**'
@@ -58,7 +58,7 @@ jobs:
       - run: mkdir BlenderStarterKit
       - run: cp ./resources/Blendfiles/Props.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
-      - run: cp ./resources/Blendfiles/Starter.blend ./BlenderStarterKit
+      - run: cp ./resources/Blendfiles/Blender-Starter.blend ./BlenderStarterKit
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
