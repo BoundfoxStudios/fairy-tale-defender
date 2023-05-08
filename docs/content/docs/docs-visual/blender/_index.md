@@ -21,7 +21,7 @@ Es beinhaltet:
 * `Tiles.blend`: Referenz-Datei mit den Tiles aus dem Spiel für Größen.
 * `textures/ColorPalette_Summer.png`: Die sommerliche [Farbpalette](../colors/).
 * `textures/Windscale.png`: Die Skala für [Wind-Effekte](../wind/).
-* `scripts/Boxfound-Export.py`: Referenz-Datei mit dem Skript zum Exportieren der Modelle.
+* `scripts/BoundfoxStudios-Export.py`: Referenz-Datei mit dem Skript zum Exportieren der Modelle.
 
 Bitte beachte, dass die Texture und das passende Material bereits in der `Blender-Starter.blend` eingebunden sind. 
 Du musst diese nur noch benutzen.
