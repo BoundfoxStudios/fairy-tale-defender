@@ -59,7 +59,7 @@ jobs:
       - run: cp ./resources/Blendfiles/House.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Blender-Starter.blend ./BlenderStarterKit
-      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStarterKit
+      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStarterKit//scripts
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
@@ -68,7 +68,7 @@ jobs:
         with:
           name: Windscale.png
           path: ./BlenderStarterKit/textures
-      - run: zip ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/textures/*.* ./BlenderStarterKit/*.*
+      - run: zip -r ./BlenderStarterKit/BlenderStarterKit.zip ./BlenderStarterKit/*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStarterKit
@@ -98,12 +98,12 @@ jobs:
       - run: cp ./resources/Blendfiles/Towers.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/Transitions.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/Tree.blend ./BlenderStudio
-      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStudio
+      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStudio/scripts
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
           path: ./BlenderStudio/textures/
-      - run: zip ./BlenderStudio/BlenderStudio.zip ./BlenderStudio/textures/*.* ./BlenderStudio/*.*
+      - run: zip -r ./BlenderStudio/BlenderStudio.zip ./BlenderStudio/*
       - uses: actions/upload-artifact@v3
         with:
           name: BlenderStudio
