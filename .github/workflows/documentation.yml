@@ -59,6 +59,7 @@ jobs:
       - run: cp ./resources/Blendfiles/House.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Tiles.blend ./BlenderStarterKit
       - run: cp ./resources/Blendfiles/Blender-Starter.blend ./BlenderStarterKit
+      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStarterKit
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
@@ -97,6 +98,7 @@ jobs:
       - run: cp ./resources/Blendfiles/Towers.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/Transitions.blend ./BlenderStudio
       - run: cp ./resources/Blendfiles/Tree.blend ./BlenderStudio
+      - run: cp ./docs/content/docs/docs-visual/blender/assets/BoundfoxStudios-Export.py ./BlenderStudio
       - uses: actions/download-artifact@v3
         with:
           name: ColorPalette_Summer.png
