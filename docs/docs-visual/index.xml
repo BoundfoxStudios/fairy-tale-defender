@@ -7,17 +7,18 @@
 &lt;p>&lt;a href="assets/BlenderStarterKit.zip">Klicke hier, um das Blender Starter-Kit herunterzuladen&lt;/a>.&lt;/p>
 &lt;p>Es beinhaltet:&lt;/p>
 &lt;ul>
-&lt;li>&lt;code>Props.blend&lt;/code>: Referenz-Datei mit Assets aus dem Spiel als Referenz für Größen, Formen.&lt;/li>
+&lt;li>&lt;code>Blender-Starter.blend&lt;/code>: Hiermit startest Du ein neues Asset für das Spiel.&lt;/li>
+&lt;li>&lt;code>House.blend&lt;/code>: Referenz-Datei mit den Häuser aus dem Spiel für Größen.&lt;/li>
 &lt;li>&lt;code>Tiles.blend&lt;/code>: Referenz-Datei mit den Tiles aus dem Spiel für Größen.&lt;/li>
-&lt;li>&lt;code>Starter.blend&lt;/code>: Hiermit startest Du ein neues Asset für das Spiel.&lt;/li>
 &lt;li>&lt;code>textures/ColorPalette_Summer.png&lt;/code>: Die sommerliche &lt;a href="../colors/">Farbpalette&lt;/a>.&lt;/li>
 &lt;li>&lt;code>textures/Windscale.png&lt;/code>: Die Skala für &lt;a href="../wind/">Wind-Effekte&lt;/a>.&lt;/li>
+&lt;li>&lt;code>scripts/BoundfoxStudios-Export.py&lt;/code>: Referenz-Datei mit dem Skript zum Exportieren der Modelle.&lt;/li>
 &lt;/ul>
-&lt;p>Bitte beachte, dass die Texture und das passende Material bereits in der &lt;code>Starter.blend&lt;/code> eingebunden sind.
+&lt;p>Bitte beachte, dass die Texture und das passende Material bereits in der &lt;code>Blender-Starter.blend&lt;/code> eingebunden sind.
 Du musst diese nur noch benutzen.&lt;/p>
 &lt;/div>
 &lt;h2 id="blender-einstellungen">Blender-Einstellungen&lt;/h2>
-&lt;p>Am besten ist es, wenn Du die &lt;code>Starter.blend&lt;/code> als Grundlage nutzt, um eigene Assets zu erstellen.
+&lt;p>Am besten ist es, wenn Du die &lt;code>Blender-Starter.blend&lt;/code> als Grundlage nutzt, um eigene Assets zu erstellen.
 Dort ist bereits die Farbpaletten-Textur und das &lt;a href="#export-script">Export-Script&lt;/a> hinterlegt.&lt;/p>
 &lt;p>Achte bitte darauf, dass Du das bestehende Material &lt;code>ColorPalette&lt;/code> nutzt.
 Bitte erstelle keine weiteren Materialien und nenne das bestehende Material auch nicht um.
@@ -33,7 +34,7 @@ Das Material muss &lt;code>ColorPalette&lt;/code> heißen, da wir beim Import in
 &lt;p>Wenn Du mehrere Modelle in einer Blender-Datei hast, dann ist folgendes Script nützlich für den Export:&lt;/p>
 &lt;h3 id="export-script">Export-Script&lt;/h3>
 &lt;blockquote>
-&lt;p>Das Export-Script ist in der &lt;code>Starter.blend&lt;/code> im Blender Starter-Kit bereits enthalten.&lt;/p>
+&lt;p>Das Export-Script ist in der &lt;code>Blender-Starter.blend&lt;/code> im Blender Starter-Kit bereits enthalten.&lt;/p>
 &lt;/blockquote>
 &lt;p>Wechsle in das Scripting-Tab von Blender und erzeuge ein neues Script.
 Kopiere dann folgendes Script in den leeren Text-Editor.&lt;/p>
@@ -45,7 +46,8 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/ol>
 &lt;p>In beiden Fällen werden die Dateien dort abgelegt, wo auch die Blender-Datei liegt.&lt;/p>
 &lt;p>Bitte beachte, dass Du im Object-Mode sein musst zum Exportieren.&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># https://docs.fairytaledefender.de/docs/docs-visual/blender/#export-script&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> os
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># export to blend file location&lt;/span>
