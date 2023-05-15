@@ -30,24 +30,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             ""id"": ""a364189b-7ccc-4ede-a56e-3f9935c00534"",
             ""actions"": [
                 {
-                    ""name"": ""EdgePan"",
-                    ""type"": ""Value"",
-                    ""id"": ""0b628e71-0451-4029-aec5-1b0fdc18dc3c"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""EdgePan,ClampMagnitudeVector2"",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
-                    ""name"": ""CameraMovement"",
-                    ""type"": ""Value"",
-                    ""id"": ""5721ba78-9155-4d3e-8116-c6752adff673"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""ClampMagnitudeVector2"",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
-                },
-                {
                     ""name"": ""Click"",
                     ""type"": ""Value"",
                     ""id"": ""46ba8697-23f1-4290-8cc2-849963e8e7be"",
@@ -58,127 +40,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""989b95ed-1fd6-4de7-b131-77dc28f71e14"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""EdgePan"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""WSAD"",
-                    ""id"": ""44ea0500-4894-4794-b85e-3137801f1eb6"",
-                    ""path"": ""2DVector(mode=1)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""d497c965-76aa-4413-ac11-cc93c1110cb3"",
-                    ""path"": ""<Keyboard>/w"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""2dca2336-235c-4930-aa38-1b4f8f3bbeed"",
-                    ""path"": ""<Keyboard>/s"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""943d2e6e-716a-44d7-b9a7-f7cbbb00394f"",
-                    ""path"": ""<Keyboard>/a"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""1ab38b3a-f97c-44dc-8862-087122a5252d"",
-                    ""path"": ""<Keyboard>/d"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""ArrowKeys"",
-                    ""id"": ""977b8634-8bae-4d60-8bb5-1f5b43000b8b"",
-                    ""path"": ""2DVector(mode=1)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": true,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""up"",
-                    ""id"": ""fce959b5-4bf0-48f0-a451-062a3b0f9017"",
-                    ""path"": ""<Keyboard>/upArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""down"",
-                    ""id"": ""36c09758-a5d3-4649-b77d-f56aa921ed2f"",
-                    ""path"": ""<Keyboard>/downArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""left"",
-                    ""id"": ""c4f96ef3-a7f9-49e0-b230-738e9ca15c8b"",
-                    ""path"": ""<Keyboard>/leftArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""right"",
-                    ""id"": ""ab8dfb40-99c8-4f52-b8ff-d13e00421ca9"",
-                    ""path"": ""<Keyboard>/rightArrow"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""CameraMovement"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
                 {
                     ""name"": ""LeftMouseClick"",
                     ""id"": ""93992887-d295-480f-9222-fc26d4db1539"",
@@ -878,6 +739,153 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Camera"",
+            ""id"": ""bab4a3d3-ee6b-45e3-9918-2617d34594d2"",
+            ""actions"": [
+                {
+                    ""name"": ""EdgePan"",
+                    ""type"": ""Value"",
+                    ""id"": ""feabe797-c23a-4c27-af97-62ee945874d7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""EdgePan,ClampMagnitudeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CameraMovement"",
+                    ""type"": ""Value"",
+                    ""id"": ""6a1b2963-0287-41ef-b321-a53ceeeaa15b"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": ""ClampMagnitudeVector2"",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""5f03c444-6edb-409c-9c2a-0b5079381674"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""EdgePan"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""WSAD"",
+                    ""id"": ""c46a9e66-0c81-41e5-b07b-f1f99a9b4362"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""42613a37-4342-4415-b935-7be3f291aef5"",
+                    ""path"": ""<Keyboard>/w"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""1d21471f-10e2-4459-92e7-7db01660cc91"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""c63d4ec2-a482-4b24-b7ba-1f83d1660322"",
+                    ""path"": ""<Keyboard>/a"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""c7700ad9-6ad9-4247-bdff-4114a0119412"",
+                    ""path"": ""<Keyboard>/d"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""ArrowKeys"",
+                    ""id"": ""58e34c0e-0972-443f-829e-165922e91786"",
+                    ""path"": ""2DVector(mode=1)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""c2101cb2-aae4-459c-8e95-da5f9889c199"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""c23b164d-14ab-488d-9677-ae3cbe8d108d"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""left"",
+                    ""id"": ""479e1d87-d4cd-4262-a0a7-8d41697389b7"",
+                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""right"",
+                    ""id"": ""a1f0b73e-5861-4f42-ac22-99114cc2f234"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""CameraMovement"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -901,8 +909,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 }");
             // Gameplay
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
-            m_Gameplay_EdgePan = m_Gameplay.FindAction("EdgePan", throwIfNotFound: true);
-            m_Gameplay_CameraMovement = m_Gameplay.FindAction("CameraMovement", throwIfNotFound: true);
             m_Gameplay_Click = m_Gameplay.FindAction("Click", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
@@ -925,6 +931,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             // Tooltips
             m_Tooltips = asset.FindActionMap("Tooltips", throwIfNotFound: true);
             m_Tooltips_TooltipPosition = m_Tooltips.FindAction("TooltipPosition", throwIfNotFound: true);
+            // Camera
+            m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
+            m_Camera_EdgePan = m_Camera.FindAction("EdgePan", throwIfNotFound: true);
+            m_Camera_CameraMovement = m_Camera.FindAction("CameraMovement", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -986,15 +996,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         // Gameplay
         private readonly InputActionMap m_Gameplay;
         private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
-        private readonly InputAction m_Gameplay_EdgePan;
-        private readonly InputAction m_Gameplay_CameraMovement;
         private readonly InputAction m_Gameplay_Click;
         public struct GameplayActions
         {
             private @GameInput m_Wrapper;
             public GameplayActions(@GameInput wrapper) { m_Wrapper = wrapper; }
-            public InputAction @EdgePan => m_Wrapper.m_Gameplay_EdgePan;
-            public InputAction @CameraMovement => m_Wrapper.m_Gameplay_CameraMovement;
             public InputAction @Click => m_Wrapper.m_Gameplay_Click;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
@@ -1005,12 +1011,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             {
                 if (instance == null || m_Wrapper.m_GameplayActionsCallbackInterfaces.Contains(instance)) return;
                 m_Wrapper.m_GameplayActionsCallbackInterfaces.Add(instance);
-                @EdgePan.started += instance.OnEdgePan;
-                @EdgePan.performed += instance.OnEdgePan;
-                @EdgePan.canceled += instance.OnEdgePan;
-                @CameraMovement.started += instance.OnCameraMovement;
-                @CameraMovement.performed += instance.OnCameraMovement;
-                @CameraMovement.canceled += instance.OnCameraMovement;
                 @Click.started += instance.OnClick;
                 @Click.performed += instance.OnClick;
                 @Click.canceled += instance.OnClick;
@@ -1018,12 +1018,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 
             private void UnregisterCallbacks(IGameplayActions instance)
             {
-                @EdgePan.started -= instance.OnEdgePan;
-                @EdgePan.performed -= instance.OnEdgePan;
-                @EdgePan.canceled -= instance.OnEdgePan;
-                @CameraMovement.started -= instance.OnCameraMovement;
-                @CameraMovement.performed -= instance.OnCameraMovement;
-                @CameraMovement.canceled -= instance.OnCameraMovement;
                 @Click.started -= instance.OnClick;
                 @Click.performed -= instance.OnClick;
                 @Click.canceled -= instance.OnClick;
@@ -1278,6 +1272,60 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             }
         }
         public TooltipsActions @Tooltips => new TooltipsActions(this);
+
+        // Camera
+        private readonly InputActionMap m_Camera;
+        private List<ICameraActions> m_CameraActionsCallbackInterfaces = new List<ICameraActions>();
+        private readonly InputAction m_Camera_EdgePan;
+        private readonly InputAction m_Camera_CameraMovement;
+        public struct CameraActions
+        {
+            private @GameInput m_Wrapper;
+            public CameraActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @EdgePan => m_Wrapper.m_Camera_EdgePan;
+            public InputAction @CameraMovement => m_Wrapper.m_Camera_CameraMovement;
+            public InputActionMap Get() { return m_Wrapper.m_Camera; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(CameraActions set) { return set.Get(); }
+            public void AddCallbacks(ICameraActions instance)
+            {
+                if (instance == null || m_Wrapper.m_CameraActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_CameraActionsCallbackInterfaces.Add(instance);
+                @EdgePan.started += instance.OnEdgePan;
+                @EdgePan.performed += instance.OnEdgePan;
+                @EdgePan.canceled += instance.OnEdgePan;
+                @CameraMovement.started += instance.OnCameraMovement;
+                @CameraMovement.performed += instance.OnCameraMovement;
+                @CameraMovement.canceled += instance.OnCameraMovement;
+            }
+
+            private void UnregisterCallbacks(ICameraActions instance)
+            {
+                @EdgePan.started -= instance.OnEdgePan;
+                @EdgePan.performed -= instance.OnEdgePan;
+                @EdgePan.canceled -= instance.OnEdgePan;
+                @CameraMovement.started -= instance.OnCameraMovement;
+                @CameraMovement.performed -= instance.OnCameraMovement;
+                @CameraMovement.canceled -= instance.OnCameraMovement;
+            }
+
+            public void RemoveCallbacks(ICameraActions instance)
+            {
+                if (m_Wrapper.m_CameraActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(ICameraActions instance)
+            {
+                foreach (var item in m_Wrapper.m_CameraActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_CameraActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public CameraActions @Camera => new CameraActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1289,8 +1337,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         }
         public interface IGameplayActions
         {
-            void OnEdgePan(InputAction.CallbackContext context);
-            void OnCameraMovement(InputAction.CallbackContext context);
             void OnClick(InputAction.CallbackContext context);
         }
         public interface IUIActions
@@ -1316,6 +1362,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         public interface ITooltipsActions
         {
             void OnTooltipPosition(InputAction.CallbackContext context);
+        }
+        public interface ICameraActions
+        {
+            void OnEdgePan(InputAction.CallbackContext context);
+            void OnCameraMovement(InputAction.CallbackContext context);
         }
     }
 }

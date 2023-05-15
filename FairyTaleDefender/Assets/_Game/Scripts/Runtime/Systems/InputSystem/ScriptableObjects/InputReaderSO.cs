@@ -19,6 +19,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		[field: SerializeField]
 		public TooltipActionsSO TooltipActions { get; private set; } = default!;
 
+		[field: SerializeField]
+		public CameraActionsSO CameraActions { get; private set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -51,6 +54,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				_gameInput.Gameplay.SetCallbacks(GameplayActions);
 				_gameInput.BuildSystem.SetCallbacks(BuildSystemActions);
 				_gameInput.Tooltips.SetCallbacks(TooltipActions);
+				_gameInput.Camera.SetCallbacks(CameraActions);
 			}
 
 			GameplayStartEventChannel.Raised += GameplayStart;
@@ -102,6 +106,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.UI.Disable();
 			GameInput.BuildSystem.Disable();
 			GameInput.Tooltips.Disable();
+			GameInput.Camera.Disable();
 		}
 
 		private void EnableBuildSystemInput()
@@ -109,6 +114,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.Gameplay.Disable();
 			GameInput.UI.Disable();
 			GameInput.BuildSystem.Enable();
+			GameInput.Camera.Enable();
 		}
 
 		private void EnableGameplayInput()
@@ -116,6 +122,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.BuildSystem.Disable();
 			GameInput.Gameplay.Enable();
 			GameInput.UI.Enable();
+			GameInput.Camera.Enable();
 		}
 
 		private void DisableTooltipInput()
