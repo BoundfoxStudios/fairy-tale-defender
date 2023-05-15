@@ -53,9 +53,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				_gameInput.Tooltips.SetCallbacks(TooltipActions);
 			}
 
+			GameplayStartEventChannel.Raised += GameplayStart;
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
 			ExitBuildModeEventChannel.Raised += ExitBuildMode;
-
 			ShowTooltipEventChannel.Raised += ShowTooltip;
 			HideTooltipEventChannel.Raised += HideTooltip;
 		}
