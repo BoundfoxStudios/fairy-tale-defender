@@ -46,7 +46,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		public BuildableEventChannelSO BuiltEventChannel { get; private set; } = default!;
 
-		[field: Header("Channels")]
 		[field: SerializeField]
 		private VoidEventChannelSO ExitBuildModeEventChannel { get; set; } = default!;
 
@@ -94,8 +93,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			InputReader.BuildSystemActions.Position += ReadBuildPosition;
 			InputReader.BuildSystemActions.Build += ReadBuild;
 			InputReader.BuildSystemActions.Rotate += ReadBuildRotate;
+			InputReader.BuildSystemActions.Cancel += ExitBuildMode;
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;
-			ExitBuildModeEventChannel.Raised += ExitBuildMode;
 		}
 
 		private void OnDisable()
@@ -103,13 +102,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			InputReader.BuildSystemActions.Position -= ReadBuildPosition;
 			InputReader.BuildSystemActions.Build -= ReadBuild;
 			InputReader.BuildSystemActions.Rotate -= ReadBuildRotate;
+			InputReader.BuildSystemActions.Cancel -= ExitBuildMode;
 			EnterBuildModeEventChannel.Raised -= EnterBuildMode;
-			ExitBuildModeEventChannel.Raised -= ExitBuildMode;
 		}
 
 		private void ExitBuildMode()
 		{
 			ClearBuildContext();
+			WeaponRangePreview.StopDisplayingWeaponRange();
+			ExitBuildModeEventChannel.Raise();
 		}
 
 		private void EnterBuildMode(BuildableEventChannelSO.EventArgs args)
@@ -145,7 +146,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, rotation);
 
 			BuiltEventChannel.Raise(new() { Buildable = _buildContext.Buildable });
-			ExitBuildModeEventChannel.Raise();
+			ExitBuildMode();
 		}
 
 		private bool TryFindFromRay(Ray ray, out RaycastHit hit, LayerMask layerMask) =>
