@@ -45,14 +45,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
 
 		private void OnEnable()
 		{
-			InputReader.GameplayActions.Pan += ReadPan;
-			InputReader.GameplayActions.PanStop += ReadPanStop;
+			InputReader.CameraActions.Pan += ReadPan;
+			InputReader.CameraActions.PanStop += ReadPanStop;
 		}
 
 		private void OnDisable()
 		{
-			InputReader.GameplayActions.Pan -= ReadPan;
-			InputReader.GameplayActions.PanStop -= ReadPanStop;
+			InputReader.CameraActions.Pan -= ReadPan;
+			InputReader.CameraActions.PanStop -= ReadPanStop;
 		}
 
 		private void ReadPan(Vector2 delta)
