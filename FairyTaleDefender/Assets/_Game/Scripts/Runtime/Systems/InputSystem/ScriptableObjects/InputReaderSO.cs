@@ -85,6 +85,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			EnterBuildModeEventChannel.Raised -= EnterBuildMode;
 			ExitBuildModeEventChannel.Raised -= ExitBuildMode;
 			GameplayStartEventChannel.Raised -= GameplayStart;
+			ShowTooltipEventChannel.Raised -= ShowTooltip;
+			HideTooltipEventChannel.Raised -= HideTooltip;
 
 			DisableAllInput();
 		}
