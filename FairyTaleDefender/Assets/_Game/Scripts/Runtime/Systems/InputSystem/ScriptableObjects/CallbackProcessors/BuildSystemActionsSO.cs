@@ -11,6 +11,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		public event InputReaderSO.ScreenPositionHandler Position = delegate { };
 		public event InputReaderSO.ScreenPositionHandler Build = delegate { };
 		public event Action Rotate = delegate { };
+		public event Action Cancel = delegate { };
 
 		public void OnBuildPosition(InputAction.CallbackContext context)
 		{
@@ -40,6 +41,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			}
 
 			Rotate();
+		}
+
+		public void OnCancel(InputAction.CallbackContext context)
+		{
+			if (!context.performed)
+			{
+				return;
+			}
+
+			Cancel();
 		}
 	}
 }
