@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7802cb5a0b1c4100b571288d07b0b03f, type: 3}
   m_Name: CameraActions
   m_EditorClassIdentifier: 
-  <Settings>k__BackingField: {fileID: 0}
+  <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
+    type: 2}

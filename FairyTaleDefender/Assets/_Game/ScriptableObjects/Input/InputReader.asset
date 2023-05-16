@@ -18,6 +18,8 @@ MonoBehaviour:
     type: 2}
   <TooltipActions>k__BackingField: {fileID: 11400000, guid: a41fe3d13605843e98b25071e8f7cc01,
     type: 2}
+  <CameraActions>k__BackingField: {fileID: 11400000, guid: eec0673adfd429545996670232e0b223,
+    type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
