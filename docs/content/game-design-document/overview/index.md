@@ -10,7 +10,7 @@ Es beschreibt das Design für Fairy Tale Defender.
 
 ## Titel
 
-* Vorläufig: Tower Defense Spiel
+* Fairy Tale Defender
 
 ## Genre
 
