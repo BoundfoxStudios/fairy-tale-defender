@@ -25,6 +25,7 @@ Es beschreibt das Design für Fairy Tale Defender.
 
 * Windows >= 10
 * macOS >= 12
+* Linux (64-Bit-Versionen)
 
 ## Verteilung
 
