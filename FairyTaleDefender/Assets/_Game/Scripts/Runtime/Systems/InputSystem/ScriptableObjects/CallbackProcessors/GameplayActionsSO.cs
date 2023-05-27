@@ -1,5 +1,6 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors
@@ -16,6 +17,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				return;
 			}
 
+			Debug.Log("<color=red>Invoking click!</color>");
 			Click(context.ReadValue<Vector2>());
 		}
 	}

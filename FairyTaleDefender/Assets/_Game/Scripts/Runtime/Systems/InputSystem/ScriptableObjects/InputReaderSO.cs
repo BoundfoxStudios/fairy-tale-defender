@@ -2,6 +2,7 @@ using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects
@@ -102,6 +103,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		public void DisableAllInput()
 		{
+			Debug.Log($"<color=green>{nameof(DisableAllInput)}</color>");
 			GameInput.Gameplay.Disable();
 			GameInput.UI.Disable();
 			GameInput.BuildSystem.Disable();
@@ -111,6 +113,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void EnableBuildSystemInput()
 		{
+			Debug.Log($"<color=green>{nameof(EnableBuildSystemInput)}</color>");
 			GameInput.Gameplay.Disable();
 			GameInput.UI.Disable();
 			GameInput.BuildSystem.Enable();
@@ -119,6 +122,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void EnableGameplayInput()
 		{
+			Debug.Log($"<color=green>{nameof(EnableGameplayInput)}</color>");
 			GameInput.BuildSystem.Disable();
 			GameInput.Gameplay.Enable();
 			GameInput.UI.Enable();
@@ -127,11 +131,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void DisableTooltipInput()
 		{
+			Debug.Log($"<color=green>{nameof(DisableTooltipInput)}</color>");
 			GameInput.Tooltips.Disable();
 		}
 
 		private void EnableTooltipInput()
 		{
+			Debug.Log($"<color=green>{nameof(EnableTooltipInput)}</color>");
 			GameInput.Tooltips.Enable();
 		}
 	}
