@@ -16,3 +16,4 @@ MonoBehaviour:
     type: 3}
   <BlueprintPrefab>k__BackingField: {fileID: 9013187241264066330, guid: e9c51145ac61348f0b17f648102a5d9b,
     type: 3}
+  <Price>k__BackingField: 10
