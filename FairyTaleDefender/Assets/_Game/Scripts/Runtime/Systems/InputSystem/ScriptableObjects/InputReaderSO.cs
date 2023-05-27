@@ -1,7 +1,9 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects
@@ -134,9 +136,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		private void EnableGameplayInput()
 		{
 			GameInput.BuildSystem.Disable();
-			GameInput.Gameplay.Enable();
-			GameInput.UI.Enable();
-			GameInput.Camera.Enable();
+
+			// TODO: Bring this back to sync code if that is really an issue with the InputSystem.
+			// There seems to be an issue in the InputSystem.
+			// If you enable an action during handling another action it seems to trigger the activated actions as well.
+			DoDelayedAsync(() =>
+			{
+				GameInput.Gameplay.Enable();
+				GameInput.UI.Enable();
+				GameInput.Camera.Enable();
+			}).Forget();
 		}
 
 		private void DisableTooltipInput()
@@ -147,6 +156,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		private void EnableTooltipInput()
 		{
 			GameInput.Tooltips.Enable();
+		}
+
+		private async UniTaskVoid DoDelayedAsync(Action callback)
+		{
+			await UniTask.Delay(250);
+			callback();
 		}
 	}
 }
