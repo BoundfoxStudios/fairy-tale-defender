@@ -1,9 +1,12 @@
+using System.Collections.Generic;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 {
@@ -27,7 +30,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 		[field: SerializeField]
 		private LayerMask TowerLayerMask { get; set; }
 
+		[field: SerializeField]
+		private GraphicRaycaster GraphicRaycaster { get; set; } = default!;
+
 		private Transform? _currentSelection;
+
+		private List<RaycastResult> _uiOverGameObjectResultCache = new(1);
 
 		private void OnEnable()
 		{
@@ -39,9 +47,22 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 			InputReader.GameplayActions.Click -= GameplayActionsOnClick;
 		}
 
+		private bool IsPointerOverGameObject(Vector2 position)
+		{
+			var pointerEventData = new PointerEventData(EventSystem.current)
+			{
+				position = position
+			};
+
+			_uiOverGameObjectResultCache.Clear();
+			GraphicRaycaster.Raycast(pointerEventData, _uiOverGameObjectResultCache);
+
+			return _uiOverGameObjectResultCache.Count > 0;
+		}
+
 		private void GameplayActionsOnClick(Vector2 position)
 		{
-			if (!CameraRuntimeAnchor.Item)
+			if (!CameraRuntimeAnchor.Item || IsPointerOverGameObject(position))
 			{
 				return;
 			}
@@ -66,7 +87,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 			}
 
 			_currentSelection = hitInfo.transform;
-			var canCalculateWeaponDefinition = _currentSelection.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
+			var canCalculateWeaponDefinition =
+				_currentSelection.GetComponentInChildren<ICanCalculateEffectiveWeaponDefinition>();
 			WeaponSelectedEventChannel.Raise(new()
 			{
 				Transform = _currentSelection,
