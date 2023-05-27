@@ -79,6 +79,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1366365972202018098}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &8404655398199570893 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7373829732418807039, guid: d96c88eaa24604ca6aad6e21db27e8d2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1366365972202018098}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4603536347911157265
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -272,6 +278,11 @@ PrefabInstance:
       propertyPath: m_FillAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8080968510749249390, guid: ce4f46e39468745c3af0af575293347f,
+        type: 3}
+      propertyPath: <Animator>k__BackingField
+      value: 
+      objectReference: {fileID: 8404655398199570893}
     - target: {fileID: 8080968510749249390, guid: ce4f46e39468745c3af0af575293347f,
         type: 3}
       propertyPath: <Definition>k__BackingField

@@ -13,7 +13,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters
 		[field: SerializeField]
 		public Health Health { get; private set; } = default!;
 
-		private void Awake()
+		[field: SerializeField]
+		protected Animator Animator { get; set; } = default!;
+
+		protected virtual void Awake()
 		{
 			Health.Initialize(Definition.MaxHealth, Definition.MaxHealth);
 		}

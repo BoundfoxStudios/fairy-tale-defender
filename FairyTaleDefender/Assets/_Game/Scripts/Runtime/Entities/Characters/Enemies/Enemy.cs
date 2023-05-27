@@ -11,6 +11,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 	[AddComponentMenu(Constants.MenuNames.Characters + "/" + nameof(Enemy))]
 	public class Enemy : Character<EnemySO>
 	{
+		private static readonly int IsWalking = Animator.StringToHash("IsWalking");
+
 		[field: Header("References")]
 		[field: SerializeField]
 		private SplineWalker SplineWalker { get; set; } = default!;
@@ -21,6 +23,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 
 		[field: SerializeField]
 		public EnemyEventChannelSO EnemyDestroyedByPlayer { get; private set; } = default!;
+
+		protected override void Awake()
+		{
+			base.Awake();
+
+			Animator.SetBool(IsWalking, true);
+		}
 
 		public void Initialize(ISpline spline)
 		{
