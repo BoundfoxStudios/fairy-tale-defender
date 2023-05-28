@@ -9,14 +9,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 	{
 		public event InputReaderSO.ScreenPositionHandler Click = delegate { };
 
+		private Vector2 _lastPosition;
+
 		public void OnClick(InputAction.CallbackContext context)
 		{
-			if (!context.performed)
+			if (!context.canceled)
 			{
+				_lastPosition = context.ReadValue<Vector2>();
 				return;
 			}
 
-			Click(context.ReadValue<Vector2>());
+			Click(_lastPosition);
 		}
 	}
 }
