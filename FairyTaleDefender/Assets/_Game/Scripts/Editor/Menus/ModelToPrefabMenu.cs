@@ -8,13 +8,25 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 {
 	public static class ModelToPrefabMenu
 	{
-		private static readonly AssetLocator<GameObject> AssetLocator =
+		private static readonly AssetLocator<GameObject> EnvironmentBaseAssetLocator =
 			new("Prefabs/Environment/EnvironmentAsset_Base.prefab");
+		private static readonly AssetLocator<GameObject> TileBaseAssetLocator =
+			new("Prefabs/Environment/Tiles/Tile_Base.prefab");
+		private static readonly AssetLocator<GameObject> TileWayBaseBaseAssetLocator =
+			new("Prefabs/Environment/Tiles/Tile_Way_Base.prefab");
 
-		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Prefab", priority = 20)]
-		private static void ConvertToPrefab()
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Environment Prefab", priority = 20)]
+		private static void ConvertToEnvironmentPrefab() => ConvertToPrefab(EnvironmentBaseAssetLocator);
+
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Tile Prefab", priority = 21)]
+		private static void ConvertToTilePrefab() => ConvertToPrefab(TileBaseAssetLocator);
+
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Tile Way Prefab", priority = 22)]
+		private static void ConvertToTileWayPrefab() => ConvertToPrefab(TileWayBaseBaseAssetLocator);
+
+		private static void ConvertToPrefab(AssetLocator<GameObject> assetLocator)
 		{
-			AssetLocator.SafeInvokeAsync(environmentAssetPrefab =>
+			assetLocator.SafeInvokeAsync(environmentAssetPrefab =>
 				{
 					var convertedObjects = ConvertToPrefab(GetFilteredAssets(), environmentAssetPrefab);
 
@@ -23,7 +35,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 				.Forget();
 		}
 
-		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Prefab", true)]
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Environment Prefab", true)]
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Tile Prefab", true)]
+		[MenuItem("Assets/" + Constants.MenuNames.MenuName + "/Create Tile Way Prefab", true)]
 		private static bool ConvertToPrefabValidate()
 		{
 			if (Selection.count == 0)
