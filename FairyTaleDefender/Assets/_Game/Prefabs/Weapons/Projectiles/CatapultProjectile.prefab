@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5885950034070737681}
   - component: {fileID: 1332122253977270990}
   - component: {fileID: 4428090315763681877}
+  - component: {fileID: 4582552007896101763}
   m_Layer: 11
   m_Name: CatapultProjectile
   m_TagString: Untagged
@@ -253,3 +254,19 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &4582552007896101763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783791168434829312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fb197a2bf34b3db4e5fd8593186a66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Radius>k__BackingField: 1
+  <EnemyLayer>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 1024

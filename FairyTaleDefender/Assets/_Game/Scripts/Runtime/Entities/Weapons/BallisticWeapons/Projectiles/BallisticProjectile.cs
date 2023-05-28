@@ -1,6 +1,4 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
-using BoundfoxStudios.FairyTaleDefender.Extensions;
-using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles
@@ -17,8 +15,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 
 		private Rigidbody _rigidbody = default!;
 
+		private ICanDealDamageOnCollision DamageOnCollision { get; set; } = default!;
+
 		private void Awake()
 		{
+			DamageOnCollision = GetComponent<ICanDealDamageOnCollision>();
 			_rigidbody = GetComponent<Rigidbody>();
 			_rigidbody.useGravity = false;
 
@@ -46,13 +47,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 
 		private void OnCollisionEnter(Collision collision)
 		{
-			if (collision.collider.TryGetComponentInParent<IAmDamageable>(out var damageable))
-			{
-				// TODO: Use information from SO or somewhere else, no magic numbers
-				damageable.Health.TakeDamage(10);
-			}
-
+			// TODO: Use information from SO or somewhere else, no magic numbers
+			DealDamage(collision, 10);
 			Destroy(gameObject);
+		}
+
+		private void DealDamage(Collision collision, int amount)
+		{
+			DamageOnCollision.DealDamage(collision, amount);
+		}
+
+		private void OnValidate()
+		{
+			Debug.Assert(GetComponent<ICanDealDamageOnCollision>() != null,
+				$"No component is implementing {nameof(ICanDealDamageOnCollision)} on {this}");
 		}
 	}
 }
