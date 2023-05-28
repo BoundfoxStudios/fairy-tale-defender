@@ -13,6 +13,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		public event Action Rotate = delegate { };
 		public event Action Cancel = delegate { };
 
+		private Vector2 _lastPosition;
+
 		public void OnBuildPosition(InputAction.CallbackContext context)
 		{
 			if (!context.performed)
@@ -20,17 +22,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				return;
 			}
 
-			Position(context.ReadValue<Vector2>());
+			_lastPosition = context.ReadValue<Vector2>();
+			Position(_lastPosition);
 		}
 
 		public void OnBuild(InputAction.CallbackContext context)
 		{
-			if (!context.performed)
+			if (!context.canceled)
 			{
 				return;
 			}
 
-			Build(context.ReadValue<Vector2>());
+			Build(_lastPosition);
 		}
 
 		public void OnBuildRotate(InputAction.CallbackContext context)

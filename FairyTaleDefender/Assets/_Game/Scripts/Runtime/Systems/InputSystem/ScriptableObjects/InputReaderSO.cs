@@ -87,6 +87,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void ExitBuildMode()
 		{
+			GameInput.BuildSystem.Disable();
 			EnableGameplayInput();
 		}
 
@@ -104,7 +105,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void GameplayStart()
 		{
-			EnableGameplayInput();
+			EnableGameplayInputDelayedAsync();
 		}
 
 		private void DisableAllInput()
@@ -133,19 +134,22 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.Camera.Enable();
 		}
 
-		private void EnableGameplayInput()
+		private void EnableGameplayInputDelayedAsync()
 		{
 			GameInput.BuildSystem.Disable();
 
 			// TODO: Bring this back to sync code if that is really an issue with the InputSystem.
 			// There seems to be an issue in the InputSystem.
 			// If you enable an action during handling another action it seems to trigger the activated actions as well.
-			DoDelayedAsync(() =>
-			{
-				GameInput.Gameplay.Enable();
-				GameInput.UI.Enable();
-				GameInput.Camera.Enable();
-			}).Forget();
+			// Cancel Events may be an exception here, they don't seem to be passed through.
+			DoDelayedAsync(EnableGameplayInput).Forget();
+		}
+
+		private void EnableGameplayInput()
+		{
+			GameInput.Gameplay.Enable();
+			GameInput.UI.Enable();
+			GameInput.Camera.Enable();
 		}
 
 		private void DisableTooltipInput()
