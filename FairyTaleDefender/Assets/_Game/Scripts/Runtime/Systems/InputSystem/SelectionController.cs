@@ -41,6 +41,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 
 		private void GameplayActionsOnClick(Vector2 position)
 		{
+			if (!CameraRuntimeAnchor.Item)
+			{
+				return;
+			}
+
 			var ray = CameraRuntimeAnchor.ItemSafe.ScreenPointToRay(position);
 
 			if (!Physics.Raycast(ray, out var hitInfo, 1000, TowerLayerMask))
