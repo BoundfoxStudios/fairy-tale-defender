@@ -46,11 +46,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <TextTooltipDisplay>k__BackingField: {fileID: 0}
+  <TooltipContainer>k__BackingField: {fileID: 0}
   <InputReader>k__BackingField: {fileID: 11400000, guid: 8b87fd4ff750d2348b3a6c6654e1c0fe,
     type: 2}
   <ShowTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
     type: 2}
   <HideTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
+    type: 2}
+  <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
     type: 2}
 --- !u!1 &6136770490164619603
 GameObject:
@@ -96,5 +99,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36b548f59a13498cb952a28e9d87b551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Container>k__BackingField: {fileID: 0}
+  <ContainerRectTransform>k__BackingField: {fileID: 0}
+  <TooltipCanvas>k__BackingField: {fileID: 0}
   <Text>k__BackingField: {fileID: 0}
