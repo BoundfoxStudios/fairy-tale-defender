@@ -10,20 +10,23 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 	{
 		[field: Header("References")]
 		[field: SerializeField]
-		public TextTooltipDisplay TextTooltipDisplay { get; private set; } = default!;
+		private TextTooltipDisplay TextTooltipDisplay { get; set; } = default!;
 
 		[field: SerializeField]
-		public GameObject TooltipContainer { get; private set; } = default!;
+		private GameObject TooltipContainer { get; set; } = default!;
 
 		[field: SerializeField]
-		public InputReaderSO InputReader { get; private set; } = default!;
+		private InputReaderSO InputReader { get; set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
-		public TooltipEventChannelSO ShowTooltipEventChannel { get; private set; } = default!;
+		private TooltipEventChannelSO ShowTooltipEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		public VoidEventChannelSO HideTooltipEventChannel { get; private set; } = default!;
+		private VoidEventChannelSO HideTooltipEventChannel { get; set; } = default!;
+
+		[field: SerializeField]
+		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
 
 		private TooltipDisplay? _activeTooltipDisplay;
 
@@ -36,14 +39,21 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 		{
 			ShowTooltipEventChannel.Raised += ShowTooltip;
 			HideTooltipEventChannel.Raised += HideTooltip;
+			LoadSceneEventChannel.Raised += HideTooltipOnSceneChange;
 
 			InputReader.TooltipActions.Position += SetTooltipTextPosition;
+		}
+
+		private void HideTooltipOnSceneChange(LoadSceneEventChannelSO.EventArgs _)
+		{
+			HideTooltip();
 		}
 
 		private void OnDisable()
 		{
 			ShowTooltipEventChannel.Raised -= ShowTooltip;
 			HideTooltipEventChannel.Raised -= HideTooltip;
+			LoadSceneEventChannel.Raised -= HideTooltipOnSceneChange;
 
 			InputReader.TooltipActions.Position -= SetTooltipTextPosition;
 		}
