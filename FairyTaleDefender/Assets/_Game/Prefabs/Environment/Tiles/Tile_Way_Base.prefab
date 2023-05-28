@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 3029451628350023752, guid: d8882a0bbfaf84f919261673c0dfcd81,
         type: 3}
       propertyPath: m_Name
-      value: Tile_Base Variant
+      value: Tile_Way_Base
       objectReference: {fileID: 0}
     - target: {fileID: 6375175967080167619, guid: d8882a0bbfaf84f919261673c0dfcd81,
         type: 3}

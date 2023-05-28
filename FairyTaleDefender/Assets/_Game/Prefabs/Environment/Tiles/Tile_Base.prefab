@@ -11,7 +11,12 @@ PrefabInstance:
     - target: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
         type: 3}
       propertyPath: m_Name
-      value: EnvironmentAsset_Base Variant
+      value: Tile_Base
+      objectReference: {fileID: 0}
+    - target: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8759677533206482384, guid: 6d111641095844beea5b3c09bd3ae23c,
         type: 3}
@@ -71,5 +76,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6140335157500467804}
   m_SourcePrefab: {fileID: 100100000, guid: 6d111641095844beea5b3c09bd3ae23c, type: 3}
+--- !u!1 &3029451628350023752 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 856610513094548827, guid: 6d111641095844beea5b3c09bd3ae23c,
+    type: 3}
+  m_PrefabInstance: {fileID: 2443638812523738387}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6140335157500467804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3029451628350023752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72716a6e314480caf1d56ce7f4a50c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <IsBuildable>k__BackingField: 0
