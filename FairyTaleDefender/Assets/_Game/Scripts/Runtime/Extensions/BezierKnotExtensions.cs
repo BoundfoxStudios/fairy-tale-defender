@@ -4,9 +4,10 @@ using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Extensions
 {
-	public static class SplineExtensions
+	public static class BezierKnotExtensions
 	{
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
-		public static bool IsValidKnotIndex(this ISpline spline, int knotIndex) => knotIndex >= 0 && knotIndex < spline.Count;
+		public static bool IsCloseTo(this BezierKnot knot, BezierKnot otherKnot, float epsilon = 0.001f) =>
+			math.distancesq(knot.Position, otherKnot.Position) <= epsilon;
 	}
 }
