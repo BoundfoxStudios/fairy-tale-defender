@@ -1,9 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem;
+using Unity.Mathematics;
 using UnityEditor;
+using UnityEditor.Splines;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.Splines;
@@ -13,7 +16,23 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 	[CustomEditor(typeof(WaySplineCreator))]
 	public class WaySplineCreatorEditor : UnityEditor.Editor
 	{
-		private const float SearchThreshold = 0.01f;
+		private MethodInfo? _reverseSplineFlow;
+
+		private void OnEnable()
+		{
+			FindReverseSplineFlowMethod();
+		}
+
+		private void FindReverseSplineFlowMethod()
+		{
+			var type = typeof(EditorSplineUtility);
+			_reverseSplineFlow = type.GetMethod("ReverseFlow", BindingFlags.NonPublic | BindingFlags.Static);
+
+			if (_reverseSplineFlow == null)
+			{
+				Debug.LogError("Did not find ReverseFlow method in EditorSplineUtility.");
+			}
+		}
 
 		public override void OnInspectorGUI()
 		{
@@ -105,7 +124,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 				// If the index is not zero, we need to reverse the spline, because the tile may be rotated.
 				if (index != 0)
 				{
-					knotsToAdd.Reverse();
+					// Doing some magic to reverse the spline flow via code.
+					var fakeSplineContainer = new FakeSplineContainer();
+					var splineCopy = new Spline(foundSpline.Spline);
+					fakeSplineContainer.AddSpline(splineCopy);
+
+					var splineInfoCopy = new SplineInfo(fakeSplineContainer, 0);
+					_reverseSplineFlow?.Invoke(null, new object[] { splineInfoCopy });
+
+					knotsToAdd = GetKnots(new[] { splineInfoCopy }, foundSpline.LocalToWorld).First().Value;
+					// knotsToAdd.Reverse();
 				}
 
 				// Skip the first knot in the list, because it's the same as we've already added.
@@ -166,11 +194,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			return result;
 		}
 
-		private Dictionary<SplineInfo, List<SplineKnot>> GetKnots(IEnumerable<SplineInfo> splines) =>
+		private Dictionary<SplineInfo, List<SplineKnot>> GetKnots(IEnumerable<SplineInfo> splines, float4x4? matrix = null) =>
 			splines.ToDictionary(splineInfo => splineInfo, splineInfo => splineInfo.Spline.Knots.Select((knot, i) =>
 				new SplineKnot()
 				{
-					Knot = knot.Transform(splineInfo.LocalToWorld),
+					Knot = knot.Transform(matrix ?? splineInfo.LocalToWorld),
 					TangentMode = splineInfo.Spline.GetTangentMode(i),
 					Tension = splineInfo.Spline.GetAutoSmoothTension(i)
 				}).ToList());
@@ -193,6 +221,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			public BezierKnot Knot;
 			public TangentMode TangentMode;
 			public float Tension;
+		}
+
+		private class FakeSplineContainer : ISplineContainer
+		{
+			public IReadOnlyList<Spline> Splines { get; set; } = new List<Spline>();
+			public KnotLinkCollection KnotLinkCollection { get; } = new();
 		}
 	}
 }
