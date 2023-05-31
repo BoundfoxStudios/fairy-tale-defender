@@ -75,10 +75,11 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_leaf_bones=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
@@ -111,10 +112,11 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">False&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_leaf_bones=&lt;span style="color:#00f">False&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
@@ -130,8 +132,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> view_layer.objects.active = obj_active
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Farbpalette</title><link>https://docs.fairytaledefender.de/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/colors/</guid><description>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">True&lt;/span>)&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Farbpalette</title><link>https://docs.fairytaledefender.de/docs/docs-visual/colors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-visual/colors/</guid><description>
 &lt;p>Alle Elemente im Spiel orientieren sich an einer Farbpalette.
 Es wird &amp;ldquo;pro Jahreszeit&amp;rdquo; eine Farppalette geben.&lt;/p>
 &lt;p>Jede Farbpalette ist 16x16 Pixel groß und bietet somit Platz für 256 verschiedene Farben.
