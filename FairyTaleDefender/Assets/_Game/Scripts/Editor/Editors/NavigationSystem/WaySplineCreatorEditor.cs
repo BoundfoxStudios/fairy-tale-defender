@@ -145,6 +145,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 				iteration++;
 			} while (iteration < maxIterations);
 
+			if (iteration == maxIterations)
+			{
+				Debug.LogWarning("Hit fail-safe, that should not happen.");
+			}
+
 			splineContainer.AddSpline(spline);
 		}
 
