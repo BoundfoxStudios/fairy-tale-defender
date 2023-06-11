@@ -13,7 +13,7 @@ using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 {
-	[CustomEditor(typeof(WaySplineCreator))]
+	// [CustomEditor(typeof(WaySplineCreator))]
 	public class WaySplineCreatorEditor : UnityEditor.Editor
 	{
 		private MethodInfo? _reverseSplineFlow;
@@ -116,6 +116,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 						break;
 					}
 
+					// TODO :remove just for debugging
+					splineContainer.AddSpline(spline);
 					throw new("End of spline reached, but it seems we did knot find the real end knot!");
 				}
 
@@ -165,6 +167,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			Dictionary<SplineInfo, List<SplineKnot>> knots,
 			SplineKnot knotToFind, SplineInfo ignoreSpline)
 		{
+			if (ignoreSpline.Container.KnotLinkCollection.TryGetKnotLinks(new(ignoreSpline.Index, knotToFind.Index), out var knotLinks))
+			{
+				Debug.Log($"Found KnotLinks: {knotLinks.Count}");
+			}
+
 			// Remove the ignoreSpline because that one will also contain the knot, we're looking for.
 			// But we're not interested in that one, because otherwise we would never proceed forwards.
 			var allKnots = knots.Where(kvp => kvp.Key.Spline != ignoreSpline.Spline);
@@ -178,6 +185,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			if (!splineInfo.Object)
 			{
 				return null;
+			}
+
+			if (splineInfo.Container.KnotLinkCollection.Count > 0)
+			{
+
 			}
 
 			var splineKnotIndex = splineKnots.FindIndex(knot => knot.Knot.IsCloseTo(knotToFind.Knot));
@@ -194,8 +206,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 				.Select((_, index) => new SplineInfo(splineContainer, index))
 				.ToList();
 
-			Assert.IsTrue(result.Count == 1, "Found more than one Spline in a SplineContainer. This is not supported yet.");
-
 			return result;
 		}
 
@@ -204,6 +214,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 				new SplineKnot()
 				{
 					Knot = knot.Transform(matrix ?? splineInfo.LocalToWorld),
+					Index = i,
 					TangentMode = splineInfo.Spline.GetTangentMode(i),
 					Tension = splineInfo.Spline.GetAutoSmoothTension(i)
 				}).ToList());
@@ -224,6 +235,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 		struct SplineKnot
 		{
 			public BezierKnot Knot;
+			public int Index;
 			public TangentMode TangentMode;
 			public float Tension;
 		}
