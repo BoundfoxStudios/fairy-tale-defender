@@ -1,4 +1,5 @@
 using System.Runtime.CompilerServices;
+using Unity.Mathematics;
 using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Extensions
