@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityGizmos = UnityEngine.Gizmos;
 
 namespace BoundfoxStudios.FairyTaleDefender.Editor.Gizmos
 {
@@ -17,9 +18,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Gizmos
 			var left = Quaternion.LookRotation(direction) * Quaternion.Euler(0, 180 - halfAngle, 0) *
 			           new Vector3(0, 0, 1);
 
-			Debug.DrawLine(from, to, color);
-			Debug.DrawRay(to, left * arrowHeadLength, color);
-			Debug.DrawRay(to, right * arrowHeadLength, color);
+			UnityGizmos.color = color;
+			UnityGizmos.DrawLine(from, to);
+			UnityGizmos.DrawRay(to, left * arrowHeadLength);
+			UnityGizmos.DrawRay(to, right * arrowHeadLength);
 		}
 	}
 }

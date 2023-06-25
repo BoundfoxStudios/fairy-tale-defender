@@ -76,7 +76,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			endSplineContainer.ThrowIfMoreThanOneSpline();
 
 			var allSplineContainers = wayContainer.GetComponentsInChildren<SplineContainer>();
-			var allSplineInfos = allSplineContainers.SelectMany(GetSplineInfos);
+			var allSplineInfos = allSplineContainers.SelectMany(container => container.GetSplineInfos());
 			var allKnots = allSplineInfos.SelectMany(splineInfo => splineInfo.GetExtendedKnots()).ToArray();
 
 			var spline = new Spline();
@@ -84,9 +84,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 			EditorUtility.SetDirty(splineContainer);
 			splineContainer.Clear();
 
-			var currentSplineInfo = GetSplineInfos(startSplineContainer)[0];
+			var currentSplineInfo = startSplineContainer.GetSplineInfos()[0];
 			var nextKnot = currentSplineInfo.GetExtendedKnot(0);
-			var endKnot = GetSplineInfos(endSplineContainer)[0].GetExtendedKnots().Last();
+			var endKnot = endSplineContainer.GetSplineInfos()[0].GetExtendedKnots().Last();
 
 			const int maxIterations = 1000;
 			var iteration = 0;
@@ -183,10 +183,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 		private SplineContainer GetSplineContainer(GameObject gameObject) =>
 			gameObject.GetComponentInChildren<SplineContainer>();
 
-		private IList<SplineInfo> GetSplineInfos(ISplineContainer splineContainer) =>
-			splineContainer.Splines.Select((_, index) => new SplineInfo(splineContainer, index)).ToArray();
-
-
 		private class FakeSplineContainer : ISplineContainer
 		{
 			public IReadOnlyList<Spline> Splines { get; set; } = new List<Spline>();
@@ -219,6 +215,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Editors.NavigationSystem
 
 		public static IList<ExtendedKnot> GetExtendedKnots(this SplineInfo splineInfo, float4x4? matrix = null) =>
 			splineInfo.Spline.Select((_, index) => splineInfo.GetExtendedKnot(index, matrix)).ToArray();
+
+		public static IList<SplineInfo> GetSplineInfos(this SplineContainer splineContainer) =>
+			splineContainer.Splines.Select((_, index) => new SplineInfo(splineContainer, index)).ToArray();
 
 		public static void InsertExtendedKnots(this Spline spline, IEnumerable<ExtendedKnot> extendedKnots)
 		{

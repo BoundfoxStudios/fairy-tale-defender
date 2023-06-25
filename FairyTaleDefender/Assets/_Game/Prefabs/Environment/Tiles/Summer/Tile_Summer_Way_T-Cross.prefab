@@ -92,6 +92,36 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <HasExit>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <CanEditExits>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <Exits>k__BackingField.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <Exits>k__BackingField.Array.data[1].Knot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <Exits>k__BackingField.Array.data[2].Knot
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342044489553359160, guid: a6c20cb33807341c3ad92e166c1dda41,
+        type: 3}
+      propertyPath: <Exits>k__BackingField.Array.data[2].Spline
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4290925082570878999, guid: a6c20cb33807341c3ad92e166c1dda41,
         type: 3}
       propertyPath: m_Name
