@@ -137,12 +137,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		private void EnableGameplayInputDelayedAsync()
 		{
 			GameInput.BuildSystem.Disable();
-
-			// TODO: Bring this back to sync code if that is really an issue with the InputSystem.
-			// There seems to be an issue in the InputSystem.
-			// If you enable an action during handling another action it seems to trigger the activated actions as well.
-			// Cancel Events may be an exception here, they don't seem to be passed through.
-			DoDelayedAsync(EnableGameplayInput).Forget();
+			EnableGameplayInput();
 		}
 
 		private void EnableGameplayInput()
@@ -160,12 +155,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		private void EnableTooltipInput()
 		{
 			GameInput.Tooltips.Enable();
-		}
-
-		private async UniTaskVoid DoDelayedAsync(Action callback)
-		{
-			await UniTask.Delay(250);
-			callback();
 		}
 	}
 }
