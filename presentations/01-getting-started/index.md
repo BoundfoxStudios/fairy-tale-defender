@@ -117,7 +117,7 @@ Viele Informationen, die hier in der Präsentation stehen, werd ich auch nochmal
 
 ## Technisch
 
-* Unity 2022.2.14f1
+* Unity 2022.3.4f1
 * Universal Render Pipeline
 * dotnet-format: Einheitliche, automatisierte Code-Formatierung
 * Code-Editor: Egal, Rider, Visual Studio, Visual Studio Code
