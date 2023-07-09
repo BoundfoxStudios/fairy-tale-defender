@@ -65,11 +65,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.cinemachine": {
-      "version": "3.0.0-pre.5",
+      "version": "3.0.0-pre.7",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.splines": "2.0.0-pre.4",
+        "com.unity.splines": "2.0.0",
         "com.unity.test-framework": "1.1.33"
       },
       "url": "https://packages.unity.com"
