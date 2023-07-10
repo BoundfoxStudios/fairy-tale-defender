@@ -3,6 +3,7 @@ using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
@@ -15,6 +16,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 
 		[field: SerializeField]
 		public WaySplineRuntimeAnchorSO WaySplineRuntimeAnchor { get; set; } = default!;
+
+		public float MovementSpeed { get; set; } = 1;
 
 		public event Action ReachedEndOfSpline = delegate { };
 
@@ -29,14 +32,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 		private float _normalizedTime;
 
 		private float _elapsedTime;
-		private float _movementSpeed = 1;
 		private ISpline _spline = default!;
 
 		public void Initialize(ISpline spline, float movementSpeed)
 		{
 			_spline = spline;
-			_duration = spline.GetLength() / _movementSpeed;
-			_movementSpeed = movementSpeed;
+			_duration = spline.GetLength() / MovementSpeed;
+			MovementSpeed = movementSpeed;
 		}
 
 		private void CalculateNormalizedTime(float deltaTime)
@@ -51,7 +53,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 
 		private void FixedUpdate()
 		{
-			CalculateNormalizedTime(Time.deltaTime * _movementSpeed);
+			CalculateNormalizedTime(Time.deltaTime * MovementSpeed);
 
 			var (position, rotation) = EvaluateSpline(_normalizedTime);
 

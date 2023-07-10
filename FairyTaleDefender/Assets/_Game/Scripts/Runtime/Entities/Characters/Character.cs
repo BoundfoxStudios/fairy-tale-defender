@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Entities.Characters.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.StateMachine;
 using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
 using UnityEngine;
 
@@ -8,16 +9,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters
 		where TDefinition : CharacterSO
 	{
 		[field: SerializeField]
-		protected TDefinition Definition { get; set; } = default!;
+		public TDefinition Definition { get; set; } = default!;
 
 		[field: SerializeField]
 		public Health Health { get; private set; } = default!;
 
 		[field: SerializeField]
-		protected Animator Animator { get; set; } = default!;
+		public Animator Animator { get; set; } = default!;
+
+		protected CharacterStateMachine<TDefinition> StateMachine { get; private set; } = default!;
 
 		protected virtual void Awake()
 		{
+			StateMachine = new(this);
+
 			Health.Initialize(Definition.MaxHealth, Definition.MaxHealth);
 		}
 

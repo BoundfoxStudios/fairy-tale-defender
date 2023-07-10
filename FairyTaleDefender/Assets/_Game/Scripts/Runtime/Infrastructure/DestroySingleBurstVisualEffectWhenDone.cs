@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.VFX;
@@ -16,8 +17,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure
 
 		private async UniTaskVoid DestroyAfterFinishAsync(VisualEffect visualEffect)
 		{
-			await UniTask.WaitWhile(() => visualEffect.aliveParticleCount == 0);
-			await UniTask.WaitUntil(() => visualEffect.aliveParticleCount == 0);
+			await UniTask.WaitWhile(() => visualEffect.aliveParticleCount == 0, cancellationToken: destroyCancellationToken);
+			await UniTask.WaitUntil(() => visualEffect.aliveParticleCount == 0, cancellationToken: destroyCancellationToken);
+
+			if (destroyCancellationToken.IsCancellationRequested)
+			{
+				return;
+			}
+
 			Destroy(gameObject);
 		}
 	}

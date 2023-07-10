@@ -24,9 +24,11 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 15
   <Armor>k__BackingField: 1
   <MovementSpeed>k__BackingField: 1
+  <CanHobble>k__BackingField: 1
+  <HobbleSpeedPercentage>k__BackingField: 0.33
   <Size>k__BackingField: 1
   <ExperienceOnKill>k__BackingField: 1
-  <CurrencyOnKill>k__BackingField: 1
+  <CoinsOnKill>k__BackingField: 1
   references:
     version: 2
     RefIds: []

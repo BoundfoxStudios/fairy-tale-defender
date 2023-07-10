@@ -1,3 +1,5 @@
+using UnityEngine;
+
 namespace BoundfoxStudios.FairyTaleDefender.Common
 {
 	public static class Constants
@@ -35,6 +37,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 				"https://www.youtube.com/playlist?list=PLxVAs8AY4TgchOtBZqg4qvFeq6w74ZtAm";
 
 			public const string Discord = "https://discord.gg/tHqNzMT";
+		}
+
+		public static class AnimationStates
+		{
+			public static readonly int IsWalking = Animator.StringToHash("IsWalking");
+			public static readonly int IsHobbling = Animator.StringToHash("IsHobbling");
 		}
 	}
 }

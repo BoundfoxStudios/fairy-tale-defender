@@ -1,5 +1,6 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.StateMachine.States;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem;
 using UnityEngine;
@@ -11,8 +12,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 	[AddComponentMenu(Constants.MenuNames.Characters + "/" + nameof(Enemy))]
 	public class Enemy : Character<EnemySO>
 	{
-		private static readonly int IsWalking = Animator.StringToHash("IsWalking");
-
 		[field: Header("References")]
 		[field: SerializeField]
 		private SplineWalker SplineWalker { get; set; } = default!;
@@ -28,7 +27,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 		{
 			base.Awake();
 
-			Animator.SetBool(IsWalking, true);
+			StateMachine.AddState<WalkingState<EnemySO>>();
+			StateMachine.AddState<HobblingState<EnemySO>>();
+
+			StateMachine.ChangeState<WalkingState<EnemySO>>();
 		}
 
 		public void Initialize(ISpline spline)
