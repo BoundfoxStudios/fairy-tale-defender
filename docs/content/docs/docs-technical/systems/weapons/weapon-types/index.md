@@ -29,3 +29,16 @@ Beispiel vom Katapult:
 Ballistische Waffen verschießen Projektile, die aktuell so implementiert sind, dass sie physikalisch korrekt fliegen.
 Ein Projektil hat einen dynamischen Rigidbody und wird durch die Gravitation nach unten gezogen.
 Beim Start ein Projektiles wird einmalig die Abschussgeschwindigkeit (Velocity) bestimmt, anhand derer das Projektil zu seinem Zielpunkt fliegt.
+
+#### Schaden
+
+Bei Kollision fügen Projektile Gegnern Schaden zu. Dazu benötigt jedes Projektil eine weitere Komponente, die das Interface IDealDamageOnCollision implementiert.
+
+Hierfür gibt es derzeit 2 Implementierungen:
+1. Einzelschaden: Die Komponente SingleTargetDamageOnCollision trifft nur genau das Ziel, mit dem das Projektil kollidiert.
+![Einzelschaden](../assets/single-target-damage-on-collision-component.png)
+
+2. Flächenschaden: Die Komponente AreaDamageOnCollision nutzt einen SphereCast um potenziell mehreren Gegnern im gegebenen Radius vom Ort der Kollision Schaden zuzufügen.<br>
+![Flächenschaden](../assets/area-damage-on-collision-component.png)
+
+Anschließend wird in beiden Fällen das GameObject welches das Projektil darstellt gelöscht.
