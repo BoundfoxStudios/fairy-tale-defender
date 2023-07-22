@@ -64,7 +64,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fb197a2bf34b3db4e5fd8593186a66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Radius>k__BackingField: 1
+  <Radius>k__BackingField: 0.25
   <EnemyLayer>k__BackingField:
     serializedVersion: 2
     m_Bits: 1024
