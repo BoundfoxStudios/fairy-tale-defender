@@ -1663,4 +1663,18 @@ Für ballistische Waffen exitiert ein ScriptableObject vom Typ &lt;code>Ballisti
 &lt;h3 id="projektile">Projektile&lt;/h3>
 &lt;p>Ballistische Waffen verschießen Projektile, die aktuell so implementiert sind, dass sie physikalisch korrekt fliegen.
 Ein Projektil hat einen dynamischen Rigidbody und wird durch die Gravitation nach unten gezogen.
-Beim Start ein Projektiles wird einmalig die Abschussgeschwindigkeit (Velocity) bestimmt, anhand derer das Projektil zu seinem Zielpunkt fliegt.&lt;/p></description></item></channel></rss>
+Beim Start ein Projektiles wird einmalig die Abschussgeschwindigkeit (Velocity) bestimmt, anhand derer das Projektil zu seinem Zielpunkt fliegt.&lt;/p>
+&lt;h4 id="schaden">Schaden&lt;/h4>
+&lt;p>Bei Kollision fügen Projektile Gegnern Schaden zu. Dazu benötigt jedes Projektil eine weitere Komponente, die das Interface IDealDamageOnCollision implementiert.&lt;/p>
+&lt;p>Hierfür gibt es derzeit 2 Implementierungen:&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Einzelschaden: Die Komponente SingleTargetDamageOnCollision trifft nur genau das Ziel, mit dem das Projektil kollidiert.
+&lt;img src="../assets/single-target-damage-on-collision-component.png" alt="Einzelschaden">&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Flächenschaden: Die Komponente AreaDamageOnCollision nutzt einen SphereCast um potenziell mehreren Gegnern im gegebenen Radius vom Ort der Kollision Schaden zuzufügen.&lt;br>
+&lt;img src="../assets/area-damage-on-collision-component.png" alt="Flächenschaden">&lt;/p>
+&lt;/li>
+&lt;/ol>
+&lt;p>Anschließend wird in beiden Fällen das GameObject welches das Projektil darstellt gelöscht.&lt;/p></description></item></channel></rss>
