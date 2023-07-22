@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem;
@@ -5,6 +6,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 {
+	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(AreaDamageOnCollision))]
 	public class AreaDamageOnCollision : MonoBehaviour, ICanDealDamageOnCollision
 	{
 		[field: SerializeField]
@@ -13,9 +15,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 		[field: SerializeField]
 		private LayerMask EnemyLayer { get; set; }
 
+		[field: SerializeField]
+		private GameObject? Effect { get; set; }
+
 		public void DealDamage(Collision collision, int amount)
 		{
-			var results = Physics.SphereCastAll(collision.transform.position, Radius,
+			var position = collision.transform.position;
+			TrySpawnEffect(position);
+
+			var results = Physics.SphereCastAll(position, Radius,
 				Vector3.up, Radius, EnemyLayer);
 
 			foreach (var hit in results)
@@ -25,6 +33,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 					damageable.Health.TakeDamage(amount);
 				}
 			}
+		}
+
+		private void TrySpawnEffect(Vector3 position)
+		{
+			if (!Effect)
+			{
+				return;
+			}
+
+			Instantiate(Effect, position, Quaternion.identity);
 		}
 	}
 }
