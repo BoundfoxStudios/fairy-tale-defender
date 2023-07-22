@@ -68,6 +68,8 @@ MonoBehaviour:
   <EnemyLayer>k__BackingField:
     serializedVersion: 2
     m_Bits: 1024
+  <Effect>k__BackingField: {fileID: 6615919096893088869, guid: 1043e08f13cc342f89b02563d442cade,
+    type: 3}
 --- !u!33 &177307508736010507
 MeshFilter:
   m_ObjectHideFlags: 0

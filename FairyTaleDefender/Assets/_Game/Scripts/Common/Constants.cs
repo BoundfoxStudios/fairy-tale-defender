@@ -24,6 +24,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public const string Integrations = MenuName + "/Integrations";
 			public const string SteamIntegration = Integrations + "/Steam";
 			public const string BuildSystem = MenuName + "/Build System";
+			public const string Infrastructure = MenuName + "/Infrastructure";
 		}
 
 		public static class SocialLinks
