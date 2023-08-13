@@ -3,6 +3,9 @@
   <name>Windows</name>
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
+    <options>
+      <option name="artifactRules" value="build/StandaloneWindows64 =&gt; Windows" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_2" name="Build Windows" type="unity">
