@@ -25,6 +25,10 @@
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
         <artifact sourcePath="contributors.json" />
       </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="manifest.json" />
+      </dependency>
     </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="FairyTaleDefender_Test_EditMode">
