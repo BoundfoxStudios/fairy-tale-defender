@@ -13,6 +13,19 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_3" type="IssueTracker">
+      <parameters>
+        <param name="authType" value="accesstoken" />
+        <param name="name" value="BoundfoxStudios/fairy-tale-defender" />
+        <param name="pattern" value="#(\d+)" />
+        <param name="repository" value="https://github.com/BoundfoxStudios/fairy-tale-defender" />
+        <param name="secure:accessToken" value="credentialsJSON:057775b2-9c5e-4c52-a403-32760adeea25" />
+        <param name="secure:password" value="" />
+        <param name="tokenId" value="" />
+        <param name="type" value="GithubIssues" />
+        <param name="username" value="" />
+      </parameters>
+    </extension>
   </project-extensions>
   <cleanup />
 </project>
