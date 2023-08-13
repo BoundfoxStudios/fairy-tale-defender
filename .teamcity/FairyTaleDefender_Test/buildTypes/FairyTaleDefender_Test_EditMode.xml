@@ -8,7 +8,6 @@
       <runner id="RUNNER_2" name="Run edit mode tests" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
-          <param name="buildTarget" value="LinuxUniversal" />
           <param name="detectionMode" value="auto" />
           <param name="noGraphics" value="true" />
           <param name="runEditorTests" value="true" />
