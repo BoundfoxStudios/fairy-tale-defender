@@ -11,7 +11,7 @@
           <param name="script.content"><![CDATA[apk update
 apk add jq 
 
-jq -n --arg sha "${build.vcs.number}" '{ sha: $sha }' > manifest.json
+jq -n --arg sha "$BUILD_VCS_NUMBER" '{ sha: $sha }' > manifest.json
 echo "##teamcity[publishArtifacts 'manifest.json']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
