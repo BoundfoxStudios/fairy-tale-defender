@@ -20,6 +20,12 @@
     <vcs-settings />
     <requirements />
     <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="contributors.json" />
+      </dependency>
+    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="FairyTaleDefender_Test_EditMode">
         <options>
