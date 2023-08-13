@@ -6,7 +6,18 @@
       <option name="allowExternalStatus" value="true" />
     </options>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_2" name="" type="unity">
+        <parameters>
+          <param name="arguments" value="-logFile -" />
+          <param name="detectionMode" value="auto" />
+          <param name="noGraphics" value="true" />
+          <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="unityVersion" value="2022.3" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
     </vcs-settings>
