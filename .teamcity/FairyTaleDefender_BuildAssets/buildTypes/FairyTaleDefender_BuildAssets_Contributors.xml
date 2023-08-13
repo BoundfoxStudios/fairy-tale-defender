@@ -4,7 +4,17 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_4" name="Create contributors.json" type="simpleRunner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="apteno/alpine-jq:latest" />
+          <param name="script.content"><![CDATA[cat .all-contributors | jq --compact-output '{ items: [.contributors[] | { user: .name, githubAccount: .login, contributions: .contributions }] }' > contributors.json
+echo "##teamcity[publishArtifacts 'contributors.json']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
     </vcs-settings>
