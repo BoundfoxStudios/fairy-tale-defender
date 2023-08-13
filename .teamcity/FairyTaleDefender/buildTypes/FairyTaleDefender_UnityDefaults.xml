@@ -39,6 +39,7 @@
           <param name="detectionMode" value="auto" />
           <param name="secure:password" value="credentialsJSON:69bd7621-741b-4196-9723-942e79278d8a" />
           <param name="secure:serialNumber" value="credentialsJSON:1479d2f8-0f3e-4490-bd23-ae6aabfb19e7" />
+          <param name="unityVersion" value="2022.3.7f1" />
           <param name="username" value="%UNITY_EMAIL%" />
         </parameters>
       </extension>
