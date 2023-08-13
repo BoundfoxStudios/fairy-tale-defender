@@ -8,8 +8,8 @@
       <runner id="RUNNER_3" name="" type="simpleRunner">
         <parameters>
           <param name="plugin.docker.imageId" value="alpine/git:latest" />
-          <param name="script.content"><![CDATA[sudo apk update
-sudo apk add jq 
+          <param name="script.content"><![CDATA[apk update
+apk add jq 
 
 jq -n --arg sha "${build.vcs.number}" '{ sha: $sha }' > manifest.json
 echo "##teamcity[publishArtifacts 'manifest.json']"]]></param>
