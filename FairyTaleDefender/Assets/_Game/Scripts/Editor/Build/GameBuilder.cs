@@ -16,7 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void DebugBuildMacOS() => BuildMacOS(true);
 
 		[MenuItem(Constants.MenuNames.Build + "/macOS (Release)", priority = MenuPriority)]
-		public static void ReleaseBuildBuildMacOS() => BuildMacOS();
+		public static void ReleaseBuildMacOS() => BuildMacOS();
 
 		private static void BuildMacOS(bool isDebug = false) =>
 			Build(BuildTarget.StandaloneOSX, "FairyTaleDefender.app", isDebug);
@@ -29,7 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void DebugBuildWindows() => BuildWindows(true);
 
 		[MenuItem(Constants.MenuNames.Build + "/Windows (Release)", priority = MenuPriority)]
-		public static void ReleaseBuildBuildWindows() => BuildWindows();
+		public static void ReleaseBuildWindows() => BuildWindows();
 
 		private static void BuildWindows(bool isDebug = false) =>
 			Build(BuildTarget.StandaloneWindows64, isDebug: isDebug);
@@ -42,7 +42,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void DebugBuildLinux() => BuildLinux(true);
 
 		[MenuItem(Constants.MenuNames.Build + "/Linux (Release)", priority = MenuPriority)]
-		public static void ReleaseBuildBuildLinux() => BuildLinux();
+		public static void ReleaseBuildLinux() => BuildLinux();
 
 		private static void BuildLinux(bool isDebug = false) =>
 			Build(BuildTarget.StandaloneLinux64, isDebug: isDebug);
