@@ -13,7 +13,7 @@
           <param name="runEditorTests" value="true" />
           <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="testPlatform" value="editmode" />
+          <param name="testPlatform" value="all" />
           <param name="unityVersion" value="2022.3" />
         </parameters>
       </runner>
