@@ -45,7 +45,6 @@
     <dependencies>
       <depend-on sourceBuildTypeId="FairyTaleDefender_Test_EditMode">
         <options>
-          <option name="run-build-if-dependency-failed" value="CANCEL" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
