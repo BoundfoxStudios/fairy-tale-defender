@@ -4,6 +4,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
+      <option name="maximumNumberOfBuilds" value="1" />
     </options>
     <parameters />
     <build-runners>
