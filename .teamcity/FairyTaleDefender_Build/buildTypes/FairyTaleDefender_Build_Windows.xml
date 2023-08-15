@@ -4,7 +4,7 @@
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
     <options>
-      <option name="artifactRules" value="build/StandaloneWindows64 =&gt; Windows" />
+      <option name="artifactRules" value="build/StandaloneWindows64/** =&gt; Windows" />
     </options>
     <parameters />
     <build-runners order="RUNNER_5, RUNNER_2">
