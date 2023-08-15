@@ -32,7 +32,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void ReleaseBuildWindows() => BuildWindows();
 
 		private static void BuildWindows(bool isDebug = false) =>
-			Build(BuildTarget.StandaloneWindows64, isDebug: isDebug);
+			Build(BuildTarget.StandaloneWindows64, "FairyTaleDefender", isDebug: isDebug);
 
 		#endregion
 
@@ -45,11 +45,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void ReleaseBuildLinux() => BuildLinux();
 
 		private static void BuildLinux(bool isDebug = false) =>
-			Build(BuildTarget.StandaloneLinux64, isDebug: isDebug);
+			Build(BuildTarget.StandaloneLinux64, "FairyTaleDefender", isDebug: isDebug);
 
 		#endregion
 
-		private static void Build(BuildTarget target, string locationName = "", bool isDebug = false)
+		private static void Build(BuildTarget target, string locationName, bool isDebug = false)
 		{
 			var options = new BuildPlayerOptions()
 			{
@@ -75,7 +75,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 			Debug.LogError("Build failed!");
 		}
 
-		private static string CreateBuildFolderPath(BuildTarget target, string name = "") =>
+		private static string CreateBuildFolderPath(BuildTarget target, string name) =>
 			Path.Join("build", target.ToString(), name);
 	}
 }
