@@ -7,7 +7,16 @@
       <option name="artifactRules" value="build/StandaloneWindows64 =&gt; Windows" />
     </options>
     <parameters />
-    <build-runners>
+    <build-runners order="RUNNER_5, RUNNER_2">
+      <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m windows --cm&quot;)" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_2" name="Build Windows" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
@@ -17,15 +26,6 @@
           <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
           <param name="teamcity.step.mode" value="default" />
           <param name="unityVersion" value="2022.3" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
-        <parameters>
-          <param name="jetbrains_powershell_execution" value="PS1" />
-          <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m windows --cm&quot;)" />
-          <param name="jetbrains_powershell_script_mode" value="CODE" />
-          <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
     </build-runners>
