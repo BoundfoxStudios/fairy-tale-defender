@@ -30,6 +30,16 @@
     <vcs-settings />
     <requirements />
     <build-triggers />
+    <build-extensions>
+      <extension id="UnityBuildFeature" type="UnityBuildFeature">
+        <parameters>
+          <param name="activateLicense" value="true" />
+          <param name="secure:password" value="credentialsJSON:69bd7621-741b-4196-9723-942e79278d8a" />
+          <param name="secure:serialNumber" value="credentialsJSON:1479d2f8-0f3e-4490-bd23-ae6aabfb19e7" />
+          <param name="username" value="%UNITY_EMAIL%" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
