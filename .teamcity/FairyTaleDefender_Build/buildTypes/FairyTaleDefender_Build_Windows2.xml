@@ -8,11 +8,11 @@
     </options>
     <parameters />
     <build-runners order="RUNNER_5, RUNNER_2">
-      <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
+      <runner id="RUNNER_5" name="Install Unity 2022.3.7f1" type="jetbrains_powershell">
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m windows-il2cpp --cm&quot;" />
+          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install --version 2022.3.7f1 -m windows-il2cpp --cm&quot;" />
           <param name="jetbrains_powershell_script_mode" value="CODE" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
