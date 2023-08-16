@@ -4,7 +4,7 @@
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
     <options>
-      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneWindows64/** =&gt; Windows.zip&#xA;-:FairyTaleDefender/build/*_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Windows.zip&#xA;+:FairyTaleDefender/build/*_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Windows-DebugInfo.zip" />
+      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneWindows64/** =&gt; Windows.zip&#xA;-:FairyTaleDefender/build/*BackUpThisFolder* =&gt; Windows.zip&#xA;FairyTaleDefender/build/*BackUpThisFolder* =&gt; Windows-DebugInfo.zip" />
     </options>
     <parameters />
     <build-runners order="RUNNER_5, RUNNER_2">
