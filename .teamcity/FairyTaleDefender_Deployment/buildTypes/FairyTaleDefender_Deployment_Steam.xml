@@ -13,12 +13,9 @@
       <runner id="RUNNER_6" name="Steam" type="simpleRunner">
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:alpine" />
-          <param name="script.content"><![CDATA[which steamcmd
-realpath "$(which steamcmd)"
-
-mkdir /usr/games/steamcmd/config
-echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/games/steamcmd/config.vdf
-chmod 777 /usr/games/steamcmd/config.vdf
+          <param name="script.content"><![CDATA[mkdir /usr/bin/steamcmd/config
+echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/bin/steamcmd/config.vdf
+chmod 777 /usr/bin/steamcmd/config.vdf
 
 # Test login
 steamcmd +login %STEAM_BUILDER_USERNAME% +quit]]></param>
