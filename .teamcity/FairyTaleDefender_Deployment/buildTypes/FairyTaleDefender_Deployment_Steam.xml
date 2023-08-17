@@ -27,7 +27,9 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build resources/Steam/fairy_ta
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <artifact-dependencies>
