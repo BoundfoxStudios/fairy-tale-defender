@@ -14,7 +14,7 @@
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
           <param name="script.content"><![CDATA[echo "SteamCMD path $(which steamcmd)"
-ln $(which steamcmd)
+ls $(which steamcmd)
 echo "DONE"
 
 exit 1
