@@ -17,11 +17,11 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_2" name="Build Windows" type="unity">
+      <runner id="RUNNER_2" name="Build Linux" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
           <param name="detectionMode" value="auto" />
-          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildWindows" />
+          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildLinux" />
           <param name="noGraphics" value="true" />
           <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
           <param name="teamcity.step.mode" value="default" />
