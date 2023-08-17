@@ -18,6 +18,10 @@
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
         <artifact sourcePath="Linux.zip" />
       </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="FairyTaleDefender_Build_Windows" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="Windows.zip" />
+      </dependency>
     </artifact-dependencies>
     <cleanup />
   </settings>
