@@ -10,7 +10,6 @@
     </options>
     <disabled-settings>
       <setting-ref ref="ARTIFACT_DEPENDENCY_3" />
-      <setting-ref ref="ARTIFACT_DEPENDENCY_4" />
     </disabled-settings>
     <parameters />
     <build-runners>
