@@ -17,6 +17,7 @@
       <runner id="RUNNER_6" name="Steam" type="simpleRunner">
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="script.content"><![CDATA[echo ls /usr/bin
 echo ls /usr/games
 
