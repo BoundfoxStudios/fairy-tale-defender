@@ -32,6 +32,17 @@
     <vcs-settings />
     <requirements />
     <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_1" type="jetbrains.buildserver.feature.build.cache">
+        <parameters>
+          <param name="cache-name" value="UnityLibraryWindows" />
+          <param name="publish-cache" value="true" />
+          <param name="publish-cache-rules" value="FairyTaleDefender/Library" />
+          <param name="publish-only-changed" value="true" />
+          <param name="use-cache" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
