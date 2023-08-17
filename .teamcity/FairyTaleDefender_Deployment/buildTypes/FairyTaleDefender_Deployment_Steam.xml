@@ -19,9 +19,9 @@ echo "DONE"
 
 exit 1
 
-mkdir /usr/bin/steamcmd/config
-echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/bin/steamcmd/config.vdf
-chmod 777 /usr/bin/steamcmd/config.vdf
+mkdir /usr/games/steamcmd/config
+echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/games/steamcmd/config/config.vdf
+chmod 777 /usr/games/steamcmd/config/config.vdf
 
 # Test login
 steamcmd +login %STEAM_BUILDER_USERNAME% +quit]]></param>
