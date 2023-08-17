@@ -23,10 +23,10 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +quit
 echo "DEBUG INFOS"
 echo "pwd $(pwd)"
 echo "ls"
-ls .
+ls -R resources
 
 # Upload to steam
-steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build resources/Steam/fairy_tale_defender_develop.vdf +quit]]></param>
+steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build ./resources/Steam/fairy_tale_defender_develop.vdf +quit]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
