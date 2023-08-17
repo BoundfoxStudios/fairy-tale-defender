@@ -32,7 +32,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Build
 		public static void ReleaseBuildWindows() => BuildWindows();
 
 		private static void BuildWindows(bool isDebug = false) =>
-			Build(BuildTarget.StandaloneWindows64, "FairyTaleDefender", isDebug: isDebug);
+			Build(BuildTarget.StandaloneWindows64, "FairyTaleDefender.exe", isDebug: isDebug);
 
 		#endregion
 
