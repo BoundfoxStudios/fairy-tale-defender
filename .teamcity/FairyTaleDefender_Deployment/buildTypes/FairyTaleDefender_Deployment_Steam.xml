@@ -18,13 +18,9 @@
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="script.content"><![CDATA[apt-get install tree 
+          <param name="script.content"><![CDATA[ls -R -d /usr/bin/
 
-echo "TREE USR BIN"
-tree /usr/bin/
-
-echo "TREE USR GAMES"
-tree /usr/games/
+ls -R -d /usr/games/
 
 exit 1
 
