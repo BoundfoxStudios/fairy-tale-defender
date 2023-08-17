@@ -12,7 +12,7 @@
         <parameters>
           <param name="jetbrains_powershell_execution" value="PS1" />
           <param name="jetbrains_powershell_noprofile" value="true" />
-          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m windows-il2cpp --cm&quot;" />
+          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m linux-il2cpp --cm&quot;" />
           <param name="jetbrains_powershell_script_mode" value="CODE" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
