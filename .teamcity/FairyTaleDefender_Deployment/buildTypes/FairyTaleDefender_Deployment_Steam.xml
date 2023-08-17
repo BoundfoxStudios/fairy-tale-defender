@@ -16,7 +16,7 @@
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="FairyTaleDefender_Build_Linux" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
-        <artifact sourcePath="Linux.zip" />
+        <artifact sourcePath="Linux.zip!** =&gt; resources/Steam/content/Linux" />
       </dependency>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="FairyTaleDefender_Build_Windows" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
