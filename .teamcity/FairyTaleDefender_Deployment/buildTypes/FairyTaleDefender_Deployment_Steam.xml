@@ -9,7 +9,21 @@
       <option name="maximumNumberOfBuilds" value="1" />
     </options>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_6" name="Steam" type="simpleRunner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="steamcmd/steamcmd:alpine" />
+          <param name="script.content"><![CDATA[mkdir /usr/games/steamcmd/config
+echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/games/steamcmd/config.vdf
+chmod 777 /usr/games/steamcmd/config.vdf
+
+# Test login
+steamcmd +login %STEAM_BUILDER_USERNAME% +quit]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
