@@ -19,7 +19,10 @@ echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /root/Steam/config/config.vdf
 chmod 777 /root/Steam/config/config.vdf
 
 # Test login
-steamcmd +login %STEAM_BUILDER_USERNAME% +quit]]></param>
+steamcmd +login %STEAM_BUILDER_USERNAME% +quit
+
+# Upload to steam
+steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build resources/Steam/fairy_tale_defender_develop.vdf +quit]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
