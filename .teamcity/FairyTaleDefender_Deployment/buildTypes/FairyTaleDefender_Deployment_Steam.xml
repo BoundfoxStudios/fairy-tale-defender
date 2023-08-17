@@ -18,8 +18,8 @@
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="script.content"><![CDATA[echo ls /usr/bin
-echo ls /usr/games
+          <param name="script.content"><![CDATA[ls /usr/bin/
+ls /usr/games/
 
 exit 1
 
