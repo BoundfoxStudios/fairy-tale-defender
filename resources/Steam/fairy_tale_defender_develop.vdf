@@ -1,0 +1,55 @@
+"AppBuild"
+{
+	"AppID" "2350330" 
+	"Desc" "Fairy Tale Defender Build"
+
+	"ContentRoot" "./content/"
+	"BuildOutput" "./output/"
+	
+	"SetLive" "develop"
+
+	"Depots"
+	{
+		"2350331"
+		{
+			"FileMapping"
+			{
+				"LocalPath" "Windows/*"
+				"DepotPath" "."
+				"recursive" "1"
+			}
+			
+			"FileExclusion" "*.pdb"
+			"FileExclusion" "**/*_BurstDebugInformation_DoNotShip*"
+			"FileExclusion" "**/*_BackUpThisFolder_ButDontShipItWithYourGame*"
+		}
+		
+		// "2350332"
+		// {
+		//	"FileMapping"
+		//	{
+		//		"LocalPath" "macOS/*"
+		//		"DepotPath" "."
+		//		"recursive" "1"
+		//	}
+			
+		//	"FileExclusion" "*.pdb"
+		//	"FileExclusion" "**/*_BurstDebugInformation_DoNotShip*"
+		//	"FileExclusion" "**/*_BackUpThisFolder_ButDontShipItWithYourGame*"
+		// }
+		
+		"2350333"
+		{
+			"FileMapping"
+			{
+				"LocalPath" "Linux/*"
+				"DepotPath" "."
+				"recursive" "1"
+			}
+			
+			"FileExclusion" "*.pdb"
+			"FileExclusion" "**/*_BurstDebugInformation_DoNotShip*"
+			"FileExclusion" "**/*_BackUpThisFolder_ButDontShipItWithYourGame*"
+		}
+	}
+}
