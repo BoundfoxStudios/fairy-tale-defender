@@ -14,8 +14,7 @@
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="script.content"><![CDATA[mkdir /root/Steam/config
-echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /root/Steam/config/config.vdf
+          <param name="script.content"><![CDATA[echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /root/Steam/config/config.vdf
 chmod 777 /root/Steam/config/config.vdf
 
 # Test login
