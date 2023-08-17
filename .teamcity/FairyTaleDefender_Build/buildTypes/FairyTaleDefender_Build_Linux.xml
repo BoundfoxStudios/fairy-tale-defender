@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d6b12d47-df73-4945-b44c-b8351703afb5" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Linux</name>
+  <description />
+  <settings ref="FairyTaleDefender_UnityDefaults">
+    <options>
+      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneWindows64/** =&gt; Windows.zip&#xA;-:FairyTaleDefender/build/StandaloneWindows64/*BackUpThisFolder* =&gt; Windows.zip&#xA;FairyTaleDefender/build/StandaloneWindows64/*BackUpThisFolder* =&gt; Windows-DebugInfo.zip" />
+    </options>
+    <parameters />
+    <build-runners order="RUNNER_5, RUNNER_2">
+      <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m windows-il2cpp --cm&quot;" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Build Windows" type="unity">
+        <parameters>
+          <param name="arguments" value="-logFile -" />
+          <param name="detectionMode" value="auto" />
+          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildWindows" />
+          <param name="noGraphics" value="true" />
+          <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="unityVersion" value="2022.3" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="contributors.json" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest" cleanDestination="false">
+        <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
+        <artifact sourcePath="manifest.json" />
+      </dependency>
+    </artifact-dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
