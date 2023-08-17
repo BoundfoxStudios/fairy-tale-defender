@@ -13,13 +13,7 @@
       <runner id="RUNNER_6" name="Steam" type="simpleRunner">
         <parameters>
           <param name="plugin.docker.imageId" value="steamcmd/steamcmd:latest" />
-          <param name="script.content"><![CDATA[echo "SteamCMD path $(which steamcmd)"
-ls $(which steamcmd)
-echo "DONE"
-
-exit 1
-
-mkdir /usr/games/steamcmd/config
+          <param name="script.content"><![CDATA[mkdir /usr/games/steamcmd/config
 echo "%STEAM_BUILDER_CONFIG_VDF%" | base64 -d > /usr/games/steamcmd/config/config.vdf
 chmod 777 /usr/games/steamcmd/config/config.vdf
 
