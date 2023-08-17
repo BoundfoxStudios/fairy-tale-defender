@@ -20,7 +20,7 @@
       </dependency>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="FairyTaleDefender_Build_Windows" cleanDestination="false">
         <revisionRule name="lastSuccessful" revision="latest.lastSuccessful" />
-        <artifact sourcePath="Windows.zip" />
+        <artifact sourcePath="Windows.zip!** =&gt; resources/Steam/content/Windows" />
       </dependency>
     </artifact-dependencies>
     <cleanup />
