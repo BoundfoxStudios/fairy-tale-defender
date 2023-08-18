@@ -36,6 +36,7 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build "$(pwd)/resources/Steam/
         <parameters>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="triggerRules" value="-:user=teamcity:**" />
         </parameters>
       </build-trigger>
     </build-triggers>
