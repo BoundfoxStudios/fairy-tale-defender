@@ -1,5 +1,9 @@
 [![YouTube Channel Subscribers](https://img.shields.io/youtube/channel/subscribers/UCf54CbMEHpI3fXE-SwMg0Ug?style=social)][1] [![Discord](https://img.shields.io/discord/454361389935493124?logo=discord&logoColor=white)][2] ![GitHub contributors (via allcontributors.org)](https://img.shields.io/github/all-contributors/BoundfoxStudios/fairy-tale-defender)
 
+[![Windows Build](https://img.shields.io/teamcity/build/s/FairyTaleDefender_Build_Windows?server=https%3A%2F%2Fboundfoxstudios.teamcity.com&label=Windows)](https://boundfoxstudios.teamcity.com/buildConfiguration/FairyTaleDefender_Build_Windows#all-projects)
+[![Linux Build](https://img.shields.io/teamcity/build/s/FairyTaleDefender_Build_Linux?server=https%3A%2F%2Fboundfoxstudios.teamcity.com&label=Linux)](https://boundfoxstudios.teamcity.com/buildConfiguration/FairyTaleDefender_Build_Linux#all-projects)
+
+
 # Fairy Tale Defender
 
 > Ein Boundfox Studios Community-Projekt
@@ -134,13 +138,27 @@ Du musst:
 
 * Lizenz und Copyright Hinweis beilegen
 
-## JetBrains Rider
+## JetBrains
+
+![JetBrains](docs/content/docs/contributing/assets/jb_beam.png)
+
+JetBrains unterstützt unser Projekt zum einen mit Lizenzen für JetBrains Rider als auch mit einer Lizenz für TeamCity Cloud, um das Spiel zu bauen und auf Steam hochzuladen.
+
+Herzlichen Dank hierfür!
+
+### JetBrains Rider
 
 [JetBrains](https://jetbrains.com) sponsert unser Fairy Tale Defender mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
 Jeder Entwickler, die sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
 
-![JetBrains](docs/content/docs/contributing/assets/jb_beam.png)
 ![JetBrains Rider](docs/content/docs/contributing/assets/Rider.png)
+
+### JetBrains TeamCity
+
+[JetBrains](https://jetbrains.com) sponsert unser Fairy Tale Defender mit TeamCity Cloud, vielen Credits und einem eigenen macOS-Build Agent.
+[Hier](https://boundfoxstudios.teamcity.com) findest Du unseren TeamCity Cloud Server, Du kannst Dich einfach mit dem Gast-Account, der dort verlinkt ist, anmelden.
+
+![JetBrains TeamCity](docs/content/docs/contributing/assets/TeamCity.png)
 
 ## English
 
