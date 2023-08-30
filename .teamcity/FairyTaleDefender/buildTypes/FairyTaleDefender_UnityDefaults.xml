@@ -44,6 +44,11 @@
           <param name="username" value="%UNITY_EMAIL%" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_2" type="JetBrains.SharedResources">
+        <parameters>
+          <param name="locks-param" value="UnityLicense readLock" />
+        </parameters>
+      </extension>
     </build-extensions>
     <cleanup />
   </settings>
