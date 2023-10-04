@@ -666,6 +666,18 @@ MonoBehaviour:
     type: 2}
   <WeaponDeselectedEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
     type: 2}
+--- !u!114 &449263549 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8974376439884702617, guid: db6958c5b4bfb0d4c8fd62b3cb32aaf9,
+    type: 3}
+  m_PrefabInstance: {fileID: 449263545}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449263546}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0777d029ed3dffa4692f417d4aba19ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &556209361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,8 +1100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Default>k__BackingField: {fileID: 11400000, guid: 60b3d0ae46fe744798c866febf25ba33,
     type: 2}
-  <Build>k__BackingField: {fileID: 11400000, guid: d90a6341fea1641b1baaba74e51558aa,
-    type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
@@ -1119,6 +1129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1593510016}
   - component: {fileID: 1593510015}
+  - component: {fileID: 1593510017}
   m_Layer: 0
   m_Name: SelectionController
   m_TagString: Untagged
@@ -1166,6 +1177,35 @@ Transform:
   - {fileID: 449263547}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1593510017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593510014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5c40375f67547fbac42396a48b5ebad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <EventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
+    type: 2}
+  <EventResponse>k__BackingField:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 449263549}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1620236863
 GameObject:
   m_ObjectHideFlags: 0
