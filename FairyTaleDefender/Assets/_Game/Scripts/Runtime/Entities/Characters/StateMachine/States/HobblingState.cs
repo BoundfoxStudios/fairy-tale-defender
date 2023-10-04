@@ -13,6 +13,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.StateMachine.Sta
 			Character.GetComponent<SplineWalker>().MovementSpeed = Character.Definition.MovementSpeed * Character.Definition.HobbleSpeedPercentage;
 		}
 
-		public override void Exit() {}
+		public override void Exit() { }
 	}
 }

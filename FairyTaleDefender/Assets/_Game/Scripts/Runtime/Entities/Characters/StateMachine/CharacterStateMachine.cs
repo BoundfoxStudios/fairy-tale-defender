@@ -38,7 +38,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.StateMachine
 
 			if (!_states.TryGetValue(typeof(T), out var state))
 			{
-				throw new ($"Trying to enter state {typeof(T).Name}, but it was no added.");
+				throw new($"Trying to enter state {typeof(T).Name}, but it was no added.");
 			}
 
 			_currentState = state;
