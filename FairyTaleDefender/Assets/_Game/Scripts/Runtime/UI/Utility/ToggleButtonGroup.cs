@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -37,6 +38,14 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			VerifyActions(_buttons);
 			AssignListeners(_buttons);
 			UpdateSelectedButton(InitialActivatedIndex);
+		}
+
+		private void OnDestroy()
+		{
+			foreach (var toggleButton in _buttons)
+			{
+				toggleButton.Button.onClick.RemoveAllListeners();
+			}
 		}
 
 		[Conditional("UNITY_EDITOR")]
