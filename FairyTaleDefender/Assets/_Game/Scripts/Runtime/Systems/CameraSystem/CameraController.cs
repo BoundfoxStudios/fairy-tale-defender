@@ -68,7 +68,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
 
 		private void Update()
 		{
-			var speed = Settings.Camera.PanSpeed * Time.deltaTime;
+			var speed = Settings.Camera.PanSpeed * Time.unscaledDeltaTime;
 			var movement = Quaternion.Euler(0, _followTarget.eulerAngles.y, 0) * _deltaMovement;
 
 			var position = _followTarget.position + movement * speed;
