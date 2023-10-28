@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -13,7 +12,10 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 	public class ToggleButtonGroup : MonoBehaviour
 	{
 		[field: SerializeField]
-		private int InitialActivatedIndex { get; set; } = default!;
+		private int InitialActivatedIndex { get; set; }
+
+		[field: SerializeField]
+		private Color SelectedColorTint { get; set; } = new(0.67f, 0.67f, 0.67f);
 
 		private struct ToggleButton
 		{
@@ -38,6 +40,11 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			VerifyActions(_buttons);
 			AssignListeners(_buttons);
 			UpdateSelectedButton(InitialActivatedIndex);
+		}
+
+		private void Start()
+		{
+			ButtonClicked(InitialActivatedIndex);
 		}
 
 		private void OnDestroy()
@@ -82,7 +89,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			for (var i = 0; i < _buttons.Length; i++)
 			{
 				var toggleButton = _buttons[i];
-				toggleButton.Image.color = i == index ? new Color(0.67f, 0.67f, 0.67f) : new(1, 1, 1);
+				toggleButton.Image.color = i == index ? SelectedColorTint : new(1, 1, 1);
 			}
 		}
 	}
