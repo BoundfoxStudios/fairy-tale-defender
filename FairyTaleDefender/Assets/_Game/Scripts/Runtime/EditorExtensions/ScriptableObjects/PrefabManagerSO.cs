@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 {
@@ -21,6 +22,7 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		public TextPrefabs Texts = default!;
 		public BarPrefabs Bars = default!;
 		public ButtonPrefabs Buttons = default!;
+		public ContainerPrefabs Containers = default!;
 		public CameraPrefabs Cameras = default!;
 		public LightPrefabs Lights = default!;
 		public EditorPrefabs Editor = default!;
@@ -45,6 +47,13 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 			public GameObject BrownButton = default!;
 			public GameObject Toggle = default!;
 			public GameObject Dropdown = default!;
+		}
+
+		[Serializable]
+		public class ContainerPrefabs
+		{
+			public GameObject TabGroup = default!;
+			public GameObject TabGroupHeaderButton = default!;
 		}
 
 		[Serializable]

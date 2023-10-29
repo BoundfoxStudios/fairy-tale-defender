@@ -30,6 +30,11 @@ MonoBehaviour:
       type: 3}
     Dropdown: {fileID: 7441876713870414824, guid: 83d11659e7c464baa9dd94afcd47d218,
       type: 3}
+  Containers:
+    TabGroup: {fileID: 2284839135488319417, guid: 19a9a4758cb294071b12d5ab26842cde,
+      type: 3}
+    TabGroupHeaderButton: {fileID: 5569965669829330202, guid: 23f0c39268d344788bb235bc4e2e8604,
+      type: 3}
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
     Level: {fileID: 4482851638519967022, guid: 35d7ecd3de7fe484793c6fd2f5bff083, type: 3}
