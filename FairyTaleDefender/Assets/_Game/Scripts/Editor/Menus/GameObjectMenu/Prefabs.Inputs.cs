@@ -19,6 +19,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 			await SafeInstantiateAsync(prefabManager => prefabManager.Inputs.Toggle);
 		}
 
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Slider", priority = UIMenuPriority)]
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateSliderAsync()
+		{
+			await SafeInstantiateAsync(prefabManager => prefabManager.Inputs.Slider);
+		}
+
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Dropdown", priority = UIMenuPriority)]
 		// ReSharper disable once Unity.IncorrectMethodSignature
 		private static async UniTaskVoid CreateDropdownAsync()
@@ -28,6 +35,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 
 
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Toggle", true)]
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Slider", true)]
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Dropdown", true)]
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Inputs + "/Input Field", true)]
 		private static bool InputValidation() => SelectionHasCanvasValidate();

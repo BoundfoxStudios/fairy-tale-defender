@@ -53,6 +53,7 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		{
 			public GameObject InputField = default!;
 			public GameObject Toggle = default!;
+			public GameObject Slider = default!;
 			public GameObject Dropdown = default!;
 		}
 
