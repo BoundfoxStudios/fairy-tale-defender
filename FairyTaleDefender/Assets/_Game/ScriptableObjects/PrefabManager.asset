@@ -38,6 +38,8 @@ MonoBehaviour:
       type: 3}
     Slider: {fileID: 6304471380588694725, guid: 65e17cbb5781d4e61bb3bcd746f990bd,
       type: 3}
+    SliderWithValue: {fileID: 3338818837046888607, guid: da435dd2ab9dd4597acc4edb40b3e695,
+      type: 3}
     Dropdown: {fileID: 7441876713870414824, guid: 83d11659e7c464baa9dd94afcd47d218,
       type: 3}
   Cameras:
