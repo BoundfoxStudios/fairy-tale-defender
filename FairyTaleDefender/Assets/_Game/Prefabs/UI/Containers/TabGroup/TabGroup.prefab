@@ -91,7 +91,6 @@ GameObject:
   - component: {fileID: 2838544319269467530}
   - component: {fileID: 9162807618334470133}
   - component: {fileID: 6326774334689625734}
-  - component: {fileID: 2413443466471926797}
   m_Layer: 5
   m_Name: TabGroup
   m_TagString: Untagged
@@ -175,24 +174,6 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
---- !u!114 &2413443466471926797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2284839135488319417}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f83903ffd0124baaad8c6ea1573bcf4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ApplyButton>k__BackingField: {fileID: 0}
-  <ResetButton>k__BackingField: {fileID: 0}
-  <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
-    type: 2}
-  <SettingsChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 0ef4e493ebd7d934ca0b474d9fb3ac9c,
-    type: 2}
 --- !u!1 &4163246971271946237
 GameObject:
   m_ObjectHideFlags: 0
