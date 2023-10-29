@@ -29,6 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		public class TextPrefabs
 		{
 			public GameObject Text = default!;
+			public GameObject SettingsText = default!;
 		}
 
 		[Serializable]
@@ -42,6 +43,8 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		public class ButtonPrefabs
 		{
 			public GameObject BrownButton = default!;
+			public GameObject Toggle = default!;
+			public GameObject Dropdown = default!;
 		}
 
 		[Serializable]

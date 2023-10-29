@@ -12,7 +12,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 			await SafeInstantiateAsync(prefabManager => prefabManager.Texts.Text);
 		}
 
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Settings Text", priority = UIMenuPriority)]
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateSettingsTextAsync()
+		{
+			await SafeInstantiateAsync(prefabManager => prefabManager.Texts.SettingsText);
+		}
+
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Text", true)]
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Texts + "/Settings Text", true)]
 		private static bool TextValidation() => SelectionHasCanvasValidate();
 	}
 }

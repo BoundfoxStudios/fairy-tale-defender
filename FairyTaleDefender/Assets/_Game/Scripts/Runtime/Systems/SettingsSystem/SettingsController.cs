@@ -52,8 +52,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 		{
 			if (Settings.Graphic.ScreenWidth == 0 || Settings.Graphic.ScreenHeight == 0)
 			{
-				Settings.Graphic.ScreenWidth = Screen.width;
-				Settings.Graphic.ScreenHeight = Screen.height;
+				Settings.Graphic.ScreenWidth = Screen.currentResolution.width;
+				Settings.Graphic.ScreenHeight = Screen.currentResolution.height;
 			}
 		}
 
