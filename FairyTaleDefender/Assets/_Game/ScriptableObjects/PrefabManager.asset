@@ -26,14 +26,17 @@ MonoBehaviour:
   Buttons:
     BrownButton: {fileID: 7626598446852593320, guid: 21e93d599064244fb8196a653f9fb7d7,
       type: 3}
-    Toggle: {fileID: 7311376450618074140, guid: 2d932bef090604923b58824d0c76a39b,
-      type: 3}
-    Dropdown: {fileID: 7441876713870414824, guid: 83d11659e7c464baa9dd94afcd47d218,
-      type: 3}
   Containers:
     TabGroup: {fileID: 2284839135488319417, guid: 19a9a4758cb294071b12d5ab26842cde,
       type: 3}
     TabGroupHeaderButton: {fileID: 5569965669829330202, guid: 23f0c39268d344788bb235bc4e2e8604,
+      type: 3}
+  Inputs:
+    InputField: {fileID: 2621281240769190127, guid: 0f855f66dd30a4535becb25b07b103ad,
+      type: 3}
+    Toggle: {fileID: 7311376450618074140, guid: 2d932bef090604923b58824d0c76a39b,
+      type: 3}
+    Dropdown: {fileID: 7441876713870414824, guid: 83d11659e7c464baa9dd94afcd47d218,
       type: 3}
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}

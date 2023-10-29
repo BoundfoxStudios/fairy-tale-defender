@@ -23,6 +23,7 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		public BarPrefabs Bars = default!;
 		public ButtonPrefabs Buttons = default!;
 		public ContainerPrefabs Containers = default!;
+		public InputPrefabs Inputs = default!;
 		public CameraPrefabs Cameras = default!;
 		public LightPrefabs Lights = default!;
 		public EditorPrefabs Editor = default!;
@@ -45,6 +46,12 @@ namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 		public class ButtonPrefabs
 		{
 			public GameObject BrownButton = default!;
+		}
+
+		[Serializable]
+		public class InputPrefabs
+		{
+			public GameObject InputField = default!;
 			public GameObject Toggle = default!;
 			public GameObject Dropdown = default!;
 		}
