@@ -81,7 +81,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 		private void ButtonClicked(int index)
 		{
 			UpdateSelectedButton(index);
-			_buttons[index].Action?.ExecuteAction();
+			_buttons[index].Action?.ExecuteAction(index);
 		}
 
 		private void UpdateSelectedButton(int index)
@@ -96,6 +96,6 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 
 	public interface IToggleButtonAction
 	{
-		void ExecuteAction();
+		void ExecuteAction(int index);
 	}
 }

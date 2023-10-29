@@ -14,6 +14,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 		[field: SerializeField]
 		private FloatEventChannelSO SetGameSpeedEventChannel { get; set; } = default!;
 
-		public void ExecuteAction() => SetGameSpeedEventChannel.Raise(GameSpeed);
+		public void ExecuteAction(int index) => SetGameSpeedEventChannel.Raise(GameSpeed);
 	}
 }

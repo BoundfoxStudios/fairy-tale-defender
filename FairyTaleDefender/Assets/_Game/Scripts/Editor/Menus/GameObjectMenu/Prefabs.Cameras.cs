@@ -11,5 +11,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 		{
 			await SafeInstantiateAsync(prefabManager => prefabManager.Cameras.Menu);
 		}
+
+		[MenuItem(Constants.MenuNames.GameObjectMenus.Cameras + "/Level", priority = CamerasMenuPriority)]
+		// ReSharper disable once Unity.IncorrectMethodSignature
+		private static async UniTaskVoid CreateLevelCameraAsync()
+		{
+			await SafeInstantiateAsync(prefabManager => prefabManager.Cameras.Level);
+		}
 	}
 }

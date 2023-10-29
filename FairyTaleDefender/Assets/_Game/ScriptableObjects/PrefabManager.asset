@@ -17,12 +17,18 @@ MonoBehaviour:
     type: 3}
   Texts:
     Text: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
+    SettingsText: {fileID: 7298016007625527156, guid: 6f8289fd6f75c4c838755d2515507423,
+      type: 3}
   Bars:
     Bar: {fileID: 2006493411456039425, guid: 256bb3b0e04594619a0190b6ea8bb8c1, type: 3}
     HealthBar: {fileID: 6978134812381698621, guid: 67a0226c7b19846d39685c7c6a17bd7f,
       type: 3}
   Buttons:
     BrownButton: {fileID: 7626598446852593320, guid: 21e93d599064244fb8196a653f9fb7d7,
+      type: 3}
+    Toggle: {fileID: 7311376450618074140, guid: 2d932bef090604923b58824d0c76a39b,
+      type: 3}
+    Dropdown: {fileID: 7441876713870414824, guid: 83d11659e7c464baa9dd94afcd47d218,
       type: 3}
   Cameras:
     Menu: {fileID: 1832447427165650725, guid: 100589ffc7925479092daf17f2da1ccd, type: 3}
