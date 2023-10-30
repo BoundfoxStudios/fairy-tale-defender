@@ -16,7 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Settings
 		{
 			base.ResetSettings(mutableSettings);
 
-			GraphicsDropdown.SetValueWithoutNotify((int) mutableSettings.Graphic.GraphicLevel);
+			GraphicsDropdown.SetValueWithoutNotify((int)mutableSettings.Graphic.GraphicLevel);
 		}
 
 		public void DropdownChange(int value)

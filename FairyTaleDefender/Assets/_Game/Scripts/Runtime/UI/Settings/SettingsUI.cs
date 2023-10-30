@@ -102,5 +102,5 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Settings
 
 			SettingsChangedEventChannel.Raise();
 		}
- 	}
+	}
 }

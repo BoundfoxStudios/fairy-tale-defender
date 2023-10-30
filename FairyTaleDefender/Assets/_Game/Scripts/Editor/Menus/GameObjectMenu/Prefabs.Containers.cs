@@ -26,7 +26,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus.GameObjectMenu
 
 		[MenuItem(Constants.MenuNames.GameObjectMenus.Containers + "/Tab Group Header Button", true)]
 		private static bool TabGroupHeaderButtonValidation() => SelectionHasCanvasValidate() &&
-		                                                        Selection.activeGameObject.GetComponentInParent<TabGroup>() &&
-		                                                        Selection.activeGameObject.GetComponentInParent<ToggleButtonGroup>();
+																Selection.activeGameObject.GetComponentInParent<TabGroup>() &&
+																Selection.activeGameObject.GetComponentInParent<ToggleButtonGroup>();
 	}
 }
