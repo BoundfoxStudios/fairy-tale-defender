@@ -2507,7 +2507,7 @@ PrefabInstance:
     - target: {fileID: 8836093814330201621, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_Name
-      value: Build_Button
+      value: CatapultTower_BuildButton
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
