@@ -165,8 +165,8 @@ GameObject:
   - component: {fileID: 8577549856758770685}
   - component: {fileID: 8335095866269436828}
   - component: {fileID: 3653674602160367551}
-  - component: {fileID: 6565006789137122078}
   - component: {fileID: 3726535823243177271}
+  - component: {fileID: 4727519850516363084}
   m_Layer: 5
   m_Name: Build_Button
   m_TagString: Untagged
@@ -319,34 +319,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8836093814330201621}
   m_CullTransparentMesh: 1
---- !u!114 &6565006789137122078
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8836093814330201621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1ac6928df00409797ae82e459c054f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ShowTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
-    type: 2}
-  <HideTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
-    type: 2}
-  <Text>k__BackingField:
-    m_TableReference:
-      m_TableCollectionName: GUID:f8b2dcc7eb952411c827560f5a80fbe3
-    m_TableEntryReference:
-      m_KeyId: 79127719739121664
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
-  references:
-    version: 2
-    RefIds: []
 --- !u!114 &3726535823243177271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +339,35 @@ MonoBehaviour:
     type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
+--- !u!114 &4727519850516363084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8836093814330201621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fabd4586e9bf47119507b39c3ce87921, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ShowTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: a24cd6e71dc84034ea9b7b7627bef0d9,
+    type: 2}
+  <HideTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
+    type: 2}
+  <TowerName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <WeaponDefinition>k__BackingField: {fileID: 0}
+  references:
+    version: 2
+    RefIds: []
 --- !u!1001 &8380350276991179908
 PrefabInstance:
   m_ObjectHideFlags: 0

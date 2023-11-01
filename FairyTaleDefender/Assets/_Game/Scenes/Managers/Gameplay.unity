@@ -2504,6 +2504,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4727519850516363084, guid: 7051bfaff63334617b6ba6fcc9e7316f,
+        type: 3}
+      propertyPath: <WeaponDefinition>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: a75983bad9e3844f4959ba58d440e03a,
+        type: 2}
+    - target: {fileID: 4727519850516363084, guid: 7051bfaff63334617b6ba6fcc9e7316f,
+        type: 3}
+      propertyPath: <TowerName>k__BackingField.m_TableEntryReference.m_KeyId
+      value: 79127719739121664
+      objectReference: {fileID: 0}
+    - target: {fileID: 4727519850516363084, guid: 7051bfaff63334617b6ba6fcc9e7316f,
+        type: 3}
+      propertyPath: <TowerName>k__BackingField.m_TableReference.m_TableCollectionName
+      value: GUID:f8b2dcc7eb952411c827560f5a80fbe3
+      objectReference: {fileID: 0}
     - target: {fileID: 8836093814330201621, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_Name
