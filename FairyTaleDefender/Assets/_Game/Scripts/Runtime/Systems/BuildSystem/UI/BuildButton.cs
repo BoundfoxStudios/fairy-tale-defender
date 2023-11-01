@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +15,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 		[field: SerializeField]
 		public Button Button { get; private set; } = default!;
 
+		[field: SerializeField]
+		private TMP_Text CoinDisplay { get; set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		public IntDeltaEventChannelSO CoinsChangeEventChannel { get; private set; } = default!;
@@ -25,6 +29,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 		private void OnEnable()
 		{
 			CoinsChangeEventChannel.Raised += CoinsChange;
+
+			CoinDisplay.text = Buildable.Price.ToString();
 		}
 
 		private void OnDisable()
