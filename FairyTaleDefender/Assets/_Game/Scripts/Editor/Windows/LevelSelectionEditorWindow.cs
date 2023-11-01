@@ -143,6 +143,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 					MessageType.Info);
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneByNameButton("Models", "Development/Models");
+				OpenSceneByNameButton("Tower UI", "Development/TowerUI");
 				EditorGUILayout.EndHorizontal();
 			}
 
