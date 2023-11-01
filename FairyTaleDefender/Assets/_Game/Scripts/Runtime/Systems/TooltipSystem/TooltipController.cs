@@ -13,7 +13,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 		private TextTooltipDisplay TextTooltipDisplay { get; set; } = default!;
 
 		[field: SerializeField]
-		private GameObject TooltipContainer { get; set; } = default!;
+		private BuildTowerTooltipDisplay BuildTowerTooltipDisplay { get; set; } = default!;
+
+
+		[field: SerializeField]
+		private GameObject[] TooltipContainers { get; set; } = default!;
 
 		[field: SerializeField]
 		private InputReaderSO InputReader { get; set; } = default!;
@@ -32,7 +36,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 
 		private void Awake()
 		{
-			TooltipContainer.SetActive(false);
+			foreach (var tooltipContainer in TooltipContainers)
+			{
+				tooltipContainer.SetActive(false);
+			}
 		}
 
 		private void OnEnable()
@@ -96,6 +103,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 			where T : class, ITooltip => tooltip switch
 			{
 				ITextTooltip => TextTooltipDisplay,
+				IBuildTowerTooltip => BuildTowerTooltipDisplay,
 				_ => throw new($"{typeof(T)} is not implemented yet.")
 			};
 	}
