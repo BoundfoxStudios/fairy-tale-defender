@@ -26,6 +26,18 @@ MonoBehaviour:
     m_Localized: Catapult Tower
     m_Metadata:
       m_Items: []
+  - m_Id: 147118421101764608
+    m_Localized: Range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118485459165184
+    m_Localized: Fire rate / s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118589914112000
+    m_Localized: Angle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

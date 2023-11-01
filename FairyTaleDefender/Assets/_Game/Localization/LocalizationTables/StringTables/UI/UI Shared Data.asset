@@ -23,6 +23,30 @@ MonoBehaviour:
     m_Key: Tooltips/CatapultTower
     m_Metadata:
       m_Items: []
+  - m_Id: 147118421101764608
+    m_Key: AttackRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118485459165184
+    m_Key: FireRatePerSecond
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118589914112000
+    m_Key: AttackAngle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118822836396032
+    m_Key: PersistentManagers/Tooltip_Canvas/BuildTowerTooltip_Container/Tooltip_Chrome/Body/AttackRange_Row/Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118865832206336
+    m_Key: PersistentManagers/Tooltip_Canvas/BuildTowerTooltip_Container/Tooltip_Chrome/Body/FireRate_Row/Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118890167558144
+    m_Key: PersistentManagers/Tooltip_Canvas/BuildTowerTooltip_Container/Tooltip_Chrome/Body/AttackAngle_Row/Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

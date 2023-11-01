@@ -26,6 +26,30 @@ MonoBehaviour:
     m_Localized: Katapultturm
     m_Metadata:
       m_Items: []
+  - m_Id: 147118421101764608
+    m_Localized: Reichweite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118485459165184
+    m_Localized: Feuerrate / s
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118589914112000
+    m_Localized: Winkel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118822836396032
+    m_Localized: Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118865832206336
+    m_Localized: Tooltip
+    m_Metadata:
+      m_Items: []
+  - m_Id: 147118890167558144
+    m_Localized: Tooltip
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
