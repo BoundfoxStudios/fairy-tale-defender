@@ -7,7 +7,14 @@
       <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneOSX/** =&gt; macOS.zip&#xA;-:FairyTaleDefender/build/StandaloneOSX/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; macOS.zip&#xA;+:FairyTaleDefender/build/StandaloneOSX/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; macOS-DebugInfo.zip" />
     </options>
     <parameters />
-    <build-runners order="RUNNER_5, RUNNER_2">
+    <build-runners order="Install_il2cpp, RUNNER_2">
+      <runner id="Install_il2cpp" name="Install il2cpp" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="/Applications/Unity\ Hub.app/Contents/MacOS/Unity\ Hub -- --headless install-modules --version 2022.1.23f1 -m mac-il2cpp --cm" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_2" name="Build macOS" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
@@ -17,13 +24,6 @@
           <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
           <param name="teamcity.step.mode" value="default" />
           <param name="unityVersion" value="2022.1" />
-        </parameters>
-      </runner>
-      <runner id="Install_il2cpp" name="Install il2cpp" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="/Applications/Unity\ Hub.app/Contents/MacOS/Unity\ Hub -- --headless install-modules --version 2022.1.23f1 -m mac-il2cpp --cm" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
