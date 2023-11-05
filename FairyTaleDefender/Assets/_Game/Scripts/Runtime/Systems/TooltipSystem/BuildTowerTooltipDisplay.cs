@@ -24,7 +24,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 		protected override void SetTooltip<T>(T tooltip)
 		{
 			var resolvedTooltip = ResolveTooltip<IBuildTowerTooltip, T>(tooltip);
-			TowerName.text = resolvedTooltip.TowerName.GetLocalizedString();
+			TowerName.text = resolvedTooltip.TowerDefinition.Name.GetLocalizedString();
 			AttackRangeText.text = GetRange(resolvedTooltip.WeaponDefinition);
 
 			// FireRate is every seconds, but we'll show fire rate per seconds to the player.

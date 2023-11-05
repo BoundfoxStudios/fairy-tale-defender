@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using UnityEngine.Localization;
 
@@ -15,7 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 
 	public interface IBuildTowerTooltip : ITooltip
 	{
-		LocalizedString TowerName { get; }
 		WeaponSO WeaponDefinition { get; }
+		TowerSO TowerDefinition { get; }
 	}
 }
