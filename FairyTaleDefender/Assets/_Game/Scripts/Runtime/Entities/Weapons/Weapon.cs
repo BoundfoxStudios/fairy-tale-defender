@@ -13,7 +13,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 {
 	[SelectionBase]
 	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour,
-		ICanCalculateEffectiveWeaponDefinition
+		ICanCalculateEffectiveWeaponDefinition,
+		ICanChangeTargetType
 		where TWeaponSO : WeaponSO
 		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
 		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
@@ -31,7 +32,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 		public Tower Tower { get; private set; } = default!;
 
 		[field: SerializeField]
-		public TargetTypeSO TargetType { get; private set; } = default!;
+		public TargetTypeSO TargetType { get; set; } = default!;
 
 		private TEffectiveWeaponDefinition EffectiveWeaponDefinition =>
 			_effectiveWeaponDefinition ??=

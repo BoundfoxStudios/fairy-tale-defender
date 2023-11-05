@@ -2,8 +2,11 @@ using System.Collections.Generic;
 using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.UI.Utility;
 using TMPro;
 using UnityEngine;
 
@@ -32,6 +35,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 		[field: SerializeField]
 		private TextMeshProUGUI TowerNameText { get; set; } = default!;
 
+		[field: SerializeField]
+		private ToggleButtonGroup TargetTypeToggleButtonGroup { get; set; } = default!;
+
+		[field: SerializeField]
+		private List<TargetTypeSO> TargetTypes { get; set; } = default!;
+
 		[field: Header("Listening Event Channels")]
 		[field: SerializeField]
 		public WeaponSelectedEventChannelSO WeaponSelectedEventChannel { get; private set; } = default!;
@@ -45,6 +54,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 
 		private readonly Dictionary<StatisticType, StatisticDisplay> _statistics = new();
 
+		private WeaponSelectedEventChannelSO.EventArgs? _currentSelection;
+
 		private void Awake()
 		{
 			TowerUIContainer.SetActive(false);
@@ -53,20 +64,36 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 		private void OnEnable()
 		{
 			WeaponSelectedEventChannel.Raised += Show;
+			TargetTypeToggleButtonGroup.IndexChanged += ChangeTargetType;
+		}
+
+		private void ChangeTargetType(int targetTypeIndex)
+		{
+			var targetType = _currentSelection?.Transform.GetComponentInChildren<ICanChangeTargetType>();
+
+			Debug.Assert(targetType != null);
+
+			targetType!.TargetType = TargetTypes[targetTypeIndex];
 		}
 
 		private void OnDisable()
 		{
+			_currentSelection = null;
 			WeaponSelectedEventChannel.Raised -= Show;
+			TargetTypeToggleButtonGroup.IndexChanged -= ChangeTargetType;
 		}
 
 		private void Show(WeaponSelectedEventChannelSO.EventArgs args)
 		{
+			_currentSelection = args;
 			_statistics.Clear();
 			StatisticsContainer.transform.ClearChildren();
 			TowerUIContainer.SetActive(true);
 
 			TowerNameText.text = args.Tower.Name.GetLocalizedString();
+			var targetType = _currentSelection?.Transform.GetComponentInChildren<ICanChangeTargetType>();
+
+			TargetTypeToggleButtonGroup.Index = TargetTypes.FindIndex(type => type == targetType!.TargetType);
 
 			var parent = StatisticsContainer.transform;
 			var definition = args.EffectiveWeaponDefinition.CalculateEffectiveWeaponDefinition(args.Transform.position);
