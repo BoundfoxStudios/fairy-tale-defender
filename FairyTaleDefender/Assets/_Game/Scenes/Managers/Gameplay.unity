@@ -1121,6 +1121,10 @@ MonoBehaviour:
   <StatisticsRowPrefab>k__BackingField: {fileID: 9027387122748055931, guid: 798269d5c903a47d6a5ae0f268bd50ac,
     type: 3}
   <TowerNameText>k__BackingField: {fileID: 1466535975}
+  <TargetTypeToggleButtonGroup>k__BackingField: {fileID: 135571431}
+  <TargetTypes>k__BackingField:
+  - {fileID: 11400000, guid: 60b758fae1fe95b44b420de43903e9d1, type: 2}
+  - {fileID: 11400000, guid: bb9469c0d14e3e84cb027962df1638e0, type: 2}
   <WeaponSelectedEventChannel>k__BackingField: {fileID: 11400000, guid: 6bcda8772031e764ea22183523b7e9f7,
     type: 2}
 --- !u!4 &984792242
@@ -3784,7 +3788,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
