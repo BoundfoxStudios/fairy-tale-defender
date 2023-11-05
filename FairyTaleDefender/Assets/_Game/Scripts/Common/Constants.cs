@@ -45,6 +45,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public static readonly int IsHobbling = Animator.StringToHash("IsHobbling");
 		}
 
+		public static class Gameplay
+		{
+			public const int MaximumTargets = 50;
+		}
+
 		public static class Settings
 		{
 			public static class Panning
@@ -53,5 +58,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 				public const int End = 15;
 			}
 		}
+
 	}
 }
