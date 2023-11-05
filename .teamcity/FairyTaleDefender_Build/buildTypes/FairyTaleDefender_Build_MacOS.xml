@@ -42,6 +42,12 @@
           <param name="use-cache" value="true" />
         </parameters>
       </extension>
+      <extension id="UnityBuildFeature" type="UnityBuildFeature">
+        <parameters>
+          <param name="detectionMode" value="auto" />
+          <param name="unityVersion" value="2022.1" />
+        </parameters>
+      </extension>
     </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
