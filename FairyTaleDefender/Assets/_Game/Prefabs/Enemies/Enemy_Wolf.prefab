@@ -188,6 +188,11 @@ PrefabInstance:
       propertyPath: Spline.m_Knots.Array.data[3].Rotation.value.w
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1726704639093836598, guid: ce4f46e39468745c3af0af575293347f,
+        type: 3}
+      propertyPath: <Enemy>k__BackingField
+      value: 
+      objectReference: {fileID: 5748376400373774719}
     - target: {fileID: 1808533816645699006, guid: ce4f46e39468745c3af0af575293347f,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -336,3 +341,15 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.14258373, y: 0.35246068, z: 0.46748808}
   m_Center: {x: 0, y: -0.0290277, z: 0.048007354}
+--- !u!114 &5748376400373774719 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8080968510749249390, guid: ce4f46e39468745c3af0af575293347f,
+    type: 3}
+  m_PrefabInstance: {fileID: 4603536347911157265}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9913ab926961492884f3c635da01d744, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
