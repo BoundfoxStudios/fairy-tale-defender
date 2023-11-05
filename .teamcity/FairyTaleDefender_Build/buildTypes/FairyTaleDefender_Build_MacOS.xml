@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="9149c7d1-8f31-496a-864b-33abd3dcab54" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>macOS</name>
+  <description />
+  <settings ref="FairyTaleDefender_UnityDefaults">
+    <options>
+      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneLinux64/** =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux-DebugInfo.zip" />
+    </options>
+    <parameters />
+    <build-runners order="RUNNER_5, RUNNER_2">
+      <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
+        <parameters>
+          <param name="jetbrains_powershell_execution" value="PS1" />
+          <param name="jetbrains_powershell_noprofile" value="true" />
+          <param name="jetbrains_powershell_script_code" value="Start-Process &quot;C:\Program Files\Unity Hub\Unity Hub.exe&quot; -ArgumentList &quot;-- --headless install-modules --version 2022.3.2f1 -m linux-il2cpp --cm&quot;" />
+          <param name="jetbrains_powershell_script_mode" value="CODE" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="Build Linux" type="unity">
+        <parameters>
+          <param name="arguments" value="-logFile -" />
+          <param name="detectionMode" value="auto" />
+          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildLinux" />
+          <param name="noGraphics" value="true" />
+          <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="unityVersion" value="2022.3" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_1" type="jetbrains.buildserver.feature.build.cache">
+        <parameters>
+          <param name="cache-name" value="UnityLibraryLinux" />
+          <param name="publish-cache" value="true" />
+          <param name="publish-cache-rules" value="FairyTaleDefender/Library" />
+          <param name="publish-only-changed" value="true" />
+          <param name="use-cache" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="contributors.json" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="manifest.json" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_Test_EditMode">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
