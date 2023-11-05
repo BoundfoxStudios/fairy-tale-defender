@@ -19,6 +19,13 @@
           <param name="unityVersion" value="2022.1" />
         </parameters>
       </runner>
+      <runner id="Install_il2cpp" name="Install il2cpp" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="/Applications/Unity\ Hub.app/Contents/MacOS/Unity\ Hub -- --headless install-modules --version 2022.1.23f1 -m mac-il2cpp --cm" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements>
