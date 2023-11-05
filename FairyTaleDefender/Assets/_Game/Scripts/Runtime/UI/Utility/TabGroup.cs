@@ -6,22 +6,29 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(TabGroup))]
 	public class TabGroup : MonoBehaviour
 	{
-		private TabGroupButton[] _buttons = default!;
-
 		[field: SerializeField]
-		private GameObject HeaderContainer { get; set; } = default!;
+		private ToggleButtonGroup HeaderToggleButtonGroup { get; set; } = default!;
 
 		[field: SerializeField]
 		private GameObject BodyContainer { get; set; } = default!;
 
 		private void Awake()
 		{
-			_buttons = HeaderContainer.GetComponentsInChildren<TabGroupButton>();
-
-			Debug.Assert(_buttons.Length == BodyContainer.transform.childCount);
+			Debug.Assert(HeaderToggleButtonGroup.transform.childCount == BodyContainer.transform.childCount);
+			Show(0);
 		}
 
-		public void Show(int index)
+		private void OnEnable()
+		{
+			HeaderToggleButtonGroup.IndexChanged += Show;
+		}
+
+		private void OnDisable()
+		{
+			HeaderToggleButtonGroup.IndexChanged -= Show;
+		}
+
+		private void Show(int index)
 		{
 			var bodyContainerTransform = BodyContainer.transform;
 
