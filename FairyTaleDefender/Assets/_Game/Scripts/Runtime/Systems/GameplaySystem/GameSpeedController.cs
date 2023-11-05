@@ -1,5 +1,6 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.UI.Utility;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
@@ -7,9 +8,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 	[AddComponentMenu(Constants.MenuNames.GameplaySystem + "/" + nameof(GameSpeedController))]
 	public class GameSpeedController : MonoBehaviour
 	{
-		[field: Header("Listening Channels")]
+		[field: Header("References")]
+		[field: SerializeField]
+		private ToggleButtonGroup GameSpeedToggleButtonGroup { get; set; } = default!;
+
+		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
 		private FloatEventChannelSO SetGameSpeedEventChannel { get; set; } = default!;
+
+		[field: Header("Listening Channels")]
 
 		[field: SerializeField]
 		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
@@ -18,13 +25,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private void OnEnable()
 		{
 			GameOverEventChannel.Raised += GameOver;
-			SetGameSpeedEventChannel.Raised += SetGameSpeed;
+			GameSpeedToggleButtonGroup.IndexChanged += SetGameSpeed;
 		}
 
 		private void OnDisable()
 		{
 			GameOverEventChannel.Raised -= GameOver;
-			SetGameSpeedEventChannel.Raised -= SetGameSpeed;
+			GameSpeedToggleButtonGroup.IndexChanged -= SetGameSpeed;
 		}
 
 		private void Awake()
@@ -37,9 +44,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			SetSpeed(1);
 		}
 
-		private void SetGameSpeed(float gameSpeed)
+		private void SetGameSpeed(int buttonIndex)
 		{
-			SetSpeed(gameSpeed);
+			SetSpeed(buttonIndex + 1);
 		}
 
 		private void GameOver()
@@ -50,6 +57,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private void SetSpeed(float i)
 		{
 			Time.timeScale = i;
+			SetGameSpeedEventChannel.Raise(i);
 		}
 	}
 }

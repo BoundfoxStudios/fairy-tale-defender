@@ -1,10 +1,9 @@
+using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.UI;
-using Debug = UnityEngine.Debug;
 
 namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {
@@ -15,12 +14,28 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 		private int InitialActivatedIndex { get; set; }
 
 		[field: SerializeField]
+		private bool ActivateInitialIndexOnStart { get; set; } = default!;
+
+		[field: SerializeField]
 		private Color SelectedColorTint { get; set; } = new(0.67f, 0.67f, 0.67f);
+
+		public event Action<int> IndexChanged = delegate { };
+
+		private int _index;
+
+		public int Index
+		{
+			get => _index;
+			set
+			{
+				_index = value;
+				UpdateSelectedButton(_index);
+			}
+		}
 
 		private struct ToggleButton
 		{
 			public Button Button { get; set; }
-			public IToggleButtonAction? Action { get; set; }
 			public Image Image { get; set; }
 		}
 
@@ -33,18 +48,19 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			_buttons = buttons.Select(button => new ToggleButton()
 			{
 				Button = button,
-				Action = button.GetComponent<IToggleButtonAction>(),
 				Image = button.GetComponent<Image>(),
 			}).ToArray();
 
-			VerifyActions(_buttons);
 			AssignListeners(_buttons);
 			UpdateSelectedButton(InitialActivatedIndex);
 		}
 
 		private void Start()
 		{
-			ButtonClicked(InitialActivatedIndex);
+			if (ActivateInitialIndexOnStart)
+			{
+				ButtonClicked(InitialActivatedIndex);
+			}
 		}
 
 		private void OnDestroy()
@@ -52,18 +68,6 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			foreach (var toggleButton in _buttons)
 			{
 				toggleButton.Button.onClick.RemoveAllListeners();
-			}
-		}
-
-		[Conditional("UNITY_EDITOR")]
-		private void VerifyActions(IEnumerable<ToggleButton> buttons)
-		{
-			foreach (var button in buttons)
-			{
-				if (button.Action == null)
-				{
-					Debug.LogError("Missing IToggleButtonAction on ToggleButton", button.Button);
-				}
 			}
 		}
 
@@ -80,8 +84,8 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 
 		private void ButtonClicked(int index)
 		{
-			UpdateSelectedButton(index);
-			_buttons[index].Action?.ExecuteAction(index);
+			Index = index;
+			IndexChanged(index);
 		}
 
 		private void UpdateSelectedButton(int index)
@@ -92,10 +96,5 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 				toggleButton.Image.color = i == index ? SelectedColorTint : new(1, 1, 1);
 			}
 		}
-	}
-
-	public interface IToggleButtonAction
-	{
-		void ExecuteAction(int index);
 	}
 }
