@@ -11,12 +11,6 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 	public class ToggleButtonGroup : MonoBehaviour
 	{
 		[field: SerializeField]
-		private int InitialActivatedIndex { get; set; }
-
-		[field: SerializeField]
-		private bool ActivateInitialIndexOnStart { get; set; } = default!;
-
-		[field: SerializeField]
 		private Color SelectedColorTint { get; set; } = new(0.67f, 0.67f, 0.67f);
 
 		public event Action<int> IndexChanged = delegate { };
@@ -52,15 +46,6 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 			}).ToArray();
 
 			AssignListeners(_buttons);
-			UpdateSelectedButton(InitialActivatedIndex);
-		}
-
-		private void Start()
-		{
-			if (ActivateInitialIndexOnStart)
-			{
-				ButtonClicked(InitialActivatedIndex);
-			}
 		}
 
 		private void OnDestroy()
