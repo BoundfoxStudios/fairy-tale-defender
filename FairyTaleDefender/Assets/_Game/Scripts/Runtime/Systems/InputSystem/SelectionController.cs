@@ -36,7 +36,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 
 		private Transform? _currentSelection;
 
-		private List<RaycastResult> _uiOverGameObjectResultCache = new(1);
+		private readonly List<RaycastResult> _uiOverGameObjectResultCache = new(1);
 
 		private void OnEnable()
 		{
