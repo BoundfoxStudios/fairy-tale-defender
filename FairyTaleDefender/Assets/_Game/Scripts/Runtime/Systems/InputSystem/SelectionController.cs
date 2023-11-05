@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
@@ -92,7 +93,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
 			WeaponSelectedEventChannel.Raise(new()
 			{
 				Transform = _currentSelection,
-				EffectiveWeaponDefinition = canCalculateWeaponDefinition
+				EffectiveWeaponDefinition = canCalculateWeaponDefinition,
+				Tower = _currentSelection.GetComponent<Tower>().TowerDefinition,
 			});
 		}
 	}

@@ -1,7 +1,7 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using UnityEngine;
-using UnityEngine.Localization;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
@@ -9,9 +9,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 	public class BuildTowerTooltip : Tooltip, IBuildTowerTooltip
 	{
 		[field: SerializeField]
-		public LocalizedString TowerName { get; private set; } = default!;
+		public WeaponSO WeaponDefinition { get; private set; } = default!;
 
 		[field: SerializeField]
-		public WeaponSO WeaponDefinition { get; private set; } = default!;
+		public TowerSO TowerDefinition { get; private set; } = default!;
 	}
 }

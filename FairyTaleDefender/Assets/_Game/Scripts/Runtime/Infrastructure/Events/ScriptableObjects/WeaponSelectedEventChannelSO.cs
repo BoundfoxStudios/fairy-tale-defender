@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 		{
 			public Transform Transform;
 			public ICanCalculateEffectiveWeaponDefinition EffectiveWeaponDefinition;
+			public TowerSO Tower;
 		}
 	}
 }
