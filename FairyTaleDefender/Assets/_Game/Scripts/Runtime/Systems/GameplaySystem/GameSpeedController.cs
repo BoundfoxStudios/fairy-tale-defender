@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.UI.Utility;
@@ -37,6 +38,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private void Awake()
 		{
 			SetSpeed(1);
+		}
+
+		private void Start()
+		{
+			GameSpeedToggleButtonGroup.Index = 0;
 		}
 
 		private void OnDestroy()
