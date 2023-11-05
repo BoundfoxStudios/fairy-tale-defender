@@ -5,7 +5,7 @@ using UnityEngine;
 namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 {
 	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(TowerBuildButton))]
-	public class TowerBuildButton : BuildButton<TowerSO>
+	public class TowerBuildButton : BuildButton<BuildableTowerSO>
 	{
 	}
 }

@@ -12,8 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dacbc12eb87340398e0107e99c2e31d0, type: 3}
   m_Name: CatapultTower
   m_EditorClassIdentifier: 
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:f8b2dcc7eb952411c827560f5a80fbe3
+    m_TableEntryReference:
+      m_KeyId: 79127719739121664
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <Prefab>k__BackingField: {fileID: 1344278548517668222, guid: 65f56f73f75d94a2faa3d72091f0229b,
     type: 3}
   <BlueprintPrefab>k__BackingField: {fileID: 9013187241264066330, guid: e9c51145ac61348f0b17f648102a5d9b,
     type: 3}
   <Price>k__BackingField: 10
+  references:
+    version: 2
+    RefIds: []

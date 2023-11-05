@@ -1,20 +1,11 @@
-using BoundfoxStudios.FairyTaleDefender.Common;
-using BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem;
 using UnityEngine;
+using UnityEngine.Localization;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects
 {
-	[CreateAssetMenu(menuName = Constants.MenuNames.Towers + "/Tower")]
-	public class TowerSO : ScriptableObject, IAmBuildable, IHaveAPrice
+	public abstract class TowerSO : ScriptableObject
 	{
 		[field: SerializeField]
-		public GameObject Prefab { get; private set; } = default!;
-
-		[field: SerializeField]
-		public GameObject BlueprintPrefab { get; private set; } = default!;
-
-		[field: SerializeField]
-		[field: Range(1, 1000)]
-		public int Price { get; private set; } = 100;
+		public LocalizedString Name { get; private set; } = default!;
 	}
 }

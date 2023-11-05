@@ -74,6 +74,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240,
         type: 2}
+    - target: {fileID: 9063598822524051110, guid: c794aa7a6b5c4411dbf0209d8545b3c5,
+        type: 3}
+      propertyPath: <TowerDefinition>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240,
+        type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

@@ -38,10 +38,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 		private float _minimumRange;
 		private Limits2 _range;
 
-		public EffectiveBallisticWeaponDefinition(Limits2 range, float fireRateInSeconds, int attackAngle)
+		public EffectiveBallisticWeaponDefinition(Limits2 range, float fireRateEverySeconds, int attackAngle)
 		{
 			Range = range;
-			FireRateInSeconds = fireRateInSeconds;
+			FireRateEverySeconds = fireRateEverySeconds;
 			AttackAngle = attackAngle;
 		}
 	}
