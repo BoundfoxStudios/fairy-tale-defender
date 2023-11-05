@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
@@ -9,6 +10,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 	[AddComponentMenu(Constants.MenuNames.Targeting + "/" + nameof(TargetPoint))]
 	public class TargetPoint : MonoBehaviour
 	{
+		[field: SerializeField]
+		public Enemy Enemy { get; private set; } = default!;
+
 		private Collider _targetPointCollider = default!;
 
 		private void Awake()

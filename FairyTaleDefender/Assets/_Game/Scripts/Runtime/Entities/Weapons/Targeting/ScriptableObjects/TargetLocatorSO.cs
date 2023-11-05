@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using UnityEngine;
 
@@ -26,7 +27,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 		/// It's currently set to size 50 which means that we can not target more than 50 targets at once.
 		/// But for our game that should be enough.
 		/// </summary>
-		private readonly Collider[] _targetPointsCache = new Collider[50];
+		private readonly Collider[] _targetPointsCache = new Collider[Constants.Gameplay.MaximumTargets];
 
 		/// <summary>
 		/// Does an OverlapSphere to get all targets around the tower.
