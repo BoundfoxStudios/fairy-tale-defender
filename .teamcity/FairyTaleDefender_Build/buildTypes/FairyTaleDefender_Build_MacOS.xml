@@ -8,15 +8,15 @@
     </options>
     <parameters />
     <build-runners order="RUNNER_5, RUNNER_2">
-      <runner id="RUNNER_2" name="Build Linux" type="unity">
+      <runner id="RUNNER_2" name="Build macOS" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
           <param name="detectionMode" value="auto" />
-          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildLinux" />
+          <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildMacOS" />
           <param name="noGraphics" value="true" />
           <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="unityVersion" value="2022.3" />
+          <param name="unityVersion" value="2022.1" />
         </parameters>
       </runner>
     </build-runners>
