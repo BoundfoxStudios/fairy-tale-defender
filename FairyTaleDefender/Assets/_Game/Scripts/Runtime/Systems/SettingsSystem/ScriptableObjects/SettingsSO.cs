@@ -90,8 +90,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			public bool EnableEdgePanning = true;
 			public bool EnableKeyboardPanning = true;
 
-			// Note: if you change this range, also change it in PanningSpeedSettings
-			[Range(0, 15)]
+			[Range(Constants.Settings.Panning.Start, Constants.Settings.Panning.Start)]
 			public float PanSpeed = 7.5f;
 		}
 	}
