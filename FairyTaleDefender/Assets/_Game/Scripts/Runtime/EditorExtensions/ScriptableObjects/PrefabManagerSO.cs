@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace BoundfoxStudios.FairyTaleDefender.EditorExtensions.ScriptableObjects
 {

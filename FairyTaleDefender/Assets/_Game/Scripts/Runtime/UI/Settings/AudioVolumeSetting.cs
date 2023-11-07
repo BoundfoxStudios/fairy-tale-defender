@@ -4,8 +4,6 @@ using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects
 using BoundfoxStudios.FairyTaleDefender.UI.Utility;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
 
 namespace BoundfoxStudios.FairyTaleDefender.UI.Settings
 {
