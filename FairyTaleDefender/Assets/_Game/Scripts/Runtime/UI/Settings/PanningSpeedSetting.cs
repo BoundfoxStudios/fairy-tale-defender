@@ -18,13 +18,14 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Settings
 		{
 			base.ResetSettings(mutableSettings);
 
-			// Note: We remap from PanSpeed's [Range] attribute to 0 - 100
-			Slider.SetValueWithoutNotify(math.remap(0, 15, 0, 100, mutableSettings.Camera.PanSpeed));
+			Slider.SetValueWithoutNotify(math.remap(Constants.Settings.Panning.Start, Constants.Settings.Panning.End, 0, 100,
+				mutableSettings.Camera.PanSpeed));
 		}
 
 		public void SliderChange(float value)
 		{
-			MutableSettings.Camera.PanSpeed = math.remap(0, 100, 0, 15, value);
+			MutableSettings.Camera.PanSpeed =
+				math.remap(0, 100, Constants.Settings.Panning.Start, Constants.Settings.Panning.End, value);
 			OnSettingsChange();
 		}
 	}

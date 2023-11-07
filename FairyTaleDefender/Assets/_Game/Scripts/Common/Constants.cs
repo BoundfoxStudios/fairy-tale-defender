@@ -44,5 +44,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public static readonly int IsWalking = Animator.StringToHash("IsWalking");
 			public static readonly int IsHobbling = Animator.StringToHash("IsHobbling");
 		}
+
+		public static class Settings
+		{
+			public static class Panning
+			{
+				public const int Start = 0;
+				public const int End = 15;
+			}
+		}
 	}
 }
