@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 68faec62483354fa893bae07ca03b3f6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74a668e891ea04131bff192bdbc1bade, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -164,7 +164,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 95124094235fb4e8a9b6ef26d9184d80, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25128846de4ac412386035a75167c7b8, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -331,17 +331,17 @@ PrefabInstance:
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
       propertyPath: m_fontColor.b
-      value: 0.23890994
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
       propertyPath: m_fontColor.g
-      value: 0.31966823
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
       propertyPath: m_fontColor.r
-      value: 0.355
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
@@ -356,7 +356,7 @@ PrefabInstance:
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 4282208859
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5939346216126308751, guid: f044ccc8a6e784128a33f514b5385ffe,
         type: 3}
