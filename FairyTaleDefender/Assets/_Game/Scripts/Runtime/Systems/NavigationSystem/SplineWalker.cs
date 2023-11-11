@@ -1,5 +1,6 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
@@ -16,6 +17,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 
 		[field: SerializeField]
 		public WaySplineRuntimeAnchorSO WaySplineRuntimeAnchor { get; set; } = default!;
+
+		[field: SerializeField]
+		private Transform Gfx { get; set; } = default!;
 
 		public float MovementSpeed { get; set; } = 1;
 
@@ -57,7 +61,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 
 			var (position, rotation) = EvaluateSpline(_normalizedTime);
 
-			Rigidbody.Move(position, rotation);
+			Rigidbody.Move(position, Quaternion.Euler(0, rotation.eulerAngles.y, 0));
+
+			Gfx.localRotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
 
 			if (_normalizedTime > 1)
 			{
@@ -65,7 +71,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 			}
 		}
 
-		private (float3 Position, Quaternion Tangent) EvaluateSpline(float normalizedTime)
+		private (float3 Position, Quaternion Rotation) EvaluateSpline(float normalizedTime)
 		{
 			WaySplineRuntimeAnchor.ItemSafe.Evaluate(_spline, normalizedTime, out var position, out var tangent, out _);
 

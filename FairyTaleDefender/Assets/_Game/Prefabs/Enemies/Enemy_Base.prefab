@@ -23,13 +23,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4740030005653978953}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4508017015304133662}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6170205046915126970
 GameObject:
@@ -58,6 +58,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6170205046915126970}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -67,7 +68,6 @@ Transform:
   - {fileID: 4052367446084604737}
   - {fileID: 1808533816645699006}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8080968510749249390
 MonoBehaviour:
@@ -83,6 +83,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Definition>k__BackingField: {fileID: 0}
   <Health>k__BackingField: {fileID: 1877689021823224971}
+  <Animator>k__BackingField: {fileID: 0}
   <SplineWalker>k__BackingField: {fileID: 1489119832408811952}
   <EnemyDamagesPlayerEventChannel>k__BackingField: {fileID: 11400000, guid: 71190fa050e4a4a6399e26e30393957b,
     type: 2}
@@ -115,6 +116,7 @@ MonoBehaviour:
   <Rigidbody>k__BackingField: {fileID: -3768004599823536257}
   <WaySplineRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 392fa5f7bc6124fbaabcd11031584bc2,
     type: 2}
+  <Gfx>k__BackingField: {fileID: 2945683609454861703}
 --- !u!54 &-3768004599823536257
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,13 +168,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8333320366394414276}
+  serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4508017015304133662}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1726704639093836598
 MonoBehaviour:
@@ -199,6 +201,11 @@ PrefabInstance:
       propertyPath: <Health>k__BackingField
       value: 
       objectReference: {fileID: 1877689021823224971}
+    - target: {fileID: 6978134811004410269, guid: 67a0226c7b19846d39685c7c6a17bd7f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6978134812381698621, guid: 67a0226c7b19846d39685c7c6a17bd7f,
         type: 3}
       propertyPath: m_Name
