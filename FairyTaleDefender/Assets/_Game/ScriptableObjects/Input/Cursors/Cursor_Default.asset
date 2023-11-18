@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Cursor_Default
   m_EditorClassIdentifier: 
   <Textures>k__BackingField:
-  - {fileID: 2800000, guid: 9094a8d1bae394d628110c00be07de9e, type: 3}
+  - {fileID: 2800000, guid: 94c853815d3c84b588fbf49c5c826c6f, type: 3}
   <AnimationDelay>k__BackingField: 0.2
   <Hotspot>k__BackingField: {x: 5, y: 3}
