@@ -304,8 +304,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2518fd1b55b45d983a52bd909a40710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InitialActivatedIndex>k__BackingField: 0
-  <ActivateInitialIndexOnStart>k__BackingField: 0
   <SelectedColorTint>k__BackingField: {r: 0.67, g: 0.67, b: 0.67, a: 1}
 --- !u!114 &135571432
 MonoBehaviour:
@@ -1807,56 +1805,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 3143464407060503866}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1228257626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1228257628}
-  - component: {fileID: 1228257627}
-  m_Layer: 0
-  m_Name: CursorController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
---- !u!114 &1228257627
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228257626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de09cdc94254401ab28e963232b6b85a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Default>k__BackingField: {fileID: 11400000, guid: 60b3d0ae46fe744798c866febf25ba33,
-    type: 2}
-  <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
-    type: 2}
-  <ExitBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: cb5eeb0921c8347829f129c42bdeb130,
-    type: 2}
---- !u!4 &1228257628
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1228257626}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444703219
 GameObject:
   m_ObjectHideFlags: 0
@@ -3903,8 +3851,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2518fd1b55b45d983a52bd909a40710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <InitialActivatedIndex>k__BackingField: 0
-  <ActivateInitialIndexOnStart>k__BackingField: 1
   <SelectedColorTint>k__BackingField: {r: 0.67, g: 0.67, b: 0.67, a: 1}
 --- !u!114 &2011921778
 MonoBehaviour:
@@ -4370,7 +4316,6 @@ SceneRoots:
   - {fileID: 1620236866}
   - {fileID: 326114871}
   - {fileID: 1593510016}
-  - {fileID: 1228257628}
   - {fileID: 984792242}
   - {fileID: 777411585}
   - {fileID: 763099576}
