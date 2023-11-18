@@ -24,6 +24,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		[field: SerializeField]
 		public CameraActionsSO CameraActions { get; private set; } = default!;
 
+		[field: SerializeField]
+		public UIEffectsActionsSO UIEffectsActions { get; private set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -60,7 +63,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				_gameInput.BuildSystem.SetCallbacks(BuildSystemActions);
 				_gameInput.Tooltips.SetCallbacks(TooltipActions);
 				_gameInput.Camera.SetCallbacks(CameraActions);
+				_gameInput.UIEffects.SetCallbacks(UIEffectsActions);
 			}
+
+			_gameInput.UIEffects.Enable();
 
 			GameplayStartEventChannel.Raised += GameplayStart;
 			EnterBuildModeEventChannel.Raised += EnterBuildMode;

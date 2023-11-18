@@ -7,6 +7,13 @@
       "dependencies": {},
       "hash": "ac405b32a618bf9d9880e4fc1b63c5e45036c72c"
     },
+    "com.coffee.ui-particle": {
+      "version": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "4e4b9eb2a756219cf9632525e0acb00aec30aa92"
+    },
     "com.cyanilux.shadergraph-to-png": {
       "version": "https://github.com/Cyanilux/ShaderGraphToPNG.git",
       "depth": 0,

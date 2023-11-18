@@ -886,6 +886,34 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                     ""isPartOfComposite"": true
                 }
             ]
+        },
+        {
+            ""name"": ""UIEffects"",
+            ""id"": ""7dda024f-55ab-43ad-b5f4-caa0e5dfe248"",
+            ""actions"": [
+                {
+                    ""name"": ""Position"",
+                    ""type"": ""Value"",
+                    ""id"": ""7fc77208-c9c4-473d-ba1c-7905e3776873"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""45da87f1-49fe-4902-9be7-90a4e7a08cde"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Position"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -935,6 +963,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
             m_Camera_EdgePan = m_Camera.FindAction("EdgePan", throwIfNotFound: true);
             m_Camera_CameraMovement = m_Camera.FindAction("CameraMovement", throwIfNotFound: true);
+            // UIEffects
+            m_UIEffects = asset.FindActionMap("UIEffects", throwIfNotFound: true);
+            m_UIEffects_Position = m_UIEffects.FindAction("Position", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1326,6 +1357,52 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             }
         }
         public CameraActions @Camera => new CameraActions(this);
+
+        // UIEffects
+        private readonly InputActionMap m_UIEffects;
+        private List<IUIEffectsActions> m_UIEffectsActionsCallbackInterfaces = new List<IUIEffectsActions>();
+        private readonly InputAction m_UIEffects_Position;
+        public struct UIEffectsActions
+        {
+            private @GameInput m_Wrapper;
+            public UIEffectsActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @Position => m_Wrapper.m_UIEffects_Position;
+            public InputActionMap Get() { return m_Wrapper.m_UIEffects; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(UIEffectsActions set) { return set.Get(); }
+            public void AddCallbacks(IUIEffectsActions instance)
+            {
+                if (instance == null || m_Wrapper.m_UIEffectsActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_UIEffectsActionsCallbackInterfaces.Add(instance);
+                @Position.started += instance.OnPosition;
+                @Position.performed += instance.OnPosition;
+                @Position.canceled += instance.OnPosition;
+            }
+
+            private void UnregisterCallbacks(IUIEffectsActions instance)
+            {
+                @Position.started -= instance.OnPosition;
+                @Position.performed -= instance.OnPosition;
+                @Position.canceled -= instance.OnPosition;
+            }
+
+            public void RemoveCallbacks(IUIEffectsActions instance)
+            {
+                if (m_Wrapper.m_UIEffectsActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IUIEffectsActions instance)
+            {
+                foreach (var item in m_Wrapper.m_UIEffectsActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_UIEffectsActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public UIEffectsActions @UIEffects => new UIEffectsActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1367,6 +1444,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         {
             void OnEdgePan(InputAction.CallbackContext context);
             void OnCameraMovement(InputAction.CallbackContext context);
+        }
+        public interface IUIEffectsActions
+        {
+            void OnPosition(InputAction.CallbackContext context);
         }
     }
 }
