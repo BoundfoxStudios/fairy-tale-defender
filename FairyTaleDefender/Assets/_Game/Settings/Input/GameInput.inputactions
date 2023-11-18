@@ -862,6 +862,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "UIEffects",
+            "id": "7dda024f-55ab-43ad-b5f4-caa0e5dfe248",
+            "actions": [
+                {
+                    "name": "Position",
+                    "type": "Value",
+                    "id": "7fc77208-c9c4-473d-ba1c-7905e3776873",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "45da87f1-49fe-4902-9be7-90a4e7a08cde",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [

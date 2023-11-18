@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.boundfoxstudios.fluentassertions": "https://github.com/BoundfoxStudios/fluentassertions-unity.git#upm",
+    "com.coffee.ui-particle": "https://github.com/mob-sakai/ParticleEffectForUGUI.git",
     "com.cyanilux.shadergraph-to-png": "https://github.com/Cyanilux/ShaderGraphToPNG.git",
     "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
     "com.rlabrecque.steamworks.net": "https://github.com/rlabrecque/Steamworks.NET.git?path=/com.rlabrecque.steamworks.net",
