@@ -19,6 +19,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 		[field: SerializeField]
 		private AudioMixer MainMixer { get; set; } = default!;
 
+		[field: SerializeField]
+		private GameObject CursorEffects { get; set; } = default!;
+
 		[field: Header("Listening on")]
 		[field: SerializeField]
 		private VoidEventChannelSO GameSettingsChangedEventChannel { get; set; } = default!;
@@ -63,6 +66,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 			ApplyScreenSettings();
 			ApplyGraphicSettings();
 			ApplyLocalizationSettings();
+			ApplyCursorSettings();
+		}
+
+		private void ApplyCursorSettings()
+		{
+			CursorEffects.SetActive(Settings.Graphic.EnableCursorEffects);
 		}
 
 		private void ApplyAudioSettings()

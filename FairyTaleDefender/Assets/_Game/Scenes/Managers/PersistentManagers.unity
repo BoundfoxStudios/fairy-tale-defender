@@ -7992,6 +7992,7 @@ MonoBehaviour:
     type: 2}
   <MainMixer>k__BackingField: {fileID: 24100000, guid: 3e3e965e639d8434fa54621eaf374ca5,
     type: 2}
+  <CursorEffects>k__BackingField: {fileID: 453421862}
   <GameSettingsChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 0ef4e493ebd7d934ca0b474d9fb3ac9c,
     type: 2}
 --- !u!4 &1767715563
