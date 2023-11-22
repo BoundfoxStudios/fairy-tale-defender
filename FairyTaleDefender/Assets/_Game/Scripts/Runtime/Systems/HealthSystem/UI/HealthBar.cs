@@ -14,16 +14,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem.UI
 		private Health Health { get; set; } = default!;
 
 		[field: SerializeField]
-		private GameObject Background { get; set; } = default!;
+		private GameObject VisualContainer { get; set; } = default!;
 
 		[field: SerializeField]
 		private bool HideWhenHealthIsFull { get; set; } = true;
+
+		private bool IsVisible => !(HideWhenHealthIsFull && Health.Current == Health.Maximum);
 
 		private void Start()
 		{
 			Bar.Initialize(Health.Current, Health.Maximum);
 
-			Background.SetActive(!(HideWhenHealthIsFull && Health.Current == Health.Maximum));
+			VisualContainer.SetActive(IsVisible);
 		}
 
 		private void OnEnable()
@@ -41,7 +43,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem.UI
 		private void Change(int current, int change)
 		{
 			Bar.Value = current;
-			Background.SetActive(!(HideWhenHealthIsFull && Health.Current == Health.Maximum));
+			VisualContainer.SetActive(IsVisible);
 		}
 
 		private void Dead()
