@@ -2,6 +2,7 @@
 
 [![Windows Build](https://img.shields.io/teamcity/build/s/FairyTaleDefender_Build_Windows?server=https%3A%2F%2Fboundfoxstudios.teamcity.com&label=Windows)](https://boundfoxstudios.teamcity.com/buildConfiguration/FairyTaleDefender_Build_Windows#all-projects)
 [![Linux Build](https://img.shields.io/teamcity/build/s/FairyTaleDefender_Build_Linux?server=https%3A%2F%2Fboundfoxstudios.teamcity.com&label=Linux)](https://boundfoxstudios.teamcity.com/buildConfiguration/FairyTaleDefender_Build_Linux#all-projects)
+[![macOS Build](https://img.shields.io/teamcity/build/s/FairyTaleDefender_Build_MacOS?server=https%3A%2F%2Fboundfoxstudios.teamcity.com&label=macOS)](https://boundfoxstudios.teamcity.com/buildConfiguration/FairyTaleDefender_Build_MacOS#all-projects)
 
 
 # Fairy Tale Defender
