@@ -9,22 +9,12 @@ on:
     types:
       - synchronize
       - opened
-      - labeled
     branches-ignore:
       - main
 
 jobs:
   change-detection:
     uses: ./.github/workflows/change-detection.yml
-
-  unlabel-ready-to-merge:
-    name: Removes "ci-ready-to-merge" label on synchronize
-    if: github.event.action == 'synchronize'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions-ecosystem/action-remove-labels@v1
-        with:
-          labels: ci-ready-to-merge
 
   build-documentation:
     name: Build the documentation
@@ -62,47 +52,3 @@ jobs:
             echo "PR is not valid due to enabled Steam integration. Please turn it off."
             exit 1
           fi
-
-  build:
-    needs: [lint, fail-on-enabled-steam-integration, change-detection]
-    if: |
-      needs.change-detection.outputs.unity == 'true'
-      && github.event.action == 'labeled' 
-      && contains(github.event.pull_request.labels.*.name, 'ci-reviewed')
-    name: Development Builds
-    uses: ./.github/workflows/build.yml
-    secrets:
-      UNITY_LICENSE: ${{ secrets.UNITY_PERSONAL_LICENSE }}
-      UNITY_EMAIL: ${{ secrets.UNITY_PERSONAL_EMAIL }}
-      UNITY_PASSWORD: ${{ secrets.UNITY_PERSONAL_PASSWORD }}
-    with:
-      do-test: true
-      fail-fast: true
-      ref: "refs/pull/${{ github.event.number }}/merge"
-
-  label-successful-build:
-    needs: [change-detection, build, build-documentation]
-    if: always()
-    name: Label successful build
-    runs-on: ubuntu-latest
-    steps:
-      - if: needs.change-detection.outputs.unity == 'true' && needs.build.result != 'success'
-        run: |
-          echo "Need successful build"
-          exit 1
-      - uses: actions-ecosystem/action-add-labels@v1
-        if: | 
-          (needs.change-detection.outputs.unity == 'true' && needs.build.result == 'success')
-          || (needs.change-detection.outputs.docs == 'true' && needs.build-documentation.result == 'success')
-        with:
-          labels: ci-ready-to-merge
-
-  unlabel-pr:
-    needs: build
-    name: Unlabel "ci-reviewed" PR
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions-ecosystem/action-remove-labels@v1
-        with:
-          labels: ci-reviewed
