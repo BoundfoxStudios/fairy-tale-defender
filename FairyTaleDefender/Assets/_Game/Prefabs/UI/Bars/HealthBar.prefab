@@ -136,7 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Bar>k__BackingField: {fileID: 6927917929110226936}
   <Health>k__BackingField: {fileID: 0}
-  <Background>k__BackingField: {fileID: 6782113470997211772}
+  <VisualContainer>k__BackingField: {fileID: 6782113470997211772}
   <HideWhenHealthIsFull>k__BackingField: 1
 --- !u!1001 &8867358435118359453
 PrefabInstance:
@@ -229,7 +229,7 @@ PrefabInstance:
     - target: {fileID: 2006493411456039424, guid: 256bb3b0e04594619a0190b6ea8bb8c1,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -0.0000000018626451
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2006493411456039424, guid: 256bb3b0e04594619a0190b6ea8bb8c1,
         type: 3}
