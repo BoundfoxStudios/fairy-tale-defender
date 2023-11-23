@@ -32542,6 +32542,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1423839862}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1424100874 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
+    type: 3}
+  m_PrefabInstance: {fileID: 2076772805}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1427886454
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37029,6 +37035,7 @@ Transform:
   - {fileID: 1998914811}
   - {fileID: 886759644}
   - {fileID: 1143958541}
+  - {fileID: 1424100874}
   m_Father: {fileID: 1185429235}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1708532055
@@ -41459,7 +41466,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1702350141}
     m_Modifications:
     - target: {fileID: 4237396286884223557, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
@@ -41489,7 +41496,7 @@ PrefabInstance:
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.06
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
@@ -41504,17 +41511,17 @@ PrefabInstance:
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 5241534175121017550, guid: e7a320dd528f1452d8bd14ebf35f4783,
         type: 3}
@@ -42503,4 +42510,3 @@ SceneRoots:
   - {fileID: 1160487049}
   - {fileID: 1185429235}
   - {fileID: 801891218}
-  - {fileID: 2076772805}
