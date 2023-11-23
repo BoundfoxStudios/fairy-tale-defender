@@ -1,5 +1,6 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
@@ -8,6 +9,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 	public class Health : MonoBehaviour
 	{
 		public delegate void HealthHandler(int current, int change);
+
+		[field: SerializeField]
+		private HealthVisualizerRuntimeAnchorSO? HealthVisualizerRuntimeAnchor { get; set; }
 
 		public event Action Dead = delegate { };
 		public event HealthHandler Change = delegate { };
@@ -19,7 +23,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 			Current = health;
 			Maximum = maxHealth;
 
-			Change(health, 0);
+			OnChange(health, 0);
 		}
 
 		public void TakeDamage(int damage)
@@ -27,11 +31,21 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 			Debug.Assert(damage >= 0, "Damage is negative");
 
 			Current -= damage;
-			Change(Current, damage);
+			OnChange(Current, damage);
 
 			if (Current <= 0)
 			{
 				Dead();
+			}
+		}
+
+		private void OnChange(int current, int change)
+		{
+			Change(current, change);
+
+			if (HealthVisualizerRuntimeAnchor && HealthVisualizerRuntimeAnchor!.IsSet)
+			{
+				HealthVisualizerRuntimeAnchor.ItemSafe.UpdateVisuals(current, Maximum);
 			}
 		}
 	}
