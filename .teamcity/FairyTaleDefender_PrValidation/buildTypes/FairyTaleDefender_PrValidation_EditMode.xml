@@ -21,6 +21,17 @@
     <vcs-settings />
     <requirements />
     <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_5" type="pullRequests">
+        <parameters>
+          <param name="authenticationType" value="vcsRoot" />
+          <param name="filterAuthorRole" value="MEMBER_OR_COLLABORATOR" />
+          <param name="filterTargetBranch" value="+:refs/heads/develop" />
+          <param name="providerType" value="github" />
+          <param name="vcsRootId" value="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <cleanup />
   </settings>
 </build-type>
