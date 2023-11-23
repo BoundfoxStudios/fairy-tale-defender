@@ -1379,6 +1379,8 @@ MonoBehaviour:
     type: 2}
   <TimeToRotate>k__BackingField: 0.133
   <WeaponRangePreview>k__BackingField: {fileID: 2003418655}
+  <BuildEffect>k__BackingField: {fileID: 2190186802327282871, guid: bfb9ba7b5edbc4d21bce4090328f7758,
+    type: 3}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
     type: 2}
   <BuiltEventChannel>k__BackingField: {fileID: 11400000, guid: 7ecdd2f74b0d943cea4ce5325c4f3454,

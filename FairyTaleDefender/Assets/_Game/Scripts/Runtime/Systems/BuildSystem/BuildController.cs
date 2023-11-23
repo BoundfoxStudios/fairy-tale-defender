@@ -38,6 +38,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		private WeaponRangePreview WeaponRangePreview { get; set; } = default!;
 
+		[field: SerializeField]
+		private GameObject? BuildEffect { get; set; }
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -144,6 +147,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			var rotation = _buildContext.BlueprintInstance.transform.rotation;
 			Destroy(_buildContext.BlueprintInstance);
 			Instantiate(_buildContext.Buildable.Prefab, _buildContext.TilePosition, rotation);
+
+			if (BuildEffect)
+			{
+				Instantiate(BuildEffect, _buildContext.TilePosition, Quaternion.identity);
+			}
 
 			BuiltEventChannel.Raise(new() { Buildable = _buildContext.Buildable });
 			ExitBuildMode();
