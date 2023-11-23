@@ -26,7 +26,6 @@
         <parameters>
           <param name="authenticationType" value="vcsRoot" />
           <param name="filterAuthorRole" value="MEMBER_OR_COLLABORATOR" />
-          <param name="filterSourceBranch" value="feature/*" />
           <param name="ignoreDrafts" value="true" />
           <param name="providerType" value="github" />
           <param name="vcsRootId" value="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
