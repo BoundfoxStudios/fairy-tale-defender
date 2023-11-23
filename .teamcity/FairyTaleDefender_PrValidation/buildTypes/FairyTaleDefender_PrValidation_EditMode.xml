@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="86dbb1c1-f5a5-4d6d-a6f3-90367f336857" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Edit &amp; Play Mode Tests</name>
+  <description />
+  <settings ref="FairyTaleDefender_UnityDefaults">
+    <parameters />
+    <build-runners order="RUNNER_2">
+      <runner id="RUNNER_2" name="Run edit mode tests" type="unity">
+        <parameters>
+          <param name="arguments" value="-logFile -" />
+          <param name="detectionMode" value="auto" />
+          <param name="noGraphics" value="true" />
+          <param name="runEditorTests" value="true" />
+          <param name="teamcity.build.workingDir" value="FairyTaleDefender" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="testPlatform" value="all" />
+          <param name="unityVersion" value="2022.3" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+
