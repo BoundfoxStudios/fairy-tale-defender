@@ -32,14 +32,6 @@
           <param name="vcsRootId" value="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
         </parameters>
       </extension>
-      <extension id="BUILD_EXT_4" type="commit-status-publisher">
-        <parameters>
-          <param name="github_authentication_type" value="vcsRoot" />
-          <param name="github_host" value="https://api.github.com" />
-          <param name="publisherId" value="githubStatusPublisher" />
-          <param name="vcsRootId" value="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
-        </parameters>
-      </extension>
     </build-extensions>
     <cleanup />
   </settings>
