@@ -8,6 +8,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.Script
 {
 	public abstract class RuntimeAnchorBaseSO : ScriptableObject
 	{
+		public bool IsSet { get; protected set; }
 		public abstract Type Type { get; }
 		public abstract object? ManagedObject { set; }
 	}
@@ -20,7 +21,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.Script
 	public abstract class RuntimeAnchorBaseSO<T> : RuntimeAnchorBaseSO
 		where T : class
 	{
-		public bool IsSet { get; private set; }
 		private T? _item;
 
 		public T? Item
@@ -36,7 +36,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.Script
 		public T ItemSafe => Item.EnsureOrThrow();
 
 		public override Type Type => typeof(T);
-		public override object? ManagedObject { set => _item = value as T; }
+		public override object? ManagedObject { set => Item = value as T; }
 
 		[MethodImpl(MethodImplOptions.AggressiveInlining)]
 		public bool TryGetItem([NotNullWhen(true)] out T? item)
