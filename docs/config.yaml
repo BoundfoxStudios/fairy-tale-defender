@@ -18,6 +18,9 @@ cascade:
 enableRobotsTXT: true
 enableGitInfo: true
 
+theme:
+  - hugo-shortcode-gallery
+
 params:
   pygmentsUseClassic: false
   pygmentsStyle: vs
