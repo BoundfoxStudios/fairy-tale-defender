@@ -818,6 +818,11 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 676347200478737071, guid: 491417a9edf8f46599ed40484d34b754,
+        type: 3}
+      propertyPath: m_Name
+      value: Video_Button
+      objectReference: {fileID: 0}
     - target: {fileID: 1016557999621376344, guid: 491417a9edf8f46599ed40484d34b754,
         type: 3}
       propertyPath: m_AnchorMax.y
