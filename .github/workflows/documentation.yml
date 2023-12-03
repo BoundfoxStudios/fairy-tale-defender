@@ -118,6 +118,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           ref: ${{ inputs.ref }}
+          submodules: true
       - uses: ./.github/actions/download-all-artifacts
       - uses: ./.github/actions/hugo-check-broken-links
 
@@ -129,6 +130,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
+          submodules: true
       - uses: ./.github/actions/download-all-artifacts
       - uses: actions/setup-node@v3
         with:
