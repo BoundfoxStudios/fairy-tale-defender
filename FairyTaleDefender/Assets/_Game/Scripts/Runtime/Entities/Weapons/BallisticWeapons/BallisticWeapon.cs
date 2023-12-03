@@ -21,9 +21,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 		public ArmSettings Arm { get; private set; } = default!;
 
 		[field: SerializeField]
-		private BallisticProjectile ProjectilePrefab { get; set; } = default!;
+		private Projectile ProjectilePrefab { get; set; } = default!;
 
-		private BallisticProjectile? _projectile;
+		private Projectile? _projectile;
 		private Quaternion _targetRotation;
 
 		[Serializable]
