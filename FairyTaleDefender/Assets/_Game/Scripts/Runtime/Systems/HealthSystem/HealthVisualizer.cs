@@ -11,6 +11,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 		[field: Tooltip("Objects must be sorted from high to low")]
 		private GameObject[] Visuals { get; set; } = default!;
 
+		[field: SerializeField]
+		private string CloseToDeathAnimationName { get; set; } = default!;
+
+		[field: SerializeField]
+		private Animator Animator { get; set; } = default!;
+
 		private void Start()
 		{
 			ActivateIndex(0);
@@ -18,9 +24,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 
 		public void UpdateVisuals(int current, int maximum)
 		{
-			var index = Mathf.FloorToInt(math.remap(maximum, 1, 0, Visuals.Length - 1, current));
+			var index = Mathf.FloorToInt(math.remap(maximum, 2, 0, Visuals.Length - 1, current));
 
 			ActivateIndex(index);
+
+			if (current == 1)
+			{
+				Animator.Play(CloseToDeathAnimationName);
+			}
 		}
 
 		private void ActivateIndex(int index)
