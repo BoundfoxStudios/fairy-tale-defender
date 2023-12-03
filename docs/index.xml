@@ -157,72 +157,206 @@ Natürlich kann, wenn sich genug beteiligen, auch in der MVP-Phase bereits eine 
 Bei gewissen Implementierungen kommt man sich hier ja auch nicht in die Quere.&lt;/p>
 &lt;p>Wichtig ist, dass das Hauptfokus bei der Umsetzung des Game Loops ist, denn nur mit diesem kann das Spiel letzendlich auch gespielt werden. :)&lt;/p></description></item><item><title>Docs: Screenshots-Historie</title><link>https://docs.fairytaledefender.de/docs/screenshots/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/screenshots/</guid><description>
 &lt;p>Klicke Screenshots an, um sie zu vergrößern.&lt;/p>
+&lt;h2 id="03122023">03.12.2023&lt;/h2>
+&lt;script src="https://docs.fairytaledefender.de/shortcode-gallery/swipebox/js/jquery.swipebox.min.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://docs.fairytaledefender.de/shortcode-gallery/swipebox/css/swipebox.min.css">
+&lt;script src="https://docs.fairytaledefender.de/shortcode-gallery/justified_gallery/jquery.justifiedGallery.min.js">&lt;/script>
+&lt;link rel="stylesheet" href="https://docs.fairytaledefender.de/shortcode-gallery/justified_gallery/justifiedGallery.min.css"/>
+&lt;style>
+&lt;/style>
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-0-wrapper" class="gallery-wrapper">
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-0" class="justified-gallery">
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/01-main-menu.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/01-main-menu_hu9b75c0f10dda95806ce256cb61918ea4_719971_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
+&lt;/div>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/02-settings.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/02-settings_hu1bd4d51356fd7145a1dcabfff10a465a_606157_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
+&lt;/div>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/03-credits.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/03-credits_hu93983f5ca3e6f1434925adcf7880cf14_613677_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
+&lt;/div>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/04-level-1.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-12-03/04-level-1_huf20d3d3355061bd58162bf26585b993e_954455_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;script>
+if (!jQuery) {
+alert("jquery is not loaded");
+}
+$( document ).ready(() => {
+const gallery = $("#gallery-f1968990d3d3d42a5ce652dac5dfb145-0");
+let swipeboxInstance = null;
+gallery.on('jg.complete', () => {
+swipeboxInstance = $('.galleryImg').swipebox(
+jQuery.extend({},
+{ }
+)
+);
+});
+gallery.justifiedGallery({
+rowHeight : "150",
+margins : "5",
+border : 0,
+randomize : false ,
+waitThumbnailsLoad : false,
+lastRow : "justify",
+captions : false,
+});
+});
+&lt;/script>
 &lt;h2 id="27042023">27.04.2023&lt;/h2>
-&lt;div class="td-card-deck card-deck mb-4">
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Main Menu
+&lt;style>
+&lt;/style>
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-1-wrapper" class="gallery-wrapper">
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-1" class="justified-gallery">
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/01-main-menu.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/01-main-menu_hu9b75c0f10dda95806ce256cb61918ea4_729629_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
 &lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-27/main-menu.png">&lt;img src="assets/2023-04-27/main-menu.png" alt="Main Menu">&lt;/a>
-&lt;/p>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/02-credits.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/02-credits_hu06599cf332615ba053294f3606850f43_140043_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
 &lt;/div>
-&lt;/div>
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Level 1
-&lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-27/level-1.png">&lt;img src="assets/2023-04-27/level-1.png" alt="Level 1">&lt;/a>
-&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Credits
-&lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-27/credits.png">&lt;img src="assets/2023-04-27/credits.png" alt="Credits">&lt;/a>
-&lt;/p>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/03-level-1.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-27/03-level-1_hu98b08630bc10198d8a7987f7d635f5af_904187_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
 &lt;/div>
 &lt;/div>
 &lt;/div>
+&lt;script>
+if (!jQuery) {
+alert("jquery is not loaded");
+}
+$( document ).ready(() => {
+const gallery = $("#gallery-f1968990d3d3d42a5ce652dac5dfb145-1");
+let swipeboxInstance = null;
+gallery.on('jg.complete', () => {
+swipeboxInstance = $('.galleryImg').swipebox(
+jQuery.extend({},
+{ }
+)
+);
+});
+gallery.justifiedGallery({
+rowHeight : "150",
+margins : "5",
+border : 0,
+randomize : false ,
+waitThumbnailsLoad : false,
+lastRow : "justify",
+captions : false,
+});
+});
+&lt;/script>
 &lt;h2 id="07042023">07.04.2023&lt;/h2>
-&lt;div class="td-card-deck card-deck mb-4">
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Main Menu
+&lt;style>
+&lt;/style>
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-2-wrapper" class="gallery-wrapper">
+&lt;div id="gallery-f1968990d3d3d42a5ce652dac5dfb145-2" class="justified-gallery">
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/01-main-menu.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/01-main-menu_hua5de953d40492ea9308bf8e3871fc6d7_54942_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
 &lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-07/main-menu.png">&lt;img src="assets/2023-04-07/main-menu.png" alt="Main Menu">&lt;/a>
-&lt;/p>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/02-credits.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/02-credits_hu53a19f29f3f472f03cc45dc509123cf9_141994_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
+&lt;/div>
+&lt;div>
+&lt;a href="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/03-level-1.png"
+class="galleryImg"
+>
+&lt;img
+width="300" height="169"
+src="https://docs.fairytaledefender.de/docs/screenshots/assets/2023-04-07/03-level-1_hu808345b88505f1f562c2265ab185e900_640672_300x300_fit_q90_lanczos_3.png"
+>
+&lt;/a>
 &lt;/div>
 &lt;/div>
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Level 1
 &lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-07/level-1.png">&lt;img src="assets/2023-04-07/level-1.png" alt="Level 1">&lt;/a>
-&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;div class="td-card card mb-4">
-&lt;div class="card-header">
-Credits
-&lt;/div>
-&lt;div class="card-body">
-&lt;p class="card-text">
-&lt;a href="assets/2023-04-07/credits.png">&lt;img src="assets/2023-04-07/credits.png" alt="Credits">&lt;/a>
-&lt;/p>
-&lt;/div>
-&lt;/div>
-&lt;/div></description></item><item><title>Game-Design-Document: Terrain</title><link>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</guid><description>
+&lt;script>
+if (!jQuery) {
+alert("jquery is not loaded");
+}
+$( document ).ready(() => {
+const gallery = $("#gallery-f1968990d3d3d42a5ce652dac5dfb145-2");
+let swipeboxInstance = null;
+gallery.on('jg.complete', () => {
+swipeboxInstance = $('.galleryImg').swipebox(
+jQuery.extend({},
+{ }
+)
+);
+});
+gallery.justifiedGallery({
+rowHeight : "150",
+margins : "5",
+border : 0,
+randomize : false ,
+waitThumbnailsLoad : false,
+lastRow : "justify",
+captions : false,
+});
+});
+&lt;/script></description></item><item><title>Game-Design-Document: Terrain</title><link>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/game-design-document/gameplay/terrain/</guid><description>
 &lt;p>Die Karten innerhalb der verschiedenen Level sind grundsätzlich rasterbasiert. Dabei handelt es sich nicht um flache Karten, sondern es sollen auch bergige Welten möglich sein.
 Es sollen abrupte größere Sprünge in der Höhe möglich sein, wie z.B. bei Bergen, um die Höhenunterschiede nicht ausschließlich kontinuierlich in Stufen zu gestalten. Damit würde die Landschaft nicht vollkommen homogen aussehen und etwas mehr Abwechslung für das Auge bieten.&lt;/p>
 &lt;p>Die einzelnen Wege werden ebenfalls auf diesem Raster platziert, andere Dekoelemente wie Bäume hingegen sollen absolut frei von Designern platziert werden können.&lt;/p>
