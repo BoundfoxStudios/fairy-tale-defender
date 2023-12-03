@@ -20,7 +20,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 
 		public void DealDamage(Collision collision, int amount)
 		{
-			var position = collision.transform.position;
+			var position = collision.GetContact(0).point;
 			TrySpawnEffect(position);
 
 			var results = Physics.SphereCastAll(position, Radius,
