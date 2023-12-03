@@ -54,13 +54,6 @@
       </dependency>
     </artifact-dependencies>
     <dependencies>
-      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Linux">
-        <options>
-          <option name="run-build-if-dependency-failed" value="CANCEL" />
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
       <depend-on sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors">
         <options>
           <option name="run-build-if-dependency-failed" value="CANCEL" />
