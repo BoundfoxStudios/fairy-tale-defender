@@ -144,6 +144,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneByNameButton("Models", "Development/Models");
 				OpenSceneByNameButton("Tower UI", "Development/TowerUI");
+				OpenSceneByNameButton("Icon Creator", "Development/IconCreator");
 				EditorGUILayout.EndHorizontal();
 			}
 
