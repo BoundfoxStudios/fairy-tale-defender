@@ -2415,6 +2415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8bbeaa179c44d88327dda414657ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <HealthVisualizerRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: dbbbf1608e8ab43edb1e7c23a092f530,
+    type: 2}
 --- !u!114 &1620236865
 MonoBehaviour:
   m_ObjectHideFlags: 0
