@@ -7,12 +7,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 	[AddComponentMenu(Constants.MenuNames.HealthSystem + "/" + nameof(HealthVisualizer))]
 	public class HealthVisualizer : MonoBehaviour
 	{
+		private static readonly int Death = Animator.StringToHash("Death");
+
 		[field: SerializeField]
 		[field: Tooltip("Objects must be sorted from high to low")]
 		private GameObject[] Visuals { get; set; } = default!;
-
-		[field: SerializeField]
-		private string CloseToDeathAnimationName { get; set; } = default!;
 
 		[field: SerializeField]
 		private Animator Animator { get; set; } = default!;
@@ -30,7 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.HealthSystem
 
 			if (current == 1)
 			{
-				Animator.Play(CloseToDeathAnimationName);
+				Animator.Play(Death);
 			}
 		}
 
