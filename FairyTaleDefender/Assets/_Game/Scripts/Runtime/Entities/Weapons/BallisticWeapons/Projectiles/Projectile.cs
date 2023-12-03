@@ -3,9 +3,9 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles
 {
-	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(BallisticProjectile))]
+	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(Projectile))]
 	[RequireComponent(typeof(Rigidbody))]
-	public class BallisticProjectile : MonoBehaviour
+	public class Projectile : MonoBehaviour
 	{
 		[field: SerializeField]
 		public Collider Collider { get; private set; } = default!;
@@ -29,14 +29,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 			}
 		}
 
-		public void Launch(Vector3 velocity, bool doUnparent = true)
+		public void Launch(Vector3 velocity,
+			bool doUnparent = true,
+			bool useGravity = true
+		)
 		{
 			if (doUnparent)
 			{
 				transform.SetParent(null, true);
 			}
 
-			_rigidbody.useGravity = true;
+			_rigidbody.useGravity = useGravity;
 			_rigidbody.velocity = velocity;
 
 			if (TrailRenderer)

@@ -1,6 +1,7 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons;
+using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
@@ -38,8 +39,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 			var range = effectiveWeaponDefinition switch
 			{
 				EffectiveBallisticWeaponDefinition effectiveBallisticWeaponDefinition =>
-					new Limits2(effectiveBallisticWeaponDefinition.MinimumRange,
+					new(effectiveBallisticWeaponDefinition.MinimumRange,
 						effectiveBallisticWeaponDefinition.MaximumRange),
+				EffectiveDirectWeaponDefinition effectiveDirectWeaponDefinition =>
+					new Limits2(0, effectiveDirectWeaponDefinition.Range),
 				_ => throw new ArgumentOutOfRangeException(nameof(effectiveWeaponDefinition),
 					$"{effectiveWeaponDefinition} is not implemented yet.")
 			};
