@@ -47,6 +47,15 @@
           <param name="vcsRootId" value="FairyTaleDefender_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_1" type="jetbrains.buildserver.feature.build.cache">
+        <parameters>
+          <param name="cache-name" value="UnityLibraryPRValidation" />
+          <param name="publish-cache" value="true" />
+          <param name="publish-cache-rules" value="FairyTaleDefender/Library" />
+          <param name="publish-only-changed" value="true" />
+          <param name="use-cache" value="true" />
+        </parameters>
+      </extension>
     </build-extensions>
     <cleanup />
   </settings>
