@@ -28,6 +28,8 @@ MonoBehaviour:
     m_LocalVariables: []
   <Waves>k__BackingField: {fileID: 11400000, guid: 14ea98d944de3434ab04cdfdd7b5eecd,
     type: 2}
+  <Objectives>k__BackingField: {fileID: 11400000, guid: 9e3c0656af8c10c4c873035b0238d1e9,
+    type: 2}
   <PlayerStartResources>k__BackingField:
     <Health>k__BackingField: 10
     <Coins>k__BackingField: 100

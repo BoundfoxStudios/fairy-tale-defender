@@ -1,5 +1,7 @@
 using System;
 using System.Threading;
+using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -21,8 +23,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves
 		public int EnemiesToSpawn { get; private set; } = 10;
 
 		public float TimeToSpawnAllEnemies => (EnemiesToSpawn - 1) * DelayBetweenEachSpawnInSeconds;
+
+		protected EventChannelSO<Enemy>? EnemySpawnedEventChannel;
+
 		public abstract UniTask SpawnAsync(ISpline spline, SplineContainer splineContainer,
-			CancellationToken cancellationToken);
+			CancellationToken cancellationToken, EventChannelSO<Enemy> enemySpawnedEventChannel);
 
 #if UNITY_EDITOR
 		public abstract string InspectorName { get; }

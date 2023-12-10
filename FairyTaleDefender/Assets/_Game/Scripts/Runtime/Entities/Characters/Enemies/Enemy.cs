@@ -21,7 +21,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 		private IntEventChannelSO EnemyDamagesPlayerEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		public EnemyEventChannelSO EnemyDestroyedByPlayer { get; private set; } = default!;
+		public EnemySOEventChannelSO EnemyDestroyedByPlayer { get; private set; } = default!;
+
+		[field: SerializeField]
+		public EnemyEventChannelSO EnemyDestroyed { get; private set; } = default!;
 
 		protected override void Awake()
 		{
@@ -54,12 +57,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 		{
 			// TODO: Get this info from the SO
 			EnemyDamagesPlayerEventChannel.Raise(1);
-			DestroyCharacter();
+			Destroy();
 		}
 
 		private void DestroyedByPlayer()
 		{
 			EnemyDestroyedByPlayer.Raise(Definition);
+			Destroy();
+		}
+
+		private void Destroy()
+		{
+			EnemyDestroyed.Raise(this);
 			DestroyCharacter();
 		}
 	}
