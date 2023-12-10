@@ -47,6 +47,22 @@ MonoBehaviour:
     m_Key: PersistentManagers/Tooltip_Canvas/BuildTowerTooltip_Container/Tooltip_Chrome/Body/AttackAngle_Row/Text
     m_Metadata:
       m_Items: []
+  - m_Id: 161237439286861824
+    m_Key: Sponsor/JetBrains
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238628124581888
+    m_Key: Sponsor/TeamCity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238980953628672
+    m_Key: Sponsor/SupportedBy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161239038872772608
+    m_Key: Sponsor/ProudlyBuiltBy
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
