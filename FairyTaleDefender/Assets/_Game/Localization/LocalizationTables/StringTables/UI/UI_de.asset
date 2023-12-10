@@ -50,6 +50,22 @@ MonoBehaviour:
     m_Localized: Tooltip
     m_Metadata:
       m_Items: []
+  - m_Id: 161237439286861824
+    m_Localized: "Unterst\xFCtzt durch JetBrains"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238628124581888
+    m_Localized: Mit Stolz gebaut von TeamCity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238980953628672
+    m_Localized: "Unterst\xFCtzt durch"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161239038872772608
+    m_Localized: Mit Stolz gebaut von
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

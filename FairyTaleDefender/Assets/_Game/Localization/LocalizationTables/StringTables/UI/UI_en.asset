@@ -38,6 +38,22 @@ MonoBehaviour:
     m_Localized: Angle
     m_Metadata:
       m_Items: []
+  - m_Id: 161237439286861824
+    m_Localized: Supported by JetBrains
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238628124581888
+    m_Localized: Proudly built by TeamCity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161238980953628672
+    m_Localized: Supported by
+    m_Metadata:
+      m_Items: []
+  - m_Id: 161239038872772608
+    m_Localized: Proudly built by
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
