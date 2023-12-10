@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8611937263896127622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 982611642237741412}
+  - component: {fileID: 6200529528548129079}
+  m_Layer: 0
+  m_Name: ObjectiveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &982611642237741412
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611937263896127622}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6200529528548129079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611937263896127622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dbb5b60c23f433b9a5f43d69b3b4e7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <LevelRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: b12e537301c554260b06a1dec1263463,
+    type: 2}
+  <AllLevelPacks>k__BackingField: {fileID: 11400000, guid: 8b1004765cea142f196f2750abc90c4e,
+    type: 2}
+  <MainMenuScene>k__BackingField: {fileID: 11400000, guid: df402765d19514e9c9d8b331e8d43989,
+    type: 2}
+  <GameplayStartedEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
+    type: 2}
+  <ObjectiveCompletedEventChannel>k__BackingField: {fileID: 11400000, guid: afe01205a1f439249ba3b2669561f78a,
+    type: 2}
+  <AllObjectivesCompletedEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
+    type: 2}
+  <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
+    type: 2}

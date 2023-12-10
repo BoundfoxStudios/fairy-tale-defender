@@ -2,6 +2,7 @@ using System;
 using System.Threading;
 using BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using Unity.Mathematics;
 using UnityEngine;
@@ -17,8 +18,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves
 		public Enemy EnemyPrefab { get; private set; } = default!;
 
 		public override async UniTask SpawnAsync(ISpline spline, SplineContainer splineContainer,
-			CancellationToken cancellationToken)
+			CancellationToken cancellationToken, EventChannelSO<Enemy> enemySpawnedEventChannel)
 		{
+			EnemySpawnedEventChannel = enemySpawnedEventChannel;
+
 			var spawnedEnemies = 0;
 			var delay = TimeSpan.FromSeconds(DelayBetweenEachSpawnInSeconds);
 
@@ -29,6 +32,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves
 			{
 				var enemy = Object.Instantiate(EnemyPrefab, position, rotation);
 				enemy.Initialize(spline);
+				EnemySpawnedEventChannel.Raise(enemy);
 
 				spawnedEnemies++;
 

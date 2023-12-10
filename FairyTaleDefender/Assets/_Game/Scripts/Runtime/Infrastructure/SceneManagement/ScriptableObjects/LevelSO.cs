@@ -1,5 +1,6 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem.Waves.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -17,6 +18,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.Scrip
 
 		[field: SerializeField]
 		public WavesSO Waves { get; private set; } = default!;
+
+		[field: SerializeField]
+		public LevelObjectivesSO Objectives { get; private set; } = default!;
 
 		[field: SerializeField]
 		public PlayerResources PlayerStartResources { get; private set; } = default!;

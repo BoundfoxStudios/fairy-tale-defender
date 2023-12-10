@@ -294,6 +294,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: b16ed2ee6c3b947ce8daa10dd8b18d6c,
         type: 2}
+    - target: {fileID: 8080968510749249390, guid: ce4f46e39468745c3af0af575293347f,
+        type: 3}
+      propertyPath: <EnemySpawned>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: a9b11fb812b052f46aba1307087c9af9,
+        type: 2}
+    - target: {fileID: 8080968510749249390, guid: ce4f46e39468745c3af0af575293347f,
+        type: 3}
+      propertyPath: <EnemyDestroyed>k__BackingField
+      value: 
+      objectReference: {fileID: 11400000, guid: 1f1fa5af3f23ae04cbb6a25a570857dc,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 3746845030590846074, guid: ce4f46e39468745c3af0af575293347f, type: 3}
     m_RemovedGameObjects: []

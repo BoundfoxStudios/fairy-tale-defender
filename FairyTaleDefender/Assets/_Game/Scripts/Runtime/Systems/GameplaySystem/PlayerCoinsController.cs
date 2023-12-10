@@ -23,7 +23,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		public VoidEventChannelSO SceneReadyEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
-		public EnemyEventChannelSO EnemyDestroyedByPlayerEventChannel { get; private set; } = default!;
+		public EnemySOEventChannelSO EnemyDestroyedByPlayerEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
 		public BuildableEventChannelSO BuiltEventChannel { get; private set; } = default!;
