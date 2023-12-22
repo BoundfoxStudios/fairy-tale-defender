@@ -107,20 +107,22 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RippleDensity: 5.7
-    - _RippleSlimness: 7.25
-    - _RippleSpeed: 1.43
+    - _RippleDensity: 6
+    - _RippleIntensity: 0.224
+    - _RippleSlimness: 8.24
+    - _RippleSpeed: 0.46
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _SrcBlendAlpha: 1
     - _Surface: 0
+    - _Tiling: 4
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.3372549, g: 0.79607844, b: 0.88235295, a: 1}
+    - _Color: {r: 0.24363652, g: 0.63299006, b: 0.7075472, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _Flow: {r: 0, g: -0.1, b: 0, a: 0}
     - _FlowDirection: {r: 0, g: 1, b: 0, a: 0}
