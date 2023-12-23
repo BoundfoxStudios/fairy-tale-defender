@@ -28,7 +28,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.CameraSystem
 		{
 			_followTarget = VirtualCamera.Follow;
 
-			AdjustWorldBounds();
+			//AdjustWorldBounds();
 		}
 
 		private void AdjustWorldBounds()
