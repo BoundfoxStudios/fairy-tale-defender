@@ -89,6 +89,8 @@ MonoBehaviour:
     type: 2}
   <EnemyDestroyedByPlayer>k__BackingField: {fileID: 11400000, guid: bd1e991bea9504358ade3ecefa748b64,
     type: 2}
+  <EnemyDestroyed>k__BackingField: {fileID: 11400000, guid: 1f1fa5af3f23ae04cbb6a25a570857dc,
+    type: 2}
 --- !u!114 &1877689021823224971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a8bbeaa179c44d88327dda414657ba6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <HealthVisualizerRuntimeAnchor>k__BackingField: {fileID: 0}
 --- !u!114 &1489119832408811952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721303ea945b4c80b2470e7471c235aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <Enemy>k__BackingField: {fileID: 0}
 --- !u!1001 &743825450699397579
 PrefabInstance:
   m_ObjectHideFlags: 0
