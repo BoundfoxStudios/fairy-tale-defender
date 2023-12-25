@@ -3,6 +3,9 @@
   <name>Edit &amp; Play Mode Tests</name>
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_1" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_2" name="Run edit mode tests" type="unity">
