@@ -2,6 +2,7 @@ using BoundfoxStudios.FairyTaleDefender.Common;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Pool;
 
 namespace BoundfoxStudios.FairyTaleDefender.UI.Utility
 {

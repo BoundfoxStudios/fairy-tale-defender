@@ -1,0 +1,75 @@
+{"frames": [
+
+{
+	"filename": "Discord.png",
+	"frame": {"x":10,"y":10,"w":213,"h":240},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":213,"h":240},
+	"sourceSize": {"w":213,"h":240},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Gem_Yellow.png",
+	"frame": {"x":233,"y":10,"w":118,"h":216},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":118,"h":216},
+	"sourceSize": {"w":118,"h":216},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "GitHub.png",
+	"frame": {"x":361,"y":10,"w":120,"h":120},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":120,"h":120},
+	"sourceSize": {"w":120,"h":120},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "Heart.png",
+	"frame": {"x":491,"y":10,"w":256,"h":222},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":222},
+	"sourceSize": {"w":256,"h":222},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "JetBrains.png",
+	"frame": {"x":757,"y":10,"w":240,"h":240},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":240,"h":240},
+	"sourceSize": {"w":240,"h":240},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "TeamCity_Icon.png",
+	"frame": {"x":1007,"y":10,"w":200,"h":200},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":200,"h":200},
+	"sourceSize": {"w":200,"h":200},
+	"pivot": {"x":0.5,"y":0.5}
+},
+{
+	"filename": "YouTube.png",
+	"frame": {"x":1217,"y":10,"w":128,"h":128},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":128,"h":128},
+	"sourceSize": {"w":128,"h":128},
+	"pivot": {"x":0.5,"y":0.5}
+}],
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "Icons.png",
+	"format": "RGBA8888",
+	"size": {"w":2048,"h":2048},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:b1849d55d4b539484d2c5895e4aab904:ba3aa67a853fdf211f9f480627d9e341:355ec5627f80f022e232f7343cfa512c$"
+}
+}
