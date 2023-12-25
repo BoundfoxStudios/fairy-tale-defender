@@ -9,7 +9,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem.ScriptableOb
 	public class SurviveAllWavesObjectiveSO : ObjectiveSO
 	{
 		[field: Header("References")]
-		[field: SerializeField] public EnemyRuntimeSetSO LivingEnemies { get; private set; } = default!;
+		[field: SerializeField]
+		public EnemyRuntimeSetSO LivingEnemies { get; private set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
