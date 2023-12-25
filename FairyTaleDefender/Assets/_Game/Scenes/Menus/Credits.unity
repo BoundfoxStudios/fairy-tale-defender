@@ -241,7 +241,6 @@ RectTransform:
   m_Children:
   - {fileID: 1568130757}
   m_Father: {fileID: 1057845242}
-  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -298,7 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d0bde36dd71e678a4e33d048d67e84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ScrollSpeed>k__BackingField: 0.05
+  <ScrollSpeed>k__BackingField: 0.03
 --- !u!224 &1057845242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7329999705680356854, guid: 42707aee6922e4159909253356ec706a,
@@ -411,7 +410,6 @@ RectTransform:
   m_Children:
   - {fileID: 1880433266}
   m_Father: {fileID: 491231180}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -500,7 +498,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1057845242}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -578,7 +575,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1880433266}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -609,6 +605,22 @@ MonoBehaviour:
 
     <size=100%>A Boundfox Studios
     Community Project</size>
+
+
+
+
+
+
+
+
+    <link="https://jetbrains.com">Supported
+    by <size=250%><sprite name="JetBrains"></size></link>
+
+
+    <link="https://jetbrains.com/teamcity">Proudly
+    built by <size=250%><sprite name="TeamCity"></size></link>
+
+
 
 
 
@@ -798,7 +810,6 @@ RectTransform:
   m_Children:
   - {fileID: 1716179659}
   m_Father: {fileID: 1568130757}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1312,3 +1323,10 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 673820982188607406}
   m_PrefabAsset: {fileID: 0}
+--- !u!1660057539 &9223372036854775807
+SceneRoots:
+  m_ObjectHideFlags: 0
+  m_Roots:
+  - {fileID: 34026926}
+  - {fileID: 1556225287}
+  - {fileID: 1905578663}
