@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneOSX/** =&gt; macOS.zip&#xA;-:FairyTaleDefender/build/StandaloneOSX/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; macOS.zip&#xA;+:FairyTaleDefender/build/StandaloneOSX/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; macOS-DebugInfo.zip" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_1" />
+    </disabled-settings>
     <parameters />
     <build-runners order="Install_il2cpp, RUNNER_2">
       <runner id="Install_il2cpp" name="Install il2cpp" type="simpleRunner">
