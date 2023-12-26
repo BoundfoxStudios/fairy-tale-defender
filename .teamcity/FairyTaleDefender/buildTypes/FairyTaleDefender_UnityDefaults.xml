@@ -6,6 +6,9 @@
       <option name="allowExternalStatus" value="true" />
       <option name="maximumNumberOfBuilds" value="1" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_1" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_2" name="" type="unity">
