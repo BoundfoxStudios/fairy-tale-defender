@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneWindows64/** =&gt; Windows.zip&#xA;-:FairyTaleDefender/build/StandaloneWindows64/*BackUpThisFolder* =&gt; Windows.zip&#xA;FairyTaleDefender/build/StandaloneWindows64/*BackUpThisFolder* =&gt; Windows-DebugInfo.zip" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_1" />
+    </disabled-settings>
     <parameters />
     <build-runners order="RUNNER_5, RUNNER_2">
       <runner id="RUNNER_5" name="Install Il2CPP support" type="jetbrains_powershell">
