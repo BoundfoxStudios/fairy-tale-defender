@@ -1,10 +1,10 @@
+using System;
 using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem.ScriptableObjects;
-using UnityEditor;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem
@@ -70,7 +70,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem
 		private void LoadNextScene()
 		{
 			var allLevel = AllLevelPacks.LevelPacks.SelectMany(levelPack => levelPack.Levels).ToArray();
-			var currentSceneIndex = ArrayUtility.IndexOf(allLevel, LevelRuntimeAnchor.ItemSafe);
+			var currentSceneIndex = Array.IndexOf(allLevel, LevelRuntimeAnchor.ItemSafe);
 
 			if (currentSceneIndex == allLevel.Length - 1)
 			{
