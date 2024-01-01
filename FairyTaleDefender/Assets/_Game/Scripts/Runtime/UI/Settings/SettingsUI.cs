@@ -1,11 +1,9 @@
-using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UI;
-using Object = UnityEngine.Object;
 
 namespace BoundfoxStudios.FairyTaleDefender.UI.Settings
 {
