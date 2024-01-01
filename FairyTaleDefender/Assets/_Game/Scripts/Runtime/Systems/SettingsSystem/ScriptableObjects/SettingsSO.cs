@@ -5,6 +5,7 @@ using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects
 {
@@ -35,14 +36,38 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			await _jsonFileManager.WriteAsync(_jsonFileName, _gameSettings.EnsureOrThrow());
 		}
 
-		public async UniTask LoadAsync()
+		public async UniTask<bool> LoadAsync()
 		{
 			var fileExists = await _jsonFileManager.ExistsAsync(_jsonFileName);
 
 			if (!fileExists)
-				return;
+				return false;
 
 			_gameSettings = await _jsonFileManager.ReadAsync<GameSettings>(_jsonFileName);
+			return true;
+		}
+
+		public void SetStartConfig()
+		{
+			SetStartLocale();
+			SetStartResolution();
+		}
+
+		private void SetStartLocale()
+		{
+			if (Localization.Locale == default)
+			{
+				Localization.Locale = LocalizationSettings.SelectedLocale.Identifier;
+			}
+		}
+
+		private void SetStartResolution()
+		{
+			if (Graphic.ScreenWidth == 0 || Graphic.ScreenHeight == 0)
+			{
+				Graphic.ScreenWidth = Screen.currentResolution.width;
+				Graphic.ScreenHeight = Screen.currentResolution.height;
+			}
 		}
 
 		[Serializable]
