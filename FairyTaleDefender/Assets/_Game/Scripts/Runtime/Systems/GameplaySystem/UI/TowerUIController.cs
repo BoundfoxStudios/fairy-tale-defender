@@ -102,13 +102,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 			{
 				_statistics.TryAddLazy(StatisticType.Range,
 					() => CreateStatisticDisplay("Range",
-						$"{ballisticWeapon.MinimumRange:0.##}-{ballisticWeapon.MaximumRange:0.##}"));
+						$"{ballisticWeapon.MinimumRange.Format()}-{ballisticWeapon.MaximumRange.Format()}"));
 			}
 
 			_statistics.TryAddLazy(StatisticType.Range,
-				() => CreateStatisticDisplay("Range", definition.Range.ToString("0.##")));
+				() => CreateStatisticDisplay("Range", definition.Range.Format()));
 			_statistics.TryAddLazy(StatisticType.FireRate,
-				() => CreateStatisticDisplay("Fire Rate / s", (1 / definition.FireRateEverySeconds).ToString("0.00")));
+				() => CreateStatisticDisplay("Fire Rate / s", (1 / definition.FireRateEverySeconds).Format(true)));
 			_statistics.TryAddLazy(StatisticType.Angle,
 				() => CreateStatisticDisplay("Angle", definition.AttackAngle.ToString()));
 

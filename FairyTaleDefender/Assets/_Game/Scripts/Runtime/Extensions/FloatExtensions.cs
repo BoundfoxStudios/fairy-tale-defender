@@ -1,4 +1,5 @@
 using System;
+using BoundfoxStudios.FairyTaleDefender.Utility;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Extensions
@@ -18,6 +19,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Extensions
 			var roundingMultiplier = Mathf.Pow(10, decimals);
 
 			return Mathf.Round(value * roundingMultiplier) / roundingMultiplier;
+		}
+
+		/// <inheritdoc cref="NumberFormatter.Format"/>
+		public static string Format(this float value, bool keepTrailingDecimalZeros = false, bool useInvariantCulture = false)
+		{
+			return NumberFormatter.Format(value, keepTrailingDecimalZeros, useInvariantCulture);
 		}
 	}
 }

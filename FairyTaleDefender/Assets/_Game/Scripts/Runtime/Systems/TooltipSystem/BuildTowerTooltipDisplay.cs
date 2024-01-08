@@ -1,6 +1,7 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using TMPro;
 using UnityEngine;
 
@@ -28,14 +29,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 			AttackRangeText.text = GetRange(resolvedTooltip.WeaponDefinition);
 
 			// FireRate is every seconds, but we'll show fire rate per seconds to the player.
-			FireRatePerSecondsText.text = (1 / resolvedTooltip.WeaponDefinition.FireRateEverySeconds).ToString("0.00");
+			FireRatePerSecondsText.text = (1 / resolvedTooltip.WeaponDefinition.FireRateEverySeconds).Format(true);
 			AttackAngleText.text = resolvedTooltip.WeaponDefinition.AttackAngle.ToString();
 		}
 
 		private string GetRange(WeaponSO weapon) => weapon switch
 		{
-			BallisticWeaponSO ballisticWeapon => $"{ballisticWeapon.MinimumRange:0.##}-{ballisticWeapon.MaximumRange:0.##}",
-			_ => weapon.Range.ToString("0.##"),
+			BallisticWeaponSO ballisticWeapon => $"{ballisticWeapon.MinimumRange.Format()}-{ballisticWeapon.MaximumRange.Format()}",
+			_ => weapon.Range.Format(),
 		};
 	}
 }
