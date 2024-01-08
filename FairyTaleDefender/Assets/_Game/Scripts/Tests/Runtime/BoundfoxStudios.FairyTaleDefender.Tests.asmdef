@@ -9,7 +9,8 @@
         "Unity.Addressables",
         "Unity.ResourceManager",
         "BoundfoxStudios.FluentAssertions",
-        "BoundfoxStudios.FairyTaleDefender"
+        "BoundfoxStudios.FairyTaleDefender",
+        "Unity.Localization"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
