@@ -52,16 +52,16 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build "$(pwd)/resources/Steam/
       </dependency>
     </artifact-dependencies>
     <dependencies>
-      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Linux">
+      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Windows">
         <options>
           <option name="run-build-if-dependency-failed" value="CANCEL" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
       </depend-on>
-      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Windows">
+      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Linux">
         <options>
-          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
