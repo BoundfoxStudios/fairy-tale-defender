@@ -62,7 +62,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			}
 		}
 
-		private void SetStartResolution()
+		private void SetDefaultResolution()
 		{
 			if (Graphic.ScreenWidth == 0 || Graphic.ScreenHeight == 0)
 			{
