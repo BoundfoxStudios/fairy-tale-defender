@@ -53,7 +53,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			SetStartResolution();
 		}
 
-		private void SetStartLocale()
+		private void SetDefaultLocale()
 		{
 			if (Localization.Locale == default)
 			{
