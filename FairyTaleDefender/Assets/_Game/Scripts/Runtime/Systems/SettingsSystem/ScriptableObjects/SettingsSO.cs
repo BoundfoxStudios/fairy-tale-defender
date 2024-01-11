@@ -28,7 +28,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 		private void OnEnable()
 		{
 			_gameSettings = new();
-			SetStartConfig();
+			SetDefaultConfiguration();
 			_jsonFileManager = new();
 		}
 
@@ -42,15 +42,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			var fileExists = await _jsonFileManager.ExistsAsync(_jsonFileName);
 
 			if (!fileExists)
-				return false;
+				return;
 
 			_gameSettings = await _jsonFileManager.ReadAsync<GameSettings>(_jsonFileName);
 		}
 
 		private void SetDefaultConfiguration()
 		{
-			SetStartLocale();
-			SetStartResolution();
+			SetDefaultLocale();
+			SetDefaultResolution();
 		}
 
 		private void SetDefaultLocale()
