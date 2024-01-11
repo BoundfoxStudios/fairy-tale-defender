@@ -28,6 +28,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 		private void OnEnable()
 		{
 			_gameSettings = new();
+			SetStartConfig();
 			_jsonFileManager = new();
 		}
 
@@ -47,7 +48,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			return true;
 		}
 
-		public void SetStartConfig()
+		private void SetStartConfig()
 		{
 			SetStartLocale();
 			SetStartResolution();
