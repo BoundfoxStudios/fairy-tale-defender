@@ -47,7 +47,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			_gameSettings = await _jsonFileManager.ReadAsync<GameSettings>(_jsonFileName);
 		}
 
-		private void SetStartConfig()
+		private void SetDefaultConfiguration()
 		{
 			SetStartLocale();
 			SetStartResolution();
