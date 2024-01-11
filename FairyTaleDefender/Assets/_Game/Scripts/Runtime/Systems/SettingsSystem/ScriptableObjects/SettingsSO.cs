@@ -37,7 +37,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 			await _jsonFileManager.WriteAsync(_jsonFileName, _gameSettings.EnsureOrThrow());
 		}
 
-		public async UniTask<bool> LoadAsync()
+		public async UniTask LoadAsync()
 		{
 			var fileExists = await _jsonFileManager.ExistsAsync(_jsonFileName);
 
