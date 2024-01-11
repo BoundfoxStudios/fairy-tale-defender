@@ -45,7 +45,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 				return false;
 
 			_gameSettings = await _jsonFileManager.ReadAsync<GameSettings>(_jsonFileName);
-			return true;
 		}
 
 		private void SetStartConfig()
