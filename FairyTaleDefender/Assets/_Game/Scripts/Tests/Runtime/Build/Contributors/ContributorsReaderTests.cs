@@ -9,7 +9,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Build.Contributors
 	public class ContributorsReaderTests
 	{
 		[UnityTest]
-		public IEnumerator CanReadContributors() => UniTask.ToCoroutine(async () =>
+		public IEnumerator LoadAsync_CanReadContributors() => UniTask.ToCoroutine(async () =>
 		{
 			var sut = new ContributorsReader();
 

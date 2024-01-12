@@ -25,7 +25,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Events.ScriptableObject
 		}
 
 		[Test]
-		public void RaiseDoesRaiseTheEvent()
+		public void Raise_DoesRaiseTheEvent()
 		{
 			LogAssert.Expect(LogType.Log, new Regex(@"Event.*?Void Event Channel Test raised"));
 
@@ -60,7 +60,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Events.ScriptableObject
 		}
 
 		[Test]
-		public void RaiseDoesRaiseTheEvent()
+		public void Raise_DoesRaiseTheEvent()
 		{
 			LogAssert.Expect(LogType.Log, new Regex(@"Event.*?Object Event Channel Test raised.*?value.*?Foo=Unit Test, Bar=5"));
 

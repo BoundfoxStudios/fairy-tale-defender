@@ -19,7 +19,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProvider
 	public class SplinePathProviderTests
 	{
 		[Test]
-		public void CanSuccessfullyCreateAPathOnASingleSpline()
+		public void CreatePath_CanCreateAPath_GivenASingleSpline()
 		{
 			var splineContainerMock = CreateSplineContainerMock(
 				new[]
@@ -54,7 +54,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProvider
 		}
 
 		[Test]
-		public void CanSuccessfullyCreateAPathOfTwoSplinesThatSplitTheMainSplineInTheMiddleAndMergeCorrectly()
+		public void CreatePath_CanCreateAPath_GivenTwoSplinesThatSplitTheMainSplineInTheMiddleAndMergeAgain()
 		{
 			var splitKnot = new BezierKnot(new(0, 0, 1));
 			var mergeKnot = new BezierKnot(new(0, 0, 2));
@@ -109,7 +109,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProvider
 		}
 
 		[Test]
-		public void CanSuccessfullyCreateAPathOfTwoSplinesThatSplitTheMainSplineAtStartAndMergeAtTheEndCorrectly()
+		public void CreatePath_CanCreateAPath_GivenTwoSplinesThatSplitTheMainSplineAtStartAndMergeAtTheEnd()
 		{
 			var splitKnot = new BezierKnot(new(0, 0, 0));
 			var mergeKnot = new BezierKnot(new(0, 0, 3));
@@ -164,7 +164,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProvider
 		}
 
 		[Test]
-		public void WillFailIfASplineSplitsButNeverMergesBackToTheMainSpline()
+		public void CreatePath_ShouldThrow_IfASplineSplitsButNeverMergesBackToTheMainSpline()
 		{
 			var splitKnot = new BezierKnot(new(0, 0, 1));
 
@@ -225,7 +225,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Navigation.PathProvider
 		[TestCase(new[] { 1, 0, 0, 0 })] // 1. -> 2. -> 1.
 		[TestCase(new[] { 2, 0 })] // 1. -> 4. -> 1
 		[TestCase(new[] { 1, 1, 0, 0 })] // 1. -> 2. -> 3. -> 1.
-		public void CanSuccessfullyCreateAPath(int[] linkDecisions)
+		public void CreatePath_CanCreateAPath_GivenMultipleSplinesAndLinks(int[] linkDecisions)
 		{
 			var firstLinkKnot = new BezierKnot(0, 0, 1);
 			var secondLinkKnot = new BezierKnot(1, 0, 2);

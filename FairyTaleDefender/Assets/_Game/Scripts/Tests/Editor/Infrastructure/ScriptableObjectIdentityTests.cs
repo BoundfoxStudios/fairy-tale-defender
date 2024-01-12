@@ -7,7 +7,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 	public class ScriptableObjectIdentityTests
 	{
 		[Test]
-		public void ShouldBeEqualIfTheyAreTheSameInstance()
+		public void Equals_ShouldBeTrue_IfTheyAreTheSameInstance()
 		{
 			var identity = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 
@@ -15,7 +15,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 		}
 
 		[Test]
-		public void ShouldBeEqualIfTheyAreDifferentInstancesHavingTheSameGuid()
+		public void Equals_ShouldBeTrue_IfTheyAreDifferentInstancesWithSameGuid()
 		{
 			var identity1 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 			var identity2 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
@@ -24,7 +24,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 		}
 
 		[Test]
-		public void ShouldNotBeEqualIfTheyAreDifferentInstancesHavingDifferentGuid()
+		public void Equals_ShouldNotBeTrue_IfTheyAreDifferentInstancesWithDifferentGuid()
 		{
 			var identity1 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 			var identity2 = new ScriptableObjectIdentity { Guid = "different-unit-test-guid" };
@@ -33,7 +33,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 		}
 
 		[Test]
-		public void ShouldBeEqualIfTheyAreTheSameInstanceComparedWithDoubleEqualOperator()
+		public void CompareWithDoubleEqualOperator_ShouldBeEqual_IfTheyAreTheSameInstance()
 		{
 			var identity = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 
@@ -45,7 +45,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 		}
 
 		[Test]
-		public void ShouldBeEqualIfTheyAreTheDifferentInstancesWithSameGuidComparedWithDoubleEqualOperator()
+		public void CompareWithDoubleEqualOperator_ShouldBeEqual_IfTheyAreDifferentInstancesWithSameGuid()
 		{
 			var identity1 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 			var identity2 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
@@ -54,7 +54,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Infrastructure
 		}
 
 		[Test]
-		public void ShouldNotBeEqualIfTheyAreTheDifferentInstancesWithDifferentGuidComparedWithDoubleEqualOperator()
+		public void CompareWithNotEqualOperator_ShouldNotBeEqual_IfTheyAreDifferentInstancesWithDifferentGuid()
 		{
 			var identity1 = new ScriptableObjectIdentity { Guid = "unit-test-guid" };
 			var identity2 = new ScriptableObjectIdentity { Guid = "different-unit-test-guid" };

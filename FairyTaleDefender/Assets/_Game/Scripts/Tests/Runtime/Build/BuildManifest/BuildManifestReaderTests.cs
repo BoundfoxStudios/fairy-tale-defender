@@ -9,7 +9,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Build.BuildManifest
 	public class BuildManifestReaderTests
 	{
 		[UnityTest]
-		public IEnumerator CanReadBuildManifest() => UniTask.ToCoroutine(async () =>
+		public IEnumerator LoadAsync_CanReadBuildManifest() => UniTask.ToCoroutine(async () =>
 		{
 			var sut = new BuildManifestReader();
 
