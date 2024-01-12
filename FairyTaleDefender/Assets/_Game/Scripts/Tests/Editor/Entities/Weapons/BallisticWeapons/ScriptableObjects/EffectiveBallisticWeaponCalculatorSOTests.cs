@@ -15,7 +15,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Entities.Weapons.Ballis
 		[TestCase(1, 6)]
 		[TestCase(2, 8)]
 		[TestCase(10, 24)]
-		public void DoesChangeAddRangeDependingOnTheTowersPosition(float towerYPosition, float expectedMaximumRange,
+		public void Calculate_IncreasesMaximumTowerRange_GivenYPositionAboveZero(float towerYPosition, float expectedMaximumRange,
 			float definedMaximumRange = 4, float heightToRangeFactor = 2)
 		{
 			var sut = CreateSystemUnderTest(heightToRangeFactor);
