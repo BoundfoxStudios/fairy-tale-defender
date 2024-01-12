@@ -1,3 +1,4 @@
+using BoundfoxStudios.FairyTaleDefender.Utility;
 using FluentAssertions;
 using NUnit.Framework;
 using UnityEngine.Localization.Settings;
@@ -13,7 +14,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Utility
 			var culture = LocalizationSettings.SelectedLocale.Identifier.CultureInfo;
 			var expectedResult = value.ToString("0.##", culture);
 
-			var result = FairyTaleDefender.Utility.NumberFormatter.Format(value);
+			var result = NumberFormatter.Format(value);
 
 			result.Should().Be(expectedResult);
 		}
