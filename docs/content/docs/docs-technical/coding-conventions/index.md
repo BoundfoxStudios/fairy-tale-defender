@@ -146,6 +146,20 @@ Damit es in Unity genutzt werden kann, nutzen wir den [Unity-Adapter](https://gi
 
 Außerdem steht [Moq](https://github.com/moq/moq4) zur Verfügung, um Fake-Objekte zu erzeugen.
 
+##### Benamung
+
+Klassen die Tests enthalten sollten mit dem Suffix `Tests` im Namen enden.
+
+Die einzelnen Testmethoden sollten nach dem Schema `Methode_ErwartetesVerhalten` oder `Methode_ErwartetesVerhalten_Bedingung` bezeichnet werden. Beispiele hierfür wären `ReadAsync_CanReadAFile` oder `ExistsAsync_ReturnsTrue_WhenFileExists`.
+
+> **SUT**: Sut steht für **s**ystem **u**nder **t**est, also das System(Klasse, Methode) welches getestet wird.
+
+##### Aufbau
+
+* Tests sollten möglichst nach dem [AAA](https://learn.microsoft.com/de-de/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests)(Arrange, Act, Assert) Muster aufgebaut werden.
+* Vorzugsweise nur ein Assert pro Test. Damit ist einfacher nachzuvollziehen wieso ein Test scheitert.
+* Weitere Orientierungspunkte für gute Tests wären die [FIRST](https://learn.microsoft.com/de-de/dotnet/core/testing/unit-testing-best-practices#characteristics-of-a-good-unit-test) Prinzipien
+
 ### Formatierung
 
 * Verwende **1 Tab** pro Spalte, keine Leerzeichen.
