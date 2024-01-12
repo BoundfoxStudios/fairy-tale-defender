@@ -59,14 +59,6 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build "$(pwd)/resources/Steam/
           <option name="take-successful-builds-only" value="true" />
         </options>
       </depend-on>
-      <depend-on sourceBuildTypeId="FairyTaleDefender_Build_Linux">
-        <options>
-          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
-          <option name="run-build-if-dependency-failed-to-start" value="RUN_ADD_PROBLEM" />
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
     </dependencies>
     <cleanup />
   </settings>
