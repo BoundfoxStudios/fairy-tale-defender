@@ -33,7 +33,9 @@
       </runner>
     </build-runners>
     <vcs-settings />
-    <requirements />
+    <requirements>
+      <more-than id="RQ_4" name="teamcity.agent.hardware.cpuCount" value="4" />
+    </requirements>
     <build-triggers />
     <build-extensions>
       <extension id="BUILD_EXT_1" type="jetbrains.buildserver.feature.build.cache">
