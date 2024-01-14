@@ -49,12 +49,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObj
 
 		private void SetDefaultConfiguration()
 		{
-			SetDefaultLocale();
 			SetDefaultResolution();
+			SetDefaultLocale();
 		}
 
 		private void SetDefaultLocale()
 		{
+#if UNITY_EDITOR
+			if (!Application.isPlaying)
+			{
+				return;
+			}
+#endif
 			if (Localization.Locale == default)
 			{
 				Localization.Locale = LocalizationSettings.SelectedLocale.Identifier;
