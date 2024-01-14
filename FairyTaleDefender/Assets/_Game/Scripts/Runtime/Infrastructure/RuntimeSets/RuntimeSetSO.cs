@@ -30,7 +30,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 			}
 
 			Items.Add(objectToAdd);
-			RuntimeSetChangedEventChannel.Raise();
+
+			if (RuntimeSetChangedEventChannel != null)
+			{
+				RuntimeSetChangedEventChannel.Raise();
+			}
 		}
 
 		public bool Remove(T objectToRemove)
@@ -41,14 +45,22 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 			}
 
 			Items.Remove(objectToRemove);
-			RuntimeSetChangedEventChannel.Raise();
+			
+			if (RuntimeSetChangedEventChannel != null)
+			{
+				RuntimeSetChangedEventChannel.Raise();
+			}
 			return true;
 		}
 
 		public void Clear()
 		{
 			Items.Clear();
-			RuntimeSetChangedEventChannel.Raise();
+
+			if (RuntimeSetChangedEventChannel != null)
+			{
+				RuntimeSetChangedEventChannel.Raise();
+			}
 		}
 	}
 }
