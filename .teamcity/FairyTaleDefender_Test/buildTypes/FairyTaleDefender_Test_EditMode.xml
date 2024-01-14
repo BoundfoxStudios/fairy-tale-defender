@@ -4,6 +4,7 @@
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
     <disabled-settings>
+      <setting-ref ref="ARTIFACT_DEPENDENCY_5" />
       <setting-ref ref="BUILD_EXT_1" />
     </disabled-settings>
     <parameters />
