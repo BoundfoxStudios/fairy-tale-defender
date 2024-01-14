@@ -42,13 +42,13 @@ steamcmd +login %STEAM_BUILDER_USERNAME% +run_app_build "$(pwd)/resources/Steam/
       </build-trigger>
     </build-triggers>
     <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="FairyTaleDefender_Build_Linux" cleanDestination="false">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="Linux.zip!** =&gt; resources/Steam/content/Linux" />
-      </dependency>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="FairyTaleDefender_Build_Windows" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
         <artifact sourcePath="Windows.zip!** =&gt; resources/Steam/content/Windows" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="FairyTaleDefenderDocker_Build_Linux" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="Linux.zip!** =&gt; resources/Steam/content/Linux" />
       </dependency>
     </artifact-dependencies>
     <dependencies>
