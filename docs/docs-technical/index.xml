@@ -106,6 +106,18 @@ Mehr Info siehe ein &lt;a href="https://blog.unity.com/technology/unity-and-net-
 &lt;p>Zum Unit-Testen nutzen wir zusätzlich das &lt;a href="https://fluentassertions.com">FluentAssertions-Framework&lt;/a>, was das Schreiben und Lesen von Tests angenehmer gestaltet als das von Unity mitgebrachte &lt;code>Assert&lt;/code>.
 Damit es in Unity genutzt werden kann, nutzen wir den &lt;a href="https://github.com/BoundfoxStudios/fluentassertions-unity">Unity-Adapter&lt;/a>.&lt;/p>
 &lt;p>Außerdem steht &lt;a href="https://github.com/moq/moq4">Moq&lt;/a> zur Verfügung, um Fake-Objekte zu erzeugen.&lt;/p>
+&lt;h5 id="benamung">Benamung&lt;/h5>
+&lt;p>Klassen die Tests enthalten sollten mit dem Suffix &lt;code>Tests&lt;/code> im Namen enden.&lt;/p>
+&lt;p>Die einzelnen Testmethoden sollten nach dem Schema &lt;code>Methode_ErwartetesVerhalten&lt;/code> oder &lt;code>Methode_ErwartetesVerhalten_Bedingung&lt;/code> bezeichnet werden. Beispiele hierfür wären &lt;code>ReadAsync_CanReadAFile&lt;/code> oder &lt;code>ExistsAsync_ReturnsTrue_WhenFileExists&lt;/code>.&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>SUT&lt;/strong>: Sut steht für &lt;strong>s&lt;/strong>ystem &lt;strong>u&lt;/strong>nder &lt;strong>t&lt;/strong>est, also das System(Klasse, Methode) welches getestet wird.&lt;/p>
+&lt;/blockquote>
+&lt;h5 id="aufbau">Aufbau&lt;/h5>
+&lt;ul>
+&lt;li>Tests sollten möglichst nach dem &lt;a href="https://learn.microsoft.com/de-de/dotnet/core/testing/unit-testing-best-practices#arranging-your-tests">AAA&lt;/a>(Arrange, Act, Assert) Muster aufgebaut werden.&lt;/li>
+&lt;li>Vorzugsweise nur ein Assert pro Test. Damit ist einfacher nachzuvollziehen wieso ein Test scheitert.&lt;/li>
+&lt;li>Weitere Orientierungspunkte für gute Tests wären die &lt;a href="https://learn.microsoft.com/de-de/dotnet/core/testing/unit-testing-best-practices#characteristics-of-a-good-unit-test">FIRST&lt;/a> Prinzipien&lt;/li>
+&lt;/ul>
 &lt;h3 id="formatierung">Formatierung&lt;/h3>
 &lt;ul>
 &lt;li>Verwende &lt;strong>1 Tab&lt;/strong> pro Spalte, keine Leerzeichen.
@@ -132,14 +144,14 @@ Falls Du sowas brauchst, ist das oft ein Hinweis, dass die Klasse zu viele Zust�
 Nutze für diese GameObjects das &lt;code>EditorOnly&lt;/code>-Tag, sodass Unity beim Bauen des Projekts diese GameObjects entfernt.&lt;/li>
 &lt;li>Nutze leere GameObjects als Container, sobald Du mehr als 2 zusammenpassende Kind-Objekte hast.&lt;/li>
 &lt;/ul>
-&lt;h3 id="benamung">Benamung&lt;/h3>
+&lt;h3 id="benamung-1">Benamung&lt;/h3>
 &lt;ul>
 &lt;li>Nutze keine Leerzeichen innerhalb von GameObject-Namen.&lt;/li>
 &lt;li>Nutze &lt;strong>PascalCase&lt;/strong>, z.B. &lt;code>MainDoor&lt;/code>, &lt;code>LeverTrigger&lt;/code>.&lt;/li>
 &lt;li>Benenne auch Prefab-Instanzen passend in der Hierarchy um.&lt;/li>
 &lt;/ul>
 &lt;h2 id="projektdateien">Projektdateien&lt;/h2>
-&lt;h3 id="benamung-1">Benamung&lt;/h3>
+&lt;h3 id="benamung-2">Benamung&lt;/h3>
 &lt;ul>
 &lt;li>Gleiche Regeln wie bei &lt;a href="#scene--hierarchy">Scene &amp;amp; Hierachy&lt;/a>&lt;/li>
 &lt;li>Benenne Deine Objekte so, dass sie auf natürliche Art und Weise gruppiert werden, wenn sie im gleichen Ordner sind.
