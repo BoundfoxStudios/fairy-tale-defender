@@ -57,10 +57,6 @@
       </extension>
     </build-extensions>
     <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="contributors.json" />
-      </dependency>
       <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
         <artifact sourcePath="manifest.json" />
