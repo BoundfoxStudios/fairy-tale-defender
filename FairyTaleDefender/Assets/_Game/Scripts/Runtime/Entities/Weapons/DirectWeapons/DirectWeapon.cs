@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Projectiles;
@@ -16,10 +17,21 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 		private Projectile ProjectilePrefab { get; set; } = default!;
 
 		[field: SerializeField]
-		private GameObject LaunchPoint { get; set; } = default!;
+		private ArmSettings Arm { get; set; } = default!;
 
 		private Projectile? _projectile;
 		private Quaternion _targetRotation;
+		private Quaternion _targetArmRotation;
+
+		[Serializable]
+		public class ArmSettings
+		{
+			[field: SerializeField]
+			public Transform ArmPivot { get; private set; } = default!;
+
+			[field: SerializeField]
+			public Transform LaunchPoint { get; private set; } = default!;
+		}
 
 		private void Awake()
 		{
@@ -28,7 +40,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 
 		private void PrepareProjectile()
 		{
-			_projectile = Instantiate(ProjectilePrefab, LaunchPoint.transform);
+			_projectile = Instantiate(ProjectilePrefab, Arm.LaunchPoint.transform);
 
 			// Ignoring collision between tower and projectile collider, otherwise the physics engine might move the
 			// projectile due to the collider being in another collider.
@@ -39,14 +51,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 
 		protected override UniTask LaunchProjectileAsync(Vector3 target, CancellationToken cancellationToken)
 		{
-			var weaponPosition = transform.position;
-			var direction = (weaponPosition - target).normalized;
-			var distance = Vector3.Distance(weaponPosition, target);
+			var direction = Arm.LaunchPoint.forward;
+			var distance = Vector3.Distance(Arm.LaunchPoint.position, target);
 
 			if (_projectile.Exists())
 			{
-				_projectile.transform.LookAt(target);
-				_projectile.Launch(-direction * (distance / 0.1f), useGravity: false);
+				// _projectile.transform.LookAt(target);
+				_projectile.Launch(direction * (distance / 0.1f), useGravity: false);
 			}
 
 			_projectile = null;
@@ -64,10 +75,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 
 		protected override void TrackTarget(TargetPoint target)
 		{
+			// y-rotation
 			var direction = target.Center - transform.position;
 			direction.y = 0;
 
 			_targetRotation = Quaternion.LookRotation(direction);
+
+			// Arm x-rotation
+			direction = target.Center - Arm.LaunchPoint.position;
+			var armRotation = Quaternion.LookRotation(direction).eulerAngles.x;
+			_targetArmRotation = Quaternion.Euler(armRotation, 0, 0);
 		}
 
 		protected override void Update()
@@ -75,6 +92,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 			base.Update();
 
 			transform.rotation = Quaternion.RotateTowards(transform.rotation, _targetRotation,
+				WeaponDefinition.RotationSpeedInDegreesPerSecond * Time.deltaTime);
+
+			Arm.ArmPivot.localRotation = Quaternion.RotateTowards(Arm.ArmPivot.localRotation, _targetArmRotation,
 				WeaponDefinition.RotationSpeedInDegreesPerSecond * Time.deltaTime);
 		}
 	}
