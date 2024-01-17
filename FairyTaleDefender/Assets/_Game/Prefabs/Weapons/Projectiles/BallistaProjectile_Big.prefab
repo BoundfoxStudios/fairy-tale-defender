@@ -25,11 +25,12 @@ Transform:
   m_GameObject: {fileID: 26489718948927570}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1239}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2956231880887678785}
+  - {fileID: 2087728971233203850}
   m_Father: {fileID: 4185885389460933910}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3625663350968161285
@@ -45,9 +46,8 @@ GameObject:
   - component: {fileID: 7077683957808267595}
   - component: {fileID: 7946691729923622677}
   - component: {fileID: 4673776722585319587}
-  - component: {fileID: 3592554612766912803}
   m_Layer: 11
-  m_Name: BallistaProjectile
+  m_Name: BallistaProjectile_Big
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -62,9 +62,9 @@ Transform:
   m_GameObject: {fileID: 3625663350968161285}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.1209}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4948102327452186222}
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Collider>k__BackingField: {fileID: 4673776722585319587}
-  <TrailRenderer>k__BackingField: {fileID: 3592554612766912803}
+  <TrailRenderer>k__BackingField: {fileID: 6663090415139154206}
 --- !u!114 &7077683957808267595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,15 +144,47 @@ CapsuleCollider:
   m_Radius: 0.01596506
   m_Height: 0.24009135
   m_Direction: 2
-  m_Center: {x: 0, y: 0.0033858716, z: 0.0025287867}
---- !u!96 &3592554612766912803
+  m_Center: {x: 0, y: 0.0033858716, z: -0.12}
+--- !u!1 &7411894527410458046
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2087728971233203850}
+  - component: {fileID: 6663090415139154206}
+  m_Layer: 11
+  m_Name: Trail
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2087728971233203850
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7411894527410458046}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -0.1063}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4948102327452186222}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!96 &6663090415139154206
 TrailRenderer:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3625663350968161285}
+  m_GameObject: {fileID: 7411894527410458046}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
