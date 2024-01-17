@@ -28,8 +28,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 
 		private void Awake()
 		{
-			SetStartLocale();
-			SetStartResolution();
+			SetDefaultLocale();
+			SetDefaultResolution();
 			ApplySettings();
 		}
 
@@ -43,7 +43,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 			GameSettingsChangedEventChannel.Raised -= ApplySettings;
 		}
 
-		private void SetStartLocale()
+		private void SetDefaultLocale()
 		{
 			if (Settings.Localization.Locale == default)
 			{
@@ -51,7 +51,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem
 			}
 		}
 
-		private void SetStartResolution()
+		private void SetDefaultResolution()
 		{
 			if (Settings.Graphic.ScreenWidth == 0 || Settings.Graphic.ScreenHeight == 0)
 			{
