@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
 
@@ -8,7 +9,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 	{
 		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
-		public VoidEventChannelSO RuntimeSetChangedEventChannel { get; private set; } = default!;
+		public VoidEventChannelSO? RuntimeSetChangedEventChannel { get; private set; }
 
 		public List<T> Items { get; } = new();
 
@@ -31,7 +32,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 
 			Items.Add(objectToAdd);
 
-			if (RuntimeSetChangedEventChannel != null)
+			if (RuntimeSetChangedEventChannel.Exists())
 			{
 				RuntimeSetChangedEventChannel.Raise();
 			}
@@ -46,10 +47,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 
 			Items.Remove(objectToRemove);
 
-			if (RuntimeSetChangedEventChannel != null)
+			if (RuntimeSetChangedEventChannel.Exists())
 			{
 				RuntimeSetChangedEventChannel.Raise();
 			}
+
 			return true;
 		}
 
@@ -57,7 +59,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 		{
 			Items.Clear();
 
-			if (RuntimeSetChangedEventChannel != null)
+			if (RuntimeSetChangedEventChannel.Exists())
 			{
 				RuntimeSetChangedEventChannel.Raise();
 			}
