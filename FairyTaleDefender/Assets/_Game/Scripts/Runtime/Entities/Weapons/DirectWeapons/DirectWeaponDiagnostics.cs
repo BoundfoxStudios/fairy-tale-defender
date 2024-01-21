@@ -4,7 +4,7 @@ using UnityEngine;
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 {
 	/// <summary>
-	/// Helper class for Gizmos, see Editor Assembly -> BallisticWeaponGizmos
+	/// Helper class for Gizmos, see Editor Assembly -> see DirectWeaponGizmos
 	/// </summary>
 	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(DirectWeaponDiagnostics))]
 	public class DirectWeaponDiagnostics : MonoBehaviour
