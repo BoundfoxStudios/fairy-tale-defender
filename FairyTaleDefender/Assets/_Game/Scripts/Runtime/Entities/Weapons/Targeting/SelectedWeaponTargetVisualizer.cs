@@ -20,7 +20,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 		private GameObject TargetVisualizationPrefab { get; set; } = default!;
 
 		private readonly List<GameObject> _visualizations = new();
-		private ICanTrackTarget? _currentTrackableTarget;
+		private ICanTrackTarget? _currentTargetTracker;
 
 		private void OnEnable()
 		{
@@ -40,20 +40,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 			// If we select one tower and then another tower, there won't be a deselected event, but only a selected one.
 			RemoveVisualizations();
 
-			var trackableTarget = args.Transform.GetComponentInChildren<ICanTrackTarget>();
+			var targetTracker = args.Transform.GetComponentInChildren<ICanTrackTarget>();
 
-			if (trackableTarget is null)
+			if (targetTracker is null)
 			{
 				return;
 			}
 
-			_currentTrackableTarget = trackableTarget;
-			_currentTrackableTarget.TargetChanged += TargetChanged;
+			_currentTargetTracker = targetTracker;
+			_currentTargetTracker.TargetChanged += TargetChanged;
 
 
-			if (trackableTarget.Target.Exists())
+			if (targetTracker.Target.Exists())
 			{
-				AddVisualizations(trackableTarget.Target);
+				AddVisualizations(targetTracker.Target);
 			}
 		}
 
@@ -61,12 +61,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 		{
 			RemoveVisualizations();
 
-			if (_currentTrackableTarget != null)
+			if (_currentTargetTracker != null)
 			{
-				_currentTrackableTarget.TargetChanged -= TargetChanged;
+				_currentTargetTracker.TargetChanged -= TargetChanged;
 			}
 
-			_currentTrackableTarget = null;
+			_currentTargetTracker = null;
 		}
 
 		private void TargetChanged()
@@ -74,9 +74,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 			RemoveVisualizations();
 
 			// It could be that we're changing the target, but it was just destroyed.
-			if (_currentTrackableTarget != null && _currentTrackableTarget.Target.Exists())
+			if (_currentTargetTracker != null && _currentTargetTracker.Target.Exists())
 			{
-				AddVisualizations(_currentTrackableTarget.Target);
+				AddVisualizations(_currentTargetTracker.Target);
 			}
 		}
 
