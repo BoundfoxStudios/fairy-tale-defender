@@ -14,7 +14,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 	[SelectionBase]
 	public abstract class Weapon<TWeaponSO, TTargetLocatorSO, TEffectiveWeaponDefinition> : MonoBehaviour,
 		ICanCalculateEffectiveWeaponDefinition,
-		ICanChangeTargetType
+		ICanChangeTargetType,
+		ICanTrackTarget
 		where TWeaponSO : WeaponSO
 		where TTargetLocatorSO : TargetLocatorSO<TEffectiveWeaponDefinition>
 		where TEffectiveWeaponDefinition : EffectiveWeaponDefinition
@@ -59,6 +60,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 		/// </summary>
 		protected abstract void TrackTarget(TargetPoint target);
 
+		public event Action? TargetChanged;
+		public TargetPoint? Target => _currentTarget;
+
 		private TEffectiveWeaponDefinition? _effectiveWeaponDefinition;
 		private TargetPoint? _currentTarget;
 		private Vector3 _towerForward;
@@ -78,6 +82,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 
 		protected virtual void Update()
 		{
+			var previousTarget = _currentTarget;
+
 			if (!_currentTarget && !TryAcquireTarget(out _currentTarget))
 			{
 				return;
@@ -87,8 +93,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 
 			if (!isTargetInRangeAndAlive)
 			{
+				TargetChanged?.Invoke();
 				_currentTarget = null;
 				return;
+			}
+
+			if (previousTarget != _currentTarget)
+			{
+				TargetChanged?.Invoke();
 			}
 
 			TrackTarget(_currentTarget!);
