@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: <Tower>k__BackingField
       value: 
       objectReference: {fileID: 8160794055446681378}
+    - target: {fileID: 1943304408339992375, guid: c6a79aeed03274d309feff784e5a4fbb,
+        type: 3}
+      propertyPath: <ProjectileTimeToReachTarget>k__BackingField
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7314709857681029992, guid: c6a79aeed03274d309feff784e5a4fbb,
         type: 3}
       propertyPath: m_Name

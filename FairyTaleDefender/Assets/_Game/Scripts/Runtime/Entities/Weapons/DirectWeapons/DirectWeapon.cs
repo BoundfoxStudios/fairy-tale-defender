@@ -19,6 +19,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 		[field: SerializeField]
 		private ArmSettings Arm { get; set; } = default!;
 
+		[field: SerializeField]
+		[field: Tooltip("Lower number means a faster projectile.")]
+		[field: Range(0.01f, 1f)]
+		public float ProjectileTimeToReachTarget { get; private set; } = 0.1f;
+
 		private Projectile? _projectile;
 		private Quaternion _targetRotation;
 		private Quaternion _targetArmRotation;
@@ -56,8 +61,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 
 			if (_projectile.Exists())
 			{
-				// _projectile.transform.LookAt(target);
-				_projectile.Launch(direction * (distance / 0.1f), useGravity: false);
+				_projectile.Launch(direction * (distance / ProjectileTimeToReachTarget), useGravity: false);
 			}
 
 			_projectile = null;
