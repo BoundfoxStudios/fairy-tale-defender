@@ -1,4 +1,5 @@
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -17,6 +18,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 
 		[field: SerializeField]
 		private TMP_Text CoinDisplay { get; set; } = default!;
+
+		[field: SerializeField]
+		public PlayerCoinsController PlayerCoinsController { get; private set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
@@ -45,7 +49,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 
 		private void SetStateDependingOnCoins(int coins)
 		{
-			Button.interactable = coins >= Buildable.Price;
+			Button.interactable = PlayerCoinsController.CanAfford(Buildable);
 		}
 
 		public void EnterBuildMode()
