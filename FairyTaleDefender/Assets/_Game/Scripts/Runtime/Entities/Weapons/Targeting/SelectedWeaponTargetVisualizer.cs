@@ -19,9 +19,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 		[field: SerializeField]
 		private GameObject TargetVisualizationPrefab { get; set; } = default!;
 
-		[field: SerializeField]
-		private Vector3 Offset { get; set; } = new (0, 0.001f, 0);
-
 		private readonly List<GameObject> _visualizations = new();
 		private ICanTrackTarget? _currentTrackableTarget;
 
@@ -100,7 +97,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting
 			var enemyTransform = targetPoint.Enemy.transform;
 
 			var visualization = Instantiate(TargetVisualizationPrefab, enemyTransform);
-			visualization.transform.localPosition += Offset;
 			_visualizations.Add(visualization);
 		}
 	}

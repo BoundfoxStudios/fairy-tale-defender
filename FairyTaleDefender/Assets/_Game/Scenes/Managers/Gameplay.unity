@@ -1129,7 +1129,6 @@ MonoBehaviour:
     type: 2}
   <TargetVisualizationPrefab>k__BackingField: {fileID: 3949593316030231720, guid: d440931cb03454699880c2ec92f844d3,
     type: 3}
-  <Offset>k__BackingField: {x: 0, y: 0.001, z: 0}
 --- !u!4 &624011865
 Transform:
   m_ObjectHideFlags: 0
@@ -3752,7 +3751,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
@@ -4621,7 +4620,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
