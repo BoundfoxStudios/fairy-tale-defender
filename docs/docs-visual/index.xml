@@ -49,6 +49,8 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># https://docs.fairytaledefender.de/docs/docs-visual/blender/#export-script&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> bpy
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> os
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> io_scene_fbx.export_fbx_bin
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">import&lt;/span> mathutils
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># export to blend file location&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>basedir = os.path.dirname(bpy.data.filepath)
@@ -62,28 +64,26 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection = bpy.context.selected_objects
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>selection_count = len(selection)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># Load the original unity settings for export&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kwargs = io_scene_fbx.export_fbx_bin.defaults_unity3d()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>kwargs[&lt;span style="color:#a31515">&amp;#34;object_types&amp;#34;&lt;/span>] = {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>};
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">FakeOp&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">def&lt;/span> report(self, tp, msg):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#a31515">&amp;#34;&lt;/span>&lt;span style="color:#a31515">%s&lt;/span>&lt;span style="color:#a31515">: &lt;/span>&lt;span style="color:#a31515">%s&lt;/span>&lt;span style="color:#a31515">&amp;#34;&lt;/span> % (tp, msg))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000"># use active collection if no object is selected&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">if&lt;/span> selection_count == 0:
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name = bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(name)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fn = os.path.join(basedir, name)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.export_scene.fbx(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_active_collection=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> object_types= {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>},
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_leaf_bones=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kwargs[&lt;span style="color:#a31515">&amp;#34;use_active_collection&amp;#34;&lt;/span>] = &lt;span style="color:#00f">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> io_scene_fbx.export_fbx_bin.save(FakeOp(), bpy.context, filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>, **kwargs)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">else&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> kwargs[&lt;span style="color:#a31515">&amp;#34;use_selection&amp;#34;&lt;/span>] = &lt;span style="color:#00f">True&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">for&lt;/span> obj &lt;span style="color:#00f">in&lt;/span> selection:
@@ -97,7 +97,9 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Save the initial location and set the object to 0/0/0&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oldLocation = obj.location.copy()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> oldRotation = obj.rotation_euler.copy()
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = (0, 0, 0)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.rotation_euler = mathutils.Euler((0, 0, 0), &lt;span style="color:#a31515">&amp;#39;XYZ&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># some exporters only use the active object&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> view_layer.objects.active = obj
@@ -105,24 +107,11 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name = bpy.path.clean_name(obj.name)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> fn = os.path.join(basedir, name)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.export_scene.fbx(
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_selection=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> object_types= {&lt;span style="color:#a31515">&amp;#39;MESH&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;ARMATURE&amp;#39;&lt;/span>, &lt;span style="color:#a31515">&amp;#39;EMPTY&amp;#39;&lt;/span>},
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_mesh_modifiers=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> mesh_smooth_type=&lt;span style="color:#a31515">&amp;#39;OFF&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_custom_props=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_nla_strips=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_anim_use_all_actions=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> use_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bake_space_transform=&lt;span style="color:#00f">True&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> add_leaf_bones=&lt;span style="color:#00f">False&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_forward=&lt;span style="color:#a31515">&amp;#39;-Z&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> axis_up=&lt;span style="color:#a31515">&amp;#39;Y&amp;#39;&lt;/span>,
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> apply_scale_options=&lt;span style="color:#a31515">&amp;#39;FBX_SCALE_ALL&amp;#39;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> io_scene_fbx.export_fbx_bin.save(FakeOp(), bpy.context, filepath=fn + &lt;span style="color:#a31515">&amp;#34;.fbx&amp;#34;&lt;/span>, **kwargs)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000"># Restore the old location &lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = oldLocation
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.rotation_euler = oldRotation
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">False&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
