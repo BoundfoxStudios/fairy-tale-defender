@@ -24,8 +24,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Gizmos
 
 			// If we're viewing the weapon prefab, we may not have a tower
 			var forward = directWeapon.Tower ? directWeapon.Tower.transform.forward : weaponTransform.forward;
-			var effectiveWeaponDefinition =
-				(EffectiveDirectWeaponDefinition)directWeapon.CalculateEffectiveWeaponDefinition(directWeapon.Tower
+			var effectiveWeaponDefinition = directWeapon.CalculateEffectiveWeaponDefinition(directWeapon.Tower
 					? directWeapon.Tower.transform.position
 					: weaponTransform.position);
 			UnityGizmos.color = new(1, 0.976f, 0.102f, 0.5f);
@@ -33,7 +32,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Gizmos
 				weaponTransform.position,
 				forward,
 				effectiveWeaponDefinition.AttackAngle,
-				0,
 				effectiveWeaponDefinition.Range
 			);
 		}
