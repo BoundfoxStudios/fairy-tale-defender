@@ -81,5 +81,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 				Coins -= buildableWithPrice.Price;
 			}
 		}
+
+		public bool CanAfford(IHaveAPrice tower)
+		{
+			return Coins >= tower.Price;
+		}
 	}
 }
