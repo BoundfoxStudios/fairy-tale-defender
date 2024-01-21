@@ -32,6 +32,7 @@ MonoBehaviour:
     type: 2}
   <StartTowers>k__BackingField:
   - {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240, type: 2}
+  - {fileID: 11400000, guid: 1c58190b0a66147d59b11dbd72d55cfd, type: 2}
   <PlayerStartResources>k__BackingField:
     <Health>k__BackingField: 10
     <Coins>k__BackingField: 100
