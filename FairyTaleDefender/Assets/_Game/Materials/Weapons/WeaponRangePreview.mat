@@ -104,7 +104,7 @@ Material:
     m_Ints: []
     m_Floats:
     - Normal_Blend: 0.5
-    - _Alpha: 0.795
+    - _Alpha: 0.6
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _AttackAngle: 90
