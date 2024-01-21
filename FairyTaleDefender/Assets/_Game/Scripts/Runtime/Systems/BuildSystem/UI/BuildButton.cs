@@ -44,10 +44,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 
 		private void CoinsChange(IntDeltaEventChannelSO.EventArgs args)
 		{
-			SetStateDependingOnCoins(args.Value);
+			SetStateDependingOnCoins();
 		}
 
-		private void SetStateDependingOnCoins(int coins)
+		private void SetStateDependingOnCoins()
 		{
 			Button.interactable = PlayerCoinsController.CanAfford(Buildable);
 		}
