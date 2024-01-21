@@ -19,7 +19,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		public PlayerCoinsController PlayerCoinsController { get; private set; } = default!;
 
-
 		[field: SerializeField]
 		public LevelRuntimeAnchorSO LevelRuntimeAnchor { get; private set; } = default!;
 
@@ -56,7 +55,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			{
 				return;
 			}
-			EnterBuildModeEventChannel.Raise(new BuildableEventChannelSO.EventArgs { Buildable = tower });
+
+			EnterBuildModeEventChannel.Raise(new() { Buildable = tower });
 		}
 	}
 }
