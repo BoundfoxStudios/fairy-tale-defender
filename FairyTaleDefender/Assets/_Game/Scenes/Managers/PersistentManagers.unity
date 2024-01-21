@@ -13135,6 +13135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Effects_Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7329999705680356852, guid: 42707aee6922e4159909253356ec706a,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7329999705680356853, guid: 42707aee6922e4159909253356ec706a,
         type: 3}
       propertyPath: m_SortingOrder
