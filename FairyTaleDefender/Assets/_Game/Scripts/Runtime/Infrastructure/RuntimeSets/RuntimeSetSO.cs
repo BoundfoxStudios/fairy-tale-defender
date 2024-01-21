@@ -45,7 +45,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeSets
 			}
 
 			Items.Remove(objectToRemove);
-			
+
 			if (RuntimeSetChangedEventChannel != null)
 			{
 				RuntimeSetChangedEventChannel.Raise();

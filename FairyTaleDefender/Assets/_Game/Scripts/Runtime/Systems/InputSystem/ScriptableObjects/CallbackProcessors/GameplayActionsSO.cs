@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -8,6 +9,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 	public class GameplayActionsSO : ScriptableObject, GameInput.IGameplayActions
 	{
 		public event InputReaderSO.ScreenPositionHandler Click = delegate { };
+
+		public event Action<int> BuildTower = delegate (int index) { };
 
 		private Vector2 _lastPosition;
 
@@ -20,6 +23,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			}
 
 			Click(_lastPosition);
+		}
+
+		public void OnBuildTower(InputAction.CallbackContext context)
+		{
+			if (!context.canceled)
+			{
+				return;
+			}
+
+			var towerIndex = context.action.GetBindingIndexForControl(context.control);
+
+			BuildTower(towerIndex);
 		}
 	}
 }
