@@ -3701,7 +3701,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 190
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
@@ -3754,6 +3754,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1c58190b0a66147d59b11dbd72d55cfd,
         type: 2}
+    - target: {fileID: 3726535823243177271, guid: 7051bfaff63334617b6ba6fcc9e7316f,
+        type: 3}
+      propertyPath: <PlayerCoinsController>k__BackingField
+      value: 
+      objectReference: {fileID: 326114872}
     - target: {fileID: 3837178281136216281, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4565,7 +4570,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 60
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
@@ -4712,8 +4717,8 @@ SceneRoots:
   - {fileID: 1593510016}
   - {fileID: 984792242}
   - {fileID: 777411585}
+  - {fileID: 537284258}
   - {fileID: 1649223940}
   - {fileID: 1883199079}
   - {fileID: 763099576}
   - {fileID: 1691620297}
-  - {fileID: 537284258}
