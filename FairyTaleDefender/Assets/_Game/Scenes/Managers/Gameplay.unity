@@ -1094,6 +1094,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &624011863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624011865}
+  - component: {fileID: 624011864}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!114 &624011864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624011863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c95244ab2fb4ef3b69c4b1a5f5319ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <WeaponSelectedEventChannel>k__BackingField: {fileID: 11400000, guid: 6bcda8772031e764ea22183523b7e9f7,
+    type: 2}
+  <WeaponDeselectedEventChannel>k__BackingField: {fileID: 11400000, guid: e80022fa2bdfeb845a9a735d96f15878,
+    type: 2}
+  <TargetVisualizationPrefab>k__BackingField: {fileID: 3949593316030231720, guid: d440931cb03454699880c2ec92f844d3,
+    type: 3}
+  <Offset>k__BackingField: {x: 0, y: 0.001, z: 0}
+--- !u!4 &624011865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624011863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &763099575
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,7 +3752,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 190
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
@@ -4570,7 +4621,7 @@ PrefabInstance:
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 2829109754266862566, guid: 7051bfaff63334617b6ba6fcc9e7316f,
         type: 3}
@@ -4718,6 +4769,7 @@ SceneRoots:
   - {fileID: 984792242}
   - {fileID: 777411585}
   - {fileID: 537284258}
+  - {fileID: 624011865}
   - {fileID: 1649223940}
   - {fileID: 1883199079}
   - {fileID: 763099576}
