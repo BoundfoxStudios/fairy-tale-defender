@@ -1,7 +1,6 @@
 name: Idee/Vorschlag für ein Feature
 description: Schlage eine Idee oder ein Feature für das Projekt vor.
-title: "[Idee/Vorschlag]: "
-labels: ["Triage"]
+labels: ["Triage", "Idee"]
 body:
   - type: markdown
     attributes:
