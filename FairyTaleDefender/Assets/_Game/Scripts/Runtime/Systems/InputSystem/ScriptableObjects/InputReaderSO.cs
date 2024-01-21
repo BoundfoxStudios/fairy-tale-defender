@@ -1,9 +1,7 @@
-using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects.CallbackProcessors;
-using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObjects
@@ -111,7 +109,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void GameplayStart()
 		{
-			EnableGameplayInputDelayedAsync();
+			EnableGameplayInputDelayed();
 		}
 
 		private void DisableAllInput()
@@ -140,7 +138,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.Camera.Enable();
 		}
 
-		private void EnableGameplayInputDelayedAsync()
+		private void EnableGameplayInputDelayed()
 		{
 			GameInput.BuildSystem.Disable();
 			EnableGameplayInput();
