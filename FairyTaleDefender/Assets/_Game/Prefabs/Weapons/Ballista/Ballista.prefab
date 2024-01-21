@@ -216,6 +216,7 @@ MonoBehaviour:
   <Arm>k__BackingField:
     <ArmPivot>k__BackingField: {fileID: 8677105286982316669}
     <LaunchPoint>k__BackingField: {fileID: 436429156701455769}
+  <ProjectileTimeToReachTarget>k__BackingField: 0.1
 --- !u!4 &7314709857964744143 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4417085996651400459, guid: 58040a623dccf48739eb35e77740a26f,
