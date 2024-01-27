@@ -21,7 +21,7 @@ on:
 jobs:
   assign-issue-to-contributor:
     name: Assign Issue to Contributor
-    if: github.event_name == 'issue_comment' && !github.event.issue.pull_request && !contains(github.event.issue.labels.*.name, 'Triage')
+    if: github.event_name == 'issue_comment' && !github.event.issue.pull_request && !contains(github.event.issue.labels.*.name, 'Triage') && github.event.issue.state == 'open'
     runs-on: ubuntu-latest
     permissions:
       issues: write
