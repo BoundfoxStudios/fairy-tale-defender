@@ -111,7 +111,7 @@ jobs:
       - uses: actions/stale@v6
         with: 
           include-only-assigned: true
-          exempt-assignees: 'ManuelRauber'
+          exempt-assignees: 'ManuelRauber,M4lph'
           days-before-stale: 7
           days-before-close: -1 # Never close an issue/pr
           stale-issue-message: 'Hey! Diese Aufgabe wurde vor einigen Tagen übernommen, aber seit dem ist nichts mehr passiert. Eventuell kann der aktuelle Contributor sich dazu äußern?'
@@ -131,6 +131,6 @@ jobs:
         with:
           last-activity: 7
           labels: 'Wartet auf Contributor'
-          exempt-assignees: 'ManuelRauber'
+          exempt-assignees: 'ManuelRauber,M4lph'
           labels-to-remove: 'Wartet auf Contributor'
           message: 'Aufgrund längerer Inaktivität wurde diese Aufgabe automatisch zurückgeben.'
