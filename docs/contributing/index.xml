@@ -69,11 +69,16 @@ Konzentriere Dich daher generell nur auf Deine Aufgabe und prüfe in Git, ob Du 
 &lt;h3 id="hilfe-ich-komme-mit-git-gar-nicht-klar">Hilfe, ich komme mit Git gar nicht klar&lt;/h3>
 &lt;p>Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für das Projekt nutzen kannst. :)&lt;/p>
 &lt;p>Frag gerne auf dem &lt;a href="https://discord.gg/tHqNzMT">Discord&lt;/a> nach, wenn Du so gar nicht weiter kommst.&lt;/p>
-&lt;h2 id="jetbrains-rider-lizenz">JetBrains Rider Lizenz&lt;/h2>
+&lt;h2 id="jetbrains">JetBrains&lt;/h2>
+&lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">&lt;/p>
+&lt;h3 id="jetbrains-rider-lizenz">JetBrains Rider Lizenz&lt;/h3>
 &lt;p>&lt;a href="https://jetbrains.com">JetBrains&lt;/a> sponsert Fairy Tale Defender mit &lt;a href="https://jb.gg/OpenSourceSupport">Lizenzen&lt;/a> für JetBrains Rider!
 Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.&lt;/p>
-&lt;p>&lt;img src="../assets/jb_beam.png" alt="JetBrains">
-&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/visual/</guid><description>
+&lt;p>&lt;img src="../assets/Rider.png" alt="JetBrains Rider">&lt;/p>
+&lt;h3 id="jetbrains-teamcity">JetBrains TeamCity&lt;/h3>
+&lt;p>Zusätzlich zu Rider stellt uns JetBrains TeamCity zur Verfügung, um unser Spiel für Windows, Linux und macOS veröffentlichen zu können.&lt;/p>
+&lt;p>&lt;a href="https://boundfoxstudios.teamcity.com">Hier&lt;/a> findest Du unseren TeamCity Cloud Server, Du kannst Dich einfach mit dem Gast-Account, der dort verlinkt ist, anmelden.&lt;/p>
+&lt;p>&lt;img src="../assets/TeamCity.png" alt="JetBrains TeamCity">&lt;/p></description></item><item><title>Docs: Visuell (3D, 2D) mitmachen</title><link>https://docs.fairytaledefender.de/docs/contributing/visual/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/contributing/visual/</guid><description>
 &lt;p>Du bist hier richtig, wenn Du Dich visuell am Projekt beteiligen möchtest, d.h. Du&lt;/p>
 &lt;ul>
 &lt;li>modellierst 3D-Modelle,&lt;/li>
