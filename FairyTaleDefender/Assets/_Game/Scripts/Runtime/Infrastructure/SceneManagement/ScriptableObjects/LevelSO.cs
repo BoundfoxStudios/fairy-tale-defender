@@ -29,6 +29,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.Scrip
 		[field: SerializeField]
 		public PlayerResources PlayerStartResources { get; private set; } = default!;
 
+		[field: NonSerialized]
+		public LevelSO? NextLevel { get; set; }
+
+		[field: NonSerialized]
+		public LevelSO? PreviousLevel { get; set; }
+
 		[Serializable]
 		public class PlayerResources
 		{

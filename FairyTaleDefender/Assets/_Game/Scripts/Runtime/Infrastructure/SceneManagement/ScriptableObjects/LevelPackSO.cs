@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.Localization;
@@ -15,6 +16,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.Scrip
 		public LocalizedString Name { get; private set; } = default!;
 
 		[field: SerializeField]
-		public LevelSO[] Levels { get; private set; } = default!;
+		public LevelSO[] Levels { get; set; } = default!;
+
+		[field: NonSerialized]
+		public LevelPackSO? NextLevelPack { get; set; }
+
+		[field: NonSerialized]
+		public LevelPackSO? PreviousLevelPack { get; set; }
 	}
 }
