@@ -3,9 +3,6 @@
   <name>Edit &amp; Play Mode Tests</name>
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
-    <options>
-      <option name="excludeDefaultBranchChanges" value="true" />
-    </options>
     <disabled-settings>
       <setting-ref ref="ARTIFACT_DEPENDENCY_5" />
       <setting-ref ref="ARTIFACT_DEPENDENCY_6" />
