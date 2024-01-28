@@ -23,7 +23,9 @@
       </runner>
     </build-runners>
     <vcs-settings />
-    <requirements />
+    <requirements>
+      <matches id="RQ_5" name="teamcity.agent.jvm.os.family" value="Windows" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
         <parameters>
