@@ -48,10 +48,21 @@ Als technischer Mitwirkender musst Du Dir Git soweit aneignen, dass Du es für d
 
 Frag gerne auf dem [Discord]({{< param "project_links.discord.url" >}}) nach, wenn Du so gar nicht weiter kommst. 
 
-## JetBrains Rider Lizenz
+## JetBrains
+
+![JetBrains](../assets/jb_beam.png)
+
+### JetBrains Rider Lizenz
 
 [JetBrains](https://jetbrains.com) sponsert Fairy Tale Defender mit [Lizenzen](https://jb.gg/OpenSourceSupport) für JetBrains Rider!
 Jeder Entwickler, der sich im Projekt regelmäßig engagiert und aktiv ist, kann eine Lizenz für JetBrains Rider erhalten.
 
-![JetBrains](../assets/jb_beam.png)
 ![JetBrains Rider](../assets/Rider.png)
+
+### JetBrains TeamCity 
+
+Zusätzlich zu Rider stellt uns JetBrains TeamCity zur Verfügung, um unser Spiel für Windows, Linux und macOS veröffentlichen zu können.
+
+[Hier](https://boundfoxstudios.teamcity.com) findest Du unseren TeamCity Cloud Server, Du kannst Dich einfach mit dem Gast-Account, der dort verlinkt ist, anmelden.
+
+![JetBrains TeamCity](../assets/TeamCity.png)
