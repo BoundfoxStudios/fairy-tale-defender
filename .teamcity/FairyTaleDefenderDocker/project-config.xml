@@ -8,7 +8,7 @@
         <param name="buildSettings" value="PREFER_VCS" />
         <param name="credentialsStorageType" value="credentialsJSON" />
         <param name="enabled" value="true" />
-        <param name="ignoreChangesInDependenciesAndVcsSettings" value="false" />
+        <param name="ignoreChangesInDependenciesAndVcsSettings" value="true" />
         <param name="rootId" value="FairyTaleDefenderDocker_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
         <param name="showChanges" value="true" />
       </parameters>
