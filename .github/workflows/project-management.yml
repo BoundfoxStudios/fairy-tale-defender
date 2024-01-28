@@ -36,7 +36,16 @@ jobs:
           issueCurrentlyAssignedMessage: Die Aufgabe wird aktuell bereits von jemand anderem bearbeitet, daher kannst Du Dir diese leider nicht selbst zuweisen.
           trigger: .meine-aufgabe
           token: ${{ secrets.GITHUB_TOKEN }}
+      - id: assignee-count
+        run: |
+          count=$(gh issue view $ISSUE_ID --json assignees | jq -e '.assignees | length')
+
+          echo "assignee_count=$count" >> "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ISSUE_ID: ${{ github.event.issue.node_id }}
       - uses: ./.github/actions/move-issue
+        if: steps.empty-assignees.outputs.assignee_count > 0
         with:
           app-id: ${{ secrets.COMMUNITY_APP_ID }}
           private-key: ${{ secrets.COMMUNITY_APP_PEM }}
