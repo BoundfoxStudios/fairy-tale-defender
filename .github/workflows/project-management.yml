@@ -43,7 +43,7 @@ jobs:
           echo "count=$count" >> "$GITHUB_OUTPUT"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          ISSUE_ID: ${{ github.event.issue.node_id }}
+          ISSUE_ID: ${{ github.event.issue.id }}
       - uses: ./.github/actions/move-issue
         if: steps.assignee-count.outputs.count > 0
         with:
