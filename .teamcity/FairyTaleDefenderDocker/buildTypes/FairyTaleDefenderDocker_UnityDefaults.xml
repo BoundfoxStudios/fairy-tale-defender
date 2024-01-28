@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2e423338-d22d-46f0-b3b9-919de729c9b6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>UnityDefaults</name>
+  <settings>
+    <options>
+      <option name="allowExternalStatus" value="true" />
+      <option name="maximumNumberOfBuilds" value="1" />
+    </options>
+    <parameters />
+    <build-runners />
+    <vcs-settings>
+      <vcs-entry-ref root-id="FairyTaleDefenderDocker_HttpsGithubComBoundfoxStudiosFairyTaleDefenderRefsHeadsDevelop" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <build-extensions>
+      <extension id="BUILD_EXT_2" type="JetBrains.SharedResources">
+        <parameters>
+          <param name="locks-param" value="UnityLicense readLock" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</template>
+

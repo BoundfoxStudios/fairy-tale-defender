@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e9005c20-8fb3-4509-84e2-6e88daf36ab6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Linux</name>
+  <description />
+  <settings ref="FairyTaleDefenderDocker_UnityDefaults">
+    <options>
+      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneLinux64/** =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BurstDebugInformation_DoNotShip =&gt; Linux.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux-DebugInfo.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BurstDebugInformation_DoNotShip =&gt; Linux-DebugInfo.zip" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="simpleRunner" name="" type="simpleRunner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="unityci/editor:2022.3.12f1-linux-il2cpp-3" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="plugin.docker.run.parameters"><![CDATA[-e BUILD_TARGET=StandaloneLinux64
+-e UNITY_DIR=%teamcity.build.checkoutDir%/FairyTaleDefender/]]></param>
+          <param name="script.content"><![CDATA[set -e
+set -x
+
+activateLicense() {
+    echo "Activate License"
+
+	${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' unity-editor} \
+      -quit \
+      -batchmode \
+      -serial %UNITY_SERIAL_NUMBER% \
+      -username "%UNITY_EMAIL%" \
+      -password "%UNITY_PASSWORD%"
+}
+
+deactivateLicense() {
+	rv=$?
+
+    echo "Deactivate License"
+
+	${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' unity-editor} \
+      -quit \
+      -batchmode \
+      -returnlicense \
+      -username "%UNITY_EMAIL%" \
+      -password "%UNITY_PASSWORD%"
+      
+    exit $rv
+}
+
+trap deactivateLicense EXIT
+
+activateLicense
+
+echo "Building for $BUILD_TARGET"
+
+export BUILD_PATH=${UNITY_DIR}build/$BUILD_TARGET/
+mkdir -p $BUILD_PATH
+
+${UNITY_EXECUTABLE:-xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' unity-editor} \
+  -projectPath $UNITY_DIR \
+  -quit \
+  -batchmode \
+  -nographics \
+  -buildTarget StandaloneLinux64 \
+  -executeMethod BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildLinux \
+  -logFile /dev/stdout
+
+UNITY_EXIT_CODE=$?
+
+if [ $UNITY_EXIT_CODE -eq 0 ]; then
+  echo "Run succeeded, no failures occurred";
+elif [ $UNITY_EXIT_CODE -eq 2 ]; then
+  echo "Run succeeded, some tests failed";
+elif [ $UNITY_EXIT_CODE -eq 3 ]; then
+  echo "Run failure (other failure)";
+else
+  echo "Unexpected exit code $UNITY_EXIT_CODE";
+fi
+
+ls -la $BUILD_PATH
+[ -n "$(ls -A $BUILD_PATH)" ] # fail job if build folder is empty]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements>
+      <more-than id="RQ_3" name="teamcity.agent.hardware.cpuCount" value="4" />
+    </requirements>
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_11" sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:contributors.json=&gt;FairyTaleDefender/Assets/_Game/Build/" />
+      </dependency>
+      <dependency id="ARTIFACT_DEPENDENCY_12" sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:manifest.json=&gt;FairyTaleDefender/Assets/_Game/Build/" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_BuildAssets_Contributors">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_BuildAssets_CreateManifest">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="FairyTaleDefender_Test_EditMode">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
