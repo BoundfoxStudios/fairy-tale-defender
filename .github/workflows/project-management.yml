@@ -26,9 +26,11 @@ jobs:
     permissions:
       issues: write
     steps:
-      - uses: Bhacaz/checkout-files@v2
+      - uses: actions/checkout@v4
         with:
-          files: .github/actions
+          sparse-checkout: |
+            .github/actions
+          sparse-checkout-cone-mode: false
       - name: Assign issue
         uses: bdougie/take-action@main
         with:
