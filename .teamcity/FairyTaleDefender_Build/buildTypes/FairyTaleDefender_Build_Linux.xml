@@ -4,7 +4,7 @@
   <description />
   <settings ref="FairyTaleDefender_UnityDefaults">
     <options>
-      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneLinux64/** =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux-DebugInfo.zip&#xA;+:Z:/buildAgent/temp/buildTmp/Unity/Editor/Crashes/** =&gt; Crashes.zip" />
+      <option name="artifactRules" value="+:FairyTaleDefender/build/StandaloneLinux64/** =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux.zip&#xA;-:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BurstDebugInformation_DoNotShip =&gt; Linux.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BackUpThisFolder_ButDontShipItWithYourGame =&gt; Linux-DebugInfo.zip&#xA;+:FairyTaleDefender/build/StandaloneLinux64/FairyTaleDefender_BurstDebugInformation_DoNotShip =&gt; Linux-DebugInfo.zip&#xA;+:Z:/buildAgent/temp/buildTmp/Unity/Editor/Crashes/** =&gt; Crashes.zip" />
     </options>
     <disabled-settings>
       <setting-ref ref="BUILD_EXT_1" />
