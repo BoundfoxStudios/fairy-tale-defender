@@ -23,6 +23,7 @@
       <runner id="RUNNER_2" name="Build Linux" type="unity">
         <parameters>
           <param name="arguments" value="-logFile -" />
+          <param name="buildTarget" value="Linux64" />
           <param name="detectionMode" value="auto" />
           <param name="executeMethod" value="BoundfoxStudios.FairyTaleDefender.Editor.Build.GameBuilder.ReleaseBuildLinux" />
           <param name="noGraphics" value="true" />
