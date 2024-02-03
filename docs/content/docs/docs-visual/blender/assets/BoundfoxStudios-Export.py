@@ -65,7 +65,7 @@ else:
         obj.location = oldLocation
         obj.rotation_euler = oldRotation
 
-        obj.select_set(False)
+        bpy.ops.object.select_all(action='DESELECT')
 
         print("written:", fn)
 

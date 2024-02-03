@@ -90,6 +90,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Menus
 			var staticFlags = GameObjectUtility.GetStaticEditorFlags(gfxChild.gameObject);
 
 			var gameObjectInstance = (GameObject)PrefabUtility.InstantiatePrefab(gameObject, gfxChild);
+
+			gameObjectInstance.transform.localScale = Vector3.one;
+			gameObjectInstance.transform.rotation = Quaternion.Euler(-90, 0, 0);
+
+			foreach (var childTransform in gameObjectInstance.GetComponentsInChildren<Transform>())
+			{
+				childTransform.transform.localScale = Vector3.one;
+			}
+
 			GameObjectUtility.SetStaticEditorFlags(gameObjectInstance, staticFlags);
 
 			var savedPrefab = PrefabUtility.SaveAsPrefabAsset(basePrefabVariant, prefabAssetPath, out var success);
