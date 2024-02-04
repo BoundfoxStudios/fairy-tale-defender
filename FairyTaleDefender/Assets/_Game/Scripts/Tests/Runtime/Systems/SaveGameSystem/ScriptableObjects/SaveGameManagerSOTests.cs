@@ -50,6 +50,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 			name = name.Slugify();
 
 			var saveGamePath = Path.Combine(SaveGamesPath, name);
+			var metaPath = Path.Combine(saveGamePath, Constants.SaveGames.MetaFileName);
 
 			var meta = new SaveGameMeta()
 			{
@@ -58,18 +59,21 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 				Directory = saveGamePath,
 			};
 
-			await fileManager.WriteAsync(Path.Combine(saveGamePath, Constants.SaveGames.MetaFileName), meta);
+			await fileManager.WriteAsync(metaPath, meta);
 
 			if (!isValid)
 			{
 				return meta;
 			}
 
-			await fileManager.WriteAsync(
-				Path.Combine(saveGamePath, Constants.SaveGames.SaveGameFileName), new SaveGameData()
-				{
-					LastLevel = null
-				});
+			var saveGameFilePath = Path.Combine(saveGamePath, Constants.SaveGames.SaveGameFileName);
+			await fileManager.WriteAsync(saveGameFilePath, new SaveGameData()
+			{
+				LastLevel = null
+			});
+
+			meta.Hash = SaveGameHash.Create(meta.Name, saveGameFilePath);
+			await fileManager.WriteAsync(metaPath, meta);
 
 			return meta;
 		}
@@ -164,5 +168,23 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 
 				result.Should().BeTrue();
 			});
+
+		[UnityTest]
+		public IEnumerator LoadSaveGame_CannotLoadWhenFileWasTemperedWith() =>
+			UniTask.ToCoroutine(async () =>
+			{
+				var meta = await PrepareSaveGameAsync(name: "Unit Test");
+
+				// Temper with the file
+				await File.AppendAllLinesAsync(Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName), new []{" "});
+
+				var sut = ScriptableObject.CreateInstance<SaveGameManagerSO>();
+
+				var saveGame = await sut.LoadSaveGameAsync(meta);
+
+				saveGame.Should().BeNull();
+			});
+
+
 	}
 }

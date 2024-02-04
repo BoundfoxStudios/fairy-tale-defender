@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Security.Cryptography;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
@@ -76,8 +77,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 
 			try
 			{
+				var saveGameFile = Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName);
+				var saveGameFilePath = await _fileManager.WriteAsync(saveGameFile, data);
+
+				meta.Hash = SaveGameHash.Create(meta.Name, saveGameFilePath);
+
 				await _fileManager.WriteAsync(Path.Combine(meta.Directory, Constants.SaveGames.MetaFileName), meta);
-				await _fileManager.WriteAsync(Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName), data);
 			}
 
 			catch
@@ -98,12 +103,28 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 
 		private async UniTask<bool> IsValidSaveGameAsync(string directory)
 		{
+			var saveGameFile = CreatePath(directory, Constants.SaveGames.SaveGameFileName);
+
 			var metaFileExists = await _fileManager.ExistsAsync(CreatePath(directory, Constants.SaveGames.MetaFileName));
 			var saveGameFileExists =
-				await _fileManager.ExistsAsync(CreatePath(directory, Constants.SaveGames.SaveGameFileName));
+				await _fileManager.ExistsAsync(saveGameFile);
 
-			return metaFileExists && saveGameFileExists;
+			var filesExist = metaFileExists && saveGameFileExists;
+
+			if (!filesExist)
+			{
+				return false;
+			}
+
+			var meta = await LoadMeta(directory);
+			var hash = SaveGameHash.Create(meta.Name, _fileManager.CreatePath(saveGameFile));
+
+			return meta.Hash == hash;
 		}
+
+		private async UniTask<SaveGameMeta> LoadMeta(string directory) =>
+			await _fileManager.ReadAsync<SaveGameMeta>(CreatePath(directory,
+				Constants.SaveGames.MetaFileName));
 
 		private string CreatePath(string directory, string fileName) => Path.Combine(CreatePath(directory), fileName);
 

@@ -10,7 +10,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 	{
 		public string Name = string.Empty;
 		public DateTime LastPlayedDate;
+		public string Hash = string.Empty;
 
-		public string Directory { get; set; }
+		public string Directory { get; set; } = string.Empty;
 	}
 }

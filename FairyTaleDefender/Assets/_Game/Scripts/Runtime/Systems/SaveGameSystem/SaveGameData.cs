@@ -1,5 +1,5 @@
 using System;
-using BoundfoxStudios.FairyTaleDefender.Infrastructure.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 {
@@ -12,6 +12,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 		/// <summary>
 		/// Identifies the last played level.
 		/// </summary>
-		public IdentifiableSO? LastLevel;
+		public ScriptableObjectIdentity? LastLevel;
 	}
 }

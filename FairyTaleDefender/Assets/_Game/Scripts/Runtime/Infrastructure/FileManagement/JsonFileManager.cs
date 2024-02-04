@@ -10,32 +10,31 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 
 		public UniTask<bool> ExistsAsync(string key)
 		{
-			var result = File.Exists(CreateFilePath(key));
+			var result = File.Exists(CreatePath(key));
 
 			return UniTask.FromResult(result);
 		}
 
-		public async UniTask WriteAsync<T>(string key, T serializable)
+		public async UniTask<string> WriteAsync<T>(string key, T serializable)
 		{
 			var jsonSerialization = JsonUtility.ToJson(serializable);
 
-			var path = CreateFilePath(key);
+			var path = CreatePath(key);
 			EnsurePath(path);
 
 			await File.WriteAllTextAsync(path, jsonSerialization);
+
+			return path;
 		}
 
 		public async UniTask<T> ReadAsync<T>(string key)
 		{
-			var jsonFromFile = await File.ReadAllTextAsync(CreateFilePath(key));
+			var jsonFromFile = await File.ReadAllTextAsync(CreatePath(key));
 
 			return JsonUtility.FromJson<T>(jsonFromFile);
 		}
 
-		private string CreateFilePath(string key)
-		{
-			return Path.Combine(_rootPath, key);
-		}
+		public string CreatePath(string key) => Path.Combine(_rootPath, key);
 
 		private void EnsurePath(string path)
 		{
