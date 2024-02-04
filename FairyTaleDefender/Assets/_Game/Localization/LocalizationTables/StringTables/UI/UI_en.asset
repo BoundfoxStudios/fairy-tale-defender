@@ -58,6 +58,43 @@ MonoBehaviour:
     m_Localized: Proudly built by
     m_Metadata:
       m_Items: []
+  - m_Id: 179073782365720576
+    m_Localized: You won!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179073929992638464
+    m_Localized: You lost!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179074020547661824
+    m_Localized: Return to main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181176314747588608
+    m_Localized: 'Thank you for playing our little community developed game.
+
+
+      If
+      you encountered any bugs, or have any kind of feedback, please let us know
+      on
+
+      <link="https://github.com/BoundfoxStudios/fairy-tale-defender/issues"><color="lightblue">GitHub</color>
+      <size=150%><sprite name="GitHub"></size></link> or <link="https://discord.gg/tHqNzMT"><color="lightblue">Discord
+      </color><size=150%><sprite name="Discord"></size></link>
+
+
+      We appreciate
+      it very much.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181205552674541568
+    m_Localized: Replay level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181206164157927424
+    m_Localized: Play next level
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

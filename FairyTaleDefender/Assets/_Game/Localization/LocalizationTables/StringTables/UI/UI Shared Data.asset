@@ -67,6 +67,30 @@ MonoBehaviour:
     m_Key: Sponsor/ProudlyBuiltBy
     m_Metadata:
       m_Items: []
+  - m_Id: 179073782365720576
+    m_Key: PlayerWonLevelText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179073929992638464
+    m_Key: PlayerLostLevelText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179074020547661824
+    m_Key: ReturnToMainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181176314747588608
+    m_Key: Gameplay/GameOverCanvas/Panel/FeedbackPanel/FeedbackText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181205552674541568
+    m_Key: Gameplay/GameOverCanvas/Panel/LoadSceneButtons/ReplayLevelButton/Text
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181206164157927424
+    m_Key: Gameplay/GameOverCanvas/Panel/LoadSceneButtons/LoadNextLevelButton/Text
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
