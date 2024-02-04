@@ -70,6 +70,35 @@ MonoBehaviour:
     m_Localized: Mit Stolz gebaut von
     m_Metadata:
       m_Items: []
+  - m_Id: 179073782365720576
+    m_Localized: Du hast gewonnen!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179073929992638464
+    m_Localized: Du hast verloren!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179074020547661824
+    m_Localized: "Zur\xFCck zum Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181176314747588608
+    m_Localized: "Danke dass Du unser kleines von der Community entwickeltes Spiel
+      gespielt hast.\n\nFalls du auf Fehler gesto\xDFen bist, oder jegliche Art von
+      Feedback hast, teile es gerne mit uns auf\n<link=\"https://github.com/BoundfoxStudios/fairy-tale-defender/issues\"><color=\"lightblue\">GitHub</color>
+      <size=150%><sprite name=\"GitHub\"></size></link> oder <link=\"https://discord.gg/tHqNzMT\"><color=\"lightblue\">Discord
+      </color><size=150%><sprite name=\"Discord\"></size></link>\n\nWir wissen das
+      sehr zu sch\xE4tzen."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181205552674541568
+    m_Localized: Level nochmal spielen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 181206164157927424
+    m_Localized: "N\xE4chsten Level spielen"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
