@@ -113,7 +113,7 @@ Achte hier bitte darauf, dass das Objekt im Nullpunkt steht!&lt;/li>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.location = oldLocation
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.rotation_euler = oldRotation
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> obj.select_set(&lt;span style="color:#00f">False&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> bpy.ops.object.select_all(action=&lt;span style="color:#a31515">&amp;#39;DESELECT&amp;#39;&lt;/span>)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(&lt;span style="color:#a31515">&amp;#34;written:&amp;#34;&lt;/span>, fn)
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
