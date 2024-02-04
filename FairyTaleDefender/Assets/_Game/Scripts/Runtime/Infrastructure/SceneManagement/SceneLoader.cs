@@ -98,6 +98,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 
 				case LevelSO level:
 					LevelRuntimeAnchor.Item = level;
+					await UnloadGameplaySceneAsync();
 					await LoadGameplaySceneAsync();
 					break;
 			}
