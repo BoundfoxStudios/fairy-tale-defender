@@ -34,3 +34,5 @@ MonoBehaviour:
     type: 2}
   <LoadSceneEventChannel>k__BackingField: {fileID: 11400000, guid: 0de4913d3098c42fba13eb9f7000c72e,
     type: 2}
+  <LevelFinishedEventChannel>k__BackingField: {fileID: 11400000, guid: c3d7b13c70aad0f42b56364a3244ba0f,
+    type: 2}

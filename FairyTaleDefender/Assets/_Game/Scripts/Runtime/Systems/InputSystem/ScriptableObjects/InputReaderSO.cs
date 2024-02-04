@@ -44,6 +44,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		[field: SerializeField]
 		private LoadSceneEventChannelSO LoadSceneEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		private BoolEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
+
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
 
@@ -72,6 +75,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			ShowTooltipEventChannel.Raised += ShowTooltip;
 			HideTooltipEventChannel.Raised += HideTooltip;
 			LoadSceneEventChannel.Raised += DisableAllInputInLoadScreen;
+			LevelFinishedEventChannel.Raised += DisableGameplayInput;
+		}
+
+		private void DisableGameplayInput(bool playerWon)
+		{
+			GameInput.Gameplay.Disable();
+			GameInput.Camera.Disable();
+			GameInput.BuildSystem.Disable();
 		}
 
 		private void HideTooltip()
@@ -103,6 +114,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			ShowTooltipEventChannel.Raised -= ShowTooltip;
 			HideTooltipEventChannel.Raised -= HideTooltip;
 			LoadSceneEventChannel.Raised -= DisableAllInputInLoadScreen;
+			LevelFinishedEventChannel.Raised -= DisableGameplayInput;
 
 			DisableAllInput();
 		}
