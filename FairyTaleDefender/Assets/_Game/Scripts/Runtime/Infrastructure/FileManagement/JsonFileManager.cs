@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 {
-	public class JsonFileManager : IFileManager
+	public class JsonFileManager
 	{
 		private readonly string _rootPath = Application.persistentDataPath;
 

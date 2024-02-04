@@ -29,6 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public const string BuildSystem = MenuName + "/Build System";
 			public const string Infrastructure = MenuName + "/Infrastructure";
 			public const string RuntimeSets = MenuName + "/Runtime Sets";
+			public const string SaveGame = MenuName + "/Save Game";
 			public const string Objectives = MenuName + "/Objectives";
 		}
 
@@ -51,6 +52,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 		public static class Gameplay
 		{
 			public const int MaximumTargets = 50;
+		}
+
+		public static class SaveGames
+		{
+			public static readonly string DirectoryName = "Save Games";
+			public static readonly string MetaFileName = "meta.json";
+			public static readonly string SaveGameFileName = "save.json";
 		}
 
 		public static class Settings
