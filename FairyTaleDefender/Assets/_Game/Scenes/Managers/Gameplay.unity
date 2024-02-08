@@ -2224,6 +2224,7 @@ GameObject:
   - component: {fileID: 1125636244}
   - component: {fileID: 1125636246}
   - component: {fileID: 1125636245}
+  - component: {fileID: 1125636247}
   m_Layer: 5
   m_Name: BuildContainer
   m_TagString: Untagged
@@ -2292,6 +2293,25 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &1125636247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125636243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7fea80748102403ca9daf68aa319540f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <BuildButtonPrefab>k__BackingField: {fileID: 8836093814330201621, guid: 7051bfaff63334617b6ba6fcc9e7316f,
+    type: 3}
+  <PlayerCoinsController>k__BackingField: {fileID: 326114872}
+  <AvailableTowers>k__BackingField: {fileID: 11400000, guid: eb21287821faea945b2f9e359eabf15a,
+    type: 2}
+  <AvailableTowersChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 9b83a624ca9ffc4458bccd6687e2213f,
+    type: 2}
 --- !u!1001 &1177097134
 PrefabInstance:
   m_ObjectHideFlags: 0

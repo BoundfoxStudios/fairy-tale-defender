@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0a3df759a6242f982d527dc927bf5eb, type: 3}
   m_Name: BuildableTower_RuntimeSet
   m_EditorClassIdentifier: 
-  <RuntimeSetChangedEventChannel>k__BackingField: {fileID: 0}
+  <RuntimeSetChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 9b83a624ca9ffc4458bccd6687e2213f,
+    type: 2}
