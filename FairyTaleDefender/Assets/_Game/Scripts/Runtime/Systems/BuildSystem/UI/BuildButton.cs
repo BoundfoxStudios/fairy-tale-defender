@@ -20,6 +20,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 		private TMP_Text CoinDisplay { get; set; } = default!;
 
 		[field: SerializeField]
+		private Image Image { get; set; } = default!;
+
+		[field: SerializeField]
 		public PlayerCoinsController PlayerCoinsController { get; private set; } = default!;
 
 		[field: Header("Listening Channels")]
@@ -40,6 +43,16 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 		private void OnDisable()
 		{
 			CoinsChangeEventChannel.Raised -= CoinsChange;
+		}
+
+		public void Init(T buildable, PlayerCoinsController playerCoinsController)
+		{
+			Buildable = buildable;
+			PlayerCoinsController = playerCoinsController;
+			Image.sprite = buildable.BuildableIcon;
+
+			CoinDisplay.text = Buildable.Price.ToString();
+			SetStateDependingOnCoins();
 		}
 
 		private void CoinsChange(IntDeltaEventChannelSO.EventArgs args)

@@ -13,5 +13,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 
 		[field: SerializeField]
 		public TowerSO TowerDefinition { get; private set; } = default!;
+
+		public void Init(BuildableTowerSO towerDefinition)
+		{
+			TowerDefinition = towerDefinition;
+			WeaponDefinition = towerDefinition.WeaponSO;
+		}
 	}
 }

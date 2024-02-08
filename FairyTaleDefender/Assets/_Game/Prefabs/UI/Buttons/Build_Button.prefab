@@ -335,6 +335,8 @@ MonoBehaviour:
     type: 2}
   <Button>k__BackingField: {fileID: 8577549856758770685}
   <CoinDisplay>k__BackingField: {fileID: 5796334138108645846}
+  <Image>k__BackingField: {fileID: 5295773175276684443}
+  <PlayerCoinsController>k__BackingField: {fileID: 0}
   <CoinsChangeEventChannel>k__BackingField: {fileID: 11400000, guid: 42b83e1defef54d16bedaf305ec0489e,
     type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
@@ -355,19 +357,8 @@ MonoBehaviour:
     type: 2}
   <HideTooltipEventChannel>k__BackingField: {fileID: 11400000, guid: b03109885f5d43a4ba11257465712b62,
     type: 2}
-  <TowerName>k__BackingField:
-    m_TableReference:
-      m_TableCollectionName: 
-    m_TableEntryReference:
-      m_KeyId: 0
-      m_Key: 
-    m_FallbackState: 0
-    m_WaitForCompletion: 0
-    m_LocalVariables: []
   <WeaponDefinition>k__BackingField: {fileID: 0}
-  references:
-    version: 2
-    RefIds: []
+  <TowerDefinition>k__BackingField: {fileID: 0}
 --- !u!1001 &8380350276991179908
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,6 +25,10 @@ MonoBehaviour:
     type: 3}
   <BlueprintPrefab>k__BackingField: {fileID: 2855513885513437986, guid: 95a2171c951934343b139d736bd2f3a7,
     type: 3}
+  <BuildableIcon>k__BackingField: {fileID: 21300000, guid: d95e37335da724642b80aa4b6adfffe5,
+    type: 3}
+  <WeaponSO>k__BackingField: {fileID: 11400000, guid: fe561347965324f5ab3fae316b5cf944,
+    type: 2}
   <Price>k__BackingField: 10
   references:
     version: 2
