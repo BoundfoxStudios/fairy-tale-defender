@@ -7,7 +7,7 @@ using UnityEngine.UI;
 namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem.UI
 {
 	public abstract class BuildButton<T> : MonoBehaviour
-		where T : IAmBuildable, IHaveAPrice
+		where T : IAmBuildable, IHaveAPrice, IHaveBuildableUI
 	{
 		[field: Header("References")]
 		[field: SerializeField]
