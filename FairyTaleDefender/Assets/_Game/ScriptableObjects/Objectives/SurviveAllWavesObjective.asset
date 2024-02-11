@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24777371a3a34fb49989d68ae92572b5, type: 3}
   m_Name: SurviveAllWavesObjective
   m_EditorClassIdentifier: 
-  <Title>k__BackingField: Reach the last wave and survive all enemies.
   <ObjectiveCompletedEventChannel>k__BackingField: {fileID: 11400000, guid: afe01205a1f439249ba3b2669561f78a,
     type: 2}
   <LivingEnemies>k__BackingField: {fileID: 11400000, guid: 4972058b527553a4dbc326d3ad59bc0c,
     type: 2}
-  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 209e08c2fac3644e99ab0702be102457,
+  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 1aea3c49e16d89c46a94522c1357ca48,
     type: 2}
   <RuntimeSetChangedEventChannel>k__BackingField: {fileID: 11400000, guid: 365748769eff81e4ab831f3bc9575de3,
     type: 2}

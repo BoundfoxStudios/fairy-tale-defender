@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <SceneReadyEventChannel>k__BackingField: {fileID: 11400000, guid: 3ac76ef19a58741a881c904120fe86a6,
     type: 2}
-  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 209e08c2fac3644e99ab0702be102457,
+  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 1aea3c49e16d89c46a94522c1357ca48,
     type: 2}
   <GameOverEventChannel>k__BackingField: {fileID: 11400000, guid: 10c7057d7409d4925950eabb5fe2816f,
     type: 2}
@@ -3825,7 +3825,7 @@ MonoBehaviour:
     type: 2}
   <EnemySpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: a9b11fb812b052f46aba1307087c9af9,
     type: 2}
-  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 209e08c2fac3644e99ab0702be102457,
+  <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 1aea3c49e16d89c46a94522c1357ca48,
     type: 2}
 --- !u!1001 &1683993159
 PrefabInstance:

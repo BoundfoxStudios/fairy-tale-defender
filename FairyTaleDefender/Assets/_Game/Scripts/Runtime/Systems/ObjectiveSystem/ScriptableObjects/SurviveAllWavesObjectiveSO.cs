@@ -14,7 +14,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem.ScriptableOb
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
-		public BoolEventChannelSO WaveSpawnedEventChannel { get; private set; } = default!;
+		public WaveSpawnedEventChannelSO WaveSpawnedEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
 		public VoidEventChannelSO RuntimeSetChangedEventChannel { get; private set; } = default!;
@@ -33,9 +33,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.ObjectiveSystem.ScriptableOb
 			RuntimeSetChangedEventChannel.Raised -= EnemyRuntimeSetChanged;
 		}
 
-		private void WaveSpawned(bool hasMoreWaves)
+		private void WaveSpawned(WaveSpawnedEventChannelSO.EventArgs args)
 		{
-			_levelHasMoreWaves = hasMoreWaves;
+			_levelHasMoreWaves = args.LevelHasMoreWaves;
 		}
 
 		private void EnemyRuntimeSetChanged()
