@@ -13,7 +13,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private VoidEventChannelSO SceneReadyEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private BoolEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
+		private WaveSpawnedEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
 		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
@@ -65,9 +65,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			});
 		}
 
-		private void WaveSpawned(bool hasMoreWaves)
+		private void WaveSpawned(WaveSpawnedEventChannelSO.EventArgs args)
 		{
-			if (hasMoreWaves)
+			if (args.LevelHasMoreWaves)
 			{
 				SpawnNextWaveEventChannel.Raise();
 			}

@@ -31,7 +31,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem
 		public EnemyEventChannelSO EnemySpawnedEventChannel { get; private set; } = default!;
 
 		[field: SerializeField]
-		private BoolEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
+		private WaveSpawnedEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
 
 		private Queue<Wave> _waves = new();
 
@@ -68,7 +68,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SpawnSystem
 			var spline = pathProvider.CreatePath(WaySplineRuntimeAnchor.ItemSafe, new RandomSplineLinkDecisionMaker());
 			var wave = _waves.Dequeue();
 			await wave.SpawnAsync(spline, WaySplineRuntimeAnchor.ItemSafe, destroyCancellationToken, EnemySpawnedEventChannel);
-			WaveSpawnedEventChannel.Raise(_waves.Count > 0);
+			WaveSpawnedEventChannel.Raise(new()
+			{
+				LevelHasMoreWaves = _waves.Count > 0
+			});
 		}
 	}
 }
