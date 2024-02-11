@@ -17,9 +17,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Build.BuildManifest
 
 			buildManifest.Should().NotBeNull();
 			buildManifest.Sha.Should().Be("example-sha");
-			buildManifest.ShortSha.Should().Be("short-sha");
-			buildManifest.RunId.Should().Be(13371337);
-			buildManifest.RunNumber.Should().Be(815);
+			buildManifest.ShortSha.Should().Be("example-");
 		});
 	}
 }

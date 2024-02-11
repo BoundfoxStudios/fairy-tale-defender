@@ -13,23 +13,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Build.BuildManifest
 		// ReSharper disable once InconsistentNaming
 		private string sha = string.Empty;
 
-		[SerializeField]
-		// ReSharper disable once InconsistentNaming
-		private string shortSha = string.Empty;
-
-		[SerializeField]
-		// ReSharper disable once InconsistentNaming
-		private int runId;
-
-		[SerializeField]
-		// ReSharper disable once InconsistentNaming
-		private int runNumber;
-
 		public string Sha => sha;
-		public string ShortSha => shortSha;
-		public int RunId => runId;
-		public int RunNumber => runNumber;
-
-		// I am just a CI trigger and will be removed later. :))
+		public string ShortSha => Sha[..8];
 	}
 }
