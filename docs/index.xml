@@ -1067,7 +1067,38 @@ Action["Aktion/Trigger (MonoBehaviour)"] -->|"Raise()"| Event["Event (Scriptable
 EventListener["Event Listener (MonoBehaviour)"] -->|"Horcht auf"| Event
 EventListener --> Response["Antwort auf Event"]
 &lt;/div>
-&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
+&lt;h3 id="event-channel-parameter">Event Channel Parameter&lt;/h3>
+&lt;p>Event Channel mit einem primitiven Datentyp wie Boolean als Parameter sollten vermieden werden, solange aus der Bezeichnung des Event Channel nicht eindeutig hervorgeht wofür der Parameter steht.&lt;/p>
+&lt;p>So wäre beispielsweise bei ToggleLoadingScreen als Event Channel mit einer bool&amp;rsquo;schen Variablen offensichtlich wofür diese benutzt wird.
+Bei WaveSpawned mit bool als Parameter hingegen müsste man aus dem Code heraus rückfolgern wie die Variable verwendet wird, oder es wurde eine Beschreibung im Inspektor angelegt, welche jedoch auch &amp;ldquo;umständlich&amp;rdquo; zu suchen wäre.&lt;/p>
+&lt;p>Eine schönere Lösung ist es einen eigenen Typ für die Parameter des Event Channel anzulegen, der die Absicht der Variablen genau beschreibt, womit die Verwendung im Code eindeutiger ist.
+Als Beispiel:&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-cs" data-lang="cs">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">//Definition&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">class&lt;/span> &lt;span style="color:#2b91af">LevelFinishedEventChannelSO&lt;/span> : EventChannelSO&amp;lt;LevelFinishedEventChannelSO.EventArgs&amp;gt;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#00f">struct&lt;/span> &lt;span style="color:#2b91af">EventArgs&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#00f">public&lt;/span> &lt;span style="color:#2b91af">bool&lt;/span> PlayerHasWon;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">//Triggern des Events&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> LevelFinished()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> LevelFinishedEventChannel.Raise(&lt;span style="color:#00f">new&lt;/span>()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> PlayerHasWon = &lt;span style="color:#00f">false&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> });
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#008000">//Auf Event reagieren&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#00f">private&lt;/span> &lt;span style="color:#00f">void&lt;/span> InitDisplay(LevelFinishedEventChannelSO.EventArgs args)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>{
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SetLevelFinishedText(args.PlayerHasWon);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> SetupButtons();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> ActivateCanvases();
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h2 id="was-ist-ein-event-system">Was ist ein Event-System?&lt;/h2>
 &lt;p>Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.&lt;/p>
 &lt;p>Nehmen wir als Beispiel mal das Leben des Spielers.
 Wenn der Spieler Leben verliert oder bekommt, möchte man das in der Regel im UI anzeigen.
