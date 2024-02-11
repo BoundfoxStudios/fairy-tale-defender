@@ -29,7 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private VoidEventChannelSO SpawnNextWaveEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private BoolEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
+		private LevelFinishedEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
 
 		private void OnEnable()
 		{
@@ -59,7 +59,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 
 		private void FinishLevel(bool playerWon)
 		{
-			LevelFinishedEventChannel.Raise(playerWon);
+			LevelFinishedEventChannel.Raise(new()
+			{
+				PlayerHasWon = playerWon
+			});
 		}
 
 		private void WaveSpawned(bool hasMoreWaves)
