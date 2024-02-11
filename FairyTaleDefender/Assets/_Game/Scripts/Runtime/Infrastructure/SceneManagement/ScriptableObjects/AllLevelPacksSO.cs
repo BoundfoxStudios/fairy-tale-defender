@@ -1,3 +1,4 @@
+using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.Scrip
 		{
 			LinkAllLevel();
 		}
+
+		public LevelSO? FindByIdentity(ScriptableObjectIdentity identity) => LevelPacks.SelectMany(packs => packs.Levels)
+			.SingleOrDefault(level => level.Identity == identity);
 
 		public void LinkAllLevel()
 		{

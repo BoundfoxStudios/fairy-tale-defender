@@ -59,6 +59,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Common
 			public static readonly string DirectoryName = "Save Games";
 			public static readonly string MetaFileName = "meta.json";
 			public static readonly string SaveGameFileName = "save.json";
+			public static readonly string DefaultSaveGameName = "default";
 		}
 
 		public static class Settings

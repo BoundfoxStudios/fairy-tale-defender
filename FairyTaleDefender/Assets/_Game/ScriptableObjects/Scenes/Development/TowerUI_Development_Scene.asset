@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75d455b499674b1cac2a9b33a5536c5c, type: 3}
-  m_Name: TowerUI
+  m_Name: TowerUI_Development_Scene
   m_EditorClassIdentifier: 
   <SceneReference>k__BackingField:
     m_AssetGUID: 0c8af94f53e8d4c59985f0662fd757ab
