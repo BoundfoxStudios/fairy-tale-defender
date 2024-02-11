@@ -3935,8 +3935,18 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 4417230495756755502, guid: ac7cc51efde2645bab55d748fbf5a6ec,
         type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417230495756755502, guid: ac7cc51efde2645bab55d748fbf5a6ec,
+        type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: LoadMainMenu
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 4417230495756755502, guid: ac7cc51efde2645bab55d748fbf5a6ec,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6073335993275796565, guid: ac7cc51efde2645bab55d748fbf5a6ec,
         type: 3}
