@@ -1304,8 +1304,6 @@ MonoBehaviour:
     type: 2}
   <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 1aea3c49e16d89c46a94522c1357ca48,
     type: 2}
-  <GameOverEventChannel>k__BackingField: {fileID: 11400000, guid: 10c7057d7409d4925950eabb5fe2816f,
-    type: 2}
   <AllObjectivesCompletedEventChannel>k__BackingField: {fileID: 11400000, guid: f2da8c3aab236d844abc108c2035d739,
     type: 2}
   <GameplayStartEventChannel>k__BackingField: {fileID: 11400000, guid: 99f85e4fb463f481781ca948ecefe0dc,
@@ -1518,7 +1516,7 @@ MonoBehaviour:
   <GameSpeedToggleButtonGroup>k__BackingField: {fileID: 2011921777}
   <SetGameSpeedEventChannel>k__BackingField: {fileID: 11400000, guid: 23b126c3a408e4ae998512c77b32c9b2,
     type: 2}
-  <GameOverEventChannel>k__BackingField: {fileID: 11400000, guid: 10c7057d7409d4925950eabb5fe2816f,
+  <LevelFinishedEventChannel>k__BackingField: {fileID: 11400000, guid: c3d7b13c70aad0f42b56364a3244ba0f,
     type: 2}
 --- !u!4 &777411585
 Transform:
@@ -3533,7 +3531,7 @@ MonoBehaviour:
     type: 2}
   <SceneReadyEventChannel>k__BackingField: {fileID: 11400000, guid: 3ac76ef19a58741a881c904120fe86a6,
     type: 2}
-  <GameOverEventChannel>k__BackingField: {fileID: 11400000, guid: 10c7057d7409d4925950eabb5fe2816f,
+  <LevelFinishedEventChannel>k__BackingField: {fileID: 11400000, guid: c3d7b13c70aad0f42b56364a3244ba0f,
     type: 2}
 --- !u!4 &1620236866
 Transform:
