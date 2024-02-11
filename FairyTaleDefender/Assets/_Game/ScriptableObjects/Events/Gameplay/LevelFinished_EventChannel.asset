@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07bb1247b08a4ee386b00fc5cd7f7909, type: 3}
   m_Name: LevelFinished_EventChannel
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Raised everytime the gameplay ends, with level won or lost as boolean
+    argument.

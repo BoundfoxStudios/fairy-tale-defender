@@ -24,6 +24,43 @@ flowchart LR
     EventListener --> Response["Antwort auf Event"]
 ```
 
+### Event Channel Parameter
+Event Channel mit einem primitiven Datentyp wie Boolean als Parameter sollten vermieden werden, solange aus der Bezeichnung des Event Channel nicht eindeutig hervorgeht wofür der Parameter steht.
+
+So wäre beispielsweise bei ToggleLoadingScreen als Event Channel mit einer bool'schen Variablen offensichtlich wofür diese benutzt wird.
+Bei WaveSpawned mit bool als Parameter hingegen müsste man aus dem Code heraus rückfolgern wie die Variable verwendet wird, oder es wurde eine Beschreibung im Inspektor angelegt, welche jedoch auch "umständlich" zu suchen wäre.
+
+Eine schönere Lösung ist es einen eigenen Typ für die Parameter des Event Channel anzulegen, der die Absicht der Variablen genau beschreibt, womit die Verwendung im Code eindeutiger ist.
+Als Beispiel:
+
+```cs
+//Definition
+public class LevelFinishedEventChannelSO : EventChannelSO<LevelFinishedEventChannelSO.EventArgs>
+{
+	public struct EventArgs
+	{
+		public bool PlayerHasWon;
+	}
+}
+
+//Triggern des Events
+private void LevelFinished()
+{
+	LevelFinishedEventChannel.Raise(new()
+    {
+        PlayerHasWon = false
+    });
+}
+
+//Auf Event reagieren
+private void InitDisplay(LevelFinishedEventChannelSO.EventArgs args)
+{
+    SetLevelFinishedText(args.PlayerHasWon);
+    SetupButtons();
+    ActivateCanvases();
+}
+```
+
 ## Was ist ein Event-System?
 
 Der Sinn eines Event-Systems ist es, Systeme zu entkoppeln.
