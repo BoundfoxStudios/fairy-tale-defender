@@ -6,7 +6,7 @@ using UnityEngine;
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Buildings.Towers.ScriptableObjects
 {
 	[CreateAssetMenu(menuName = Constants.MenuNames.Towers + "/Buildable Tower")]
-	public class BuildableTowerSO : TowerSO, IAmBuildable, IHaveAPrice
+	public class BuildableTowerSO : TowerSO, IAmBuildable, IHaveAPrice, IHaveBuildableUI
 	{
 		[field: Header("References")]
 		[field: SerializeField]
