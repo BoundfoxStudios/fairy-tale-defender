@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6e38195d7ec498fbd649eb0ce837ebd, type: 3}
+  m_Script: {fileID: 11500000, guid: 07bb1247b08a4ee386b00fc5cd7f7909, type: 3}
   m_Name: LevelFinished_EventChannel
   m_EditorClassIdentifier: 
   Description: 

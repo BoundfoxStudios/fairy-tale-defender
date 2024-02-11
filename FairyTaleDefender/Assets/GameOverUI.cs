@@ -29,7 +29,7 @@ namespace BoundfoxStudios.FairyTaleDefender
 
 	    [field: Header("Listening Channels")]
 	    [field: SerializeField]
-	    private BoolEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
+	    private LevelFinishedEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
 
 	    private void OnEnable()
 	    {
@@ -42,9 +42,10 @@ namespace BoundfoxStudios.FairyTaleDefender
 		    LevelFinishedEventChannel.Raised -= InitDisplay;
 	    }
 
-	    private void InitDisplay(bool playerWon)
+
+	    private void InitDisplay(LevelFinishedEventChannelSO.EventArgs args)
 	    {
-		    SetLevelFinishedText(playerWon);
+		    SetLevelFinishedText(args.PlayerHasWon);
 		    SetupButtons();
 		    ActivateCanvases();
 	    }
