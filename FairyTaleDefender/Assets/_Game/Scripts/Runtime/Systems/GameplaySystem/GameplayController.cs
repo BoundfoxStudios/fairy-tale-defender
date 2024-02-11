@@ -16,9 +16,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		private BoolEventChannelSO WaveSpawnedEventChannel { get; set; } = default!;
 
 		[field: SerializeField]
-		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
-
-		[field: SerializeField]
 		private VoidEventChannelSO AllObjectivesCompletedEventChannel { get; set; } = default!;
 
 		[field: Header("Broadcasting Channels")]
@@ -35,7 +32,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		{
 			SceneReadyEventChannel.Raised += SceneReady;
 			WaveSpawnedEventChannel.Raised += WaveSpawned;
-			GameOverEventChannel.Raised += GameOver;
 			AllObjectivesCompletedEventChannel.Raised += ObjectivesCompleted;
 		}
 
@@ -43,18 +39,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		{
 			SceneReadyEventChannel.Raised -= SceneReady;
 			WaveSpawnedEventChannel.Raised -= WaveSpawned;
-			GameOverEventChannel.Raised -= GameOver;
 			AllObjectivesCompletedEventChannel.Raised -= ObjectivesCompleted;
 		}
 
 		private void ObjectivesCompleted()
 		{
 			FinishLevel(true);
-		}
-
-		private void GameOver()
-		{
-			FinishLevel(false);
 		}
 
 		private void FinishLevel(bool playerWon)

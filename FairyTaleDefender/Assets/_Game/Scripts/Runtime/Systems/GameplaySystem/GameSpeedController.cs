@@ -1,4 +1,3 @@
-using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.UI.Utility;
@@ -20,18 +19,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		[field: Header("Listening Channels")]
 
 		[field: SerializeField]
-		private VoidEventChannelSO GameOverEventChannel { get; set; } = default!;
+		private LevelFinishedEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
 
 
 		private void OnEnable()
 		{
-			GameOverEventChannel.Raised += GameOver;
+			LevelFinishedEventChannel.Raised += LevelFinished;
 			GameSpeedToggleButtonGroup.IndexChanged += SetGameSpeed;
 		}
 
 		private void OnDisable()
 		{
-			GameOverEventChannel.Raised -= GameOver;
+			LevelFinishedEventChannel.Raised -= LevelFinished;
 			GameSpeedToggleButtonGroup.IndexChanged -= SetGameSpeed;
 		}
 
@@ -55,7 +54,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			SetSpeed(buttonIndex + 1);
 		}
 
-		private void GameOver()
+		private void LevelFinished(LevelFinishedEventChannelSO.EventArgs _)
 		{
 			SetSpeed(1);
 		}
