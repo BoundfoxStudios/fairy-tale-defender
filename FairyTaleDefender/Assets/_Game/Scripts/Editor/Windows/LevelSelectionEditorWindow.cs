@@ -158,6 +158,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor.Windows
 			{
 				EditorGUILayout.BeginHorizontal();
 				OpenSceneByNameButton("MainMenu", "Menus/MainMenu");
+				OpenSceneByNameButton("Preparation", "Menus/Preparation");
 				OpenSceneByNameButton("Settings", "Menus/Settings");
 				OpenSceneByNameButton("Credits", "Menus/Credits");
 				EditorGUILayout.EndHorizontal();
