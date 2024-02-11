@@ -10,7 +10,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.ScriptableObjects
 	/// </summary>
 	public abstract class IdentifiableSO : ScriptableObject, IEquatable<IdentifiableSO>
 	{
-		[field: SerializeField]
+		[field: SerializeField, HideInInspector]
 		// ReSharper disable once InconsistentNaming
 		private string _guid { get; set; } = string.Empty;
 

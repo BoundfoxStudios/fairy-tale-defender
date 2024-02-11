@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using System.Linq;
 using Cysharp.Threading.Tasks;
@@ -40,7 +41,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 		/// <returns></returns>
 		public UniTask<string[]> ListDirectoriesAsync(string directory)
 		{
-			var result = Directory.EnumerateDirectories(CreateDirectoryPath(directory));
+			var path = CreateDirectoryPath(directory);
+
+			if (!Directory.Exists(path))
+			{
+				return UniTask.FromResult(Array.Empty<string>());
+			}
+
+			var result = Directory.EnumerateDirectories(path);
 
 			return UniTask.FromResult(result.ToArray());
 		}
@@ -52,7 +60,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 		/// <returns></returns>
 		public UniTask DeleteAsync(string directory)
 		{
-			Directory.Delete(CreateDirectoryPath(directory), true);
+			var path = CreateDirectoryPath(directory);
+
+			if (!Directory.Exists(path))
+			{
+				return UniTask.CompletedTask;
+			}
+
+			Directory.Delete(path, true);
 
 			return UniTask.CompletedTask;
 		}

@@ -64,7 +64,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 			return saveGame;
 		}
 
-		public async UniTask<SaveGameMeta?> CreateSaveGameAsync(string saveName, SaveGameData data)
+		public async UniTask<SaveGame?> CreateSaveGameAsync(string saveName, SaveGameData data)
 		{
 			var slugifiedName = saveName.Slugify();
 
@@ -91,7 +91,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 				return null;
 			}
 
-			return meta;
+			return new(meta, data);
 		}
 
 		public async UniTask<bool> SaveGameExistsAsync(string saveName)

@@ -7,6 +7,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Editor
 		public static class MenuNames
 		{
 			public const string MenuName = RuntimeConstants.MenuNames.MenuName;
+			public const string Files = MenuName + "/Files";
 			public const string Windows = MenuName + "/Windows";
 			public const string Build = MenuName + "/Build";
 
