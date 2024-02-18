@@ -5,7 +5,7 @@ using UnityEngine;
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects
 {
 	/// <summary>
-	/// Target type for selecting a random target.
+	/// Target type for selecting random targets.
 	/// </summary>
 	// We don't need more than one instance.
 	// [CreateAssetMenu(fileName = "RandomTargetType", menuName = Constants.MenuNames.Targeting + "/Random Target Type")]
@@ -16,7 +16,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 			{
 				Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
 
-				return targets.Result.PickRandom(targets)!;
+				return targets == 1 ? targets[0] : targets.Result.PickRandom(targets)!;
 			}
 		}
 	}
