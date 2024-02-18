@@ -22,7 +22,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.Scriptabl
 		public override Collider GetTargetNonAlloc(Vector3 weaponPosition, NoAllocArrayResult<Collider> targets)
 		{
 			Debug.Assert(targets > 0, $"{nameof(targets.Size)} must be greater than 0.");
-			
+
 			var result = targets[0];
 
 			if (targets == 1)
