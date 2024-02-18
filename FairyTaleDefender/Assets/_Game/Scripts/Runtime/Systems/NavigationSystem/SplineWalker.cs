@@ -75,5 +75,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 
 			return (position, rotation);
 		}
+
+		public float GetTimeToReachSplineEnd()
+		{
+			return (1 - _normalizedDistance) * _totalDistance / MovementSpeed;
+		}
 	}
 }
