@@ -91,6 +91,34 @@ MonoBehaviour:
     m_Key: Gameplay/GameOverCanvas/Panel/LoadSceneButtons/LoadNextLevelButton/Text
     m_Metadata:
       m_Items: []
+  - m_Id: 186643542330740736
+    m_Key: Tower/TargetType/First
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186643645133131776
+    m_Key: Tower/TargetType/Last
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186697680867463168
+    m_Key: Tower/TargetType/Closest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698398529654784
+    m_Key: Tower/TargetType/Random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698573167890432
+    m_Key: Tower/TargetType/HighestHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698867343790080
+    m_Key: Tower/TargetType/LowestHP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186709683065491456
+    m_Key: Tower/Target
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

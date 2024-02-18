@@ -99,6 +99,34 @@ MonoBehaviour:
     m_Localized: "N\xE4chsten Level spielen"
     m_Metadata:
       m_Items: []
+  - m_Id: 186643645133131776
+    m_Localized: Letze
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186643542330740736
+    m_Localized: Erste
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186697680867463168
+    m_Localized: "N\xE4heste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698398529654784
+    m_Localized: "Zuf\xE4llig"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698573167890432
+    m_Localized: "H\xF6chste LP"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698867343790080
+    m_Localized: Wenigste LP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186709683065491456
+    m_Localized: Ziel
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

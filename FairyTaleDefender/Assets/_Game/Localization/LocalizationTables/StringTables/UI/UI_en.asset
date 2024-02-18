@@ -95,6 +95,34 @@ MonoBehaviour:
     m_Localized: Play next level
     m_Metadata:
       m_Items: []
+  - m_Id: 186643542330740736
+    m_Localized: First
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186643645133131776
+    m_Localized: Last
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186697680867463168
+    m_Localized: Closest
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698398529654784
+    m_Localized: Random
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698573167890432
+    m_Localized: Highest HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186698867343790080
+    m_Localized: Lowest HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 186709683065491456
+    m_Localized: Target
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
