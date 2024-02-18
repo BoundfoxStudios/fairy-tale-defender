@@ -1,10 +1,8 @@
 using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
-using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using Unity.Mathematics;
 using UnityEngine;
-using UnityEngine.Serialization;
 using UnityEngine.Splines;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
@@ -26,54 +24,52 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.NavigationSystem
 		public event Action ReachedEndOfSpline = delegate { };
 
 		/// <summary>
-		/// Overall duration it will take to traverse <see cref="_spline"/>
+		/// Total length of the given <see cref="_spline"/>
 		/// </summary>
-		private float _duration;
+		private float _totalDistance;
 
 		/// <summary>
 		/// 0..1 where 0 is the start of the spline and 1 is the end of the spline.
 		/// </summary>
-		private float _normalizedTime;
+		private float _normalizedDistance;
 
-		private float _elapsedTime;
+		private float _traversedDistance;
 		private ISpline _spline = default!;
 
 		public void Initialize(ISpline spline, float movementSpeed)
 		{
 			_spline = spline;
-			_duration = spline.GetLength() / MovementSpeed;
 			MovementSpeed = movementSpeed;
+			_totalDistance = spline.GetLength();
 		}
 
-		private void CalculateNormalizedTime(float deltaTime)
+		private void CalculateNormalizedDistance(float deltaTime)
 		{
-			_elapsedTime += deltaTime;
-
-			var t = math.min(_elapsedTime, _duration);
-			t /= _duration;
-
-			_normalizedTime = math.floor(_normalizedTime) + t;
+			_traversedDistance += deltaTime * MovementSpeed;
+			_normalizedDistance = math.clamp((_traversedDistance / _totalDistance), 0, 1);
 		}
 
 		private void FixedUpdate()
 		{
-			CalculateNormalizedTime(Time.deltaTime * MovementSpeed);
+			CalculateNormalizedDistance(Time.deltaTime);
 
-			var (position, rotation) = EvaluateSpline(_normalizedTime);
+			var (position, rotation) = EvaluateSpline(_normalizedDistance);
 
 			Rigidbody.Move(position, Quaternion.Euler(0, rotation.eulerAngles.y, 0));
 
 			Gfx.localRotation = Quaternion.Euler(rotation.eulerAngles.x, 0, 0);
 
-			if (_normalizedTime > 1)
+			// ReSharper disable once CompareOfFloatsByEqualityOperator
+			// Justification: Value is clamped, so we know it will be actually 1.
+			if (_normalizedDistance == 1)
 			{
 				ReachedEndOfSpline();
 			}
 		}
 
-		private (float3 Position, Quaternion Rotation) EvaluateSpline(float normalizedTime)
+		private (float3 Position, Quaternion Rotation) EvaluateSpline(float normalizedDistance)
 		{
-			WaySplineRuntimeAnchor.ItemSafe.Evaluate(_spline, normalizedTime, out var position, out var tangent, out _);
+			WaySplineRuntimeAnchor.ItemSafe.Evaluate(_spline, normalizedDistance, out var position, out var tangent, out _);
 
 			var rotation = tangent.Equals(float3.zero) ? Quaternion.identity : Quaternion.LookRotation(tangent);
 
