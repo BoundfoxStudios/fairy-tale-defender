@@ -5,7 +5,7 @@ using UnityEngine;
 namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.Targeting.ScriptableObjects
 {
 	/// <summary>
-	/// Target type for selecting closest target.
+	/// Target type for selecting closest target in relation to weapon.
 	/// </summary>
 	// We don't need more than one instance.
 	// [CreateAssetMenu(fileName = "ClosestTargetType", menuName = Constants.MenuNames.Targeting + "/Closest Target Type")]
