@@ -127,6 +127,18 @@ MonoBehaviour:
     m_Key: Gameplay/Resume
     m_Metadata:
       m_Items: []
+  - m_Id: 189177069089755136
+    m_Key: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189177179810992128
+    m_Key: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189196035145240576
+    m_Key: ConfirmReturnToMainMenu
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

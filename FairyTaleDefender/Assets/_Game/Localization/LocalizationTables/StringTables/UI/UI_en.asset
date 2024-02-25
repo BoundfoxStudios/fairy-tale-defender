@@ -103,6 +103,19 @@ MonoBehaviour:
     m_Localized: Resume
     m_Metadata:
       m_Items: []
+  - m_Id: 189177069089755136
+    m_Localized: Confirm
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189177179810992128
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189196035145240576
+    m_Localized: Are you sure you want to return to main menu? Your current progress
+      will be lost.
+    m_Metadata:
+      m_Items: []
   - m_Id: 186643542330740736
     m_Localized: First
     m_Metadata:

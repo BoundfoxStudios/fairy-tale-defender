@@ -135,6 +135,19 @@ MonoBehaviour:
     m_Localized: Ziel
     m_Metadata:
       m_Items: []
+  - m_Id: 189177069089755136
+    m_Localized: "Best\xE4tigen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189177179810992128
+    m_Localized: Abbrechen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189196035145240576
+    m_Localized: "M\xF6chtest du wirklich zum Hauptmen\xFC zur\xFCckkehren? Dein
+      aktueller Fortschritt geht dabei verloren."
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
