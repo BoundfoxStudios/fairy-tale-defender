@@ -46,6 +46,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PauseGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""1867b1a0-9b96-4fa0-88e2-bf87ab22f962"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -189,6 +198,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
                     ""action"": ""BuildTower"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""043322e2-2bc1-4580-855a-bccc542b4e7c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""PauseGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1033,6 +1053,34 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Pause"",
+            ""id"": ""0191dbda-1912-4c31-853e-026a14793e4b"",
+            ""actions"": [
+                {
+                    ""name"": ""ResumeGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""8d262aa7-4929-4b46-ade1-95b8da44453e"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""b68e6a99-0399-431c-ab3a-5709419d504c"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""ResumeGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -1058,6 +1106,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             m_Gameplay = asset.FindActionMap("Gameplay", throwIfNotFound: true);
             m_Gameplay_Click = m_Gameplay.FindAction("Click", throwIfNotFound: true);
             m_Gameplay_BuildTower = m_Gameplay.FindAction("BuildTower", throwIfNotFound: true);
+            m_Gameplay_PauseGame = m_Gameplay.FindAction("PauseGame", throwIfNotFound: true);
             // UI
             m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
             m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1086,6 +1135,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             // UIEffects
             m_UIEffects = asset.FindActionMap("UIEffects", throwIfNotFound: true);
             m_UIEffects_Position = m_UIEffects.FindAction("Position", throwIfNotFound: true);
+            // Pause
+            m_Pause = asset.FindActionMap("Pause", throwIfNotFound: true);
+            m_Pause_ResumeGame = m_Pause.FindAction("ResumeGame", throwIfNotFound: true);
         }
 
         public void Dispose()
@@ -1149,12 +1201,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         private List<IGameplayActions> m_GameplayActionsCallbackInterfaces = new List<IGameplayActions>();
         private readonly InputAction m_Gameplay_Click;
         private readonly InputAction m_Gameplay_BuildTower;
+        private readonly InputAction m_Gameplay_PauseGame;
         public struct GameplayActions
         {
             private @GameInput m_Wrapper;
             public GameplayActions(@GameInput wrapper) { m_Wrapper = wrapper; }
             public InputAction @Click => m_Wrapper.m_Gameplay_Click;
             public InputAction @BuildTower => m_Wrapper.m_Gameplay_BuildTower;
+            public InputAction @PauseGame => m_Wrapper.m_Gameplay_PauseGame;
             public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -1170,6 +1224,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                 @BuildTower.started += instance.OnBuildTower;
                 @BuildTower.performed += instance.OnBuildTower;
                 @BuildTower.canceled += instance.OnBuildTower;
+                @PauseGame.started += instance.OnPauseGame;
+                @PauseGame.performed += instance.OnPauseGame;
+                @PauseGame.canceled += instance.OnPauseGame;
             }
 
             private void UnregisterCallbacks(IGameplayActions instance)
@@ -1180,6 +1237,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                 @BuildTower.started -= instance.OnBuildTower;
                 @BuildTower.performed -= instance.OnBuildTower;
                 @BuildTower.canceled -= instance.OnBuildTower;
+                @PauseGame.started -= instance.OnPauseGame;
+                @PauseGame.performed -= instance.OnPauseGame;
+                @PauseGame.canceled -= instance.OnPauseGame;
             }
 
             public void RemoveCallbacks(IGameplayActions instance)
@@ -1531,6 +1591,52 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
             }
         }
         public UIEffectsActions @UIEffects => new UIEffectsActions(this);
+
+        // Pause
+        private readonly InputActionMap m_Pause;
+        private List<IPauseActions> m_PauseActionsCallbackInterfaces = new List<IPauseActions>();
+        private readonly InputAction m_Pause_ResumeGame;
+        public struct PauseActions
+        {
+            private @GameInput m_Wrapper;
+            public PauseActions(@GameInput wrapper) { m_Wrapper = wrapper; }
+            public InputAction @ResumeGame => m_Wrapper.m_Pause_ResumeGame;
+            public InputActionMap Get() { return m_Wrapper.m_Pause; }
+            public void Enable() { Get().Enable(); }
+            public void Disable() { Get().Disable(); }
+            public bool enabled => Get().enabled;
+            public static implicit operator InputActionMap(PauseActions set) { return set.Get(); }
+            public void AddCallbacks(IPauseActions instance)
+            {
+                if (instance == null || m_Wrapper.m_PauseActionsCallbackInterfaces.Contains(instance)) return;
+                m_Wrapper.m_PauseActionsCallbackInterfaces.Add(instance);
+                @ResumeGame.started += instance.OnResumeGame;
+                @ResumeGame.performed += instance.OnResumeGame;
+                @ResumeGame.canceled += instance.OnResumeGame;
+            }
+
+            private void UnregisterCallbacks(IPauseActions instance)
+            {
+                @ResumeGame.started -= instance.OnResumeGame;
+                @ResumeGame.performed -= instance.OnResumeGame;
+                @ResumeGame.canceled -= instance.OnResumeGame;
+            }
+
+            public void RemoveCallbacks(IPauseActions instance)
+            {
+                if (m_Wrapper.m_PauseActionsCallbackInterfaces.Remove(instance))
+                    UnregisterCallbacks(instance);
+            }
+
+            public void SetCallbacks(IPauseActions instance)
+            {
+                foreach (var item in m_Wrapper.m_PauseActionsCallbackInterfaces)
+                    UnregisterCallbacks(item);
+                m_Wrapper.m_PauseActionsCallbackInterfaces.Clear();
+                AddCallbacks(instance);
+            }
+        }
+        public PauseActions @Pause => new PauseActions(this);
         private int m_KeyboardMouseSchemeIndex = -1;
         public InputControlScheme KeyboardMouseScheme
         {
@@ -1544,6 +1650,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         {
             void OnClick(InputAction.CallbackContext context);
             void OnBuildTower(InputAction.CallbackContext context);
+            void OnPauseGame(InputAction.CallbackContext context);
         }
         public interface IUIActions
         {
@@ -1577,6 +1684,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
         public interface IUIEffectsActions
         {
             void OnPosition(InputAction.CallbackContext context);
+        }
+        public interface IPauseActions
+        {
+            void OnResumeGame(InputAction.CallbackContext context);
         }
     }
 }

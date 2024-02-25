@@ -23,6 +23,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		public CameraActionsSO CameraActions { get; private set; } = default!;
 
 		[field: SerializeField]
+		public PauseActionsSO PauseActions { get; private set; } = default!;
+
+		[field: SerializeField]
 		public UIEffectsActionsSO UIEffectsActions { get; private set; } = default!;
 
 		[field: Header("Listening Channels")]
@@ -47,6 +50,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 		[field: SerializeField]
 		private LevelFinishedEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		public BoolEventChannelSO TogglePauseEventChannel { get; private set; } = default!;
+
 		private GameInput? _gameInput;
 		private GameInput GameInput => _gameInput.EnsureOrThrow();
 
@@ -65,6 +71,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 				_gameInput.Tooltips.SetCallbacks(TooltipActions);
 				_gameInput.Camera.SetCallbacks(CameraActions);
 				_gameInput.UIEffects.SetCallbacks(UIEffectsActions);
+				_gameInput.Pause.SetCallbacks(PauseActions);
 			}
 
 			_gameInput.UIEffects.Enable();
@@ -76,6 +83,31 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			HideTooltipEventChannel.Raised += HideTooltip;
 			LoadSceneEventChannel.Raised += DisableAllInputInLoadScreen;
 			LevelFinishedEventChannel.Raised += LevelFinished;
+			TogglePauseEventChannel.Raised += TogglePause;
+		}
+
+		private void TogglePause(bool paused)
+		{
+			if (paused)
+			{
+				DisableGameplayInput();
+				EnablePauseInput();
+			}
+			else
+			{
+				DisablePauseInput();
+				EnableGameplayInput();
+			}
+		}
+
+		private void DisablePauseInput()
+		{
+			GameInput.Pause.Disable();
+		}
+
+		private void EnablePauseInput()
+		{
+			GameInput.Pause.Enable();
 		}
 
 		private void LevelFinished(LevelFinishedEventChannelSO.EventArgs _)
@@ -113,6 +145,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			HideTooltipEventChannel.Raised -= HideTooltip;
 			LoadSceneEventChannel.Raised -= DisableAllInputInLoadScreen;
 			LevelFinishedEventChannel.Raised -= LevelFinished;
+			TogglePauseEventChannel.Raised -= TogglePause;
 
 			DisableAllInput();
 		}

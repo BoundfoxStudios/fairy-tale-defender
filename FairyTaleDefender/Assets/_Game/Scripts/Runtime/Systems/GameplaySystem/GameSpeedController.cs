@@ -21,17 +21,23 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 		[field: SerializeField]
 		private LevelFinishedEventChannelSO LevelFinishedEventChannel { get; set; } = default!;
 
+		[field: SerializeField]
+		public BoolEventChannelSO TogglePauseEventChannel { get; private set; } = default!;
+
+		private float _selectedGameSpeed = 1;
 
 		private void OnEnable()
 		{
 			LevelFinishedEventChannel.Raised += LevelFinished;
 			GameSpeedToggleButtonGroup.IndexChanged += SetGameSpeed;
+			TogglePauseEventChannel.Raised += TogglePause;
 		}
 
 		private void OnDisable()
 		{
 			LevelFinishedEventChannel.Raised -= LevelFinished;
 			GameSpeedToggleButtonGroup.IndexChanged -= SetGameSpeed;
+			TogglePauseEventChannel.Raised -= TogglePause;
 		}
 
 		private void Awake()
@@ -51,7 +57,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 
 		private void SetGameSpeed(int buttonIndex)
 		{
-			SetSpeed(buttonIndex + 1);
+			_selectedGameSpeed = buttonIndex + 1;
+			SetSpeed(_selectedGameSpeed);
+		}
+
+		private void TogglePause(bool paused)
+		{
+			SetSpeed(paused ? 0 : _selectedGameSpeed);
 		}
 
 		private void LevelFinished(LevelFinishedEventChannelSO.EventArgs _)
