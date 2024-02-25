@@ -99,6 +99,14 @@ MonoBehaviour:
     m_Localized: "N\xE4chsten Level spielen"
     m_Metadata:
       m_Items: []
+  - m_Id: 189172796931084288
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189174140366655488
+    m_Localized: Weiterspielen
+    m_Metadata:
+      m_Items: []
   - m_Id: 186643645133131776
     m_Localized: Letze
     m_Metadata:

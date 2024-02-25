@@ -20,6 +20,8 @@ MonoBehaviour:
     type: 2}
   <CameraActions>k__BackingField: {fileID: 11400000, guid: eec0673adfd429545996670232e0b223,
     type: 2}
+  <PauseActions>k__BackingField: {fileID: 11400000, guid: 0c17e16a80f9c1e4b813df0c76be3455,
+    type: 2}
   <UIEffectsActions>k__BackingField: {fileID: 11400000, guid: 5b4a47b535e464e7a8283880d633e7a2,
     type: 2}
   <EnterBuildModeEventChannel>k__BackingField: {fileID: 11400000, guid: ba08fca58cb80430883e7a626ae9d678,
@@ -36,5 +38,5 @@ MonoBehaviour:
     type: 2}
   <LevelFinishedEventChannel>k__BackingField: {fileID: 11400000, guid: c3d7b13c70aad0f42b56364a3244ba0f,
     type: 2}
-  <TogglePauseGameEventChannel>k__BackingField: {fileID: 11400000, guid: 66827b6bd9e71f94aaf86829f2d8fb32,
+  <TogglePauseEventChannel>k__BackingField: {fileID: 11400000, guid: 66827b6bd9e71f94aaf86829f2d8fb32,
     type: 2}
