@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e38195d7ec498fbd649eb0ce837ebd, type: 3}
   m_Name: TogglePause_EventChannel
   m_EditorClassIdentifier: 
-  Description: 
+  Description: Triggered whener the game changes pause state. Parameter describes
+    the new state the game is in.

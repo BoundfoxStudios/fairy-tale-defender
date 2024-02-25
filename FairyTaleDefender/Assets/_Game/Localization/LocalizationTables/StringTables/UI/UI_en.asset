@@ -95,6 +95,14 @@ MonoBehaviour:
     m_Localized: Play next level
     m_Metadata:
       m_Items: []
+  - m_Id: 189172796931084288
+    m_Localized: Pause
+    m_Metadata:
+      m_Items: []
+  - m_Id: 189174140366655488
+    m_Localized: Resume
+    m_Metadata:
+      m_Items: []
   - m_Id: 186643542330740736
     m_Localized: First
     m_Metadata:
