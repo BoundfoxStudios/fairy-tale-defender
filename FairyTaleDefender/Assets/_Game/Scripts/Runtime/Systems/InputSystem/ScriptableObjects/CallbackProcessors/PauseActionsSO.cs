@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using UnityEngine;
 using UnityEngine.InputSystem;
