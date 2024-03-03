@@ -176,7 +176,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 				var meta = await PrepareSaveGameAsync(name: "Unit Test");
 
 				// Temper with the file
-				await File.AppendAllLinesAsync(Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName), new []{" "});
+				await File.AppendAllLinesAsync(Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName),
+					new[] { " " });
 
 				var sut = ScriptableObject.CreateInstance<SaveGameManagerSO>();
 
@@ -184,7 +185,5 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 
 				saveGame.Should().BeNull();
 			});
-
-
 	}
 }
