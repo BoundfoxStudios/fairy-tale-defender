@@ -1665,7 +1665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 763099576}
   m_Layer: 0
-  m_Name: ----- UI -----
+  m_Name: '----- UI -----'
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2149,7 +2149,7 @@ GameObject:
   m_Component:
   - component: {fileID: 992338361}
   m_Layer: 0
-  m_Name: ----- MANAGERS -----
+  m_Name: '----- MANAGERS -----'
   m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3295,11 +3295,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1466535977}
+    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 5503584644410776870,
+          guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}, insertIndex: -1, addedObject: {
+          fileID: 1466535977}}]
   m_SourcePrefab: {fileID: 100100000, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
 --- !u!224 &1466535974 stripped
 RectTransform:
@@ -7262,11 +7260,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5503584644410776870, guid: f044ccc8a6e784128a33f514b5385ffe,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2065371545}
+    m_AddedComponents: [{targetCorrespondingSourceObject: {fileID: 5503584644410776870,
+          guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}, insertIndex: -1, addedObject: {
+          fileID: 2065371545}}]
   m_SourcePrefab: {fileID: 100100000, guid: f044ccc8a6e784128a33f514b5385ffe, type: 3}
 --- !u!224 &2065371542 stripped
 RectTransform:
