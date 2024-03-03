@@ -1,11 +1,13 @@
+using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace BoundfoxStudios.FairyTaleDefender
+namespace BoundfoxStudios.FairyTaleDefender.UI
 {
+	[AddComponentMenu(Constants.MenuNames.UI + "/" + nameof(GameOverUI))]
     public class GameOverUI : MonoBehaviour
     {
 	    [field: Header("References")]
