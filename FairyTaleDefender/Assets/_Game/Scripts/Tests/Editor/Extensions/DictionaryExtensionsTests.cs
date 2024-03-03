@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
@@ -12,7 +12,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Extensions
 		[Test]
 		public void TryAddLazy_DoesNotAddItemToDictionary_IfKeyAlreadyExists()
 		{
-			var sut = new Dictionary<int, string> { {1, "1"} };
+			var sut = new Dictionary<int, string> { { 1, "1" } };
 			var newEntry = 1;
 
 			sut.TryAddLazy(newEntry, () => newEntry.ToString());
@@ -23,7 +23,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Extensions
 		[Test]
 		public void TryAddLazy_DoesAddItemToDictionary_IfKeyIsNew()
 		{
-			var sut = new Dictionary<int, string> { {1, "1"} };
+			var sut = new Dictionary<int, string> { { 1, "1" } };
 			var newEntry = 2;
 			var kvp = new KeyValuePair<int, string>(newEntry, newEntry.ToString());
 
