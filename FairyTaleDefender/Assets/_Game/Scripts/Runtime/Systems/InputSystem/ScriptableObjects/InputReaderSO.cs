@@ -152,7 +152,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 
 		private void GameplayStart()
 		{
-			EnableGameplayInputDelayed();
+			EnableGameplayInput();
 		}
 
 		private void DisableAllInput()
@@ -181,14 +181,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem.ScriptableObject
 			GameInput.Camera.Enable();
 		}
 
-		private void EnableGameplayInputDelayed()
-		{
-			GameInput.BuildSystem.Disable();
-			EnableGameplayInput();
-		}
-
 		private void EnableGameplayInput()
 		{
+			GameInput.BuildSystem.Disable();
 			GameInput.Gameplay.Enable();
 			GameInput.UI.Enable();
 			GameInput.Camera.Enable();

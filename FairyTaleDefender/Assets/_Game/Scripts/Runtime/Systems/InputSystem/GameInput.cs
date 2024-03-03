@@ -204,7 +204,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.InputSystem
                 {
                     ""name"": """",
                     ""id"": ""043322e2-2bc1-4580-855a-bccc542b4e7c"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/p"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
