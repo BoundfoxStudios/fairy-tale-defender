@@ -10,11 +10,19 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.ScriptableObjects
 	/// </summary>
 	public abstract class IdentifiableSO : ScriptableObject, IEquatable<IdentifiableSO>
 	{
-		[field: SerializeField, HideInInspector]
+		[field: HideInInspector]
+		[field: SerializeField]
 		// ReSharper disable once InconsistentNaming
 		private string _guid { get; set; } = string.Empty;
 
+		// Unity should not serialize this field per default.
+		// However, it does do _something_ and initializes the field with a non-null-value (even when using "= null").
+		// The non-null-value is a ScriptableObjectIdentity with an empty GUID.
+		// Therefor, the property "Identity" does not create a new identity anymore with the correct GUID.
+		// By using [NonSerialized] this behavior stops and works as expected.
+		[NonSerialized]
 		private ScriptableObjectIdentity? _identity;
+
 		public ScriptableObjectIdentity Identity => _identity ??= new() { Guid = _guid };
 
 		protected virtual void OnValidate()
