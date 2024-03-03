@@ -8,7 +8,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	{
 #if UNITY_EDITOR
 		/// <summary>
-		/// In-Editor description to let developers for what certain event instances are.
+		/// In-Editor description to let developers know what certain event instances are for.
 		/// </summary>
 		[TextArea]
 		[SerializeField]

@@ -6,7 +6,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <summary>
 	/// Event channel with an int argument.
 	/// </summary>
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Int Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Int" + Constants.MenuNames.EventChannelSuffix)]
 	public class IntEventChannelSO : EventChannelSO<int>
 	{
 		// Marker class

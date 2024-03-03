@@ -6,7 +6,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <summary>
 	/// Event channel with a float argument.
 	/// </summary>
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Float Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Float" + Constants.MenuNames.EventChannelSuffix)]
 	public class FloatEventChannelSO : EventChannelSO<float>
 	{
 		// Marker class

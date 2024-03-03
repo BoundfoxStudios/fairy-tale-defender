@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Audio Cue Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Audio Cue" + Constants.MenuNames.EventChannelSuffix)]
 	public class AudioCueEventChannelSO : EventChannelSO<AudioCueSO>
 	{
 		// Marker Class

@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
-	[CreateAssetMenu(fileName = "Enemy_EventChannel", menuName = Constants.MenuNames.Events + "/Enemy Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Enemy" + Constants.MenuNames.EventChannelSuffix)]
 	public class EnemyEventChannelSO : EventChannelSO<Enemy>
 	{
 		// Marker Class

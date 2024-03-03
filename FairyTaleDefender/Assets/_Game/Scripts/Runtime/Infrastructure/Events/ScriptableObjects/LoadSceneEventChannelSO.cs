@@ -7,7 +7,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <summary>
 	/// Event that can be used whenever a scene needs to be loaded, e.g. <see cref="MenuSO"/>.
 	/// </summary>
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Load Scene Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Load Scene" + Constants.MenuNames.EventChannelSuffix)]
 	public class LoadSceneEventChannelSO : EventChannelSO<LoadSceneEventChannelSO.EventArgs>
 	{
 		public struct EventArgs

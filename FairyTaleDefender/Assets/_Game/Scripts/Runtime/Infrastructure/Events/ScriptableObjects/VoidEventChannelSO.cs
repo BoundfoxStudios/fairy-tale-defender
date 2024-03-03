@@ -6,7 +6,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <summary>
 	/// Event channel without any arguments.
 	/// </summary>
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Void Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Void" + Constants.MenuNames.EventChannelSuffix)]
 	public class VoidEventChannelSO : EventChannelSO
 	{
 		// Marker class
