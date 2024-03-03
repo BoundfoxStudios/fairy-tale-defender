@@ -34,6 +34,9 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Confirmation
 
 		[field: Header("Settings")]
 		[field: SerializeField]
+		private LocalizedString? ConfirmationMessage { get; set; }
+
+		[field: SerializeField]
 		private UnityEvent? ConfirmAction { get; set; }
 
 		[field: SerializeField]
@@ -41,6 +44,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Confirmation
 
 		public void Open()
 		{
+			ConfirmationText.text = ConfirmationMessage!.GetLocalizedString();
 			ConfirmButton.onClick.AddListener(ConfirmButtonPressed);
 			CancelButton.onClick.AddListener(CancelButtonPressed);
 
@@ -49,7 +53,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Confirmation
 
 		public void Open(LocalizedString confirmationMessage, UnityEvent confirmAction, UnityEvent cancelAction)
 		{
-			ConfirmationText.text = confirmationMessage.GetLocalizedString();
+			ConfirmationMessage = confirmationMessage;
 			ConfirmAction = confirmAction;
 			CancelAction = cancelAction;
 
