@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using FluentAssertions;
 using NUnit.Framework;
