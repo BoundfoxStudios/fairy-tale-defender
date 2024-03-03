@@ -9,7 +9,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <remarks>
 	/// Indicates if a level has more waves to spawn in <see cref="EventArgs"/>
 	/// </remarks>
-	[CreateAssetMenu(fileName = "WaveSpawned_EventChannel", menuName = Constants.MenuNames.Events + "/Wave Spawned Event Channel", order = 0)]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Wave Spawned" + Constants.MenuNames.EventChannelSuffix,
+		order = 0)]
 	public class WaveSpawnedEventChannelSO : EventChannelSO<WaveSpawnedEventChannelSO.EventArgs>
 	{
 		public struct EventArgs

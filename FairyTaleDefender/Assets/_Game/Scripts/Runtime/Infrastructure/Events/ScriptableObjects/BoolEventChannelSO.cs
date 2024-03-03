@@ -6,7 +6,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObje
 	/// <summary>
 	/// Event channel with a bool argument.
 	/// </summary>
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Bool Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Bool" + Constants.MenuNames.EventChannelSuffix)]
 	public class BoolEventChannelSO : EventChannelSO<bool>
 	{
 		// Marker class

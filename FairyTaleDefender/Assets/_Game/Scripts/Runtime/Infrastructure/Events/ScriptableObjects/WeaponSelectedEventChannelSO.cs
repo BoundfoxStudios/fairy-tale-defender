@@ -5,7 +5,8 @@ using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects
 {
-	[CreateAssetMenu(menuName = Constants.MenuNames.Events + "/Tower Selected Event Channel")]
+	[CreateAssetMenu(fileName = Constants.FileNames.EventChannelSuffix,
+		menuName = Constants.MenuNames.Events + "/Tower Selected" + Constants.MenuNames.EventChannelSuffix)]
 	public class WeaponSelectedEventChannelSO : EventChannelSO<WeaponSelectedEventChannelSO.EventArgs>
 	{
 		public struct EventArgs
