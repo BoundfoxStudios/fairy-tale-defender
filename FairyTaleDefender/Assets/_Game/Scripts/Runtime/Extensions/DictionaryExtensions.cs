@@ -8,6 +8,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Extensions
 		public static void TryAddLazy<TKey, TValue>(this IDictionary<TKey, TValue> dictionary, TKey key,
 			Func<TValue> valueGetter)
 		{
+			if (dictionary == null)
+			{
+				throw new NullReferenceException();
+			}
+
 			if (dictionary.ContainsKey(key))
 			{
 				return;
