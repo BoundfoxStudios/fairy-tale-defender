@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using TMPro;
 using UnityEngine;
@@ -41,6 +42,11 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.Confirmation
 
 		[field: SerializeField]
 		private UnityEvent? CancelAction { get; set; }
+
+		private void Awake()
+		{
+			Panel.SetActive(false);
+		}
 
 		public void Open()
 		{

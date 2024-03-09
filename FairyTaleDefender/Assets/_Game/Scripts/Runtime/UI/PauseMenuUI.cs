@@ -1,3 +1,4 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using UnityEngine;
@@ -14,6 +15,11 @@ namespace BoundfoxStudios.FairyTaleDefender.UI
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BoolEventChannelSO TogglePauseEventChannel { get; set; } = default!;
+
+		private void Awake()
+		{
+			PauseMenu.SetActive(false);
+		}
 
 		private void OnEnable()
 		{

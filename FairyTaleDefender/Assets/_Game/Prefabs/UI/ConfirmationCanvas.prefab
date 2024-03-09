@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1662868719705572545
 RectTransform:
   m_ObjectHideFlags: 0
@@ -195,12 +195,24 @@ MonoBehaviour:
   <ConfirmButton>k__BackingField: {fileID: 3365150559565170480}
   <CancelButton>k__BackingField: {fileID: 875061096684881248}
   <ConfirmationText>k__BackingField: {fileID: 8108933160500135282}
+  <ConfirmationMessage>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <ConfirmAction>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
   <CancelAction>k__BackingField:
     m_PersistentCalls:
       m_Calls: []
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &5754879546636062559
 GameObject:
   m_ObjectHideFlags: 0

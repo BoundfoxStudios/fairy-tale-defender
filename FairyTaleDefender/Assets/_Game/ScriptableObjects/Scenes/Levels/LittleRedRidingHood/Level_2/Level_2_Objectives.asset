@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1523b62ce37f41e4a1099a2540e0e316, type: 3}
-  m_Name: Level_1_Objectives
+  m_Name: Level_2_Objectives
   m_EditorClassIdentifier: 
   <Objectives>k__BackingField:
   - {fileID: 11400000, guid: 737b62d40be466c4d8f221cc253b21ad, type: 2}

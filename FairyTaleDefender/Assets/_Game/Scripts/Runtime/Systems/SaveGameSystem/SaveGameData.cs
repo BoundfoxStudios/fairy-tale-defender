@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
@@ -13,5 +14,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 		/// Identifies the last played level.
 		/// </summary>
 		public ScriptableObjectIdentity? LastLevel;
+
+		/// <summary>
+		/// List of all unlocked levels.
+		/// </summary>
+		public List<ScriptableObjectIdentity> UnlockedLevels = new();
 	}
 }

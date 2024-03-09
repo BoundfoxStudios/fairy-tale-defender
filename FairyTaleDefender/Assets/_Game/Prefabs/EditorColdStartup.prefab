@@ -24,6 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510804133511062543}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,7 +32,6 @@ Transform:
   m_Children:
   - {fileID: 6965031437306754027}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &510804133511062542
 MonoBehaviour:
@@ -45,11 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d3466fc35504947b6b6551d241659ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <LoadDefaultSaveGame>k__BackingField: 1
   <ThisScene>k__BackingField: {fileID: 0}
   <SteamIntegrator>k__BackingField: {fileID: 5540902927536327495}
   <Settings>k__BackingField: {fileID: 11400000, guid: db4e4a6d0dbbead4db9135f4b61da8ac,
     type: 2}
   <PersistentManagersScene>k__BackingField: {fileID: 11400000, guid: 5e5ad133a99a54988a82ec22840b89d3,
+    type: 2}
+  <SaveGameRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: 6a1d6f927797d4aec827533611c461ab,
+    type: 2}
+  <SaveGameManager>k__BackingField: {fileID: 11400000, guid: 5b53e7cde7f494831a39bde1efa4db97,
+    type: 2}
+  <AllLevelPacks>k__BackingField: {fileID: 11400000, guid: 8b1004765cea142f196f2750abc90c4e,
     type: 2}
   <NotifyColdStartupEventChannel>k__BackingField: {fileID: 11400000, guid: b0e2d50b556474f6f9421ca8a2423cdb,
     type: 2}
@@ -77,13 +84,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314642737172024741}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 510804133511062641}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5540902927536327495
 MonoBehaviour:

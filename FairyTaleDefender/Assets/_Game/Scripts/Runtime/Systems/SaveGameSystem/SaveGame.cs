@@ -10,5 +10,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 			Meta = meta;
 			Data = data;
 		}
+
+		public string MetaFilePath => Meta.MetaFilePath;
+		public string DataFilePath => Meta.DataFilePath;
 	}
 }

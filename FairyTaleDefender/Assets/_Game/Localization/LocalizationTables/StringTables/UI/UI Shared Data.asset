@@ -139,6 +139,14 @@ MonoBehaviour:
     m_Key: ConfirmReturnToMainMenu
     m_Metadata:
       m_Items: []
+  - m_Id: 196739899258298368
+    m_Key: ReturnToLevelSelection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196740023648772096
+    m_Key: ConfirmReturnToLevelSelection
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

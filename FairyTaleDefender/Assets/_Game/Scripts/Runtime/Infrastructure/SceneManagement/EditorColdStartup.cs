@@ -1,6 +1,9 @@
+using System.Collections.Generic;
+using System.Linq;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SettingsSystem.ScriptableObjects;
 using Cysharp.Threading.Tasks;
 using JetBrains.Annotations;
@@ -18,6 +21,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 	public class EditorColdStartup : MonoBehaviour
 	{
 #if UNITY_EDITOR
+		[field: Header("Settings")]
+		[field: SerializeField]
+		private bool LoadDefaultSaveGame { get; set; } = default!;
+
 		[field: Header("References")]
 		[field: SerializeField]
 		private SceneSO ThisScene { get; set; } = default!;
@@ -30,6 +37,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 
 		[field: SerializeField]
 		private PersistentManagersSceneSO PersistentManagersScene { get; set; } = default!;
+
+		[field: SerializeField]
+		private SaveGameRuntimeAnchorSO SaveGameRuntimeAnchor { get; set; } = default!;
+
+		[field: SerializeField]
+		private SaveGameManagerSO SaveGameManager { get; set; } = default!;
+
+		[field: SerializeField]
+		private AllLevelPacksSO AllLevelPacks { get; set; } = default!;
 
 		[field: Header("Broadcasting Channels")]
 		[field: SerializeField]
@@ -54,11 +70,29 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement
 				return;
 			}
 
+			if (LoadDefaultSaveGame)
+			{
+				var saveGames = await SaveGameManager.ListAvailableSaveGamesAsync();
+				var saveGameMeta =
+					saveGames.SingleOrDefault(saveGame => saveGame.Name == Constants.SaveGames.DefaultSaveGameName);
+
+				var saveGame = saveGameMeta != null
+					? await SaveGameManager.LoadSaveGameAsync(saveGameMeta)
+					: await SaveGameManager.CreateSaveGameAsync(Constants.SaveGames.DefaultSaveGameName, new()
+					{
+						LastLevel = ThisScene is LevelSO ? ThisScene : AllLevelPacks.LevelPacks[0].Levels[0],
+						UnlockedLevels = new() { ThisScene is LevelSO ? ThisScene : AllLevelPacks.LevelPacks[0].Levels[0] }
+					});
+
+				SaveGameRuntimeAnchor.Item = saveGame;
+			}
+
 			SteamIntegrator.Integrate();
 
 			await Settings.LoadAsync();
 
-			var persistentManagersSceneInstance = await PersistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
+			var persistentManagersSceneInstance =
+				await PersistentManagersScene.SceneReference.LoadSceneAsync(LoadSceneMode.Additive);
 
 			// Because we load the Steam API here and not via the PersistentManager scene, we move the GameObject there
 			// in order to survive the unloading of the initialization scene.

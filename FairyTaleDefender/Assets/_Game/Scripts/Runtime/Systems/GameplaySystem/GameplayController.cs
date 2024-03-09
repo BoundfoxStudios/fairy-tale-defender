@@ -1,5 +1,8 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
+using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObjects;
 using UnityEngine;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
@@ -8,6 +11,15 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 	public class GameplayController : MonoBehaviour
 	{
 		[field: Header("References")]
+		[field: SerializeField]
+		private AllLevelPacksSO AllLevelPacks { get; set; } = default!;
+
+		[field: SerializeField]
+		private SaveGameRuntimeAnchorSO SaveGameRuntimeAnchor { get; set; } = default!;
+
+		[field: SerializeField]
+		private SaveGameManagerSO SaveGameManager { get; set; } = default!;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private VoidEventChannelSO SceneReadyEventChannel { get; set; } = default!;
@@ -53,6 +65,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			{
 				PlayerHasWon = playerWon
 			});
+
+			// TODO: Possibly move this somewhere else
+			// TODO: We need the information which level is currently being played.
+			var currentLevelIdentity = SaveGameRuntimeAnchor.ItemSafe.Data.LastLevel;
+			var currentLevel = AllLevelPacks.FindByIdentity(currentLevelIdentity!);
+
+			if (currentLevel.Exists() && currentLevel.NextLevel.Exists())
+			{
+				SaveGameRuntimeAnchor.ItemSafe.Data.UnlockedLevels.Add(currentLevel.NextLevel);
+			}
+
+			SaveGameManager.SaveGameAsync(SaveGameRuntimeAnchor.ItemSafe).Forget();
 		}
 
 		private void WaveSpawned(WaveSpawnedEventChannelSO.EventArgs args)
