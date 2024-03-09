@@ -35,11 +35,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Editor.Extensions
 		[Test]
 		public void TryAddLazy_DoesThrow_IfDictionaryIsNull()
 		{
-			var sut = new Dictionary<int, string>();
-			sut = null;
+			Dictionary<int, string>? sut = null;
 
 			var newEntry = 2;
-			TestDelegate action = () => sut.TryAddLazy(newEntry, () => newEntry.ToString());
+			TestDelegate action = () => sut!.TryAddLazy(newEntry, () => newEntry.ToString());
 
 			Assert.Throws<NullReferenceException>(action);
 		}
