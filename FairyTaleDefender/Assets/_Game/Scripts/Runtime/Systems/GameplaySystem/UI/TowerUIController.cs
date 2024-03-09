@@ -9,6 +9,7 @@ using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.UI.Utility;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 {
@@ -33,7 +34,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 		private StatisticDisplay StatisticsRowPrefab { get; set; } = default!;
 
 		[field: SerializeField]
-		private TextMeshProUGUI TowerNameText { get; set; } = default!;
+		private LocalizeStringEvent TowerNameLocalizeString { get; set; } = default!;
 
 		[field: SerializeField]
 		private ToggleButtonGroup TargetTypeToggleButtonGroup { get; set; } = default!;
@@ -90,7 +91,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem.UI
 			StatisticsContainer.transform.ClearChildren();
 			TowerUIContainer.SetActive(true);
 
-			TowerNameText.text = args.Tower.Name.GetLocalizedString();
+			TowerNameLocalizeString.StringReference = args.Tower.Name;
 			var targetType = _currentSelection?.Transform.GetComponentInChildren<ICanChangeTargetType>();
 
 			TargetTypeToggleButtonGroup.Index = TargetTypes.FindIndex(type => type == targetType!.TargetType);

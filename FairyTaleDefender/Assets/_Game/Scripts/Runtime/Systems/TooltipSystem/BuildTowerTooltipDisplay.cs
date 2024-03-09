@@ -4,6 +4,7 @@ using BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
@@ -11,7 +12,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 	public class BuildTowerTooltipDisplay : TooltipDisplay
 	{
 		[field: SerializeField]
-		private TextMeshProUGUI TowerName { get; set; } = default!;
+		private LocalizeStringEvent TowerNameLocalizeString { get; set; } = default!;
 
 		[field: SerializeField]
 		private TextMeshProUGUI AttackRangeText { get; set; } = default!;
@@ -25,7 +26,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 		protected override void SetTooltip<T>(T tooltip)
 		{
 			var resolvedTooltip = ResolveTooltip<IBuildTowerTooltip, T>(tooltip);
-			TowerName.text = resolvedTooltip.TowerDefinition.Name.GetLocalizedString();
+			TowerNameLocalizeString.StringReference = resolvedTooltip.TowerDefinition.Name;
 			AttackRangeText.text = GetRange(resolvedTooltip.WeaponDefinition);
 
 			// FireRate is every seconds, but we'll show fire rate per seconds to the player.
