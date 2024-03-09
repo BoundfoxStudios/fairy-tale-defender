@@ -33,12 +33,11 @@ body:
       description: Bitte selektiere Dein Betriebssystem, dass Du nutzt.
       multiple: false
       options:
-        - Windows 7
-        - Windows 8
         - Windows 10
+        - Windows 11
         - Linux (genaue Distribution bitte in der Fehlerbeschreibung angeben)
+        - macOS Sonoma (14)
         - macOS Ventura (13)
-        - macOS Monterey (12)
         - Anderes (bitte in der Fehlerbeschreibung angeben)
     validations:
       required: true
