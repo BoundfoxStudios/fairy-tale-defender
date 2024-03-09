@@ -145,7 +145,16 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 189196035145240576
     m_Localized: "M\xF6chtest du wirklich zum Hauptmen\xFC zur\xFCckkehren? Dein
-      aktueller Fortschritt geht dabei verloren."
+      aktueller Fortschritt geht dabei verloren!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196739899258298368
+    m_Localized: "Zur\xFCck zur Levelauswahl"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196740023648772096
+    m_Localized: "M\xF6chtest Du wirklich zur Levelauswahl zur\xFCckkehren? Dein
+      aktueller Fortschritt geht dabei verloren!"
     m_Metadata:
       m_Items: []
   references:

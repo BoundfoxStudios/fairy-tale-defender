@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75d455b499674b1cac2a9b33a5536c5c, type: 3}
+  m_Name: Level_2
+  m_EditorClassIdentifier: 
+  <_guid>k__BackingField: a284b07fff6934491ac43bd31a51f22f
+  <SceneReference>k__BackingField:
+    m_AssetGUID: db6b682dfb5b6466fbb3131fcc218802
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  <Name>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <Waves>k__BackingField: {fileID: 11400000, guid: 163c46e50f0594758870d5a09e50c920,
+    type: 2}
+  <Objectives>k__BackingField: {fileID: 11400000, guid: d0ee1eb17720743d288917a8906b5220,
+    type: 2}
+  <StartTowers>k__BackingField:
+  - {fileID: 11400000, guid: 0a58817823ece406480eaee4f6ee2240, type: 2}
+  - {fileID: 11400000, guid: 1c58190b0a66147d59b11dbd72d55cfd, type: 2}
+  <PlayerStartResources>k__BackingField:
+    <Health>k__BackingField: 10
+    <Coins>k__BackingField: 100
+  references:
+    version: 2
+    RefIds: []

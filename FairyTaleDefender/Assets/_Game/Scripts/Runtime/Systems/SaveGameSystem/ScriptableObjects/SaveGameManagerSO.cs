@@ -55,8 +55,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 				return null;
 			}
 
-			var saveGameData =
-				await _fileManager.ReadAsync<SaveGameData>(CreatePath(meta.Directory, Constants.SaveGames.SaveGameFileName));
+			var saveGameData = await _fileManager.ReadAsync<SaveGameData>(meta.DataFilePath);
 
 			var saveGame = new SaveGame(meta, saveGameData);
 
@@ -76,12 +75,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 
 			try
 			{
-				var saveGameFile = Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName);
-				var saveGameFilePath = await _fileManager.WriteAsync(saveGameFile, data);
+				var saveGameFilePath = await _fileManager.WriteAsync(meta.DataFilePath, data);
 
 				meta.Hash = SaveGameHash.Create(meta.Name, saveGameFilePath);
 
-				await _fileManager.WriteAsync(Path.Combine(meta.Directory, Constants.SaveGames.MetaFileName), meta);
+				await _fileManager.WriteAsync(meta.MetaFilePath, meta);
 			}
 
 			catch
@@ -91,6 +89,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 			}
 
 			return new(meta, data);
+		}
+
+		public async UniTaskVoid SaveGameAsync(SaveGame saveGame)
+		{
+			saveGame.Meta.LastPlayedDate = DateTime.Now;
+
+			var saveGameFilePath = await _fileManager.WriteAsync(saveGame.DataFilePath, saveGame.Data);
+
+			saveGame.Meta.Hash = SaveGameHash.Create(saveGame.Meta.Name, saveGameFilePath);
+
+			await _fileManager.WriteAsync(saveGame.MetaFilePath, saveGame.Meta);
 		}
 
 		public async UniTask<bool> SaveGameExistsAsync(string saveName)

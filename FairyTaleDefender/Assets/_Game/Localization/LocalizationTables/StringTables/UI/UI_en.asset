@@ -112,8 +112,8 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 189196035145240576
-    m_Localized: Are you sure you want to return to main menu? Your current progress
-      will be lost.
+    m_Localized: Are you sure you want to return to the main menu? Your current progress
+      will be lost!
     m_Metadata:
       m_Items: []
   - m_Id: 186643542330740736
@@ -142,6 +142,15 @@ MonoBehaviour:
       m_Items: []
   - m_Id: 186709683065491456
     m_Localized: Target
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196739899258298368
+    m_Localized: Return to level selection
+    m_Metadata:
+      m_Items: []
+  - m_Id: 196740023648772096
+    m_Localized: Are you sure you want to return to the level selection? Your current
+      progress will be lost!
     m_Metadata:
       m_Items: []
   references:

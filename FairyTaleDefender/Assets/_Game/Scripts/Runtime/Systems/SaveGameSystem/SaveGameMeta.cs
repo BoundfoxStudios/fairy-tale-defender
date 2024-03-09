@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using BoundfoxStudios.FairyTaleDefender.Common;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 {
@@ -13,5 +15,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem
 		public string Hash = string.Empty;
 
 		public string Directory { get; set; } = string.Empty;
+
+		public string MetaFilePath => Path.Combine(Directory, Constants.SaveGames.MetaFileName);
+		public string DataFilePath => Path.Combine(Directory, Constants.SaveGames.SaveGameFileName);
 	}
 }

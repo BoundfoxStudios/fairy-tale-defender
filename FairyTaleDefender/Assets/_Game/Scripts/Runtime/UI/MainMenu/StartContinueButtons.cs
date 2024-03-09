@@ -59,7 +59,8 @@ namespace BoundfoxStudios.FairyTaleDefender.UI.MainMenu
 			{
 				var saveGame = await SaveGameManager.CreateSaveGameAsync(Constants.SaveGames.DefaultSaveGameName, new()
 				{
-					LastLevel = AllLevelPacks.LevelPacks[0].Levels[0]
+					LastLevel = AllLevelPacks.LevelPacks[0].Levels[0],
+					UnlockedLevels = new() { AllLevelPacks.LevelPacks[0].Levels[0] }
 				});
 
 				// TODO: Needs error handling when save game is null
