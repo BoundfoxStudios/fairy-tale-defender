@@ -59,6 +59,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Extensions
 			return sb.ToString().Normalize();
 		}
 
+		/// <summary>
+		/// Transforms <paramref name="input"/> to a normalized, comparable representation.
+		/// </summary>
+		/// <returns>
+		/// A trimmed, lowercase string will be returned, which contains only a-z and 0-9
+		/// with single hyphens between words as delimiters. Diacritics will be removed.
+		/// </returns>
 		public static string Slugify(this string input) => ToSlug(input);
 	}
 }
