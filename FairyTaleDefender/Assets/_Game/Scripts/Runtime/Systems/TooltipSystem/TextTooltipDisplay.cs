@@ -1,6 +1,7 @@
 using BoundfoxStudios.FairyTaleDefender.Common;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 
 namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 {
@@ -8,12 +9,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.TooltipSystem
 	public class TextTooltipDisplay : TooltipDisplay
 	{
 		[field: SerializeField]
-		private TextMeshProUGUI Text { get; set; } = default!;
+		private LocalizeStringEvent TextLocalizeString { get; set; } = default!;
 
 		protected override void SetTooltip<T>(T tooltip)
 		{
 			var resolvedTooltip = ResolveTooltip<ITextTooltip, T>(tooltip);
-			Text.text = resolvedTooltip.Text.GetLocalizedString();
+			TextLocalizeString.StringReference = resolvedTooltip.Text;
 		}
 	}
 }
