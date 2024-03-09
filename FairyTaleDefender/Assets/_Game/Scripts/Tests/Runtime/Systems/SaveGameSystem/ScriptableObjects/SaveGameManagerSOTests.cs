@@ -33,15 +33,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 		[TearDown]
 		public void RestoreSaveGamesFolderBackup()
 		{
-			if (Directory.Exists(SaveGamesBackupPath))
+			if (!Directory.Exists(SaveGamesBackupPath))
 			{
-				if (Directory.Exists(SaveGamesPath))
-				{
-					Directory.Delete(SaveGamesPath, true);
-				}
-
-				Directory.Move(SaveGamesBackupPath, SaveGamesPath);
+				return;
 			}
+
+			if (Directory.Exists(SaveGamesPath))
+			{
+				Directory.Delete(SaveGamesPath, true);
+			}
+
+			Directory.Move(SaveGamesBackupPath, SaveGamesPath);
 		}
 
 		private async UniTask<SaveGameMeta> PrepareSaveGameAsync(bool isValid = true, string name = "1")
@@ -55,7 +57,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 			var meta = new SaveGameMeta()
 			{
 				Name = $"Unit Test Save {name}",
-				LastPlayedDate = DateTime.Now.Subtract(new TimeSpan(1)),
+				LastPlayedDate = DateTime.Now,
 				Directory = saveGamePath,
 			};
 
@@ -140,9 +142,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 			{
 				var sut = ScriptableObject.CreateInstance<SaveGameManagerSO>();
 
-				var meta = await sut.CreateSaveGameAsync("UnitTest", new());
+				var saveGame = await sut.CreateSaveGameAsync("UnitTest", new());
 
-				meta.Should().NotBeNull();
+				saveGame.Should().NotBeNull();
 			});
 
 		[UnityTest]
@@ -170,12 +172,12 @@ namespace BoundfoxStudios.FairyTaleDefender.Tests.Systems.SaveGameSystem.Scripta
 			});
 
 		[UnityTest]
-		public IEnumerator LoadSaveGame_CannotLoadWhenFileWasTemperedWith() =>
+		public IEnumerator LoadSaveGame_CannotLoadWhenFileWasTamperedWith() =>
 			UniTask.ToCoroutine(async () =>
 			{
 				var meta = await PrepareSaveGameAsync(name: "Unit Test");
 
-				// Temper with the file
+				// Tamper with the file
 				await File.AppendAllLinesAsync(Path.Combine(meta.Directory, Constants.SaveGames.SaveGameFileName),
 					new[] { " " });
 
