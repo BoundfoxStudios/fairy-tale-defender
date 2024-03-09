@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Security.Cryptography;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement;
@@ -68,7 +67,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObj
 		{
 			var slugifiedName = saveName.Slugify();
 
-			var meta = new SaveGameMeta()
+			var meta = new SaveGameMeta
 			{
 				Name = saveName,
 				LastPlayedDate = DateTime.Now,
