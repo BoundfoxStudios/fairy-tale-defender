@@ -26,11 +26,18 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 		/// </summary>
 		/// <param name="directory">The directory to list files.</param>
 		/// <returns></returns>
-		public UniTask<string[]> ListFilesAsync(string directory)
+		public async UniTask<string[]> ListFilesAsync(string directory)
 		{
-			var result = Directory.EnumerateFiles(CreateDirectoryPath(directory));
+			var path = CreateDirectoryPath(directory);
 
-			return UniTask.FromResult(result.ToArray());
+			if (!await ExistsAsync(path))
+			{
+				return Array.Empty<string>();
+			}
+
+			var result = Directory.EnumerateFiles(CreateDirectoryPath(path));
+
+			return result.ToArray();
 		}
 
 		/// <summary>
