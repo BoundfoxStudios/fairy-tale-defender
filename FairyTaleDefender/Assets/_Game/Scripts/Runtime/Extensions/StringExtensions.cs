@@ -56,7 +56,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Extensions
 				}
 			}
 
-			return (sb.ToString().Normalize(NormalizationForm.FormC));
+			return sb.ToString().Normalize();
 		}
 
 		public static string Slugify(this string input) => ToSlug(input);
