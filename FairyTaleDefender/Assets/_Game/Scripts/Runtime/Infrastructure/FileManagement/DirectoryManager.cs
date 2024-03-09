@@ -21,7 +21,6 @@ namespace BoundfoxStudios.FairyTaleDefender.Infrastructure.FileManagement
 			return UniTask.FromResult(result);
 		}
 
-
 		/// <summary>
 		/// Lists all files in the given <paramref name="directory"/>.
 		/// </summary>
