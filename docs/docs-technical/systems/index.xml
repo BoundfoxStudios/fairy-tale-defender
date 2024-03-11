@@ -160,7 +160,31 @@ Als prominentes Beispiel wäre hier die MainCamera zu nennen, diese wird öfter 
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008000">// camera.ScreenPointToRay...&lt;/span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Scene Templates</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/scene-templates/</guid><description>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div></description></item><item><title>Docs: Save Games</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/save-game-system/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/save-game-system/</guid><description>
+&lt;h2 id="speicherort">Speicherort&lt;/h2>
+&lt;p>Der Speicherort wird abgeleitet von Unity&amp;rsquo;s &lt;code>Application.persistentDataPath&lt;/code>:&lt;/p>
+&lt;ul>
+&lt;li>Windows: &lt;code>%userprofile%\AppData\LocalLow\Boundfox Studios\Fairy Tale Defender\Save Games&lt;/code>&lt;/li>
+&lt;li>macOS: &lt;code>~/Library/Application Support/Boundfox Studios/Fairy Tale Defender/Save Games&lt;/code>&lt;/li>
+&lt;li>Linux: &lt;code>$HOME/.config/unity3d/Boundfox Studios/Fairy Tale Defender/Save Games&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;h2 id="layout">Layout&lt;/h2>
+&lt;p>Innerhalb des Ordners &lt;code>Save Games&lt;/code> wird für jedes Save Game ein Ordner angelegt.
+In diesem Ordner befinden sich zwei Dateien:&lt;/p>
+&lt;ul>
+&lt;li>&lt;code>meta.json&lt;/code>: Meta-Informationen zum Spielstand, z.B. Name.&lt;/li>
+&lt;li>&lt;code>save.json&lt;/code>: Der Speicherpunkt.&lt;/li>
+&lt;/ul>
+&lt;h2 id="hash-generierung">Hash-Generierung&lt;/h2>
+&lt;p>Für jeden Speicherstand legen wir in der &lt;code>meta.json&lt;/code> einen Hash ab.&lt;/p>
+&lt;div class="alert alert-success" role="alert">
+&lt;h4 class="alert-heading">Was ist ein Hash?&lt;/h4>
+Ein Hash ist ein Fingerabdruck für Daten. Egal wie groß oder klein die Eingabedaten sind, der Hash hat immer eine konstante Länge.
+Eine identische Eingabe erzeugt immer den gleichen Hash.
+Er kann genutzt werden um zu schauen, ob die Daten verändert wurden.
+&lt;/div>
+&lt;p>Mit dem Hash prüfen wir, ob jemand eine Änderung am Spielstand vorgenommen hat.
+Das bietet natürlich keinen sicheren Schutz gegen Manipulationen, aber es stellt eine kleine Hürde dar.&lt;/p></description></item><item><title>Docs: Scene Templates</title><link>https://docs.fairytaledefender.de/docs/docs-technical/systems/scene-templates/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://docs.fairytaledefender.de/docs/docs-technical/systems/scene-templates/</guid><description>
 &lt;p>Du kannst komfortabel neue Szenen anlegen, wenn Du in Unity über das Menü &lt;code>File&lt;/code> -&amp;gt; &lt;code>New Scene&lt;/code> gehst.
 Dort findest Du im Dialog zwei Templates, die von Fairy Tale Defender stammen:&lt;/p>
 &lt;ul>
