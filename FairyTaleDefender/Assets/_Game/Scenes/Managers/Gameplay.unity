@@ -1503,6 +1503,8 @@ MonoBehaviour:
     type: 2}
   <SaveGameManager>k__BackingField: {fileID: 11400000, guid: 5b53e7cde7f494831a39bde1efa4db97,
     type: 2}
+  <LevelRuntimeAnchor>k__BackingField: {fileID: 11400000, guid: b12e537301c554260b06a1dec1263463,
+    type: 2}
   <SceneReadyEventChannel>k__BackingField: {fileID: 11400000, guid: 3ac76ef19a58741a881c904120fe86a6,
     type: 2}
   <WaveSpawnedEventChannel>k__BackingField: {fileID: 11400000, guid: 1aea3c49e16d89c46a94522c1357ca48,

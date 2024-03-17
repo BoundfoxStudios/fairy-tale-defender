@@ -59,13 +59,7 @@ namespace BoundfoxStudios.FairyTaleDefender.UI
 
 		private void SetupButtons()
 		{
-			if (!NextLevelButton.HasNextLevel())
-			{
-				return;
-			}
-
-			//TODO: Only display next level button when it is unlocked.
-			NextLevelButton.gameObject.SetActive(true);
+			NextLevelButton.gameObject.SetActive(NextLevelButton.HasNextLevel());
 		}
 
 		private void ActivateCanvases()
