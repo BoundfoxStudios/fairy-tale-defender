@@ -1,6 +1,8 @@
+using System;
 using BoundfoxStudios.FairyTaleDefender.Common;
 using BoundfoxStudios.FairyTaleDefender.Extensions;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.Events.ScriptableObjects;
+using BoundfoxStudios.FairyTaleDefender.Infrastructure.RuntimeAnchors.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Infrastructure.SceneManagement.ScriptableObjects;
 using BoundfoxStudios.FairyTaleDefender.Systems.SaveGameSystem.ScriptableObjects;
 using UnityEngine;
@@ -19,6 +21,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 
 		[field: SerializeField]
 		private SaveGameManagerSO SaveGameManager { get; set; } = default!;
+
+		[field: SerializeField]
+		private LevelRuntimeAnchorSO LevelRuntimeAnchor { get; set; } = default!;
 
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
@@ -54,6 +59,11 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			AllObjectivesCompletedEventChannel.Raised -= ObjectivesCompleted;
 		}
 
+		private void Start()
+		{
+			SaveGameRuntimeAnchor.ItemSafe.Data.LastLevel = LevelRuntimeAnchor.ItemSafe;
+		}
+
 		private void ObjectivesCompleted()
 		{
 			FinishLevel(true);
@@ -67,9 +77,8 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.GameplaySystem
 			});
 
 			// TODO: Possibly move this somewhere else
-			// TODO: We need the information which level is currently being played.
-			var currentLevelIdentity = SaveGameRuntimeAnchor.ItemSafe.Data.LastLevel;
-			var currentLevel = AllLevelPacks.FindByIdentity(currentLevelIdentity!);
+			var currentLevelIdentity = LevelRuntimeAnchor.ItemSafe;
+			var currentLevel = AllLevelPacks.FindByIdentity(currentLevelIdentity);
 
 			if (currentLevel.Exists() && currentLevel.NextLevel.Exists())
 			{
