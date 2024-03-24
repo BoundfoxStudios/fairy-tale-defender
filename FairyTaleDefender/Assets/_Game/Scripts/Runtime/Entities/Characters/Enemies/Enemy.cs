@@ -55,8 +55,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Characters.Enemies
 
 		private void ReachedEndOfSpline()
 		{
-			// TODO: Get this info from the SO
-			EnemyDamagesPlayerEventChannel.Raise(1);
+			EnemyDamagesPlayerEventChannel.Raise(Definition.Damage);
 			Destroy();
 		}
 
