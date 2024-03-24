@@ -7,6 +7,20 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 	[RequireComponent(typeof(Rigidbody))]
 	public class Projectile : MonoBehaviour
 	{
+		public class LaunchArgs
+		{
+			public Vector3 Velocity { get; }
+			public bool DoUnparent { get; set; } = true;
+			public bool UseGravity { get; set; } = true;
+			public int Damage { get; }
+
+			public LaunchArgs(Vector3 velocity, int damage)
+			{
+				Velocity = velocity;
+				Damage = damage;
+			}
+		}
+
 		[field: SerializeField]
 		public Collider Collider { get; private set; } = default!;
 
@@ -14,6 +28,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 		private TrailRenderer TrailRenderer { get; set; } = default!;
 
 		private Rigidbody _rigidbody = default!;
+		private int _damage;
 
 		private ICanDealDamageOnCollision DamageOnCollision { get; set; } = default!;
 
@@ -29,18 +44,17 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 			}
 		}
 
-		public void Launch(Vector3 velocity,
-			bool doUnparent = true,
-			bool useGravity = true
-		)
+		public void Launch(LaunchArgs args)
 		{
-			if (doUnparent)
+			_damage = args.Damage;
+
+			if (args.DoUnparent)
 			{
 				transform.SetParent(null, true);
 			}
 
-			_rigidbody.useGravity = useGravity;
-			_rigidbody.velocity = velocity;
+			_rigidbody.useGravity = args.UseGravity;
+			_rigidbody.velocity = args.Velocity;
 
 			if (TrailRenderer)
 			{
@@ -50,8 +64,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons.Pr
 
 		private void OnCollisionEnter(Collision collision)
 		{
-			// TODO: Use information from SO or somewhere else, no magic numbers
-			DealDamage(collision, 10);
+			DealDamage(collision, _damage);
 			Destroy(gameObject);
 		}
 

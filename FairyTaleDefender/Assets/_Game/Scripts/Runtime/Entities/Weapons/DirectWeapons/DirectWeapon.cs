@@ -61,7 +61,10 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.DirectWeapons
 
 			if (_projectile.Exists())
 			{
-				_projectile.Launch(direction * (distance / ProjectileTimeToReachTarget), useGravity: false);
+				_projectile.Launch(new(direction * (distance / ProjectileTimeToReachTarget), WeaponDefinition.Damage)
+				{
+					UseGravity = false,
+				});
 			}
 
 			_projectile = null;

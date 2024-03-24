@@ -15,5 +15,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.ScriptableObjects
 		[field: SerializeField]
 		[field: Range(0, 360)]
 		public int AttackAngle { get; private set; }
+
+		[field: SerializeField]
+		[field: Min(0)]
+		public int Damage { get; private set; } = 10;
 	}
 }
