@@ -61,7 +61,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons.BallisticWeapons
 			var launchVelocity = BallisticCalculationUtilities
 				.CalculateBallisticArcVelocity(Arm.LaunchPoint.position, target, transform.forward);
 
-			_projectile.EnsureOrThrow().Launch(launchVelocity);
+			_projectile.EnsureOrThrow().Launch(new(launchVelocity, WeaponDefinition.Damage));
 			_projectile = null;
 
 			return UniTask.CompletedTask;
