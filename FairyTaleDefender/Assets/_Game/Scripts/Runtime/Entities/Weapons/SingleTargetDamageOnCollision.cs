@@ -9,10 +9,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Entities.Weapons
 	[AddComponentMenu(Constants.MenuNames.Weapons + "/" + nameof(SingleTargetDamageOnCollision))]
 	public class SingleTargetDamageOnCollision : MonoBehaviour, ICanDealDamageOnCollision
 	{
+		private bool _hasDealtDamage;
+
 		public void DealDamage(Collision collision, int amount)
 		{
-			if (collision.collider.TryGetComponentInParent<IAmDamageable>(out var damageable))
+			if (!_hasDealtDamage && collision.collider.TryGetComponentInParent<IAmDamageable>(out var damageable))
 			{
+				_hasDealtDamage = true;
 				damageable.Health.TakeDamage(amount);
 			}
 		}
