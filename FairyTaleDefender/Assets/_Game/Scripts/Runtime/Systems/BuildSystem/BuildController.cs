@@ -41,6 +41,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		[field: SerializeField]
 		private GameObject? BuildEffect { get; set; }
 
+		[field: SerializeField]
+		private float YBuildOffset { get; set; } = 0.2f;
+
 		[field: Header("Listening Channels")]
 		[field: SerializeField]
 		private BuildableEventChannelSO EnterBuildModeEventChannel { get; set; } = default!;
@@ -58,6 +61,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		private class BuildContext
 		{
 			private Vector3 _tilePosition;
+			private readonly float _yOffset;
 
 			public IAmBuildable Buildable { get; }
 			public GameObject BlueprintInstance { get; }
@@ -68,8 +72,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 				get => _tilePosition;
 				set
 				{
-					_tilePosition = value;
-					BlueprintInstance.transform.position = value;
+					var offsetPosition = value + new Vector3(0, _yOffset, 0);
+					_tilePosition = offsetPosition;
+					BlueprintInstance.transform.position = offsetPosition;
 				}
 			}
 
@@ -77,8 +82,9 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			public bool? PreviousHasValidPosition { get; set; }
 			public ICanCalculateEffectiveWeaponDefinition WeaponDefinition { get; }
 
-			public BuildContext(IAmBuildable buildable)
+			public BuildContext(IAmBuildable buildable, float yOffset)
 			{
+				_yOffset = yOffset;
 				Buildable = buildable;
 				BlueprintInstance = Instantiate(buildable.BlueprintPrefab);
 				MeshRenderers = BlueprintInstance.GetComponentsInChildren<MeshRenderer>();
@@ -120,7 +126,7 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 		{
 			ClearBuildContext();
 
-			_buildContext = new(args.Buildable);
+			_buildContext = new(args.Buildable, YBuildOffset);
 			_buildContext.BlueprintInstance.Deactivate();
 		}
 
@@ -202,12 +208,14 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			// 4. Make a box cast from above the tile down to the tile, also hitting anything on the ObstacleLayerMask.
 			// We need it to check, if there is an obstacle placed on the tile.
 			// Adjust the casted box to be a bit smaller than a tile, otherwise we might hit a neighbor.
-			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold, Vector3.down,
+			var hitsTerrainOrObstacle = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold,
+				Vector3.down,
 				out var terrainWithObstaclesBoxHit, Quaternion.identity, boxCastHeight, _terrainAndObstacleLayerMask);
 
 			// 5. Additionally, cast one more box cast only hitting the TerrainLayerMask to determine the correct position
 			// to place the tower.
-			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold, Vector3.down,
+			var hitsTerrain = Physics.BoxCast(tilePosition + Vector3.up * boxCastHeight, Vector3.one * threshold,
+				Vector3.down,
 				out var terrainBoxHit, Quaternion.identity, boxCastHeight, TerrainLayerMask);
 
 			// It could be, that we do not hit anything if we cast exactly in a gap of colliders or on some collider walls.
@@ -229,13 +237,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			//   - The hit TerrainTile needs a BuildInformation script. That script knows, if the tile is buildable or not.
 			//   - If we got a BuildInformation script, we check, if it is buildable.
 			var hasValidPosition = terrainWithObstaclesBoxHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
-								   && terrainWithObstaclesBoxHit.collider
-									   .TryGetComponent<BuildInformation>(out var buildInformation)
-								   && buildInformation.IsBuildable;
+			                       && terrainWithObstaclesBoxHit.collider
+				                       .TryGetComponent<BuildInformation>(out var buildInformation)
+			                       && buildInformation.IsBuildable;
 
 			// 8. Check, if we need to swap the material if we change from a valid to an invalid position and vice-versa.
 			var needsMaterialSwap = _buildContext.PreviousHasValidPosition is null
-									|| _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
+			                        || _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
 			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
 			if (needsMaterialSwap && hasValidPosition)
