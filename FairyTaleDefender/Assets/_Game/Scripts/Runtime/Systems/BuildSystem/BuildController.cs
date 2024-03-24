@@ -237,13 +237,13 @@ namespace BoundfoxStudios.FairyTaleDefender.Systems.BuildSystem
 			//   - The hit TerrainTile needs a BuildInformation script. That script knows, if the tile is buildable or not.
 			//   - If we got a BuildInformation script, we check, if it is buildable.
 			var hasValidPosition = terrainWithObstaclesBoxHit.collider.gameObject.IsInLayerMask(TerrainLayerMask)
-			                       && terrainWithObstaclesBoxHit.collider
-				                       .TryGetComponent<BuildInformation>(out var buildInformation)
-			                       && buildInformation.IsBuildable;
+								   && terrainWithObstaclesBoxHit.collider
+									   .TryGetComponent<BuildInformation>(out var buildInformation)
+								   && buildInformation.IsBuildable;
 
 			// 8. Check, if we need to swap the material if we change from a valid to an invalid position and vice-versa.
 			var needsMaterialSwap = _buildContext.PreviousHasValidPosition is null
-			                        || _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
+									|| _buildContext.PreviousHasValidPosition.Value != hasValidPosition;
 			_buildContext.PreviousHasValidPosition = hasValidPosition;
 
 			if (needsMaterialSwap && hasValidPosition)
